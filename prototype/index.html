@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>小学互动视觉家教 - 中低保真原型</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="prototype-shell">
+      <aside class="prototype-rail" aria-label="原型画板导航">
+        <div class="rail-brand">
+          <span class="rail-mark">PV</span>
+          <div>
+            <strong>互动视觉家教</strong>
+            <small>中低保真原型 v1</small>
+          </div>
+        </div>
+        <nav id="prototype-nav"></nav>
+        <div class="rail-note">
+          <span class="status-dot"></span>
+          固定教学夹具<br />不调用真实语音或模型
+        </div>
+      </aside>
+      <main class="prototype-stage">
+        <header class="prototype-toolbar">
+          <div>
+            <strong id="screen-title">儿童首页</strong>
+            <span id="screen-description">选择学习入口</span>
+          </div>
+          <div class="viewport-switch" aria-label="预览设备">
+            <button class="icon-button active" data-viewport="tablet" title="平板横屏" aria-label="平板横屏">▭</button>
+            <button class="icon-button" data-viewport="mobile" title="手机竖屏" aria-label="手机竖屏">▯</button>
+          </div>
+        </header>
+        <section class="device-wrap">
+          <div id="app" class="device tablet" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
