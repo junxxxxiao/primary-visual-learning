@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>小知 · 声音互动体验 Demo</title>
+  <style>
+    :root {
+      --chalk: #f2f3ef;
+      --paper: #fff;
+      --ink: #0a0a0a;
+      --muted: #686962;
+      --line: #d9dbd3;
+      --lime: #e8ef3e;
+      --lime-soft: #f6f8b4;
+      --sky: #83cdf7;
+      --sky-soft: #dff3ff;
+      --coral: #ff725f;
+      --violet: #bca9ff;
+      --violet-soft: #eee9ff;
+      --green: #56c596;
+      --yellow: #f4d45d;
+      --radius-card: 30px;
+      --radius-control: 999px;
+      --shadow: 0 26px 70px rgba(0, 0, 0, .16);
+      --font: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+      --motion-out: cubic-bezier(.23, 1, .32, 1);
+      --motion-in-out: cubic-bezier(.77, 0, .175, 1);
+      --motion-drawer: cubic-bezier(.32, .72, 0, 1);
+      --phone-safe-top: max(20px, env(safe-area-inset-top, 0px));
+      --phone-safe-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: #252622;
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible { outline: 4px solid var(--sky); outline-offset: 3px; }
+
+    .review {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .review-bar {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: white;
+    }
+    .review-title strong { display: block; font-size: 16px; }
+    .review-title span { color: #bfc0ba; font-size: 12px; }
+    .review-tabs {
+      max-width: 78%;
+      padding: 5px;
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-control);
+      background: rgba(255,255,255,.07);
+    }
+    .review-tabs button {
+      flex: 0 0 auto;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: var(--radius-control);
+      background: transparent;
+      color: #d8d9d3;
+      font-weight: 750;
+    }
+    .review-tabs button[aria-selected="true"] { background: var(--lime); color: var(--ink); }
+    .review-navs { min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+    .viewport-tabs { padding: 5px; display: flex; gap: 4px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-control); background: rgba(255,255,255,.07); }
+    .viewport-tabs button { min-height: 42px; padding: 0 14px; border: 0; border-radius: var(--radius-control); background: transparent; color: #d8d9d3; font-weight: 750; }
+    .viewport-tabs button[aria-pressed="true"] { background: white; color: var(--ink); }
+    .screen-frame {
+      position: relative;
+      aspect-ratio: 1180 / 820;
+      overflow: hidden;
+      border: 7px solid #10110f;
+      border-radius: 38px;
+      background: var(--chalk);
+      box-shadow: var(--shadow);
+    }
+    .concept-screen {
+      position: absolute;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      background: var(--chalk);
+    }
+    .concept-screen.active { display: block; }
+
+    .appbar {
+      height: 10%;
+      min-height: 64px;
+      padding: 0 3.2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .appbar.floating {
+      width: calc(100% - 5.6%);
+      height: 8.8%;
+      min-height: 58px;
+      position: absolute;
+      z-index: 5;
+      top: 3%;
+      left: 2.8%;
+      border: 1px solid rgba(10,10,10,.08);
+      border-radius: var(--radius-control);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(15px);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: clamp(14px, 1.4vw, 20px); font-weight: 900; }
+    .brand-mark {
+      width: clamp(34px, 3.5vw, 46px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 14px 14px 14px 5px;
+      background: var(--lime);
+      transform: rotate(-4deg);
+    }
+    .app-actions, .topic-tabs, .chip-row, .choice-row, .timeline, .lesson-controls { display: flex; align-items: center; }
+    .app-actions { gap: 9px; }
+    .meta-chip, .topic-tabs span, .condition-chip, .slide-tag {
+      padding: .55em 1em;
+      border-radius: var(--radius-control);
+      background: var(--paper);
+      font-size: clamp(10px, .85vw, 13px);
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .meta-chip.dark { background: var(--ink); color: white; }
+    .meta-chip.soft { background: var(--sky-soft); }
+
+    .cta {
+      min-height: clamp(42px, 4.4vw, 58px);
+      padding: 0 clamp(18px, 2vw, 29px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.8px solid var(--ink);
+      border-radius: var(--radius-control);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: clamp(12px, 1.05vw, 16px);
+      font-weight: 830;
+    }
+    .cta.primary { border-color: var(--lime); background: var(--lime); }
+    .cta.dark { background: var(--ink); color: white; }
+    .cta.disabled { opacity: .42; pointer-events: none; }
+
+    /* Entry */
+    .entry-screen {
+      background:
+        radial-gradient(circle at 82% 25%, rgba(232,239,62,.62), transparent 24%),
+        var(--chalk);
+    }
+    .entry-content {
+      height: 100%;
+      padding: 14% 6% 5.2%;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 5%;
+      align-items: center;
+    }
+    .eyebrow { margin: 0 0 2.4%; color: var(--muted); font-size: clamp(10px, 1vw, 14px); font-weight: 850; letter-spacing: .12em; }
+    .entry-copy h1 {
+      max-width: 680px;
+      margin: 0 0 3.5%;
+      font-size: clamp(38px, 4.7vw, 64px);
+      line-height: .99;
+      letter-spacing: -.065em;
+      font-weight: 950;
+    }
+    .entry-copy h1 em { position: relative; z-index: 0; font-style: normal; }
+    .entry-copy h1 em::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -2%; right: -3%; bottom: .03em;
+      height: .34em;
+      border-radius: 999px;
+      background: var(--lime);
+      transform: rotate(-2deg);
+    }
+    .entry-lead { max-width: 610px; margin: 0 0 4%; color: var(--muted); font-size: clamp(12px, 1.25vw, 18px); line-height: 1.7; font-weight: 560; }
+    .entry-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .privacy-note {
+      max-width: 560px;
+      margin-top: 4%;
+      padding: 2.5% 3%;
+      display: flex;
+      gap: 12px;
+      border-left: 5px solid var(--ink);
+      border-radius: 0 18px 18px 0;
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      font-size: clamp(10px, .9vw, 13px);
+      line-height: 1.55;
+    }
+    .privacy-note strong { color: var(--ink); white-space: nowrap; }
+    .entry-visual { min-width: 0; display: grid; place-items: center; }
+    .lab-orbit {
+      width: min(36vw, 430px);
+      aspect-ratio: 1;
+      position: relative;
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+      background: var(--sky);
+      box-shadow: clamp(10px, 1.4vw, 18px) clamp(12px, 1.6vw, 22px) 0 var(--ink);
+      transform: rotate(4deg);
+    }
+    .lab-sticker {
+      position: absolute;
+      z-index: 2;
+      right: -7%; top: 5%;
+      padding: 3% 5%;
+      border: 2px solid var(--ink);
+      border-radius: 18px 18px 18px 5px;
+      background: var(--lime);
+      font-size: clamp(10px, 1.1vw, 16px);
+      font-weight: 900;
+      transform: rotate(8deg);
+    }
+    .lab-string {
+      width: 68%; height: 35%;
+      position: absolute;
+      left: 16%; top: 31%;
+      border-left: 7px solid var(--ink);
+      border-right: 7px solid var(--ink);
+    }
+    .lab-string svg { width: 100%; height: 100%; }
+    .lab-fork {
+      width: 25%; height: 33%;
+      position: absolute;
+      left: -9%; bottom: 4%;
+      border: 3px solid var(--ink);
+      border-radius: 24px 24px 7px 24px;
+      background: var(--coral);
+      transform: rotate(-11deg);
+    }
+    .lab-fork::before, .lab-fork::after { content: ""; position: absolute; top: 18%; width: 12%; height: 58%; border-radius: 999px; background: var(--ink); }
+    .lab-fork::before { left: 30%; } .lab-fork::after { right: 30%; }
+    .lab-dots { width: 22%; aspect-ratio: 1; position: absolute; right: -3%; bottom: -3%; border: 3px solid var(--ink); border-radius: 50% 50% 12px 50%; background: var(--violet); }
+
+    /* Prediction */
+    .prediction-screen { padding: 2.5%; }
+    .prediction-shell { height: 100%; display: grid; grid-template-columns: 22% 1fr; gap: 2%; }
+    .progress-rail {
+      padding: 9% 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius-card);
+      border: 2px solid var(--ink);
+      background: #eceee7;
+      color: var(--ink);
+      box-shadow: 7px 8px 0 var(--ink);
+    }
+    .progress-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; }
+    .progress-list { display: grid; gap: clamp(10px, 1.5vw, 20px); }
+    .progress-item { display: grid; grid-template-columns: 30px 1fr; gap: 9px; align-items: center; color: var(--muted); font-size: clamp(10px, .9vw, 13px); font-weight: 700; }
+    .progress-item i { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #a9b3b5; border-radius: 50%; font-style: normal; }
+    .progress-item.done, .progress-item.active { color: var(--ink); }
+    .progress-item.done i { border-color: var(--green); background: var(--green); color: var(--ink); }
+    .progress-item.active i { border-color: var(--lime); background: var(--lime); color: var(--ink); }
+    .rail-note { color: var(--muted); font-size: clamp(9px, .78vw, 12px); line-height: 1.55; }
+    .prediction-main {
+      padding: 3.5% 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(10,10,10,.08);
+      border-radius: var(--radius-card);
+      background: var(--paper);
+    }
+    .prediction-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .prediction-head h1 { max-width: 760px; margin: .35em 0 0; font-size: clamp(27px, 3.25vw, 47px); line-height: 1.12; letter-spacing: -.05em; }
+    .voice-cue {
+      min-width: 160px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-radius: 18px;
+      background: var(--sky-soft);
+      font-size: clamp(9px, .8vw, 12px);
+      font-weight: 750;
+    }
+    .voice-cue b { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); }
+    .condition-box { margin: 2.7% 0; padding: 2%; border: 1px solid var(--line); border-radius: 20px; background: var(--chalk); }
+    .condition-box strong { display: block; margin-bottom: 1.2%; font-size: clamp(11px, 1vw, 14px); }
+    .chip-row { flex-wrap: wrap; gap: 7px; }
+    .condition-chip { padding: .45em .85em; border: 1px solid var(--line); }
+    .condition-chip.change { border-color: var(--ink); background: var(--lime-soft); }
+    .choice-row { align-items: stretch; gap: 1.5%; }
+    .answer-card {
+      flex: 1;
+      min-width: 0;
+      min-height: 155px;
+      padding: 2.2%;
+      position: relative;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+    }
+    .answer-card.selected { border-color: var(--ink); background: var(--lime-soft); box-shadow: 6px 7px 0 var(--ink); transform: translate(-3px, -3px); }
+    .answer-card .choice-mark { width: 27px; height: 27px; margin-bottom: 15px; display: grid; place-items: center; border: 1.5px solid var(--ink); border-radius: 50%; font-size: 12px; font-weight: 900; }
+    .answer-card.selected .choice-mark { background: var(--ink); color: white; }
+    .answer-card strong { display: block; margin-bottom: 8px; font-size: clamp(15px, 1.5vw, 22px); }
+    .answer-card span { color: var(--muted); font-size: clamp(9px, .86vw, 13px); line-height: 1.5; }
+    .prediction-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .prediction-footer p { margin: 0; color: var(--muted); font-size: clamp(10px, .9vw, 13px); }
+
+    /* Lesson */
+    .lesson-screen { padding: 2.1%; background: #e6e8e2; }
+    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: 1.6%; }
+    .lesson-appbar {
+      min-height: 62px;
+      padding: 0 2%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: var(--radius-control);
+      background: var(--paper);
+    }
+    .topic-tabs { gap: 5px; }
+    .topic-tabs span { background: transparent; }
+    .topic-tabs span.active { background: var(--ink); color: white; }
+    .lesson-controls { gap: 8px; color: var(--muted); font-size: clamp(9px, .8vw, 12px); }
+    .lesson-appbar .lesson-back { margin-right: 10px; }
+    .lesson-appbar .brand { margin-right: auto; }
+    .lesson-appbar .topic-tabs { position: absolute; left: 50%; transform: translateX(-50%); }
+    .lesson-appbar .lesson-controls { margin-left: auto; }
+    .lesson-controls b { padding: .5em .9em; border-radius: 999px; background: var(--sky-soft); color: var(--ink); }
+    [data-screen="intro"] .lesson-controls b { display: none; }
+    .lesson-grid { min-height: 0; flex: 1; display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(270px, .72fr); gap: 1.6%; }
+    .workspace, .tutor-panel { min-height: 0; border-radius: 15px; background: var(--paper); }
+    .workspace { padding: 2.4%; display: flex; flex-direction: column; }
+    .lesson-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .lesson-heading h1 { margin: .25em 0 .15em; font-size: clamp(25px, 2.7vw, 40px); line-height: 1.1; letter-spacing: -.05em; }
+    .lesson-heading p { margin: 0; color: var(--muted); font-size: clamp(10px, .95vw, 14px); }
+    .slide-tag { background: var(--lime-soft); }
+    .lesson-canvas {
+      min-height: 0;
+      flex: 1;
+      margin-top: 2.2%;
+      padding: 2.6%;
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 3%;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--chalk);
+    }
+    .lesson-copy p { margin-bottom: 8%; color: var(--muted); font-size: clamp(10px, 1vw, 14px); line-height: 1.65; }
+    .lesson-points { display: grid; gap: 10px; }
+    .lesson-point { display: grid; grid-template-columns: 28px 1fr; gap: 9px; align-items: center; font-size: clamp(10px, .93vw, 14px); font-weight: 760; }
+    .lesson-point i { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); font-style: normal; }
+    .compare-visual { display: grid; gap: 11px; }
+    .wave-card { padding: 3%; border: 1.5px solid var(--ink); border-radius: 19px; background: var(--paper); }
+    .wave-card.strong { background: var(--sky-soft); }
+    .wave-card header { display: flex; justify-content: space-between; margin-bottom: 2%; font-size: clamp(9px, .85vw, 12px); font-weight: 800; }
+    .wave-card header span { color: var(--muted); font-weight: 650; }
+    .wave-card svg { width: 100%; height: clamp(38px, 5vw, 70px); }
+    .visual-takeaway { padding: 2.2% 3%; display: flex; justify-content: space-between; gap: 10px; border-radius: 17px; background: var(--ink); color: white; font-size: clamp(9px, .88vw, 13px); }
+    .visual-takeaway b { color: var(--lime); }
+    .timeline { margin-top: 1.9%; display: grid; grid-template-columns: 40px repeat(3, minmax(0, 1fr)) auto; align-items: center; gap: 8px; }
+    .timeline-play-toggle { width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #aeb0b3; font-size: 15px; font-weight: 900; cursor: pointer; }
+    .timeline-play-toggle.paused { font-size: 13px; }
+    .timeline span { height: 6px; flex: 1; border-radius: 999px; background: var(--line); }
+    .timeline span.done { background: var(--ink); }
+    .timeline span.active { background: var(--lime); }
+    .timeline small { margin-left: 7px; color: var(--muted); font-size: 10px; }
+    .tutor-panel { padding: 2.1%; display: flex; flex-direction: column; }
+    .tutor-head { padding-bottom: 4%; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
+    .tutor-avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 15px 15px 15px 5px; background: var(--coral); font-size: 11px; font-weight: 900; }
+    .tutor-head strong, .tutor-head small { display: block; }
+    .tutor-head small { margin-top: 2px; color: var(--muted); font-size: clamp(8px, .72vw, 11px); }
+    .thread { min-height: 0; flex: 1; padding: 6% 0; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+    .message { max-width: 92%; padding: 4.5%; border-radius: 18px 18px 18px 5px; background: var(--chalk); }
+    .message small { color: var(--muted); font-size: clamp(8px, .7vw, 10px); }
+    .message p { margin: 5px 0 0; font-size: clamp(9px, .86vw, 13px); line-height: 1.55; }
+    .key-point { padding: 4.5%; border-radius: 18px; background: var(--lime-soft); font-size: clamp(9px, .84vw, 12px); line-height: 1.5; font-weight: 760; }
+    .followup-label { margin-bottom: 7px; color: var(--muted); font-size: clamp(8px, .72vw, 10px); font-weight: 750; }
+    .followup-box { padding: 5px 5px 5px 12px; display: flex; align-items: center; gap: 6px; border: 1.5px solid var(--ink); border-radius: 17px; }
+    .followup-box span { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: clamp(8px, .8vw, 12px); }
+    .followup-box b { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 12px; background: var(--ink); color: white; font-size: 11px; }
+
+    /* Full demo static surfaces */
+    .static-screen { padding: 2.5%; background: var(--chalk); }
+    .static-shell { height: 100%; padding: 2.7% 3.2%; display: flex; flex-direction: column; border-radius: var(--radius-card); background: var(--paper); }
+    .static-appbar { min-height: 58px; margin-bottom: 2.4%; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .static-appbar .back { width: 42px; height: 42px; display: grid; place-items: center; border: 1.5px solid var(--ink); border-radius: 50%; font-weight: 950; }
+    .static-appbar .step { padding: .55em 1em; border-radius: 999px; background: var(--ink); color: white; font-size: clamp(9px,.8vw,12px); font-weight: 850; }
+    .static-content { min-height: 0; flex: 1; display: grid; place-items: center; }
+    .static-narrow { width: min(700px, 100%); }
+    .static-wide { width: 100%; }
+    .static-title { margin: 0 0 1.6%; font-size: clamp(28px,3.5vw,52px); line-height: 1.06; letter-spacing: -.052em; }
+    .static-lead { max-width: 720px; margin-bottom: 2.5%; color: var(--muted); font-size: clamp(10px,1.05vw,15px); line-height: 1.6; }
+    .mode-layout, .confirm-layout, .migration-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 3.5%; align-items: center; }
+    .fixed-question { padding: 4%; border: 2px solid var(--ink); border-radius: 24px; background: var(--lime-soft); box-shadow: 7px 8px 0 var(--ink); }
+    .fixed-question small { color: var(--muted); font-weight: 800; }
+    .fixed-question strong { display: block; margin-top: 2%; font-size: clamp(20px,2.25vw,34px); line-height: 1.25; }
+    .mode-list, .static-choice-list { display: grid; gap: 9px; }
+    .mode-row, .static-choice { padding: 2.3% 2.6%; display: grid; grid-template-columns: 42px 1fr auto; gap: 12px; align-items: center; border: 1.5px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .mode-row.selected, .static-choice.selected { border-color: var(--ink); background: var(--lime-soft); box-shadow: 5px 6px 0 var(--ink); }
+    .mode-row i, .static-choice i { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 13px; background: var(--chalk); font-style: normal; font-weight: 950; }
+    .mode-row.selected i, .static-choice.selected i { background: var(--lime); }
+    .mode-row strong, .static-choice strong, .mode-row small, .static-choice small { display: block; }
+    .mode-row small, .static-choice small { margin-top: 2px; color: var(--muted); font-size: clamp(8px,.75vw,11px); }
+    .source-cue { margin: 2.5% 0; padding: 2.4%; display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; border-radius: 18px; background: var(--ink); color: white; }
+    .source-cue i { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-style: normal; }
+    .source-cue strong, .source-cue small { display: block; }.source-cue small { margin-top: 2px; color: #bfc1b8; font-size: clamp(8px,.74vw,11px); }
+    .goal-box { padding: 3%; border: 1px solid var(--line); border-radius: 20px; background: var(--chalk); }
+    .goal-box small { color: var(--muted); }.goal-box strong { display: block; margin-top: 1%; font-size: clamp(15px,1.6vw,23px); }
+    .calibration-pair, .feedback-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2%; }
+    .cal-card { min-height: 265px; padding: 4%; display: flex; flex-direction: column; border: 2px solid var(--ink); border-radius: 24px; background: var(--paper); }
+    .cal-card.done { background: var(--lime-soft); box-shadow: 7px 8px 0 var(--ink); }.cal-card.locked { opacity: .43; }
+    .cal-card .sound { width: 56px; height: 56px; margin-bottom: 6%; display: grid; place-items: center; border-radius: 18px; background: var(--sky); font-size: 20px; font-weight: 950; }
+    .cal-card h2 { margin-bottom: 2%; font-size: clamp(22px,2.2vw,32px); }.cal-card p { color: var(--muted); font-size: clamp(9px,.85vw,12px); }.cal-card .cta { margin-top: auto; align-self: flex-start; }
+    .loading-rig { width: min(520px,78%); height: 210px; margin: 2% auto; position: relative; display: grid; place-items: center; }
+    .loading-rig::before, .loading-rig::after { content:""; width: 18px; height: 130px; position: absolute; background: var(--ink); border-radius: 8px; }.loading-rig::before{left:2%}.loading-rig::after{right:2%}
+    .loading-rig svg { width: 90%; }.load-dot { width: 24px; height: 24px; position: absolute; border: 3px solid var(--ink); border-radius: 50%; background: var(--lime); }
+    .load-track { width: min(600px,86%); height: 12px; margin: 0 auto; overflow: hidden; border-radius: 999px; background: var(--line); }.load-track span { width: 76%; height: 100%; display: block; border-radius: inherit; background: var(--lime); }
+    .intro-stage { height: 100%; position: relative; display: grid; place-items: center; text-align: center; }.intro-stage::before { content:""; width: 48%; aspect-ratio:1; position:absolute; border:2px solid var(--line); border-radius:50%; }
+    .intro-stage > div { position: relative; z-index: 1; }.intro-stage h1 { margin: 0 0 4%; font-size: clamp(36px,5.1vw,72px); line-height: 1.04; letter-spacing: -.06em; }
+    .experiment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6%; }
+    .experiment-pane { min-height: 300px; padding: 2.5%; border: 2px solid var(--ink); border-radius: 23px; background: var(--chalk); }
+    .experiment-pane header { display:flex;justify-content:space-between;font-size:clamp(9px,.8vw,12px);font-weight:850 }.experiment-pane svg{width:100%;height:190px}.experiment-tags{display:flex;gap:7px;flex-wrap:wrap}.experiment-tags span{padding:.5em .8em;border-radius:999px;background:var(--green);font-size:clamp(8px,.72vw,10px);font-weight:850}.experiment-tags span.blue{background:var(--sky-soft)}
+    .drawer-preview { width: 44%; min-width: 330px; margin-left: auto; padding: 3%; border-radius: 28px 28px 0 0; background: var(--paper); box-shadow: 0 -20px 55px rgba(0,0,0,.2); }
+    .drawer-backdrop { height: 100%; padding: 3%; display: flex; align-items: flex-end; background: linear-gradient(rgba(10,10,10,.34),rgba(10,10,10,.5)), var(--chalk); }
+    .voice-wave { height: 90px; margin: 5% 0; display:flex;align-items:center;justify-content:center;gap:6px;border-radius:20px;background:var(--violet-soft) }.voice-wave i{width:6px;height:24px;border-radius:999px;background:var(--ink)}.voice-wave i:nth-child(2){height:52px}.voice-wave i:nth-child(3){height:34px}
+    .vacuum-jar { width: 64%; height: 320px; margin: 0 auto; position: relative; border: 5px solid var(--ink); border-bottom-width: 13px; border-radius: 46% 46% 20px 20px; background: linear-gradient(135deg,rgba(188,169,255,.3),rgba(131,205,247,.13)); }.vacuum-jar svg{width:72%;height:120px;position:absolute;left:14%;top:32%}.vacuum-sticker{position:absolute;right:-10%;top:8%;padding:10px 15px;border:2px solid var(--ink);border-radius:16px 16px 16px 5px;background:var(--violet);font-weight:900;transform:rotate(5deg)}
+    .science-object { min-height: 390px; display: grid; place-items: center; position: relative; border: 2px solid var(--ink); border-radius: 28px; background: var(--sky); box-shadow: 9px 10px 0 var(--ink); }
+    .fork { width: 170px; height: 250px; position:relative }.fork::before,.fork::after{content:"";width:28px;height:165px;position:absolute;top:0;border:9px solid var(--ink);border-bottom:0;border-radius:17px 17px 0 0}.fork::before{left:28px}.fork::after{right:28px}.fork i{width:34px;height:105px;position:absolute;left:68px;bottom:0;border-radius:0 0 15px 15px;background:var(--ink)}
+    .xylophone { width: 68%; display:grid;gap:8px;transform:rotate(-4deg) }.xylophone i{height:40px;border:3px solid var(--ink);border-radius:9px;background:var(--coral)}.xylophone i:nth-child(2){width:90%;background:var(--yellow)}.xylophone i:nth-child(3){width:80%;background:var(--green)}.xylophone i:nth-child(4){width:70%;background:var(--sky)}
+    .hint { margin-bottom: 3%; padding: 2.3%; border-left: 6px solid var(--yellow); border-radius: 0 17px 17px 0; background: #fff7c8; font-size: clamp(9px,.85vw,12px); line-height: 1.55; }
+    .feedback-grid { display: grid; grid-template-columns:repeat(3,1fr); gap:2%; }.feedback-card{min-height:170px;padding:4%;display:grid;place-items:center;border:2px solid var(--ink);border-radius:25px;background:var(--lime-soft);text-align:center;font-size:clamp(15px,1.5vw,22px);font-weight:900}.feedback-card:nth-child(2){background:var(--sky-soft)}.feedback-card:nth-child(3){background:#ffe1dc}.feedback-card.selected{box-shadow:8px 9px 0 var(--ink);transform:translate(-3px,-3px)}
+    .feedback-reasons { margin: 3% auto 0; padding: 2.4%; display: flex; align-items: center; justify-content: center; gap: 9px; flex-wrap: wrap; border-radius: 18px; background: var(--chalk); }
+    .feedback-reasons > strong { width: 100%; color: var(--muted); font-size: 10px; }
+    .reason-chip { padding: .75em 1em; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--paper); font-size: 10px; font-weight: 820; }
+    .reason-chip.selected { background: var(--sky-soft); box-shadow: 3px 4px 0 var(--ink); }
+    [data-screen="result"] .static-appbar { justify-content: space-between; }
+    .result-card { width: 100%; padding: 2.5%; display: grid; grid-template-columns: .72fr 1.28fr; gap: 2.5%; align-items: stretch; border: 2px solid var(--ink); border-radius: 30px; background: var(--paper); box-shadow: 9px 10px 0 var(--ink); }
+    .result-hero { min-height: 450px; padding: 7%; display:flex;flex-direction:column;border-radius:15px;background:#f2eee4;color:var(--ink)}.result-mark{width:74px;height:74px;display:grid;place-items:center;border:2px solid var(--ink);border-radius:23px 23px 23px 7px;background:#ffd2cc;color:var(--ink);font-size:31px;font-weight:950}.result-hero h1{margin:9% 0 2%;font-size:clamp(38px,4.4vw,64px);line-height:1}.result-hero p{color:var(--muted)}.result-hero .entry-buttons{margin-top:auto}.result-hero .cta.primary{border-color:var(--ink);background:#ffd2cc;color:var(--ink)}.result-details{padding:1%;display:flex;flex-direction:column;justify-content:center}.evidence-list{display:grid;gap:8px}.evidence-row{padding:2.8%;display:grid;grid-template-columns:115px 1fr auto;gap:12px;align-items:center;border:1px solid #e5e7df;border-radius:16px;background:var(--chalk)}.evidence-row span{color:var(--muted);font-size:10px}.evidence-row strong{font-size:clamp(10px,.9vw,13px)}.evidence-row em{padding:.5em .8em;border-radius:999px;background:#dff6eb;font-size:9px;font-style:normal;font-weight:850}.evidence-row em.negative{background:#ffe0dc;color:#a32418}.core-finding{margin-top:2%;padding:3%;border:2px solid var(--ink);border-radius:20px;background:var(--lime-soft);box-shadow:6px 7px 0 var(--ink)}.core-finding p{margin:1% 0 0;font-size:clamp(15px,1.55vw,22px);font-weight:900;line-height:1.45}
+
+    .header-spacer { width: 42px; }
+    .ask-focus { padding-top: 1%; }
+    .question-composer { margin: 4% 0 2.5%; padding: 3.5%; border: 2px solid var(--ink); border-radius: 26px; background: var(--paper); box-shadow: 8px 9px 0 var(--ink); }
+    .question-composer label { display: block; margin-bottom: 1%; color: var(--muted); font-size: clamp(10px,.9vw,13px); font-weight: 800; }
+    .question-value { width: 100%; min-height: 105px; padding: 2.3% 0; resize: none; overflow: hidden; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: clamp(25px,2.8vw,42px); line-height: 1.18; font-weight: 900; }
+    .question-value:focus { box-shadow: inset 0 -3px 0 var(--sky); }
+    .composer-tools { padding-top: 2%; display: flex; align-items: center; gap: 9px; border-top: 1px solid var(--line); }
+    .composer-tools .icon-button:first-child { margin-left: auto; }
+    .composer-send { min-height: 44px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; border: 1.8px solid var(--ink); border-radius: 999px; background: var(--ink); color: white; font-size: 12px; font-weight: 850; }
+    .confirm-send { border-color: var(--ink); background: var(--ink); color: white; }
+    [data-screen="loading"] .static-appbar .step { font-size: 0; }
+    [data-screen="loading"] .static-appbar .step::after { content: "准备观察"; font-size: clamp(9px,.8vw,12px); }
+    .icon-button, .lesson-back { width: 44px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; border: 1.8px solid var(--ink); border-radius: 50%; background: var(--paper); color: var(--ink); }
+    .icon-button svg, .lesson-back svg, .voice-action svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-button svg rect { fill: none; }
+    .input-entry-notes { margin: 3% 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .input-entry-notes span { padding: 3%; display: flex; align-items: center; gap: 9px; border-radius: 16px; background: var(--chalk); color: var(--muted); font-size: 11px; font-weight: 700; }
+    .input-entry-notes b { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 10px; background: var(--lime); color: var(--ink); }
+    .confirm-focus { width: min(850px,100%); padding: 5%; border: 2px solid var(--ink); border-radius: 28px; background: var(--lime-soft); box-shadow: 9px 10px 0 var(--ink); }
+    .calibration-main { padding: 4%; }
+
+    .voice-action { background: var(--ink); color: white; }
+    .send-action { background: var(--lime) !important; color: var(--ink) !important; }
+    .send-action svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .followup-box .send-action { font-size: 0; }
+    .send-action::before { content: "➤"; display: block; font-size: 15px; line-height: 1; transform: rotate(-32deg) translate(-1px, 0); transform-origin: center; }
+    .message.emphasis { max-width: 100%; border: 1px solid #d8d98a; background: var(--lime-soft); }
+    .message.user-message { margin-left: auto; border-radius: 18px 18px 5px 18px; background: var(--sky-soft); }
+    .intro-canvas { grid-template-columns: 1.05fr .95fr; }
+    .intro-question h2 { margin: 0 0 7%; font-size: clamp(25px,3vw,44px); line-height: 1.12; letter-spacing: -.045em; }
+    .controlled-visual { min-height: 300px; padding: 5%; display: grid; align-content: center; gap: 18px; border: 2px solid var(--ink); border-radius: 15px; background: #f2eee4; box-shadow: 7px 8px 0 var(--ink); }
+    .control-string span { font-weight: 900; }
+    .control-string svg { width: 100%; height: 120px; }
+    .control-arrow { padding: 3%; border-radius: 12px; background: var(--coral); text-align: center; font-size: 12px; }
+    .control-arrow strong { font-size: 17px; }
+
+    .exit-preview { position: absolute; inset: 2.1%; padding: 2%; border-radius: 28px; background: var(--paper); }
+    .exit-preview-bar { height: 64px; display: flex; align-items: center; gap: 14px; }
+    .exit-preview-bar .meta-chip { margin-left: auto; }
+    .exit-preview-body { height: calc(100% - 78px); padding: 4%; display: grid; grid-template-columns: 1fr 1.3fr; grid-template-rows: 90px 1fr; gap: 18px; border-radius: 24px; background: var(--chalk); }
+    .exit-preview-body span { border-radius: 18px; background: var(--line); }
+    .exit-preview-body span:first-child { grid-column: 1 / -1; }
+    .exit-backdrop { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; background: rgba(10,10,10,.46); backdrop-filter: blur(4px); }
+    .exit-modal { width: min(480px,84%); padding: 4%; border: 2px solid var(--ink); border-radius: 28px; background: var(--paper); box-shadow: 10px 12px 0 var(--ink); text-align: center; }
+    .exit-icon { width: 64px; height: 64px; margin: 0 auto 5%; display: grid; place-items: center; border-radius: 20px 20px 20px 6px; background: var(--lime); font-size: 29px; font-weight: 950; }
+    .exit-modal h2 { margin: 0; font-size: 32px; }
+    .exit-modal p { margin: 4% 0 7%; color: var(--muted); line-height: 1.65; }
+    .exit-actions { display: flex; justify-content: center; gap: 9px; }
+    .demo-exit-dialog[hidden] { display: none; }
+    .demo-exit-dialog { position: absolute; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(10,10,10,.46); backdrop-filter: blur(4px); }
+
+    .experiment-canvas { display: block; padding: 0; border: 0; background: transparent; }
+    .interactive-string-stage { height: calc(100% - 76px); padding: 2.5%; display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: auto 1fr auto; gap: 12px 18px; border: 2px solid var(--ink); border-radius: 22px; background: var(--paper); }
+    .experiment-canvas > .prediction-footer { margin-top: 16px; padding: 0 4px; }
+    .stage-label { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 12px; }
+    .stage-label span { color: var(--muted); font-size: 11px; }
+    .pluck-string { width: 100%; height: 100%; min-height: 170px; align-self: center; border-radius: 18px; background: var(--sky-soft); }
+    .live-explanation { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .metric { padding: 12px; display: flex; flex-direction: column; justify-content: center; border-radius: 15px; background: var(--lime-soft); }
+    .metric.green { background: #dff6eb; }
+    .metric.blue { background: var(--sky-soft); }
+    .metric small { color: var(--muted); font-size: 9px; }
+    .metric strong { margin-top: 3px; font-size: 14px; }
+    .response-wave { grid-column: 1 / -1; padding: 9px 12px; display: grid; grid-template-columns: 120px 1fr; align-items: center; border-radius: 15px; background: var(--chalk); font-size: 10px; font-weight: 850; }
+    .response-wave svg { width: 100%; height: 55px; }
+    .lesson-playback { margin-top: 1.9%; display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 12px; }
+    .lesson-play-toggle { width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #aeb0b3; }
+    .lesson-play-toggle svg { width: 28px; height: 28px; fill: currentColor; }
+    .lesson-progress { display: grid; grid-template-columns: .9fr 2.2fr 2.2fr 2.2fr; gap: 8px; }
+    .lesson-progress span { height: 4px; overflow: hidden; border-radius: 999px; background: #e9eafb; }
+    .lesson-progress span::before { content: ""; width: 0; height: 100%; display: block; background: #c8c9ff; }
+    .lesson-progress span.done::before { width: 100%; }
+    .lesson-progress span.active::before { width: 48%; }
+    .lesson-playback small { color: var(--muted); font-size: 10px; }
+    .recording-panel .thread { gap: 13px; }
+    .recording-inline { padding: 7%; display: grid; place-items: center; position: relative; border: 2px solid var(--ink); border-radius: 21px; background: var(--violet-soft); text-align: center; }
+    .recording-inline .voice-wave { width: 100%; height: 88px; margin: 0 0 8px; }
+    .recording-inline > span { margin-top: 7px; color: var(--muted); font-size: 10px; }
+    .record-done, .record-cancel { width: 42px; height: 42px; position: absolute; bottom: 10px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 50%; font-size: 19px; }
+    .record-done { right: 10px; background: var(--lime); }
+    .record-cancel { right: 60px; background: var(--paper); }
+    .recording-inline::after { content: "×"; width: 42px; height: 42px; position: absolute; left: 10px; bottom: 10px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--paper); font-size: 19px; }
+    .recording-inline { min-height: 104px; }
+    .migration-question-list { display: grid; gap: 14px; }
+    .migration-question { display: grid; gap: 9px; }
+    .migration-question-title { margin: 0; display: flex; align-items: center; gap: 10px; font-size: clamp(13px,1.15vw,17px); }
+    .migration-question-title b { width: 30px; height: 30px; flex: 0 0 30px; display: grid; place-items: center; border: 1.5px solid var(--ink); border-radius: 10px 10px 10px 4px; background: var(--lime); color: var(--ink); font-size: 13px; box-shadow: 2px 3px 0 var(--ink); }
+    .migration-options { display: grid; gap: 9px; }
+    .migration-options.compact { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .migration-question .static-choice { width: 100%; min-height: 64px; padding: 11px 14px; grid-template-columns: 26px 1fr; border-radius: 0; color: var(--ink); font: inherit; text-align: left; }
+    .migration-question .static-choice i { width: 24px; height: 24px; border: 1.5px solid var(--ink); border-radius: 50%; background: white; color: transparent; font-size: 13px; }
+    .migration-question .static-choice.selected i { border-color: var(--ink); background: var(--ink); color: var(--lime); }
+    .migration-question .static-choice:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+
+    .object-caption { position: absolute; bottom: 20px; font-weight: 900; }
+    .fork-object { background: var(--sky-soft); }
+    .fork-illustration { width: 78%; height: 78%; overflow: visible; }
+    .fork-illustration .fork-body { fill: none; stroke: var(--ink); stroke-width: 28; stroke-linecap: round; stroke-linejoin: round; }
+    .fork-illustration .vibration { fill: none; stroke: var(--coral); stroke-width: 8; stroke-linecap: round; }
+    .fork-illustration .mallet { fill: none; stroke: var(--ink); stroke-width: 18; stroke-linecap: round; }
+    .fork-illustration .mallet-head { fill: var(--coral); stroke: var(--ink); stroke-width: 8; }
+
+    .review-caption { margin: 14px 6px 0; display: flex; justify-content: space-between; gap: 20px; color: #aeb0a8; font-size: 11px; }
+
+    /* Phone portrait review mode: same screens, recomposed for the 390 × 844 baseline. */
+    body.phone-review .review { width: min(1180px, 100%); }
+    body.phone-review .review-bar { align-items: flex-start; }
+    body.phone-review .review-navs { max-width: 76%; flex-wrap: wrap; }
+    body.phone-review .review-tabs { order: 2; max-width: 100%; }
+    body.phone-review .screen-frame { width: 390px; height: 844px; margin: 0 auto; aspect-ratio: auto; border-width: 6px; border-radius: 34px; }
+    body.phone-review .concept-screen { font-size: 12px; }
+    body.phone-review .brand { gap: 8px; font-size: 14px; }
+    body.phone-review .brand-mark { width: 34px; border-radius: 12px 12px 12px 4px; }
+    body.phone-review .meta-chip,
+    body.phone-review .topic-tabs span,
+    body.phone-review .condition-chip,
+    body.phone-review .slide-tag { font-size: 9px; }
+    body.phone-review .cta { min-height: 44px; padding: 0 16px; font-size: 12px; }
+    body.phone-review .eyebrow { margin-bottom: 8px; font-size: 9px; }
+
+    body.phone-review .appbar.floating { width: calc(100% - 24px); height: 58px; top: calc(var(--phone-safe-top) + 12px); left: 12px; padding: 0 14px; }
+    body.phone-review .app-actions { gap: 5px; }
+    body.phone-review .app-actions .meta-chip { display: none; }
+    body.phone-review .app-actions .meta-chip.dark { display: inline-flex; }
+    body.phone-review .entry-content { padding: calc(var(--phone-safe-top) + 108px) 24px calc(var(--phone-safe-bottom) + 18px); display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 14px; align-items: stretch; }
+    body.phone-review .entry-copy { min-height: 0; }
+    body.phone-review .entry-copy .eyebrow { margin-bottom: 9px; }
+    body.phone-review .entry-copy h1 { max-width: 342px; margin-bottom: 13px; font-size: 34px; line-height: 1.03; letter-spacing: -.055em; }
+    body.phone-review .entry-lead { margin-bottom: 14px; font-size: 12px; line-height: 1.5; }
+    body.phone-review .entry-buttons { gap: 7px; }
+    body.phone-review .entry-buttons .cta { flex: 1; padding: 0 12px; }
+    body.phone-review .privacy-note { max-width: 100%; margin-top: 10px; padding: 8px; gap: 5px; font-size: 7.5px; white-space: nowrap; }
+    body.phone-review .privacy-note strong { font-size: 8px; }
+    body.phone-review .privacy-note span { white-space: nowrap; }
+    body.phone-review .entry-visual { min-height: 0; padding-top: 34px; align-self: stretch; place-items: start center; }
+    body.phone-review .lab-orbit { width: min(68vw, 270px); }
+    body.phone-review .lab-sticker { font-size: 10px; }
+
+    body.phone-review .static-screen { padding: calc(var(--phone-safe-top) + 10px) 10px calc(var(--phone-safe-bottom) + 10px); }
+    body.phone-review .static-shell { padding: 14px 15px; border-radius: 24px; }
+    body.phone-review .static-appbar { min-height: 48px; margin-bottom: 14px; gap: 8px; }
+    body.phone-review .static-appbar .back { width: 36px; height: 36px; }
+    body.phone-review .static-appbar .step { padding: .5em .75em; font-size: 8px; }
+    body.phone-review .static-content { display: block; }
+    body.phone-review .static-title { margin-bottom: 10px; font-size: 29px; line-height: 1.08; }
+    body.phone-review .static-lead { margin: 0 0 12px; font-size: 10px; line-height: 1.5; }
+    body.phone-review .mode-layout,
+    body.phone-review .confirm-layout,
+    body.phone-review .migration-layout,
+    body.phone-review .result-layout { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    body.phone-review .fixed-question { padding: 15px; border-radius: 18px; box-shadow: 5px 6px 0 var(--ink); }
+    body.phone-review .fixed-question strong { margin-top: 5px; font-size: 20px; }
+    body.phone-review .prediction-main { padding: 15px; border-radius: 20px; }
+    body.phone-review [data-screen="ask"] .prediction-main { gap: 10px; }
+    body.phone-review [data-screen="ask"] .prediction-head h2 { margin: 0; font-size: 18px; }
+    body.phone-review .mode-list,
+    body.phone-review .static-choice-list { gap: 7px; }
+    body.phone-review .mode-row,
+    body.phone-review .static-choice { padding: 8px 9px; grid-template-columns: 34px 1fr auto; gap: 9px; border-radius: 14px; }
+    body.phone-review .mode-row i,
+    body.phone-review .static-choice i { width: 34px; height: 34px; border-radius: 11px; }
+    body.phone-review .mode-row small,
+    body.phone-review .static-choice small { font-size: 8px; }
+    body.phone-review .condition-box { margin: 8px 0; padding: 10px; border-radius: 15px; }
+    body.phone-review .prediction-footer { gap: 8px; }
+    body.phone-review .prediction-footer p { font-size: 8px; }
+    body.phone-review .source-cue { margin: 14px 0; padding: 12px; grid-template-columns: 38px 1fr auto; gap: 8px; border-radius: 16px; }
+    body.phone-review .source-cue i { width: 36px; height: 36px; }
+    body.phone-review .source-cue small { font-size: 8px; }
+    body.phone-review .goal-box { padding: 14px; border-radius: 17px; }
+    body.phone-review .goal-box strong { font-size: 17px; }
+    body.phone-review .calibration-pair { grid-template-columns: 1fr; gap: 9px; }
+    body.phone-review .cal-card { min-height: 184px; padding: 15px; border-radius: 18px; }
+    body.phone-review .cal-card .sound { width: 45px; height: 45px; margin-bottom: 8px; border-radius: 14px; }
+    body.phone-review .cal-card h2 { margin: 0; font-size: 22px; }
+    body.phone-review .cal-card p { margin: 6px 0; font-size: 9px; }
+    body.phone-review .cal-card .cta { min-height: 39px; }
+
+    body.phone-review .prediction-screen { padding: calc(var(--phone-safe-top) + 10px) 10px calc(var(--phone-safe-bottom) + 10px); }
+    body.phone-review .prediction-shell { grid-template-columns: 1fr; grid-template-rows: 58px 1fr; gap: 9px; }
+    body.phone-review .progress-rail { padding: 7px 10px; justify-content: center; border-radius: 15px; box-shadow: 4px 5px 0 var(--ink); }
+    body.phone-review .progress-brand { display: none; }
+    body.phone-review .progress-list { grid-template-columns: repeat(3, 1fr); gap: 5px; }
+    body.phone-review .progress-item { grid-template-columns: 18px 1fr; gap: 4px; font-size: 7px; }
+    body.phone-review .progress-item i { width: 18px; height: 18px; }
+    body.phone-review .rail-note { display: none; }
+    body.phone-review [data-screen="prediction"] .prediction-main { padding: 16px 15px; }
+    body.phone-review .prediction-head { gap: 8px; }
+    body.phone-review .prediction-head h1 { font-size: 27px; }
+    body.phone-review .voice-cue { min-width: 0; padding: 8px; font-size: 8px; }
+    body.phone-review .voice-cue b { width: 27px; height: 27px; }
+    body.phone-review .choice-row { flex-direction: column; gap: 7px; }
+    body.phone-review .answer-card { min-height: 85px; padding: 11px 12px 10px 52px; border-radius: 17px; }
+    body.phone-review .answer-card .choice-mark { position: absolute; left: 12px; top: 12px; margin: 0; }
+    body.phone-review .answer-card strong { margin: 0 0 3px; font-size: 16px; }
+    body.phone-review .answer-card span { font-size: 9px; }
+
+    body.phone-review .loading-rig { width: 92%; height: 240px; }
+    body.phone-review .loading-rig::before,
+    body.phone-review .loading-rig::after { height: 120px; }
+    body.phone-review .intro-stage::before { width: 104%; }
+    body.phone-review .intro-stage h1 { font-size: 45px; }
+    body.phone-review [data-screen="intro"] .source-cue { margin-top: 28px !important; }
+
+    body.phone-review .lesson-screen { padding: calc(var(--phone-safe-top) + 9px) 9px calc(var(--phone-safe-bottom) + 9px); }
+    body.phone-review .lesson-shell { position: relative; gap: 8px; }
+    body.phone-review .lesson-appbar { min-height: 54px; padding: 0 12px; }
+    body.phone-review .topic-tabs { display: none; }
+    body.phone-review .lesson-controls span { display: none; }
+    body.phone-review .lesson-grid { display: block; }
+    body.phone-review .workspace { height: 100%; padding: 14px; border-radius: 22px; }
+    body.phone-review .lesson-heading { gap: 8px; }
+    body.phone-review .lesson-heading h1 { margin: 3px 0; font-size: 25px; }
+    body.phone-review .lesson-heading p { font-size: 9px; }
+    body.phone-review .slide-tag { align-self: flex-start; padding: .5em .65em; }
+    body.phone-review .lesson-canvas { margin-top: 10px; padding: 12px; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 9px; border-radius: 15px; }
+    body.phone-review .lesson-copy { display: grid; grid-template-columns: 1fr; }
+    body.phone-review .lesson-copy > p { display: none; }
+    body.phone-review .lesson-points { grid-template-columns: 1fr; gap: 5px; }
+    body.phone-review .lesson-point { grid-template-columns: 22px 1fr; gap: 7px; font-size: 9px; }
+    body.phone-review .lesson-point i { width: 22px; height: 22px; }
+    body.phone-review .compare-visual { gap: 7px; }
+    body.phone-review .wave-card { padding: 9px; border-radius: 14px; }
+    body.phone-review .wave-card header { font-size: 8px; }
+    body.phone-review .wave-card svg { height: 47px; }
+    body.phone-review .visual-takeaway { padding: 9px; flex-direction: column; gap: 4px; font-size: 8px; }
+    body.phone-review .timeline { margin-top: 9px; grid-template-columns: 32px repeat(3, minmax(0, 1fr)) auto; gap: 5px; }
+    body.phone-review .timeline-play-toggle { width: 30px; height: 30px; font-size: 12px; }
+    body.phone-review .timeline-play-toggle.paused { font-size: 11px; }
+    body.phone-review .tutor-panel { width: 142px; min-height: 54px; height: 54px; padding: 6px; position: absolute; z-index: 4; right: 13px; bottom: 35px; overflow: hidden; border: 2px solid var(--ink); border-radius: 15px; box-shadow: 5px 6px 0 var(--ink); }
+    body.phone-review .tutor-panel .tutor-head { padding: 0; border: 0; }
+    body.phone-review .tutor-panel .tutor-avatar { width: 36px; height: 36px; }
+    body.phone-review .tutor-panel .tutor-head strong { font-size: 9px; }
+    body.phone-review .tutor-panel .tutor-head small { font-size: 7px; }
+    body.phone-review .tutor-panel .thread,
+    body.phone-review .tutor-panel > div:last-child,
+    body.phone-review .tutor-panel > .followup-box { display: none; }
+    body.phone-review .experiment-grid { grid-template-columns: 1fr; gap: 8px; }
+    body.phone-review .experiment-pane { min-height: 184px; padding: 10px; border-radius: 16px; }
+    body.phone-review .experiment-pane header { font-size: 8px; }
+    body.phone-review .experiment-pane svg { height: 125px; }
+    body.phone-review [data-screen="experiment"] .lesson-canvas { padding-bottom: 62px; }
+    body.phone-review [data-screen="experiment"] .prediction-footer { min-height: 54px; margin-top: 14px !important; padding: 0 132px 0 2px; align-items: center; }
+    body.phone-review [data-screen="experiment"] .prediction-footer p { margin: 0; }
+    body.phone-review [data-screen="experiment"] .prediction-footer .cta { width: 100%; max-width: 150px; padding: 0 10px; }
+    body.phone-review [data-screen="experiment"] .prediction-footer > .meta-chip { display: none; }
+    body.phone-review [data-screen="experiment"] .entry-buttons { width: 100%; }
+
+    body.phone-review .drawer-backdrop { padding: 12px; }
+    body.phone-review .drawer-preview { width: 100%; min-width: 0; padding: 20px 18px; border-radius: 26px 26px 0 0; }
+    body.phone-review .voice-wave { height: 110px; }
+    body.phone-review [data-screen="followup"] .prediction-footer .cta { padding: 0 13px; }
+    body.phone-review .vacuum-jar { width: 74%; height: 245px; }
+    body.phone-review .vacuum-sticker { right: -18%; padding: 7px 9px; font-size: 9px; }
+
+    body.phone-review .science-object { min-height: 230px; border-radius: 20px; box-shadow: 6px 7px 0 var(--ink); }
+    body.phone-review .fork { width: 110px; height: 170px; transform: scale(.72); }
+    body.phone-review .xylophone { width: 66%; gap: 5px; }
+    body.phone-review .xylophone i { height: 27px; }
+    body.phone-review [data-screen="fork"] .static-title,
+    body.phone-review [data-screen="xylophone"] .static-title { font-size: 25px; }
+    body.phone-review [data-screen="fork"] .science-object,
+    body.phone-review [data-screen="xylophone"] .science-object { min-height: 214px; }
+    body.phone-review [data-screen="fork"] .static-choice,
+    body.phone-review [data-screen="xylophone"] .static-choice { padding-top: 6px; padding-bottom: 6px; }
+    body.phone-review .migration-question-list { gap: 10px; }
+    body.phone-review .migration-question { gap: 6px; }
+    body.phone-review .migration-question-title { gap: 7px; font-size: 12px; }
+    body.phone-review .migration-question-title b { width: 26px; height: 26px; flex-basis: 26px; border-radius: 8px 8px 8px 3px; font-size: 11px; box-shadow: 2px 2px 0 var(--ink); }
+    body.phone-review .migration-question .static-choice { min-height: 48px; padding: 7px 9px; grid-template-columns: 22px 1fr; }
+    body.phone-review .migration-question .static-choice i { width: 20px; height: 20px; }
+    body.phone-review [data-screen="xylophone"] .prediction-footer { margin-top: 18px !important; }
+    body.phone-review .hint { margin-bottom: 8px; padding: 9px; font-size: 8px; }
+    body.phone-review .feedback-grid { grid-template-columns: 1fr; gap: 9px; }
+    body.phone-review .feedback-card { min-height: 132px; padding: 13px; border-radius: 18px; font-size: 17px; }
+    body.phone-review [data-screen="result"] .static-appbar { justify-content: space-between; }
+    body.phone-review .result-card { padding: 10px; grid-template-columns: 1fr; gap: 10px; border-radius: 22px; box-shadow: 6px 7px 0 var(--ink); }
+    body.phone-review .result-hero { min-height: 210px; padding: 17px; border-radius: 15px; }
+    body.phone-review .result-mark { width: 52px; height: 52px; border-radius: 17px 17px 17px 5px; font-size: 24px; }
+    body.phone-review .result-hero h1 { margin: 13px 0 5px; font-size: 34px; }
+    body.phone-review .result-hero p { margin: 0; }
+    body.phone-review .result-hero .entry-buttons { margin-top: 12px; }
+    body.phone-review .result-hero .entry-buttons .cta:first-child { flex-basis: 100%; }
+    body.phone-review .evidence-list { gap: 5px; }
+    body.phone-review .result-details { padding: 0; }
+    body.phone-review .evidence-row { padding: 7px 8px; grid-template-columns: 58px 1fr auto; gap: 6px; border-radius: 12px; }
+    body.phone-review .evidence-row span { font-size: 7px; }
+    body.phone-review .evidence-row strong { font-size: 8px; }
+    body.phone-review .evidence-row em { padding: .4em .55em; font-size: 7px; }
+    body.phone-review .core-finding { margin-top: 7px; padding: 10px; border-radius: 15px; box-shadow: 4px 5px 0 var(--ink); }
+    body.phone-review .core-finding p { font-size: 12px; }
+    body.phone-review .prototype-note { display: none; }
+    body.phone-review .ask-focus { padding-top: 10px; }
+    body.phone-review .question-composer { margin: 22px 0 16px; padding: 16px; border-radius: 20px; box-shadow: 6px 7px 0 var(--ink); }
+    body.phone-review .question-composer label { font-size: 9px; }
+    body.phone-review .question-value { min-height: 128px; padding: 14px 0; font-size: 24px; }
+    body.phone-review .composer-tools { padding-top: 12px; }
+    body.phone-review .icon-button { width: 42px; height: 42px; }
+    body.phone-review .composer-send { min-height: 42px; padding: 0 15px; font-size: 11px; }
+    body.phone-review .input-entry-notes { margin: 16px 0; grid-template-columns: 1fr; gap: 7px; }
+    body.phone-review .input-entry-notes span { padding: 8px; font-size: 9px; }
+    body.phone-review .confirm-focus { margin-top: 22%; padding: 20px; border-radius: 22px; box-shadow: 6px 7px 0 var(--ink); }
+    body.phone-review .confirm-focus .static-title { font-size: 31px; }
+    body.phone-review .calibration-main { padding: 15px; }
+
+    body.phone-review .lesson-appbar { min-height: 58px; padding: 7px 10px; display: grid; grid-template-columns: 34px auto minmax(0,1fr) auto; grid-template-rows: 42px; gap: 0 7px; }
+    body.phone-review .lesson-appbar .lesson-back { width: 34px; height: 34px; grid-column: 1; grid-row: 1; margin: 0; }
+    body.phone-review .lesson-appbar .brand { grid-column: 2; grid-row: 1; margin: 0; font-size: 11px; white-space: nowrap; }
+    body.phone-review .lesson-appbar .lesson-controls { display: flex; grid-column: 4; grid-row: 1; margin: 0; justify-self: end; }
+    body.phone-review .lesson-appbar .lesson-controls [data-subtitle-toggle] { min-height: 36px; padding: 0 9px; display: inline-flex; align-items: center; border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); font-size: 8px; font-weight: 850; white-space: nowrap; }
+    body.phone-review .lesson-appbar .lesson-controls [data-subtitle-toggle].active { background: var(--ink); color: var(--paper); }
+    body.phone-review .lesson-appbar .lesson-controls b { display: none; }
+    body.phone-review .lesson-appbar .topic-tabs { display: flex; grid-column: 3; grid-row: 1; justify-self: end; position: static; transform: none; white-space: nowrap; }
+    body.phone-review .lesson-appbar .topic-tabs span { padding: .45em .7em; font-size: 8px; }
+    body.phone-review [data-screen="experiment"] .lesson-appbar .topic-tabs span.active,
+    body.phone-review [data-screen="followup"] .lesson-appbar .topic-tabs span.active { padding: 6px 10px; }
+    body.phone-review .lesson-shell { gap: 7px; }
+    body.phone-review .intro-canvas { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    body.phone-review .intro-question h2 { margin-bottom: 10px; font-size: 26px; }
+    body.phone-review .controlled-visual { min-height: 255px; padding: 14px; border-radius: 15px; box-shadow: 5px 6px 0 var(--ink); }
+    body.phone-review .control-string svg { height: 95px; }
+    body.phone-review .control-arrow { padding: 9px; }
+    body.phone-review [data-screen="intro"] .tutor-panel { bottom: 76px; }
+
+    body.phone-review .exit-preview { inset: 9px; padding: 12px; }
+    body.phone-review .exit-preview-body { grid-template-columns: 1fr; }
+    body.phone-review .exit-modal { width: 88%; padding: 24px 18px; border-radius: 23px; box-shadow: 7px 8px 0 var(--ink); }
+    body.phone-review .exit-icon { width: 54px; height: 54px; }
+    body.phone-review .exit-modal h2 { font-size: 27px; }
+    body.phone-review .exit-modal p { font-size: 11px; }
+    body.phone-review .exit-actions .cta { padding: 0 13px; }
+
+    body.phone-review .experiment-canvas { padding: 0 0 66px !important; }
+    body.phone-review .interactive-string-stage { height: auto; min-height: 492px; padding: 11px; grid-template-columns: 1fr; grid-template-rows: auto 180px auto auto; gap: 8px; border-radius: 17px; }
+    body.phone-review .stage-label { font-size: 9px; }
+    body.phone-review .stage-label span { font-size: 8px; }
+    body.phone-review .pluck-string { min-height: 160px; }
+    body.phone-review .live-explanation { grid-template-columns: repeat(2,1fr); gap: 6px; }
+    body.phone-review .metric { padding: 8px; }
+    body.phone-review .metric strong { font-size: 11px; }
+    body.phone-review .response-wave { grid-template-columns: 88px 1fr; padding: 6px 8px; }
+    body.phone-review .response-wave svg { height: 40px; }
+    body.phone-review .lesson-playback { margin-top: 9px; grid-template-columns: 34px 1fr auto; gap: 8px; }
+    body.phone-review .lesson-play-toggle { width: 32px; height: 32px; }
+    body.phone-review .lesson-play-toggle svg { width: 24px; height: 24px; }
+    body.phone-review .lesson-progress { gap: 5px; }
+    body.phone-review .lesson-playback small { font-size: 8px; }
+    body.phone-review [data-screen="experiment"] .prediction-footer { margin-top: 14px; padding: 0 2px; }
+    body.phone-review [data-screen="experiment"] .prediction-footer { padding-right: 132px; }
+    body.phone-review [data-screen="experiment"] .tutor-panel { right: 12px; bottom: 42px; }
+    body.phone-review [data-screen="followup"] .experiment-canvas { padding: 0 0 66px !important; }
+    body.phone-review [data-screen="followup"] .interactive-string-stage { min-height: 492px; grid-template-rows: auto 180px auto; }
+    body.phone-review [data-screen="followup"] .tutor-panel { width: calc(100% - 20px); height: 320px; right: 10px; bottom: 0; padding: 14px 12px 12px; border-radius: 18px 18px 0 0; box-shadow: 0 -18px 42px rgba(0,0,0,.24); }
+    body.phone-review [data-screen="followup"] .recording-panel::before { content: ""; width: 42px; height: 4px; position: absolute; top: 7px; left: 50%; border-radius: 999px; background: var(--line); transform: translateX(-50%); }
+    body.phone-review [data-screen="followup"] .tutor-panel .thread { display: flex; padding: 8px 0; overflow: hidden; }
+    body.phone-review [data-screen="followup"] .recording-inline { padding: 8px; grid-template-columns: 1fr 1.3fr 32px 32px; text-align: left; }
+    body.phone-review [data-screen="followup"] .recording-inline { min-height: 92px; }
+    body.phone-review [data-screen="followup"] .recording-inline .voice-wave { width: 72px; height: 55px; margin: 0; }
+    body.phone-review [data-screen="followup"] .recording-inline > span { grid-column: 2; margin: 0; }
+    body.phone-review [data-screen="followup"] .record-done,
+    body.phone-review [data-screen="followup"] .record-cancel { width: 32px; height: 32px; position: static; grid-row: 1 / 3; }
+    body.phone-review [data-screen="followup"] .record-cancel { grid-column: 3; }
+    body.phone-review [data-screen="followup"] .record-done { grid-column: 4; }
+    body.phone-review .feedback-reasons { padding: 10px; gap: 6px; }
+    body.phone-review .reason-chip { padding: .6em .75em; font-size: 8px; }
+    body.phone-review [data-screen="loading"] .static-appbar .step { visibility: hidden; }
+    body.phone-review [data-screen="loading"] .static-appbar .step::after { visibility: visible; content: "准备观察"; font-size: 8px; }
+    body.phone-review [data-screen="followup"] .tutor-panel > .followup-box { min-height: 42px; padding: 4px 4px 4px 10px; display: flex; }
+    body.phone-review [data-screen="vacuum"] .workspace { padding-bottom: 14px; }
+    body.phone-review [data-screen="intro"] .tutor-panel > .followup-box,
+    body.phone-review [data-screen="experiment"] .tutor-panel > .followup-box { width: 76px; height: 38px; padding: 3px; display: flex; position: absolute; top: 6px; right: 6px; border: 0; }
+    body.phone-review [data-screen="intro"] .tutor-panel > .followup-box span,
+    body.phone-review [data-screen="experiment"] .tutor-panel > .followup-box span { display: none; }
+    body.phone-review [data-screen="intro"] .tutor-panel,
+    body.phone-review [data-screen="experiment"] .tutor-panel { width: 182px; }
+    body.phone-review [data-screen="intro"] .followup-box b,
+    body.phone-review [data-screen="experiment"] .followup-box b { width: 32px; height: 32px; }
+    body.phone-review [data-screen="lesson"] .tutor-panel > div:last-child { width: 38px; height: 38px; display: block; position: absolute; top: 6px; right: 6px; }
+    body.phone-review [data-screen="lesson"] .tutor-panel .followup-label,
+    body.phone-review [data-screen="lesson"] .tutor-panel .followup-box span { display: none; }
+    body.phone-review [data-screen="lesson"] .tutor-panel .followup-box { width: 38px; height: 38px; padding: 3px; display: flex; border: 0; }
+
+    body.phone-review [data-screen="intro"] .tutor-panel,
+    body.phone-review [data-screen="lesson"] .tutor-panel,
+    body.phone-review [data-screen="experiment"] .tutor-panel,
+    body.phone-review [data-screen="vacuum"] .tutor-panel {
+      width: 50px;
+      min-height: 50px;
+      height: 50px;
+      right: 16px;
+      bottom: 76px;
+      padding: 4px;
+      overflow: visible;
+      border-radius: 50%;
+    }
+    body.phone-review [data-screen="intro"] .tutor-panel .tutor-head,
+    body.phone-review [data-screen="lesson"] .tutor-panel .tutor-head,
+    body.phone-review [data-screen="experiment"] .tutor-panel .tutor-head,
+    body.phone-review [data-screen="vacuum"] .tutor-panel .tutor-head { display: block; }
+    body.phone-review [data-screen="intro"] .tutor-panel .tutor-head > div,
+    body.phone-review [data-screen="lesson"] .tutor-panel .tutor-head > div,
+    body.phone-review [data-screen="experiment"] .tutor-panel .tutor-head > div,
+    body.phone-review [data-screen="vacuum"] .tutor-panel .tutor-head > div { display: none; }
+    body.phone-review [data-screen="intro"] .tutor-panel .tutor-avatar,
+    body.phone-review [data-screen="lesson"] .tutor-panel .tutor-avatar,
+    body.phone-review [data-screen="experiment"] .tutor-panel .tutor-avatar,
+    body.phone-review [data-screen="vacuum"] .tutor-panel .tutor-avatar { width: 38px; height: 38px; border-radius: 50%; }
+    body.phone-review [data-screen="intro"] .tutor-panel::before,
+    body.phone-review [data-screen="lesson"] .tutor-panel::before,
+    body.phone-review [data-screen="experiment"] .tutor-panel::before,
+    body.phone-review [data-screen="vacuum"] .tutor-panel::before {
+      content: "按住问老师";
+      width: max-content;
+      padding: 7px 10px;
+      position: absolute;
+      right: 57px;
+      top: 7px;
+      border: 1.5px solid var(--ink);
+      border-radius: 999px;
+      background: var(--paper);
+      font-size: 9px;
+      font-weight: 800;
+      box-shadow: 3px 4px 0 var(--ink);
+    }
+    body.phone-review [data-screen="intro"] .tutor-panel > .followup-box,
+    body.phone-review [data-screen="lesson"] .tutor-panel > div:last-child,
+    body.phone-review [data-screen="experiment"] .tutor-panel > .followup-box,
+    body.phone-review [data-screen="vacuum"] .tutor-panel > .followup-box { display: none !important; }
+
+    body.phone-review .fork-illustration { width: 72%; height: 72%; }
+    body.phone-review .object-caption { bottom: 14px; font-size: 10px; }
+
+    @media (max-width: 860px) {
+      .review { padding: 14px; }
+      .review-bar { align-items: flex-start; flex-direction: column; }
+      .review-navs { width: 100%; max-width: 100%; flex-direction: column; align-items: stretch; }
+      .viewport-tabs { align-self: flex-start; }
+      .review-tabs { width: 100%; overflow-x: auto; }
+      .review-tabs button { flex: 1; min-width: max-content; }
+      body:not(.phone-review) .screen-frame { min-width: 760px; }
+      .screen-scroll { overflow-x: auto; padding-bottom: 8px; }
+      .review-caption { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .review-tabs button { transition: background .18s ease, color .18s ease; }
+    }
+
+    /* Runtime shell: the public prototype uses the approved high-fidelity screens directly. */
+    body.runtime-demo { min-width: 320px; overflow: hidden; background: var(--chalk); }
+    body.runtime-demo .review { width: 100vw; height: 100vh; padding: 0; }
+    body.runtime-demo .review-bar,
+    body.runtime-demo .review-caption { display: none; }
+    body.runtime-demo .screen-scroll { width: 100%; height: 100%; overflow: hidden; padding: 0; }
+    body.runtime-demo .screen-frame { width: 100%; height: 100%; min-width: 0; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; }
+    body.runtime-demo .concept-screen { border-radius: 0; }
+    body.runtime-demo .cta,
+    body.runtime-demo .answer-card,
+    body.runtime-demo .static-choice,
+    body.runtime-demo .feedback-card,
+    body.runtime-demo .icon-button,
+    body.runtime-demo .voice-action,
+    body.runtime-demo .send-action,
+    body.runtime-demo .topic-tabs span { cursor: pointer; user-select: none; }
+    body.runtime-demo :is(button, .cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span) { -webkit-tap-highlight-color: transparent; transition-property: transform, background-color, border-color, box-shadow, color, opacity; transition-duration: 140ms; transition-timing-function: var(--motion-out); }
+    body.runtime-demo :is(button, .cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span):active:not(.disabled):not([aria-disabled="true"]) { transform: scale(.97); }
+    body.runtime-demo :is(.cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span):focus-visible { outline: 4px solid var(--sky); outline-offset: 3px; }
+    body.runtime-demo .cta.disabled { pointer-events: none; opacity: .38; cursor: not-allowed; }
+    body.runtime-demo .answer-card.selected,
+    body.runtime-demo .static-choice.selected,
+    body.runtime-demo .feedback-card.selected { border-color: var(--ink); background: var(--lime-soft); box-shadow: 4px 5px 0 var(--ink); }
+    body.runtime-demo .runtime-toast { max-width: min(420px, calc(100vw - 32px)); padding: 12px 16px; position: fixed; z-index: 50; left: 50%; bottom: 24px; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--ink); color: white; font-size: 12px; font-weight: 800; transform: translate(-50%, 16px); opacity: 0; pointer-events: none; transition: opacity 180ms var(--motion-out), transform 180ms var(--motion-out); }
+    body.runtime-demo .runtime-toast.show { transform: translate(-50%, 0); opacity: 1; }
+    body.runtime-demo .pluck-string { touch-action: none; cursor: grab; }
+    body.runtime-demo .pluck-string.dragging { cursor: grabbing; }
+    body.runtime-demo .fallback-actions { margin-top: 10px; display: flex; gap: 8px; }
+    body.runtime-demo .recording-inline::after { display: none; }
+    body.runtime-demo .record-cancel { left: 10px; right: auto; }
+    body.runtime-demo .record-done,
+    body.runtime-demo .record-cancel { cursor: pointer; }
+    body.runtime-demo .feedback-reasons { margin: 18px auto 0; }
+    body.runtime-demo .reason-chip { cursor: pointer; }
+    body.runtime-demo [data-screen="loading"] .static-appbar .step {
+      min-width: 92px;
+      min-height: 38px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      visibility: visible;
+    }
+    body.runtime-demo [data-screen="loading"] .static-appbar .step::after { visibility: visible; }
+    body.runtime-demo [data-screen="loading"] .load-track span { width: 0; }
+    body.runtime-demo .unified-player { margin-top: 14px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 58px; align-items: center; gap: 10px; }
+    body.runtime-demo .player-toggle { width: 48px; height: 48px; display: grid; place-items: center; border: 1.5px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.78); color: var(--ink); cursor: pointer; }
+    body.runtime-demo .player-toggle:hover { background: var(--paper); }
+    body.runtime-demo .player-toggle svg { width: 32px; height: 32px; fill: currentColor; }
+    body.runtime-demo .player-segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+    body.runtime-demo .player-segment { height: 48px; padding: 0 4px; position: relative; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
+    body.runtime-demo .player-track { height: 6px; position: absolute; inset: 21px 4px; overflow: hidden; border-radius: 999px; background: #e6e7e2; }
+    body.runtime-demo .player-fill { width: 0; height: 100%; display: block; border-radius: inherit; background: var(--lime); pointer-events: none; }
+    body.runtime-demo [data-screen="vacuum"] .player-fill { background: var(--violet); }
+    body.runtime-demo .player-label { color: var(--muted); font-size: 11px; font-weight: 750; white-space: nowrap; text-align: right; }
+    body.runtime-demo .runtime-subtitle { min-height: 38px; margin: 8px auto -4px; padding: 7px 14px; display: flex; visibility: hidden; opacity: 0; transform: translateY(5px); align-items: center; justify-content: center; max-width: 82%; border: 1px solid rgba(255,255,255,.18); border-radius: 9px; background: rgba(10,10,10,.72); color: white; font-size: 12px; line-height: 1.45; text-align: center; backdrop-filter: blur(5px); transition: opacity 150ms var(--motion-out), transform 150ms var(--motion-out), visibility 0s linear 150ms; }
+    body.runtime-demo .runtime-subtitle.visible { visibility: visible; opacity: 1; transform: translateY(0); transition-delay: 0s; }
+    body.runtime-demo .lesson-controls [data-subtitle-toggle] { padding: .45em .7em; border-radius: 999px; cursor: pointer; user-select: none; }
+    body.runtime-demo .lesson-controls [data-subtitle-toggle].active { background: var(--ink); color: white; }
+    body.runtime-demo .ppt-reveal { opacity: 0; transform: translateY(8px); transition: opacity 240ms var(--motion-out), transform 240ms var(--motion-out); }
+    body.runtime-demo .ppt-reveal.is-visible { opacity: 1; transform: none; }
+    body.runtime-demo .recording-panel .thread { justify-content: flex-end; }
+    body.runtime-demo .recording-panel .recording-inline { flex: 0 0 auto; margin-top: auto; }
+    body.runtime-demo .lesson-canvas.transition-freeze * { animation-play-state: paused !important; }
+    body.runtime-demo .segment-animation { width: 100%; height: 100%; min-height: 300px; display: grid; grid-column: 1 / -1; align-items: center; }
+    body.runtime-demo .comparison-stage { grid-template-columns: 1fr 1fr; gap: 16px; }
+    body.runtime-demo .motion-sample { padding: 18px; border: 2px solid var(--ink); border-radius: 18px; background: var(--paper); }
+    body.runtime-demo .motion-sample.strong { background: var(--sky-soft); }
+    body.runtime-demo .motion-sample header { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; font-weight: 850; }
+    body.runtime-demo .motion-sample svg { width: 100%; height: 150px; overflow: visible; }
+    body.runtime-demo .motion-sample .scan-line { stroke: var(--coral); stroke-width: 2; stroke-dasharray: 4 5; }
+    body.runtime-demo .motion-sample .scan-dot { fill: var(--lime); stroke: var(--ink); stroke-width: 3; }
+    body.runtime-demo .same-rate-note { grid-column: 1 / -1; padding: 12px 16px; border-radius: 14px; background: var(--ink); color: white; text-align: center; font-size: 12px; font-weight: 800; }
+    body.runtime-demo .concept-map { grid-template-columns: 1fr; grid-template-rows: repeat(2, minmax(128px, 150px)); align-content: center; align-items: stretch; gap: 18px; }
+    body.runtime-demo .concept-row { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr); align-items: stretch; gap: 16px; }
+    body.runtime-demo .concept-node { height: 100%; min-height: 112px; padding: 18px; display: flex; flex-direction: column; justify-content: center; border: 2px solid var(--ink); border-radius: 18px; background: var(--paper); }
+    body.runtime-demo .concept-node.amplitude { background: #dff6eb; }
+    body.runtime-demo .concept-node.frequency { background: var(--sky-soft); }
+    body.runtime-demo .concept-node.result-loud { background: var(--lime-soft); }
+    body.runtime-demo .concept-node.result-pitch { background: #eef0ff; }
+    body.runtime-demo .concept-node small { color: var(--muted); font-size: clamp(13px,1.05vw,15px); font-weight: 750; line-height: 1.35; }
+    body.runtime-demo .concept-node strong { margin-top: 6px; font-size: clamp(18px,2vw,28px); }
+    body.runtime-demo .concept-arrow { align-self: center; height: 28px; position: relative; color: var(--coral); transform: scaleX(var(--arrow-progress,0)); transform-origin: left center; transition: transform .12s linear; }
+    body.runtime-demo .concept-arrow::before { content: ""; height: 5px; position: absolute; left: 0; right: 11px; top: 11px; border-radius: 999px; background: currentColor; }
+    body.runtime-demo .concept-arrow::after { content: ""; position: absolute; top: 4px; right: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 13px solid currentColor; }
+    body.runtime-demo .vacuum-question-stage { grid-template-columns: 1fr 1fr; gap: 16px; }
+    body.runtime-demo .question-step { min-height: 220px; padding: 22px; display: grid; place-items: center; align-content: center; gap: 16px; border: 2px solid var(--ink); border-radius: 20px; background: var(--paper); text-align: center; }
+    body.runtime-demo .question-step:first-child { background: var(--violet-soft); }
+    body.runtime-demo .mini-string { width: 80%; height: 70px; }
+    body.runtime-demo .relay-stage { padding: clamp(18px,3vw,36px); position: relative; grid-template-columns: minmax(140px,.78fr) minmax(260px,1.6fr) minmax(140px,.78fr); gap: clamp(16px,2.2vw,30px); align-items: stretch; }
+    body.runtime-demo .relay-source, body.runtime-demo .relay-ear { min-width: 0; min-height: 220px; height: 62%; max-height: 280px; padding: 18px; align-self: center; display: grid; place-items: center; align-content: center; gap: 14px; border: 2px solid var(--ink); border-radius: 22px; background: var(--paper); box-shadow: 6px 7px 0 var(--ink); font-size: 12px; font-weight: 850; text-align: center; }
+    body.runtime-demo .relay-source { background: var(--sky-soft); }
+    body.runtime-demo .relay-ear { background: var(--lime-soft); }
+    body.runtime-demo .relay-source svg { width: min(130px,100%); }
+    body.runtime-demo .relay-source strong, body.runtime-demo .relay-ear strong, body.runtime-demo .relay-source small, body.runtime-demo .relay-ear small { display: block; }
+    body.runtime-demo .relay-source strong, body.runtime-demo .relay-ear strong { font-size: clamp(14px,1.35vw,20px); }
+    body.runtime-demo .relay-source small, body.runtime-demo .relay-ear small { margin-top: 5px; color: var(--muted); font-size: clamp(9px,.8vw,12px); line-height: 1.45; }
+    body.runtime-demo .ear-illustration { width: 58px; height: 58px; display: grid; place-items: center; font-size: 50px; line-height: 1; filter: drop-shadow(2px 3px 0 rgba(10,10,10,.18)); }
+    body.runtime-demo .air-lane { min-width: 0; height: 128px; align-self: center; position: relative; overflow: hidden; border: 2px solid var(--ink); border-radius: 999px; background: linear-gradient(90deg,var(--sky-soft),var(--violet-soft)); box-shadow: inset 0 0 0 10px rgba(255,255,255,.3); }
+    body.runtime-demo .relay-caption { position: absolute; z-index: 1; inset: 50% auto auto 50%; padding: 9px 14px; border: 1.5px solid var(--ink); border-radius: 14px 14px 14px 5px; background: rgba(255,255,255,.9); text-align: center; transform: translate(-50%,-50%); }
+    body.runtime-demo .relay-caption strong, body.runtime-demo .relay-caption small { display: block; white-space: nowrap; }
+    body.runtime-demo .relay-caption strong { font-size: 13px; }
+    body.runtime-demo .relay-caption small { margin-top: 3px; color: var(--muted); font-size: 9px; }
+    body.runtime-demo .air-particle { width: 16px; height: 16px; position: absolute; top: calc(50% - 8px); left: 0; border: 2px solid var(--ink); border-radius: 50%; background: var(--lime); will-change: transform; }
+    body.runtime-demo .air-particle:nth-child(2) { left: 12%; background: var(--coral); }
+    body.runtime-demo .air-particle:nth-child(3) { left: 28%; background: var(--violet); }
+    body.runtime-demo .drawer-close { display: none; }
+    body.runtime-demo .tutor-backdrop { display: none; }
+    body.runtime-demo .vacuum-block-stage { grid-template-columns: 1fr .8fr; gap: 20px; }
+    body.runtime-demo .vacuum-chamber { min-height: 250px; padding: 24px; display: grid; place-items: center; border: 5px solid var(--ink); border-bottom-width: 12px; border-radius: 42% 42% 20px 20px; background: rgba(188,169,255,.22); }
+    body.runtime-demo .blocked-path { padding: 22px; display: grid; place-items: center; gap: 12px; border: 2px dashed var(--ink); border-radius: 18px; background: var(--chalk); text-align: center; }
+    body.runtime-demo .blocked-path b { font-size: 42px; color: #d94f42; }
+    body.runtime-demo .exit-modal { width: min(520px, calc(100% - 40px)); padding: 34px 38px 32px; border-radius: 24px; background: #fff; box-shadow: 9px 10px 0 var(--ink); }
+    body.runtime-demo .exit-icon { width: 58px; height: 58px; margin-bottom: 22px; border: 2px solid var(--ink); border-radius: 18px 18px 18px 6px; background: var(--yellow); }
+    body.runtime-demo .exit-modal h2 { font-size: 30px; }
+    body.runtime-demo .exit-modal p { max-width: 390px; margin: 14px auto 25px; font-size: 13px; }
+    body.runtime-demo .exit-actions { gap: 12px; }
+    body.runtime-demo .exit-actions .cta { min-width: 132px; }
+    body.runtime-demo [data-screen="fork"] .static-content,
+    body.runtime-demo [data-screen="xylophone"] .static-content { overflow-y: auto; }
+    body.runtime-demo [data-screen="fork"] .static-choice-list,
+    body.runtime-demo [data-screen="xylophone"] .static-choice-list { max-height: 360px; overflow-y: auto; padding: 4px 8px 8px 0; }
+    body.runtime-demo [data-screen="fork"] .static-choice,
+    body.runtime-demo [data-screen="xylophone"] .static-choice { padding-top: 1.5%; padding-bottom: 1.5%; }
+    body.runtime-demo [data-screen="result"] .static-content { overflow-y: auto; overscroll-behavior: contain; }
+    body.runtime-demo [data-screen="result"] .result-card { margin-top: clamp(8px, 1.4vh, 16px); margin-bottom: clamp(8px, 1.4vh, 16px); }
+    @keyframes polished-drawer-in {
+      from { opacity: .7; transform: translateY(36px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 700px), (orientation: portrait) {
+      body.runtime-demo .screen-frame { width: 100vw; height: 100vh; }
+      body.runtime-demo [data-screen="loading"] .static-appbar .step { min-width: 84px; min-height: 34px; padding: 0 13px; }
+      body.runtime-demo .lesson-appbar .topic-tabs { min-width: 0; max-width: min(54vw, 236px); overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+      body.runtime-demo .lesson-appbar .topic-tabs::-webkit-scrollbar { display: none; }
+      body.runtime-demo .lesson-appbar .topic-tabs span { min-height: 40px; padding-inline: 11px; display: inline-flex; align-items: center; flex: 0 0 auto; white-space: nowrap; }
+      body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 52px; gap: 6px; }
+      body.runtime-demo .player-toggle { width: 46px; height: 46px; }
+      body.runtime-demo .player-toggle svg { width: 29px; height: 29px; }
+      body.runtime-demo .player-segments { gap: 4px; }
+      body.runtime-demo .player-segment { height: 46px; padding-inline: 2px; }
+      body.runtime-demo .player-track { inset: 20px 2px; }
+      body.runtime-demo .player-label { font-size: 8px; }
+      body.runtime-demo .runtime-subtitle { max-width: 92%; min-height: 28px; padding: 5px 9px; font-size: 10px; }
+      body.runtime-demo.phone-review .lesson-screen.active .tutor-panel:not(.drawer-open)::before { width: max-content; height: auto; min-height: 0; margin: 0; padding: 7px 10px; position: absolute; top: 7px; right: 57px; bottom: auto; left: auto; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 9px; font-weight: 800; line-height: normal; box-shadow: 3px 4px 0 var(--ink); transform: none; }
+      body.runtime-demo [data-screen="followup"] .recording-panel .thread { justify-content: flex-end; }
+      body.runtime-demo [data-screen="followup"] .recording-inline { margin-top: auto; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open { box-sizing: border-box; width: 100vw; height: min(533px, calc(100vh - 110px)); min-height: 390px; right: auto; left: 0; bottom: 0; padding: 14px 12px 12px; display: flex; position: fixed; z-index: 8; overflow: hidden; border: 2px solid var(--ink); border-radius: 18px 18px 0 0; background: var(--paper); box-shadow: 0 -18px 42px rgba(0,0,0,.24); }
+      body.runtime-demo .lesson-screen.active .tutor-backdrop { display: block; position: fixed; z-index: 7; inset: 0; border: 0; background: rgba(0,0,0,.46); opacity: 0; pointer-events: none; cursor: pointer; transition: opacity 180ms var(--motion-out); }
+      body.runtime-demo .lesson-screen.active.tutor-drawer-active .tutor-backdrop { opacity: 1; pointer-events: auto; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open { animation: polished-drawer-in 280ms var(--motion-drawer) both; transform-origin: bottom center; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open::before { display: none; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .tutor-head { width: 100%; min-height: 44px; padding: 0 46px 10px 0; display: flex; justify-content: flex-start; text-align: left; border-bottom: 1px solid var(--line); }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .tutor-head > div { display: block; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .tutor-avatar { width: 38px; height: 38px; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .drawer-close { width: 40px; height: 40px; display: grid; place-items: center; position: absolute; z-index: 2; top: 12px; right: 12px; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 20px; cursor: pointer; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .thread { display: flex; padding: 10px 0; justify-content: flex-start; overflow-y: auto; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .message { max-width: 88%; padding: 12px 14px; border-radius: 18px 18px 18px 5px; background: var(--chalk); }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .message small { font-size: 9px; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .message p { margin-top: 5px; font-size: 11px; line-height: 1.55; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .message.user-message { margin-left: auto; border-radius: 18px 18px 5px 18px; background: var(--sky-soft); }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .message.emphasis { max-width: 92%; border: 1px solid #d8d98a; background: var(--lime-soft); }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open > div:last-child:not(.followup-box) { width: 100%; height: auto; display: block !important; flex: 0 0 46px; position: static; inset: auto; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .followup-label { display: none; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .followup-box { width: 100%; height: auto; min-height: 46px; padding: 4px 4px 4px 10px; display: flex !important; flex: 0 0 46px; position: static; inset: auto; border: 1.5px solid var(--ink); }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .followup-box span { display: block; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .followup-box b { width: 34px; height: 34px; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .thread { justify-content: flex-end; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .recording-inline { min-height: 92px; padding: 8px; display: grid; grid-template-columns: 1fr 1.3fr 32px 32px; text-align: left; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .recording-inline .voice-wave { width: 72px; height: 55px; margin: 0; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .recording-inline > span { grid-column: 2; margin: 0; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-done,
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-cancel { width: 32px; height: 32px; position: static; grid-row: 1 / 3; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-cancel { grid-column: 3; }
+      body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-done { grid-column: 4; }
+      body.runtime-demo .segment-animation { min-height: 250px; }
+      body.runtime-demo .comparison-stage, body.runtime-demo .vacuum-question-stage, body.runtime-demo .vacuum-block-stage { grid-template-columns: 1fr; gap: 8px; }
+      body.runtime-demo .motion-sample { padding: 9px; }
+      body.runtime-demo .motion-sample svg { height: 74px; }
+      body.runtime-demo .same-rate-note { padding: 7px 9px; font-size: 8px; }
+      body.runtime-demo .concept-map { grid-template-columns: 1fr; grid-template-rows: repeat(2, minmax(76px, 1fr)); gap: 8px; }
+      body.runtime-demo .concept-row { grid-template-columns: minmax(0,1fr) 34px minmax(0,1fr); gap: 7px; }
+      body.runtime-demo .concept-node { min-height: 76px; padding: 9px; }
+      body.runtime-demo .concept-node small { font-size: 10px; }
+      body.runtime-demo .concept-node strong { font-size: 14px; }
+      body.runtime-demo .question-step { min-height: 105px; padding: 10px; gap: 5px; }
+      body.runtime-demo .lesson-canvas > .segment-animation { grid-row: 1 / -1; }
+      body.runtime-demo .relay-stage { min-height: 0; padding: 12px; grid-template-columns: 1fr; grid-template-rows: minmax(100px,.7fr) minmax(210px,1.5fr) minmax(100px,.7fr); gap: 12px; align-items: stretch; }
+      body.runtime-demo .relay-source, body.runtime-demo .relay-ear { min-height: 0; height: auto; max-height: none; padding: 12px 18px; align-self: stretch; grid-template-columns: 76px minmax(0,1fr); place-items: center start; align-content: center; gap: 14px; border-radius: 18px; box-shadow: 4px 5px 0 var(--ink); text-align: left; }
+      body.runtime-demo .relay-source svg { width: 72px; }
+      body.runtime-demo .relay-source strong, body.runtime-demo .relay-ear strong { font-size: 15px; }
+      body.runtime-demo .relay-source small, body.runtime-demo .relay-ear small { font-size: 9px; }
+      body.runtime-demo .ear-illustration { width: 42px; height: 42px; font-size: 38px; }
+      body.runtime-demo .air-lane { width: 132px; height: 100%; min-height: 210px; justify-self: center; border-radius: 999px; background: linear-gradient(180deg,var(--sky-soft),var(--violet-soft)); }
+      body.runtime-demo .relay-caption { padding: 8px 10px; }
+      body.runtime-demo .relay-caption strong, body.runtime-demo .relay-caption small { white-space: normal; }
+      body.runtime-demo .relay-caption strong { font-size: 11px; }
+      body.runtime-demo .relay-caption small { width: 82px; font-size: 8px; line-height: 1.35; }
+      body.runtime-demo .air-particle { top: 0; left: calc(50% - 8px); }
+      body.runtime-demo .air-particle:nth-child(2) { top: 12%; left: calc(50% - 8px); }
+      body.runtime-demo .air-particle:nth-child(3) { top: 28%; left: calc(50% - 8px); }
+      body.runtime-demo .vacuum-chamber { min-height: 150px; padding: 12px; }
+      body.runtime-demo .blocked-path { padding: 10px; }
+      body.runtime-demo .exit-modal { padding: 26px 20px 24px; }
+      body.runtime-demo .exit-actions { flex-direction: column; }
+      body.runtime-demo .exit-actions .cta { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body.runtime-demo *, body.runtime-demo *::before, body.runtime-demo *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      body.runtime-demo .air-particle { display: none !important; }
+      body.runtime-demo .ppt-reveal { transform: none; }
+    }
+    body.runtime-demo.phone-viewport-forced { --phone-safe-top: 24px; --phone-safe-bottom: 20px; overflow: auto; background: #252622; }
+    body.runtime-demo.phone-viewport-forced .review { width: max(100vw, 390px); height: max(100vh, 844px); display: grid; place-items: center; }
+    body.runtime-demo.phone-viewport-forced .screen-scroll { width: 390px !important; height: 844px !important; overflow: hidden; flex: 0 0 390px; }
+    body.runtime-demo.phone-viewport-forced .screen-frame { width: 390px !important; height: 844px !important; min-width: 390px !important; min-height: 844px !important; max-width: 390px; max-height: 844px; margin: 0; border: 0; border-radius: 0; }
+  </style>
+</head>
+<body class="runtime-demo">
+  <main class="review">
+    <header class="review-bar">
+      <div class="review-title"><strong>方向 A · 声音 Demo 全页面高保真</strong><span>S01–S15 静态视觉评审稿 / 暂不包含产品交互</span></div>
+      <div class="review-navs">
+        <div class="viewport-tabs" aria-label="切换审阅画布"><button type="button" aria-pressed="true" data-viewport="tablet">平板</button><button type="button" aria-pressed="false" data-viewport="phone">手机</button></div>
+        <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
+          <button role="tab" aria-selected="true" data-target="entry">S01 入口</button><button role="tab" aria-selected="false" data-target="ask">S02 提问</button><button role="tab" aria-selected="false" data-target="confirm">S03 确认</button><button role="tab" aria-selected="false" data-target="calibration">S04 校准</button><button role="tab" aria-selected="false" data-target="prediction">S05 预测</button><button role="tab" aria-selected="false" data-target="loading">S06 准备</button><button role="tab" aria-selected="false" data-target="intro">S07 引入</button><button role="tab" aria-selected="false" data-target="lesson">S08 讲解</button><button role="tab" aria-selected="false" data-target="lesson-exit">S08 返回确认</button><button role="tab" aria-selected="false" data-target="experiment">S09 实验</button><button role="tab" aria-selected="false" data-target="followup">S10 追问</button><button role="tab" aria-selected="false" data-target="vacuum">S11 真空</button><button role="tab" aria-selected="false" data-target="fork">S12 音叉</button><button role="tab" aria-selected="false" data-target="xylophone">S13 木琴</button><button role="tab" aria-selected="false" data-target="feedback">S14 反馈</button><button role="tab" aria-selected="false" data-target="result">S15 结果</button>
+        </nav>
+      </div>
+    </header>
+
+    <div class="screen-scroll">
+      <div class="screen-frame">
+        <section id="screen-entry" class="concept-screen entry-screen active" role="tabpanel" aria-labelledby="tab-entry" data-screen="entry">
+          <header class="appbar floating">
+            <div class="brand"><span class="brand-mark">知</span><span>小知</span></div>
+            <div class="app-actions"><span class="meta-chip soft">约 4 分钟</span><span class="meta-chip">无需登录</span><span class="meta-chip dark">固定声音 Demo</span></div>
+          </header>
+          <div class="entry-content">
+            <div class="entry-copy">
+              <p class="eyebrow">固定声音主题体验</p>
+              <h1>你问为什么，<br>小知<em>现场演</em>给你看。</h1>
+              <p class="entry-lead">从一个真实问题出发，先预测，再看见琴弦怎样振动，最后亲手验证自己的想法。</p>
+              <div class="entry-buttons"><span class="cta primary">开始体验 →</span></div>
+              <div class="privacy-note"><strong>数据说明</strong><span>体验不会调用相机或麦克风，不保存儿童姓名、照片或原始语音。</span></div>
+            </div>
+            <div class="entry-visual" aria-label="琴弦、音叉与声音观察图形">
+              <div class="lab-orbit">
+                <span class="lab-sticker">声音看得见！</span>
+                <div class="lab-string"><svg viewBox="0 0 280 130" aria-hidden="true"><path d="M0 65 C22 20 47 110 70 65 S117 20 140 65 S187 110 210 65 S257 20 280 65" fill="none" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round"/></svg></div>
+                <div class="lab-fork"></div><div class="lab-dots"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept-screen static-screen" data-screen="ask" hidden>
+          <div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>发起一个问题</span></div><span class="header-spacer"></span></header><div class="static-content"><div class="static-narrow ask-focus">
+            <h1 class="static-title">从一个“为什么”开始</h1><p class="static-lead">可以直接输入，也可以用语音或照片告诉小知。当前输入框已放入本次声音 Demo 的预设问题。</p>
+            <div class="question-composer"><label for="demo-question">你想问什么？</label><textarea id="demo-question" class="question-value" rows="2">更用力拨同一根弦，音调会更高吗？</textarea><div class="composer-tools"><span class="icon-button" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span class="icon-button" aria-label="拍照输入"><svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="composer-send">发送</span></div></div>
+            <div class="input-entry-notes"><span><b>文</b>直接输入问题</span><span><b>声</b>说出问题</span><span><b>照</b>拍下不会的内容</span></div>
+            <div class="prediction-footer"><p>演示不会调用真实麦克风或相机。</p></div>
+          </div></div></div>
+        </section>
+
+        <section class="concept-screen static-screen" data-screen="confirm" hidden>
+          <div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>问题确认</span></div><span class="header-spacer"></span></header><div class="static-content"><div class="static-narrow confirm-focus">
+            <p class="eyebrow">你想问的问题是</p><h1 class="static-title">“更用力拨同一根弦，音调会更高吗？”</h1><div class="prediction-footer" style="margin-top:5%"><span class="cta">修改问题</span><span class="cta confirm-send">就是这个问题 →</span></div>
+          </div></div></div>
+        </section>
+
+        <section class="concept-screen prediction-screen" data-screen="calibration" hidden>
+          <div class="prediction-shell">
+            <aside class="progress-rail"><div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div><div class="progress-list"><div class="progress-item active"><i>1</i><span>听懂“响”和“高”</span></div><div class="progress-item"><i>2</i><span>先做一个预测</span></div><div class="progress-item"><i>3</i><span>问题讲解</span></div></div><div class="rail-note">先分清两个词，再带着自己的预测进入问题讲解。</div></aside>
+            <main class="prediction-main calibration-main"><div><h1 class="static-title">先把“响”和“高”分清楚</h1><p class="static-lead">按顺序播放两组固定声音。这里先建立词义，不提前告诉你振幅和频率的关系。</p><div class="calibration-pair"><article class="cal-card"><span class="sound">响</span><h2>响度</h2><p>听起来有多响。第一声较轻，第二声明显更响。</p><span class="cta">▶ 播放示例</span></article><article class="cal-card locked"><span class="sound" style="background:var(--violet)">高</span><h2>音调</h2><p>听起来有多高。听完响度示例后解锁。</p><span class="cta disabled">先听响度</span></article></div></div><div class="prediction-footer"><p>先听响度，再听音调。</p><span class="cta primary disabled">我分清了，继续猜 →</span></div></main>
+          </div>
+        </section>
+
+        <section id="screen-prediction" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-prediction" data-screen="prediction" hidden>
+          <div class="prediction-shell">
+            <aside class="progress-rail">
+              <div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div>
+              <div class="progress-list">
+                <div class="progress-item done"><i>✓</i><span>听懂“响”和“高”</span></div>
+                <div class="progress-item active"><i>2</i><span>先做一个预测</span></div>
+                <div class="progress-item"><i>3</i><span>问题讲解</span></div>
+              </div>
+              <div class="rail-note">猜错也没关系。预测只是为了让接下来的观察更有目标。</div>
+            </aside>
+            <main class="prediction-main">
+              <div>
+                <div class="prediction-head">
+                  <div><p class="eyebrow">先猜一猜</p><h1>更用力拨同一根弦，<br>音调会更高吗？</h1></div>
+                </div>
+                <div class="condition-box"><strong>这次比较要公平</strong><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变：拨弦力度</span></div></div>
+                <div class="choice-row">
+                  <article class="answer-card"><div class="choice-mark">A</div><strong>会更高</strong><span>用力越大，音调越高</span></article>
+                  <article class="answer-card"><div class="choice-mark">B</div><strong>基本不变</strong><span>主要变化可能在响度</span></article>
+                  <article class="answer-card"><div class="choice-mark">C</div><strong>还不确定</strong><span>我想先看一看</span></article>
+                </div>
+              </div>
+              <div class="prediction-footer"><p>先选一个答案，再去验证。</p><span class="cta primary disabled">去验证 →</span></div>
+            </main>
+          </div>
+        </section>
+
+        <section class="concept-screen static-screen" data-screen="loading" hidden>
+          <div class="static-shell"><header class="static-appbar"><button type="button" class="back" data-demo-back aria-label="返回 Demo 首页">‹</button><div class="brand"><span class="brand-mark">知</span><span>准备观察</span></div><span class="step">准备观察</span></header><div class="static-content"><div class="static-narrow" style="text-align:center"><p class="eyebrow">正在准备第一段观察</p><h1 class="static-title">正在校准琴弦观察画面</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">先把同一根琴弦的轻拨和用力拨放在一起比较。互动琴弦会在讲解结束后出现。</p><div class="loading-rig"><span class="load-dot"></span><svg viewBox="0 0 520 150"><path d="M0 75 C40 40 80 40 120 75 S200 110 240 75 S320 40 360 75 S440 110 520 75" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div><div class="load-track"><span></span></div></div></div></div>
+        </section>
+
+        <section class="concept-screen lesson-screen" data-screen="intro" hidden>
+          <div class="lesson-shell"><header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span class="active">琴弦振动</span></div><div class="lesson-controls"><span>字幕 关</span><b>自动播放 1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">第一个子片段</p><h1>先做一次公平比较</h1><p>只改变拨弦力度，其他条件保持不变。</p></div><span class="slide-tag">1 / 3</span></div><div class="lesson-canvas intro-canvas"><div class="intro-question"><h2>更用力拨同一根弦，音调会更高吗？</h2><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变力度</span></div></div><div class="controlled-visual"><div class="control-string"><span>同一根弦</span><svg viewBox="0 0 440 120"><path d="M0 60 C35 25 70 25 105 60 S175 95 210 60 S280 25 315 60 S385 95 440 60" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></div><div class="control-arrow">只改变<br><strong>拨弦力度</strong></div></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="active"></span><span></span><span></span><small>第 1 段</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>问题讲解从这里开始</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>先做一次公平比较：我们只改变拨弦力度，弦长、松紧和粗细都保持不变。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div>
+        </section>
+
+        <section id="screen-lesson" class="concept-screen lesson-screen" role="tabpanel" aria-labelledby="tab-lesson" data-screen="lesson" hidden>
+          <div class="lesson-shell">
+            <header class="lesson-appbar">
+              <button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div>
+              <div class="topic-tabs"><span class="active">琴弦振动</span></div>
+              <div class="lesson-controls"><span>字幕 关</span><b>自动播放中</b></div>
+            </header>
+            <div class="lesson-grid">
+              <main class="workspace">
+                <div class="lesson-heading"><div><p class="eyebrow">核心讲解 · 图解与动画</p><h1>看看真实现象</h1><p>摆得更开，不等于来回得更快。</p></div><span class="slide-tag">自动播放 2 / 3</span></div>
+                <div class="lesson-canvas">
+                  <div class="lesson-copy"><p>轻轻拨，琴弦摆动得窄；用力拨，琴弦摆动得更开。可是同样一小段时间里，它们来回的次数差不多。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>轻轻拨：摆动范围较小</span></div><div class="lesson-point"><i>2</i><span>用力拨：摆动范围更大</span></div><div class="lesson-point"><i>3</i><span>共同点：往返节奏基本相同</span></div></div></div>
+                  <div class="compare-visual">
+                    <article class="wave-card"><header><strong>轻轻拨</strong><span>振幅较小</span></header><svg viewBox="0 0 460 80" aria-hidden="true"><path d="M0 40 C18 23 38 23 56 40 S94 57 112 40 S150 23 168 40 S206 57 224 40 S262 23 280 40 S318 57 336 40 S374 23 392 40 S430 57 460 40" fill="none" stroke="#0a0a0a" stroke-width="5" stroke-linecap="round"/></svg></article>
+                    <article class="wave-card strong"><header><strong>用力拨</strong><span>振幅更大 · 波峰数量接近</span></header><svg viewBox="0 0 460 80" aria-hidden="true"><path d="M0 40 C18 4 38 4 56 40 S94 76 112 40 S150 4 168 40 S206 76 224 40 S262 4 280 40 S318 76 336 40 S374 4 392 40 S430 76 460 40" fill="none" stroke="#0a0a0a" stroke-width="5" stroke-linecap="round"/></svg></article>
+                    <div class="visual-takeaway"><span><b>振幅</b>变大 → 声音更响</span><span><b>频率</b>接近不变 → 音调基本不变</span></div>
+                  </div>
+                </div>
+                <div class="lesson-playback" aria-label="讲解播放进度"><button type="button" class="lesson-play-toggle" data-lesson-play aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="lesson-progress" aria-hidden="true"><span class="done"></span><span class="active"></span><span></span><span></span></div><small>第 2 段</small></div>
+              </main>
+              <aside class="tutor-panel">
+                <div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>正在讲解“看看真实现象”</small></div></div>
+                <div class="thread"><div class="message emphasis"><small>小知老师 · 正在讲解</small><p>注意看：用力拨以后，琴弦摆得更开了，但同样时间内来回的次数没有明显增加。也就是说，同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div></div>
+                <div><div class="followup-label">讲解中可以随时追问</div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept-screen lesson-screen" data-screen="lesson-exit" hidden>
+          <div class="exit-preview"><div class="exit-preview-bar"><span class="lesson-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><span class="meta-chip">琴弦振动</span></div><div class="exit-preview-body"><span></span><span></span><span></span></div></div>
+          <div class="exit-backdrop"><div class="exit-modal"><span class="exit-icon">↩</span><h2>要返回吗？</h2><p>返回后，本次学习进度和已经完成的记录会保存到历史记录，你可以之后继续查看。</p><div class="exit-actions"><span class="cta">继续学习</span><span class="cta primary">保存并返回</span></div></div></div>
+        </section>
+
+        <section class="concept-screen lesson-screen" data-screen="experiment" hidden>
+          <div class="lesson-shell">
+            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--lime-soft)">等待拨动</b></div></header>
+            <div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">讲解结束后开放</p><h1>现在你可以拨动琴弦</h1><p>拨得越开，下面的振动波形会同步变化。</p></div><span class="slide-tag">等待拨动</span></div><div class="lesson-canvas experiment-canvas"><div class="interactive-string-stage"><div class="stage-label"><strong>按住黄色圆点，上下拨动</strong><span>琴弦静止，尚未记录力度</span></div><svg class="pluck-string" viewBox="0 0 760 190"><line x1="30" y1="95" x2="730" y2="95" stroke="#c9cbc4" stroke-width="2"/><path d="M30 95 L730 95" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linecap="round"/><circle cx="330" cy="95" r="15" fill="#e8ef3e" stroke="#0a0a0a" stroke-width="4"/></svg><div class="live-explanation"><span class="metric"><small>振幅</small><strong>等待观察</strong></span><span class="metric"><small>响度</small><strong>等待观察</strong></span><span class="metric"><small>频率</small><strong>等待观察</strong></span><span class="metric"><small>音调</small><strong>等待观察</strong></span></div><div class="response-wave"><span>实时振动记录</span><svg viewBox="0 0 680 90"><path d="M0 45 L680 45" fill="none" stroke="#c9cbc4" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="prediction-footer"><span class="cta dark">进入迁移 →</span></div></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>延续前面的讲解记录</small></div></div><div class="thread"><div class="message emphasis"><small>小知老师</small><p>现在轮到你了。先轻轻拨一次，再用力拨一次，观察振幅、响度、频率和音调怎样变化。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div>
+          </div>
+        </section>
+
+        <section class="concept-screen lesson-screen" data-screen="followup" hidden>
+          <div class="lesson-shell">
+            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--lime-soft)">可以操作</b></div></header>
+            <div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">动手实验</p><h1>现在你可以拨动琴弦</h1><p>语音追问直接发生在右侧对话区。</p></div><span class="slide-tag">语音录入中</span></div><div class="lesson-canvas experiment-canvas"><div class="interactive-string-stage"><div class="stage-label"><strong>按住黄色圆点，上下拨动</strong><span>当前力度：用力拨</span></div><svg class="pluck-string" viewBox="0 0 760 190"><path d="M30 95 C120 25 235 25 330 95 S550 165 730 95" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linecap="round"/><circle cx="330" cy="95" r="15" fill="#e8ef3e" stroke="#0a0a0a" stroke-width="4"/></svg><div class="live-explanation"><span class="metric green"><small>振幅</small><strong>变大</strong></span><span class="metric"><small>响度</small><strong>更响</strong></span><span class="metric blue"><small>频率</small><strong>基本不变</strong></span></div></div></div></main><aside class="tutor-panel recording-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>正在录入追问</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>现在轮到你了。拨得更开时，振幅和响度会变大；频率和音调基本不变。</p></div><div class="recording-inline"><div class="voice-wave"><i></i><i></i><i></i><i></i><i></i></div><strong>正在听你说…</strong><span>如果没有空气呢？</span><button type="button" class="record-cancel" data-record-cancel aria-label="取消语音录入">×</button><button type="button" class="record-done" data-record-done aria-label="确认并提交语音录入">✓</button></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div>
+          </div>
+        </section>
+
+        <section class="concept-screen lesson-screen" data-screen="vacuum" hidden><div class="lesson-shell"><header class="lesson-appbar"><span class="lesson-back" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>关联问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">真空中的声音</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--violet-soft)">自动播放中</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">如果没有空气呢？</p><h1>琴弦还在振动，声音却传不过去</h1><p>把“物体怎样振动”和“声音怎样传播”分开看。</p></div><span class="slide-tag" style="background:var(--violet-soft)">关联问题</span></div><div class="lesson-canvas"><div class="lesson-copy"><p>没有空气时，琴弦本身仍然来回振动。但没有介质把振动一段段传到耳朵。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>物体仍然振动</span></div><div class="lesson-point"><i>2</i><span>声音不能穿过真空传播</span></div><div class="lesson-point"><i>3</i><span>振动与传播是两个相连的问题</span></div></div></div><div class="vacuum-jar"><span class="vacuum-sticker">介质：真空</span><svg viewBox="0 0 320 120"><path d="M0 60 C25 15 50 15 75 60 S125 105 150 60 S200 15 225 60 S275 105 320 60" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="done"></span><span class="active" style="background:var(--violet)"></span><span></span><small>关联讲解</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>继承完整消息记录</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><div class="message user-message"><small>你</small><p>如果没有空气呢？</p></div><div class="message emphasis"><small>小知老师</small><p>琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。</p></div></div><div class="followup-box"><span>继续问这个问题</span><b class="voice-action"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div></section>
+
+        <section class="concept-screen static-screen" data-screen="fork" hidden><div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>音叉迁移</span></div><span class="step">第一次迁移</span></header><div class="static-content"><div class="static-wide migration-layout"><div class="science-object fork-object"><svg class="fork-illustration" viewBox="0 0 420 360" aria-label="音叉与敲击锤"><path class="vibration" d="M82 72C48 105 48 157 82 190M338 72c34 33 34 85 0 118"/><path class="fork-body" d="M142 55v135c0 47 31 82 68 82s68-35 68-82V55M210 272v54"/><path class="mallet" d="M304 248l58 55M333 221l56 56"/><rect class="mallet-head" x="328" y="198" width="58" height="70" rx="22" transform="rotate(-44 357 233)"/></svg><span class="object-caption">同一个音叉 · 轻敲 / 用力敲</span></div><div><p class="eyebrow">分别验证结论和原因</p><h1 class="static-title">更用力敲同一个音叉，音调会更高吗？</h1><p class="static-lead">同一个音叉不更换，只改变敲击力度。</p><div class="static-choice-list migration-question-list"></div><div class="prediction-footer" style="margin-top:3%"><p>提交前不显示正误。</p><span class="cta primary disabled">提交验证 →</span></div></div></div></div></div></section>
+
+        <section class="concept-screen static-screen" data-screen="xylophone" hidden><div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>木琴迁移</span></div><span class="step">提示后新情境</span></header><div class="static-content"><div class="static-wide migration-layout"><div class="science-object" style="background:var(--violet-soft)"><div class="xylophone"><i></i><i></i><i></i><i></i></div><span style="position:absolute;bottom:20px;font-weight:900">同一块音条 · 轻敲 / 用力敲</span></div><div><p class="eyebrow">换一个新情境</p><h1 class="static-title">更用力敲同一块音条，会发生什么？</h1><div class="hint"><strong>观察提示</strong><br>分别看振动幅度，以及相同时间内的振动次数。</div><div class="static-choice-list migration-question-list"></div><div class="prediction-footer" style="margin-top:2%"><p>不是在原题上反复试到正确。</p><span class="cta primary disabled">提交验证 →</span></div></div></div></div></div></section>
+
+        <section class="concept-screen static-screen" data-screen="feedback" hidden><div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>体验反馈</span></div><span class="step">不影响迁移结果</span></header><div class="static-content"><div class="static-wide" style="text-align:center"><p class="eyebrow">这不是考试分数</p><h1 class="static-title">刚才的讲解对你有帮助吗？</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">主观感受会单独记录，不会覆盖刚才的客观迁移结果。</p><div class="feedback-grid"><div class="feedback-card selected">讲明白了<small style="display:block;color:var(--muted);font-size:10px">我知道该观察什么</small></div><div class="feedback-card">还有一点不懂<small style="display:block;color:var(--muted);font-size:10px">有一部分需要再看看</small></div><div class="feedback-card">没讲明白<small style="display:block;color:var(--muted);font-size:10px">我想换一种讲法</small></div></div><div class="button-row" style="justify-content:center;margin-top:4%"><span class="cta">跳过</span><span class="cta primary">完成体验 →</span></div></div></div></div></section>
+
+        <section class="concept-screen static-screen" data-screen="result" hidden>
+          <div class="static-shell">
+            <header class="static-appbar result-appbar"><span class="back" aria-label="返回">‹</span><div class="brand"><span class="brand-mark">知</span><span>体验完成</span></div><span class="header-spacer"></span></header>
+            <div class="static-content"><div class="static-wide result-card"><section class="result-hero"><span class="result-mark">✓</span><h1>自己弄懂了</h1><p>完成方式：首次通过</p><div class="entry-buttons"><span class="cta primary">填写问卷，申请加入内测群</span><span class="cta">重新体验</span></div></section><section class="result-details"><div class="evidence-list"><div class="evidence-row"><span>实验操作</span><strong>轻拨、用力拨、观察波形</strong><em>已完成</em></div><div class="evidence-row"><span>关联追问</span><strong>没有空气时，琴弦仍振动，声音传不过去</strong><em>已发现</em></div><div class="evidence-row"><span>迁移结论</span><strong>音调基本不变</strong><em>通过</em></div><div class="evidence-row"><span>因果解释</span><strong>振幅变大，频率基本不变</strong><em>通过</em></div><div class="evidence-row"><span>家庭协助</span><strong>未确认</strong><em class="negative">未确认</em></div></div><div class="core-finding"><small>核心发现</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><p class="prototype-note">本次内容为固定演示，不代表动态生成能力已经上线。</p></section></div></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="demo-exit-dialog" id="demo-exit-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="demo-exit-title">
+      <div class="exit-modal"><span class="exit-icon">↩</span><h2 id="demo-exit-title">要返回吗？</h2><p>返回后，本次学习进度和已经完成的记录会保存到历史记录，你可以之后继续查看。</p><div class="exit-actions"><button type="button" class="cta" data-exit-cancel>继续学习</button><button type="button" class="cta primary" data-exit-confirm>保存并返回</button></div></div>
+    </div>
+    <footer class="review-caption"><span id="viewport-caption">基准画布：1180 × 820 · 平板横屏</span><span>当前用于视觉评审 · 已按 2026-07-24 决策微调关键状态与返回规则</span></footer>
+  </main>
+
+  <div class="runtime-toast" id="runtime-toast" role="status" aria-live="polite"></div>
+  <audio id="demo-audio" preload="auto"></audio>
+  <script src="./config.js"></script>
+  <script>
+    const fixtureQuestion = '更用力拨同一根弦，音调会更高吗？';
+    const audio = document.querySelector('#demo-audio');
+    const screens = [...document.querySelectorAll('.concept-screen[data-screen]')];
+    const reviewTabs = [...document.querySelectorAll('.review-tabs [data-target]')];
+    const viewportTabs = [...document.querySelectorAll('[data-viewport]')];
+    const viewportCaption = document.querySelector('#viewport-caption');
+    const exitDialog = document.querySelector('#demo-exit-dialog');
+    const toast = document.querySelector('#runtime-toast');
+    const confirmBackScreens = new Set(['loading', 'intro', 'lesson', 'experiment', 'followup', 'vacuum', 'fork']);
+    const audioPath = name => `./assets/audio/${name}.wav`;
+    const state = {
+      screen: 'entry', question: fixtureQuestion, calibration: 0, prediction: null,
+      lessonSegment: 1, experimentStep: 0, dragFailures: 0, returnScreen: 'experiment',
+      migrationStage: 'fork', migration: {}, transferResult: null,
+      feedback: null, feedbackReasons: [], playing: false,
+      audioKind: null, audioSegment: 1, vacuumSegment: 1, subtitles: false,
+      topicStage: 0, transitioning: false, drawerScreen: null, recordingScreen: null, recordingWasPlaying: false,
+      followupHistory: [],
+      interruptedScreen: null, interruptedMainSegment: 1
+    };
+    let loadingTimer = null;
+    let loadingFrame = null;
+    let activeAudioSource = '';
+    let activeAudioEnded = null;
+    let pendingSeekRatio = null;
+    let dragStartY = null;
+    let exitWasPlaying = false;
+    let tutorPress = null;
+    let suppressTutorClick = false;
+
+    const subtitleCues = {
+      'main-1': [
+        [0, '先想象一下，你手里就是同一把吉他。'],
+        [.2, '我们只把手指的力气变大，琴弦还是那一根。'],
+        [.43, '长度、松紧、粗细都不动。这样比较才公平，对吧？'],
+        [.68, '现在，我们要同时留意三件事：'],
+        [.8, '它摆得多开，振得多快，还有听起来怎样。']
+      ],
+      'main-2': [
+        [0, '来，看这里。轻轻拨，琴弦只在中间附近摆动。'],
+        [.24, '用力拨，它一下子摆得更开了。'],
+        [.47, '可是你再看仔细一点：同样一小段时间里，'],
+        [.67, '两根弦来回的次数，差不多。'],
+        [.84, '原来，摆得更开，不等于来回得更快。']
+      ],
+      'main-3': [
+        [0, '现在给刚才的发现起个名字。'],
+        [.14, '琴弦摆动的范围，叫振幅。'],
+        [.3, '单位时间里振动的次数，叫频率。'],
+        [.48, '力气变大，主要让振幅变大，所以声音更响。'],
+        [.7, '频率基本不变，所以音调也基本不变。'],
+        [.88, '注意，是在同一根弦、其他条件不变的时候哦。']
+      ],
+      practice: [
+        [0, '讲到这里，轮到你了！'],
+        [.22, '现在你可以动手来试试。'],
+        [.45, '先轻轻拨一次，再用力拨一次。'],
+        [.72, '看看刚才的发现是不是真的。']
+      ],
+      'vacuum-1': [
+        [0, '如果没有空气呢？问得好！'],
+        [.2, '先别急着回答听不听得到。我们把它拆成两步：'],
+        [.48, '第一步，琴弦自己还会不会振动。'],
+        [.72, '第二步，这个振动还能不能走到耳朵。']
+      ],
+      'vacuum-2': [
+        [0, '平时，琴弦不会直接碰到你的耳朵。'],
+        [.24, '它先推动旁边的空气。'],
+        [.42, '空气再像接力队一样，把振动一层一层传过来。'],
+        [.72, '最后，耳朵接到了这个振动，我们才听见声音。']
+      ],
+      'vacuum-3': [
+        [0, '现在把空气拿走。琴弦呢？它还是会振动。'],
+        [.3, '可是中间没有空气接力，振动就传不到远处的耳朵。'],
+        [.63, '所以，没有空气时，琴弦仍然在动。'],
+        [.82, '我们却听不到通过空气传来的声音。']
+      ],
+      'return-main': [
+        [0, '这个问题我们弄明白了。'],
+        [.3, '如果你也明白了，让我们再回到刚才的琴弦振动。'],
+        [.68, '从被打断的那一小段重新看起吧。']
+      ]
+    };
+
+    function playerMarkup(kind) {
+      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${[1,2,3].map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small></div>`;
+    }
+
+    const syntheticControlSelector = '.cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span';
+
+    function syncInteractiveSemantics(root = document) {
+      root.querySelectorAll(syntheticControlSelector).forEach(control => {
+        const selected = control.classList.contains('selected') || control.classList.contains('active');
+        const disabled = control.classList.contains('disabled');
+        if (control.matches('.topic-tabs span')) {
+          control.setAttribute('role', 'tab');
+          control.setAttribute('aria-selected', String(selected));
+        } else if (control.matches('.answer-card, .cal-card, .feedback-card, .static-choice, .reason-chip')) {
+          control.setAttribute('role', control.matches('.reason-chip') ? 'checkbox' : 'radio');
+          control.setAttribute('aria-checked', String(selected));
+        } else if (!control.matches('button')) {
+          control.setAttribute('role', 'button');
+        }
+        if (!control.matches('button, input, textarea, select, a[href]')) control.tabIndex = disabled ? -1 : 0;
+        if (disabled) control.setAttribute('aria-disabled', 'true');
+        else control.removeAttribute('aria-disabled');
+      });
+      root.querySelectorAll('.topic-tabs').forEach(group => group.setAttribute('role', 'tablist'));
+    }
+
+    function initRuntimeComponents() {
+      document.querySelectorAll('[data-screen="vacuum"] .lesson-back').forEach(back => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'lesson-back';
+        button.dataset.demoBack = '';
+        button.setAttribute('aria-label', '返回 Demo 首页');
+        button.innerHTML = back.innerHTML;
+        back.replaceWith(button);
+      });
+      [['intro', 'main'], ['lesson', 'main'], ['vacuum', 'vacuum']].forEach(([screenName, kind]) => {
+        const screen = document.querySelector(`[data-screen="${screenName}"]`);
+        const oldPlayer = screen?.querySelector('.timeline, .lesson-playback');
+        if (oldPlayer) oldPlayer.outerHTML = playerMarkup(kind);
+        const canvas = screen?.querySelector('.lesson-canvas');
+        if (canvas && !screen.querySelector('.runtime-subtitle')) canvas.insertAdjacentHTML('afterend', '<div class="runtime-subtitle" aria-live="polite"></div>');
+      });
+      document.querySelectorAll('.lesson-controls span').forEach(control => {
+        control.dataset.subtitleToggle = '';
+        control.setAttribute('role', 'button');
+        control.setAttribute('tabindex', '0');
+      });
+      document.querySelectorAll('[data-screen="intro"] .followup-box > span, [data-screen="lesson"] .followup-box > span, [data-screen="experiment"] .followup-box > span, [data-screen="vacuum"] .followup-box > span').forEach(input => {
+        input.contentEditable = 'true';
+        input.setAttribute('role', 'textbox');
+        input.setAttribute('aria-label', '输入追问');
+        input.spellcheck = false;
+      });
+      document.querySelectorAll('[data-screen="intro"] .tutor-panel, [data-screen="lesson"] .tutor-panel, [data-screen="experiment"] .tutor-panel, [data-screen="vacuum"] .tutor-panel').forEach(panel => {
+        if (panel.querySelector('.drawer-close')) return;
+        panel.insertAdjacentHTML('afterbegin', '<button type="button" class="drawer-close" data-drawer-close aria-label="关闭对话">×</button>');
+        const shell = panel.closest('.lesson-shell');
+        if (shell && !shell.querySelector(':scope > .tutor-backdrop')) shell.insertAdjacentHTML('beforeend', '<button type="button" class="tutor-backdrop" data-drawer-close aria-label="关闭对话背景"></button>');
+      });
+      const revealSelectors = { intro: ['.intro-question h2', '.chip-row', '.control-string', '.control-arrow'] };
+      Object.entries(revealSelectors).forEach(([screenName, selectors]) => {
+        const screen = document.querySelector(`[data-screen="${screenName}"]`);
+        const introRevealAt = [0, .2, .43, .68];
+        selectors.forEach((selector, index) => screen?.querySelectorAll(selector).forEach(node => {
+          node.classList.add('ppt-reveal');
+          node.dataset.revealAt = String(introRevealAt[index]);
+        }));
+      });
+      renderTopicTabs();
+      syncSubtitles();
+      syncInteractiveSemantics();
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('.ppt-reveal').forEach(node => node.classList.add('is-visible'));
+    }
+
+    function renderTopicTabs() {
+      const labels = ['琴弦振动', '实验', '真空中的声音'].slice(0, state.topicStage + 1);
+      document.querySelectorAll('.lesson-screen[data-screen]:not([data-screen="lesson-exit"]):not([data-screen="followup"])').forEach(screen => {
+        const tabs = screen.querySelector('.topic-tabs');
+        if (!tabs) return;
+        const active = screen.dataset.screen === 'vacuum' ? '真空中的声音' : screen.dataset.screen === 'experiment' ? '实验' : '琴弦振动';
+        tabs.innerHTML = labels.map(label => `<span class="${label === active ? 'active' : ''}">${label}</span>`).join('');
+      });
+      syncInteractiveSemantics();
+    }
+
+    function revealMarkup(markup) {
+      return markup;
+    }
+
+    function activateRevealNodes(canvas) {
+      canvas.querySelectorAll('[data-reveal]').forEach(node => node.classList.add('ppt-reveal'));
+    }
+
+    function earIconMarkup() {
+      return '<span class="ear-illustration" role="img" aria-label="耳朵">👂</span>';
+    }
+
+    function renderLessonVisual(segment) {
+      const canvas = document.querySelector('[data-screen="lesson"] .lesson-canvas');
+      if (!canvas) return;
+      if (segment === 2) {
+        canvas.innerHTML = revealMarkup(`<div class="segment-animation comparison-stage"><article class="motion-sample" data-reveal data-reveal-at="0"><header><strong>轻轻拨</strong><span>摆动范围小</span></header><svg viewBox="0 0 420 150"><path class="motion-path light-path" d="M10 75 C35 50 60 50 85 75 S135 100 160 75 S210 50 235 75 S285 100 310 75 S360 50 410 75" fill="none" stroke="#0a0a0a" stroke-width="6"/><line class="scan-line" x1="10" y1="18" x2="10" y2="132"/><circle class="scan-dot" cx="10" cy="75" r="8"/></svg></article><article class="motion-sample strong" data-reveal data-reveal-at=".24"><header><strong>用力拨</strong><span>摆动范围大</span></header><svg viewBox="0 0 420 150"><path class="motion-path strong-path" d="M10 75 C35 20 60 20 85 75 S135 130 160 75 S210 20 235 75 S285 130 310 75 S360 20 410 75" fill="none" stroke="#0a0a0a" stroke-width="6"/><line class="scan-line" x1="10" y1="18" x2="10" y2="132"/><circle class="scan-dot" cx="10" cy="75" r="8"/></svg></article><div class="same-rate-note" data-reveal data-reveal-at=".67">同一时间内，两根弦往返次数接近</div></div>`);
+      } else {
+        canvas.innerHTML = revealMarkup(`<div class="segment-animation concept-map"><div class="concept-row"><div class="concept-node amplitude" data-reveal data-reveal-at=".14"><small>琴弦摆动范围</small><strong>振幅变大</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-loud" data-reveal data-reveal-at=".48"><small>听起来</small><strong>声音更响</strong></div></div><div class="concept-row"><div class="concept-node frequency" data-reveal data-reveal-at=".3"><small>单位时间振动次数</small><strong>频率基本不变</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-pitch" data-reveal data-reveal-at=".7"><small>听起来</small><strong>音调基本不变</strong></div></div></div>`);
+      }
+      activateRevealNodes(canvas);
+    }
+
+    function renderVacuumVisual(segment) {
+      const canvas = document.querySelector('[data-screen="vacuum"] .lesson-canvas');
+      if (!canvas) return;
+      if (segment === 1) {
+        canvas.innerHTML = revealMarkup(`<div class="segment-animation vacuum-question-stage"><div class="question-step" data-reveal data-reveal-at=".48"><strong>第一步</strong><svg class="mini-string" viewBox="0 0 260 70"><path d="M5 35 C30 5 55 5 80 35 S130 65 155 35 S205 5 255 35" fill="none" stroke="#0a0a0a" stroke-width="7"/></svg><span>琴弦自己还会振动吗？</span></div><div class="question-step" data-reveal data-reveal-at=".72"><strong>第二步</strong>${earIconMarkup()}<span>振动还能走到耳朵吗？</span></div></div>`);
+      } else if (segment === 2) {
+        canvas.innerHTML = revealMarkup(`<div class="segment-animation relay-stage"><div class="relay-source" data-reveal data-reveal-at=".24"><svg viewBox="0 0 120 80"><path d="M0 40 C15 5 30 5 45 40 S75 75 90 40 S105 5 120 40" fill="none" stroke="#0a0a0a" stroke-width="7"/></svg><div><strong>琴弦推动空气</strong><small>振动传给附近的空气</small></div></div><div class="air-lane" data-reveal data-reveal-at=".42"><span class="relay-caption"><strong>空气接力</strong><small>振动一段段传过去</small></span><i class="air-particle"></i><i class="air-particle"></i><i class="air-particle"></i></div><div class="relay-ear" data-reveal data-reveal-at=".72">${earIconMarkup()}<div><strong>耳朵接到振动</strong><small>我们就听到了声音</small></div></div></div>`);
+      } else {
+        canvas.innerHTML = revealMarkup(`<div class="segment-animation vacuum-block-stage"><div class="vacuum-chamber" data-reveal data-reveal-at="0"><div><strong>琴弦仍在振动</strong><svg class="mini-string" viewBox="0 0 260 70"><path d="M5 35 C30 5 55 5 80 35 S130 65 155 35 S205 5 255 35" fill="none" stroke="#0a0a0a" stroke-width="7"/></svg></div></div><div class="blocked-path" data-reveal data-reveal-at=".3"><b>×</b><strong>没有空气接力</strong><span>振动传不到远处的耳朵</span></div></div>`);
+      }
+      activateRevealNodes(canvas);
+    }
+
+    function startLoading() {
+      cancelAnimationFrame(loadingFrame);
+      clearTimeout(loadingTimer);
+      const bar = document.querySelector('[data-screen="loading"] .load-track span');
+      const startedAt = performance.now();
+      const tick = now => {
+        const progress = Math.min(1, (now - startedAt) / 3200);
+        if (bar) bar.style.width = `${progress * 100}%`;
+        if (progress < 1 && state.screen === 'loading') loadingFrame = requestAnimationFrame(tick);
+      };
+      if (bar) bar.style.width = '0%';
+      loadingFrame = requestAnimationFrame(tick);
+      loadingTimer = setTimeout(() => showScreen('intro'), 3200);
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    function stopAudio() {
+      audio.pause();
+      audio.onended = null;
+      state.playing = false;
+      syncPlayButtons();
+    }
+
+    function playAudio(source, onEnded = null) {
+      stopAudio();
+      activeAudioSource = source;
+      activeAudioEnded = onEnded;
+      audio.src = source;
+      audio.currentTime = 0;
+      audio.onended = () => { state.playing = false; syncPlayButtons(); onEnded?.(); };
+      state.playing = true;
+      syncPlayButtons();
+      audio.play().catch(() => {
+        state.playing = false;
+        syncPlayButtons();
+        showToast('点左下角播放按钮继续听');
+      });
+    }
+
+    function toggleAudio() {
+      if (!activeAudioSource) return;
+      if (audio.paused) {
+        state.playing = true;
+        audio.onended = () => { state.playing = false; syncPlayButtons(); activeAudioEnded?.(); };
+        audio.play().catch(() => showToast('声音暂时无法播放'));
+      } else {
+        audio.pause();
+        state.playing = false;
+      }
+      syncPlayButtons();
+    }
+
+    function syncPlayButtons() {
+      document.querySelectorAll('[data-timeline-play]').forEach(button => {
+        button.textContent = state.playing ? 'Ⅱ' : '▶';
+        button.classList.toggle('paused', !state.playing);
+        button.setAttribute('aria-label', state.playing ? '暂停讲解' : '播放讲解');
+      });
+      document.querySelectorAll('[data-lesson-play]').forEach(button => {
+        button.setAttribute('aria-label', state.playing ? '暂停讲解' : '播放讲解');
+        button.innerHTML = state.playing
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l10 7-10 7z"/></svg>';
+      });
+      document.querySelectorAll('[data-player-toggle]').forEach(button => {
+        button.setAttribute('aria-label', state.playing ? '暂停讲解' : '播放讲解');
+        button.innerHTML = state.playing
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l10 7-10 7z"/></svg>';
+      });
+      document.querySelectorAll('[data-screen="intro"] .lesson-controls b, [data-screen="lesson"] .lesson-controls b').forEach(label => {
+        label.textContent = state.transitioning ? '即将进入实验' : `${state.playing ? '自动播放' : '已暂停'} ${state.lessonSegment} / 3`;
+      });
+      document.querySelectorAll('[data-screen="vacuum"] .lesson-controls b').forEach(label => {
+        label.textContent = state.transitioning ? '准备返回琴弦' : `${state.playing ? '自动播放' : '已暂停'} ${state.vacuumSegment} / 3`;
+      });
+    }
+
+    function updatePlayer() {
+      const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
+      const ratio = Math.max(0, Math.min(1, audio.currentTime / duration));
+      document.querySelectorAll('.unified-player').forEach(player => {
+        const visibleKind = player.dataset.playerKind;
+        const activeSegment = visibleKind === state.audioKind ? state.audioSegment : (visibleKind === 'main' ? state.lessonSegment : state.vacuumSegment);
+        player.querySelectorAll('[data-player-segment]').forEach(button => {
+          const segment = Number(button.dataset.playerSegment);
+          const fill = button.querySelector('.player-fill');
+          const width = segment < activeSegment ? 100 : segment === activeSegment ? (state.transitioning ? 100 : ratio * 100) : 0;
+          fill.style.width = `${width}%`;
+          button.classList.toggle('active', segment === activeSegment);
+        });
+        player.querySelector('.player-label').textContent = `第 ${activeSegment} 段`;
+      });
+      const visualRatio = state.transitioning ? 1 : ratio;
+      updatePptReveal(visualRatio);
+      updateLessonAnimation(visualRatio);
+      syncSubtitles(ratio);
+    }
+
+    function updatePptReveal(ratio) {
+      const screen = document.querySelector(`[data-screen="${state.screen}"]`);
+      const nodes = [...(screen?.querySelectorAll('.ppt-reveal') || [])];
+      nodes.forEach(node => node.classList.toggle('is-visible', ratio >= Number(node.dataset.revealAt || 0)));
+    }
+
+    function updateLessonAnimation(ratio) {
+      const active = document.querySelector('.concept-screen.active');
+      if (!active) return;
+      if (state.screen === 'lesson' && state.lessonSegment === 2) {
+        const cycle = ratio * Math.PI * 8;
+        const x = 10 + ratio * 400;
+        active.querySelectorAll('.motion-sample').forEach((sample, index) => {
+          const amplitude = index === 0 ? 25 : 55;
+          const y = 75 - Math.sin(cycle) * amplitude;
+          const dot = sample.querySelector('.scan-dot');
+          const line = sample.querySelector('.scan-line');
+          dot?.setAttribute('cx', String(x));
+          dot?.setAttribute('cy', String(y));
+          line?.setAttribute('x1', String(x));
+          line?.setAttribute('x2', String(x));
+        });
+      }
+      if (state.screen === 'lesson' && state.lessonSegment === 3) {
+        active.querySelectorAll('.concept-arrow').forEach((arrow, index) => {
+          const start = index === 0 ? .4 : .62;
+          arrow.style.setProperty('--arrow-progress', String(Math.max(0, Math.min(1, (ratio - start) / .08))));
+        });
+      }
+      if (state.screen === 'vacuum' && state.vacuumSegment === 2) {
+        const lane = active.querySelector('.air-lane');
+        const relayRatio = Math.max(0, Math.min(1, (ratio - .42) / .3));
+        lane?.querySelectorAll('.air-particle').forEach((particle, index) => {
+          const vertical = lane.clientHeight > lane.clientWidth * 1.15;
+          const available = Math.max(0, (vertical ? lane.clientHeight : lane.clientWidth) - 20);
+          const distance = available * ([.82, .64, .46][index] || .46);
+          particle.style.transform = vertical ? `translate3d(0,${relayRatio * distance}px,0)` : `translate3d(${relayRatio * distance}px,0,0)`;
+        });
+      }
+    }
+
+    function currentSubtitle(ratio) {
+      const key = state.audioKind === 'main' ? `main-${state.audioSegment}` : state.audioKind === 'vacuum' ? `vacuum-${state.audioSegment}` : state.audioKind;
+      const cues = subtitleCues[key] || [];
+      let text = cues[0]?.[1] || '';
+      cues.forEach(([start, cue]) => { if (ratio >= start) text = cue; });
+      return text;
+    }
+
+    function syncSubtitles(forcedRatio = null) {
+      const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
+      const ratio = forcedRatio ?? Math.max(0, Math.min(1, audio.currentTime / duration));
+      document.querySelectorAll('[data-subtitle-toggle]').forEach(control => {
+        control.textContent = `字幕 ${state.subtitles ? '开' : '关'}`;
+        control.classList.toggle('active', state.subtitles);
+        control.setAttribute('aria-pressed', String(state.subtitles));
+      });
+      document.querySelectorAll('.runtime-subtitle').forEach(subtitle => {
+        const screen = subtitle.closest('[data-screen]');
+        subtitle.textContent = currentSubtitle(ratio);
+        subtitle.classList.toggle('visible', state.subtitles && screen?.dataset.screen === state.screen);
+      });
+    }
+
+    function playMainSegment(segment) {
+      state.audioKind = 'main';
+      state.audioSegment = segment;
+      state.lessonSegment = segment;
+      if (segment === 1) {
+        if (state.screen !== 'intro') showScreen('intro');
+        else playAudio(audioPath('narration-main-1'), () => showScreen('lesson'));
+        return;
+      }
+      if (state.screen !== 'lesson') showScreen('lesson');
+      playLessonSegment(segment);
+    }
+
+    function playRequestedSegment(kind, segment, seekRatio = 0) {
+      pendingSeekRatio = seekRatio;
+      if (kind === 'vacuum') {
+        state.vacuumSegment = segment;
+        state.audioKind = 'vacuum';
+        state.audioSegment = segment;
+        if (state.screen !== 'vacuum') showScreen('vacuum');
+        else playVacuumSequence(segment);
+      } else {
+        playMainSegment(segment);
+      }
+    }
+
+    function showViewport(name) {
+      const phone = name === 'phone';
+      document.body.classList.toggle('phone-review', phone);
+      document.body.classList.toggle('phone-viewport-forced', requestedViewport === 'phone');
+      viewportTabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.viewport === name)));
+      if (viewportCaption) viewportCaption.textContent = phone ? '基准画布：390 × 844 · 手机竖屏' : '基准画布：1180 × 820 · 平板横屏';
+    }
+
+    function showScreen(name, updateUrl = true) {
+      clearTimeout(loadingTimer);
+      cancelAnimationFrame(loadingFrame);
+      closeTutorDrawer(false);
+      stopAudio();
+      state.screen = name;
+      reviewTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.target === name)));
+      screens.forEach(screen => {
+        const active = screen.dataset.screen === name;
+        screen.classList.toggle('active', active);
+        screen.hidden = !active;
+      });
+      if (updateUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set('screen', name);
+        history.replaceState({}, '', url);
+      }
+      prepareScreen(name);
+      renderTopicTabs();
+      syncInteractiveSemantics();
+    }
+
+    function prepareScreen(name) {
+      if (name === 'confirm') {
+        const title = document.querySelector('[data-screen="confirm"] .static-title');
+        title.textContent = `“${state.question || fixtureQuestion}”`;
+        playAudio(audioPath('narration-confirm-text'));
+      }
+      if (name === 'calibration') playAudio(audioPath('narration-calibration'));
+      if (name === 'prediction') playAudio(audioPath('narration-prediction'));
+      if (name === 'loading') startLoading();
+      if (name === 'intro') {
+        state.audioKind = 'main';
+        state.audioSegment = 1;
+        state.lessonSegment = 1;
+        playAudio(audioPath('narration-main-1'), () => showScreen('lesson'));
+      }
+      if (name === 'lesson' && state.lessonSegment < 2) playLessonSegment(2);
+      if (name === 'experiment') { state.topicStage = Math.max(1, state.topicStage); resetExperimentView(); }
+      if (name === 'vacuum') {
+        state.topicStage = 2;
+        playVacuumSequence(state.vacuumSegment || 1);
+      }
+      if (name === 'fork') renderMigration('fork');
+      if (name === 'xylophone') renderMigration('xylophone');
+      if (name === 'feedback') renderFeedback();
+      if (name === 'result') renderResult();
+      syncPlayButtons();
+    }
+
+    function playLessonSegment(segment) {
+      state.transitioning = false;
+      state.audioKind = 'main';
+      state.audioSegment = segment;
+      state.lessonSegment = segment;
+      const screen = document.querySelector('[data-screen="lesson"]');
+      const title = screen.querySelector('.lesson-heading h1');
+      const lead = screen.querySelector('.lesson-heading p:last-child');
+      const tag = screen.querySelector('.slide-tag');
+      screen.querySelector('.lesson-canvas')?.classList.remove('transition-freeze');
+      if (segment === 2) {
+        title.textContent = '看看真实现象';
+        lead.textContent = '摆得更开，不等于来回得更快。';
+        tag.textContent = '自动播放 2 / 3';
+        renderLessonVisual(2);
+      } else {
+        title.textContent = '给发现起名字';
+        lead.textContent = '振幅管响度，频率管音调。';
+        tag.textContent = '自动播放 3 / 3';
+        renderLessonVisual(3);
+      }
+      updatePlayer();
+      playAudio(audioPath(`narration-main-${segment}`), () => {
+        if (segment === 2) playLessonSegment(3);
+        else {
+          state.topicStage = Math.max(1, state.topicStage);
+          renderTopicTabs();
+          playTransitionNarration('practice', audioPath('narration-practice'), '即将进入实验', () => showScreen('experiment'));
+        }
+      });
+    }
+
+    function playVacuumSequence(segment) {
+      state.transitioning = false;
+      state.audioKind = 'vacuum';
+      state.audioSegment = segment;
+      state.vacuumSegment = segment;
+      const screen = document.querySelector('[data-screen="vacuum"]');
+      const title = screen?.querySelector('.lesson-heading h1');
+      const lead = screen?.querySelector('.lesson-heading p:last-child');
+      const tag = screen?.querySelector('.slide-tag');
+      const headings = {
+        1: ['先把问题拆成两步', '先看琴弦会不会振动，再看振动能不能到耳朵。'],
+        2: ['空气怎样把声音送过来', '琴弦推动空气，振动像接力一样传到耳朵。'],
+        3: ['拿走空气，会发生什么', '琴弦仍在振动，但中间没有空气继续接力。']
+      };
+      if (title) title.textContent = headings[segment][0];
+      if (lead) lead.textContent = headings[segment][1];
+      if (tag) tag.textContent = `关联讲解 ${segment} / 3`;
+      renderVacuumVisual(segment);
+      document.querySelector('[data-screen="vacuum"] .lesson-canvas')?.classList.remove('transition-freeze');
+      updatePlayer();
+      playAudio(audioPath(`narration-vacuum-${segment}`), () => {
+        if (segment < 3) playVacuumSequence(segment + 1);
+        else playTransitionNarration('return-main', audioPath('narration-return-main'), '准备返回琴弦', () => {
+          const segment = Math.max(1, Math.min(3, state.interruptedMainSegment || 1));
+          playMainSegment(segment);
+        });
+      });
+    }
+
+    function playTransitionNarration(kind, source, status, onEnded) {
+      state.transitioning = true;
+      state.audioKind = kind;
+      const screen = document.querySelector(`[data-screen="${state.screen}"]`);
+      screen?.querySelector('.lesson-canvas')?.classList.add('transition-freeze');
+      const statusLabel = screen?.querySelector('.lesson-controls b');
+      if (statusLabel) statusLabel.textContent = status;
+      updatePlayer();
+      playAudio(source, () => {
+        state.transitioning = false;
+        onEnded?.();
+      });
+    }
+
+    function updateCalibration() {
+      const screen = document.querySelector('[data-screen="calibration"]');
+      const cards = [...screen.querySelectorAll('.cal-card')];
+      const continueButton = screen.querySelector('.prediction-footer .cta');
+      if (state.calibration >= 1) {
+        cards[0].classList.add('played');
+        cards[0].querySelector('.cta').textContent = '▶ 再听一次';
+        cards[1].classList.remove('locked');
+        cards[1].querySelector('.cta').classList.remove('disabled');
+        cards[1].querySelector('.cta').textContent = state.calibration >= 2 ? '▶ 再听一次' : '▶ 播放示例';
+      }
+      if (state.calibration >= 2) {
+        cards[1].classList.add('played');
+        continueButton.classList.remove('disabled');
+      }
+    }
+
+    function updatePrediction() {
+      const screen = document.querySelector('[data-screen="prediction"]');
+      screen.querySelectorAll('.answer-card').forEach((card, index) => card.classList.toggle('selected', index === state.prediction));
+      screen.querySelector('.prediction-footer .cta').classList.toggle('disabled', state.prediction === null);
+    }
+
+    function resetExperimentView() {
+      const screen = document.querySelector('[data-screen="experiment"]');
+      if (state.experimentStep > 0) return updateExperimentView(state.experimentStep === 1 ? 'light' : 'strong');
+      screen.querySelector('.stage-label span').textContent = '琴弦静止，尚未记录力度';
+      screen.querySelectorAll('.metric strong').forEach(value => value.textContent = '等待观察');
+    }
+
+    function updateExperimentView(force) {
+      const screen = document.querySelector('[data-screen="experiment"]');
+      const labels = screen.querySelectorAll('.metric strong');
+      screen.querySelector('.stage-label span').textContent = force === 'strong' ? '当前力度：用力拨' : '当前力度：轻轻拨';
+      labels[0].textContent = force === 'strong' ? '变大' : '较小';
+      labels[1].textContent = force === 'strong' ? '更响' : '较轻';
+      labels[2].textContent = '基本不变';
+      labels[3].textContent = '基本不变';
+      const wave = screen.querySelector('.response-wave path');
+      if (wave) wave.setAttribute('d', force === 'strong' ? 'M0 45 C20 5 40 5 60 45 S100 85 120 45 S160 5 180 45 S220 85 240 45 S280 5 320 45 S360 85 400 45 S440 5 480 45 S520 85 560 45 S600 5 680 45' : 'M0 45 C20 28 40 28 60 45 S100 62 120 45 S160 28 180 45 S220 62 240 45 S280 28 320 45 S360 62 400 45 S440 28 480 45 S520 62 560 45 S600 28 680 45');
+    }
+
+    function addFallbackButtons() {
+      const footer = document.querySelector('[data-screen="experiment"] .prediction-footer');
+      if (footer.querySelector('.fallback-actions')) return;
+      const group = document.createElement('div');
+      group.className = 'fallback-actions';
+      group.innerHTML = '<button type="button" class="cta" data-fallback-force="light">轻拨一次</button><button type="button" class="cta" data-fallback-force="strong">用力拨一次</button>';
+      footer.prepend(group);
+    }
+
+    function renderMigration(stage) {
+      state.migrationStage = stage;
+      state.migration = {};
+      const screen = document.querySelector(`[data-screen="${stage === 'fork' ? 'fork' : 'xylophone'}"]`);
+      const list = screen.querySelector('.static-choice-list');
+      if (stage === 'fork') {
+        list.innerHTML = '<section class="migration-question"><h2 class="migration-question-title"><b>1</b><span>音调怎样变化</span></h2><div class="migration-options compact" role="radiogroup" aria-label="音调怎样变化"><button type="button" class="static-choice" data-migration="pitch:higher" role="radio" aria-checked="false"><i>✓</i><span><strong>会更高</strong></span></button><button type="button" class="static-choice" data-migration="pitch:same" role="radio" aria-checked="false"><i>✓</i><span><strong>基本不变</strong></span></button></div></section><section class="migration-question"><h2 class="migration-question-title"><b>2</b><span>为什么</span></h2><div class="migration-options" role="radiogroup" aria-label="为什么"><button type="button" class="static-choice" data-migration="reason:amplitude" role="radio" aria-checked="false"><i>✓</i><span><strong>振幅变大，频率基本不变</strong><small>更用力主要让振动幅度变大，每秒振动次数基本不变。</small></span></button><button type="button" class="static-choice" data-migration="reason:frequency" role="radio" aria-checked="false"><i>✓</i><span><strong>频率变高，振幅也变大</strong><small>更用力让每秒振动次数变多，所以音调变高。</small></span></button></div></section>';
+      } else {
+        list.innerHTML = '<section class="migration-question"><h2 class="migration-question-title"><b>1</b><span>响度怎样变化</span></h2><div class="migration-options compact" role="radiogroup" aria-label="响度怎样变化"><button type="button" class="static-choice" data-migration="loudness:louder" role="radio" aria-checked="false"><i>✓</i><span><strong>声音会更响</strong></span></button><button type="button" class="static-choice" data-migration="loudness:same" role="radio" aria-checked="false"><i>✓</i><span><strong>响度基本不变</strong></span></button></div></section><section class="migration-question"><h2 class="migration-question-title"><b>2</b><span>音调怎样变化</span></h2><div class="migration-options compact" role="radiogroup" aria-label="音调怎样变化"><button type="button" class="static-choice" data-migration="pitch:higher" role="radio" aria-checked="false"><i>✓</i><span><strong>音调会更高</strong></span></button><button type="button" class="static-choice" data-migration="pitch:same" role="radio" aria-checked="false"><i>✓</i><span><strong>音调基本不变</strong></span></button></div></section><section class="migration-question"><h2 class="migration-question-title"><b>3</b><span>为什么</span></h2><div class="migration-options" role="radiogroup" aria-label="为什么"><button type="button" class="static-choice" data-migration="reason:amplitude" role="radio" aria-checked="false"><i>✓</i><span><strong>振幅变大，频率基本不变</strong></span></button><button type="button" class="static-choice" data-migration="reason:frequency" role="radio" aria-checked="false"><i>✓</i><span><strong>频率变高，所以音调更高</strong></span></button></div></section>';
+      }
+      screen.querySelector('.prediction-footer .cta').classList.add('disabled');
+      syncInteractiveSemantics(screen);
+    }
+
+    function updateMigrationChoice(element) {
+      const [type, value] = element.dataset.migration.split(':');
+      state.migration[type] = value;
+      const screen = element.closest('.concept-screen');
+      screen.querySelectorAll(`[data-migration^="${type}:"]`).forEach(choice => {
+        const selected = choice === element;
+        choice.classList.toggle('selected', selected);
+        choice.setAttribute('aria-checked', String(selected));
+      });
+      const ready = state.migration.pitch && state.migration.reason && (state.migrationStage === 'fork' || state.migration.loudness);
+      screen.querySelector('.prediction-footer .cta').classList.toggle('disabled', !ready);
+      syncInteractiveSemantics(screen);
+    }
+
+    function submitMigration() {
+      const correct = state.migration.pitch === 'same' && state.migration.reason === 'amplitude' && (state.migrationStage === 'fork' || state.migration.loudness === 'louder');
+      if (state.migrationStage === 'fork' && !correct) {
+        state.transferResult = 'prompted-pass';
+        showScreen('xylophone');
+      } else {
+        state.transferResult = correct ? (state.migrationStage === 'fork' ? 'first-pass' : 'prompted-pass') : 'incomplete';
+        showScreen('feedback');
+      }
+    }
+
+    function renderFeedback() {
+      state.feedback = null;
+      state.feedbackReasons = [];
+      const screen = document.querySelector('[data-screen="feedback"]');
+      screen.querySelectorAll('.feedback-card').forEach(card => card.classList.remove('selected'));
+      screen.querySelector('.button-row .cta.primary').classList.add('disabled');
+      screen.querySelector('.feedback-reasons')?.remove();
+      syncInteractiveSemantics(screen);
+    }
+
+    function showFeedbackReasons() {
+      const grid = document.querySelector('[data-screen="feedback"] .feedback-grid');
+      if (grid.nextElementSibling?.classList.contains('feedback-reasons')) return;
+      const reasons = document.createElement('div');
+      reasons.className = 'feedback-reasons';
+      reasons.innerHTML = '<strong>还可以告诉我原因（可多选）</strong><span class="reason-chip" data-reason="fast">讲得太快</span><span class="reason-chip" data-reason="animation">动画没看懂</span><span class="reason-chip" data-reason="different">想换一种讲法</span>';
+      grid.insertAdjacentElement('afterend', reasons);
+      syncInteractiveSemantics(reasons);
+    }
+
+    function renderResult() {
+      const screen = document.querySelector('[data-screen="result"]');
+      const passed = state.transferResult === 'first-pass' || state.transferResult === 'prompted-pass';
+      screen.querySelector('.result-hero h1').textContent = passed ? '自己弄懂了' : '还有一点需要帮助';
+      screen.querySelector('.result-hero p').textContent = `完成方式：${state.transferResult === 'first-pass' ? '首次通过' : state.transferResult === 'prompted-pass' ? '提示后通过' : '尚未完整通过'}`;
+    }
+
+    function openTutorDrawer(screenName) {
+      if (!['intro', 'lesson', 'experiment', 'vacuum'].includes(screenName)) return;
+      const screen = document.querySelector(`[data-screen="${screenName}"]`);
+      const panel = screen?.querySelector('.tutor-panel');
+      if (!panel) return;
+      if (state.drawerScreen && state.drawerScreen !== screenName) closeTutorDrawer(false);
+      state.drawerScreen = screenName;
+      panel.classList.add('drawer-open');
+      screen.classList.add('tutor-drawer-active');
+    }
+
+    function closeTutorDrawer(resume = true) {
+      const screenName = state.drawerScreen || state.recordingScreen;
+      if (!screenName) return;
+      stopInlineRecording(resume);
+      document.querySelector(`[data-screen="${screenName}"] .tutor-panel`)?.classList.remove('drawer-open', 'recording-panel', 'recording-active');
+      document.querySelector(`[data-screen="${screenName}"]`)?.classList.remove('tutor-drawer-active');
+      state.drawerScreen = null;
+    }
+
+    function startInlineRecording(screenName) {
+      if (!['intro', 'lesson', 'experiment'].includes(screenName) || state.recordingScreen === screenName) return;
+      openTutorDrawer(screenName);
+      const screen = document.querySelector(`[data-screen="${screenName}"]`);
+      const panel = screen?.querySelector('.tutor-panel');
+      const thread = panel?.querySelector('.thread');
+      if (!panel || !thread) return;
+      state.returnScreen = screenName;
+      state.recordingScreen = screenName;
+      state.recordingWasPlaying = !audio.paused;
+      audio.pause();
+      state.playing = false;
+      syncPlayButtons();
+      panel.classList.add('recording-panel', 'recording-active');
+      const question = screen.querySelector('.followup-box > span')?.textContent.trim() || '如果没有空气呢？';
+      const recording = document.createElement('div');
+      recording.className = 'recording-inline';
+      recording.innerHTML = `<div class="voice-wave"><i></i><i></i><i></i><i></i><i></i></div><strong>正在听你说…</strong><span>${question.replace(/[<>]/g, '')}</span><button type="button" class="record-cancel" data-record-cancel aria-label="取消语音录入">×</button><button type="button" class="record-done" data-record-done aria-label="确认并提交语音录入">✓</button>`;
+      thread.append(recording);
+    }
+
+    function stopInlineRecording(resume = false) {
+      const screenName = state.recordingScreen;
+      if (!screenName) return;
+      const panel = document.querySelector(`[data-screen="${screenName}"] .tutor-panel`);
+      panel?.querySelector('.recording-inline')?.remove();
+      panel?.classList.remove('recording-active', 'recording-panel');
+      const shouldResume = resume && state.recordingWasPlaying && activeAudioSource;
+      state.recordingScreen = null;
+      state.recordingWasPlaying = false;
+      if (shouldResume) toggleAudio();
+    }
+
+    function persistFollowupConversation(question) {
+      const normalized = question.trim() || '如果没有空气呢？';
+      const existingIndex = state.followupHistory.findIndex(item => item.question === normalized);
+      const historyIndex = existingIndex >= 0 ? existingIndex : state.followupHistory.push({
+        question: normalized,
+        answer: '琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。'
+      }) - 1;
+      const item = state.followupHistory[historyIndex];
+      ['intro', 'lesson', 'experiment'].forEach(screenName => {
+        const thread = document.querySelector(`[data-screen="${screenName}"] .tutor-panel .thread`);
+        if (!thread || thread.querySelector(`[data-history-index="${historyIndex}"]`)) return;
+        const pair = document.createElement('div');
+        pair.className = 'conversation-pair';
+        pair.innerHTML = `<div class="message user-message" data-history-index="${historyIndex}"><small>你</small><p>${item.question.replace(/[<>]/g, '')}</p></div><div class="message emphasis" data-history-index="${historyIndex}"><small>小知老师</small><p>${item.answer}</p></div>`;
+        thread.append(...pair.children);
+      });
+      const vacuumThread = document.querySelector('[data-screen="vacuum"] .tutor-panel .thread');
+      const vacuumQuestion = vacuumThread?.querySelector('.message.user-message');
+      const vacuumAnswer = vacuumThread?.querySelector('.message.emphasis');
+      if (vacuumQuestion && vacuumAnswer && historyIndex === 0) {
+        vacuumQuestion.dataset.historyIndex = '0';
+        vacuumAnswer.dataset.historyIndex = '0';
+        vacuumQuestion.querySelector('p').textContent = item.question;
+        vacuumAnswer.querySelector('p').textContent = item.answer;
+      } else if (vacuumThread && !vacuumThread.querySelector(`[data-history-index="${historyIndex}"]`)) {
+        vacuumThread.insertAdjacentHTML('beforeend', `<div class="message user-message" data-history-index="${historyIndex}"><small>你</small><p>${item.question.replace(/[<>]/g, '')}</p></div><div class="message emphasis" data-history-index="${historyIndex}"><small>小知老师</small><p>${item.answer}</p></div>`);
+      }
+    }
+
+    function submitFollowup(fromScreen = state.screen) {
+      state.returnScreen = ['intro', 'lesson', 'experiment'].includes(fromScreen) ? fromScreen : state.returnScreen;
+      state.interruptedScreen = fromScreen;
+      state.interruptedMainSegment = fromScreen === 'intro' ? 1 : Math.max(2, state.lessonSegment || 2);
+      const screen = document.querySelector(`[data-screen="${fromScreen}"]`);
+      const question = screen?.querySelector('.followup-box > span')?.textContent.trim() || '如果没有空气呢？';
+      persistFollowupConversation(question);
+      closeTutorDrawer(false);
+      state.topicStage = 2;
+      renderTopicTabs();
+      showToast('问题已发送');
+      setTimeout(() => {
+        state.vacuumSegment = 1;
+        showScreen('vacuum');
+      }, 420);
+    }
+
+    function openTopic(label) {
+      if (label === '实验' && state.topicStage >= 1) return showScreen('experiment');
+      if (label === '真空中的声音' && state.topicStage >= 2) {
+        state.vacuumSegment = 1;
+        return showScreen('vacuum');
+      }
+      if (label === '琴弦振动') {
+        state.lessonSegment = Math.max(2, state.lessonSegment);
+        return showScreen('lesson');
+      }
+    }
+
+    function openExitDialog() {
+      exitWasPlaying = state.playing;
+      clearTimeout(loadingTimer);
+      stopAudio();
+      exitDialog.hidden = false;
+      exitDialog.querySelector('[data-exit-cancel]').focus();
+    }
+    function closeExitDialog() { exitDialog.hidden = true; }
+    function cancelExitDialog() {
+      closeExitDialog();
+      if (state.screen === 'loading') startLoading();
+      else if (exitWasPlaying && activeAudioSource) toggleAudio();
+      exitWasPlaying = false;
+    }
+
+    document.addEventListener('click', event => {
+      const active = state.screen;
+      if (event.target.closest('[data-exit-cancel]')) { cancelExitDialog(); return; }
+      if (event.target.closest('[data-exit-confirm]')) { closeExitDialog(); showScreen('entry'); return; }
+      if (event.target.closest('[data-drawer-close]')) { closeTutorDrawer(true); return; }
+      const segmentButton = event.target.closest('[data-player-segment]');
+      if (segmentButton) {
+        const player = segmentButton.closest('.unified-player');
+        const rect = segmentButton.getBoundingClientRect();
+        const seekRatio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+        playRequestedSegment(player.dataset.playerKind, Number(segmentButton.dataset.playerSegment), seekRatio);
+        return;
+      }
+      if (event.target.closest('[data-player-toggle]')) { toggleAudio(); return; }
+      const subtitleToggle = event.target.closest('[data-subtitle-toggle]');
+      if (subtitleToggle) { state.subtitles = !state.subtitles; syncSubtitles(); return; }
+      const topic = event.target.closest('.topic-tabs span');
+      if (topic) { openTopic(topic.textContent.trim()); return; }
+      if (event.target.closest('[data-timeline-play], [data-lesson-play]')) { toggleAudio(); return; }
+      const back = event.target.closest('.static-appbar .back, .lesson-back, [data-demo-back]');
+      if (back) {
+        event.preventDefault();
+        if (confirmBackScreens.has(active)) openExitDialog();
+        else showScreen(({ ask: 'entry', confirm: 'ask', calibration: 'confirm', prediction: 'calibration' })[active] || 'entry');
+        return;
+      }
+      if (active === 'entry' && event.target.closest('.entry-buttons .cta')) return showScreen('ask');
+      if (active === 'ask') {
+        if (event.target.closest('.composer-send')) { state.question = document.querySelector('#demo-question').value.trim() || fixtureQuestion; return showScreen('confirm'); }
+        if (event.target.closest('.icon-button')) { document.querySelector('#demo-question').value = fixtureQuestion; showToast('已放入本次体验的问题'); return; }
+      }
+      if (active === 'confirm') {
+        const buttons = [...document.querySelectorAll('[data-screen="confirm"] .cta')];
+        if (event.target.closest('.cta') === buttons[0]) return showScreen('ask');
+        if (event.target.closest('.cta') === buttons[1]) return showScreen('calibration');
+      }
+      if (active === 'calibration') {
+        const cards = [...document.querySelectorAll('[data-screen="calibration"] .cal-card')];
+        const card = event.target.closest('.cal-card');
+        if (card === cards[0]) { state.calibration = Math.max(1, state.calibration); playAudio(audioPath('calibration-loudness')); updateCalibration(); return; }
+        if (card === cards[1] && state.calibration >= 1) { state.calibration = 2; playAudio(audioPath('calibration-pitch')); updateCalibration(); return; }
+        if (event.target.closest('.prediction-footer .cta') && state.calibration >= 2) return showScreen('prediction');
+      }
+      if (active === 'prediction') {
+        const card = event.target.closest('.answer-card');
+        if (card) { state.prediction = [...card.parentElement.children].indexOf(card); updatePrediction(); return; }
+        if (event.target.closest('.prediction-footer .cta') && state.prediction !== null) return showScreen('loading');
+      }
+      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.send-action')) return submitFollowup(active);
+      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.voice-action')) return startInlineRecording(active);
+      if (['intro', 'lesson', 'experiment', 'vacuum'].includes(active) && document.body.classList.contains('phone-review') && event.target.closest('.tutor-panel:not(.drawer-open)')) {
+        if (suppressTutorClick) { suppressTutorClick = false; return; }
+        return openTutorDrawer(active);
+      }
+      if (event.target.closest('[data-record-cancel]')) { stopInlineRecording(true); return; }
+      if (event.target.closest('[data-record-done]')) return submitFollowup(state.recordingScreen || active);
+      if (active === 'experiment' && event.target.closest('.prediction-footer > .cta')) return showScreen('fork');
+      const fallback = event.target.closest('[data-fallback-force]');
+      if (fallback) {
+        const force = fallback.dataset.fallbackForce;
+        if (force === 'strong' && state.experimentStep < 1) return showToast('先轻拨一次，再用力拨');
+        state.experimentStep = force === 'light' ? Math.max(1, state.experimentStep) : 2;
+        updateExperimentView(force);
+        playAudio(audioPath(force === 'light' ? 'string-light' : 'string-strong'));
+        return;
+      }
+      const migration = event.target.closest('[data-migration]');
+      if (migration) { updateMigrationChoice(migration); return; }
+      if ((active === 'fork' || active === 'xylophone') && event.target.closest('.prediction-footer .cta:not(.disabled)')) return submitMigration();
+      if (active === 'feedback') {
+        const card = event.target.closest('.feedback-card');
+        if (card) {
+          state.feedback = [...card.parentElement.children].indexOf(card);
+          card.parentElement.querySelectorAll('.feedback-card').forEach(item => item.classList.toggle('selected', item === card));
+          document.querySelector('[data-screen="feedback"] .button-row .cta.primary').classList.remove('disabled');
+          if (state.feedback > 0) showFeedbackReasons(); else document.querySelector('[data-screen="feedback"] .feedback-reasons')?.remove();
+          return;
+        }
+        const reason = event.target.closest('[data-reason]');
+        if (reason) {
+          reason.classList.toggle('selected');
+          state.feedbackReasons = [...document.querySelectorAll('[data-reason].selected')].map(item => item.dataset.reason);
+          return;
+        }
+        const action = event.target.closest('.button-row .cta');
+        if (action && (!action.classList.contains('primary') || state.feedback !== null)) return showScreen('result');
+      }
+      if (active === 'result') {
+        const buttons = [...document.querySelectorAll('[data-screen="result"] .entry-buttons .cta')];
+        if (event.target.closest('.cta') === buttons[0]) {
+          const survey = window.SOUND_DEMO_CONFIG?.SURVEY_URL?.trim();
+          if (survey) location.assign(survey); else showToast('问卷链接尚未开放');
+          return;
+        }
+        if (event.target.closest('.cta') === buttons[1]) { Object.assign(state, { question: fixtureQuestion, calibration: 0, prediction: null, lessonSegment: 1, experimentStep: 0, dragFailures: 0, migration: {}, transferResult: null, feedback: null, feedbackReasons: [], followupHistory: [] }); return showScreen('entry'); }
+      }
+    });
+
+    document.addEventListener('pointerdown', event => {
+      const tutorHead = event.target.closest('.tutor-panel:not(.drawer-open)');
+      if (tutorHead && document.body.classList.contains('phone-review') && ['intro', 'lesson', 'experiment'].includes(state.screen)) {
+        const screenName = state.screen;
+        tutorPress = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, long: false, timer: setTimeout(() => {
+          if (!tutorPress || tutorPress.pointerId !== event.pointerId) return;
+          tutorPress.long = true;
+          suppressTutorClick = true;
+          startInlineRecording(screenName);
+        }, 500) };
+        return;
+      }
+      if (state.screen !== 'experiment' || !event.target.closest('.pluck-string')) return;
+      dragStartY = event.clientY;
+      event.target.closest('.pluck-string').classList.add('dragging');
+    });
+    document.addEventListener('pointermove', event => {
+      if (tutorPress?.pointerId === event.pointerId && Math.hypot(event.clientX - tutorPress.x, event.clientY - tutorPress.y) > 8) {
+        clearTimeout(tutorPress.timer);
+        tutorPress = null;
+      }
+      if (dragStartY === null) return;
+      const svg = document.querySelector('[data-screen="experiment"] .pluck-string');
+      const path = svg?.querySelector('path');
+      if (!path) return;
+      const delta = Math.max(-55, Math.min(55, event.clientY - dragStartY));
+      path.setAttribute('d', `M30 95 Q330 ${95 + delta} 730 95`);
+      svg.querySelector('circle')?.setAttribute('cy', String(95 + delta));
+    });
+    document.addEventListener('pointerup', event => {
+      if (tutorPress?.pointerId === event.pointerId) {
+        clearTimeout(tutorPress.timer);
+        tutorPress = null;
+        return;
+      }
+      if (dragStartY === null) return;
+      const distance = Math.abs(event.clientY - dragStartY);
+      dragStartY = null;
+      document.querySelector('[data-screen="experiment"] .pluck-string')?.classList.remove('dragging');
+      if (distance < 8) {
+        state.dragFailures += 1;
+        if (state.dragFailures >= 2) addFallbackButtons();
+        showToast(state.dragFailures >= 2 ? '可以使用下方轻拨按钮' : '再拨远一点');
+        return;
+      }
+      const force = distance > 30 ? 'strong' : 'light';
+      if (force === 'strong' && state.experimentStep === 0) { state.dragFailures += 1; showToast('先轻轻拨一次'); return; }
+      state.experimentStep = force === 'light' ? Math.max(1, state.experimentStep) : 2;
+      updateExperimentView(force);
+      playAudio(audioPath(force === 'light' ? 'string-light' : 'string-strong'));
+    });
+    document.addEventListener('pointercancel', event => {
+      if (tutorPress?.pointerId !== event.pointerId) return;
+      clearTimeout(tutorPress.timer);
+      tutorPress = null;
+    });
+    document.addEventListener('contextmenu', event => {
+      if (document.body.classList.contains('phone-review') && event.target.closest('.tutor-panel:not(.drawer-open)')) event.preventDefault();
+    });
+    document.addEventListener('click', () => queueMicrotask(() => syncInteractiveSemantics()));
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (pendingSeekRatio !== null && Number.isFinite(audio.duration)) {
+        audio.currentTime = Math.max(0, Math.min(audio.duration - .05, audio.duration * pendingSeekRatio));
+        pendingSeekRatio = null;
+      }
+      updatePlayer();
+    });
+    audio.addEventListener('timeupdate', updatePlayer);
+    audio.addEventListener('play', () => { state.playing = true; syncPlayButtons(); });
+    audio.addEventListener('pause', () => { if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !exitDialog.hidden) closeExitDialog();
+      if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-subtitle-toggle]')) {
+        event.preventDefault();
+        state.subtitles = !state.subtitles;
+        syncSubtitles();
+        return;
+      }
+      const control = event.target.closest(syntheticControlSelector);
+      if ((event.key === 'Enter' || event.key === ' ') && control && !control.matches('button, input, textarea, select, a[href]') && control.getAttribute('aria-disabled') !== 'true') {
+        event.preventDefault();
+        control.click();
+      }
+    });
+    const rawQuery = location.search.slice(1);
+    const normalizedQuery = rawQuery.replace(/\?/g, '&');
+    const params = new URLSearchParams(normalizedQuery);
+    if (normalizedQuery !== rawQuery) {
+      const normalizedUrl = new URL(location.href);
+      normalizedUrl.search = normalizedQuery;
+      history.replaceState({}, '', normalizedUrl);
+    }
+    const requestedViewport = params.get('viewport');
+    const responsiveViewport = () => requestedViewport === 'phone' || requestedViewport === 'tablet' ? requestedViewport : innerWidth < 700 || innerHeight > innerWidth ? 'phone' : 'tablet';
+    window.addEventListener('resize', () => showViewport(responsiveViewport()));
+    const validScreens = ['entry','ask','confirm','calibration','prediction','loading','intro','lesson','experiment','vacuum','fork','xylophone','feedback','result'];
+    initRuntimeComponents();
+    showViewport(responsiveViewport());
+    const requestedScreen = params.get('screen') === 'followup' ? 'experiment' : params.get('screen');
+    showScreen(validScreens.includes(requestedScreen) ? requestedScreen : 'entry', params.get('screen') === 'followup');
+  </script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # 小学互动视觉家教技术可行性验证与切片准备
 
+> **文档状态：已被 [技术验证 v2](2026-07-22-primary-visual-tutor-technical-validation-v2.md) 替代，仅保留为历史记录。**
+
 > 版本：v1.0  
 > 日期：2026-07-17  
 > 对应 PRD：[小学互动视觉家教 PRD](../product/2026-07-17-primary-visual-tutor-prd.md)  

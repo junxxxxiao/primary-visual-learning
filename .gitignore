@@ -14,6 +14,7 @@ tmp/
 .env
 .env.*
 !.env.example
+.venv-tts/
 *.pem
 *.key
 
@@ -32,3 +33,7 @@ spikes/**/results/tmp/
 
 # Generated design exports; source links and reviewed assets remain tracked
 design/high-fidelity/exports/
+
+# Local narration review candidates; only promoted runtime WAV files are published
+prototype/assets/audio/*-candidate-*.wav
+prototype/assets/audio/*-qwen-standard-*.wav

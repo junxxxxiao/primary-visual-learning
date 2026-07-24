@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小知 · 视觉方向板 A</title>
+  <style>
+    :root {
+      --chalk: #f2f3ef;
+      --paper: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #686962;
+      --line: #d9dbd3;
+      --lime: #e8ef3e;
+      --lime-soft: #f5f7b6;
+      --sky: #83cdf7;
+      --sky-soft: #dff3ff;
+      --coral: #ff725f;
+      --violet: #bca9ff;
+      --green: #56c596;
+      --radius-card: 32px;
+      --radius-control: 999px;
+      --shadow: 0 22px 55px rgba(10, 10, 10, .09);
+      --font: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: #dfe1db;
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button { font: inherit; }
+    .board {
+      width: min(1440px, 100%);
+      min-height: 1100px;
+      margin: 0 auto;
+      padding: 44px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 83% 12%, rgba(232, 239, 62, .5), transparent 21%),
+        var(--chalk);
+    }
+
+    .topbar {
+      min-height: 70px;
+      padding: 10px 14px 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border: 1px solid rgba(10, 10, 10, .08);
+      border-radius: var(--radius-control);
+      background: rgba(255, 255, 255, .82);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand, .brand-mark, .top-actions, .badge, .button-row,
+    .swatches, .type-tags, .lesson-top, .lesson-footer, .wave-labels {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand { gap: 12px; font-weight: 900; font-size: 20px; letter-spacing: -.03em; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      justify-content: center;
+      border-radius: 15px 15px 15px 5px;
+      background: var(--lime);
+      transform: rotate(-4deg);
+      box-shadow: inset 0 -3px 0 rgba(10, 10, 10, .08);
+    }
+    .brand-mark span { transform: rotate(4deg); font-weight: 950; }
+
+    .top-actions { gap: 10px; }
+    .tiny-note { color: var(--muted); font-size: 13px; font-weight: 650; }
+    .pill {
+      min-height: 46px;
+      padding: 0 22px;
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-control);
+      background: transparent;
+      color: var(--ink);
+      font-weight: 750;
+    }
+    .pill.dark { background: var(--ink); color: white; }
+    .pill.lime { border-color: var(--lime); background: var(--lime); }
+    .pill.soft { border-color: transparent; background: var(--sky-soft); }
+
+    .hero {
+      padding: 58px 12px 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(310px, .65fr);
+      gap: 44px;
+      align-items: end;
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 850px;
+      margin-bottom: 22px;
+      font-size: clamp(52px, 6vw, 90px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 950;
+    }
+    h1 .highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+    }
+    h1 .highlight::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -4px;
+      right: -8px;
+      bottom: .04em;
+      height: .34em;
+      border-radius: 999px;
+      background: var(--lime);
+      transform: rotate(-2deg);
+    }
+    .hero-copy {
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      font-weight: 580;
+    }
+    .button-row { flex-wrap: wrap; gap: 12px; }
+
+    .hero-sticker {
+      min-height: 270px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .orbit {
+      width: 250px;
+      height: 250px;
+      position: relative;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--sky);
+      box-shadow: 12px 14px 0 var(--ink);
+      transform: rotate(5deg);
+    }
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+    }
+    .orbit::before {
+      width: 94px;
+      height: 94px;
+      left: -28px;
+      top: 18px;
+      border-radius: 28px 28px 8px 28px;
+      background: var(--coral);
+      transform: rotate(-12deg);
+    }
+    .orbit::after {
+      width: 72px;
+      height: 72px;
+      right: -12px;
+      bottom: -15px;
+      border-radius: 50% 50% 12px 50%;
+      background: var(--violet);
+    }
+    .string-icon {
+      width: 160px;
+      height: 106px;
+      position: absolute;
+      left: 45px;
+      top: 70px;
+      border: 5px solid var(--ink);
+      border-top: 0;
+      border-bottom: 0;
+    }
+    .string-icon::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      transform: translateY(-50%);
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='24' viewBox='0 0 160 24'%3E%3Cpath d='M0 12 C20 -3 40 27 60 12 S100 -3 120 12 S145 27 160 12' fill='none' stroke='%230a0a0a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    .sticker-label {
+      position: absolute;
+      right: 2px;
+      top: 3px;
+      padding: 10px 16px;
+      border: 2px solid var(--ink);
+      border-radius: 18px 18px 18px 5px;
+      background: var(--lime);
+      font-weight: 900;
+      transform: rotate(7deg);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: .85fr .9fr 1.4fr;
+      gap: 18px;
+    }
+    .panel {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid rgba(10, 10, 10, .1);
+      border-radius: var(--radius-card);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .panel h2 { margin-bottom: 5px; font-size: 20px; line-height: 1.25; letter-spacing: -.03em; }
+    .panel-sub { margin-bottom: 22px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .swatches { align-items: stretch; gap: 8px; }
+    .swatch {
+      flex: 1;
+      min-width: 0;
+      height: 116px;
+      padding: 10px;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid rgba(10, 10, 10, .1);
+      border-radius: 18px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .swatch.ink { background: var(--ink); color: white; }
+    .swatch.lime { background: var(--lime); }
+    .swatch.sky { background: var(--sky); }
+    .swatch.coral { background: var(--coral); }
+    .swatch.violet { background: var(--violet); }
+
+    .type-showcase { display: grid; gap: 12px; }
+    .type-display { font-size: 44px; line-height: 1.04; letter-spacing: -.06em; font-weight: 950; }
+    .type-title { font-size: 24px; line-height: 1.25; letter-spacing: -.03em; font-weight: 850; }
+    .type-body { color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .type-tags { flex-wrap: wrap; gap: 7px; margin-top: 3px; }
+    .badge {
+      min-height: 30px;
+      padding: 0 11px;
+      justify-content: center;
+      border-radius: var(--radius-control);
+      background: var(--chalk);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .lesson-panel { padding: 18px; background: var(--ink); color: white; }
+    .lesson-shell {
+      min-height: 304px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 24px;
+      background: var(--chalk);
+      color: var(--ink);
+    }
+    .lesson-top, .lesson-footer { justify-content: space-between; gap: 12px; }
+    .lesson-top strong { font-size: 14px; }
+    .step-chip { padding: 7px 11px; border-radius: 999px; background: var(--lime-soft); font-size: 11px; font-weight: 800; }
+    .question {
+      max-width: 530px;
+      margin: 16px 0 18px;
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: -.035em;
+      font-weight: 900;
+    }
+    .wave-stage {
+      min-height: 102px;
+      padding: 15px 18px;
+      display: grid;
+      align-content: center;
+      border: 1.5px solid var(--ink);
+      border-radius: 20px;
+      background: var(--sky-soft);
+    }
+    .wave-svg { width: 100%; height: 44px; }
+    .wave-labels { justify-content: space-between; color: var(--muted); font-size: 10px; font-weight: 750; }
+    .answer-pills { display: flex; gap: 8px; }
+    .answer { padding: 10px 13px; border: 1.5px solid var(--ink); border-radius: 999px; background: white; font-size: 11px; font-weight: 800; }
+    .answer.selected { background: var(--lime); }
+    .voice-dot { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--coral); font-size: 18px; }
+
+    .principles {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .principle {
+      min-height: 104px;
+      padding: 18px;
+      border: 1px solid rgba(10, 10, 10, .1);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .62);
+    }
+    .principle-num { margin-bottom: 15px; color: var(--muted); font-size: 11px; font-weight: 850; }
+    .principle strong { display: block; margin-bottom: 5px; font-size: 14px; }
+    .principle span { color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+    @media (max-width: 980px) {
+      .board { padding: 24px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-sticker { display: none; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .lesson-panel { grid-column: 1 / -1; }
+      .principles { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .board { padding: 14px; }
+      .topbar { align-items: flex-start; border-radius: 28px; }
+      .tiny-note { display: none; }
+      .top-actions .pill:first-of-type { display: none; }
+      .hero { padding: 40px 4px 28px; }
+      h1 { font-size: 46px; }
+      .grid { grid-template-columns: 1fr; }
+      .lesson-panel { grid-column: auto; }
+      .principles { grid-template-columns: 1fr; }
+      .lesson-footer { align-items: flex-end; }
+      .answer-pills { flex-wrap: wrap; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .brand-mark, .orbit, .sticker-label { transition: transform .28s cubic-bezier(.2, .8, .2, 1); }
+      .topbar:hover .brand-mark { transform: rotate(3deg) translateY(-2px); }
+      .hero-sticker:hover .orbit { transform: rotate(1deg) translateY(-5px); }
+      .hero-sticker:hover .sticker-label { transform: rotate(3deg) translateY(-3px); }
+      .pill { transition: transform .18s ease, box-shadow .18s ease; }
+      .pill:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(10,10,10,.15); }
+    }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"><span>知</span></span><span>小知 · 视觉方向 A</span></div>
+      <div class="top-actions">
+        <span class="tiny-note">Aaply-inspired / Child-learning adapted</span>
+        <button class="pill">视觉实验</button>
+        <button class="pill dark">固定声音 Demo →</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Visual direction board · 2026.07</p>
+        <h1>让抽象知识<br>变成<span class="highlight">看得见</span>的实验</h1>
+        <p class="hero-copy">轻松、聪明、有触感。用强排版、单一荧光主色和玩具式几何图形建立记忆点，同时保留儿童学习所需要的清晰层级、明确反馈和低干扰。</p>
+        <div class="button-row">
+          <button class="pill lime">开始探索 →</button>
+          <button class="pill">先听一遍问题</button>
+          <button class="pill soft">🎙 可以随时打断</button>
+        </div>
+      </div>
+      <div class="hero-sticker" aria-label="琴弦振动贴纸图形">
+        <div class="orbit"><div class="string-icon"></div></div>
+        <span class="sticker-label">声音看得见！</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>颜色系统</h2>
+        <p class="panel-sub">黑白灰建立秩序，荧光黄负责行动与高光；学科色仅辅助表达。</p>
+        <div class="swatches">
+          <div class="swatch ink">INK</div>
+          <div class="swatch lime">LIME</div>
+          <div class="swatch sky">SKY</div>
+          <div class="swatch coral">CORAL</div>
+          <div class="swatch violet">VIOLET</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>字体与语气</h2>
+        <p class="panel-sub">中文采用系统黑体；标题粗、短、有节奏，正文保持自然老师口吻。</p>
+        <div class="type-showcase">
+          <div class="type-display">更用力，<br>音调会更高吗？</div>
+          <div class="type-title">先预测，再动手验证</div>
+          <div class="type-body">不用急着答对。先拨一拨、看一看，再说说你观察到了什么。</div>
+          <div class="type-tags"><span class="badge">标题 900</span><span class="badge">正文 500</span><span class="badge">大字号</span><span class="badge">短句</span></div>
+        </div>
+      </article>
+
+      <article class="panel lesson-panel">
+        <div class="lesson-shell">
+          <div class="lesson-top"><strong>声音实验室</strong><span class="step-chip">第 2 / 3 段</span></div>
+          <div>
+            <div class="question">同一根弦，拨得更用力时，什么发生了变化？</div>
+            <div class="wave-stage">
+              <svg class="wave-svg" viewBox="0 0 520 44" role="img" aria-label="琴弦振动幅度示意">
+                <path d="M4 22 C35 -7 66 51 97 22 S159 -7 190 22 S252 51 283 22 S345 -7 376 22 S438 51 516 22" fill="none" stroke="#0a0a0a" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="4" cy="22" r="5" fill="#ff725f"/><circle cx="516" cy="22" r="5" fill="#ff725f"/>
+              </svg>
+              <div class="wave-labels"><span>轻轻拨</span><span>振动幅度变大，但频率接近不变</span><span>用力拨</span></div>
+            </div>
+          </div>
+          <div class="lesson-footer">
+            <div class="answer-pills"><span class="answer selected">响度变大</span><span class="answer">音调变高</span><span class="answer">都不变</span></div>
+            <span class="voice-dot">♪</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="principles" aria-label="视觉原则">
+      <div class="principle"><div class="principle-num">01</div><strong>大而明确</strong><span>关键信息一次只突出一个，减少工具界面的密度感。</span></div>
+      <div class="principle"><div class="principle-num">02</div><strong>圆润但不幼稚</strong><span>卡片 24–32px 圆角，按钮胶囊化，避免卡通堆叠。</span></div>
+      <div class="principle"><div class="principle-num">03</div><strong>颜色有职责</strong><span>荧光黄只用于行动和高光，错误与成功仍保留语义色。</span></div>
+      <div class="principle"><div class="principle-num">04</div><strong>动效服务理解</strong><span>振动、拖动和切换给即时反馈，并完整支持减少动态效果。</span></div>
+    </section>
+  </main>
+</body>
+</html>

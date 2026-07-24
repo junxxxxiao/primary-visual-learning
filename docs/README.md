@@ -2,9 +2,11 @@
 
 ## 当前事实源
 
-1. [PRD v3.0](product/2026-07-17-primary-visual-tutor-prd.md)
-2. [当前原型规范](design/2026-07-17-low-mid-fidelity-prototype-spec.md)
-3. [技术可行性验证与切片准备](technical/2026-07-17-primary-visual-tutor-technical-validation.md)
+1. [PRD v4.0](product/2026-07-22-primary-visual-tutor-prd-v4.md)
+2. [声音价值 Demo 规范](design/2026-07-22-sound-value-demo-spec.md)
+3. [当前中低保真原型规范](design/2026-07-17-low-mid-fidelity-prototype-spec.md)
+4. [技术验证 v2](technical/2026-07-22-primary-visual-tutor-technical-validation-v2.md)
+5. [系统级 ADR](adr/)
 
 ## 目录职责
 

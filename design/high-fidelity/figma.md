@@ -1,22 +1,10 @@
-# Figma 索引
+# 已停用的 Figma 历史记录
 
-## 当前文件
+自 2026-07-23 起，本项目不再使用 Figma。高保真设计统一在 [`design/high-fidelity/`](README.md) 中以本地可运行、可编辑、可版本控制的文件完成。
 
-- 链接：<https://www.figma.com/design/4ZbZsoLJ0ej8hldkcjpdwi?node-id=1-2>
-- 当前内容：早期首页参考；
-- 状态：非完整高保真，不代表最新原型全部页面；
-- 后续动作：在可用性测试和 P0 技术结论后，按最新 PRD 重建设计系统与页面。
+此文件仅为历史决策留痕，不再是设计入口或交付清单。旧文件只包含早期首页参考，从未构成完整高保真，也不代表当前 PRD、原型或视觉方向。
 
-## 文件页建议
+当前本地入口：
 
-1. `00 Cover & Decisions`
-2. `01 Foundations`
-3. `02 Components`
-4. `03 Child Tablet`
-5. `04 Child Mobile`
-6. `05 Parent Mobile`
-7. `06 States & Errors`
-8. `07 Motion & Audio`
-9. `08 Dev Handoff`
-
-每个关键页面应标注 PRD 需求编号、原型状态、技术依赖和更新时间。
+- [视觉方向板](visual-direction-board.html)
+- [关键页面高保真](key-screen-concepts.html)

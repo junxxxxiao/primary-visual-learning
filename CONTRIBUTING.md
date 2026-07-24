@@ -70,7 +70,7 @@ chore: initialize workspace structure
 
 ## 设计提交边界
 
-仓库提交设计规范、Token、资源清单、关键导出和 Figma 链接。大量临时导出放在 `design/high-fidelity/exports/`，默认不进入 Git。
+仓库提交本地可运行的高保真页面、设计规范、Token、资源清单和必要的关键截图或导出。本项目不使用 Figma；`design/high-fidelity/` 中的 HTML、CSS、JavaScript 和本地设计资产是可编辑、可审阅的设计交付源。大量临时导出放在 `design/high-fidelity/exports/`，默认不进入 Git。
 
 每次高保真交付应说明：
 
@@ -78,7 +78,8 @@ chore: initialize workspace structure
 - 对应原型版本；
 - 已覆盖设备和状态；
 - 仍受哪些技术切片结论影响；
-- 资产版权与来源。
+- 资产版权与来源；
+- 本地打开或运行方式、关键页面直达参数和浏览器验证结果。
 
 ## 数据安全
 

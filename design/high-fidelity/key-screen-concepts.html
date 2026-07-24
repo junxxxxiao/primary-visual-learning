@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小知 · 三个关键高保真页面</title>
+  <style>
+    :root {
+      --chalk: #f2f3ef;
+      --paper: #fff;
+      --ink: #0a0a0a;
+      --muted: #686962;
+      --line: #d9dbd3;
+      --lime: #e8ef3e;
+      --lime-soft: #f6f8b4;
+      --sky: #83cdf7;
+      --sky-soft: #dff3ff;
+      --coral: #ff725f;
+      --violet: #bca9ff;
+      --green: #56c596;
+      --radius-card: 30px;
+      --radius-control: 999px;
+      --shadow: 0 26px 70px rgba(0, 0, 0, .16);
+      --font: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: #252622;
+      color: var(--ink);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible { outline: 4px solid var(--sky); outline-offset: 3px; }
+
+    .review {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .review-bar {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: white;
+    }
+    .review-title strong { display: block; font-size: 16px; }
+    .review-title span { color: #bfc0ba; font-size: 12px; }
+    .review-tabs {
+      padding: 5px;
+      display: flex;
+      gap: 5px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-control);
+      background: rgba(255,255,255,.07);
+    }
+    .review-tabs button {
+      min-height: 42px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: var(--radius-control);
+      background: transparent;
+      color: #d8d9d3;
+      font-weight: 750;
+    }
+    .review-tabs button[aria-selected="true"] { background: var(--lime); color: var(--ink); }
+    .screen-frame {
+      position: relative;
+      aspect-ratio: 1180 / 820;
+      overflow: hidden;
+      border: 7px solid #10110f;
+      border-radius: 38px;
+      background: var(--chalk);
+      box-shadow: var(--shadow);
+    }
+    .concept-screen {
+      position: absolute;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      background: var(--chalk);
+    }
+    .concept-screen.active { display: block; }
+
+    .appbar {
+      height: 10%;
+      min-height: 64px;
+      padding: 0 3.2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .appbar.floating {
+      width: calc(100% - 5.6%);
+      height: 8.8%;
+      min-height: 58px;
+      position: absolute;
+      z-index: 5;
+      top: 3%;
+      left: 2.8%;
+      border: 1px solid rgba(10,10,10,.08);
+      border-radius: var(--radius-control);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(15px);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: clamp(14px, 1.4vw, 20px); font-weight: 900; }
+    .brand-mark {
+      width: clamp(34px, 3.5vw, 46px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 14px 14px 14px 5px;
+      background: var(--lime);
+      transform: rotate(-4deg);
+    }
+    .app-actions, .topic-tabs, .chip-row, .choice-row, .timeline, .lesson-controls { display: flex; align-items: center; }
+    .app-actions { gap: 9px; }
+    .meta-chip, .topic-tabs span, .condition-chip, .slide-tag {
+      padding: .55em 1em;
+      border-radius: var(--radius-control);
+      background: var(--paper);
+      font-size: clamp(10px, .85vw, 13px);
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .meta-chip.dark { background: var(--ink); color: white; }
+    .meta-chip.soft { background: var(--sky-soft); }
+
+    .cta {
+      min-height: clamp(42px, 4.4vw, 58px);
+      padding: 0 clamp(18px, 2vw, 29px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.8px solid var(--ink);
+      border-radius: var(--radius-control);
+      background: var(--paper);
+      font-size: clamp(12px, 1.05vw, 16px);
+      font-weight: 830;
+    }
+    .cta.primary { border-color: var(--lime); background: var(--lime); }
+    .cta.dark { background: var(--ink); color: white; }
+
+    /* Entry */
+    .entry-screen {
+      background:
+        radial-gradient(circle at 82% 25%, rgba(232,239,62,.62), transparent 24%),
+        var(--chalk);
+    }
+    .entry-content {
+      height: 100%;
+      padding: 14% 6% 5.2%;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 5%;
+      align-items: center;
+    }
+    .eyebrow { margin: 0 0 2.4%; color: var(--muted); font-size: clamp(10px, 1vw, 14px); font-weight: 850; letter-spacing: .12em; }
+    .entry-copy h1 {
+      max-width: 680px;
+      margin: 0 0 3.5%;
+      font-size: clamp(42px, 5.8vw, 80px);
+      line-height: .99;
+      letter-spacing: -.065em;
+      font-weight: 950;
+    }
+    .entry-copy h1 em { position: relative; z-index: 0; font-style: normal; }
+    .entry-copy h1 em::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -2%; right: -3%; bottom: .03em;
+      height: .34em;
+      border-radius: 999px;
+      background: var(--lime);
+      transform: rotate(-2deg);
+    }
+    .entry-lead { max-width: 610px; margin: 0 0 4%; color: var(--muted); font-size: clamp(12px, 1.25vw, 18px); line-height: 1.7; font-weight: 560; }
+    .entry-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .privacy-note {
+      max-width: 560px;
+      margin-top: 4%;
+      padding: 2.5% 3%;
+      display: flex;
+      gap: 12px;
+      border-left: 5px solid var(--ink);
+      border-radius: 0 18px 18px 0;
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      font-size: clamp(10px, .9vw, 13px);
+      line-height: 1.55;
+    }
+    .privacy-note strong { color: var(--ink); white-space: nowrap; }
+    .entry-visual { min-width: 0; display: grid; place-items: center; }
+    .lab-orbit {
+      width: min(36vw, 430px);
+      aspect-ratio: 1;
+      position: relative;
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+      background: var(--sky);
+      box-shadow: clamp(10px, 1.4vw, 18px) clamp(12px, 1.6vw, 22px) 0 var(--ink);
+      transform: rotate(4deg);
+    }
+    .lab-sticker {
+      position: absolute;
+      z-index: 2;
+      right: -7%; top: 5%;
+      padding: 3% 5%;
+      border: 2px solid var(--ink);
+      border-radius: 18px 18px 18px 5px;
+      background: var(--lime);
+      font-size: clamp(10px, 1.1vw, 16px);
+      font-weight: 900;
+      transform: rotate(8deg);
+    }
+    .lab-string {
+      width: 68%; height: 35%;
+      position: absolute;
+      left: 16%; top: 31%;
+      border-left: 7px solid var(--ink);
+      border-right: 7px solid var(--ink);
+    }
+    .lab-string svg { width: 100%; height: 100%; }
+    .lab-fork {
+      width: 25%; height: 33%;
+      position: absolute;
+      left: -9%; bottom: 4%;
+      border: 3px solid var(--ink);
+      border-radius: 24px 24px 7px 24px;
+      background: var(--coral);
+      transform: rotate(-11deg);
+    }
+    .lab-fork::before, .lab-fork::after { content: ""; position: absolute; top: 18%; width: 12%; height: 58%; border-radius: 999px; background: var(--ink); }
+    .lab-fork::before { left: 30%; } .lab-fork::after { right: 30%; }
+    .lab-dots { width: 22%; aspect-ratio: 1; position: absolute; right: -3%; bottom: -3%; border: 3px solid var(--ink); border-radius: 50% 50% 12px 50%; background: var(--violet); }
+
+    /* Prediction */
+    .prediction-screen { padding: 2.5%; }
+    .prediction-shell { height: 100%; display: grid; grid-template-columns: 22% 1fr; gap: 2%; }
+    .progress-rail {
+      padding: 9% 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius-card);
+      background: var(--ink);
+      color: white;
+    }
+    .progress-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; }
+    .progress-list { display: grid; gap: clamp(10px, 1.5vw, 20px); }
+    .progress-item { display: grid; grid-template-columns: 30px 1fr; gap: 9px; align-items: center; color: #aeb0a8; font-size: clamp(10px, .9vw, 13px); font-weight: 700; }
+    .progress-item i { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #4d4f48; border-radius: 50%; font-style: normal; }
+    .progress-item.done, .progress-item.active { color: white; }
+    .progress-item.done i { border-color: var(--green); background: var(--green); color: var(--ink); }
+    .progress-item.active i { border-color: var(--lime); background: var(--lime); color: var(--ink); }
+    .rail-note { color: #9d9f97; font-size: clamp(9px, .78vw, 12px); line-height: 1.55; }
+    .prediction-main {
+      padding: 3.5% 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(10,10,10,.08);
+      border-radius: var(--radius-card);
+      background: var(--paper);
+    }
+    .prediction-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .prediction-head h1 { max-width: 760px; margin: .35em 0 0; font-size: clamp(27px, 3.25vw, 47px); line-height: 1.12; letter-spacing: -.05em; }
+    .voice-cue {
+      min-width: 160px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-radius: 18px;
+      background: var(--sky-soft);
+      font-size: clamp(9px, .8vw, 12px);
+      font-weight: 750;
+    }
+    .voice-cue b { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); }
+    .condition-box { margin: 2.7% 0; padding: 2%; border: 1px solid var(--line); border-radius: 20px; background: var(--chalk); }
+    .condition-box strong { display: block; margin-bottom: 1.2%; font-size: clamp(11px, 1vw, 14px); }
+    .chip-row { flex-wrap: wrap; gap: 7px; }
+    .condition-chip { padding: .45em .85em; border: 1px solid var(--line); }
+    .condition-chip.change { border-color: var(--ink); background: var(--lime-soft); }
+    .choice-row { align-items: stretch; gap: 1.5%; }
+    .answer-card {
+      flex: 1;
+      min-width: 0;
+      min-height: 155px;
+      padding: 2.2%;
+      position: relative;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+    }
+    .answer-card.selected { border-color: var(--ink); background: var(--lime-soft); box-shadow: 6px 7px 0 var(--ink); transform: translate(-3px, -3px); }
+    .answer-card .choice-mark { width: 27px; height: 27px; margin-bottom: 15px; display: grid; place-items: center; border: 1.5px solid var(--ink); border-radius: 50%; font-size: 12px; font-weight: 900; }
+    .answer-card.selected .choice-mark { background: var(--ink); color: white; }
+    .answer-card strong { display: block; margin-bottom: 8px; font-size: clamp(15px, 1.5vw, 22px); }
+    .answer-card span { color: var(--muted); font-size: clamp(9px, .86vw, 13px); line-height: 1.5; }
+    .prediction-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .prediction-footer p { margin: 0; color: var(--muted); font-size: clamp(10px, .9vw, 13px); }
+
+    /* Lesson */
+    .lesson-screen { padding: 2.1%; background: #e6e8e2; }
+    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: 1.6%; }
+    .lesson-appbar {
+      min-height: 62px;
+      padding: 0 2%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--radius-control);
+      background: var(--paper);
+    }
+    .topic-tabs { gap: 5px; }
+    .topic-tabs span { background: transparent; }
+    .topic-tabs span.active { background: var(--ink); color: white; }
+    .lesson-controls { gap: 8px; color: var(--muted); font-size: clamp(9px, .8vw, 12px); }
+    .lesson-controls b { padding: .5em .9em; border-radius: 999px; background: var(--sky-soft); color: var(--ink); }
+    .lesson-grid { min-height: 0; flex: 1; display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(270px, .72fr); gap: 1.6%; }
+    .workspace, .tutor-panel { min-height: 0; border-radius: var(--radius-card); background: var(--paper); }
+    .workspace { padding: 2.4%; display: flex; flex-direction: column; }
+    .lesson-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .lesson-heading h1 { margin: .25em 0 .15em; font-size: clamp(25px, 2.7vw, 40px); line-height: 1.1; letter-spacing: -.05em; }
+    .lesson-heading p { margin: 0; color: var(--muted); font-size: clamp(10px, .95vw, 14px); }
+    .slide-tag { background: var(--lime-soft); }
+    .lesson-canvas {
+      min-height: 0;
+      flex: 1;
+      margin-top: 2.2%;
+      padding: 2.6%;
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 3%;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--chalk);
+    }
+    .lesson-copy p { margin-bottom: 8%; color: var(--muted); font-size: clamp(10px, 1vw, 14px); line-height: 1.65; }
+    .lesson-points { display: grid; gap: 10px; }
+    .lesson-point { display: grid; grid-template-columns: 28px 1fr; gap: 9px; align-items: center; font-size: clamp(10px, .93vw, 14px); font-weight: 760; }
+    .lesson-point i { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); font-style: normal; }
+    .compare-visual { display: grid; gap: 11px; }
+    .wave-card { padding: 3%; border: 1.5px solid var(--ink); border-radius: 19px; background: var(--paper); }
+    .wave-card.strong { background: var(--sky-soft); }
+    .wave-card header { display: flex; justify-content: space-between; margin-bottom: 2%; font-size: clamp(9px, .85vw, 12px); font-weight: 800; }
+    .wave-card header span { color: var(--muted); font-weight: 650; }
+    .wave-card svg { width: 100%; height: clamp(38px, 5vw, 70px); }
+    .visual-takeaway { padding: 2.2% 3%; display: flex; justify-content: space-between; gap: 10px; border-radius: 17px; background: var(--ink); color: white; font-size: clamp(9px, .88vw, 13px); }
+    .visual-takeaway b { color: var(--lime); }
+    .timeline { margin-top: 1.9%; gap: 8px; }
+    .timeline span { height: 6px; flex: 1; border-radius: 999px; background: var(--line); }
+    .timeline span.done { background: var(--ink); }
+    .timeline span.active { background: var(--lime); }
+    .timeline small { margin-left: 7px; color: var(--muted); font-size: 10px; }
+    .tutor-panel { padding: 2.1%; display: flex; flex-direction: column; }
+    .tutor-head { padding-bottom: 4%; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
+    .tutor-avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 15px 15px 15px 5px; background: var(--coral); font-size: 11px; font-weight: 900; }
+    .tutor-head strong, .tutor-head small { display: block; }
+    .tutor-head small { margin-top: 2px; color: var(--muted); font-size: clamp(8px, .72vw, 11px); }
+    .thread { min-height: 0; flex: 1; padding: 6% 0; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+    .message { max-width: 92%; padding: 4.5%; border-radius: 18px 18px 18px 5px; background: var(--chalk); }
+    .message small { color: var(--muted); font-size: clamp(8px, .7vw, 10px); }
+    .message p { margin: 5px 0 0; font-size: clamp(9px, .86vw, 13px); line-height: 1.55; }
+    .key-point { padding: 4.5%; border-radius: 18px; background: var(--lime-soft); font-size: clamp(9px, .84vw, 12px); line-height: 1.5; font-weight: 760; }
+    .followup-label { margin-bottom: 7px; color: var(--muted); font-size: clamp(8px, .72vw, 10px); font-weight: 750; }
+    .followup-box { padding: 5px 5px 5px 12px; display: flex; align-items: center; gap: 6px; border: 1.5px solid var(--ink); border-radius: 17px; }
+    .followup-box span { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: clamp(8px, .8vw, 12px); }
+    .followup-box b { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 12px; background: var(--ink); color: white; font-size: 11px; }
+
+    .review-caption { margin: 14px 6px 0; display: flex; justify-content: space-between; gap: 20px; color: #aeb0a8; font-size: 11px; }
+
+    @media (max-width: 860px) {
+      .review { padding: 14px; }
+      .review-bar { align-items: flex-start; flex-direction: column; }
+      .review-tabs { width: 100%; overflow-x: auto; }
+      .review-tabs button { flex: 1; min-width: max-content; }
+      .screen-frame { min-width: 760px; }
+      .screen-scroll { overflow-x: auto; padding-bottom: 8px; }
+      .review-caption { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .concept-screen.active { animation: enter .28s cubic-bezier(.2,.8,.2,1); }
+      .review-tabs button { transition: background .18s ease, color .18s ease; }
+      .lab-orbit { animation: float 4s ease-in-out infinite; }
+      @keyframes enter { from { opacity: 0; transform: translateY(8px); } }
+      @keyframes float { 50% { transform: rotate(1deg) translateY(-8px); } }
+    }
+  </style>
+</head>
+<body>
+  <main class="review">
+    <header class="review-bar">
+      <div class="review-title"><strong>方向 A · 关键页面高保真</strong><span>固定声音价值 Demo / 视觉评审稿</span></div>
+      <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
+        <button id="tab-entry" role="tab" aria-controls="screen-entry" aria-selected="true" data-target="entry">01 公开入口</button>
+        <button id="tab-prediction" role="tab" aria-controls="screen-prediction" aria-selected="false" data-target="prediction">02 预测页</button>
+        <button id="tab-lesson" role="tab" aria-controls="screen-lesson" aria-selected="false" data-target="lesson">03 核心讲解</button>
+      </nav>
+    </header>
+
+    <div class="screen-scroll">
+      <div class="screen-frame">
+        <section id="screen-entry" class="concept-screen entry-screen active" role="tabpanel" aria-labelledby="tab-entry" data-screen="entry">
+          <header class="appbar floating">
+            <div class="brand"><span class="brand-mark">知</span><span>小知</span></div>
+            <div class="app-actions"><span class="meta-chip soft">约 4 分钟</span><span class="meta-chip">无需登录</span><span class="meta-chip dark">固定声音 Demo</span></div>
+          </header>
+          <div class="entry-content">
+            <div class="entry-copy">
+              <p class="eyebrow">固定声音主题体验</p>
+              <h1>你问为什么，<br>小知<em>现场演</em>给你看。</h1>
+              <p class="entry-lead">从一个真实问题出发，先预测，再看见琴弦怎样振动，最后亲手验证自己的想法。</p>
+              <div class="entry-buttons"><span class="cta primary">开始体验 →</span><span class="cta">先看看怎么玩</span></div>
+              <div class="privacy-note"><strong>数据说明</strong><span>体验不会调用相机或麦克风，不保存儿童姓名、照片或原始语音。</span></div>
+            </div>
+            <div class="entry-visual" aria-label="琴弦、音叉与声音观察图形">
+              <div class="lab-orbit">
+                <span class="lab-sticker">声音看得见！</span>
+                <div class="lab-string"><svg viewBox="0 0 280 130" aria-hidden="true"><path d="M0 65 C22 20 47 110 70 65 S117 20 140 65 S187 110 210 65 S257 20 280 65" fill="none" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round"/></svg></div>
+                <div class="lab-fork"></div><div class="lab-dots"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-prediction" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-prediction" data-screen="prediction" hidden>
+          <div class="prediction-shell">
+            <aside class="progress-rail">
+              <div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div>
+              <div class="progress-list">
+                <div class="progress-item done"><i>✓</i><span>听懂“响”和“高”</span></div>
+                <div class="progress-item active"><i>2</i><span>先做一个预测</span></div>
+                <div class="progress-item"><i>3</i><span>观察琴弦并验证</span></div>
+              </div>
+              <div class="rail-note">猜错也没关系。预测只是为了让接下来的观察更有目标。</div>
+            </aside>
+            <main class="prediction-main">
+              <div>
+                <div class="prediction-head">
+                  <div><p class="eyebrow">先猜一猜</p><h1>更用力拨同一根弦，<br>音调会更高吗？</h1></div>
+                  <div class="voice-cue"><b>▶</b><span>小知正在引导你猜<br>可以重听</span></div>
+                </div>
+                <div class="condition-box"><strong>这次比较要公平</strong><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变：拨弦力度</span></div></div>
+                <div class="choice-row">
+                  <article class="answer-card"><div class="choice-mark">A</div><strong>会更高</strong><span>用力越大，音调越高</span></article>
+                  <article class="answer-card selected"><div class="choice-mark">✓</div><strong>基本不变</strong><span>主要变化可能在响度</span></article>
+                  <article class="answer-card"><div class="choice-mark">C</div><strong>还不确定</strong><span>我想先看一看</span></article>
+                </div>
+              </div>
+              <div class="prediction-footer"><p>你的选择不会限制后面的讲解路径。</p><span class="cta primary">去验证 →</span></div>
+            </main>
+          </div>
+        </section>
+
+        <section id="screen-lesson" class="concept-screen lesson-screen" role="tabpanel" aria-labelledby="tab-lesson" data-screen="lesson" hidden>
+          <div class="lesson-shell">
+            <header class="lesson-appbar">
+              <div class="brand"><span class="brand-mark">知</span><span>小知</span></div>
+              <div class="topic-tabs"><span class="active">琴弦振动</span><span>真空中的声音</span></div>
+              <div class="lesson-controls"><span>字幕 开</span><b>自动播放中</b><span>•••</span></div>
+            </header>
+            <div class="lesson-grid">
+              <main class="workspace">
+                <div class="lesson-heading"><div><p class="eyebrow">核心讲解 · 图解与动画</p><h1>看看真实现象</h1><p>摆得更开，不等于来回得更快。</p></div><span class="slide-tag">自动播放 2 / 3</span></div>
+                <div class="lesson-canvas">
+                  <div class="lesson-copy"><p>轻轻拨，琴弦摆动得窄；用力拨，琴弦摆动得更开。可是同样一小段时间里，它们来回的次数差不多。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>轻轻拨：摆动范围较小</span></div><div class="lesson-point"><i>2</i><span>用力拨：摆动范围更大</span></div><div class="lesson-point"><i>3</i><span>共同点：往返节奏基本相同</span></div></div></div>
+                  <div class="compare-visual">
+                    <article class="wave-card"><header><strong>轻轻拨</strong><span>振幅较小</span></header><svg viewBox="0 0 460 80" aria-hidden="true"><path d="M0 40 C18 23 38 23 56 40 S94 57 112 40 S150 23 168 40 S206 57 224 40 S262 23 280 40 S318 57 336 40 S374 23 392 40 S430 57 460 40" fill="none" stroke="#0a0a0a" stroke-width="5" stroke-linecap="round"/></svg></article>
+                    <article class="wave-card strong"><header><strong>用力拨</strong><span>振幅更大 · 波峰数量接近</span></header><svg viewBox="0 0 460 80" aria-hidden="true"><path d="M0 40 C18 4 38 4 56 40 S94 76 112 40 S150 4 168 40 S206 76 224 40 S262 4 280 40 S318 76 336 40 S374 4 392 40 S430 76 460 40" fill="none" stroke="#0a0a0a" stroke-width="5" stroke-linecap="round"/></svg></article>
+                    <div class="visual-takeaway"><span><b>振幅</b>变大 → 声音更响</span><span><b>频率</b>接近不变 → 音调基本不变</span></div>
+                  </div>
+                </div>
+                <div class="timeline" aria-label="讲解进度"><span class="done"></span><span class="active"></span><span></span><small>第 2 段</small></div>
+              </main>
+              <aside class="tutor-panel">
+                <div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>正在讲解“看看真实现象”</small></div></div>
+                <div class="thread"><div class="message"><small>小知老师 · 正在讲解</small><p>注意看：用力拨以后，琴弦摆得更开了。但它在同样时间内来回的次数并没有明显增加。</p></div><div class="key-point">同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</div></div>
+                <div><div class="followup-label">讲解中也可以随时追问（固定演示）</div><div class="followup-box"><span>如果没有空气呢？</span><b>➤</b></div></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="review-caption"><span>基准画布：1180 × 820 · 当前仅用于视觉方向评审</span><span>未修改产品流程、功能状态或数据边界</span></footer>
+  </main>
+
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const screens = [...document.querySelectorAll('[data-screen]')];
+
+    function showScreen(name, updateUrl = true) {
+      tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.target === name)));
+      screens.forEach((screen) => {
+        const active = screen.dataset.screen === name;
+        screen.classList.toggle('active', active);
+        screen.hidden = !active;
+      });
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('screen', name);
+        window.history.replaceState({}, '', url);
+      }
+    }
+
+    tabs.forEach((tab) => tab.addEventListener('click', () => showScreen(tab.dataset.target)));
+    const initialScreen = new URLSearchParams(window.location.search).get('screen');
+    if (['entry', 'prediction', 'lesson'].includes(initialScreen)) showScreen(initialScreen, false);
+  </script>
+</body>
+</html>
