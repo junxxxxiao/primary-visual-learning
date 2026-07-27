@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>小知 · 互动讲解体验 Demo</title>
+  <script>
+    function redirectFilePreviewToHttp() {
+      if (window.location.protocol !== 'file:') return;
+      const httpDemoUrl = 'http://127.0.0.1:4173/sound-demo.html';
+      const probe = new Image();
+      probe.onload = () => window.location.replace(`${httpDemoUrl}${window.location.search}${window.location.hash}`);
+      probe.onerror = () => {};
+      probe.src = `http://127.0.0.1:4173/assets/images/math-completing-square-problem.png?preview-probe=${Date.now()}`;
+    }
+    redirectFilePreviewToHttp();
+  </script>
   <style>
     :root {
       --chalk: #f2f3ef;
@@ -355,6 +366,8 @@
     .lesson-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
     .lesson-heading h1 { margin: .25em 0 .15em; font-size: clamp(25px, 2.7vw, 40px); line-height: 1.1; letter-spacing: -.05em; }
     .lesson-heading p { margin: 0; color: var(--muted); font-size: clamp(10px, .95vw, 14px); }
+    .lesson-status { min-width: 76px; display: flex; flex: 0 0 auto; flex-direction: column; align-items: stretch; gap: 8px; }
+    .lesson-status .slide-tag { align-self: stretch; text-align: center; }
     .slide-tag { background: var(--lime-soft); }
     .lesson-canvas {
       box-sizing: border-box;
@@ -726,9 +739,11 @@
     body.phone-review .lesson-grid { display: block; }
     body.phone-review .workspace { height: 100%; padding: 14px; border-radius: 22px; }
     body.phone-review .lesson-heading { gap: 8px; }
+    body.phone-review .lesson-heading > div:first-child { min-width: 0; }
     body.phone-review .lesson-heading h1 { margin: 3px 0; font-size: 25px; }
     body.phone-review .lesson-heading p { font-size: 9px; }
-    body.phone-review .slide-tag { align-self: flex-start; padding: .5em .65em; }
+    body.phone-review .lesson-status { min-width: 62px; gap: 6px; }
+    body.phone-review .slide-tag { padding: .5em .65em; }
     body.phone-review .lesson-canvas { margin-top: 10px; padding: 12px; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 9px; border-radius: 15px; }
     body.phone-review .lesson-canvas > .math-stage { grid-column: 1; grid-row: 1 / -1; }
     body.phone-review .math-stage .ppt-reveal { transform: none; }
@@ -849,13 +864,15 @@
     body.phone-review .confirm-focus .static-title { font-size: 31px; }
     body.phone-review .calibration-main { padding: 15px; }
 
-    body.phone-review .lesson-appbar { min-height: 58px; padding: 7px 10px; display: grid; grid-template-columns: 34px auto minmax(0,1fr) auto; grid-template-rows: 42px; gap: 0 7px; }
+    body.phone-review .lesson-appbar { min-height: 58px; padding: 7px 10px; display: grid; grid-template-columns: 34px minmax(0,110px) minmax(0,1fr); grid-template-rows: 42px; gap: 0 7px; }
     body.phone-review .lesson-appbar .lesson-back { width: 34px; height: 34px; grid-column: 1; grid-row: 1; margin: 0; }
-    body.phone-review .lesson-appbar .brand { grid-column: 2; grid-row: 1; margin: 0; font-size: 11px; white-space: nowrap; }
-    body.phone-review .lesson-appbar .lesson-controls { display: flex; grid-column: 4; grid-row: 1; margin: 0; justify-self: end; }
+    body.phone-review .lesson-appbar .brand { min-width: 0; grid-column: 2; grid-row: 1; margin: 0; overflow: hidden; font-size: 11px; white-space: nowrap; }
+    body.phone-review .lesson-appbar .brand > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    body.phone-review .lesson-appbar .lesson-controls { display: none; }
     body.phone-review .lesson-appbar .lesson-controls b { display: none; }
-    body.phone-review .lesson-appbar .topic-tabs { display: flex; grid-column: 3; grid-row: 1; justify-self: end; position: static; transform: none; white-space: nowrap; }
-    body.phone-review .lesson-appbar .topic-tabs span { padding: .45em .7em; font-size: 8px; }
+    body.phone-review .lesson-appbar .topic-tabs { width: 100%; min-width: 0; max-width: none; display: flex; grid-column: 3; grid-row: 1; justify-self: stretch; position: static; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; transform: none; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+    body.phone-review .lesson-appbar .topic-tabs::-webkit-scrollbar { display: none; }
+    body.phone-review .lesson-appbar .topic-tabs span { min-height: 40px; padding: .45em .7em; display: inline-flex; align-items: center; flex: 0 0 auto; scroll-snap-align: nearest; font-size: 9px; }
     body.phone-review [data-screen="experiment"] .lesson-appbar .topic-tabs span.active,
     body.phone-review [data-screen="followup"] .lesson-appbar .topic-tabs span.active { padding: 6px 10px; }
     body.phone-review .lesson-shell { gap: 7px; }
@@ -874,11 +891,12 @@
     body.phone-review .exit-modal p { font-size: 11px; }
     body.phone-review .exit-actions .cta { padding: 0 13px; }
 
-    body.phone-review .experiment-canvas { padding: 0 0 66px !important; }
-    body.phone-review .interactive-string-stage { height: auto; min-height: 492px; padding: 11px; grid-template-columns: 1fr; grid-template-rows: auto 180px auto auto; gap: 8px; border-radius: 17px; }
+    body.phone-review .lesson-canvas { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+    body.phone-review .experiment-canvas { min-height: 0; padding: 0 !important; display: grid; grid-template-rows: minmax(0,1fr) 46px; gap: 8px; overflow: visible; }
+    body.phone-review .interactive-string-stage { width: 100%; height: 100%; min-height: 0; max-height: 100%; padding: 10px; display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: auto minmax(130px,1fr) auto auto; gap: 7px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; border-radius: 17px; -webkit-overflow-scrolling: touch; }
     body.phone-review .stage-label { font-size: 9px; }
     body.phone-review .stage-label span { font-size: 8px; }
-    body.phone-review .pluck-string { min-height: 160px; }
+    body.phone-review .pluck-string { height: 100%; min-height: 0; max-height: 150px; }
     body.phone-review .live-explanation { grid-template-columns: repeat(2,1fr); gap: 6px; }
     body.phone-review .metric { padding: 8px; }
     body.phone-review .metric strong { font-size: 11px; }
@@ -889,11 +907,10 @@
     body.phone-review .lesson-play-toggle svg { width: 24px; height: 24px; }
     body.phone-review .lesson-progress { gap: 5px; }
     body.phone-review .lesson-playback small { font-size: 8px; }
-    body.phone-review [data-screen="experiment"] .prediction-footer { margin-top: 14px; padding: 0 2px; }
-    body.phone-review [data-screen="experiment"] .prediction-footer { padding-right: 132px; }
-    body.phone-review [data-screen="experiment"] .tutor-panel { right: 12px; bottom: 42px; }
-    body.phone-review [data-screen="followup"] .experiment-canvas { padding: 0 0 66px !important; }
-    body.phone-review [data-screen="followup"] .interactive-string-stage { min-height: 492px; grid-template-rows: auto 180px auto; }
+    body.phone-review [data-screen="experiment"] .prediction-footer { width: 100%; min-height: 46px; margin: 0 !important; padding: 0; display: flex; align-items: center; justify-content: center; }
+    body.phone-review [data-screen="experiment"] .prediction-footer .cta { width: auto; min-width: 150px; max-width: calc(100% - 24px); }
+    body.phone-review [data-screen="followup"] .experiment-canvas { padding: 0 !important; }
+    body.phone-review [data-screen="followup"] .interactive-string-stage { min-height: 0; grid-template-rows: auto minmax(108px,1fr) auto; }
     body.phone-review [data-screen="followup"] .tutor-panel { width: calc(100% - 20px); height: 320px; right: 10px; bottom: 0; padding: 14px 12px 12px; border-radius: 18px 18px 0 0; box-shadow: 0 -18px 42px rgba(0,0,0,.24); }
     body.phone-review [data-screen="followup"] .recording-panel::before { content: ""; width: 42px; height: 4px; position: absolute; top: 7px; left: 50%; border-radius: 999px; background: var(--line); transform: translateX(-50%); }
     body.phone-review [data-screen="followup"] .tutor-panel .thread { display: flex; padding: 8px 0; overflow: hidden; }
@@ -998,6 +1015,8 @@
     body.runtime-demo .screen-scroll { width: 100%; height: 100%; overflow: hidden; padding: 0; }
     body.runtime-demo .screen-frame { width: 100%; height: 100%; min-width: 0; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; }
     body.runtime-demo .concept-screen { border-radius: 0; }
+    body.runtime-demo :is(.lesson-grid, .workspace, .lesson-canvas, .segment-animation, .interactive-string-stage) { min-width: 0; min-height: 0; }
+    body.runtime-demo :is(.lesson-canvas, .segment-animation) > * { min-width: 0; max-width: 100%; }
     body.runtime-demo .cta,
     body.runtime-demo .answer-card,
     body.runtime-demo .static-choice,
@@ -1036,7 +1055,7 @@
     }
     body.runtime-demo [data-screen="loading"] .static-appbar .step::after { visibility: visible; }
     body.runtime-demo [data-screen="loading"] .load-track span { width: 0; }
-    body.runtime-demo .unified-player { margin-top: 14px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 58px 68px; align-items: center; gap: 10px; }
+    body.runtime-demo .unified-player { margin-top: 14px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 58px; align-items: center; gap: 10px; }
     body.runtime-demo .player-toggle { width: 48px; height: 48px; display: grid; place-items: center; border: 1.5px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.78); color: var(--ink); cursor: pointer; }
     body.runtime-demo .player-toggle:hover { background: var(--paper); }
     body.runtime-demo .player-toggle svg { width: 32px; height: 32px; fill: currentColor; }
@@ -1123,12 +1142,16 @@
       to { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 700px), (orientation: portrait) {
-      body.runtime-demo .screen-frame { width: 100vw; height: 100vh; }
+      body.runtime-demo,
+      body.runtime-demo .review,
+      body.runtime-demo .screen-scroll,
+      body.runtime-demo .screen-frame { height: 100vh; height: 100dvh; }
+      body.runtime-demo .screen-frame { width: 100vw; }
       body.runtime-demo [data-screen="loading"] .static-appbar .step { min-width: 84px; min-height: 34px; padding: 0 13px; }
       body.runtime-demo .lesson-appbar .topic-tabs { min-width: 0; max-width: min(54vw, 236px); overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
       body.runtime-demo .lesson-appbar .topic-tabs::-webkit-scrollbar { display: none; }
       body.runtime-demo .lesson-appbar .topic-tabs span { min-height: 40px; padding-inline: 11px; display: inline-flex; align-items: center; flex: 0 0 auto; white-space: nowrap; }
-      body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 42px 58px; gap: 6px; }
+      body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 42px; gap: 6px; }
       body.runtime-demo .player-toggle { width: 46px; height: 46px; }
       body.runtime-demo .player-toggle svg { width: 29px; height: 29px; }
       body.runtime-demo .player-segments { gap: 4px; }
@@ -1168,7 +1191,8 @@
       body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-cancel { width: 32px; height: 32px; position: static; grid-row: 1 / 3; }
       body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-cancel { grid-column: 3; }
       body.runtime-demo .lesson-screen.active .tutor-panel.recording-active .record-done { grid-column: 4; }
-      body.runtime-demo .segment-animation { min-height: 250px; }
+      body.runtime-demo .lesson-canvas { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+      body.runtime-demo .segment-animation { height: 100%; min-height: 0; }
       body.runtime-demo .comparison-stage, body.runtime-demo .vacuum-question-stage, body.runtime-demo .vacuum-block-stage { grid-template-columns: 1fr; gap: 8px; }
       body.runtime-demo .motion-sample { padding: 9px; }
       body.runtime-demo .motion-sample svg { height: 74px; }
@@ -1180,26 +1204,69 @@
       body.runtime-demo .concept-node strong { font-size: 14px; }
       body.runtime-demo .question-step { min-height: 105px; padding: 10px; gap: 5px; }
       body.runtime-demo .lesson-canvas > .segment-animation { grid-row: 1 / -1; }
-      body.runtime-demo .relay-stage { min-height: 0; padding: 12px; grid-template-columns: 1fr; grid-template-rows: minmax(100px,.7fr) minmax(210px,1.5fr) minmax(100px,.7fr); gap: 12px; align-items: stretch; }
-      body.runtime-demo .relay-source, body.runtime-demo .relay-ear { min-height: 0; height: auto; max-height: none; padding: 12px 18px; align-self: stretch; grid-template-columns: 76px minmax(0,1fr); place-items: center start; align-content: center; gap: 14px; border-radius: 18px; box-shadow: 4px 5px 0 var(--ink); text-align: left; }
-      body.runtime-demo .relay-source svg { width: 72px; }
-      body.runtime-demo .relay-source strong, body.runtime-demo .relay-ear strong { font-size: 15px; }
+      body.runtime-demo .relay-stage { min-height: 0; padding: 8px; grid-template-columns: 1fr; grid-template-rows: minmax(76px,.8fr) minmax(124px,1.2fr) minmax(76px,.8fr); gap: 8px; align-items: stretch; }
+      body.runtime-demo .relay-source, body.runtime-demo .relay-ear { min-height: 0; height: auto; max-height: none; padding: 8px 12px; align-self: stretch; grid-template-columns: 58px minmax(0,1fr); place-items: center start; align-content: center; gap: 10px; border-radius: 16px; box-shadow: 3px 4px 0 var(--ink); text-align: left; }
+      body.runtime-demo .relay-source svg { width: 54px; }
+      body.runtime-demo .relay-source strong, body.runtime-demo .relay-ear strong { font-size: 14px; }
       body.runtime-demo .relay-source small, body.runtime-demo .relay-ear small { font-size: 9px; }
-      body.runtime-demo .ear-illustration { width: 42px; height: 42px; font-size: 38px; }
-      body.runtime-demo .air-lane { width: 132px; height: 100%; min-height: 210px; justify-self: center; border-radius: 999px; background: linear-gradient(180deg,var(--sky-soft),var(--violet-soft)); }
-      body.runtime-demo .relay-caption { padding: 8px 10px; }
+      body.runtime-demo .ear-illustration { width: 38px; height: 38px; font-size: 34px; }
+      body.runtime-demo .air-lane { width: 104px; height: 100%; min-height: 0; justify-self: center; border-radius: 999px; background: linear-gradient(180deg,var(--sky-soft),var(--violet-soft)); }
+      body.runtime-demo .relay-caption { box-sizing: border-box; width: calc(100% - 8px); padding: 8px 4px; }
       body.runtime-demo .relay-caption strong, body.runtime-demo .relay-caption small { white-space: normal; }
       body.runtime-demo .relay-caption strong { font-size: 11px; }
-      body.runtime-demo .relay-caption small { width: 82px; font-size: 8px; line-height: 1.35; }
+      body.runtime-demo .relay-caption small { width: auto; font-size: 8px; line-height: 1.35; }
       body.runtime-demo .air-particle { top: 0; left: calc(50% - 8px); }
       body.runtime-demo .air-particle:nth-child(2) { top: 12%; left: calc(50% - 8px); }
       body.runtime-demo .air-particle:nth-child(3) { top: 28%; left: calc(50% - 8px); }
-      body.runtime-demo .vacuum-chamber { min-height: 150px; padding: 12px; }
-      body.runtime-demo .blocked-path { padding: 10px; }
+      body.runtime-demo .vacuum-block-stage { min-height: 0; grid-template-rows: repeat(2,minmax(0,1fr)); align-items: stretch; }
+      body.runtime-demo .vacuum-chamber { min-height: 0; height: auto; padding: 14px 12px 9px; border-width: 3px; border-bottom-width: 8px; border-radius: 28px 28px 14px 14px; }
+      body.runtime-demo .vacuum-chamber > div { width: 100%; min-width: 0; display: grid; place-items: center; gap: 4px; text-align: center; }
+      body.runtime-demo .vacuum-chamber .mini-string { width: min(220px,72%); height: 48px; }
+      body.runtime-demo .blocked-path { min-height: 0; padding: 8px; gap: 5px; }
+      body.runtime-demo .blocked-path b { font-size: 28px; line-height: 1; }
       body.runtime-demo .exit-modal { padding: 26px 20px 24px; }
       body.runtime-demo .exit-actions { flex-direction: column; }
       body.runtime-demo .exit-actions .cta { width: 100%; }
     }
+    body.runtime-demo.phone-review .lesson-canvas { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+    body.runtime-demo.phone-review .segment-animation { height: 100%; min-height: 0; }
+    body.runtime-demo.phone-review .comparison-stage,
+    body.runtime-demo.phone-review .vacuum-question-stage,
+    body.runtime-demo.phone-review .vacuum-block-stage { grid-template-columns: 1fr; gap: 8px; }
+    body.runtime-demo.phone-review .motion-sample { padding: 9px; }
+    body.runtime-demo.phone-review .motion-sample svg { height: 74px; }
+    body.runtime-demo.phone-review .same-rate-note { padding: 7px 9px; font-size: 8px; }
+    body.runtime-demo.phone-review .concept-map { grid-template-columns: 1fr; grid-template-rows: repeat(2, minmax(76px, 1fr)); gap: 8px; }
+    body.runtime-demo.phone-review .concept-row { grid-template-columns: minmax(0,1fr) 34px minmax(0,1fr); gap: 7px; }
+    body.runtime-demo.phone-review .concept-node { min-height: 76px; padding: 9px; }
+    body.runtime-demo.phone-review .concept-node small { font-size: 10px; }
+    body.runtime-demo.phone-review .concept-node strong { font-size: 14px; }
+    body.runtime-demo.phone-review .question-step { min-height: 105px; padding: 10px; gap: 5px; }
+    body.runtime-demo.phone-review .lesson-canvas > .segment-animation { grid-row: 1 / -1; }
+    body.runtime-demo.phone-review .relay-stage { min-height: 0; padding: 8px; grid-template-columns: 1fr; grid-template-rows: minmax(76px,.8fr) minmax(124px,1.2fr) minmax(76px,.8fr); gap: 8px; align-items: stretch; }
+    body.runtime-demo.phone-review .relay-source,
+    body.runtime-demo.phone-review .relay-ear { min-height: 0; height: auto; max-height: none; padding: 8px 12px; align-self: stretch; grid-template-columns: 58px minmax(0,1fr); place-items: center start; align-content: center; gap: 10px; border-radius: 16px; box-shadow: 3px 4px 0 var(--ink); text-align: left; }
+    body.runtime-demo.phone-review .relay-source svg { width: 54px; }
+    body.runtime-demo.phone-review .relay-source strong,
+    body.runtime-demo.phone-review .relay-ear strong { font-size: 14px; }
+    body.runtime-demo.phone-review .relay-source small,
+    body.runtime-demo.phone-review .relay-ear small { font-size: 9px; }
+    body.runtime-demo.phone-review .ear-illustration { width: 38px; height: 38px; font-size: 34px; }
+    body.runtime-demo.phone-review .air-lane { width: 104px; height: 100%; min-height: 0; justify-self: center; border-radius: 999px; background: linear-gradient(180deg,var(--sky-soft),var(--violet-soft)); }
+    body.runtime-demo.phone-review .relay-caption { box-sizing: border-box; width: calc(100% - 8px); padding: 8px 4px; }
+    body.runtime-demo.phone-review .relay-caption strong,
+    body.runtime-demo.phone-review .relay-caption small { white-space: normal; }
+    body.runtime-demo.phone-review .relay-caption strong { font-size: 11px; }
+    body.runtime-demo.phone-review .relay-caption small { width: auto; font-size: 8px; line-height: 1.35; }
+    body.runtime-demo.phone-review .air-particle { top: 0; left: calc(50% - 8px); }
+    body.runtime-demo.phone-review .air-particle:nth-child(2) { top: 12%; left: calc(50% - 8px); }
+    body.runtime-demo.phone-review .air-particle:nth-child(3) { top: 28%; left: calc(50% - 8px); }
+    body.runtime-demo.phone-review .vacuum-block-stage { min-height: 0; grid-template-rows: repeat(2,minmax(0,1fr)); align-items: stretch; }
+    body.runtime-demo.phone-review .vacuum-chamber { min-height: 0; height: auto; padding: 14px 12px 9px; border-width: 3px; border-bottom-width: 8px; border-radius: 28px 28px 14px 14px; }
+    body.runtime-demo.phone-review .vacuum-chamber > div { width: 100%; min-width: 0; display: grid; place-items: center; gap: 4px; text-align: center; }
+    body.runtime-demo.phone-review .vacuum-chamber .mini-string { width: min(220px,72%); height: 48px; }
+    body.runtime-demo.phone-review .blocked-path { min-height: 0; padding: 8px; gap: 5px; }
+    body.runtime-demo.phone-review .blocked-path b { font-size: 28px; line-height: 1; }
     @media (prefers-reduced-motion: reduce) {
       body.runtime-demo *, body.runtime-demo *::before, body.runtime-demo *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
       body.runtime-demo .air-particle { display: none !important; }
@@ -1304,7 +1371,7 @@
         </section>
 
         <section class="concept-screen lesson-screen" data-screen="intro" hidden>
-          <div class="lesson-shell"><header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span class="active">琴弦振动</span></div><div class="lesson-controls"><b>自动播放 1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">第一个子片段</p><h1>先做一次公平比较</h1><p>只改变拨弦力度，其他条件保持不变。</p></div><span class="slide-tag">1 / 3</span></div><div class="lesson-canvas intro-canvas"><div class="intro-question"><h2>更用力拨同一根弦，音调会更高吗？</h2><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变力度</span></div></div><div class="controlled-visual"><div class="control-string"><span>同一根弦</span><svg viewBox="0 0 440 120"><path d="M0 60 C35 25 70 25 105 60 S175 95 210 60 S280 25 315 60 S385 95 440 60" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></div><div class="control-arrow">只改变<br><strong>拨弦力度</strong></div></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="active"></span><span></span><span></span><small>第 1 段</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>问题讲解从这里开始</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>先做一次公平比较：我们只改变拨弦力度，弦长、松紧和粗细都保持不变。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div>
+          <div class="lesson-shell"><header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span class="active">琴弦振动</span></div><div class="lesson-controls"><b>1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">第一个子片段</p><h1>先做一次公平比较</h1><p>只改变拨弦力度，其他条件保持不变。</p></div><span class="slide-tag">1 / 3</span></div><div class="lesson-canvas intro-canvas"><div class="intro-question"><h2>更用力拨同一根弦，音调会更高吗？</h2><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变力度</span></div></div><div class="controlled-visual"><div class="control-string"><span>同一根弦</span><svg viewBox="0 0 440 120"><path d="M0 60 C35 25 70 25 105 60 S175 95 210 60 S280 25 315 60 S385 95 440 60" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></div><div class="control-arrow">只改变<br><strong>拨弦力度</strong></div></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="active"></span><span></span><span></span><small>第 1 段</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>问题讲解从这里开始</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>先做一次公平比较：我们只改变拨弦力度，弦长、松紧和粗细都保持不变。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div>
         </section>
 
         <section id="screen-lesson" class="concept-screen lesson-screen" role="tabpanel" aria-labelledby="tab-lesson" data-screen="lesson" hidden>
@@ -1313,11 +1380,11 @@
               <button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
               <div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div>
               <div class="topic-tabs"><span class="active">琴弦振动</span></div>
-              <div class="lesson-controls"><b>自动播放中</b></div>
+              <div class="lesson-controls"><b>2 / 3</b></div>
             </header>
             <div class="lesson-grid">
               <main class="workspace">
-                <div class="lesson-heading"><div><p class="eyebrow">核心讲解 · 图解与动画</p><h1>看看真实现象</h1><p>摆得更开，不等于来回得更快。</p></div><span class="slide-tag">自动播放 2 / 3</span></div>
+                <div class="lesson-heading"><div><p class="eyebrow">核心讲解 · 图解与动画</p><h1>看看真实现象</h1><p>摆得更开，不等于来回得更快。</p></div><span class="slide-tag">2 / 3</span></div>
                 <div class="lesson-canvas">
                   <div class="lesson-copy"><p>轻轻拨，琴弦摆动得窄；用力拨，琴弦摆动得更开。可是同样一小段时间里，它们来回的次数差不多。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>轻轻拨：摆动范围较小</span></div><div class="lesson-point"><i>2</i><span>用力拨：摆动范围更大</span></div><div class="lesson-point"><i>3</i><span>共同点：往返节奏基本相同</span></div></div></div>
                   <div class="compare-visual">
@@ -1356,7 +1423,7 @@
           </div>
         </section>
 
-        <section class="concept-screen lesson-screen" data-screen="vacuum" hidden><div class="lesson-shell"><header class="lesson-appbar"><span class="lesson-back" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>关联问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">真空中的声音</span></div><div class="lesson-controls"><b style="background:var(--violet-soft)">自动播放中</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">如果没有空气呢？</p><h1>琴弦还在振动，声音却传不过去</h1><p>把“物体怎样振动”和“声音怎样传播”分开看。</p></div><span class="slide-tag" style="background:var(--violet-soft)">关联问题</span></div><div class="lesson-canvas"><div class="lesson-copy"><p>没有空气时，琴弦本身仍然来回振动。但没有介质把振动一段段传到耳朵。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>物体仍然振动</span></div><div class="lesson-point"><i>2</i><span>声音不能穿过真空传播</span></div><div class="lesson-point"><i>3</i><span>振动与传播是两个相连的问题</span></div></div></div><div class="vacuum-jar"><span class="vacuum-sticker">介质：真空</span><svg viewBox="0 0 320 120"><path d="M0 60 C25 15 50 15 75 60 S125 105 150 60 S200 15 225 60 S275 105 320 60" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="done"></span><span class="active" style="background:var(--violet)"></span><span></span><small>关联讲解</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>继承完整消息记录</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><div class="message user-message"><small>你</small><p>如果没有空气呢？</p></div><div class="message emphasis"><small>小知老师</small><p>琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。</p></div></div><div class="followup-box"><span>继续问这个问题</span><b class="voice-action"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div></section>
+        <section class="concept-screen lesson-screen" data-screen="vacuum" hidden><div class="lesson-shell"><header class="lesson-appbar"><span class="lesson-back" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>关联问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">真空中的声音</span></div><div class="lesson-controls"><b style="background:var(--violet-soft)">1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">如果没有空气呢？</p><h1>琴弦还在振动，声音却传不过去</h1><p>把“物体怎样振动”和“声音怎样传播”分开看。</p></div><span class="slide-tag" style="background:var(--violet-soft)">1 / 3</span></div><div class="lesson-canvas"><div class="lesson-copy"><p>没有空气时，琴弦本身仍然来回振动。但没有介质把振动一段段传到耳朵。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>物体仍然振动</span></div><div class="lesson-point"><i>2</i><span>声音不能穿过真空传播</span></div><div class="lesson-point"><i>3</i><span>振动与传播是两个相连的问题</span></div></div></div><div class="vacuum-jar"><span class="vacuum-sticker">介质：真空</span><svg viewBox="0 0 320 120"><path d="M0 60 C25 15 50 15 75 60 S125 105 150 60 S200 15 225 60 S275 105 320 60" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="done"></span><span class="active" style="background:var(--violet)"></span><span></span><small>关联讲解</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>继承完整消息记录</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><div class="message user-message"><small>你</small><p>如果没有空气呢？</p></div><div class="message emphasis"><small>小知老师</small><p>琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。</p></div></div><div class="followup-box"><span>继续问这个问题</span><b class="voice-action"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div></section>
 
         <section class="concept-screen static-screen" data-screen="fork" hidden><div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>音叉迁移</span></div><span class="step">第一次迁移</span></header><div class="static-content"><div class="static-wide migration-layout"><div class="science-object fork-object"><svg class="fork-illustration" viewBox="0 0 420 360" aria-label="音叉与敲击锤"><path class="vibration" d="M82 72C48 105 48 157 82 190M338 72c34 33 34 85 0 118"/><path class="fork-body" d="M142 55v135c0 47 31 82 68 82s68-35 68-82V55M210 272v54"/><path class="mallet" d="M304 248l58 55M333 221l56 56"/><rect class="mallet-head" x="328" y="198" width="58" height="70" rx="22" transform="rotate(-44 357 233)"/></svg><span class="object-caption">同一个音叉 · 轻敲 / 用力敲</span></div><div><p class="eyebrow">分别验证结论和原因</p><h1 class="static-title">更用力敲同一个音叉，音调会更高吗？</h1><p class="static-lead">同一个音叉不更换，只改变敲击力度。</p><div class="static-choice-list migration-question-list"></div><div class="prediction-footer" style="margin-top:3%"><p>提交前不显示正误。</p><span class="cta primary disabled">提交验证 →</span></div></div></div></div></div></section>
 
@@ -1512,7 +1579,20 @@
     };
 
     function playerMarkup(kind, segmentCount = 3) {
-      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${Array.from({ length: segmentCount }, (_, index) => index + 1).map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small><button type="button" class="player-subtitle-toggle" data-subtitle-toggle aria-pressed="false">字幕 关</button></div>`;
+      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${Array.from({ length: segmentCount }, (_, index) => index + 1).map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small></div>`;
+    }
+
+    function mountLessonStatusControls() {
+      ['intro', 'lesson', 'vacuum'].forEach(screenName => {
+        const heading = document.querySelector(`[data-screen="${screenName}"] .lesson-heading`);
+        const tag = heading?.querySelector('.slide-tag');
+        if (!heading || !tag || tag.closest('.lesson-status')) return;
+        const status = document.createElement('div');
+        status.className = 'lesson-status';
+        status.innerHTML = '<button type="button" class="player-subtitle-toggle" data-subtitle-toggle aria-pressed="false">字幕 关</button>';
+        tag.replaceWith(status);
+        status.append(tag);
+      });
     }
 
     const syntheticControlSelector = '.cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span';
@@ -1554,6 +1634,7 @@
         const canvas = screen?.querySelector('.lesson-canvas');
         if (canvas && !screen.querySelector('.runtime-subtitle')) canvas.insertAdjacentHTML('afterend', '<div class="runtime-subtitle" aria-live="polite"></div>');
       });
+      mountLessonStatusControls();
       document.querySelectorAll('[data-screen="intro"] .followup-box > span, [data-screen="lesson"] .followup-box > span, [data-screen="experiment"] .followup-box > span, [data-screen="vacuum"] .followup-box > span').forEach(input => {
         input.contentEditable = 'true';
         input.setAttribute('role', 'textbox');
@@ -1648,6 +1729,7 @@
       if (state.preset === 'math') {
         document.querySelectorAll('[data-screen="intro"] .topic-tabs, [data-screen="lesson"] .topic-tabs').forEach(tabs => { tabs.innerHTML = '<span class="active">完全平方配方</span>'; });
         syncInteractiveSemantics();
+        requestAnimationFrame(syncActiveTopicVisibility);
         return;
       }
       const labels = ['琴弦振动', '实验', '真空中的声音'].slice(0, state.topicStage + 1);
@@ -1658,6 +1740,18 @@
         tabs.innerHTML = labels.map(label => `<span class="${label === active ? 'active' : ''}">${label}</span>`).join('');
       });
       syncInteractiveSemantics();
+      requestAnimationFrame(syncActiveTopicVisibility);
+    }
+
+    function syncActiveTopicVisibility() {
+      document.querySelectorAll('.lesson-appbar .topic-tabs').forEach(tabs => {
+        const active = tabs.querySelector('.active');
+        if (!active || tabs.clientWidth === 0) return;
+        const left = active.offsetLeft;
+        const right = left + active.offsetWidth;
+        if (left < tabs.scrollLeft) tabs.scrollLeft = left;
+        else if (right > tabs.scrollLeft + tabs.clientWidth) tabs.scrollLeft = right - tabs.clientWidth;
+      });
     }
 
     function revealMarkup(markup) {
@@ -1983,11 +2077,10 @@
       });
       document.querySelectorAll('[data-screen="intro"] .lesson-controls b, [data-screen="lesson"] .lesson-controls b').forEach(label => {
         const segmentCount = state.preset === 'math' ? 4 : 3;
-        const transitionLabel = state.preset === 'math' ? '准备迁移验证' : '即将进入实验';
-        label.textContent = state.transitioning ? transitionLabel : `${state.playing ? '自动播放' : '已暂停'} ${state.lessonSegment} / ${segmentCount}`;
+        label.textContent = `${state.lessonSegment} / ${segmentCount}`;
       });
       document.querySelectorAll('[data-screen="vacuum"] .lesson-controls b').forEach(label => {
-        label.textContent = state.transitioning ? '准备返回琴弦' : `${state.playing ? '自动播放' : '已暂停'} ${state.vacuumSegment} / 3`;
+        label.textContent = `${state.vacuumSegment} / 3`;
       });
     }
 
@@ -2118,6 +2211,7 @@
       document.body.classList.toggle('phone-viewport-forced', requestedViewport === 'phone');
       viewportTabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.viewport === name)));
       if (viewportCaption) viewportCaption.textContent = phone ? '基准画布：390 × 844 · 手机竖屏' : '基准画布：1180 × 820 · 平板横屏';
+      requestAnimationFrame(syncActiveTopicVisibility);
     }
 
     function showScreen(name, updateUrl = true) {
@@ -2214,12 +2308,12 @@
       if (segment === 2) {
         title.textContent = '看看真实现象';
         lead.textContent = '摆得更开，不等于来回得更快。';
-        tag.textContent = '自动播放 2 / 3';
+        tag.textContent = '2 / 3';
         renderLessonVisual(2);
       } else {
         title.textContent = '给发现起名字';
         lead.textContent = '振幅管响度，频率管音调。';
-        tag.textContent = '自动播放 3 / 3';
+        tag.textContent = '3 / 3';
         renderLessonVisual(3);
       }
       updatePlayer();
@@ -2249,7 +2343,7 @@
       };
       if (title) title.textContent = headings[segment][0];
       if (lead) lead.textContent = headings[segment][1];
-      if (tag) tag.textContent = `关联讲解 ${segment} / 3`;
+      if (tag) tag.textContent = `${segment} / 3`;
       renderVacuumVisual(segment);
       document.querySelector('[data-screen="vacuum"] .lesson-canvas')?.classList.remove('transition-freeze');
       updatePlayer();
@@ -2379,7 +2473,7 @@
         state.mathTransferEvidence = { result: state.migration.result, reason: state.migration.reason };
         if (correct) {
           state.transferResult = state.mathTransferAttempt === 0 ? 'first-pass' : 'guided-retry';
-          showScreen('result');
+          showScreen('feedback');
         } else if (state.mathTransferAttempt === 0) {
           state.mathTransferAttempt = 1;
           renderMathMigration();
@@ -2387,7 +2481,7 @@
           showToast('看看配方提示，再试一次');
         } else {
           state.transferResult = 'incomplete';
-          showScreen('result');
+          showScreen('feedback');
         }
         return;
       }

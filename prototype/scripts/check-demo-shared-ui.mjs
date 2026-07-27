@@ -1,10 +1,47 @@
 import fs from 'node:fs';
+import vm from 'node:vm';
 
 const html = fs.readFileSync(new URL('../sound-demo.html', import.meta.url), 'utf8');
 const failures = [];
 const requireMatch = (condition, message) => {
   if (!condition) failures.push(message);
 };
+
+requireMatch(/function redirectFilePreviewToHttp\(\)/.test(html), '直接打开 file:// Demo 时必须尝试切换到可检查的 HTTP 入口');
+requireMatch(/if \(window\.location\.protocol !== 'file:'\) return;/.test(html), '本地预览切换不得影响 HTTP 或公开部署入口');
+requireMatch(/probe\.onload = \(\) => window\.location\.replace\(`\$\{httpDemoUrl\}\$\{window\.location\.search\}\$\{window\.location\.hash\}`\)/.test(html), 'HTTP 服务可用后必须保留当前查询参数和锚点');
+requireMatch(/probe\.onerror = \(\) => \{\};/.test(html), 'HTTP 服务未启动时必须保留当前 file:// 页面');
+
+const redirectScript = html.match(/<script>\s*(function redirectFilePreviewToHttp\(\)[\s\S]*?redirectFilePreviewToHttp\(\);)\s*<\/script>/)?.[1];
+const runRedirectScenario = ({ protocol, probeLoads }) => {
+  let replacement = null;
+  let probeRequest = null;
+  const location = {
+    protocol,
+    search: '?screen=lesson&preset=math&viewport=phone',
+    hash: '#segment-3',
+    replace(url) { replacement = url; }
+  };
+  class PreviewProbe {
+    set src(url) {
+      probeRequest = url;
+      if (probeLoads) this.onload();
+      else this.onerror();
+    }
+  }
+  if (redirectScript) vm.runInNewContext(redirectScript, { window: { location }, Image: PreviewProbe, Date });
+  return { replacement, probeRequest };
+};
+
+const availableFilePreview = runRedirectScenario({ protocol: 'file:', probeLoads: true });
+requireMatch(
+  availableFilePreview.replacement === 'http://127.0.0.1:4173/sound-demo.html?screen=lesson&preset=math&viewport=phone#segment-3',
+  '标准服务可用时 file:// Demo 必须自动切换到 HTTP 并保留完整状态'
+);
+const unavailableFilePreview = runRedirectScenario({ protocol: 'file:', probeLoads: false });
+requireMatch(unavailableFilePreview.replacement === null, '标准服务不可用时 file:// Demo 不得跳到错误页');
+const httpPreview = runRedirectScenario({ protocol: 'http:', probeLoads: true });
+requireMatch(httpPreview.probeRequest === null && httpPreview.replacement === null, 'HTTP Demo 不得重复执行本地入口切换');
 
 requireMatch(!/math-mode[^{}]*tutor-panel[^{]*\{[^}]*display:\s*none/.test(html), '数学预设不得隐藏共享小知面板');
 requireMatch(!/math-mode[^{}]*lesson-controls[^{]*\{[^}]*display:\s*none/.test(html), '数学预设不得隐藏共享顶部状态');
@@ -16,6 +53,7 @@ requireMatch(/function renderMathTutor\(segment\)/.test(html), '数学讲解必�
 requireMatch(/followupBox\.setAttribute\('aria-disabled', 'true'\)/.test(html), '数学讲解必须保留追问外观但标记为不可操作');
 requireMatch(/action\.classList\.add\('disabled'\)/.test(html), '数学追问按钮必须在共享语义同步后仍保持不可操作');
 requireMatch(/if \(state\.preset === 'math'\) return;/.test(html), '数学追问入口点击后不得跳转或产生反馈');
+requireMatch(/function submitMigration\(\)[\s\S]{0,900}if \(state\.preset === 'math'\)[\s\S]{0,700}showScreen\('feedback'\)[\s\S]{0,700}showScreen\('feedback'\)/.test(html), '数学迁移首次通过、提示后完成或未通过后都必须先进入共享体验反馈页');
 requireMatch(/function startPlaybackTicker\(\)/.test(html), '真实旁白播放时必须有逐帧视觉时钟');
 requireMatch(/function startPlaybackTicker\(\)[\s\S]{0,500}updatePlayer\(\)/.test(html), '逐帧视觉时钟必须同步更新进度和动画');
 requireMatch(!/audio\.addEventListener\('timeupdate',\s*updatePlayer\)/.test(html), 'timeupdate 事件不得把 Event 对象误传为强制播放比例');
@@ -26,12 +64,28 @@ requireMatch(/playAudioWithLeadIn\(audioPath\(`narration-math-\$\{segment\}`\)/.
 requireMatch(/playAudioWithLeadIn\(audioPath\(`narration-main-\$\{segment\}`\)/.test(html), '声音主讲解不得绕过共享 1 秒静置时序');
 requireMatch(/playAudioWithLeadIn\(audioPath\(`narration-vacuum-\$\{segment\}`\)/.test(html), '声音关联讲解不得绕过共享 1 秒静置时序');
 requireMatch(/if \(event\.target\.closest\('\[data-record-done\]'\)\) \{\s*if \(state\.preset === 'math'\) return;/.test(html), '数学语音确认不得提交或跳转');
-requireMatch(/function playerMarkup\([\s\S]{0,900}class="player-subtitle-toggle" data-subtitle-toggle/.test(html), '字幕开关必须属于共享底部播放器');
-requireMatch(!/<div class="lesson-controls"><span>字幕/.test(html), '顶部导航不得包含字幕开关节点');
-requireMatch(!/lesson-controls[^\n{]*data-subtitle-toggle|dataset\.subtitleToggle/.test(html), '不得用页面脚本把顶部状态升级为字幕开关');
+requireMatch(/function mountLessonStatusControls\(\)[\s\S]{0,1200}lesson-status[\s\S]{0,600}data-subtitle-toggle/.test(html), '所有动画讲解页必须通过共享状态组把字幕开关放在段数标签上方');
+requireMatch(!/function playerMarkup\([\s\S]{0,900}player-subtitle-toggle/.test(html), '共享底部播放器不得继续包含字幕开关');
+requireMatch(/body\.runtime-demo \.unified-player \{[^}]*grid-template-columns:\s*52px minmax\(0, 1fr\) 58px;/.test(html), '移除字幕按钮后底部播放器必须使用三列布局');
+requireMatch(!/slide-tag[^>]*>(?:自动播放|关联问题)|tag\.textContent\s*=\s*['`]自动播放|tag\.textContent\s*=\s*`关联讲解/.test(html), '所有动画步骤标签只能显示当前段数，不得带自动播放或关联讲解文案');
+requireMatch(/label\.textContent = `\$\{state\.lessonSegment\} \/ \$\{segmentCount\}`/.test(html), '主讲解共享顶部状态必须只显示当前段数');
+requireMatch(/label\.textContent = `\$\{state\.vacuumSegment\} \/ 3`/.test(html), '追问讲解共享顶部状态必须只显示当前段数');
 requireMatch(/math-stage math-geometry-stage two-column/.test(html), '数学花圃讲解必须使用手机专属响应式构图');
 requireMatch(/phone-review \.lesson-canvas > \.math-stage \{ grid-column: 1; grid-row: 1 \/ -1; \}/.test(html), '手机数学动画根节点必须占满整个讲解画布');
 requireMatch(/phone-review \.math-stage \.ppt-reveal \{ transform: none; \}/.test(html), '手机数学渐进节点不得通过位移越出卡片边界');
+requireMatch(/body\.runtime-demo \.vacuum-block-stage \{[^}]*grid-template-rows:\s*repeat\(2,minmax\(0,1fr\)\);[^}]*align-items:\s*stretch;/.test(html), '手机真空第三段必须为两个容器分配完整且可收缩的纵向空间');
+requireMatch(/body\.runtime-demo \.vacuum-chamber > div \{[^}]*width:\s*100%;[^}]*display:\s*grid;[^}]*place-items:\s*center;[^}]*text-align:\s*center;/.test(html), '手机真空容器的文字和弦图必须位于圆弧内部安全内容区中央');
+requireMatch(/body\.runtime-demo \.vacuum-chamber \.mini-string \{[^}]*width:\s*min\(220px,72%\);[^}]*height:\s*48px;/.test(html), '手机真空容器的弦图必须按内部安全宽度缩放');
+requireMatch(/body\.phone-review \.lesson-appbar \.topic-tabs \{[^}]*overflow-x:\s*auto;[^}]*scroll-snap-type:\s*x proximity;/.test(html), '手机主题标签必须在独立轨道内横向滚动');
+requireMatch(/function syncActiveTopicVisibility\(\)/.test(html) && /requestAnimationFrame\(syncActiveTopicVisibility\)/.test(html), '主题切换后必须让当前标签保持可见');
+requireMatch(/body\.phone-review \.experiment-canvas \{[^}]*grid-template-rows:\s*minmax\(0,1fr\) 46px;/.test(html), '手机实验画布必须为固定迁移入口保留独立行');
+requireMatch(/body\.phone-review \[data-screen="experiment"\] \.prediction-footer \{[^}]*margin:\s*0 !important;[^}]*justify-content:\s*center;/.test(html), '手机实验迁移入口必须清除旧偏移并水平居中');
+requireMatch(/body\.runtime-demo,[\s\S]{0,180}height:\s*100dvh;/.test(html), '真实手机短视口必须使用动态视口高度');
+requireMatch(/body\.runtime-demo \.relay-stage \{[^}]*grid-template-rows:\s*minmax\(76px,\.8fr\) minmax\(124px,1\.2fr\) minmax\(76px,\.8fr\);/.test(html), '手机真空接力动画必须使用紧凑纵向构图');
+requireMatch(/body\.runtime-demo \.relay-caption \{[^}]*box-sizing:\s*border-box;[^}]*width:\s*calc\(100% - 8px\);/.test(html), '手机真空接力标签必须限制在轨道内部安全宽度');
+requireMatch(/body\.runtime-demo \.relay-caption small \{[^}]*width:\s*auto;/.test(html), '手机真空接力说明不得使用超过轨道的固定宽度');
+requireMatch(/body\.runtime-demo\.phone-review \.relay-stage \{[^}]*grid-template-columns:\s*1fr;[^}]*grid-template-rows:\s*minmax\(76px,\.8fr\) minmax\(124px,1\.2fr\) minmax\(76px,\.8fr\);/.test(html), '固定手机审阅模式不得依赖外层浏览器宽度应用真空纵向构图');
+requireMatch(/body\.runtime-demo\.phone-review \.vacuum-chamber > div \{[^}]*width:\s*100%;[^}]*place-items:\s*center;[^}]*text-align:\s*center;/.test(html), '固定手机审阅模式必须复用真空容器内部安全区规则');
 requireMatch(/body\.phone-review \.lesson-screen \{ padding: 9px 9px calc\(var\(--phone-safe-bottom\) \+ 9px\); \}/.test(html), '手机讲解页顶部只保留视觉边距，不得叠加顶部安全区空白带');
 requireMatch(!/--phone-safe-top\s*:|var\(--phone-safe-top\)/.test(html), '所有手机页面不得定义或消费顶部安全区 Token');
 requireMatch(/\[canvas, \.\.\.canvas\.querySelectorAll\('\*'\)\]/.test(html), '画布审计必须检查画布自身及全部后代');
