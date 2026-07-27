@@ -18,6 +18,7 @@ requireMatch(/action\.classList\.add\('disabled'\)/.test(html), '数学追问按
 requireMatch(/if \(state\.preset === 'math'\) return;/.test(html), '数学追问入口点击后不得跳转或产生反馈');
 requireMatch(/function startPlaybackTicker\(\)/.test(html), '真实旁白播放时必须有逐帧视觉时钟');
 requireMatch(/function startPlaybackTicker\(\)[\s\S]{0,500}updatePlayer\(\)/.test(html), '逐帧视觉时钟必须同步更新进度和动画');
+requireMatch(!/audio\.addEventListener\('timeupdate',\s*updatePlayer\)/.test(html), 'timeupdate 事件不得把 Event 对象误传为强制播放比例');
 requireMatch(/audio\.addEventListener\('error'[\s\S]{0,400}startVisualFallback/.test(html), '音频媒体报错时必须继续视觉时间轴');
 requireMatch(/let visualFallbackRatio = 0;/.test(html) && /visualFallbackStartedAt = performance\.now\(\) - visualFallbackRatio \* duration/.test(html), '暂停视觉降级必须保存当前位置并从原位置续播');
 requireMatch(/function playAudioWithLeadIn\(source, onEnded = null\)[\s\S]{0,400}setTimeout\([\s\S]{0,220}, 1000\)/.test(html), '所有讲解子片段必须先静置 1 秒再播放');

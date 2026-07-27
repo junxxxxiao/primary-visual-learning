@@ -2732,7 +2732,7 @@
       }
       updatePlayer();
     });
-    audio.addEventListener('timeupdate', updatePlayer);
+    audio.addEventListener('timeupdate', () => updatePlayer());
     audio.addEventListener('play', () => { state.playing = true; startPlaybackTicker(); syncPlayButtons(); });
     audio.addEventListener('pause', () => { stopPlaybackTicker(); if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
     audio.addEventListener('error', () => {
