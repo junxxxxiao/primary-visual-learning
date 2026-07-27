@@ -772,10 +772,10 @@
     body.phone-review .experiment-pane { min-height: 184px; padding: 10px; border-radius: 16px; }
     body.phone-review .experiment-pane header { font-size: 8px; }
     body.phone-review .experiment-pane svg { height: 125px; }
-    body.phone-review [data-screen="experiment"] .lesson-canvas { padding-bottom: 62px; }
-    body.phone-review [data-screen="experiment"] .prediction-footer { min-height: 54px; margin-top: 14px !important; padding: 0 132px 0 2px; align-items: center; }
+    body.phone-review [data-screen="experiment"] .lesson-canvas { padding-bottom: 0; }
+    body.phone-review [data-screen="experiment"] .prediction-footer { min-height: 54px; margin: 0 !important; padding: 0; align-items: center; justify-content: center; }
     body.phone-review [data-screen="experiment"] .prediction-footer p { margin: 0; }
-    body.phone-review [data-screen="experiment"] .prediction-footer .cta { width: 100%; max-width: 150px; padding: 0 10px; }
+    body.phone-review [data-screen="experiment"] .prediction-footer .cta { width: auto; min-width: 150px; max-width: 100%; padding: 0 16px; }
     body.phone-review [data-screen="experiment"] .prediction-footer > .meta-chip { display: none; }
     body.phone-review [data-screen="experiment"] .entry-buttons { width: 100%; }
 
@@ -1148,7 +1148,8 @@
       body.runtime-demo .screen-frame { height: 100vh; height: 100dvh; }
       body.runtime-demo .screen-frame { width: 100vw; }
       body.runtime-demo [data-screen="loading"] .static-appbar .step { min-width: 84px; min-height: 34px; padding: 0 13px; }
-      body.runtime-demo .lesson-appbar .topic-tabs { min-width: 0; max-width: min(54vw, 236px); overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+      body.runtime-demo .lesson-appbar .topic-tabs { min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+      body.runtime-demo:not(.phone-review) .lesson-appbar .topic-tabs { max-width: min(54vw, 236px); }
       body.runtime-demo .lesson-appbar .topic-tabs::-webkit-scrollbar { display: none; }
       body.runtime-demo .lesson-appbar .topic-tabs span { min-height: 40px; padding-inline: 11px; display: inline-flex; align-items: center; flex: 0 0 auto; white-space: nowrap; }
       body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 42px; gap: 6px; }
