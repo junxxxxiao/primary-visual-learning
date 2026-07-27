@@ -151,6 +151,7 @@ python3 prototype/scripts/generate-qwen-narration.py --promote-suffix qwen-stand
 - 题图：`assets/images/math-completing-square-problem.png`，仅作为固定附件展示，不执行真实上传或 OCR；
 - 四段讲解：配方规律、第（1）题最小值 `-3`、第（2）题最大值 `3`、第（3）题最大面积 `1250` 平方米；
 - 数学路径不进入声音校准、预测、实验或追问；
+- 数学讲解继续复用声音 Demo 的顶部导航、主题标签、字幕开关、播放器、小知挂件和可展开对话面板；面板显示当前数学步骤的讲解消息，并保留追问输入、语音和发送入口的完整外观，但这些入口当前不可操作，点击不产生反馈或跳转；
 - 迁移：120 米靠墙围栏，短边 30 米、长边 60 米、最大面积 1800 平方米，并验证配方原因；
 - 同题提示后答对只记录“提示后完成本题，仍需换题验证”，不记为“提示后弄懂”。
 
@@ -160,6 +161,7 @@ python3 prototype/scripts/generate-qwen-narration.py --promote-suffix qwen-stand
 
 ```bash
 node --check prototype/app.js
+node prototype/scripts/check-demo-shared-ui.mjs
 node prototype/scripts/generate-fixture-audio.mjs
 python3 prototype/scripts/generate-qwen-narration.py --dry-run
 ```

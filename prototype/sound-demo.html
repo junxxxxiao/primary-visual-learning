@@ -394,6 +394,7 @@
     .timeline span.active { background: var(--lime); }
     .timeline small { margin-left: 7px; color: var(--muted); font-size: 10px; }
     .tutor-panel { padding: 2.1%; display: flex; flex-direction: column; }
+    body.runtime-demo.math-mode .tutor-panel .followup-box [aria-disabled="true"] { pointer-events: none; }
     .tutor-head { padding-bottom: 4%; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
     .tutor-avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 15px 15px 15px 5px; background: var(--coral); font-size: 11px; font-weight: 900; }
     .tutor-head strong, .tutor-head small { display: block; }
@@ -576,10 +577,6 @@
     .migration-question .static-choice i { width: 24px; height: 24px; border: 1.5px solid var(--ink); border-radius: 50%; background: white; color: transparent; font-size: 13px; }
     .migration-question .static-choice.selected i { border-color: var(--ink); background: var(--ink); color: var(--lime); }
     .migration-question .static-choice:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
-    body.runtime-demo.math-mode [data-screen="intro"] .lesson-grid,
-    body.runtime-demo.math-mode [data-screen="lesson"] .lesson-grid { grid-template-columns: 1fr; }
-    body.runtime-demo.math-mode [data-screen="intro"] .tutor-panel,
-    body.runtime-demo.math-mode [data-screen="lesson"] .tutor-panel { display: none; }
     .math-stage { box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; padding: 0 7px 7px 0; grid-column: 1 / -1; display: grid; gap: 16px; align-content: stretch; align-items: stretch; overflow: hidden; }
     .math-stage > * { min-width: 0; min-height: 0; }
     .math-stage.two-column { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); grid-template-rows: minmax(0,1fr); }
@@ -1410,6 +1407,7 @@
     let activeAudioSource = '';
     let activeAudioEnded = null;
     let visualFallbackFrame = null;
+    let playbackFrame = null;
     let pendingSeekRatio = null;
     let dragStartY = null;
     let exitWasPlaying = false;
@@ -1733,9 +1731,38 @@
       } else {
         canvas.innerHTML = `<div class="math-stage two-column"><section class="math-geometry-card ppt-reveal" data-reveal-at="0"><div class="math-wall">围墙（不需要木栅栏）</div><div class="math-plot"><span class="math-x">x 米</span><span class="math-y">100 − 2x 米</span></div></section><section class="math-work-card"><h2>面积 = 短边 × 长边</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at=".18">长边 = 100 − 2x</div><div class="math-formula ppt-reveal" data-reveal-at=".4">S = x(100 − 2x)</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".63">S = −2(x − 25)² + 1250</div><div class="math-conclusion ppt-reveal" data-reveal-at=".84">x = 25 米，长边 50 米，最大面积 1250 平方米</div></div></section></div>`;
       }
+      renderMathTutor(segment);
       activateRevealNodes(canvas);
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) canvas.querySelectorAll('.ppt-reveal').forEach(node => node.classList.add('is-visible'));
       requestAnimationFrame(auditLessonCanvasBounds);
+    }
+
+    function renderMathTutor(segment) {
+      const screenName = segment === 1 ? 'intro' : 'lesson';
+      const panel = document.querySelector(`[data-screen="${screenName}"] .tutor-panel`);
+      if (!panel) return;
+      const tutorCopy = {
+        1: ['先认识配方规律', '先看完全平方前面的正负号：正号帮助找最小值，负号帮助找最大值。'],
+        2: ['正在讲第（1）题', '把 x² − 4x 补成 (x − 2)²，再减去多补的 4，就能看出最小值。'],
+        3: ['正在讲第（2）题', 'a 和 b 的部分要分别配方，最后再把常数合在一起。'],
+        4: ['正在讲第（3）题', '先用 x 表示短边和长边，再把面积式配方，就能找到最大面积。']
+      }[segment];
+      const status = panel.querySelector('.tutor-head small');
+      const thread = panel.querySelector('.thread');
+      const followupBox = panel.querySelector('.followup-box');
+      const input = followupBox?.querySelector('span');
+      if (status) status.textContent = tutorCopy[0];
+      if (thread) thread.innerHTML = `<div class="message emphasis"><small>小知老师 · 正在讲解</small><p>${tutorCopy[1]}</p></div>`;
+      if (followupBox) followupBox.setAttribute('aria-disabled', 'true');
+      if (input) {
+        input.textContent = '这一步为什么要这样配方？';
+        input.contentEditable = 'false';
+        input.tabIndex = -1;
+      }
+      followupBox?.querySelectorAll('.voice-action, .send-action').forEach(action => {
+        action.classList.add('disabled');
+        action.setAttribute('aria-disabled', 'true');
+      });
     }
 
     function prepareLoadingContent() {
@@ -1790,6 +1817,7 @@
     function stopAudio() {
       cancelAnimationFrame(visualFallbackFrame);
       visualFallbackFrame = null;
+      stopPlaybackTicker();
       audio.pause();
       audio.onended = null;
       state.playing = false;
@@ -1802,7 +1830,7 @@
       activeAudioEnded = onEnded;
       audio.src = source;
       audio.currentTime = 0;
-      audio.onended = () => { state.playing = false; syncPlayButtons(); onEnded?.(); };
+      audio.onended = () => { stopPlaybackTicker(); state.playing = false; syncPlayButtons(); onEnded?.(); };
       state.playing = true;
       syncPlayButtons();
       audio.play().catch(error => {
@@ -1811,12 +1839,28 @@
         if (error?.name === 'NotAllowedError') showToast('点左下角播放按钮继续听');
         else {
           showToast('声音资源暂时不可用，继续播放画面');
-          startVisualFallback(onEnded);
+          if (visualFallbackFrame === null) startVisualFallback(onEnded);
         }
       });
     }
 
+    function stopPlaybackTicker() {
+      cancelAnimationFrame(playbackFrame);
+      playbackFrame = null;
+    }
+
+    function startPlaybackTicker() {
+      stopPlaybackTicker();
+      const tick = () => {
+        updatePlayer();
+        if (!audio.paused && !audio.ended && state.playing) playbackFrame = requestAnimationFrame(tick);
+        else playbackFrame = null;
+      };
+      playbackFrame = requestAnimationFrame(tick);
+    }
+
     function startVisualFallback(onEnded) {
+      stopPlaybackTicker();
       cancelAnimationFrame(visualFallbackFrame);
       const startedAt = performance.now();
       const duration = 9000;
@@ -1840,10 +1884,19 @@
       if (!activeAudioSource) return;
       if (audio.paused) {
         state.playing = true;
-        audio.onended = () => { state.playing = false; syncPlayButtons(); activeAudioEnded?.(); };
-        audio.play().catch(() => showToast('声音暂时无法播放'));
+        audio.onended = () => { stopPlaybackTicker(); state.playing = false; syncPlayButtons(); activeAudioEnded?.(); };
+        audio.play().catch(error => {
+          state.playing = false;
+          syncPlayButtons();
+          if (error?.name === 'NotAllowedError') showToast('点左下角播放按钮继续听');
+          else if (visualFallbackFrame === null) {
+            showToast('声音资源暂时不可用，继续播放画面');
+            startVisualFallback(activeAudioEnded);
+          }
+        });
       } else {
         audio.pause();
+        stopPlaybackTicker();
         state.playing = false;
       }
       syncPlayButtons();
@@ -2513,8 +2566,14 @@
         if (card) { state.prediction = [...card.parentElement.children].indexOf(card); updatePrediction(); return; }
         if (event.target.closest('.prediction-footer .cta') && state.prediction !== null) return showScreen('loading');
       }
-      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.send-action')) return submitFollowup(active);
-      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.voice-action')) return startInlineRecording(active);
+      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.send-action')) {
+        if (state.preset === 'math') return;
+        return submitFollowup(active);
+      }
+      if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.voice-action')) {
+        if (state.preset === 'math') return;
+        return startInlineRecording(active);
+      }
       if (['intro', 'lesson', 'experiment', 'vacuum'].includes(active) && document.body.classList.contains('phone-review') && event.target.closest('.tutor-panel:not(.drawer-open)')) {
         if (suppressTutorClick) { suppressTutorClick = false; return; }
         return openTutorDrawer(active);
@@ -2632,8 +2691,15 @@
       updatePlayer();
     });
     audio.addEventListener('timeupdate', updatePlayer);
-    audio.addEventListener('play', () => { state.playing = true; syncPlayButtons(); });
-    audio.addEventListener('pause', () => { if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
+    audio.addEventListener('play', () => { state.playing = true; startPlaybackTicker(); syncPlayButtons(); });
+    audio.addEventListener('pause', () => { stopPlaybackTicker(); if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
+    audio.addEventListener('error', () => {
+      if (!activeAudioSource || visualFallbackFrame !== null) return;
+      state.playing = false;
+      syncPlayButtons();
+      showToast('声音资源暂时不可用，继续播放画面');
+      startVisualFallback(activeAudioEnded);
+    });
 
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && !problemImageDialog.hidden) { closeProblemImage(); return; }
