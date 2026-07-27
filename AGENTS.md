@@ -39,6 +39,7 @@ Archived documents provide background and are not active requirements.
 - **手机安全区**：所有手机页面必须通过共享安全区 Token 处理系统状态栏、摄像头刘海 / 灵动岛和底部 Home Indicator；真实设备读取 `env(safe-area-inset-*)`，同时在系统值为 `0` 时保留明确的最小顶部 / 底部安全距离，固定 `?viewport=phone` 审阅画布必须模拟安全区。不得在单页用临时偏移规避遮挡。
 - **主设计风格一致性**：所有新增前端内容必须先复用项目现有设计 Token、组件形态、色彩、描边、圆角、阴影、字体层级和图标语言，并与当前主高保真设计保持一致；不得为单个页面临时引入不属于主设计系统的新视觉语言。新增组件在实现前后都要与相邻页面及同类组件进行视觉对照。
 - **讲解动画响应式构图**：生成或修改讲解演示动画时，必须分别为手机竖屏与平板布局组织信息层级、运动方向、主体尺寸和安全留白；不得把桌面横向构图直接压缩到手机，也不得让主体集中在局部而产生大面积无意义空白。每个动画状态都要检查画面密度、可读性、遮挡、裁切及旁白语义对应关系，并在手机与平板基准视口分别验收。
+- **讲解画布硬边界**：所有讲解演示的可视内容（文字、公式、图形、标注、动画主体及其运动轨迹）必须完整位于共享讲解画布内，不得覆盖标题区、播放器或画布外区域；画布必须统一建立布局与绘制隔离。响应式实现必须通过重排、缩放和安全留白让内容完整适配，不能用裁切掩盖越界。验收时必须检查手机与平板的每个子片段起始、过程和最终状态，并比较所有可视元素边界框与画布内边界；出现越界或被裁切即不通过。
 - **C 端信息边界**：系统逻辑、开发状态、实现细节、内部保存字段和调试说明不得直接展示给 C 端用户。面向用户的文案只保留完成任务所需的自然提示；是否需要展示某项信息应先从用户理解和操作价值判断。
 - Technical slices must test one falsifiable question and record fixtures, schemas, metrics, thresholds, failures, results, and a decision.
 - Every completed slice must state its effect on the PRD, high-fidelity design, architecture, data, and privacy.

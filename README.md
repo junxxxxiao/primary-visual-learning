@@ -10,7 +10,7 @@
 - 当前公开体验：[声音互动体验 Demo](https://junxxxxiao.github.io/primary-visual-learning/)；
 - 下一阶段：家庭体验验证、社交媒体种子家庭招募、P0 技术切片；
 - 尚未开始：生产技术栈初始化、真实模型与媒体服务接入、端到端 MVP 开发；
-- 原型黄金任务：`更用力拨同一根弦，音调会更高吗？`；
+- 原型预设任务：声音问题 `更用力拨同一根弦，音调会更高吗？`，以及固定图片输入的完全平方公式数学真题；
 - 关联追问：`如果没有空气呢？`；
 - 迁移任务：同一音叉被更用力敲击时，音调是否改变。
 
@@ -83,6 +83,7 @@ python3 -m http.server 4173 --directory prototype
 - `?screen=result`：体验结果；
 - `&viewport=phone`：固定 `390 × 844` 手机审阅画布；
 - `&viewport=tablet`：固定平板审阅画布；
+- `&preset=math`：切换到固定数学真题预设；
 - 不传 `viewport`：按真实浏览器窗口自适应。
 
 完整说明见 [prototype/README.md](prototype/README.md)。

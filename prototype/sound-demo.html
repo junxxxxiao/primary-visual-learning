@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>小知 · 声音互动体验 Demo</title>
+  <title>小知 · 互动讲解体验 Demo</title>
   <style>
     :root {
       --chalk: #f2f3ef;
@@ -358,6 +358,7 @@
     .lesson-heading p { margin: 0; color: var(--muted); font-size: clamp(10px, .95vw, 14px); }
     .slide-tag { background: var(--lime-soft); }
     .lesson-canvas {
+      box-sizing: border-box;
       min-height: 0;
       flex: 1;
       margin-top: 2.2%;
@@ -366,10 +367,13 @@
       grid-template-columns: .82fr 1.18fr;
       gap: 3%;
       align-items: center;
+      overflow: hidden;
+      contain: layout paint;
       border: 1px solid var(--line);
       border-radius: 15px;
       background: var(--chalk);
     }
+    .lesson-canvas > * { min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; }
     .lesson-copy p { margin-bottom: 8%; color: var(--muted); font-size: clamp(10px, 1vw, 14px); line-height: 1.65; }
     .lesson-points { display: grid; gap: 10px; }
     .lesson-point { display: grid; grid-template-columns: 28px 1fr; gap: 9px; align-items: center; font-size: clamp(10px, .93vw, 14px); font-weight: 760; }
@@ -448,7 +452,7 @@
     .drawer-preview { width: 44%; min-width: 330px; margin-left: auto; padding: 3%; border-radius: 28px 28px 0 0; background: var(--paper); box-shadow: 0 -20px 55px rgba(0,0,0,.2); }
     .drawer-backdrop { height: 100%; padding: 3%; display: flex; align-items: flex-end; background: linear-gradient(rgba(10,10,10,.34),rgba(10,10,10,.5)), var(--chalk); }
     .voice-wave { height: 90px; margin: 5% 0; display:flex;align-items:center;justify-content:center;gap:6px;border-radius:20px;background:var(--violet-soft) }.voice-wave i{width:6px;height:24px;border-radius:999px;background:var(--ink)}.voice-wave i:nth-child(2){height:52px}.voice-wave i:nth-child(3){height:34px}
-    .vacuum-jar { width: 64%; height: 320px; margin: 0 auto; position: relative; border: 5px solid var(--ink); border-bottom-width: 13px; border-radius: 46% 46% 20px 20px; background: linear-gradient(135deg,rgba(188,169,255,.3),rgba(131,205,247,.13)); }.vacuum-jar svg{width:72%;height:120px;position:absolute;left:14%;top:32%}.vacuum-sticker{position:absolute;right:-10%;top:8%;padding:10px 15px;border:2px solid var(--ink);border-radius:16px 16px 16px 5px;background:var(--violet);font-weight:900;transform:rotate(5deg)}
+    .vacuum-jar { width: 64%; height: 320px; margin: 0 auto; position: relative; border: 5px solid var(--ink); border-bottom-width: 13px; border-radius: 46% 46% 20px 20px; background: linear-gradient(135deg,rgba(188,169,255,.3),rgba(131,205,247,.13)); }.vacuum-jar svg{width:72%;height:120px;position:absolute;left:14%;top:32%}.vacuum-sticker{position:absolute;right:2%;top:8%;padding:10px 15px;border:2px solid var(--ink);border-radius:16px 16px 16px 5px;background:var(--violet);font-weight:900;transform:rotate(5deg)}
     .science-object { min-height: 390px; display: grid; place-items: center; position: relative; border: 2px solid var(--ink); border-radius: 28px; background: var(--sky); box-shadow: 9px 10px 0 var(--ink); }
     .fork { width: 170px; height: 250px; position:relative }.fork::before,.fork::after{content:"";width:28px;height:165px;position:absolute;top:0;border:9px solid var(--ink);border-bottom:0;border-radius:17px 17px 0 0}.fork::before{left:28px}.fork::after{right:28px}.fork i{width:34px;height:105px;position:absolute;left:68px;bottom:0;border-radius:0 0 15px 15px;background:var(--ink)}
     .xylophone { width: 68%; display:grid;gap:8px;transform:rotate(-4deg) }.xylophone i{height:40px;border:3px solid var(--ink);border-radius:9px;background:var(--coral)}.xylophone i:nth-child(2){width:90%;background:var(--yellow)}.xylophone i:nth-child(3){width:80%;background:var(--green)}.xylophone i:nth-child(4){width:70%;background:var(--sky)}
@@ -464,7 +468,17 @@
 
     .header-spacer { width: 42px; }
     .ask-focus { padding-top: 1%; }
+    .preset-switcher { margin: 3% 0 0; display: flex; gap: 10px; flex-wrap: wrap; }
+    .preset-option { min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--chalk); color: var(--muted); font-size: 11px; font-weight: 850; }
+    .preset-option b { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 8px 8px 8px 3px; background: var(--paper); color: var(--ink); }
+    .preset-option.selected { border-color: var(--ink); background: var(--lime-soft); color: var(--ink); box-shadow: 3px 4px 0 var(--ink); }
     .question-composer { margin: 4% 0 2.5%; padding: 3.5%; border: 2px solid var(--ink); border-radius: 26px; background: var(--paper); box-shadow: 8px 9px 0 var(--ink); }
+    .question-composer-body { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: start; }
+    .question-composer.has-attachment .question-composer-body { grid-template-columns: 112px minmax(0, 1fr); }
+    .question-attachment { min-width: 0; position: relative; align-self: stretch; }
+    .question-attachment[hidden] { display: none; }
+    .question-attachment img { width: 112px; height: 104px; display: block; object-fit: cover; object-position: top left; border: 1.5px solid var(--ink); border-radius: 13px; background: var(--chalk); cursor: zoom-in; }
+    .question-copy { min-width: 0; }
     .question-composer label { display: block; margin-bottom: 1%; color: var(--muted); font-size: clamp(10px,.9vw,13px); font-weight: 800; }
     .question-value { width: 100%; min-height: 105px; padding: 2.3% 0; resize: none; overflow: hidden; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: clamp(25px,2.8vw,42px); line-height: 1.18; font-weight: 900; }
     .question-value:focus { box-shadow: inset 0 -3px 0 var(--sky); }
@@ -481,6 +495,8 @@
     .input-entry-notes span { padding: 3%; display: flex; align-items: center; gap: 9px; border-radius: 16px; background: var(--chalk); color: var(--muted); font-size: 11px; font-weight: 700; }
     .input-entry-notes b { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 10px; background: var(--lime); color: var(--ink); }
     .confirm-focus { width: min(850px,100%); padding: 5%; border: 2px solid var(--ink); border-radius: 28px; background: var(--lime-soft); box-shadow: 9px 10px 0 var(--ink); }
+    .confirm-attachment { width: min(320px, 100%); max-height: 230px; margin: 0 0 18px; object-fit: contain; object-position: left top; border: 1.5px solid var(--ink); border-radius: 15px; background: white; }
+    .confirm-attachment[hidden] { display: none; }
     .calibration-main { padding: 4%; }
 
     .voice-action { background: var(--ink); color: white; }
@@ -512,6 +528,11 @@
     .exit-actions { display: flex; justify-content: center; gap: 9px; }
     .demo-exit-dialog[hidden] { display: none; }
     .demo-exit-dialog { position: absolute; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(10,10,10,.46); backdrop-filter: blur(4px); }
+    .problem-image-dialog[hidden] { display: none; }
+    .problem-image-dialog { position: absolute; inset: 0; z-index: 24; padding: 4%; display: grid; place-items: center; background: rgba(10,10,10,.64); backdrop-filter: blur(5px); }
+    .problem-image-panel { width: min(880px, 92%); max-height: 88%; padding: 18px; position: relative; overflow: auto; border: 2px solid var(--ink); border-radius: 24px; background: var(--paper); box-shadow: 10px 12px 0 var(--ink); }
+    .problem-image-panel img { width: 100%; height: auto; display: block; border-radius: 13px; }
+    .problem-image-close { width: 44px; height: 44px; position: sticky; z-index: 1; top: 0; left: 100%; margin: 0 0 -44px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 23px; font-weight: 900; }
 
     .experiment-canvas { display: block; padding: 0; border: 0; background: transparent; }
     .interactive-string-stage { height: calc(100% - 76px); padding: 2.5%; display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: auto 1fr auto; gap: 12px 18px; border: 2px solid var(--ink); border-radius: 22px; background: var(--paper); }
@@ -555,6 +576,42 @@
     .migration-question .static-choice i { width: 24px; height: 24px; border: 1.5px solid var(--ink); border-radius: 50%; background: white; color: transparent; font-size: 13px; }
     .migration-question .static-choice.selected i { border-color: var(--ink); background: var(--ink); color: var(--lime); }
     .migration-question .static-choice:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+    body.runtime-demo.math-mode [data-screen="intro"] .lesson-grid,
+    body.runtime-demo.math-mode [data-screen="lesson"] .lesson-grid { grid-template-columns: 1fr; }
+    body.runtime-demo.math-mode [data-screen="intro"] .tutor-panel,
+    body.runtime-demo.math-mode [data-screen="lesson"] .tutor-panel { display: none; }
+    .math-stage { box-sizing: border-box; width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; padding: 0 7px 7px 0; grid-column: 1 / -1; display: grid; gap: 16px; align-content: stretch; align-items: stretch; overflow: hidden; }
+    .math-stage > * { min-width: 0; min-height: 0; }
+    .math-stage.two-column { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); grid-template-rows: minmax(0,1fr); }
+    .math-rule-card, .math-work-card, .math-geometry-card { box-sizing: border-box; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; padding: clamp(14px, 1.8vw, 22px); overflow: hidden; border: 2px solid var(--ink); border-radius: 20px; background: var(--paper); box-shadow: 6px 7px 0 var(--ink); }
+    .math-rule-card { background: var(--lime-soft); }
+    .math-rule-card h2, .math-work-card h2 { margin: 0 0 14px; font-size: clamp(20px,2.1vw,30px); }
+    .math-rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .math-rule { padding: 15px; border-radius: 15px; background: var(--paper); }
+    .math-rule strong, .math-rule span { display: block; }
+    .math-rule strong { font-size: clamp(16px,1.6vw,23px); }
+    .math-rule span { margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .math-work-card { display: flex; flex-direction: column; }
+    .math-formula-stack { min-height: 0; display: grid; gap: 8px; align-content: start; }
+    .math-formula { padding: 9px 12px; border-radius: 13px; background: var(--chalk); font-family: "Times New Roman", "Noto Serif SC", serif; font-size: clamp(18px,1.7vw,26px); font-weight: 800; line-height: 1.2; }
+    .math-formula.highlight { background: var(--sky-soft); }
+    .math-conclusion { padding: 9px 12px; border-radius: 13px; background: var(--lime-soft); font-size: clamp(14px,1.25vw,18px); font-weight: 900; line-height: 1.35; }
+    .math-zero-note { color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .math-geometry-card { display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: stretch; gap: 12px; background: var(--sky-soft); }
+    .math-wall { padding: 18px 8px 8px; background: repeating-linear-gradient(135deg, var(--ink) 0 4px, transparent 4px 9px) top / 100% 12px no-repeat; }
+    .math-plot { min-height: 160px; position: relative; border-right: 4px solid var(--ink); border-bottom: 4px solid var(--ink); border-left: 4px solid var(--ink); background: rgba(255,255,255,.7); }
+    .math-plot span { position: absolute; padding: 5px 8px; border-radius: 8px; background: var(--yellow); font-size: 11px; font-weight: 900; }
+    .math-plot .math-x { right: 7px; top: 50%; transform: translateY(-50%); }
+    .math-plot .math-y { left: 50%; bottom: 7px; transform: translateX(-50%); }
+    .math-problem-preview { width: min(440px, 100%); height: 100%; max-height: 100%; margin: 0 auto; display: block; object-fit: contain; border: 2px solid var(--ink); border-radius: 18px; background: white; box-shadow: 7px 8px 0 var(--ink); }
+    .generation-rig { width: min(520px, 88%); display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; align-items: end; }
+    .generation-rig i { min-height: 86px; display: block; border: 2px solid var(--ink); border-radius: 18px; background: var(--chalk); box-shadow: 5px 6px 0 var(--ink); animation: generation-pulse 1.2s ease-in-out infinite alternate; }
+    .generation-rig i:nth-child(2) { min-height: 126px; background: var(--lime-soft); animation-delay: 160ms; }
+    .generation-rig i:nth-child(3) { min-height: 104px; background: var(--sky-soft); animation-delay: 320ms; }
+    @keyframes generation-pulse { to { transform: translateY(-10px); } }
+    body.runtime-demo.math-mode [data-screen="fork"] .science-object { background: var(--sky-soft); }
+    .math-transfer-diagram { width: 78%; display: grid; gap: 12px; }
+    .math-transfer-diagram .math-wall { font-size: 12px; font-weight: 900; }
 
     .object-caption { position: absolute; bottom: 20px; font-weight: 900; }
     .fork-object { background: var(--sky-soft); }
@@ -715,7 +772,7 @@
     body.phone-review .voice-wave { height: 110px; }
     body.phone-review [data-screen="followup"] .prediction-footer .cta { padding: 0 13px; }
     body.phone-review .vacuum-jar { width: 74%; height: 245px; }
-    body.phone-review .vacuum-sticker { right: -18%; padding: 7px 9px; font-size: 9px; }
+    body.phone-review .vacuum-sticker { right: 2%; padding: 7px 9px; font-size: 9px; }
 
     body.phone-review .science-object { min-height: 230px; border-radius: 20px; box-shadow: 6px 7px 0 var(--ink); }
     body.phone-review .fork { width: 110px; height: 170px; transform: scale(.72); }
@@ -763,6 +820,23 @@
     body.phone-review .composer-send { min-height: 42px; padding: 0 15px; font-size: 11px; }
     body.phone-review .input-entry-notes { margin: 16px 0; grid-template-columns: 1fr; gap: 7px; }
     body.phone-review .input-entry-notes span { padding: 8px; font-size: 9px; }
+    body.phone-review .preset-switcher { margin-top: 10px; gap: 7px; }
+    body.phone-review .preset-option { min-height: 40px; padding: 0 10px; font-size: 9px; }
+    body.phone-review .question-composer.has-attachment .question-composer-body { grid-template-columns: 74px minmax(0, 1fr); gap: 10px; }
+    body.phone-review .question-attachment img { width: 74px; height: 78px; border-radius: 10px; }
+    body.phone-review .question-composer.has-attachment .question-value { min-height: 78px; font-size: 19px; }
+    body.phone-review .confirm-attachment { max-height: 190px; }
+    body.phone-review .math-stage { padding: 0 5px 5px 0; gap: 8px; align-content: stretch; }
+    body.phone-review .math-stage.two-column { grid-template-columns: 1fr; grid-template-rows: minmax(0,.7fr) minmax(0,1.3fr); }
+    body.phone-review .math-rule-card, body.phone-review .math-work-card, body.phone-review .math-geometry-card { padding: 13px; border-radius: 16px; box-shadow: 4px 5px 0 var(--ink); }
+    body.phone-review .math-rule-grid { grid-template-columns: 1fr; gap: 7px; }
+    body.phone-review .math-rule { padding: 10px; }
+    body.phone-review .math-formula { padding: 9px 10px; font-size: 18px; }
+    body.phone-review .math-geometry-card { min-height: 0; }
+    body.phone-review .math-plot { min-height: 70px; }
+    body.phone-review .math-problem-preview { max-height: 100%; }
+    body.phone-review .problem-image-dialog { padding: calc(var(--phone-safe-top) + 16px) 14px calc(var(--phone-safe-bottom) + 16px); }
+    body.phone-review .problem-image-panel { width: 100%; max-height: 100%; padding: 12px; border-radius: 18px; }
     body.phone-review .confirm-focus { margin-top: 22%; padding: 20px; border-radius: 22px; box-shadow: 6px 7px 0 var(--ink); }
     body.phone-review .confirm-focus .static-title { font-size: 31px; }
     body.phone-review .calibration-main { padding: 15px; }
@@ -961,6 +1035,7 @@
     body.runtime-demo .player-toggle:hover { background: var(--paper); }
     body.runtime-demo .player-toggle svg { width: 32px; height: 32px; fill: currentColor; }
     body.runtime-demo .player-segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+    body.runtime-demo [data-player-kind="math"] .player-segments { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     body.runtime-demo .player-segment { height: 48px; padding: 0 4px; position: relative; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
     body.runtime-demo .player-track { height: 6px; position: absolute; inset: 21px 4px; overflow: hidden; border-radius: 999px; background: #e6e7e2; }
     body.runtime-demo .player-fill { width: 0; height: 100%; display: block; border-radius: inherit; background: var(--lime); pointer-events: none; }
@@ -1132,7 +1207,7 @@
 <body class="runtime-demo">
   <main class="review">
     <header class="review-bar">
-      <div class="review-title"><strong>方向 A · 声音 Demo 全页面高保真</strong><span>S01–S15 静态视觉评审稿 / 暂不包含产品交互</span></div>
+      <div class="review-title"><strong>小知互动讲解 Demo</strong><span>声音知识与数学真题双预设</span></div>
       <div class="review-navs">
         <div class="viewport-tabs" aria-label="切换审阅画布"><button type="button" aria-pressed="true" data-viewport="tablet">平板</button><button type="button" aria-pressed="false" data-viewport="phone">手机</button></div>
         <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
@@ -1146,13 +1221,13 @@
         <section id="screen-entry" class="concept-screen entry-screen active" role="tabpanel" aria-labelledby="tab-entry" data-screen="entry">
           <header class="appbar floating">
             <div class="brand"><span class="brand-mark">知</span><span>小知</span></div>
-            <div class="app-actions"><span class="meta-chip soft">约 4 分钟</span><span class="meta-chip">无需登录</span><span class="meta-chip dark">固定声音 Demo</span></div>
+            <div class="app-actions"><span class="meta-chip soft">约 4 分钟</span><span class="meta-chip">无需登录</span><span class="meta-chip dark">固定双题 Demo</span></div>
           </header>
           <div class="entry-content">
             <div class="entry-copy">
-              <p class="eyebrow">固定声音主题体验</p>
+              <p class="eyebrow">固定互动讲解体验</p>
               <h1>你问为什么，<br>小知<em>现场演</em>给你看。</h1>
-              <p class="entry-lead">从一个真实问题出发，先预测，再看见琴弦怎样振动，最后亲手验证自己的想法。</p>
+              <p class="entry-lead">从声音知识或数学真题出发，看见问题怎样一步步被讲清楚，再用新题验证方法。</p>
               <div class="entry-buttons"><span class="cta primary">开始体验 →</span></div>
               <div class="privacy-note"><strong>数据说明</strong><span>体验不会调用相机或麦克风，不保存儿童姓名、照片或原始语音。</span></div>
             </div>
@@ -1168,8 +1243,9 @@
 
         <section class="concept-screen static-screen" data-screen="ask" hidden>
           <div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>发起一个问题</span></div><span class="header-spacer"></span></header><div class="static-content"><div class="static-narrow ask-focus">
-            <h1 class="static-title">从一个“为什么”开始</h1><p class="static-lead">可以直接输入，也可以用语音或照片告诉小知。当前输入框已放入本次声音 Demo 的预设问题。</p>
-            <div class="question-composer"><label for="demo-question">你想问什么？</label><textarea id="demo-question" class="question-value" rows="2">更用力拨同一根弦，音调会更高吗？</textarea><div class="composer-tools"><span class="icon-button" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span class="icon-button" aria-label="拍照输入"><svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="composer-send">发送</span></div></div>
+            <h1 class="static-title">从一个“为什么”开始</h1><p class="static-lead" data-ask-lead>可以直接输入，也可以用语音或照片告诉小知。当前输入框已放入本次声音 Demo 的预设问题。</p>
+            <div class="preset-switcher" role="radiogroup" aria-label="选择演示问题"><button type="button" class="preset-option selected" data-preset="sound" role="radio" aria-checked="true"><b>声</b>声音知识演示</button><button type="button" class="preset-option" data-preset="math" role="radio" aria-checked="false"><b>数</b>数学真题演示</button></div>
+            <div class="question-composer"><label for="demo-question">你想问什么？</label><div class="question-composer-body"><div class="question-attachment" hidden><img src="./assets/images/math-completing-square-problem.png" alt="一道利用完全平方公式求最值的数学题截图" data-open-problem-image role="button" tabindex="0" aria-label="放大查看数学题图片"></div><div class="question-copy"><textarea id="demo-question" class="question-value" rows="2">更用力拨同一根弦，音调会更高吗？</textarea></div></div><div class="composer-tools"><span class="icon-button" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span class="icon-button" aria-label="拍照输入"><svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="composer-send">发送</span></div></div>
             <div class="input-entry-notes"><span><b>文</b>直接输入问题</span><span><b>声</b>说出问题</span><span><b>照</b>拍下不会的内容</span></div>
             <div class="prediction-footer"><p>演示不会调用真实麦克风或相机。</p></div>
           </div></div></div>
@@ -1177,7 +1253,7 @@
 
         <section class="concept-screen static-screen" data-screen="confirm" hidden>
           <div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>问题确认</span></div><span class="header-spacer"></span></header><div class="static-content"><div class="static-narrow confirm-focus">
-            <p class="eyebrow">你想问的问题是</p><h1 class="static-title">“更用力拨同一根弦，音调会更高吗？”</h1><div class="prediction-footer" style="margin-top:5%"><span class="cta">修改问题</span><span class="cta confirm-send">就是这个问题 →</span></div>
+            <p class="eyebrow">你想问的问题是</p><img class="confirm-attachment" src="./assets/images/math-completing-square-problem.png" alt="待讲解的数学题截图" hidden><h1 class="static-title">“更用力拨同一根弦，音调会更高吗？”</h1><div class="prediction-footer" style="margin-top:5%"><span class="cta">修改问题</span><span class="cta confirm-send">就是这个问题 →</span></div>
           </div></div></div>
         </section>
 
@@ -1292,6 +1368,9 @@
     <div class="demo-exit-dialog" id="demo-exit-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="demo-exit-title">
       <div class="exit-modal"><span class="exit-icon">↩</span><h2 id="demo-exit-title">要返回吗？</h2><p>返回后，本次学习进度和已经完成的记录会保存到历史记录，你可以之后继续查看。</p><div class="exit-actions"><button type="button" class="cta" data-exit-cancel>继续学习</button><button type="button" class="cta primary" data-exit-confirm>保存并返回</button></div></div>
     </div>
+    <div class="problem-image-dialog" id="problem-image-dialog" hidden role="dialog" aria-modal="true" aria-label="数学题图片预览">
+      <div class="problem-image-panel"><button type="button" class="problem-image-close" data-close-problem-image aria-label="关闭图片预览">×</button><img src="./assets/images/math-completing-square-problem.png" alt="利用完全平方公式求最值的完整数学题"></div>
+    </div>
     <footer class="review-caption"><span id="viewport-caption">基准画布：1180 × 820 · 平板横屏</span><span>当前用于视觉评审 · 已按 2026-07-24 决策微调关键状态与返回规则</span></footer>
   </main>
 
@@ -1300,19 +1379,26 @@
   <script src="./config.js"></script>
   <script>
     const fixtureQuestion = '更用力拨同一根弦，音调会更高吗？';
+    const mathFixtureQuestion = '帮我讲解下这道数学题';
+    const mathProblemImage = './assets/images/math-completing-square-problem.png';
     const audio = document.querySelector('#demo-audio');
     const screens = [...document.querySelectorAll('.concept-screen[data-screen]')];
+    const sharedScreenMarkup = Object.fromEntries(['loading', 'intro', 'lesson', 'fork', 'result'].map(name => [name, document.querySelector(`[data-screen="${name}"]`).innerHTML]));
     const reviewTabs = [...document.querySelectorAll('.review-tabs [data-target]')];
     const viewportTabs = [...document.querySelectorAll('[data-viewport]')];
     const viewportCaption = document.querySelector('#viewport-caption');
     const exitDialog = document.querySelector('#demo-exit-dialog');
+    const problemImageDialog = document.querySelector('#problem-image-dialog');
     const toast = document.querySelector('#runtime-toast');
     const confirmBackScreens = new Set(['loading', 'intro', 'lesson', 'experiment', 'followup', 'vacuum', 'fork']);
     const audioPath = name => `./assets/audio/${name}.wav`;
     const state = {
-      screen: 'entry', question: fixtureQuestion, calibration: 0, prediction: null,
+      screen: 'entry', preset: 'sound', question: fixtureQuestion, calibration: 0, prediction: null,
       lessonSegment: 1, experimentStep: 0, dragFailures: 0, returnScreen: 'experiment',
       migrationStage: 'fork', migration: {}, transferResult: null,
+      mathTransferAttempt: 0,
+      mathAttachment: true,
+      mathTransferEvidence: null,
       feedback: null, feedbackReasons: [], playing: false,
       audioKind: null, audioSegment: 1, vacuumSegment: 1, subtitles: false,
       topicStage: 0, transitioning: false, drawerScreen: null, recordingScreen: null, recordingWasPlaying: false,
@@ -1323,6 +1409,7 @@
     let loadingFrame = null;
     let activeAudioSource = '';
     let activeAudioEnded = null;
+    let visualFallbackFrame = null;
     let pendingSeekRatio = null;
     let dragStartY = null;
     let exitWasPlaying = false;
@@ -1380,11 +1467,39 @@
         [0, '这个问题我们弄明白了。'],
         [.3, '如果你也明白了，让我们再回到刚才的琴弦振动。'],
         [.68, '从被打断的那一小段重新看起吧。']
+      ],
+      'math-1': [
+        [0, '先看材料里的共同规律。'],
+        [.2, '完全平方不可能小于零。'],
+        [.45, '前面是正号，就用它找最小值。'],
+        [.68, '前面是负号，就用它找最大值。'],
+        [.86, '关键时刻，都是让完全平方这一项等于零。']
+      ],
+      'math-2': [
+        [0, '来看第一小题。'],
+        [.18, '把负四 x 拆成负二乘二再乘 x。'],
+        [.43, '补出 x 减二的平方，同时减去多补的四。'],
+        [.68, '原式等于 x 减二的平方再减三。'],
+        [.86, '平方最小是零，所以原式最小是负三。']
+      ],
+      'math-3': [
+        [0, '第二小题有两个字母，我们分别配方。'],
+        [.23, 'a 的部分变成负的 a 加三的平方，再加九。'],
+        [.48, 'b 的部分变成负的 b 减二的平方，再加四。'],
+        [.72, '合起来是两个负平方，再加三。'],
+        [.88, '所以最大值是三。']
+      ],
+      'math-4': [
+        [0, '最后看花圃问题。'],
+        [.18, '两条短边都是 x 米，所以长边是，一百减二 x 米。'],
+        [.4, '面积就是 x 乘一百减二 x。'],
+        [.63, '配方后得到负二乘 x 减二十五的平方，再加一千二百五十。'],
+        [.84, '所以短边二十五米、长边五十米时，面积最大。']
       ]
     };
 
-    function playerMarkup(kind) {
-      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${[1,2,3].map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small></div>`;
+    function playerMarkup(kind, segmentCount = 3) {
+      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${Array.from({ length: segmentCount }, (_, index) => index + 1).map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small></div>`;
     }
 
     const syntheticControlSelector = '.cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span';
@@ -1458,7 +1573,75 @@
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('.ppt-reveal').forEach(node => node.classList.add('is-visible'));
     }
 
+    function restoreSharedScreens() {
+      Object.entries(sharedScreenMarkup).forEach(([name, markup]) => {
+        const screen = document.querySelector(`[data-screen="${name}"]`);
+        if (screen) screen.innerHTML = markup;
+      });
+      initRuntimeComponents();
+    }
+
+    function configurePreset(preset, announce = true) {
+      state.preset = preset === 'math' ? 'math' : 'sound';
+      state.question = state.preset === 'math' ? mathFixtureQuestion : fixtureQuestion;
+      state.calibration = 0;
+      state.prediction = null;
+      state.lessonSegment = 1;
+      state.migration = {};
+      state.transferResult = null;
+      state.mathTransferAttempt = 0;
+      state.mathTransferEvidence = null;
+      state.mathAttachment = state.preset === 'math';
+      state.topicStage = 0;
+      document.body.classList.toggle('math-mode', state.preset === 'math');
+      if (announce) {
+        const url = new URL(location.href);
+        if (state.preset === 'math') url.searchParams.set('preset', 'math');
+        else url.searchParams.delete('preset');
+        history.replaceState({}, '', url);
+      }
+      restoreSharedScreens();
+      const ask = document.querySelector('[data-screen="ask"]');
+      const composer = ask.querySelector('.question-composer');
+      const attachment = ask.querySelector('.question-attachment');
+      const input = ask.querySelector('#demo-question');
+      const isMath = state.preset === 'math';
+      ask.querySelectorAll('[data-preset]').forEach(option => {
+        const selected = option.dataset.preset === state.preset;
+        option.classList.toggle('selected', selected);
+        option.setAttribute('aria-checked', String(selected));
+      });
+      ask.querySelector('[data-ask-lead]').textContent = isMath
+        ? '题目图片已作为本次固定演示的附件放入输入框。可以切回声音知识演示。'
+        : '可以直接输入，也可以用语音或照片告诉小知。当前输入框已放入本次声音 Demo 的预设问题。';
+      composer.classList.toggle('has-attachment', isMath && state.mathAttachment);
+      attachment.hidden = !(isMath && state.mathAttachment);
+      input.value = state.question;
+      input.readOnly = isMath;
+      input.setAttribute('aria-readonly', String(isMath));
+      configureLessonPlayers();
+      syncInteractiveSemantics();
+      if (announce) showToast(isMath ? '已切换到数学真题演示' : '已切换到声音知识演示');
+    }
+
+    function configureLessonPlayers() {
+      const kind = state.preset === 'math' ? 'math' : 'main';
+      const count = state.preset === 'math' ? 4 : 3;
+      ['intro', 'lesson'].forEach(screenName => {
+        const screen = document.querySelector(`[data-screen="${screenName}"]`);
+        const oldPlayer = screen?.querySelector('.unified-player, .timeline, .lesson-playback');
+        if (oldPlayer) oldPlayer.outerHTML = playerMarkup(kind, count);
+        const canvas = screen?.querySelector('.lesson-canvas');
+        if (canvas && !screen.querySelector('.runtime-subtitle')) canvas.insertAdjacentHTML('afterend', '<div class="runtime-subtitle" aria-live="polite"></div>');
+      });
+    }
+
     function renderTopicTabs() {
+      if (state.preset === 'math') {
+        document.querySelectorAll('[data-screen="intro"] .topic-tabs, [data-screen="lesson"] .topic-tabs').forEach(tabs => { tabs.innerHTML = '<span class="active">完全平方配方</span>'; });
+        syncInteractiveSemantics();
+        return;
+      }
       const labels = ['琴弦振动', '实验', '真空中的声音'].slice(0, state.topicStage + 1);
       document.querySelectorAll('.lesson-screen[data-screen]:not([data-screen="lesson-exit"]):not([data-screen="followup"])').forEach(screen => {
         const tabs = screen.querySelector('.topic-tabs');
@@ -1477,6 +1660,35 @@
       canvas.querySelectorAll('[data-reveal]').forEach(node => node.classList.add('ppt-reveal'));
     }
 
+    function auditLessonCanvasBounds() {
+      const screen = document.querySelector(`[data-screen="${state.screen}"]`);
+      const canvas = screen?.querySelector('.lesson-canvas');
+      if (!canvas) return [];
+      const bounds = canvas.getBoundingClientRect();
+      const tolerance = 1;
+      const violations = [...canvas.querySelectorAll('*')].flatMap(node => {
+        const style = getComputedStyle(node);
+        if (style.display === 'none' || style.visibility === 'hidden') return [];
+        const rect = node.getBoundingClientRect();
+        if (!rect.width && !rect.height) return [];
+        const outsideCanvas = rect.left < bounds.left - tolerance || rect.top < bounds.top - tolerance || rect.right > bounds.right + tolerance || rect.bottom > bounds.bottom + tolerance;
+        const clipsX = ['hidden', 'clip'].includes(style.overflowX) && node.scrollWidth > node.clientWidth + tolerance;
+        const clipsY = ['hidden', 'clip'].includes(style.overflowY) && node.scrollHeight > node.clientHeight + tolerance;
+        if (!outsideCanvas && !clipsX && !clipsY) return [];
+        return [{
+          selector: node.className || node.tagName.toLowerCase(),
+          kind: outsideCanvas ? 'outside-canvas' : 'clipped-content',
+          rect: rect.toJSON(),
+          bounds: bounds.toJSON(),
+          scrollSize: { width: node.scrollWidth, height: node.scrollHeight },
+          clientSize: { width: node.clientWidth, height: node.clientHeight }
+        }];
+      });
+      if (violations.length) console.error('Lesson canvas boundary violation', violations);
+      return violations;
+    }
+    window.__demoAuditCanvasBounds = auditLessonCanvasBounds;
+
     function earIconMarkup() {
       return '<span class="ear-illustration" role="img" aria-label="耳朵">👂</span>';
     }
@@ -1490,6 +1702,52 @@
         canvas.innerHTML = revealMarkup(`<div class="segment-animation concept-map"><div class="concept-row"><div class="concept-node amplitude" data-reveal data-reveal-at=".14"><small>琴弦摆动范围</small><strong>振幅变大</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-loud" data-reveal data-reveal-at=".48"><small>听起来</small><strong>声音更响</strong></div></div><div class="concept-row"><div class="concept-node frequency" data-reveal data-reveal-at=".3"><small>单位时间振动次数</small><strong>频率基本不变</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-pitch" data-reveal data-reveal-at=".7"><small>听起来</small><strong>音调基本不变</strong></div></div></div>`);
       }
       activateRevealNodes(canvas);
+      requestAnimationFrame(auditLessonCanvasBounds);
+    }
+
+    function renderMathVisual(segment) {
+      const screenName = segment === 1 ? 'intro' : 'lesson';
+      const screen = document.querySelector(`[data-screen="${screenName}"]`);
+      const canvas = screen?.querySelector('.lesson-canvas');
+      if (!screen || !canvas) return;
+      const title = screen.querySelector('.lesson-heading h1');
+      const lead = screen.querySelector('.lesson-heading p:last-child');
+      const eyebrow = screen.querySelector('.lesson-heading .eyebrow');
+      const tag = screen.querySelector('.slide-tag');
+      const segments = {
+        1: ['先找到配方规律', '平方项前面的正负号，决定我们找最小值还是最大值。'],
+        2: ['第（1）题：一个字母配方', '先补成完全平方，再用平方不小于零。'],
+        3: ['第（2）题：两个字母分别配方', '把 a 和 b 的部分分开处理，再合并常数。'],
+        4: ['第（3）题：把面积写成代数式', '先用 100 米表示长边，再配方找最大面积。']
+      };
+      eyebrow.textContent = `数学讲解 · 第 ${segment} 段`;
+      title.textContent = segments[segment][0];
+      lead.textContent = segments[segment][1];
+      tag.textContent = `${segment} / 4`;
+      if (segment === 1) {
+        canvas.innerHTML = `<div class="math-stage two-column"><img class="math-problem-preview ppt-reveal" data-reveal-at="0" src="${mathProblemImage}" alt="利用完全平方公式求最值的原题"><section class="math-rule-card ppt-reveal" data-reveal-at=".2"><h2>完全平方 ≥ 0</h2><div class="math-rule-grid"><div class="math-rule"><strong>+(　)^2</strong><span>平方项最小时，整个式子取得最小值。</span></div><div class="math-rule"><strong>−(　)^2</strong><span>负平方项最大为 0，整个式子取得最大值。</span></div></div><p class="math-zero-note">找极值时，关键是看完全平方项什么时候等于 0。</p></section></div>`;
+      } else if (segment === 2) {
+        canvas.innerHTML = `<div class="math-stage"><section class="math-work-card"><h2>把中间项配成平方</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at="0">x² − 4x + 1</div><div class="math-formula ppt-reveal" data-reveal-at=".43">= (x − 2)² − 4 + 1</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".68">= (x − 2)² − 3</div><div class="math-conclusion ppt-reveal" data-reveal-at=".86">当 x = 2 时，最小值是 −3</div></div></section></div>`;
+      } else if (segment === 3) {
+        canvas.innerHTML = `<div class="math-stage"><section class="math-work-card"><h2>a、b 两部分分别配方</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at="0">−a² − b² − 6a + 4b − 10</div><div class="math-formula ppt-reveal" data-reveal-at=".23">= −(a + 3)² + 9 − (b − 2)² + 4 − 10</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".72">= −(a + 3)² − (b − 2)² + 3</div><div class="math-conclusion ppt-reveal" data-reveal-at=".88">当 a = −3，b = 2 时，最大值是 3</div></div></section></div>`;
+      } else {
+        canvas.innerHTML = `<div class="math-stage two-column"><section class="math-geometry-card ppt-reveal" data-reveal-at="0"><div class="math-wall">围墙（不需要木栅栏）</div><div class="math-plot"><span class="math-x">x 米</span><span class="math-y">100 − 2x 米</span></div></section><section class="math-work-card"><h2>面积 = 短边 × 长边</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at=".18">长边 = 100 − 2x</div><div class="math-formula ppt-reveal" data-reveal-at=".4">S = x(100 − 2x)</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".63">S = −2(x − 25)² + 1250</div><div class="math-conclusion ppt-reveal" data-reveal-at=".84">x = 25 米，长边 50 米，最大面积 1250 平方米</div></div></section></div>`;
+      }
+      activateRevealNodes(canvas);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) canvas.querySelectorAll('.ppt-reveal').forEach(node => node.classList.add('is-visible'));
+      requestAnimationFrame(auditLessonCanvasBounds);
+    }
+
+    function prepareLoadingContent() {
+      const screen = document.querySelector('[data-screen="loading"]');
+      const eyebrow = screen.querySelector('.eyebrow');
+      const title = screen.querySelector('.static-title');
+      const lead = screen.querySelector('.static-lead');
+      const rig = screen.querySelector('.loading-rig');
+      eyebrow.textContent = '正在准备讲解';
+      title.textContent = '正在生成动画讲解';
+      lead.textContent = '请稍等，小知正在把问题整理成分步画面。';
+      rig.innerHTML = '<div class="generation-rig" aria-hidden="true"><i></i><i></i><i></i></div>';
     }
 
     function renderVacuumVisual(segment) {
@@ -1503,6 +1761,7 @@
         canvas.innerHTML = revealMarkup(`<div class="segment-animation vacuum-block-stage"><div class="vacuum-chamber" data-reveal data-reveal-at="0"><div><strong>琴弦仍在振动</strong><svg class="mini-string" viewBox="0 0 260 70"><path d="M5 35 C30 5 55 5 80 35 S130 65 155 35 S205 5 255 35" fill="none" stroke="#0a0a0a" stroke-width="7"/></svg></div></div><div class="blocked-path" data-reveal data-reveal-at=".3"><b>×</b><strong>没有空气接力</strong><span>振动传不到远处的耳朵</span></div></div>`);
       }
       activateRevealNodes(canvas);
+      requestAnimationFrame(auditLessonCanvasBounds);
     }
 
     function startLoading() {
@@ -1510,14 +1769,15 @@
       clearTimeout(loadingTimer);
       const bar = document.querySelector('[data-screen="loading"] .load-track span');
       const startedAt = performance.now();
+      const loadingDuration = state.preset === 'math' ? 2200 : 3200;
       const tick = now => {
-        const progress = Math.min(1, (now - startedAt) / 3200);
+        const progress = Math.min(1, (now - startedAt) / loadingDuration);
         if (bar) bar.style.width = `${progress * 100}%`;
         if (progress < 1 && state.screen === 'loading') loadingFrame = requestAnimationFrame(tick);
       };
       if (bar) bar.style.width = '0%';
       loadingFrame = requestAnimationFrame(tick);
-      loadingTimer = setTimeout(() => showScreen('intro'), 3200);
+      loadingTimer = setTimeout(() => showScreen('intro'), loadingDuration);
     }
 
     function showToast(message) {
@@ -1528,6 +1788,8 @@
     }
 
     function stopAudio() {
+      cancelAnimationFrame(visualFallbackFrame);
+      visualFallbackFrame = null;
       audio.pause();
       audio.onended = null;
       state.playing = false;
@@ -1543,11 +1805,35 @@
       audio.onended = () => { state.playing = false; syncPlayButtons(); onEnded?.(); };
       state.playing = true;
       syncPlayButtons();
-      audio.play().catch(() => {
+      audio.play().catch(error => {
         state.playing = false;
         syncPlayButtons();
-        showToast('点左下角播放按钮继续听');
+        if (error?.name === 'NotAllowedError') showToast('点左下角播放按钮继续听');
+        else {
+          showToast('声音资源暂时不可用，继续播放画面');
+          startVisualFallback(onEnded);
+        }
       });
+    }
+
+    function startVisualFallback(onEnded) {
+      cancelAnimationFrame(visualFallbackFrame);
+      const startedAt = performance.now();
+      const duration = 9000;
+      state.playing = true;
+      syncPlayButtons();
+      const tick = now => {
+        const ratio = Math.min(1, (now - startedAt) / duration);
+        updatePlayer(ratio);
+        if (ratio < 1) visualFallbackFrame = requestAnimationFrame(tick);
+        else {
+          visualFallbackFrame = null;
+          state.playing = false;
+          syncPlayButtons();
+          onEnded?.();
+        }
+      };
+      visualFallbackFrame = requestAnimationFrame(tick);
     }
 
     function toggleAudio() {
@@ -1582,19 +1868,21 @@
           : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l10 7-10 7z"/></svg>';
       });
       document.querySelectorAll('[data-screen="intro"] .lesson-controls b, [data-screen="lesson"] .lesson-controls b').forEach(label => {
-        label.textContent = state.transitioning ? '即将进入实验' : `${state.playing ? '自动播放' : '已暂停'} ${state.lessonSegment} / 3`;
+        const segmentCount = state.preset === 'math' ? 4 : 3;
+        const transitionLabel = state.preset === 'math' ? '准备迁移验证' : '即将进入实验';
+        label.textContent = state.transitioning ? transitionLabel : `${state.playing ? '自动播放' : '已暂停'} ${state.lessonSegment} / ${segmentCount}`;
       });
       document.querySelectorAll('[data-screen="vacuum"] .lesson-controls b').forEach(label => {
         label.textContent = state.transitioning ? '准备返回琴弦' : `${state.playing ? '自动播放' : '已暂停'} ${state.vacuumSegment} / 3`;
       });
     }
 
-    function updatePlayer() {
+    function updatePlayer(forcedRatio = null) {
       const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
-      const ratio = Math.max(0, Math.min(1, audio.currentTime / duration));
+      const ratio = forcedRatio ?? Math.max(0, Math.min(1, audio.currentTime / duration));
       document.querySelectorAll('.unified-player').forEach(player => {
         const visibleKind = player.dataset.playerKind;
-        const activeSegment = visibleKind === state.audioKind ? state.audioSegment : (visibleKind === 'main' ? state.lessonSegment : state.vacuumSegment);
+        const activeSegment = visibleKind === state.audioKind ? state.audioSegment : (visibleKind === 'main' || visibleKind === 'math' ? state.lessonSegment : state.vacuumSegment);
         player.querySelectorAll('[data-player-segment]').forEach(button => {
           const segment = Number(button.dataset.playerSegment);
           const fill = button.querySelector('.player-fill');
@@ -1652,7 +1940,7 @@
     }
 
     function currentSubtitle(ratio) {
-      const key = state.audioKind === 'main' ? `main-${state.audioSegment}` : state.audioKind === 'vacuum' ? `vacuum-${state.audioSegment}` : state.audioKind;
+      const key = state.audioKind === 'main' ? `main-${state.audioSegment}` : state.audioKind === 'math' ? `math-${state.audioSegment}` : state.audioKind === 'vacuum' ? `vacuum-${state.audioSegment}` : state.audioKind;
       const cues = subtitleCues[key] || [];
       let text = cues[0]?.[1] || '';
       cues.forEach(([start, cue]) => { if (ratio >= start) text = cue; });
@@ -1689,6 +1977,10 @@
 
     function playRequestedSegment(kind, segment, seekRatio = 0) {
       pendingSeekRatio = seekRatio;
+      if (kind === 'math') {
+        playMathSegment(segment);
+        return;
+      }
       if (kind === 'vacuum') {
         state.vacuumSegment = segment;
         state.audioKind = 'vacuum';
@@ -1734,28 +2026,59 @@
       if (name === 'confirm') {
         const title = document.querySelector('[data-screen="confirm"] .static-title');
         title.textContent = `“${state.question || fixtureQuestion}”`;
-        playAudio(audioPath('narration-confirm-text'));
+        const attachment = document.querySelector('[data-screen="confirm"] .confirm-attachment');
+        attachment.hidden = state.preset !== 'math';
+        playAudio(audioPath(state.preset === 'math' ? 'narration-math-confirm' : 'narration-confirm-text'));
       }
       if (name === 'calibration') playAudio(audioPath('narration-calibration'));
       if (name === 'prediction') playAudio(audioPath('narration-prediction'));
-      if (name === 'loading') startLoading();
+      if (name === 'loading') { prepareLoadingContent(); startLoading(); }
       if (name === 'intro') {
+        if (state.preset === 'math') { playMathSegment(1); return; }
         state.audioKind = 'main';
         state.audioSegment = 1;
         state.lessonSegment = 1;
         playAudio(audioPath('narration-main-1'), () => showScreen('lesson'));
       }
-      if (name === 'lesson' && state.lessonSegment < 2) playLessonSegment(2);
+      if (name === 'lesson' && state.preset === 'math') playMathSegment(Math.max(2, state.lessonSegment));
+      else if (name === 'lesson' && state.lessonSegment < 2) playLessonSegment(2);
       if (name === 'experiment') { state.topicStage = Math.max(1, state.topicStage); resetExperimentView(); }
       if (name === 'vacuum') {
         state.topicStage = 2;
         playVacuumSequence(state.vacuumSegment || 1);
       }
-      if (name === 'fork') renderMigration('fork');
+      if (name === 'fork') {
+        renderMigration(state.preset === 'math' ? 'math' : 'fork');
+        if (state.preset === 'math') playAudio(audioPath('narration-math-transfer-intro'));
+      }
       if (name === 'xylophone') renderMigration('xylophone');
       if (name === 'feedback') renderFeedback();
       if (name === 'result') renderResult();
       syncPlayButtons();
+    }
+
+    function playMathSegment(segment) {
+      state.transitioning = false;
+      state.audioKind = 'math';
+      state.audioSegment = segment;
+      state.lessonSegment = segment;
+      const targetScreen = segment === 1 ? 'intro' : 'lesson';
+      if (state.screen !== targetScreen) {
+        showScreen(targetScreen);
+        return;
+      }
+      document.querySelectorAll('[data-screen="intro"] .brand > span:last-child, [data-screen="lesson"] .brand > span:last-child').forEach(label => { label.textContent = '数学题讲解'; });
+      renderTopicTabs();
+      renderMathVisual(segment);
+      updatePlayer();
+      playAudio(audioPath(`narration-math-${segment}`), () => {
+        if (segment < 4) playMathSegment(segment + 1);
+        else {
+          state.transitioning = true;
+          syncPlayButtons();
+          setTimeout(() => { state.transitioning = false; showScreen('fork'); }, 900);
+        }
+      });
     }
 
     function playLessonSegment(segment) {
@@ -1885,6 +2208,10 @@
     }
 
     function renderMigration(stage) {
+      if (state.preset === 'math') {
+        renderMathMigration();
+        return;
+      }
       state.migrationStage = stage;
       state.migration = {};
       const screen = document.querySelector(`[data-screen="${stage === 'fork' ? 'fork' : 'xylophone'}"]`);
@@ -1898,6 +2225,18 @@
       syncInteractiveSemantics(screen);
     }
 
+    function renderMathMigration() {
+      state.migrationStage = 'math';
+      state.migration = {};
+      const screen = document.querySelector('[data-screen="fork"]');
+      const prompted = state.mathTransferAttempt > 0;
+      screen.querySelector('.static-appbar .brand > span:last-child').textContent = '数学迁移验证';
+      screen.querySelector('.static-appbar .step').textContent = prompted ? '提示后再试一次' : '第一次迁移';
+      const layout = screen.querySelector('.migration-layout');
+      layout.innerHTML = `<div class="science-object"><div class="math-transfer-diagram"><div class="math-wall">围墙 · 木栅栏共 120 米</div><div class="math-plot"><span class="math-x">x 米</span><span class="math-y">120 − 2x 米</span></div></div></div><div><p class="eyebrow">把刚学的方法用在新数字上</p><h1 class="static-title">靠墙用 120 米木栅栏围花圃，最大面积是多少？</h1>${prompted ? '<div class="hint"><strong>配方提示</strong><br>先写成 S = x(120 − 2x)，再把它配成 −2(x − 30)² + 1800。</div>' : '<p class="static-lead">分别选择最大面积与判断它的理由。</p>'}<div class="static-choice-list migration-question-list"><section class="migration-question"><h2 class="migration-question-title"><b>1</b><span>最大面积与尺寸</span></h2><div class="migration-options" role="radiogroup" aria-label="最大面积与尺寸"><button type="button" class="static-choice" data-migration="result:1800" role="radio" aria-checked="false"><i>✓</i><span><strong>短边 30 米，长边 60 米，最大面积 1800 平方米</strong></span></button><button type="button" class="static-choice" data-migration="result:1250" role="radio" aria-checked="false"><i>✓</i><span><strong>短边 25 米，长边 50 米，最大面积 1250 平方米</strong></span></button></div></section><section class="migration-question"><h2 class="migration-question-title"><b>2</b><span>为什么</span></h2><div class="migration-options" role="radiogroup" aria-label="为什么"><button type="button" class="static-choice" data-migration="reason:square" role="radio" aria-checked="false"><i>✓</i><span><strong>S = −2(x − 30)² + 1800</strong><small>负的完全平方最大为 0，所以面积最大是 1800。</small></span></button><button type="button" class="static-choice" data-migration="reason:perimeter" role="radio" aria-checked="false"><i>✓</i><span><strong>因为 30 + 30 + 60 = 120</strong><small>只验证了木栅栏长度，没有说明面积为什么最大。</small></span></button></div></section></div><div class="prediction-footer" style="margin-top:3%"><p>两项都选择后才能提交。</p><span class="cta primary disabled">提交验证 →</span></div></div>`;
+      syncInteractiveSemantics(screen);
+    }
+
     function updateMigrationChoice(element) {
       const [type, value] = element.dataset.migration.split(':');
       state.migration[type] = value;
@@ -1907,12 +2246,31 @@
         choice.classList.toggle('selected', selected);
         choice.setAttribute('aria-checked', String(selected));
       });
-      const ready = state.migration.pitch && state.migration.reason && (state.migrationStage === 'fork' || state.migration.loudness);
+      const ready = state.preset === 'math'
+        ? state.migration.result && state.migration.reason
+        : state.migration.pitch && state.migration.reason && (state.migrationStage === 'fork' || state.migration.loudness);
       screen.querySelector('.prediction-footer .cta').classList.toggle('disabled', !ready);
       syncInteractiveSemantics(screen);
     }
 
     function submitMigration() {
+      if (state.preset === 'math') {
+        const correct = state.migration.result === '1800' && state.migration.reason === 'square';
+        state.mathTransferEvidence = { result: state.migration.result, reason: state.migration.reason };
+        if (correct) {
+          state.transferResult = state.mathTransferAttempt === 0 ? 'first-pass' : 'guided-retry';
+          showScreen('result');
+        } else if (state.mathTransferAttempt === 0) {
+          state.mathTransferAttempt = 1;
+          renderMathMigration();
+          playAudio(audioPath('narration-math-transfer-hint'));
+          showToast('看看配方提示，再试一次');
+        } else {
+          state.transferResult = 'incomplete';
+          showScreen('result');
+        }
+        return;
+      }
       const correct = state.migration.pitch === 'same' && state.migration.reason === 'amplitude' && (state.migrationStage === 'fork' || state.migration.loudness === 'louder');
       if (state.migrationStage === 'fork' && !correct) {
         state.transferResult = 'prompted-pass';
@@ -1946,6 +2304,16 @@
     function renderResult() {
       const screen = document.querySelector('[data-screen="result"]');
       const passed = state.transferResult === 'first-pass' || state.transferResult === 'prompted-pass';
+      if (state.preset === 'math') {
+        const guided = state.transferResult === 'guided-retry';
+        const conclusionCorrect = state.mathTransferEvidence?.result === '1800';
+        const reasonCorrect = state.mathTransferEvidence?.reason === 'square';
+        const evidenceLabel = value => value ? (guided ? '提示后完成' : '通过') : '未通过';
+        screen.querySelector('.result-hero h1').textContent = passed ? '方法用对了' : guided ? '提示后完成了' : '再练一次会更稳';
+        screen.querySelector('.result-hero p').textContent = `完成方式：${passed ? '首次通过' : guided ? '提示后完成本题，仍需换题验证' : '尚未完整通过'}`;
+        screen.querySelector('.result-details').innerHTML = `<div class="evidence-list"><div class="evidence-row"><span>讲解内容</span><strong>配方规律与三道小题</strong><em>已完成</em></div><div class="evidence-row"><span>迁移结论</span><strong>120 米围栏的最大面积是 1800 平方米</strong><em class="${conclusionCorrect ? '' : 'negative'}">${evidenceLabel(conclusionCorrect)}</em></div><div class="evidence-row"><span>因果解释</span><strong>S = −2(x − 30)² + 1800</strong><em class="${reasonCorrect ? '' : 'negative'}">${evidenceLabel(reasonCorrect)}</em></div><div class="evidence-row"><span>家庭协助</span><strong>未确认</strong><em class="negative">未确认</em></div></div><div class="core-finding"><small>核心方法</small><p>先把代数式配成完全平方，再利用平方不小于 0 判断最大值或最小值。</p></div><p class="prototype-note">如果是在提示后完成，这个方法还可以换一道题再试一次。</p>`;
+        return;
+      }
       screen.querySelector('.result-hero h1').textContent = passed ? '自己弄懂了' : '还有一点需要帮助';
       screen.querySelector('.result-hero p').textContent = `完成方式：${state.transferResult === 'first-pass' ? '首次通过' : state.transferResult === 'prompted-pass' ? '提示后通过' : '尚未完整通过'}`;
     }
@@ -2050,6 +2418,7 @@
     }
 
     function openTopic(label) {
+      if (state.preset === 'math') return;
       if (label === '实验' && state.topicStage >= 1) return showScreen('experiment');
       if (label === '真空中的声音' && state.topicStage >= 2) {
         state.vacuumSegment = 1;
@@ -2069,6 +2438,14 @@
       exitDialog.querySelector('[data-exit-cancel]').focus();
     }
     function closeExitDialog() { exitDialog.hidden = true; }
+    function openProblemImage() {
+      problemImageDialog.hidden = false;
+      problemImageDialog.querySelector('[data-close-problem-image]').focus();
+    }
+    function closeProblemImage() {
+      problemImageDialog.hidden = true;
+      document.querySelector('[data-open-problem-image]')?.focus();
+    }
     function cancelExitDialog() {
       closeExitDialog();
       if (state.screen === 'loading') startLoading();
@@ -2078,6 +2455,8 @@
 
     document.addEventListener('click', event => {
       const active = state.screen;
+      if (event.target.closest('[data-open-problem-image]')) { openProblemImage(); return; }
+      if (event.target.closest('[data-close-problem-image]') || event.target === problemImageDialog) { closeProblemImage(); return; }
       if (event.target.closest('[data-exit-cancel]')) { cancelExitDialog(); return; }
       if (event.target.closest('[data-exit-confirm]')) { closeExitDialog(); showScreen('entry'); return; }
       if (event.target.closest('[data-drawer-close]')) { closeTutorDrawer(true); return; }
@@ -2104,13 +2483,23 @@
       }
       if (active === 'entry' && event.target.closest('.entry-buttons .cta')) return showScreen('ask');
       if (active === 'ask') {
-        if (event.target.closest('.composer-send')) { state.question = document.querySelector('#demo-question').value.trim() || fixtureQuestion; return showScreen('confirm'); }
-        if (event.target.closest('.icon-button')) { document.querySelector('#demo-question').value = fixtureQuestion; showToast('已放入本次体验的问题'); return; }
+        const preset = event.target.closest('[data-preset]');
+        if (preset) { configurePreset(preset.dataset.preset); return; }
+        if (event.target.closest('.composer-send')) { state.question = state.preset === 'math' ? mathFixtureQuestion : (document.querySelector('#demo-question').value.trim() || fixtureQuestion); return showScreen('confirm'); }
+        if (event.target.closest('.icon-button')) {
+          if (state.preset === 'math') {
+            showToast('当前使用本次演示的固定数学题');
+          } else {
+            document.querySelector('#demo-question').value = fixtureQuestion;
+            showToast('已放入本次体验的问题');
+          }
+          return;
+        }
       }
       if (active === 'confirm') {
         const buttons = [...document.querySelectorAll('[data-screen="confirm"] .cta')];
         if (event.target.closest('.cta') === buttons[0]) return showScreen('ask');
-        if (event.target.closest('.cta') === buttons[1]) return showScreen('calibration');
+        if (event.target.closest('.cta') === buttons[1]) return showScreen(state.preset === 'math' ? 'loading' : 'calibration');
       }
       if (active === 'calibration') {
         const cards = [...document.querySelectorAll('[data-screen="calibration"] .cal-card')];
@@ -2170,7 +2559,7 @@
           if (survey) location.assign(survey); else showToast('问卷链接尚未开放');
           return;
         }
-        if (event.target.closest('.cta') === buttons[1]) { Object.assign(state, { question: fixtureQuestion, calibration: 0, prediction: null, lessonSegment: 1, experimentStep: 0, dragFailures: 0, migration: {}, transferResult: null, feedback: null, feedbackReasons: [], followupHistory: [] }); return showScreen('entry'); }
+        if (event.target.closest('.cta') === buttons[1]) { configurePreset(state.preset, false); return showScreen('entry'); }
       }
     });
 
@@ -2247,7 +2636,13 @@
     audio.addEventListener('pause', () => { if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
 
     document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !problemImageDialog.hidden) { closeProblemImage(); return; }
       if (event.key === 'Escape' && !exitDialog.hidden) closeExitDialog();
+      if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-open-problem-image]')) {
+        event.preventDefault();
+        openProblemImage();
+        return;
+      }
       if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-subtitle-toggle]')) {
         event.preventDefault();
         state.subtitles = !state.subtitles;
@@ -2272,7 +2667,7 @@
     const responsiveViewport = () => requestedViewport === 'phone' || requestedViewport === 'tablet' ? requestedViewport : innerWidth < 700 || innerHeight > innerWidth ? 'phone' : 'tablet';
     window.addEventListener('resize', () => showViewport(responsiveViewport()));
     const validScreens = ['entry','ask','confirm','calibration','prediction','loading','intro','lesson','experiment','vacuum','fork','xylophone','feedback','result'];
-    initRuntimeComponents();
+    configurePreset(params.get('preset') === 'math' ? 'math' : 'sound', false);
     showViewport(responsiveViewport());
     const requestedScreen = params.get('screen') === 'followup' ? 'experiment' : params.get('screen');
     showScreen(validScreens.includes(requestedScreen) ? requestedScreen : 'entry', params.get('screen') === 'followup');
