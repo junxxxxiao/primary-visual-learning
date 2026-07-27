@@ -724,7 +724,6 @@
     body.phone-review .lesson-shell { position: relative; gap: 8px; }
     body.phone-review .lesson-appbar { min-height: 54px; padding: 0 12px; }
     body.phone-review .topic-tabs { display: none; }
-    body.phone-review .lesson-controls span { display: none; }
     body.phone-review .lesson-grid { display: block; }
     body.phone-review .workspace { height: 100%; padding: 14px; border-radius: 22px; }
     body.phone-review .lesson-heading { gap: 8px; }
@@ -842,8 +841,6 @@
     body.phone-review .lesson-appbar .lesson-back { width: 34px; height: 34px; grid-column: 1; grid-row: 1; margin: 0; }
     body.phone-review .lesson-appbar .brand { grid-column: 2; grid-row: 1; margin: 0; font-size: 11px; white-space: nowrap; }
     body.phone-review .lesson-appbar .lesson-controls { display: flex; grid-column: 4; grid-row: 1; margin: 0; justify-self: end; }
-    body.phone-review .lesson-appbar .lesson-controls [data-subtitle-toggle] { min-height: 36px; padding: 0 9px; display: inline-flex; align-items: center; border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); font-size: 8px; font-weight: 850; white-space: nowrap; }
-    body.phone-review .lesson-appbar .lesson-controls [data-subtitle-toggle].active { background: var(--ink); color: var(--paper); }
     body.phone-review .lesson-appbar .lesson-controls b { display: none; }
     body.phone-review .lesson-appbar .topic-tabs { display: flex; grid-column: 3; grid-row: 1; justify-self: end; position: static; transform: none; white-space: nowrap; }
     body.phone-review .lesson-appbar .topic-tabs span { padding: .45em .7em; font-size: 8px; }
@@ -1027,7 +1024,7 @@
     }
     body.runtime-demo [data-screen="loading"] .static-appbar .step::after { visibility: visible; }
     body.runtime-demo [data-screen="loading"] .load-track span { width: 0; }
-    body.runtime-demo .unified-player { margin-top: 14px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 58px; align-items: center; gap: 10px; }
+    body.runtime-demo .unified-player { margin-top: 14px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 58px 68px; align-items: center; gap: 10px; }
     body.runtime-demo .player-toggle { width: 48px; height: 48px; display: grid; place-items: center; border: 1.5px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.78); color: var(--ink); cursor: pointer; }
     body.runtime-demo .player-toggle:hover { background: var(--paper); }
     body.runtime-demo .player-toggle svg { width: 32px; height: 32px; fill: currentColor; }
@@ -1038,10 +1035,10 @@
     body.runtime-demo .player-fill { width: 0; height: 100%; display: block; border-radius: inherit; background: var(--lime); pointer-events: none; }
     body.runtime-demo [data-screen="vacuum"] .player-fill { background: var(--violet); }
     body.runtime-demo .player-label { color: var(--muted); font-size: 11px; font-weight: 750; white-space: nowrap; text-align: right; }
+    body.runtime-demo .player-subtitle-toggle { min-height: 38px; padding: 0 10px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 10px; font-weight: 850; white-space: nowrap; cursor: pointer; }
+    body.runtime-demo .player-subtitle-toggle.active { border-color: var(--ink); background: var(--ink); color: var(--paper); }
     body.runtime-demo .runtime-subtitle { min-height: 38px; margin: 8px auto -4px; padding: 7px 14px; display: flex; visibility: hidden; opacity: 0; transform: translateY(5px); align-items: center; justify-content: center; max-width: 82%; border: 1px solid rgba(255,255,255,.18); border-radius: 9px; background: rgba(10,10,10,.72); color: white; font-size: 12px; line-height: 1.45; text-align: center; backdrop-filter: blur(5px); transition: opacity 150ms var(--motion-out), transform 150ms var(--motion-out), visibility 0s linear 150ms; }
     body.runtime-demo .runtime-subtitle.visible { visibility: visible; opacity: 1; transform: translateY(0); transition-delay: 0s; }
-    body.runtime-demo .lesson-controls [data-subtitle-toggle] { padding: .45em .7em; border-radius: 999px; cursor: pointer; user-select: none; }
-    body.runtime-demo .lesson-controls [data-subtitle-toggle].active { background: var(--ink); color: white; }
     body.runtime-demo .ppt-reveal { opacity: 0; transform: translateY(8px); transition: opacity 240ms var(--motion-out), transform 240ms var(--motion-out); }
     body.runtime-demo .ppt-reveal.is-visible { opacity: 1; transform: none; }
     body.runtime-demo .recording-panel .thread { justify-content: flex-end; }
@@ -1119,13 +1116,14 @@
       body.runtime-demo .lesson-appbar .topic-tabs { min-width: 0; max-width: min(54vw, 236px); overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
       body.runtime-demo .lesson-appbar .topic-tabs::-webkit-scrollbar { display: none; }
       body.runtime-demo .lesson-appbar .topic-tabs span { min-height: 40px; padding-inline: 11px; display: inline-flex; align-items: center; flex: 0 0 auto; white-space: nowrap; }
-      body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 52px; gap: 6px; }
+      body.runtime-demo .unified-player { grid-template-columns: 48px minmax(0, 1fr) 42px 58px; gap: 6px; }
       body.runtime-demo .player-toggle { width: 46px; height: 46px; }
       body.runtime-demo .player-toggle svg { width: 29px; height: 29px; }
       body.runtime-demo .player-segments { gap: 4px; }
       body.runtime-demo .player-segment { height: 46px; padding-inline: 2px; }
       body.runtime-demo .player-track { inset: 20px 2px; }
       body.runtime-demo .player-label { font-size: 8px; }
+      body.runtime-demo .player-subtitle-toggle { min-height: 34px; padding: 0 7px; font-size: 8px; }
       body.runtime-demo .runtime-subtitle { max-width: 92%; min-height: 28px; padding: 5px 9px; font-size: 10px; }
       body.runtime-demo.phone-review .lesson-screen.active .tutor-panel:not(.drawer-open)::before { width: max-content; height: auto; min-height: 0; margin: 0; padding: 7px 10px; position: absolute; top: 7px; right: 57px; bottom: auto; left: auto; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 9px; font-weight: 800; line-height: normal; box-shadow: 3px 4px 0 var(--ink); transform: none; }
       body.runtime-demo [data-screen="followup"] .recording-panel .thread { justify-content: flex-end; }
@@ -1294,7 +1292,7 @@
         </section>
 
         <section class="concept-screen lesson-screen" data-screen="intro" hidden>
-          <div class="lesson-shell"><header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span class="active">琴弦振动</span></div><div class="lesson-controls"><span>字幕 关</span><b>自动播放 1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">第一个子片段</p><h1>先做一次公平比较</h1><p>只改变拨弦力度，其他条件保持不变。</p></div><span class="slide-tag">1 / 3</span></div><div class="lesson-canvas intro-canvas"><div class="intro-question"><h2>更用力拨同一根弦，音调会更高吗？</h2><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变力度</span></div></div><div class="controlled-visual"><div class="control-string"><span>同一根弦</span><svg viewBox="0 0 440 120"><path d="M0 60 C35 25 70 25 105 60 S175 95 210 60 S280 25 315 60 S385 95 440 60" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></div><div class="control-arrow">只改变<br><strong>拨弦力度</strong></div></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="active"></span><span></span><span></span><small>第 1 段</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>问题讲解从这里开始</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>先做一次公平比较：我们只改变拨弦力度，弦长、松紧和粗细都保持不变。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div>
+          <div class="lesson-shell"><header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span class="active">琴弦振动</span></div><div class="lesson-controls"><b>自动播放 1 / 3</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">第一个子片段</p><h1>先做一次公平比较</h1><p>只改变拨弦力度，其他条件保持不变。</p></div><span class="slide-tag">1 / 3</span></div><div class="lesson-canvas intro-canvas"><div class="intro-question"><h2>更用力拨同一根弦，音调会更高吗？</h2><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变力度</span></div></div><div class="controlled-visual"><div class="control-string"><span>同一根弦</span><svg viewBox="0 0 440 120"><path d="M0 60 C35 25 70 25 105 60 S175 95 210 60 S280 25 315 60 S385 95 440 60" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></div><div class="control-arrow">只改变<br><strong>拨弦力度</strong></div></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="active"></span><span></span><span></span><small>第 1 段</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>问题讲解从这里开始</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>先做一次公平比较：我们只改变拨弦力度，弦长、松紧和粗细都保持不变。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div>
         </section>
 
         <section id="screen-lesson" class="concept-screen lesson-screen" role="tabpanel" aria-labelledby="tab-lesson" data-screen="lesson" hidden>
@@ -1303,7 +1301,7 @@
               <button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
               <div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div>
               <div class="topic-tabs"><span class="active">琴弦振动</span></div>
-              <div class="lesson-controls"><span>字幕 关</span><b>自动播放中</b></div>
+              <div class="lesson-controls"><b>自动播放中</b></div>
             </header>
             <div class="lesson-grid">
               <main class="workspace">
@@ -1334,19 +1332,19 @@
 
         <section class="concept-screen lesson-screen" data-screen="experiment" hidden>
           <div class="lesson-shell">
-            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--lime-soft)">等待拨动</b></div></header>
+            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><b style="background:var(--lime-soft)">等待拨动</b></div></header>
             <div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">讲解结束后开放</p><h1>现在你可以拨动琴弦</h1><p>拨得越开，下面的振动波形会同步变化。</p></div><span class="slide-tag">等待拨动</span></div><div class="lesson-canvas experiment-canvas"><div class="interactive-string-stage"><div class="stage-label"><strong>按住黄色圆点，上下拨动</strong><span>琴弦静止，尚未记录力度</span></div><svg class="pluck-string" viewBox="0 0 760 190"><line x1="30" y1="95" x2="730" y2="95" stroke="#c9cbc4" stroke-width="2"/><path d="M30 95 L730 95" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linecap="round"/><circle cx="330" cy="95" r="15" fill="#e8ef3e" stroke="#0a0a0a" stroke-width="4"/></svg><div class="live-explanation"><span class="metric"><small>振幅</small><strong>等待观察</strong></span><span class="metric"><small>响度</small><strong>等待观察</strong></span><span class="metric"><small>频率</small><strong>等待观察</strong></span><span class="metric"><small>音调</small><strong>等待观察</strong></span></div><div class="response-wave"><span>实时振动记录</span><svg viewBox="0 0 680 90"><path d="M0 45 L680 45" fill="none" stroke="#c9cbc4" stroke-width="4" stroke-linecap="round"/></svg></div></div><div class="prediction-footer"><span class="cta dark">进入迁移 →</span></div></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>延续前面的讲解记录</small></div></div><div class="thread"><div class="message emphasis"><small>小知老师</small><p>现在轮到你了。先轻轻拨一次，再用力拨一次，观察振幅、响度、频率和音调怎样变化。</p></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div>
           </div>
         </section>
 
         <section class="concept-screen lesson-screen" data-screen="followup" hidden>
           <div class="lesson-shell">
-            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--lime-soft)">可以操作</b></div></header>
+            <header class="lesson-appbar"><button type="button" class="lesson-back" data-demo-back aria-label="返回 Demo 首页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="brand"><span class="brand-mark">知</span><span>问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">实验</span></div><div class="lesson-controls"><b style="background:var(--lime-soft)">可以操作</b></div></header>
             <div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">动手实验</p><h1>现在你可以拨动琴弦</h1><p>语音追问直接发生在右侧对话区。</p></div><span class="slide-tag">语音录入中</span></div><div class="lesson-canvas experiment-canvas"><div class="interactive-string-stage"><div class="stage-label"><strong>按住黄色圆点，上下拨动</strong><span>当前力度：用力拨</span></div><svg class="pluck-string" viewBox="0 0 760 190"><path d="M30 95 C120 25 235 25 330 95 S550 165 730 95" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linecap="round"/><circle cx="330" cy="95" r="15" fill="#e8ef3e" stroke="#0a0a0a" stroke-width="4"/></svg><div class="live-explanation"><span class="metric green"><small>振幅</small><strong>变大</strong></span><span class="metric"><small>响度</small><strong>更响</strong></span><span class="metric blue"><small>频率</small><strong>基本不变</strong></span></div></div></div></main><aside class="tutor-panel recording-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>正在录入追问</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>现在轮到你了。拨得更开时，振幅和响度会变大；频率和音调基本不变。</p></div><div class="recording-inline"><div class="voice-wave"><i></i><i></i><i></i><i></i><i></i></div><strong>正在听你说…</strong><span>如果没有空气呢？</span><button type="button" class="record-cancel" data-record-cancel aria-label="取消语音录入">×</button><button type="button" class="record-done" data-record-done aria-label="确认并提交语音录入">✓</button></div></div><div class="followup-box"><span>如果没有空气呢？</span><b class="voice-action" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div>
           </div>
         </section>
 
-        <section class="concept-screen lesson-screen" data-screen="vacuum" hidden><div class="lesson-shell"><header class="lesson-appbar"><span class="lesson-back" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>关联问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">真空中的声音</span></div><div class="lesson-controls"><span>字幕 关</span><b style="background:var(--violet-soft)">自动播放中</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">如果没有空气呢？</p><h1>琴弦还在振动，声音却传不过去</h1><p>把“物体怎样振动”和“声音怎样传播”分开看。</p></div><span class="slide-tag" style="background:var(--violet-soft)">关联问题</span></div><div class="lesson-canvas"><div class="lesson-copy"><p>没有空气时，琴弦本身仍然来回振动。但没有介质把振动一段段传到耳朵。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>物体仍然振动</span></div><div class="lesson-point"><i>2</i><span>声音不能穿过真空传播</span></div><div class="lesson-point"><i>3</i><span>振动与传播是两个相连的问题</span></div></div></div><div class="vacuum-jar"><span class="vacuum-sticker">介质：真空</span><svg viewBox="0 0 320 120"><path d="M0 60 C25 15 50 15 75 60 S125 105 150 60 S200 15 225 60 S275 105 320 60" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="done"></span><span class="active" style="background:var(--violet)"></span><span></span><small>关联讲解</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>继承完整消息记录</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><div class="message user-message"><small>你</small><p>如果没有空气呢？</p></div><div class="message emphasis"><small>小知老师</small><p>琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。</p></div></div><div class="followup-box"><span>继续问这个问题</span><b class="voice-action"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div></section>
+        <section class="concept-screen lesson-screen" data-screen="vacuum" hidden><div class="lesson-shell"><header class="lesson-appbar"><span class="lesson-back" aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><div class="brand"><span class="brand-mark">知</span><span>关联问题讲解</span></div><div class="topic-tabs"><span>琴弦振动</span><span class="active">真空中的声音</span></div><div class="lesson-controls"><b style="background:var(--violet-soft)">自动播放中</b></div></header><div class="lesson-grid"><main class="workspace"><div class="lesson-heading"><div><p class="eyebrow">如果没有空气呢？</p><h1>琴弦还在振动，声音却传不过去</h1><p>把“物体怎样振动”和“声音怎样传播”分开看。</p></div><span class="slide-tag" style="background:var(--violet-soft)">关联问题</span></div><div class="lesson-canvas"><div class="lesson-copy"><p>没有空气时，琴弦本身仍然来回振动。但没有介质把振动一段段传到耳朵。</p><div class="lesson-points"><div class="lesson-point"><i>1</i><span>物体仍然振动</span></div><div class="lesson-point"><i>2</i><span>声音不能穿过真空传播</span></div><div class="lesson-point"><i>3</i><span>振动与传播是两个相连的问题</span></div></div></div><div class="vacuum-jar"><span class="vacuum-sticker">介质：真空</span><svg viewBox="0 0 320 120"><path d="M0 60 C25 15 50 15 75 60 S125 105 150 60 S200 15 225 60 S275 105 320 60" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div></div><div class="timeline"><button type="button" class="timeline-play-toggle" data-timeline-play aria-label="暂停讲解">Ⅱ</button><span class="done"></span><span class="active" style="background:var(--violet)"></span><span></span><small>关联讲解</small></div></main><aside class="tutor-panel"><div class="tutor-head"><span class="tutor-avatar">小知</span><div><strong>对话</strong><small>继承完整消息记录</small></div></div><div class="thread"><div class="message"><small>小知老师</small><p>同一根弦更用力拨，主要改变振幅和响度；频率和音调基本不变。</p></div><div class="message user-message"><small>你</small><p>如果没有空气呢？</p></div><div class="message emphasis"><small>小知老师</small><p>琴弦怎样振动，和声音怎样传播，是两个相连但不同的问题。没有空气时琴弦仍会振动，但声音传不到耳朵。</p></div></div><div class="followup-box"><span>继续问这个问题</span><b class="voice-action"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b><b class="send-action" aria-label="发送">↑</b></div></aside></div></div></section>
 
         <section class="concept-screen static-screen" data-screen="fork" hidden><div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>音叉迁移</span></div><span class="step">第一次迁移</span></header><div class="static-content"><div class="static-wide migration-layout"><div class="science-object fork-object"><svg class="fork-illustration" viewBox="0 0 420 360" aria-label="音叉与敲击锤"><path class="vibration" d="M82 72C48 105 48 157 82 190M338 72c34 33 34 85 0 118"/><path class="fork-body" d="M142 55v135c0 47 31 82 68 82s68-35 68-82V55M210 272v54"/><path class="mallet" d="M304 248l58 55M333 221l56 56"/><rect class="mallet-head" x="328" y="198" width="58" height="70" rx="22" transform="rotate(-44 357 233)"/></svg><span class="object-caption">同一个音叉 · 轻敲 / 用力敲</span></div><div><p class="eyebrow">分别验证结论和原因</p><h1 class="static-title">更用力敲同一个音叉，音调会更高吗？</h1><p class="static-lead">同一个音叉不更换，只改变敲击力度。</p><div class="static-choice-list migration-question-list"></div><div class="prediction-footer" style="margin-top:3%"><p>提交前不显示正误。</p><span class="cta primary disabled">提交验证 →</span></div></div></div></div></div></section>
 
@@ -1407,7 +1405,12 @@
     let activeAudioSource = '';
     let activeAudioEnded = null;
     let visualFallbackFrame = null;
+    let visualFallbackActive = false;
+    let visualFallbackRatio = 0;
+    let visualFallbackStartedAt = 0;
+    let visualFallbackEnded = null;
     let playbackFrame = null;
+    let segmentLeadInTimer = null;
     let pendingSeekRatio = null;
     let dragStartY = null;
     let exitWasPlaying = false;
@@ -1497,7 +1500,7 @@
     };
 
     function playerMarkup(kind, segmentCount = 3) {
-      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${Array.from({ length: segmentCount }, (_, index) => index + 1).map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small></div>`;
+      return `<div class="unified-player" data-player-kind="${kind}" aria-label="讲解播放进度"><button type="button" class="player-toggle" data-player-toggle aria-label="暂停讲解"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h3v16H7zM14 4h3v16h-3z"/></svg></button><div class="player-segments">${Array.from({ length: segmentCount }, (_, index) => index + 1).map(segment => `<button type="button" class="player-segment" data-player-segment="${segment}" aria-label="播放第 ${segment} 段"><span class="player-track"><i class="player-fill"></i></span></button>`).join('')}</div><small class="player-label">第 1 段</small><button type="button" class="player-subtitle-toggle" data-subtitle-toggle aria-pressed="false">字幕 关</button></div>`;
     }
 
     const syntheticControlSelector = '.cta, .answer-card, .cal-card, .feedback-card, .static-choice, .icon-button, .voice-action, .send-action, .reason-chip, .topic-tabs span';
@@ -1538,11 +1541,6 @@
         if (oldPlayer) oldPlayer.outerHTML = playerMarkup(kind);
         const canvas = screen?.querySelector('.lesson-canvas');
         if (canvas && !screen.querySelector('.runtime-subtitle')) canvas.insertAdjacentHTML('afterend', '<div class="runtime-subtitle" aria-live="polite"></div>');
-      });
-      document.querySelectorAll('.lesson-controls span').forEach(control => {
-        control.dataset.subtitleToggle = '';
-        control.setAttribute('role', 'button');
-        control.setAttribute('tabindex', '0');
       });
       document.querySelectorAll('[data-screen="intro"] .followup-box > span, [data-screen="lesson"] .followup-box > span, [data-screen="experiment"] .followup-box > span, [data-screen="vacuum"] .followup-box > span').forEach(input => {
         input.contentEditable = 'true';
@@ -1815,8 +1813,9 @@
     }
 
     function stopAudio() {
-      cancelAnimationFrame(visualFallbackFrame);
-      visualFallbackFrame = null;
+      clearTimeout(segmentLeadInTimer);
+      segmentLeadInTimer = null;
+      stopVisualFallback(true);
       stopPlaybackTicker();
       audio.pause();
       audio.onended = null;
@@ -1859,29 +1858,69 @@
       playbackFrame = requestAnimationFrame(tick);
     }
 
+    function stopVisualFallback(reset = false) {
+      cancelAnimationFrame(visualFallbackFrame);
+      visualFallbackFrame = null;
+      if (!reset) return;
+      visualFallbackActive = false;
+      visualFallbackRatio = 0;
+      visualFallbackStartedAt = 0;
+      visualFallbackEnded = null;
+    }
+
+    function pauseVisualFallback() {
+      if (!visualFallbackActive || visualFallbackFrame === null) return false;
+      stopVisualFallback(false);
+      state.playing = false;
+      syncPlayButtons();
+      return true;
+    }
+
     function startVisualFallback(onEnded) {
       stopPlaybackTicker();
-      cancelAnimationFrame(visualFallbackFrame);
-      const startedAt = performance.now();
+      stopVisualFallback(false);
       const duration = 9000;
+      visualFallbackActive = true;
+      visualFallbackEnded = onEnded ?? visualFallbackEnded;
+      visualFallbackStartedAt = performance.now() - visualFallbackRatio * duration;
       state.playing = true;
       syncPlayButtons();
       const tick = now => {
-        const ratio = Math.min(1, (now - startedAt) / duration);
-        updatePlayer(ratio);
-        if (ratio < 1) visualFallbackFrame = requestAnimationFrame(tick);
+        visualFallbackRatio = Math.min(1, (now - visualFallbackStartedAt) / duration);
+        updatePlayer(visualFallbackRatio);
+        if (visualFallbackRatio < 1) visualFallbackFrame = requestAnimationFrame(tick);
         else {
           visualFallbackFrame = null;
+          visualFallbackActive = false;
           state.playing = false;
           syncPlayButtons();
-          onEnded?.();
+          const ended = visualFallbackEnded;
+          visualFallbackEnded = null;
+          ended?.();
         }
       };
       visualFallbackFrame = requestAnimationFrame(tick);
     }
 
+    function playAudioWithLeadIn(source, onEnded = null) {
+      stopAudio();
+      updatePlayer(0);
+      state.playing = false;
+      syncPlayButtons();
+      segmentLeadInTimer = setTimeout(() => {
+        segmentLeadInTimer = null;
+        playAudio(source, onEnded);
+      }, 1000);
+    }
+
     function toggleAudio() {
       if (!activeAudioSource) return;
+      if (segmentLeadInTimer !== null) return;
+      if (visualFallbackActive) {
+        if (visualFallbackFrame !== null) pauseVisualFallback();
+        else startVisualFallback(visualFallbackEnded);
+        return;
+      }
       if (audio.paused) {
         state.playing = true;
         audio.onended = () => { stopPlaybackTicker(); state.playing = false; syncPlayButtons(); activeAudioEnded?.(); };
@@ -2021,7 +2060,7 @@
       state.lessonSegment = segment;
       if (segment === 1) {
         if (state.screen !== 'intro') showScreen('intro');
-        else playAudio(audioPath('narration-main-1'), () => showScreen('lesson'));
+        else playAudioWithLeadIn(audioPath('narration-main-1'), () => showScreen('lesson'));
         return;
       }
       if (state.screen !== 'lesson') showScreen('lesson');
@@ -2091,7 +2130,7 @@
         state.audioKind = 'main';
         state.audioSegment = 1;
         state.lessonSegment = 1;
-        playAudio(audioPath('narration-main-1'), () => showScreen('lesson'));
+        playAudioWithLeadIn(audioPath('narration-main-1'), () => showScreen('lesson'));
       }
       if (name === 'lesson' && state.preset === 'math') playMathSegment(Math.max(2, state.lessonSegment));
       else if (name === 'lesson' && state.lessonSegment < 2) playLessonSegment(2);
@@ -2124,7 +2163,7 @@
       renderTopicTabs();
       renderMathVisual(segment);
       updatePlayer();
-      playAudio(audioPath(`narration-math-${segment}`), () => {
+      playAudioWithLeadIn(audioPath(`narration-math-${segment}`), () => {
         if (segment < 4) playMathSegment(segment + 1);
         else {
           state.transitioning = true;
@@ -2156,7 +2195,7 @@
         renderLessonVisual(3);
       }
       updatePlayer();
-      playAudio(audioPath(`narration-main-${segment}`), () => {
+      playAudioWithLeadIn(audioPath(`narration-main-${segment}`), () => {
         if (segment === 2) playLessonSegment(3);
         else {
           state.topicStage = Math.max(1, state.topicStage);
@@ -2186,7 +2225,7 @@
       renderVacuumVisual(segment);
       document.querySelector('[data-screen="vacuum"] .lesson-canvas')?.classList.remove('transition-freeze');
       updatePlayer();
-      playAudio(audioPath(`narration-vacuum-${segment}`), () => {
+      playAudioWithLeadIn(audioPath(`narration-vacuum-${segment}`), () => {
         if (segment < 3) playVacuumSequence(segment + 1);
         else playTransitionNarration('return-main', audioPath('narration-return-main'), '准备返回琴弦', () => {
           const segment = Math.max(1, Math.min(3, state.interruptedMainSegment || 1));
@@ -2400,8 +2439,8 @@
       if (!panel || !thread) return;
       state.returnScreen = screenName;
       state.recordingScreen = screenName;
-      state.recordingWasPlaying = !audio.paused;
-      audio.pause();
+      state.recordingWasPlaying = state.playing;
+      if (!pauseVisualFallback()) audio.pause();
       state.playing = false;
       syncPlayButtons();
       panel.classList.add('recording-panel', 'recording-active');
@@ -2579,7 +2618,10 @@
         return openTutorDrawer(active);
       }
       if (event.target.closest('[data-record-cancel]')) { stopInlineRecording(true); return; }
-      if (event.target.closest('[data-record-done]')) return submitFollowup(state.recordingScreen || active);
+      if (event.target.closest('[data-record-done]')) {
+        if (state.preset === 'math') return;
+        return submitFollowup(state.recordingScreen || active);
+      }
       if (active === 'experiment' && event.target.closest('.prediction-footer > .cta')) return showScreen('fork');
       const fallback = event.target.closest('[data-fallback-force]');
       if (fallback) {
