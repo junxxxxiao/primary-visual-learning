@@ -731,6 +731,8 @@
     body.phone-review .lesson-heading p { font-size: 9px; }
     body.phone-review .slide-tag { align-self: flex-start; padding: .5em .65em; }
     body.phone-review .lesson-canvas { margin-top: 10px; padding: 12px; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 9px; border-radius: 15px; }
+    body.phone-review .lesson-canvas > .math-stage { grid-column: 1; grid-row: 1 / -1; }
+    body.phone-review .math-stage .ppt-reveal { transform: none; }
     body.phone-review .lesson-copy { display: grid; grid-template-columns: 1fr; }
     body.phone-review .lesson-copy > p { display: none; }
     body.phone-review .lesson-points { grid-template-columns: 1fr; gap: 5px; }
@@ -830,6 +832,17 @@
     body.phone-review .math-formula { padding: 9px 10px; font-size: 18px; }
     body.phone-review .math-geometry-card { min-height: 0; }
     body.phone-review .math-plot { min-height: 70px; }
+    body.phone-review .math-geometry-stage { grid-template-rows: minmax(98px, .78fr) minmax(0, 1.72fr); }
+    body.phone-review .math-geometry-stage .math-geometry-card,
+    body.phone-review .math-geometry-stage .math-work-card { padding: 9px; }
+    body.phone-review .math-geometry-stage .math-geometry-card { gap: 4px; }
+    body.phone-review .math-geometry-stage .math-wall { padding: 13px 4px 2px; font-size: 9px; line-height: 1.2; }
+    body.phone-review .math-geometry-stage .math-plot { min-height: 52px; }
+    body.phone-review .math-geometry-stage .math-plot span { padding: 3px 6px; font-size: 9px; }
+    body.phone-review .math-geometry-stage .math-work-card h2 { margin-bottom: 6px; font-size: 18px; line-height: 1.15; }
+    body.phone-review .math-geometry-stage .math-formula-stack { gap: 5px; }
+    body.phone-review .math-geometry-stage .math-formula { padding: 5px 7px; font-size: 14px; line-height: 1.15; }
+    body.phone-review .math-geometry-stage .math-conclusion { padding: 6px 7px; font-size: 11px; line-height: 1.2; }
     body.phone-review .math-problem-preview { max-height: 100%; }
     body.phone-review .problem-image-dialog { padding: calc(var(--phone-safe-top) + 16px) 14px calc(var(--phone-safe-bottom) + 16px); }
     body.phone-review .problem-image-panel { width: 100%; max-height: 100%; padding: 12px; border-radius: 18px; }
@@ -1657,12 +1670,12 @@
     }
 
     function auditLessonCanvasBounds() {
-      const screen = document.querySelector(`[data-screen="${state.screen}"]`);
+      const screen = document.querySelector('.concept-screen.active');
       const canvas = screen?.querySelector('.lesson-canvas');
       if (!canvas) return [];
       const bounds = canvas.getBoundingClientRect();
       const tolerance = 1;
-      const violations = [...canvas.querySelectorAll('*')].flatMap(node => {
+      const violations = [canvas, ...canvas.querySelectorAll('*')].flatMap(node => {
         const style = getComputedStyle(node);
         if (style.display === 'none' || style.visibility === 'hidden') return [];
         const rect = node.getBoundingClientRect();
@@ -1680,10 +1693,20 @@
           clientSize: { width: node.clientWidth, height: node.clientHeight }
         }];
       });
-      if (violations.length) console.error('Lesson canvas boundary violation', violations);
+      canvas.dataset.boundsAudit = violations.length ? 'fail' : 'pass';
+      if (violations.length) console.error('Lesson canvas boundary violation', JSON.stringify(violations));
       return violations;
     }
+    let canvasAuditFrame = null;
+    function scheduleLessonCanvasAudit() {
+      cancelAnimationFrame(canvasAuditFrame);
+      canvasAuditFrame = requestAnimationFrame(() => {
+        canvasAuditFrame = null;
+        auditLessonCanvasBounds();
+      });
+    }
     window.__demoAuditCanvasBounds = auditLessonCanvasBounds;
+    window.addEventListener('resize', scheduleLessonCanvasAudit);
 
     function earIconMarkup() {
       return '<span class="ear-illustration" role="img" aria-label="耳朵">👂</span>';
@@ -1698,7 +1721,7 @@
         canvas.innerHTML = revealMarkup(`<div class="segment-animation concept-map"><div class="concept-row"><div class="concept-node amplitude" data-reveal data-reveal-at=".14"><small>琴弦摆动范围</small><strong>振幅变大</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-loud" data-reveal data-reveal-at=".48"><small>听起来</small><strong>声音更响</strong></div></div><div class="concept-row"><div class="concept-node frequency" data-reveal data-reveal-at=".3"><small>单位时间振动次数</small><strong>频率基本不变</strong></div><i class="concept-arrow" role="img" aria-label="导致"></i><div class="concept-node result-pitch" data-reveal data-reveal-at=".7"><small>听起来</small><strong>音调基本不变</strong></div></div></div>`);
       }
       activateRevealNodes(canvas);
-      requestAnimationFrame(auditLessonCanvasBounds);
+      scheduleLessonCanvasAudit();
     }
 
     function renderMathVisual(segment) {
@@ -1727,12 +1750,12 @@
       } else if (segment === 3) {
         canvas.innerHTML = `<div class="math-stage"><section class="math-work-card"><h2>a、b 两部分分别配方</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at="0">−a² − b² − 6a + 4b − 10</div><div class="math-formula ppt-reveal" data-reveal-at=".23">= −(a + 3)² + 9 − (b − 2)² + 4 − 10</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".72">= −(a + 3)² − (b − 2)² + 3</div><div class="math-conclusion ppt-reveal" data-reveal-at=".88">当 a = −3，b = 2 时，最大值是 3</div></div></section></div>`;
       } else {
-        canvas.innerHTML = `<div class="math-stage two-column"><section class="math-geometry-card ppt-reveal" data-reveal-at="0"><div class="math-wall">围墙（不需要木栅栏）</div><div class="math-plot"><span class="math-x">x 米</span><span class="math-y">100 − 2x 米</span></div></section><section class="math-work-card"><h2>面积 = 短边 × 长边</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at=".18">长边 = 100 − 2x</div><div class="math-formula ppt-reveal" data-reveal-at=".4">S = x(100 − 2x)</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".63">S = −2(x − 25)² + 1250</div><div class="math-conclusion ppt-reveal" data-reveal-at=".84">x = 25 米，长边 50 米，最大面积 1250 平方米</div></div></section></div>`;
+        canvas.innerHTML = `<div class="math-stage math-geometry-stage two-column"><section class="math-geometry-card ppt-reveal" data-reveal-at="0"><div class="math-wall">围墙（不需要木栅栏）</div><div class="math-plot"><span class="math-x">x 米</span><span class="math-y">100 − 2x 米</span></div></section><section class="math-work-card"><h2>面积 = 短边 × 长边</h2><div class="math-formula-stack"><div class="math-formula ppt-reveal" data-reveal-at=".18">长边 = 100 − 2x</div><div class="math-formula ppt-reveal" data-reveal-at=".4">S = x(100 − 2x)</div><div class="math-formula highlight ppt-reveal" data-reveal-at=".63">S = −2(x − 25)² + 1250</div><div class="math-conclusion ppt-reveal" data-reveal-at=".84">x = 25 米，长边 50 米，最大面积 1250 平方米</div></div></section></div>`;
       }
       renderMathTutor(segment);
       activateRevealNodes(canvas);
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) canvas.querySelectorAll('.ppt-reveal').forEach(node => node.classList.add('is-visible'));
-      requestAnimationFrame(auditLessonCanvasBounds);
+      scheduleLessonCanvasAudit();
     }
 
     function renderMathTutor(segment) {
@@ -1786,7 +1809,7 @@
         canvas.innerHTML = revealMarkup(`<div class="segment-animation vacuum-block-stage"><div class="vacuum-chamber" data-reveal data-reveal-at="0"><div><strong>琴弦仍在振动</strong><svg class="mini-string" viewBox="0 0 260 70"><path d="M5 35 C30 5 55 5 80 35 S130 65 155 35 S205 5 255 35" fill="none" stroke="#0a0a0a" stroke-width="7"/></svg></div></div><div class="blocked-path" data-reveal data-reveal-at=".3"><b>×</b><strong>没有空气接力</strong><span>振动传不到远处的耳朵</span></div></div>`);
       }
       activateRevealNodes(canvas);
-      requestAnimationFrame(auditLessonCanvasBounds);
+      scheduleLessonCanvasAudit();
     }
 
     function startLoading() {
@@ -1993,7 +2016,13 @@
     function updatePptReveal(ratio) {
       const screen = document.querySelector(`[data-screen="${state.screen}"]`);
       const nodes = [...(screen?.querySelectorAll('.ppt-reveal') || [])];
-      nodes.forEach(node => node.classList.toggle('is-visible', ratio >= Number(node.dataset.revealAt || 0)));
+      let changed = false;
+      nodes.forEach(node => {
+        const visible = ratio >= Number(node.dataset.revealAt || 0);
+        if (node.classList.contains('is-visible') !== visible) changed = true;
+        node.classList.toggle('is-visible', visible);
+      });
+      if (changed) scheduleLessonCanvasAudit();
     }
 
     function updateLessonAnimation(ratio) {

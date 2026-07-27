@@ -29,6 +29,12 @@ requireMatch(/if \(event\.target\.closest\('\[data-record-done\]'\)\) \{\s*if \(
 requireMatch(/function playerMarkup\([\s\S]{0,900}class="player-subtitle-toggle" data-subtitle-toggle/.test(html), '字幕开关必须属于共享底部播放器');
 requireMatch(!/<div class="lesson-controls"><span>字幕/.test(html), '顶部导航不得包含字幕开关节点');
 requireMatch(!/lesson-controls[^\n{]*data-subtitle-toggle|dataset\.subtitleToggle/.test(html), '不得用页面脚本把顶部状态升级为字幕开关');
+requireMatch(/math-stage math-geometry-stage two-column/.test(html), '数学花圃讲解必须使用手机专属响应式构图');
+requireMatch(/phone-review \.lesson-canvas > \.math-stage \{ grid-column: 1; grid-row: 1 \/ -1; \}/.test(html), '手机数学动画根节点必须占满整个讲解画布');
+requireMatch(/phone-review \.math-stage \.ppt-reveal \{ transform: none; \}/.test(html), '手机数学渐进节点不得通过位移越出卡片边界');
+requireMatch(/\[canvas, \.\.\.canvas\.querySelectorAll\('\*'\)\]/.test(html), '画布审计必须检查画布自身及全部后代');
+requireMatch(/canvas\.dataset\.boundsAudit = violations\.length \? 'fail' : 'pass'/.test(html), '画布审计必须输出可自动验收的通过或失败状态');
+requireMatch(/window\.addEventListener\('resize', scheduleLessonCanvasAudit\)/.test(html), '视口变化后必须重新检查动画画布边界');
 
 if (failures.length) {
   console.error(failures.map(failure => `- ${failure}`).join('\n'));
