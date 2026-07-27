@@ -27,7 +27,6 @@
       --motion-out: cubic-bezier(.23, 1, .32, 1);
       --motion-in-out: cubic-bezier(.77, 0, .175, 1);
       --motion-drawer: cubic-bezier(.32, .72, 0, 1);
-      --phone-safe-top: max(20px, env(safe-area-inset-top, 0px));
       --phone-safe-bottom: max(12px, env(safe-area-inset-bottom, 0px));
     }
 
@@ -636,11 +635,11 @@
     body.phone-review .cta { min-height: 44px; padding: 0 16px; font-size: 12px; }
     body.phone-review .eyebrow { margin-bottom: 8px; font-size: 9px; }
 
-    body.phone-review .appbar.floating { width: calc(100% - 24px); height: 58px; top: calc(var(--phone-safe-top) + 12px); left: 12px; padding: 0 14px; }
+    body.phone-review .appbar.floating { width: calc(100% - 24px); height: 58px; top: 12px; left: 12px; padding: 0 14px; }
     body.phone-review .app-actions { gap: 5px; }
     body.phone-review .app-actions .meta-chip { display: none; }
     body.phone-review .app-actions .meta-chip.dark { display: inline-flex; }
-    body.phone-review .entry-content { padding: calc(var(--phone-safe-top) + 108px) 24px calc(var(--phone-safe-bottom) + 18px); display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 14px; align-items: stretch; }
+    body.phone-review .entry-content { padding: 108px 24px calc(var(--phone-safe-bottom) + 18px); display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 14px; align-items: stretch; }
     body.phone-review .entry-copy { min-height: 0; }
     body.phone-review .entry-copy .eyebrow { margin-bottom: 9px; }
     body.phone-review .entry-copy h1 { max-width: 342px; margin-bottom: 13px; font-size: 34px; line-height: 1.03; letter-spacing: -.055em; }
@@ -654,7 +653,7 @@
     body.phone-review .lab-orbit { width: min(68vw, 270px); }
     body.phone-review .lab-sticker { font-size: 10px; }
 
-    body.phone-review .static-screen { padding: calc(var(--phone-safe-top) + 10px) 10px calc(var(--phone-safe-bottom) + 10px); }
+    body.phone-review .static-screen { padding: 10px 10px calc(var(--phone-safe-bottom) + 10px); }
     body.phone-review .static-shell { padding: 14px 15px; border-radius: 24px; }
     body.phone-review .static-appbar { min-height: 48px; margin-bottom: 14px; gap: 8px; }
     body.phone-review .static-appbar .back { width: 36px; height: 36px; }
@@ -694,7 +693,7 @@
     body.phone-review .cal-card p { margin: 6px 0; font-size: 9px; }
     body.phone-review .cal-card .cta { min-height: 39px; }
 
-    body.phone-review .prediction-screen { padding: calc(var(--phone-safe-top) + 10px) 10px calc(var(--phone-safe-bottom) + 10px); }
+    body.phone-review .prediction-screen { padding: 10px 10px calc(var(--phone-safe-bottom) + 10px); }
     body.phone-review .prediction-shell { grid-template-columns: 1fr; grid-template-rows: 58px 1fr; gap: 9px; }
     body.phone-review .progress-rail { padding: 7px 10px; justify-content: center; border-radius: 15px; box-shadow: 4px 5px 0 var(--ink); }
     body.phone-review .progress-brand { display: none; }
@@ -844,7 +843,7 @@
     body.phone-review .math-geometry-stage .math-formula { padding: 5px 7px; font-size: 14px; line-height: 1.15; }
     body.phone-review .math-geometry-stage .math-conclusion { padding: 6px 7px; font-size: 11px; line-height: 1.2; }
     body.phone-review .math-problem-preview { max-height: 100%; }
-    body.phone-review .problem-image-dialog { padding: calc(var(--phone-safe-top) + 16px) 14px calc(var(--phone-safe-bottom) + 16px); }
+    body.phone-review .problem-image-dialog { padding: 16px 14px calc(var(--phone-safe-bottom) + 16px); }
     body.phone-review .problem-image-panel { width: 100%; max-height: 100%; padding: 12px; border-radius: 18px; }
     body.phone-review .confirm-focus { margin-top: 22%; padding: 20px; border-radius: 22px; box-shadow: 6px 7px 0 var(--ink); }
     body.phone-review .confirm-focus .static-title { font-size: 31px; }
@@ -1206,7 +1205,7 @@
       body.runtime-demo .air-particle { display: none !important; }
       body.runtime-demo .ppt-reveal { transform: none; }
     }
-    body.runtime-demo.phone-viewport-forced { --phone-safe-top: 24px; --phone-safe-bottom: 20px; overflow: auto; background: #252622; }
+    body.runtime-demo.phone-viewport-forced { --phone-safe-bottom: 20px; overflow: auto; background: #252622; }
     body.runtime-demo.phone-viewport-forced .review { width: max(100vw, 390px); height: max(100vh, 844px); display: grid; place-items: center; }
     body.runtime-demo.phone-viewport-forced .screen-scroll { width: 390px !important; height: 844px !important; overflow: hidden; flex: 0 0 390px; }
     body.runtime-demo.phone-viewport-forced .screen-frame { width: 390px !important; height: 844px !important; min-width: 390px !important; min-height: 844px !important; max-width: 390px; max-height: 844px; margin: 0; border: 0; border-radius: 0; }

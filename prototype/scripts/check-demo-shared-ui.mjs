@@ -33,7 +33,7 @@ requireMatch(/math-stage math-geometry-stage two-column/.test(html), '数学花�
 requireMatch(/phone-review \.lesson-canvas > \.math-stage \{ grid-column: 1; grid-row: 1 \/ -1; \}/.test(html), '手机数学动画根节点必须占满整个讲解画布');
 requireMatch(/phone-review \.math-stage \.ppt-reveal \{ transform: none; \}/.test(html), '手机数学渐进节点不得通过位移越出卡片边界');
 requireMatch(/body\.phone-review \.lesson-screen \{ padding: 9px 9px calc\(var\(--phone-safe-bottom\) \+ 9px\); \}/.test(html), '手机讲解页顶部只保留视觉边距，不得叠加顶部安全区空白带');
-requireMatch(!/body\.phone-review \.lesson-screen \{[^}]*var\(--phone-safe-top\)/.test(html), '手机讲解页外层不得重新引用顶部安全区 Token');
+requireMatch(!/--phone-safe-top\s*:|var\(--phone-safe-top\)/.test(html), '所有手机页面不得定义或消费顶部安全区 Token');
 requireMatch(/\[canvas, \.\.\.canvas\.querySelectorAll\('\*'\)\]/.test(html), '画布审计必须检查画布自身及全部后代');
 requireMatch(/canvas\.dataset\.boundsAudit = violations\.length \? 'fail' : 'pass'/.test(html), '画布审计必须输出可自动验收的通过或失败状态');
 requireMatch(/window\.addEventListener\('resize', scheduleLessonCanvasAudit\)/.test(html), '视口变化后必须重新检查动画画布边界');
