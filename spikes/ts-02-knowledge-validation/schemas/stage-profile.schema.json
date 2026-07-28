@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://primary-visual-learning.invalid/schemas/stage-profile/1.0",
+  "title": "StageProfile v1.0",
+  "type": "object",
+  "required": ["school_stage", "grade", "curriculum", "textbook_edition", "prerequisite_refs", "profile_version"],
+  "properties": {
+    "school_stage": {"type": "string", "enum": ["primary", "middle"]},
+    "grade": {"type": "integer", "minimum": 1, "maximum": 9},
+    "curriculum": {"type": "string", "minLength": 1},
+    "textbook_edition": {"type": "string", "minLength": 1},
+    "prerequisite_refs": {"type": "array", "items": {"type": "string"}},
+    "profile_version": {"type": "string", "const": "1.0"}
+  },
+  "additionalProperties": false
+}

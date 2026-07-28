@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://primary-visual-learning.invalid/schemas/knowledge-package/1.1",
+  "title": "TS-02 KnowledgePackage v1.1",
+  "type": "object",
+  "required": ["schema_version", "case_id", "package_kind", "stage_profile", "stage_context_status", "stage_fit", "source_refs", "claims", "review_method", "review_steps", "status", "verification_status", "user_notice", "formal_learning_result_allowed", "content_version", "evidence_status", "routing_reasons"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.1"},
+    "case_id": {"type": "string"},
+    "package_kind": {"type": "string", "enum": ["textbook_atom", "temporary_package", "unverified_generation"]},
+    "stage_profile": {"type": "object"},
+    "stage_context_status": {"type": "string", "enum": ["provided", "partial", "unknown"]},
+    "stage_fit": {"type": "object"},
+    "source_refs": {"type": "array", "items": {"type": "object"}},
+    "claims": {"type": "array", "items": {"type": "object"}},
+    "review_method": {"type": "string", "const": "ai_only"},
+    "review_steps": {"type": "array", "minItems": 5, "items": {"type": "object"}},
+    "status": {"type": "string", "enum": ["candidate", "temporary", "unverified_generated", "blocked"]},
+    "verification_status": {"type": "string", "enum": ["verified_atom", "temporary_verified", "unverified_generated", "blocked"]},
+    "user_notice": {"type": "string"},
+    "formal_learning_result_allowed": {"type": "boolean"},
+    "content_version": {"type": "string", "const": "2026-07-28.1"},
+    "evidence_status": {"type": "string", "enum": ["exploratory_only", "unverified_reference_only", "rejected"]},
+    "routing_reasons": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

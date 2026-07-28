@@ -1,0 +1,11 @@
+TS-02 SYNTHETIC SOURCE - NOT TEXTBOOK CONTENT
+source_id: middle-perfect-square-synthetic-v1
+stage: middle
+grade: 8
+edition: synthetic-middle-math-2026
+
+[page 34]
+The identities (a+b)^2=a^2+2ab+b^2 and (a-b)^2=a^2-2ab+b^2 follow by multiplying the binomials. Completing the square rewrites x^2+2px as (x+p)^2-p^2 and exposes a minimum because a real square is nonnegative.
+
+[page 35]
+For a rectangle against a wall with total fencing L on the other three sides, let each perpendicular side be x. The parallel side is L-2x and area is A=x(L-2x). Completing the square identifies the maximizing dimensions. A transfer task must ask for both the dimensions or maximum and the reason the square form proves the bound.

@@ -1,0 +1,362 @@
+{
+  "evidence_checks_pass": true,
+  "evidence_results": [
+    {
+      "claim_id": "science.force_amplitude_loudness",
+      "expected": "supported",
+      "marker_presence": {
+        "力度": true,
+        "振动的幅度": true
+      },
+      "observed": "supported",
+      "oracle_match": true,
+      "pdf_pages": [
+        54,
+        55
+      ],
+      "source_id": "controlled-primary-science-grade4-volume1"
+    },
+    {
+      "claim_id": "science.frequency_pitch",
+      "expected": "supported",
+      "marker_presence": {
+        "振动得越快": true,
+        "音调": true
+      },
+      "observed": "supported",
+      "oracle_match": true,
+      "pdf_pages": [
+        56
+      ],
+      "source_id": "controlled-primary-science-grade4-volume1"
+    },
+    {
+      "claim_id": "math.perfect_square_identity",
+      "expected": "supported",
+      "marker_presence": {
+        "完全平方公式": true
+      },
+      "observed": "supported",
+      "oracle_match": true,
+      "pdf_pages": [
+        116,
+        117,
+        119,
+        124
+      ],
+      "source_id": "controlled-middle-math-grade8-volume1"
+    },
+    {
+      "claim_id": "math.completing_square_extrema",
+      "expected": "unsupported",
+      "marker_presence": {
+        "最值": false,
+        "最大面积": false,
+        "配方": false
+      },
+      "observed": "unsupported",
+      "oracle_match": true,
+      "pdf_pages": [
+        101,
+        130
+      ],
+      "source_id": "controlled-middle-math-grade8-volume1"
+    },
+    {
+      "claim_id": "math.wall_fence_transfer",
+      "expected": "unsupported",
+      "marker_presence": {
+        "围栏": false,
+        "最大面积": false
+      },
+      "observed": "unsupported",
+      "oracle_match": true,
+      "pdf_pages": [
+        101,
+        130
+      ],
+      "source_id": "controlled-middle-math-grade8-volume1"
+    }
+  ],
+  "formal_learning_result_allowed": false,
+  "independence_limit": "Verification steps are structurally separated but were not run by independent model providers.",
+  "package_decisions": {
+    "current_full_math_demo_package": "unverified_generated",
+    "middle_perfect_square_identity_atom": "candidate",
+    "primary_sound_atom": "candidate"
+  },
+  "protocol_version": "1.0",
+  "review_execution": "interactive_codex_single_model_plus_deterministic_evidence_gate",
+  "review_method": "ai_only",
+  "source_checks_pass": true,
+  "source_results": {
+    "controlled-middle-math-grade8-volume1": {
+      "actual_document_hash": "sha256:925db6f76d1881b46f51dace670226e2d1edede9b51d161e1828284d444ec8aa",
+      "book_pages": [
+        95,
+        124
+      ],
+      "chapter": "第十四章 整式的乘法与因式分解",
+      "chapter_page_count": 30,
+      "chapter_pages_nonempty": true,
+      "document_hash_match": true,
+      "expected_document_hash": "sha256:925db6f76d1881b46f51dace670226e2d1edede9b51d161e1828284d444ec8aa",
+      "grade": 8,
+      "page_fingerprints": [
+        {
+          "character_count": 314,
+          "pdf_page": 101,
+          "text_sha256": "dde483da5a3e216eb031391d5595155bd2d02f45fc5a468a454ea51fb2e62c15"
+        },
+        {
+          "character_count": 499,
+          "pdf_page": 102,
+          "text_sha256": "fbee018536c0cf90c46d29a8dbed15334affcb5e6070ada27bb9f2ffbe36e949"
+        },
+        {
+          "character_count": 537,
+          "pdf_page": 103,
+          "text_sha256": "a5dfdf6a291b929673d58ea2df22317a01866bf40f2ad87ab486b31cb32b1e93"
+        },
+        {
+          "character_count": 497,
+          "pdf_page": 104,
+          "text_sha256": "e5372f4ed7bb4a8e81fefdbc0b612a96e4ce00f2d7b9d5cd50bcfadc07abd88c"
+        },
+        {
+          "character_count": 553,
+          "pdf_page": 105,
+          "text_sha256": "fc29b1617a0fad05b77a05460820d86ff81ba62a85b9c04e93f901ee0b89ca07"
+        },
+        {
+          "character_count": 481,
+          "pdf_page": 106,
+          "text_sha256": "43b0889a4371b5ef348c2d233d7744227e5e69847af40efbe23d3ca962bf03d4"
+        },
+        {
+          "character_count": 503,
+          "pdf_page": 107,
+          "text_sha256": "0b44cc0a60ab021036f51768c927d445cc2a396693998862d357ef4aef386903"
+        },
+        {
+          "character_count": 616,
+          "pdf_page": 108,
+          "text_sha256": "9f78e75d6c3a059a4d862172e0aa3b538ac47914ec2eb5b310f0142a0590b19f"
+        },
+        {
+          "character_count": 678,
+          "pdf_page": 109,
+          "text_sha256": "b6d86ee3590ca2fdb98c2bbfde4d3ec1adf01c0b8f0db2ac31f2ab196a4d5af0"
+        },
+        {
+          "character_count": 667,
+          "pdf_page": 110,
+          "text_sha256": "daf79f4878756f4166d93e073cf6ba69acf502d99c7a651d3dca486745a8bc08"
+        },
+        {
+          "character_count": 560,
+          "pdf_page": 111,
+          "text_sha256": "76270a05aba497ee9cd635e8be9fe53bdbd591f3dd1bed60276564e84f4a4293"
+        },
+        {
+          "character_count": 649,
+          "pdf_page": 112,
+          "text_sha256": "822d2cb62523e993d5834ca39f2d39e387bb94cfa404449f9ac25136f29752da"
+        },
+        {
+          "character_count": 439,
+          "pdf_page": 113,
+          "text_sha256": "442a257b129038541d6f35e3c48dddae95c1ed1dd2140c59f537e28ccbceb567"
+        },
+        {
+          "character_count": 459,
+          "pdf_page": 114,
+          "text_sha256": "1d9fcafcf910b23b8517ad7016f5970ba36408105ea640babfe3d32e31cabe2c"
+        },
+        {
+          "character_count": 590,
+          "pdf_page": 115,
+          "text_sha256": "e58328f6fc2d8a41bcdf96a3b50c4702c4c00b76deb3b387150aa9408bbcdf1f"
+        },
+        {
+          "character_count": 510,
+          "pdf_page": 116,
+          "text_sha256": "10c81949896c9975d14c6937beb2f1e3f3a2980f48c599ba7548530a705b360f"
+        },
+        {
+          "character_count": 475,
+          "pdf_page": 117,
+          "text_sha256": "4c3d559031ff9634d5f80ded52cebdd6b29b84785b072bfb32864c3b00b0f8e9"
+        },
+        {
+          "character_count": 573,
+          "pdf_page": 118,
+          "text_sha256": "69665a1d166fc185ac1a1e70584ff12a2a48bd38c8fbc5168327f801a754ffa5"
+        },
+        {
+          "character_count": 569,
+          "pdf_page": 119,
+          "text_sha256": "235a03d710d441a8781befdf4564fa128a3976e5c1089ca839319fce3052c626"
+        },
+        {
+          "character_count": 620,
+          "pdf_page": 120,
+          "text_sha256": "a9331a6ef33e65182b61104f2e340415f13079f3f3499ca8cbc730dda5e859a7"
+        },
+        {
+          "character_count": 528,
+          "pdf_page": 121,
+          "text_sha256": "6a40d7becb91efc82074a9ee0519b45b4d97c0b8db110f4ac61216847eb1cece"
+        },
+        {
+          "character_count": 625,
+          "pdf_page": 122,
+          "text_sha256": "84320881589fe3ddeaee4c48889f248b0f730dd946bde8f2e38ce568acf4fa2e"
+        },
+        {
+          "character_count": 584,
+          "pdf_page": 123,
+          "text_sha256": "3ee19a592e30f1c11f331719e88204d554a1f6ab311cfd01b79257ce316ab1b8"
+        },
+        {
+          "character_count": 498,
+          "pdf_page": 124,
+          "text_sha256": "089e2bc1ec09ebc8853c4cf9ed47540d6dfd2f95e59bbcf015ff5d0219688c99"
+        },
+        {
+          "character_count": 577,
+          "pdf_page": 125,
+          "text_sha256": "c17aa66861c894b2757260171d926162da1b96f3ce4d8c0e7043efdad5ca3f01"
+        },
+        {
+          "character_count": 659,
+          "pdf_page": 126,
+          "text_sha256": "f263f3e8fbd9e3ab7a8d0d44e7c74ec926023e99f92514cee1f3ab1d106ad891"
+        },
+        {
+          "character_count": 358,
+          "pdf_page": 127,
+          "text_sha256": "46a185cc25564d94ffaf6a5a15cc2d39405ad9fb59f19cd6c2ad05f425de32f6"
+        },
+        {
+          "character_count": 626,
+          "pdf_page": 128,
+          "text_sha256": "386d6cb966f85cb3911f747da5a4aab319e1791653225b3f39de7cee402a8961"
+        },
+        {
+          "character_count": 291,
+          "pdf_page": 129,
+          "text_sha256": "d05887b934db39e3ad9dc6c3ce9cd888dba16b93048815201bebab5468fd6930"
+        },
+        {
+          "character_count": 620,
+          "pdf_page": 130,
+          "text_sha256": "c3470e3c09b6a44b9e755a67aa7f378a27a30403822e0ec0faa3872225197b7a"
+        }
+      ],
+      "pdf_pages": [
+        101,
+        130
+      ],
+      "school_stage": "middle",
+      "title": "义务教育教科书·数学八年级上册"
+    },
+    "controlled-primary-science-grade4-volume1": {
+      "actual_document_hash": "sha256:2dceadd42bfaa05cc753c4d30cdee8fda03351fa41e830f920632aa723163774",
+      "book_pages": [
+        44,
+        57
+      ],
+      "chapter": "第五单元 声音",
+      "chapter_page_count": 14,
+      "chapter_pages_nonempty": true,
+      "document_hash_match": true,
+      "expected_document_hash": "sha256:2dceadd42bfaa05cc753c4d30cdee8fda03351fa41e830f920632aa723163774",
+      "grade": 4,
+      "page_fingerprints": [
+        {
+          "character_count": 101,
+          "pdf_page": 47,
+          "text_sha256": "fd4736f0efa2ebe9b4828c3cd2c485e53a086aa7367eef180b664cb809fc0b13"
+        },
+        {
+          "character_count": 125,
+          "pdf_page": 48,
+          "text_sha256": "3ed12f7bcbfeb31aec0779f1032515cdf00d29958634c57bccb66bd5042122c0"
+        },
+        {
+          "character_count": 186,
+          "pdf_page": 49,
+          "text_sha256": "c01f56373816091d3aa71945ecdf0300ac28092c47f1173fc37a87ad966c1b35"
+        },
+        {
+          "character_count": 136,
+          "pdf_page": 50,
+          "text_sha256": "a5896bd7b07c27e2bdcf630bf388659015acbd34515f53a11a3127185b0f130a"
+        },
+        {
+          "character_count": 129,
+          "pdf_page": 51,
+          "text_sha256": "a9873820cde56d6dd769f6404bf54d295cf94d9a37848738c98d0a3b09048b49"
+        },
+        {
+          "character_count": 198,
+          "pdf_page": 52,
+          "text_sha256": "e2c1b83fb4845cd1e69dc0ab00a337dda6b98aa1a996b214ede7548d8e53459f"
+        },
+        {
+          "character_count": 253,
+          "pdf_page": 53,
+          "text_sha256": "09592926f114d93e70335024293098b1c51aea5d82776e02b7db2a2bcbac0598"
+        },
+        {
+          "character_count": 142,
+          "pdf_page": 54,
+          "text_sha256": "b71e8bcc311eba0ab92c3d7d381f51625b4aed7767dcd255d4d257dd4a420c66"
+        },
+        {
+          "character_count": 238,
+          "pdf_page": 55,
+          "text_sha256": "b56bc06ba17a364ebc1ac1460133e0170c17e67d5f49df8b3f335f2523f41690"
+        },
+        {
+          "character_count": 325,
+          "pdf_page": 56,
+          "text_sha256": "41d32bc2f12c230c82738186d368c5974d297db862b668fec92ca0cb94dbfe87"
+        },
+        {
+          "character_count": 262,
+          "pdf_page": 57,
+          "text_sha256": "82cce3c1597252bc9160a3ee23c938018f9035ac46b0728415ba7344f6ecc4d6"
+        },
+        {
+          "character_count": 88,
+          "pdf_page": 58,
+          "text_sha256": "47fb662276734d349623fa002e3857f5f2e865c836f8916a6880c53e72868c1d"
+        },
+        {
+          "character_count": 95,
+          "pdf_page": 59,
+          "text_sha256": "0ca76be46654b9c710acfe7ff8d630a3401d03a993f5e1e3c30f4c3570a58796"
+        },
+        {
+          "character_count": 211,
+          "pdf_page": 60,
+          "text_sha256": "9873a2af0bfc72dadcc1bad8068361218c1c4abd83262b643754af52802070e5"
+        }
+      ],
+      "pdf_pages": [
+        47,
+        60
+      ],
+      "school_stage": "primary",
+      "title": "义务教育教科书·科学四年级上册"
+    }
+  },
+  "unsupported_claims": [
+    "math.completing_square_extrema",
+    "math.wall_fence_transfer"
+  ],
+  "unverified_user_notice_required": true,
+  "verdict": "conditional_pass_with_source_gap"
+}

@@ -1,0 +1,51 @@
+{
+  "manifest_version": "1.0",
+  "access": "Repository-local synthetic fixtures under fixtures/sources; no external access or authorization is required.",
+  "copyright_status": "Original synthetic validation text; not copied from textbooks or external publications.",
+  "sources": [
+    {
+      "source_id": "primary-sound-synthetic-v1",
+      "path": "fixtures/sources/primary-sound.synthetic.txt",
+      "sha256": "835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+      "edition": "synthetic-primary-science-2026",
+      "school_stage": "primary",
+      "grade": 4,
+      "source_tier": 1,
+      "independence_group": "synthetic-textbook-primary",
+      "pages": [12, 13]
+    },
+    {
+      "source_id": "middle-perfect-square-synthetic-v1",
+      "path": "fixtures/sources/middle-perfect-square.synthetic.txt",
+      "sha256": "319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+      "edition": "synthetic-middle-math-2026",
+      "school_stage": "middle",
+      "grade": 8,
+      "source_tier": 1,
+      "independence_group": "synthetic-textbook-middle",
+      "pages": [34, 35]
+    },
+    {
+      "source_id": "public-education-sound-a-v1",
+      "path": "fixtures/sources/public-education-sound-a.synthetic.txt",
+      "sha256": "149c0e327c1c9dd5f15478478a3e64b0c8188a3f89a7f7343a0cbfc4f450c83c",
+      "edition": "synthetic-public-education-a-2026",
+      "school_stage": "primary",
+      "grade": 4,
+      "source_tier": 2,
+      "independence_group": "synthetic-public-a",
+      "pages": [7]
+    },
+    {
+      "source_id": "public-education-sound-b-v1",
+      "path": "fixtures/sources/public-education-sound-b.synthetic.txt",
+      "sha256": "29076a79f72fa85c146a56fda0e2669ebbc9af065ee926cfb0fec2536fd29443",
+      "edition": "synthetic-public-education-b-2026",
+      "school_stage": "primary",
+      "grade": 4,
+      "source_tier": 2,
+      "independence_group": "synthetic-public-b",
+      "pages": [21]
+    }
+  ]
+}

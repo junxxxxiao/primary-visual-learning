@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://primary-visual-learning.invalid/schemas/validation-input/1.0",
+  "title": "TS-02 ValidationInput v1.0",
+  "type": "object",
+  "required": ["schema_version", "case_id", "package_kind", "stage_profile", "source_refs", "claims", "boundaries", "learning_objective", "age_appropriate_expression", "prerequisites_used", "transfer_task", "expected_decision"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "package_kind": {"type": "string", "enum": ["textbook_atom", "temporary_package", "unverified_generation"]},
+    "stage_profile": {"type": "object"},
+    "source_refs": {"type": "array", "items": {"type": "object"}},
+    "claims": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "boundaries": {"type": "array", "items": {"type": "string"}},
+    "learning_objective": {"type": "string"},
+    "age_appropriate_expression": {"type": "string"},
+    "prerequisites_used": {"type": "array", "items": {"type": "string"}},
+    "transfer_task": {"type": "object"},
+    "review_assertions": {"type": "object"},
+    "stage_fit_request": {"type": "object"},
+    "untrusted_instructions": {"type": "string"},
+    "expected_decision": {"type": "string", "enum": ["publish", "unverified_generate", "block"]}
+  },
+  "additionalProperties": false
+}

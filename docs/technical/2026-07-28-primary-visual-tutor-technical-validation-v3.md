@@ -2,7 +2,7 @@
 
 > 版本：v3.0
 > 日期：2026-07-28
-> 状态：验证方案已确认，切片待执行
+> 状态：验证方案已确认，TS-02 内容路由规则已补充
 > 对应 PRD：[PRD v5](../product/2026-07-28-primary-visual-tutor-prd-v5.md)
 > 替代：[技术验证 v2](2026-07-22-primary-visual-tutor-technical-validation-v2.md)
 
@@ -14,7 +14,8 @@ v3 保留原 TS 编号和 P0 依赖关系，并增加双学段验证边界：
 - 公共契约显式携带学段、年级、教材版本和前置知识；
 - TS-02、TS-03、TS-04B 使用小学科学与初中数学双夹具；
 - TS-03 增加同一核心概念的受控双学段计划，隔离学段变量；
-- 缺少学段或来源信息时必须澄清或硬降级，不得自行猜测。
+- 学段和教材上下文允许缺失；缺失时不得自行猜测，记录为 `unknown` 并正常讲解；明确超前内容记录为 `advanced`，不作为阻断条件；
+- 无知识原子且无可靠来源时进入带 C 端提示的 `unverified_generated` 路径，不得伪装为已核验内容或形成正式学习结果。
 
 v2 已确认并由 v3 继续沿用的关键假设：
 
@@ -52,6 +53,8 @@ v2 已确认并由 v3 继续沿用的关键假设：
 ### 1.4 负向夹具
 
 - 无可靠来源的问题；
+- 未填写年级和教材的问题；
+- 明确声明的超前学习路径；
 - 来源冲突；
 - 危险实验、医疗、隐私、不适龄和紧急安全问题；
 - 诱导访问网络、存储、主 DOM、相机或麦克风的生成代码；
@@ -60,24 +63,39 @@ v2 已确认并由 v3 继续沿用的关键假设：
 
 ## 2. 公共契约
 
-沿用 v1 的 QuestionEnvelope、DiagnosisEnvelope、LessonPlan、Snapshot 和 Event，并增加 `StageProfile`。`QuestionEnvelope`、`KnowledgeAtom`、`LessonPlan`、`VisualArtifact` 和 `LearningResult` 必须通过版本化引用保留同一学段上下文，不保存不必要的儿童身份信息。
+沿用 v1 的 QuestionEnvelope、DiagnosisEnvelope、LessonPlan、Snapshot 和 Event，并增加可选 `StageProfile` 与必填 `StageFit`。`QuestionEnvelope`、`KnowledgeAtom`、`LessonPlan`、`VisualArtifact` 和 `LearningResult` 必须保留已知的学段上下文；未知时显式记录，不保存不必要的儿童身份信息。
 
 ### 2.1 StageProfile
 
 ```json
 {
-  "school_stage": "primary|middle",
-  "grade": 4,
-  "curriculum": "国家课程标准版本",
-  "textbook_edition": "教材版本",
+  "context_status": "provided|partial|unknown",
+  "school_stage": "primary|middle|null",
+  "grade": "1-9|null",
+  "curriculum": "国家课程标准版本|null",
+  "textbook_edition": "教材版本|null",
   "prerequisite_refs": ["science.sound.vibration.basic"],
-  "profile_version": "1.0"
+  "profile_version": "1.1"
 }
 ```
 
-缺少学段、年级或教材上下文时，系统必须请求澄清或进入显式降级，不能从题目难度、用词或孩子身份推断。
+首次设置中的年级和教材均可跳过。缺少学段、年级或教材上下文时不得从题目难度、用词或孩子身份推断，系统继续讲解并记录 `context_status=unknown|partial`。
 
-### 2.2 KnowledgeAtom
+### 2.2 StageFit
+
+```json
+{
+  "status": "within_stage|advanced|ambiguous|unknown",
+  "basis": "curriculum_source|textbook_source|learner_confirmation|none",
+  "source_refs": [],
+  "missing_prerequisite_refs": [],
+  "fit_version": "1.0"
+}
+```
+
+`advanced` 和 `unknown` 都允许正常讲解，C 端不显示超纲提示。意外串用其他学段来源仍失败；只有显式声明来源学段、前置知识和 `StageFit` 的超前路径才可通过。
+
+### 2.3 KnowledgeAtom
 
 ```json
 {
@@ -95,7 +113,7 @@ v2 已确认并由 v3 继续沿用的关键假设：
 }
 ```
 
-### 2.3 VisualArtifact
+### 2.4 VisualArtifact
 
 ```json
 {
@@ -112,9 +130,11 @@ v2 已确认并由 v3 继续沿用的关键假设：
 }
 ```
 
-### 2.4 LearningResult
+### 2.5 ContentPackage 与 LearningResult
 
-分别保存 `stage_profile_ref`、`outcome`、`completion_method`、`system_assistance`、`family_assistance`、`evidence_status` 和具体迁移维度。家庭协助缺失为 `unknown`，不得推断。
+内容包增加 `verification_status=verified_atom|temporary_verified|unverified_generated|blocked`、`stage_fit` 和 `user_notice`。`unverified_generated` 必须显示一次固定提示，并禁止写入正式 `outcome`。
+
+学习结果分别保存 `stage_profile_ref`（可空）、`stage_fit`、`outcome`、`completion_method`、`system_assistance`、`family_assistance`、`evidence_status` 和具体迁移维度。家庭协助缺失为 `unknown`，不得推断。未核验生成只保存探索记录和反馈，不生成“自己弄懂了”等结果。
 
 ## 3. 切片定义
 
@@ -147,7 +167,7 @@ H5 能否稳定完成录音、播放、触摸互动、SVG/Canvas/沙箱渲染、
 
 ### 问题
 
-系统能否从小学科学与初中数学的指定教材核心章节形成带学段上下文的可追溯候选知识原子，并通过相互独立的 AI 步骤拒绝串用来源、无证据、冲突或误导内容？
+系统能否从指定教材形成可追溯知识原子，将可靠外部来源组织为临时知识包，并在学段上下文可选的情况下，把无来源内容准确隔离到带提示的未核验生成路径，同时阻断冲突、误导和危险内容？
 
 ### 最小实现
 
@@ -155,18 +175,23 @@ H5 能否稳定完成录音、播放、触摸互动、SVG/Canvas/沙箱渲染、
 - 解析器、来源核验器、边界检查器、教学检查器、迁移检查器和发布裁决器；
 - 来源冲突、缺页、扫描错误和诱导提示夹具；
 - 学段、年级或教材版本缺失，以及跨学段来源串用夹具；
-- 运行时临时知识包使用同一来源层级。
+- 显式超前学习夹具；
+- 运行时临时知识包使用同一来源层级；
+- 无知识原子且无可靠来源时的未核验生成提示、状态和结果隔离。
 
 ### 指标与候选门槛
 
 - 来源页码可追溯率 100%；
-- 学段、年级、教材版本和前置知识字段完整率 100%；
-- 小学与初中来源串用为 0；缺少学段上下文时自行猜测为 0；
-- 无来源关键结论进入发布状态为 0；
+- 已填写 `StageProfile` 的字段完整率 100%；缺少学段上下文时自行猜测为 0；
+- 缺少学段上下文和显式超前路径正常进入讲解的成功率 100%；
+- 未声明的小学与初中来源串用为 0；
+- 无来源关键结论被标记为已核验或临时已核验为 0；
+- 无来源路径进入 `unverified_generated` 且固定 C 端提示覆盖率 100%；
+- 未核验生成写入正式迁移学习结果为 0；
 - 检查步骤冲突时错误发布为 0；
 - Schema 合法率不低于 99%；
 - 所有产物明确 `review_method=ai_only`；
-- 未通过时返回硬降级原因。
+- 阻断、未核验生成和视觉/媒体回退分别返回机器可读原因，不用一个“硬降级”状态混合表达。
 
 ## TS-03 渐进讲解与迁移规划
 
@@ -302,6 +327,7 @@ AI 核验知识能否在保留学段上下文的前提下转换为渐进讲解�
 - 完成方式为首次、系统提示后或家长帮助后；
 - 家庭协助缺失保持未确认；
 - AI 核验和临时知识包结果为探索性证据；
+- 未核验生成只记录探索与反馈，不生成正式学习结果；
 - 不生成近期学习画像。
 
 ## TS-12 可观测性、成本与故障恢复

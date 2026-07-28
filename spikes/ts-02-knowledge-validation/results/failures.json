@@ -1,0 +1,1125 @@
+{
+  "expected_blocked_examples": [
+    {
+      "actual_decision": "block",
+      "case_id": "cross_stage_source_mixing",
+      "expected_decision": "block",
+      "oracle_match": true,
+      "package": {
+        "case_id": "cross_stage_source_mixing",
+        "claims": [
+          {
+            "claim_id": "mixed-source",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 34,
+                "quote": "a real square is nonnegative",
+                "source_id": "middle-perfect-square-synthetic-v1"
+              }
+            ],
+            "text": "A real square is nonnegative."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "rejected",
+        "formal_learning_result_allowed": false,
+        "package_kind": "textbook_atom",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [
+              "middle-perfect-square-synthetic-v1:page:34"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [
+              "middle-perfect-square-synthetic-v1:page:34:claim:mixed-source"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "middle-perfect-square-synthetic-v1:stage:middle"
+            ],
+            "reason_codes": [
+              "CROSS_STAGE_SOURCE_MIXING",
+              "TEXTBOOK_EDITION_MISMATCH"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "science.sound.vibration.basic"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Explain another square bound."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "CROSS_STAGE_SOURCE_MIXING",
+          "TEXTBOOK_EDITION_MISMATCH"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+            "edition": "synthetic-middle-math-2026",
+            "pages": [
+              34
+            ],
+            "source_id": "middle-perfect-square-synthetic-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "middle-perfect-square-synthetic-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 4,
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "primary",
+          "textbook_edition": "synthetic-primary-science-2026"
+        },
+        "status": "blocked",
+        "user_notice": "",
+        "verification_status": "blocked"
+      },
+      "steps": [
+        {
+          "evidence_refs": [
+            "middle-perfect-square-synthetic-v1:page:34"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [
+            "middle-perfect-square-synthetic-v1:page:34:claim:mixed-source"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "middle-perfect-square-synthetic-v1:stage:middle"
+          ],
+          "reason_codes": [
+            "CROSS_STAGE_SOURCE_MIXING",
+            "TEXTBOOK_EDITION_MISMATCH"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Explain another square bound."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    },
+    {
+      "actual_decision": "block",
+      "case_id": "verification_conflict",
+      "expected_decision": "block",
+      "oracle_match": true,
+      "package": {
+        "case_id": "verification_conflict",
+        "claims": [
+          {
+            "claim_id": "conflicted",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 12,
+                "quote": "mainly increases vibration amplitude",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "text": "More force mainly increases amplitude."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "rejected",
+        "formal_learning_result_allowed": false,
+        "package_kind": "textbook_atom",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:page:12"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:page:12:claim:conflicted"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:stage:primary"
+            ],
+            "reason_codes": [
+              "INDEPENDENT_CHECK_CONFLICT"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "science.sound.vibration.basic"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Compare a tuning fork."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "INDEPENDENT_CHECK_CONFLICT"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+            "edition": "synthetic-primary-science-2026",
+            "pages": [
+              12
+            ],
+            "source_id": "primary-sound-synthetic-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "primary-sound-synthetic-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 4,
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "primary",
+          "textbook_edition": "synthetic-primary-science-2026"
+        },
+        "status": "blocked",
+        "user_notice": "",
+        "verification_status": "blocked"
+      },
+      "steps": [
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:page:12"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:page:12:claim:conflicted"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:stage:primary"
+          ],
+          "reason_codes": [
+            "INDEPENDENT_CHECK_CONFLICT"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Compare a tuning fork."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    },
+    {
+      "actual_decision": "block",
+      "case_id": "ocr_error",
+      "expected_decision": "block",
+      "oracle_match": true,
+      "package": {
+        "case_id": "ocr_error",
+        "claims": [
+          {
+            "claim_id": "ocr-corruption",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 12,
+                "quote": "frequency definitely higher",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "text": "More force definitely raises frequency."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "rejected",
+        "formal_learning_result_allowed": false,
+        "package_kind": "textbook_atom",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:page:12"
+            ],
+            "reason_codes": [
+              "OCR_LOW_CONFIDENCE",
+              "OCR_OVERRIDE_UNTRUSTED"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [
+              "EVIDENCE_QUOTE_NOT_FOUND"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:stage:primary"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "science.sound.vibration.basic"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Compare a tuning fork."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "EVIDENCE_QUOTE_NOT_FOUND",
+          "OCR_LOW_CONFIDENCE",
+          "OCR_OVERRIDE_UNTRUSTED"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+            "edition": "synthetic-primary-science-2026",
+            "pages": [
+              12
+            ],
+            "source_id": "primary-sound-synthetic-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "primary-sound-synthetic-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 4,
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "primary",
+          "textbook_edition": "synthetic-primary-science-2026"
+        },
+        "status": "blocked",
+        "user_notice": "",
+        "verification_status": "blocked"
+      },
+      "steps": [
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:page:12"
+          ],
+          "reason_codes": [
+            "OCR_LOW_CONFIDENCE",
+            "OCR_OVERRIDE_UNTRUSTED"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [
+            "EVIDENCE_QUOTE_NOT_FOUND"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:stage:primary"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Compare a tuning fork."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    },
+    {
+      "actual_decision": "block",
+      "case_id": "prompt_injection",
+      "expected_decision": "block",
+      "oracle_match": true,
+      "package": {
+        "case_id": "prompt_injection",
+        "claims": [
+          {
+            "claim_id": "injected",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 7,
+                "quote": "Sound needs matter",
+                "source_id": "public-education-sound-a-v1"
+              },
+              {
+                "page": 21,
+                "quote": "without a material medium",
+                "source_id": "public-education-sound-b-v1"
+              }
+            ],
+            "text": "Sound needs a medium."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "rejected",
+        "formal_learning_result_allowed": false,
+        "package_kind": "temporary_package",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [
+              "public-education-sound-a-v1:page:7",
+              "public-education-sound-b-v1:page:21"
+            ],
+            "reason_codes": [
+              "PROMPT_INJECTION_DETECTED"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [
+              "public-education-sound-a-v1:page:7:claim:injected",
+              "public-education-sound-b-v1:page:21:claim:injected"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "public-education-sound-a-v1:stage:primary",
+              "public-education-sound-b-v1:stage:primary"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "science.sound.vibration.basic"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Explain astronaut communication."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "PROMPT_INJECTION_DETECTED"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:149c0e327c1c9dd5f15478478a3e64b0c8188a3f89a7f7343a0cbfc4f450c83c",
+            "edition": "synthetic-public-education-a-2026",
+            "pages": [
+              7
+            ],
+            "source_id": "public-education-sound-a-v1"
+          },
+          {
+            "document_hash": "sha256:29076a79f72fa85c146a56fda0e2669ebbc9af065ee926cfb0fec2536fd29443",
+            "edition": "synthetic-public-education-b-2026",
+            "pages": [
+              21
+            ],
+            "source_id": "public-education-sound-b-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "public-education-sound-a-v1",
+            "public-education-sound-b-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 4,
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "primary",
+          "textbook_edition": "runtime-outside-textbook"
+        },
+        "status": "blocked",
+        "user_notice": "",
+        "verification_status": "blocked"
+      },
+      "steps": [
+        {
+          "evidence_refs": [
+            "public-education-sound-a-v1:page:7",
+            "public-education-sound-b-v1:page:21"
+          ],
+          "reason_codes": [
+            "PROMPT_INJECTION_DETECTED"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [
+            "public-education-sound-a-v1:page:7:claim:injected",
+            "public-education-sound-b-v1:page:21:claim:injected"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "public-education-sound-a-v1:stage:primary",
+            "public-education-sound-b-v1:stage:primary"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Explain astronaut communication."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    }
+  ],
+  "expected_unverified_examples": [
+    {
+      "actual_decision": "unverified_generate",
+      "case_id": "absent_evidence",
+      "expected_decision": "unverified_generate",
+      "oracle_match": true,
+      "package": {
+        "case_id": "absent_evidence",
+        "claims": [
+          {
+            "claim_id": "unsupported",
+            "critical": true,
+            "evidence_refs": [],
+            "text": "More force always raises pitch."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "unverified_reference_only",
+        "formal_learning_result_allowed": false,
+        "package_kind": "textbook_atom",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:page:12"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [
+              "CRITICAL_CLAIM_WITHOUT_EVIDENCE"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "primary-sound-synthetic-v1:stage:primary"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "science.sound.vibration.basic"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Compare a tuning fork."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "CRITICAL_CLAIM_WITHOUT_EVIDENCE"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+            "edition": "synthetic-primary-science-2026",
+            "pages": [
+              12
+            ],
+            "source_id": "primary-sound-synthetic-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "primary-sound-synthetic-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 4,
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "primary",
+          "textbook_edition": "synthetic-primary-science-2026"
+        },
+        "status": "unverified_generated",
+        "user_notice": "这次讲解暂未匹配到已核验的教材或权威资料，内容由 AI 根据通用知识生成，可能存在错误，仅供探索参考。",
+        "verification_status": "unverified_generated"
+      },
+      "steps": [
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:page:12"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [
+            "CRITICAL_CLAIM_WITHOUT_EVIDENCE"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "primary-sound-synthetic-v1:stage:primary"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Compare a tuning fork."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    },
+    {
+      "actual_decision": "unverified_generate",
+      "case_id": "no_atom_no_authoritative_source",
+      "expected_decision": "unverified_generate",
+      "oracle_match": true,
+      "package": {
+        "case_id": "no_atom_no_authoritative_source",
+        "claims": [
+          {
+            "claim_id": "open-exploration",
+            "critical": true,
+            "evidence_refs": [],
+            "text": "A model-generated exploratory explanation without a verified source."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "unverified_reference_only",
+        "formal_learning_result_allowed": false,
+        "package_kind": "unverified_generation",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [
+              "CRITICAL_CLAIM_WITHOUT_EVIDENCE",
+              "NO_RELIABLE_SOURCE"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Try the same idea in another example without recording a formal learning result."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "CRITICAL_CLAIM_WITHOUT_EVIDENCE",
+          "NO_RELIABLE_SOURCE"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [],
+        "stage_context_status": "unknown",
+        "stage_fit": {
+          "basis": "none",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [],
+          "status": "unknown"
+        },
+        "stage_profile": {},
+        "status": "unverified_generated",
+        "user_notice": "这次讲解暂未匹配到已核验的教材或权威资料，内容由 AI 根据通用知识生成，可能存在错误，仅供探索参考。",
+        "verification_status": "unverified_generated"
+      },
+      "steps": [
+        {
+          "evidence_refs": [],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [
+            "CRITICAL_CLAIM_WITHOUT_EVIDENCE",
+            "NO_RELIABLE_SOURCE"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Try the same idea in another example without recording a formal learning result."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    },
+    {
+      "actual_decision": "unverified_generate",
+      "case_id": "missing_page",
+      "expected_decision": "unverified_generate",
+      "oracle_match": true,
+      "package": {
+        "case_id": "missing_page",
+        "claims": [
+          {
+            "claim_id": "missing-page-claim",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 99,
+                "quote": "proves a bound",
+                "source_id": "middle-perfect-square-synthetic-v1"
+              }
+            ],
+            "text": "Completing the square proves a bound."
+          }
+        ],
+        "content_version": "2026-07-28.1",
+        "evidence_status": "unverified_reference_only",
+        "formal_learning_result_allowed": false,
+        "package_kind": "textbook_atom",
+        "review_method": "ai_only",
+        "review_steps": [
+          {
+            "evidence_refs": [],
+            "reason_codes": [
+              "PAGE_MISSING"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "parse"
+          },
+          {
+            "evidence_refs": [],
+            "reason_codes": [
+              "EVIDENCE_PAGE_MISSING"
+            ],
+            "schema_version": "1.0",
+            "status": "fail",
+            "step": "source_verification"
+          },
+          {
+            "evidence_refs": [
+              "middle-perfect-square-synthetic-v1:stage:middle"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "boundary_check"
+          },
+          {
+            "evidence_refs": [
+              "math.square.nonnegative"
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "pedagogy_check"
+          },
+          {
+            "evidence_refs": [
+              "Prove another bound."
+            ],
+            "reason_codes": [],
+            "schema_version": "1.0",
+            "status": "pass",
+            "step": "transfer_check"
+          }
+        ],
+        "routing_reasons": [
+          "EVIDENCE_PAGE_MISSING",
+          "PAGE_MISSING"
+        ],
+        "schema_version": "1.1",
+        "source_refs": [
+          {
+            "document_hash": "sha256:319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+            "edition": "synthetic-middle-math-2026",
+            "pages": [
+              99
+            ],
+            "source_id": "middle-perfect-square-synthetic-v1"
+          }
+        ],
+        "stage_context_status": "provided",
+        "stage_fit": {
+          "basis": "textbook_source",
+          "fit_version": "1.0",
+          "missing_prerequisite_refs": [],
+          "source_refs": [
+            "middle-perfect-square-synthetic-v1"
+          ],
+          "status": "within_stage"
+        },
+        "stage_profile": {
+          "curriculum": "synthetic-national-curriculum-2026",
+          "grade": 8,
+          "prerequisite_refs": [
+            "math.square.nonnegative"
+          ],
+          "profile_version": "1.0",
+          "school_stage": "middle",
+          "textbook_edition": "synthetic-middle-math-2026"
+        },
+        "status": "unverified_generated",
+        "user_notice": "这次讲解暂未匹配到已核验的教材或权威资料，内容由 AI 根据通用知识生成，可能存在错误，仅供探索参考。",
+        "verification_status": "unverified_generated"
+      },
+      "steps": [
+        {
+          "evidence_refs": [],
+          "reason_codes": [
+            "PAGE_MISSING"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "parse"
+        },
+        {
+          "evidence_refs": [],
+          "reason_codes": [
+            "EVIDENCE_PAGE_MISSING"
+          ],
+          "schema_version": "1.0",
+          "status": "fail",
+          "step": "source_verification"
+        },
+        {
+          "evidence_refs": [
+            "middle-perfect-square-synthetic-v1:stage:middle"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "boundary_check"
+        },
+        {
+          "evidence_refs": [
+            "math.square.nonnegative"
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "pedagogy_check"
+        },
+        {
+          "evidence_refs": [
+            "Prove another bound."
+          ],
+          "reason_codes": [],
+          "schema_version": "1.0",
+          "status": "pass",
+          "step": "transfer_check"
+        }
+      ]
+    }
+  ],
+  "protocol_version": "1.0",
+  "schema_failures": [],
+  "unexpected_oracle_failures": []
+}

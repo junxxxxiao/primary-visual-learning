@@ -1,0 +1,8 @@
+TS-02 SYNTHETIC SOURCE - NOT EXTERNAL CONTENT
+source_id: public-education-sound-a-v1
+stage: primary
+grade: 4
+edition: synthetic-public-education-a-2026
+
+[page 7]
+Sound needs matter such as air, water, or a solid to carry a vibration from a source to a listener. In a vacuum there is no material medium, so an ordinary sound wave cannot travel from the vibrating source to the listener.

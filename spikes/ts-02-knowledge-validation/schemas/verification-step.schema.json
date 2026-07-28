@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://primary-visual-learning.invalid/schemas/verification-step/1.0",
+  "title": "TS-02 VerificationStep v1.0",
+  "type": "object",
+  "required": ["schema_version", "step", "status", "reason_codes", "evidence_refs"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "step": {"type": "string", "enum": ["parse", "source_verification", "boundary_check", "pedagogy_check", "transfer_check"]},
+    "status": {"type": "string", "enum": ["pass", "fail"]},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

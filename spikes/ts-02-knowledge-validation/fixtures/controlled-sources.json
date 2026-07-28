@@ -1,0 +1,64 @@
+{
+  "manifest_version": "1.0",
+  "access_policy": "Provide local paths at runtime. Do not copy either PDF into the repository.",
+  "version_policy": "Title, selected chapter range, and SHA-256 pin the controlled source. Publisher and printing metadata were not read because access was restricted to the requested chapters.",
+  "sources": [
+    {
+      "source_id": "controlled-primary-science-grade4-volume1",
+      "title": "义务教育教科书·科学四年级上册",
+      "school_stage": "primary",
+      "grade": 4,
+      "chapter": "第五单元 声音",
+      "pdf_pages": [47, 60],
+      "book_pages": [44, 57],
+      "sha256": "2dceadd42bfaa05cc753c4d30cdee8fda03351fa41e830f920632aa723163774"
+    },
+    {
+      "source_id": "controlled-middle-math-grade8-volume1",
+      "title": "义务教育教科书·数学八年级上册",
+      "school_stage": "middle",
+      "grade": 8,
+      "chapter": "第十四章 整式的乘法与因式分解",
+      "pdf_pages": [101, 130],
+      "book_pages": [95, 124],
+      "sha256": "925db6f76d1881b46f51dace670226e2d1edede9b51d161e1828284d444ec8aa"
+    }
+  ],
+  "evidence_rules": [
+    {
+      "claim_id": "science.force_amplitude_loudness",
+      "source_id": "controlled-primary-science-grade4-volume1",
+      "pdf_pages": [54, 55],
+      "required_markers": ["力度", "振动的幅度"],
+      "expected": "supported"
+    },
+    {
+      "claim_id": "science.frequency_pitch",
+      "source_id": "controlled-primary-science-grade4-volume1",
+      "pdf_pages": [56],
+      "required_markers": ["振动得越快", "音调"],
+      "expected": "supported"
+    },
+    {
+      "claim_id": "math.perfect_square_identity",
+      "source_id": "controlled-middle-math-grade8-volume1",
+      "pdf_pages": [116, 117, 119, 124],
+      "required_markers": ["完全平方公式"],
+      "expected": "supported"
+    },
+    {
+      "claim_id": "math.completing_square_extrema",
+      "source_id": "controlled-middle-math-grade8-volume1",
+      "pdf_pages": [101, 130],
+      "required_markers": ["配方", "最值", "最大面积"],
+      "expected": "unsupported"
+    },
+    {
+      "claim_id": "math.wall_fence_transfer",
+      "source_id": "controlled-middle-math-grade8-volume1",
+      "pdf_pages": [101, 130],
+      "required_markers": ["围栏", "最大面积"],
+      "expected": "unsupported"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+TS-02 SYNTHETIC SOURCE - NOT TEXTBOOK CONTENT
+source_id: primary-sound-synthetic-v1
+stage: primary
+grade: 4
+edition: synthetic-primary-science-2026
+
+[page 12]
+When the same string keeps the same length, thickness, and tension, plucking it harder mainly increases vibration amplitude. A larger amplitude makes the sound louder. It does not by itself make the vibration frequency higher, so pitch does not directly become higher.
+
+[page 13]
+Pitch describes how high or low a sound seems and is related to vibration frequency. Loudness describes how strong or weak a sound seems and is related here to vibration amplitude. A transfer check may compare the same tuning fork struck with different force while holding the object fixed.

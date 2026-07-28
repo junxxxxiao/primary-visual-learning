@@ -1,0 +1,8 @@
+TS-02 SYNTHETIC SOURCE - NOT EXTERNAL CONTENT
+source_id: public-education-sound-b-v1
+stage: primary
+grade: 4
+edition: synthetic-public-education-b-2026
+
+[page 21]
+A vibrating object can still vibrate in a vacuum, but without a material medium its sound cannot propagate through the empty space to an ear. This distinguishes vibration at the source from transmission of sound to a listener.

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://primary-visual-learning.invalid/schemas/stage-fit/1.0",
+  "title": "StageFit v1.0",
+  "type": "object",
+  "required": ["status", "basis", "source_refs", "missing_prerequisite_refs", "fit_version"],
+  "properties": {
+    "status": {"type": "string", "enum": ["within_stage", "advanced", "ambiguous", "unknown"]},
+    "basis": {"type": "string", "enum": ["curriculum_source", "textbook_source", "learner_confirmation", "none"]},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "missing_prerequisite_refs": {"type": "array", "items": {"type": "string"}},
+    "fit_version": {"type": "string", "const": "1.0"}
+  },
+  "additionalProperties": false
+}
