@@ -3,6 +3,7 @@
 本目录后续维护切片间的稳定数据契约，例如：
 
 - `QuestionEnvelope`
+- `StageProfile`
 - `DiagnosisEnvelope`
 - `LessonPlan`
 - `SceneDefinition`
@@ -20,4 +21,4 @@
 5. 模型输出未经校验不得进入运行时；
 6. Schema 中不包含不必要的儿童身份信息。
 
-初始字段建议见 [技术验证文档](../../../docs/technical/2026-07-17-primary-visual-tutor-technical-validation.md#5-共同数据契约)。
+初始字段建议见 [技术验证 v3](../../../docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md#2-公共契约)。

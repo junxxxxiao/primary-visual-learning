@@ -1,7 +1,7 @@
 # TS-XX 技术切片名称
 
 > 状态：草稿  
-> 对应验证文档：`docs/technical/2026-07-17-primary-visual-tutor-technical-validation.md`
+> 对应验证文档：`docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md`
 
 ## 唯一验证问题
 

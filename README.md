@@ -1,12 +1,12 @@
-# 小学互动视觉家教
+# 中小学互动视觉家教
 
-面向小学 3–4 年级数学与科学的可打断互动视觉家教。孩子可以拍下不会的内容，或直接提出一个“为什么”；系统通过可操作的 PPT 式视觉讲解帮助孩子验证想法，并允许在当前场景中随时追问、改变条件、创建关联主题和返回原现场。
+面向小学至初中数学与科学概念型学习卡点的可打断互动视觉家教。孩子可以拍下不会的内容，或直接提出一个“为什么”；系统通过与学段和前置知识匹配的可操作 PPT 式视觉讲解帮助孩子验证想法，并允许在当前场景中随时追问、改变条件、创建关联主题和返回原现场。
 
-当前仓库处于“产品方案 v4 与固定声音价值 Demo 已完成，准备开展家庭体验验证和 P0 技术切片”的阶段。现有 Demo 使用固定教学夹具，不代表真实 OCR、儿童语音识别、AI 知识核验、动态视觉生成、视觉沙箱、场景恢复或端到端延迟已经实现。
+当前仓库处于“产品方案 v5 与双学段固定价值 Demo 已完成，准备开展家庭体验验证和 P0 技术切片”的阶段。现有 Demo 包含小学科学声音知识和初中数学完全平方公式两个固定教学夹具，不代表小学至初中全年级覆盖，也不代表真实 OCR、儿童语音识别、AI 知识核验、动态视觉生成、视觉沙箱、场景恢复或端到端延迟已经实现。
 
 ## 当前状态
 
-- 已完成：产品与竞品调研、完整中低保真可点击原型、PRD v4、固定声音高保真价值 Demo、声音价值 Demo 规范、技术验证 v2；
+- 已完成：产品与竞品调研、完整中低保真可点击原型、PRD v5、固定双学段高保真价值 Demo、声音价值 Demo 规范、技术验证 v3；
 - 当前公开体验：[声音互动体验 Demo](https://junxxxxiao.github.io/primary-visual-learning/)；
 - 下一阶段：家庭体验验证、社交媒体种子家庭招募、P0 技术切片；
 - 尚未开始：生产技术栈初始化、真实模型与媒体服务接入、端到端 MVP 开发；
@@ -18,7 +18,7 @@
 
 当文档或实现存在冲突时，按以下顺序处理：
 
-1. [最新 PRD](docs/product/2026-07-22-primary-visual-tutor-prd-v4.md)；
+1. [最新 PRD](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)；
 2. [当前可点击原型](prototype/)；
 3. [声音价值 Demo 规范](docs/design/2026-07-22-sound-value-demo-spec.md)与[中低保真原型规范](docs/design/2026-07-17-low-mid-fidelity-prototype-spec.md)；
 4. 已完成技术切片的决策记录；
@@ -92,14 +92,14 @@ python3 -m http.server 4173 --directory prototype
 
 ### 产品与设计
 
-- [小学互动视觉家教 PRD v4.0](docs/product/2026-07-22-primary-visual-tutor-prd-v4.md)
+- [中小学互动视觉家教 PRD v5.0](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)
 - [声音高保真价值 Demo 规范](docs/design/2026-07-22-sound-value-demo-spec.md)
 - [中低保真研究原型规范](docs/design/2026-07-17-low-mid-fidelity-prototype-spec.md)
 - [高保真设计工作区](design/high-fidelity/README.md)
 
 ### 技术
 
-- [技术验证 v2](docs/technical/2026-07-22-primary-visual-tutor-technical-validation-v2.md)
+- [技术验证 v3](docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md)
 - [系统级 ADR](docs/adr/)
 - [技术切片工作区](spikes/README.md)
 - [切片模板](spikes/_template/README.md)
@@ -198,9 +198,9 @@ python3 -m http.server 4173 --directory prototype
 
 - [x] 前期产品与竞品调研
 - [x] 完整中低保真原型
-- [x] PRD v4 与领域词汇
+- [x] PRD v5 与领域词汇
 - [x] 声音价值 Demo 规范与执行 Brief
-- [x] 技术验证 v2 与系统 ADR
+- [x] 技术验证 v3 与系统 ADR
 - [x] 完成并发布声音高保真价值 Demo
 - [ ] 社交媒体问卷与种子家庭招募
 - [ ] P0 技术切片 TS-00、TS-02、TS-04A、TS-04B、TS-03、TS-05、TS-06

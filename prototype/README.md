@@ -1,6 +1,6 @@
 # 小知互动讲解高保真 Demo 与研究原型
 
-默认入口是以最新高保真页面为基底的固定互动讲解 Demo。提问页可在声音知识与数学真题两个预设间切换：声音预设保留完整声音价值链路；数学预设覆盖固定题图输入、四段讲解、迁移验证和结果。旧中低保真研究原型保留在 `legacy.html`，仅供逻辑与历史对照，不再作为默认公开入口。
+默认入口是以最新高保真页面为基底的固定互动讲解 Demo。提问页可在标注“小学科学”的声音知识预设与标注“初中数学”的数学真题预设间切换：声音预设保留完整声音价值链路；数学预设覆盖固定题图输入、四段讲解、迁移验证和结果。学段备注说明样板内容，不限制其他年级体验。旧中低保真研究原型保留在 `legacy.html`，仅供逻辑与历史对照，不再作为默认公开入口。
 
 公开地址：<https://junxxxxiao.github.io/primary-visual-learning/>。旧中低保真研究原型地址：<https://junxxxxiao.github.io/primary-visual-learning/legacy.html>。
 
@@ -47,6 +47,8 @@ window.SOUND_DEMO_CONFIG = {
 
 保持空字符串时，结果页点击问卷按钮会显示“问卷链接尚未开放”。配置为有效 HTTPS 地址后，按钮会在当前浏览器中打开该地址。仓库不保存群二维码、家长联系方式或真实问卷答案。
 
+外部问卷允许家庭体验一个或两个预设后提交，并记录孩子年级、实际体验预设、各预设完成情况，以及对应知识处于学过、正在学或尚未学的阶段。问卷数据不写入 Demo 或仓库。
+
 ## 千问 TTS 配置
 
 千问只用于开发时预生成固定旁白，不在浏览器中调用。网页仍播放 `assets/audio/narration-*.wav`，因此体验者不会接触 API Key，也不会在每次打开 Demo 时产生调用。
@@ -92,7 +94,7 @@ python3 prototype/scripts/generate-qwen-narration.py --output-suffix qwen-standa
 python3 prototype/scripts/generate-qwen-narration.py --promote-suffix qwen-standard-1
 ```
 
-脚本默认使用 `qwen3-tts-instruct-flash`、`Cherry` 和面向小学三四年级的自然年轻女老师风格。返回的临时音频会立即下载并统一转换为 44.1 kHz、16-bit、单声道 WAV；脚本只输出片段名和本地路径，不打印 API Key、完整响应或带签名的音频 URL。
+脚本默认使用 `qwen3-tts-instruct-flash` 和 `Cherry`：声音相关片段采用面向小学生的自然年轻女老师风格，完全平方相关片段采用面向初中生的表达。返回的临时音频会立即下载并统一转换为 44.1 kHz、16-bit、单声道 WAV；脚本只输出片段名和本地路径，不打印 API Key、完整响应或带签名的音频 URL。
 
 ## 直达状态
 
@@ -124,7 +126,7 @@ python3 prototype/scripts/generate-qwen-narration.py --promote-suffix qwen-stand
 
 ## 固定教学夹具
 
-### 声音知识预设
+### 声音知识预设（小学科学样板）
 
 - 问题：更用力拨同一根弦，音调会更高吗？
 - 提问入口：文字、拍照、语音三种入口共享同一个固定问题；点击只产生明确的演示反馈；
@@ -151,9 +153,10 @@ python3 prototype/scripts/generate-qwen-narration.py --promote-suffix qwen-stand
 - 提示后迁移：同一块木琴音条分别判断响度、音调和原因；
 - 家长样例：声音、分数、光影、乘法和植物。
 
-### 数学真题预设
+### 数学真题预设（初中数学样板）
 
 - 输入文案固定为“帮我讲解下这道数学题”且不可编辑；题图缩略图位于输入框内部左侧；
+- 提问页预设选项在“数学真题演示”下方备注“初中数学”；声音选项对应备注“小学科学”；
 - 点击题图缩略图可放大查看；加载页不展示题图，所有预设统一显示“正在生成动画讲解”；
 - 题图：`assets/images/math-completing-square-problem.png`，仅作为固定附件展示，不执行真实上传或 OCR；
 - 四段讲解：配方规律、第（1）题最小值 `-3`、第（2）题最大值 `3`、第（3）题最大面积 `1250` 平方米；

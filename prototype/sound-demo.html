@@ -482,8 +482,11 @@
     .header-spacer { width: 42px; }
     .ask-focus { padding-top: 1%; }
     .preset-switcher { margin: 3% 0 0; display: flex; gap: 10px; flex-wrap: wrap; }
-    .preset-option { min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--chalk); color: var(--muted); font-size: 11px; font-weight: 850; }
+    .preset-option { min-height: 52px; padding: 6px 16px; display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--chalk); color: var(--muted); font-size: 11px; font-weight: 850; text-align: left; }
     .preset-option b { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 8px 8px 8px 3px; background: var(--paper); color: var(--ink); }
+    .preset-option-copy { display: grid; gap: 2px; }
+    .preset-option-copy strong { color: inherit; font-size: 11px; line-height: 1.15; }
+    .preset-option-copy small { color: inherit; font-size: 9px; font-weight: 700; line-height: 1.15; opacity: .72; }
     .preset-option.selected { border-color: var(--ink); background: var(--lime-soft); color: var(--ink); box-shadow: 3px 4px 0 var(--ink); }
     .question-composer { margin: 4% 0 2.5%; padding: 3.5%; border: 2px solid var(--ink); border-radius: 26px; background: var(--paper); box-shadow: 8px 9px 0 var(--ink); }
     .question-composer-body { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: start; }
@@ -833,7 +836,9 @@
     body.phone-review .input-entry-notes { margin: 16px 0; grid-template-columns: 1fr; gap: 7px; }
     body.phone-review .input-entry-notes span { padding: 8px; font-size: 9px; }
     body.phone-review .preset-switcher { margin-top: 10px; gap: 7px; }
-    body.phone-review .preset-option { min-height: 40px; padding: 0 10px; font-size: 9px; }
+    body.phone-review .preset-option { min-height: 48px; padding: 5px 10px; font-size: 9px; }
+    body.phone-review .preset-option-copy strong { font-size: 9px; }
+    body.phone-review .preset-option-copy small { font-size: 8px; }
     body.phone-review .question-composer.has-attachment .question-composer-body { grid-template-columns: 74px minmax(0, 1fr); gap: 10px; }
     body.phone-review .question-attachment img { width: 74px; height: 78px; border-radius: 10px; }
     body.phone-review .question-composer.has-attachment .question-value { min-height: 78px; font-size: 19px; }
@@ -1390,7 +1395,7 @@
         <section class="concept-screen static-screen" data-screen="ask" hidden>
           <div class="static-shell"><header class="static-appbar"><span class="back">‹</span><div class="brand"><span class="brand-mark">知</span><span>发起一个问题</span></div><span class="header-spacer"></span></header><div class="static-content"><div class="static-narrow ask-focus">
             <h1 class="static-title">从一个“为什么”开始</h1><p class="static-lead" data-ask-lead>可以直接输入，也可以用语音或照片告诉小知。当前输入框已放入本次声音 Demo 的预设问题。</p>
-            <div class="preset-switcher" role="radiogroup" aria-label="选择演示问题"><button type="button" class="preset-option selected" data-preset="sound" role="radio" aria-checked="true"><b>声</b>声音知识演示</button><button type="button" class="preset-option" data-preset="math" role="radio" aria-checked="false"><b>数</b>数学真题演示</button></div>
+            <div class="preset-switcher" role="radiogroup" aria-label="选择演示问题"><button type="button" class="preset-option selected" data-preset="sound" role="radio" aria-checked="true"><b>声</b><span class="preset-option-copy"><strong>声音知识演示</strong><small>小学科学</small></span></button><button type="button" class="preset-option" data-preset="math" role="radio" aria-checked="false"><b>数</b><span class="preset-option-copy"><strong>数学真题演示</strong><small>初中数学</small></span></button></div>
             <div class="question-composer"><label for="demo-question">你想问什么？</label><div class="question-composer-body"><div class="question-attachment" hidden><img src="./assets/images/math-completing-square-problem.png" alt="一道利用完全平方公式求最值的数学题截图" data-open-problem-image role="button" tabindex="0" aria-label="放大查看数学题图片"></div><div class="question-copy"><textarea id="demo-question" class="question-value" rows="2">更用力拨同一根弦，音调会更高吗？</textarea></div></div><div class="composer-tools"><span class="icon-button" aria-label="语音输入"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span class="icon-button" aria-label="拍照输入"><svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z"/><circle cx="12" cy="13" r="4"/></svg></span><span class="composer-send">发送</span></div></div>
             <div class="input-entry-notes"><span><b>文</b>直接输入问题</span><span><b>声</b>说出问题</span><span><b>照</b>拍下不会的内容</span></div>
             <div class="prediction-footer"><p>演示不会调用真实麦克风或相机。</p></div>
