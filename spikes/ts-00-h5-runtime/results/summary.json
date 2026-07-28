@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "slice_id": "TS-00",
+  "status": "conditional_pass",
+  "evidence_type": "single_device_manual_smoke_test",
+  "test_date": "2026-07-28",
+  "baseline_sha": "14ae92f539aafc9c9e1e34f169e12533d86169f5",
+  "environment": {
+    "device": "iPhone 16",
+    "os": "iOS 26.5.2",
+    "entry": "WeChat WebView",
+    "wechat_version": "8.0.75"
+  },
+  "fixtures": [
+    "public_sound_demo",
+    "public_math_demo"
+  ],
+  "observations": {
+    "wechat_page_opened": "pass",
+    "sound_demo_basic_experience": "pass",
+    "math_demo_basic_experience": "pass",
+    "blocking_issue_reported": false,
+    "overall_experience": "acceptable"
+  },
+  "candidate_gates": {
+    "audio_pause_resume_error_p95_ms": {
+      "threshold": 250,
+      "value": null,
+      "result": "not_tested"
+    },
+    "interaction_fps_p95": {
+      "threshold": 30,
+      "value": null,
+      "result": "not_tested"
+    },
+    "foreground_background_restore": "not_tested",
+    "rotation_restore": "not_tested",
+    "permission_denial_fallback": "not_tested",
+    "android_compatibility": "not_tested"
+  },
+  "data_handling": {
+    "child_personal_data_collected": false,
+    "recording_committed": false,
+    "credentials_committed": false
+  },
+  "failures": [],
+  "conclusion": "The fixed sound and math demos are usable in the tested iPhone WeChat environment. This supports continuing with H5 plus a WeChat entry as a candidate, but does not establish cross-platform compatibility or complete TS-00 acceptance."
+}
