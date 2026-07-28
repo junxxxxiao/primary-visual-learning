@@ -91,6 +91,18 @@ requireMatch(!/--phone-safe-top\s*:|var\(--phone-safe-top\)/.test(html), '所有
 requireMatch(/\[canvas, \.\.\.canvas\.querySelectorAll\('\*'\)\]/.test(html), '画布审计必须检查画布自身及全部后代');
 requireMatch(/canvas\.dataset\.boundsAudit = violations\.length \? 'fail' : 'pass'/.test(html), '画布审计必须输出可自动验收的通过或失败状态');
 requireMatch(/window\.addEventListener\('resize', scheduleLessonCanvasAudit\)/.test(html), '视口变化后必须重新检查动画画布边界');
+requireMatch(/body\.runtime-demo \{[^}]*min-height:\s*100dvh;[^}]*overflow-x:\s*hidden;[^}]*overflow-y:\s*auto;/.test(html), 'ADR-0006 要求页面文档成为主要纵向滚动区');
+requireMatch(/body\.runtime-demo \.concept-screen\.active \{[^}]*position:\s*relative;[^}]*overflow:\s*visible;/.test(html), '活动页面必须进入文档流并允许页面自然增高');
+requireMatch(/body\.runtime-demo \.static-content,[\s\S]{0,100}body\.runtime-demo \.static-choice-list \{[^}]*overflow-y:\s*visible;/.test(html), '普通静态页面不得保留与页面竞争的纵向滚动区');
+requireMatch(/body\.runtime-demo \.lesson-canvas \{[\s\S]{0,500}overflow-y:\s*auto;[\s\S]{0,200}overscroll-behavior-y:\s*auto;/.test(html), '讲解画布必须条件性滚动并在边界后把手势交还页面');
+requireMatch(/body\.runtime-demo \.thread \{[^}]*overflow-y:\s*auto;[^}]*overscroll-behavior:\s*contain;/.test(html), '平板常驻对话栏与手机抽屉消息区必须独立滚动且不串滚背景');
+requireMatch(/function pageScrollRoot\(\)/.test(html) && /pageScrollPositions/.test(html), '页面切换必须使用共享滚动根并保存页面位置');
+requireMatch(/function showScreen\(name, updateUrl = true, scrollMode = 'top'\)/.test(html), '页面切换必须声明回顶部或恢复位置策略');
+requireMatch(/document\.body\.classList\.toggle\('tutor-overlay-open', drawerOpen && usesTutorOverlay\(\)\)/.test(html) && /document\.body\.classList\.remove\('tutor-overlay-open'\)/.test(html), '手机小知抽屉必须在打开时锁定背景并在关闭时解除');
+requireMatch(/phone-viewport-forced \.screen-scroll \{[^}]*overflow-x:\s*hidden;[^}]*overflow-y:\s*auto;/.test(html), '固定手机审阅画布必须在模拟页面视口内部滚动');
+requireMatch(/const contentBounds = \{ left: 0, top: 0, right: canvas\.scrollWidth, bottom: canvas\.scrollHeight \}/.test(html), '画布边界审计必须以完整可滚内容范围为准');
+requireMatch(/function auditScrollOwnership\(\)/.test(html) && /window\.__demoAuditScrollOwnership = auditScrollOwnership/.test(html), 'Demo 必须暴露机器可读的分层滚动契约审计入口');
+requireMatch(/function syncTutorOverlayLock\(\)/.test(html) && /window\.addEventListener\('resize',[\s\S]{0,180}syncTutorOverlayLock\(\)/.test(html), '旋转或断点变化后必须重新同步小知抽屉的背景锁定');
 
 if (failures.length) {
   console.error(failures.map(failure => `- ${failure}`).join('\n'));

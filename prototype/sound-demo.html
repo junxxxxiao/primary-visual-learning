@@ -1277,6 +1277,77 @@
     body.runtime-demo.phone-viewport-forced .review { width: max(100vw, 390px); height: max(100vh, 844px); display: grid; place-items: center; }
     body.runtime-demo.phone-viewport-forced .screen-scroll { width: 390px !important; height: 844px !important; overflow: hidden; flex: 0 0 390px; }
     body.runtime-demo.phone-viewport-forced .screen-frame { width: 390px !important; height: 844px !important; min-width: 390px !important; min-height: 844px !important; max-width: 390px; max-height: 844px; margin: 0; border: 0; border-radius: 0; }
+
+    /* ADR-0006: the page scrolls by default; canvas and conversation threads are explicit nested owners. */
+    html { overflow-x: hidden; overflow-y: auto; scroll-padding-block: 76px 84px; }
+    body.runtime-demo { min-height: 100vh; min-height: 100dvh; overflow-x: hidden; overflow-y: auto; }
+    body.runtime-demo .review,
+    body.runtime-demo .screen-scroll,
+    body.runtime-demo .screen-frame { height: auto; min-height: 100vh; min-height: 100dvh; overflow: visible; }
+    body.runtime-demo .concept-screen.active { min-height: 100vh; min-height: 100dvh; position: relative; inset: auto; overflow: visible; }
+    body.runtime-demo .static-shell,
+    body.runtime-demo .lesson-shell { height: auto; min-height: calc(100vh - 5vw); min-height: calc(100dvh - 5vw); }
+    body.runtime-demo .static-content,
+    body.runtime-demo .static-choice-list { max-height: none; overflow-y: visible; }
+    body.runtime-demo [data-screen="fork"] .static-content,
+    body.runtime-demo [data-screen="xylophone"] .static-content,
+    body.runtime-demo [data-screen="result"] .static-content,
+    body.runtime-demo [data-screen="fork"] .static-choice-list,
+    body.runtime-demo [data-screen="xylophone"] .static-choice-list { max-height: none; overflow-y: visible; overscroll-behavior: auto; }
+    body.runtime-demo .static-appbar,
+    body.runtime-demo .lesson-appbar { position: sticky; z-index: 6; top: 0; background: var(--paper); }
+    body.runtime-demo .lesson-canvas {
+      min-height: 340px;
+      max-height: min(68vh, 720px);
+      max-height: min(68dvh, 720px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-x: none;
+      overscroll-behavior-y: auto;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
+    }
+    body.runtime-demo .lesson-canvas > * { max-height: none; }
+    body.runtime-demo .interactive-string-stage { height: auto; max-height: none; overflow: visible; }
+    body.runtime-demo .experiment-canvas { overflow-x: hidden; overflow-y: auto; }
+    body.runtime-demo .thread { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
+    body.runtime-demo .unified-player {
+      padding-block: 6px;
+      position: sticky;
+      z-index: 5;
+      bottom: var(--phone-safe-bottom);
+      background: var(--paper);
+    }
+    body.runtime-demo.tutor-overlay-open { overflow: hidden; }
+    body.runtime-demo.tutor-overlay-open .screen-scroll { overflow: hidden; }
+
+    @media (min-width: 701px) and (orientation: landscape) {
+      body.runtime-demo .lesson-grid { align-items: stretch; }
+      body.runtime-demo .tutor-panel { max-height: min(76vh, 760px); max-height: min(76dvh, 760px); position: sticky; top: 82px; }
+    }
+
+    @media (max-width: 700px), (orientation: portrait) {
+      body.runtime-demo,
+      body.runtime-demo .review,
+      body.runtime-demo .screen-scroll,
+      body.runtime-demo .screen-frame { height: auto; min-height: 100vh; min-height: 100dvh; }
+      body.runtime-demo .workspace { height: auto; min-height: calc(100vh - 92px); min-height: calc(100dvh - 92px); }
+      body.runtime-demo .lesson-canvas {
+        height: clamp(360px, 60vh, 560px);
+        height: clamp(360px, 60dvh, 560px);
+        min-height: 360px;
+        max-height: none;
+        overscroll-behavior-y: auto;
+      }
+      body.runtime-demo .lesson-screen.active .tutor-panel.drawer-open .thread { overflow-y: auto; overscroll-behavior: contain; }
+    }
+
+    body.runtime-demo.phone-viewport-forced { overflow: auto; }
+    body.runtime-demo.phone-review .lesson-canvas { overscroll-behavior-y: auto; }
+    body.runtime-demo.phone-viewport-forced .screen-scroll { height: 844px !important; min-height: 844px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+    body.runtime-demo.phone-viewport-forced .screen-frame { height: auto !important; min-height: 844px !important; max-height: none; }
+    body.runtime-demo.phone-viewport-forced .concept-screen.active { min-height: 844px; }
+    body.runtime-demo.phone-viewport-forced.tutor-overlay-open .screen-scroll { overflow: hidden; }
   </style>
 </head>
 <body class="runtime-demo">
@@ -1477,7 +1548,7 @@
       feedback: null, feedbackReasons: [], playing: false,
       audioKind: null, audioSegment: 1, vacuumSegment: 1, subtitles: false,
       topicStage: 0, transitioning: false, drawerScreen: null, recordingScreen: null, recordingWasPlaying: false,
-      followupHistory: [],
+      followupHistory: [], pageScrollPositions: {},
       interruptedScreen: null, interruptedMainSegment: 1
     };
     let loadingTimer = null;
@@ -1683,6 +1754,7 @@
       state.mathTransferEvidence = null;
       state.mathAttachment = state.preset === 'math';
       state.topicStage = 0;
+      state.pageScrollPositions = {};
       document.body.classList.toggle('math-mode', state.preset === 'math');
       if (announce) {
         const url = new URL(location.href);
@@ -1767,14 +1839,21 @@
       const screen = document.querySelector('.concept-screen.active');
       const canvas = screen?.querySelector('.lesson-canvas');
       if (!canvas) return [];
-      const bounds = canvas.getBoundingClientRect();
+      const viewportBounds = canvas.getBoundingClientRect();
+      const contentBounds = { left: 0, top: 0, right: canvas.scrollWidth, bottom: canvas.scrollHeight };
       const tolerance = 1;
       const violations = [canvas, ...canvas.querySelectorAll('*')].flatMap(node => {
         const style = getComputedStyle(node);
         if (style.display === 'none' || style.visibility === 'hidden') return [];
         const rect = node.getBoundingClientRect();
         if (!rect.width && !rect.height) return [];
-        const outsideCanvas = rect.left < bounds.left - tolerance || rect.top < bounds.top - tolerance || rect.right > bounds.right + tolerance || rect.bottom > bounds.bottom + tolerance;
+        const relativeRect = node === canvas ? contentBounds : {
+          left: rect.left - viewportBounds.left + canvas.scrollLeft,
+          top: rect.top - viewportBounds.top + canvas.scrollTop,
+          right: rect.right - viewportBounds.left + canvas.scrollLeft,
+          bottom: rect.bottom - viewportBounds.top + canvas.scrollTop
+        };
+        const outsideCanvas = relativeRect.left < contentBounds.left - tolerance || relativeRect.top < contentBounds.top - tolerance || relativeRect.right > contentBounds.right + tolerance || relativeRect.bottom > contentBounds.bottom + tolerance;
         const clipsX = ['hidden', 'clip'].includes(style.overflowX) && node.scrollWidth > node.clientWidth + tolerance;
         const clipsY = ['hidden', 'clip'].includes(style.overflowY) && node.scrollHeight > node.clientHeight + tolerance;
         if (!outsideCanvas && !clipsX && !clipsY) return [];
@@ -1782,7 +1861,8 @@
           selector: node.className || node.tagName.toLowerCase(),
           kind: outsideCanvas ? 'outside-canvas' : 'clipped-content',
           rect: rect.toJSON(),
-          bounds: bounds.toJSON(),
+          contentRect: relativeRect,
+          bounds: contentBounds,
           scrollSize: { width: node.scrollWidth, height: node.scrollHeight },
           clientSize: { width: node.clientWidth, height: node.clientHeight }
         }];
@@ -1801,6 +1881,30 @@
     }
     window.__demoAuditCanvasBounds = auditLessonCanvasBounds;
     window.addEventListener('resize', scheduleLessonCanvasAudit);
+
+    function auditScrollOwnership() {
+      const active = document.querySelector('.concept-screen.active');
+      const root = pageScrollRoot();
+      const canvas = active?.querySelector('.lesson-canvas');
+      const thread = active?.querySelector('.tutor-panel .thread');
+      const drawerOpen = Boolean(active?.querySelector('.tutor-panel.drawer-open'));
+      const violations = [];
+      if (root && root.scrollWidth > root.clientWidth + 1) violations.push('horizontal-page-overflow');
+      if (!drawerOpen && getComputedStyle(document.body).overflowY === 'hidden') violations.push('page-scroll-locked');
+      if (canvas && getComputedStyle(canvas).overscrollBehaviorY !== 'auto') violations.push('canvas-scroll-chain-blocked');
+      if (thread && getComputedStyle(thread).overflowY !== 'auto') violations.push('conversation-not-scrollable');
+      if (drawerOpen && !document.body.classList.contains('tutor-overlay-open')) violations.push('drawer-background-unlocked');
+      return {
+        primary_scroll_owner: document.body.classList.contains('phone-viewport-forced') ? 'review_viewport' : 'document',
+        conditional_scroll_owner: canvas ? 'lesson_canvas' : null,
+        conversation_scroll_owner: thread ? 'tutor_thread' : null,
+        overlay_open: drawerOpen,
+        horizontal_overflow: violations.includes('horizontal-page-overflow'),
+        scroll_traps: violations,
+        result: violations.length ? 'fail' : 'pass'
+      };
+    }
+    window.__demoAuditScrollOwnership = auditScrollOwnership;
 
     function earIconMarkup() {
       return '<span class="ear-illustration" role="img" aria-label="耳朵">👂</span>';
@@ -2215,11 +2319,34 @@
       requestAnimationFrame(syncActiveTopicVisibility);
     }
 
-    function showScreen(name, updateUrl = true) {
+    function pageScrollRoot() {
+      if (document.body.classList.contains('phone-viewport-forced')) return document.querySelector('.screen-scroll');
+      return document.scrollingElement || document.documentElement;
+    }
+
+    function setPageScroll(top) {
+      const root = pageScrollRoot();
+      if (!root) return;
+      root.scrollTo({ top: Math.max(0, top || 0), behavior: 'auto' });
+    }
+
+    function usesTutorOverlay() {
+      return document.body.classList.contains('phone-review') || matchMedia('(max-width: 700px), (orientation: portrait)').matches;
+    }
+
+    function syncTutorOverlayLock() {
+      const drawerOpen = Boolean(document.querySelector('.concept-screen.active .tutor-panel.drawer-open'));
+      document.body.classList.toggle('tutor-overlay-open', drawerOpen && usesTutorOverlay());
+    }
+
+    function showScreen(name, updateUrl = true, scrollMode = 'top') {
       clearTimeout(loadingTimer);
       cancelAnimationFrame(loadingFrame);
       closeTutorDrawer(false);
       stopAudio();
+      const previousScreen = state.screen;
+      const previousRoot = pageScrollRoot();
+      if (previousScreen && previousRoot) state.pageScrollPositions[previousScreen] = previousRoot.scrollTop;
       state.screen = name;
       reviewTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.target === name)));
       screens.forEach(screen => {
@@ -2235,6 +2362,10 @@
       prepareScreen(name);
       renderTopicTabs();
       syncInteractiveSemantics();
+      requestAnimationFrame(() => {
+        setPageScroll(scrollMode === 'restore' ? state.pageScrollPositions[name] : 0);
+        scheduleLessonCanvasAudit();
+      });
     }
 
     function prepareScreen(name) {
@@ -2542,6 +2673,13 @@
       state.drawerScreen = screenName;
       panel.classList.add('drawer-open');
       screen.classList.add('tutor-drawer-active');
+      syncTutorOverlayLock();
+      const thread = panel.querySelector('.thread');
+      requestAnimationFrame(() => {
+        if (!thread || thread.dataset.scrollInitialized) return;
+        thread.scrollTop = thread.scrollHeight;
+        thread.dataset.scrollInitialized = 'true';
+      });
     }
 
     function closeTutorDrawer(resume = true) {
@@ -2550,6 +2688,7 @@
       stopInlineRecording(resume);
       document.querySelector(`[data-screen="${screenName}"] .tutor-panel`)?.classList.remove('drawer-open', 'recording-panel', 'recording-active');
       document.querySelector(`[data-screen="${screenName}"]`)?.classList.remove('tutor-drawer-active');
+      document.body.classList.remove('tutor-overlay-open');
       state.drawerScreen = null;
     }
 
@@ -2634,14 +2773,14 @@
 
     function openTopic(label) {
       if (state.preset === 'math') return;
-      if (label === '实验' && state.topicStage >= 1) return showScreen('experiment');
+      if (label === '实验' && state.topicStage >= 1) return showScreen('experiment', true, 'restore');
       if (label === '真空中的声音' && state.topicStage >= 2) {
         state.vacuumSegment = 1;
-        return showScreen('vacuum');
+        return showScreen('vacuum', true, 'restore');
       }
       if (label === '琴弦振动') {
         state.lessonSegment = Math.max(2, state.lessonSegment);
-        return showScreen('lesson');
+        return showScreen('lesson', true, 'restore');
       }
     }
 
@@ -2693,7 +2832,7 @@
       if (back) {
         event.preventDefault();
         if (confirmBackScreens.has(active)) openExitDialog();
-        else showScreen(({ ask: 'entry', confirm: 'ask', calibration: 'confirm', prediction: 'calibration' })[active] || 'entry');
+        else showScreen(({ ask: 'entry', confirm: 'ask', calibration: 'confirm', prediction: 'calibration' })[active] || 'entry', true, 'restore');
         return;
       }
       if (active === 'entry' && event.target.closest('.entry-buttons .cta')) return showScreen('ask');
@@ -2896,7 +3035,10 @@
     }
     const requestedViewport = params.get('viewport');
     const responsiveViewport = () => requestedViewport === 'phone' || requestedViewport === 'tablet' ? requestedViewport : innerWidth < 700 || innerHeight > innerWidth ? 'phone' : 'tablet';
-    window.addEventListener('resize', () => showViewport(responsiveViewport()));
+    window.addEventListener('resize', () => {
+      showViewport(responsiveViewport());
+      syncTutorOverlayLock();
+    });
     const validScreens = ['entry','ask','confirm','calibration','prediction','loading','intro','lesson','experiment','vacuum','fork','xylophone','feedback','result'];
     configurePreset(params.get('preset') === 'math' ? 'math' : 'sound', false);
     showViewport(responsiveViewport());

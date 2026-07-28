@@ -1,9 +1,12 @@
 ---
-status: accepted
+status: superseded
 date: 2026-07-27
+superseded_by: ADR-0006
 ---
 
 # 所有交互页面共用响应式外壳与滚动归属契约
+
+> 本决策已由 [ADR-0006](0006-adaptive-page-and-nested-scroll-contract.md) 替代。以下内容保留用于追踪此前“页面外壳不滚动”的决策背景，不再作为当前实现要求。
 
 研究原型、高保真设计和后续进入 `apps/`、`packages/` 的实际产品实现，必须共用同一份响应式交互外壳契约。契约负责设备视口、页面区域、滚动归属、安全区、固定操作和共享组件边界；不得把原型中的手机适配规则当作只用于 Demo 的临时样式。
 
