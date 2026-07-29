@@ -1,0 +1,226 @@
+{
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "decision": "format_gate_pass",
+  "estimated_cost": {
+    "estimated_cny": null,
+    "estimated_usd": null,
+    "note": "Third-party aggregator pricing is unknown; consult its billing record.",
+    "provider": "www.packyapi.ai"
+  },
+  "limits": [
+    "This targeted retry measures output-format recovery only.",
+    "It is not a second full TS-02 round and does not replace the first-round result.",
+    "Only synthetic fixtures were sent."
+  ],
+  "metrics": {
+    "reason_code_exact_match": {
+      "denominator": 7,
+      "numerator": 7
+    },
+    "schema_validity": {
+      "denominator": 7,
+      "numerator": 7
+    },
+    "status_accuracy": {
+      "denominator": 7,
+      "numerator": 7
+    }
+  },
+  "records": [
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "middle_perfect_square_valid",
+      "elapsed_ms": 10581,
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "http_status": 200,
+      "latency_ms": 10581,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:8f632553c97e65518e0e14f315e09df24d7ce343d45b0ded53658de9c1f14711",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "source_verification",
+      "usage": {
+        "completion_tokens": 1186,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 85,
+        "total_tokens": 1271
+      }
+    },
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "temporary_vacuum_valid",
+      "elapsed_ms": 7985,
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "http_status": 200,
+      "latency_ms": 7985,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:27638aafabfa7e398e6c5e44ce75449727c10a4a136133deeead40a0691ed82d",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "source_verification",
+      "usage": {
+        "completion_tokens": 843,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 82,
+        "total_tokens": 925
+      }
+    },
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "temporary_vacuum_valid",
+      "elapsed_ms": 8497,
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "http_status": 200,
+      "latency_ms": 8497,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:002ffb58e9474dd5967c043b7cbbb3290f8b76ca18cee37671886fcbd0e3fff1",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "boundary_check",
+      "usage": {
+        "completion_tokens": 755,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 29,
+        "total_tokens": 784
+      }
+    },
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "declared_advanced_path",
+      "elapsed_ms": 8500,
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "http_status": 200,
+      "latency_ms": 8500,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:af04ef3bdd487b46657500090f7e4463a2e2c46d88b0f549bad2085713df9e92",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "pedagogy_check",
+      "usage": {
+        "completion_tokens": 867,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 111,
+        "total_tokens": 978
+      }
+    },
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "absent_evidence",
+      "elapsed_ms": 10212,
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "http_status": 200,
+      "latency_ms": 10212,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:957c909e543d1f53b919f2318cc01ccab1ee963d0d3349f479ede17d619de37b",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "parse",
+      "usage": {
+        "completion_tokens": 1038,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 114,
+        "total_tokens": 1152
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "INDEPENDENT_CHECK_CONFLICT"
+      ],
+      "actual_status": "fail",
+      "case_id": "verification_conflict",
+      "elapsed_ms": 10163,
+      "expected_reason_codes": [
+        "INDEPENDENT_CHECK_CONFLICT"
+      ],
+      "expected_status": "fail",
+      "http_status": 200,
+      "latency_ms": 10162,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:ba5abc39ec58af44554bd76261780c3c8c2796a6634d0db77eb211689200793f",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "boundary_check",
+      "usage": {
+        "completion_tokens": 956,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 39,
+        "total_tokens": 995
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "EVIDENCE_PAGE_MISSING"
+      ],
+      "actual_status": "fail",
+      "case_id": "missing_page",
+      "elapsed_ms": 8874,
+      "expected_reason_codes": [
+        "EVIDENCE_PAGE_MISSING"
+      ],
+      "expected_status": "fail",
+      "http_status": 200,
+      "latency_ms": 8873,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "response_hash": "sha256:fec15596baea85b555dbe1a712164cdd4a1b591f76e7ebb69e76a617d9fb1302",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "status_match": true,
+      "step": "source_verification",
+      "usage": {
+        "completion_tokens": 870,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 109,
+        "total_tokens": 979
+      }
+    }
+  ],
+  "request_model": "deepseek-v4-flash",
+  "requests": {
+    "automatic_retries": 0,
+    "completed": 7,
+    "planned": 7
+  },
+  "run_at": "2026-07-28T16:50:39.837585+00:00",
+  "slice": "TS-02-real-model-format-retry",
+  "source_result": "model-deepseek-v4-flash-round-1.json",
+  "thinking": {
+    "type": "disabled"
+  },
+  "usage": {
+    "completion_tokens": 6515,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 0,
+    "prompt_tokens": 569,
+    "total_tokens": 7084
+  }
+}

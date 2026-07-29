@@ -126,6 +126,35 @@ python3 spikes/ts-02-knowledge-validation/run.py
 
 受控命令校验整份文件哈希，但只提取清单指定页段；教材正文只存在于运行时内存。结果写入 `results/summary.json`、`results/failures.json` 和 `results/controlled-summary.json`，最终判断及五类影响记录在 `decisions.md`。
 
+真实模型的一轮合成夹具检查使用本地 `.env.local` 中的 API Key 和模型配置：
+
+```bash
+python3 spikes/ts-02-knowledge-validation/run_model.py
+```
+
+该运行器固定只允许一轮、最多 60 次请求，只发送仓库内合成夹具，不读取或发送受控教材 PDF 与教材提取正文。原始 API 响应写入已被 Git 忽略的 `results/raw/`，汇总结果单独写入 `results/model-<model>-round-1.json`；它不会自动启动后续轮次。
+
+2026-07-29 的首轮 PackyAPI `deepseek-v4-flash` 运行已完成，机器汇总见 `results/model-deepseek-v4-flash-round-1.json`。该配置只达到 `7/12` 路由准确、`53/60` Schema 合法，并发生 `1/60` 请求超时，判定为失败；未获授权也未启动后续轮次。第三方聚合服务返回的实际模型标识为 `deepseek-v4-flash-202605`，其模型映射和计费不能按 DeepSeek 官方 API 结论外推。
+
+随后经用户确认，仅对上述 7 个 Schema/超时失败步骤关闭思考模式做定向预检，结果见 `results/model-deepseek-v4-flash-retry-no-thinking.json`：Schema、状态和原因码均为 `7/7`，使用 `7,084` Token。该结果通过格式门槛，但不是完整第二轮，不能替代首轮失败结论；它说明后续完整复测应使用关闭思考的冻结配置，而不是继续增加输出预算。
+
+经再次确认后，使用请求参数 `thinking.type=disabled` 完整运行 12 例、60 步，结果见 `results/model-deepseek-v4-flash-full-no-thinking.json`：路由 `10/12`、Schema `55/60`、步骤状态 `57/60`、原因码 `52/60`，合计 `47,707` Token，60 次请求均返回，平均延迟 `8,476 ms`。但 60/60 个响应仍包含 `reasoning_content`，其中 5 个因达到长度上限而截断，证明 PackyAPI 或其上游没有实际执行关闭思考请求。该配置仍为失败，不得表述为无思考模式验证通过。
+
+最后按混合职责运行一次：本地确定性代码处理来源存在性、哈希、页码、OCR、提示注入、StageProfile、超前声明、前置知识字段和迁移布尔标志，只把 5 个本地发布候选交给模型做 15 个语义步骤。结果见 `results/model-deepseek-v4-flash-hybrid.json`：本地路由 `12/12`，模型 Schema `14/15`，最终路由 `8/12`，共 `17,913` Token，结论为失败。失败同时暴露现有正向夹具不具备教学语义 oracle 所需的完整讲解和迁移文本；例如 `missing_stage_context` 的迁移提示只有“Compare a tuning fork.”，却由布尔字段声明为同时要求结论和理由。因此该结果不能单独归因于模型质量，也不能通过修改 oracle 追求表面通过。
+
+上述混合运行仍把模型语义失败聚合成 `block`，现仅作为“模型不得拥有最终路由权”的历史失败证据保留。调整后的职责是：本地确定性规则决定 `publish|unverified_generate|block`；模型只判断证据是否支持候选结论。模型不确定、超时、格式失败或语义拒绝时，普通问题最多降为 `unverified_generate`，不得阻断缺少年级、明确超前或无可靠来源的讲解。
+
+V4 Pro 的聚焦证据审核只运行 8 个合成样例：明确支持、部分支持、单来源冲突、无关引用、双来源一致、双来源冲突、无证据和证据内提示注入。运行命令为：
+
+```bash
+TS02_MODEL=deepseek-v4-pro \
+  python3 spikes/ts-02-knowledge-validation/run_model_evidence_audit.py
+```
+
+该运行器最多调用 8 次，不读取教材 PDF、教材提取正文或儿童数据。候选门槛为 Schema `8/8`、支持判断 `8/8`、原因码 `8/8`，并且 6 个预期拒绝样例中危险误放行必须为 `0/6`。即使达到门槛也只能记为一次运行的 `conditional_pass`，不能证明重复稳定性、广泛学科准确率或生产资格。
+
+2026-07-29 的 PackyAPI `deepseek-v4-pro` 聚焦运行达到 Schema `8/8`、支持判断 `8/8`、原因码 `8/8`、危险误放行 `0/6`，使用 `5,487 Token`，平均延迟 `6,804 ms`，8 次响应均正常结束但都包含 `reasoning_content`。机器结果见 `results/model-deepseek-v4-pro-evidence-audit.json`。本轮记为 `conditional_pass`：它只证明该请求配置在一次小型合成样本中具备辅助证据审核候选资格，不证明重复稳定性、真实教材泛化、教育正确性或 PackyAPI 模型映射；实际费用仍须查看 PackyAPI 账单。
+
 ## 已验证与未验证
 
-已验证的是固定数据形状、确定性路由、原因码保留、指定章节的局部证据存在性以及未核验内容的状态隔离。未验证的是真实模型 AI 核验质量、OCR 泛化、搜索质量、学科专家准确性评审、儿童学习效果、生产稳定性、延迟和成本。
+已验证的是固定数据形状、确定性路由、原因码保留、指定章节的局部证据存在性、未核验内容的状态隔离，以及 V4 Pro 在一次 8 例合成证据审核中的候选表现。未验证的是模型重复运行稳定性、真实教材与真实搜索泛化、OCR 泛化、学科专家准确性评审、儿童学习效果、生产稳定性和 PackyAPI 实际费用。

@@ -3,6 +3,7 @@
 当前材料：
 
 - [步步高与学而思学习机线下调研](2026-07-15-learning-machine-field-research.md)
+- [TS-02 大模型 API 首轮选型研究](2026-07-28-ts-02-llm-api-selection.md)
 
 后续建议按类型归档：
 

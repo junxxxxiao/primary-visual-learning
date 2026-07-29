@@ -1,0 +1,286 @@
+{
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "call_results": [
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "single_source_supported",
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 6210,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 1465,
+      "response_hash": "sha256:733c571d9e71758e730c8a71287da150640c3ca4b85f8109e9ec1cb978a3173f",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 398,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 262,
+        "prompt_tokens": 262,
+        "total_tokens": 660
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "actual_status": "fail",
+      "case_id": "partially_supported_claim",
+      "expected_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 6838,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 1685,
+      "response_hash": "sha256:34b650e2c0578e07362acaca13281ed53144d1249056ed50d0f9a28958ae4acf",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 435,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 255,
+        "prompt_tokens": 255,
+        "total_tokens": 690
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "EVIDENCE_CONFLICT"
+      ],
+      "actual_status": "fail",
+      "case_id": "single_source_conflict",
+      "expected_reason_codes": [
+        "EVIDENCE_CONFLICT"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 11287,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 3167,
+      "response_hash": "sha256:1a8a6ce9b2cff1f4b4b6c6990472b8b0197c8de61ae6d8f3037f65c8d82b4431",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 776,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 121,
+        "prompt_tokens": 249,
+        "total_tokens": 1025
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "actual_status": "fail",
+      "case_id": "irrelevant_citation",
+      "expected_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 6447,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 1651,
+      "response_hash": "sha256:849e44f2fe0c0b669a1fb534510768d6d1b6166dd1b5106c269a92fee667195b",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 419,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 117,
+        "prompt_tokens": 245,
+        "total_tokens": 664
+      }
+    },
+    {
+      "actual_reason_codes": [],
+      "actual_status": "pass",
+      "case_id": "two_sources_consistent",
+      "expected_reason_codes": [],
+      "expected_status": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 4447,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 781,
+      "response_hash": "sha256:72ee873dde80d21b44c493ea213b74a59607b2a6751bac268383cd0d62356566",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 258,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 162,
+        "prompt_tokens": 290,
+        "total_tokens": 548
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "EVIDENCE_CONFLICT"
+      ],
+      "actual_status": "fail",
+      "case_id": "two_sources_conflict",
+      "expected_reason_codes": [
+        "EVIDENCE_CONFLICT"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 5564,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 1107,
+      "response_hash": "sha256:accb9d6fb0c87c6173b943e9cf45537e23e76496c9d8b0623edf6a7d8c031c9e",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 353,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 157,
+        "prompt_tokens": 285,
+        "total_tokens": 638
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "actual_status": "fail",
+      "case_id": "evidence_absent",
+      "expected_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 3606,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 500,
+      "response_hash": "sha256:72ca23a602d49213cdb2b100c33aa38b64d60f49756027049362ecbdc345b373",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 150,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 92,
+        "prompt_tokens": 220,
+        "total_tokens": 370
+      }
+    },
+    {
+      "actual_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "actual_status": "fail",
+      "case_id": "injection_inside_evidence",
+      "expected_reason_codes": [
+        "CLAIM_NOT_SUPPORTED"
+      ],
+      "expected_status": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 10032,
+      "output_errors": [],
+      "reason_codes_match": true,
+      "reasoning_content_character_count": 2674,
+      "response_hash": "sha256:ebef80ba045b7d34a58661ee8a175509e479b8e33923cbabbb6e0b184c018d9b",
+      "response_model": "deepseek-v4-pro",
+      "schema_valid": true,
+      "status_match": true,
+      "unsafe_false_pass": false,
+      "usage": {
+        "completion_tokens": 640,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 124,
+        "prompt_tokens": 252,
+        "total_tokens": 892
+      }
+    }
+  ],
+  "candidate_thresholds": {
+    "reason_code_exact_match": "8/8",
+    "schema_validity": "8/8",
+    "support_status_accuracy": "8/8",
+    "unsafe_false_passes": "0/6"
+  },
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "decision": "conditional_pass",
+  "effective_output": {
+    "responses_finished_by_length": 0,
+    "responses_with_reasoning_content": 8
+  },
+  "estimated_cost": {
+    "estimated_cny": null,
+    "estimated_usd": null,
+    "note": "Third-party aggregator pricing is unknown; consult its billing record.",
+    "provider": "www.packyapi.ai"
+  },
+  "fixture_version": "1.0",
+  "latency_ms": {
+    "max": 11287,
+    "mean": 6804,
+    "min": 3606
+  },
+  "limits": [
+    "Only eight synthetic cases were used; this does not establish repeat stability or broad subject accuracy.",
+    "The model cannot block ordinary explanation or grant verified status without deterministic gates.",
+    "PackyAPI model mapping and billing were not independently verified."
+  ],
+  "metrics": {
+    "reason_code_exact_match": {
+      "denominator": 8,
+      "numerator": 8
+    },
+    "schema_validity": {
+      "denominator": 8,
+      "numerator": 8
+    },
+    "support_status_accuracy": {
+      "denominator": 8,
+      "numerator": 8
+    },
+    "unsafe_false_passes": {
+      "denominator": 6,
+      "numerator": 0
+    }
+  },
+  "model_authority": "advisory_verification_only",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "automatic_retries": 0,
+    "completed": 8,
+    "planned": 8
+  },
+  "routing_on_model_failure": "unverified_generate",
+  "run_at": "2026-07-29T09:35:39.470854+00:00",
+  "slice": "TS-02-auxiliary-evidence-reviewer",
+  "usage": {
+    "completion_tokens": 3429,
+    "prompt_cache_hit_tokens": 768,
+    "prompt_cache_miss_tokens": 1290,
+    "prompt_tokens": 2058,
+    "total_tokens": 5487
+  }
+}

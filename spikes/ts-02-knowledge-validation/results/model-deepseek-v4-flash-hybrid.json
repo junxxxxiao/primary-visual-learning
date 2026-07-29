@@ -1,0 +1,597 @@
+{
+  "architecture": {
+    "local_deterministic_steps": [
+      "parse_check",
+      "source_verification",
+      "boundary_check",
+      "pedagogy_check",
+      "transfer_check"
+    ],
+    "model_semantic_steps": [
+      "semantic_evidence_check",
+      "pedagogy_semantic_check",
+      "transfer_semantic_check"
+    ]
+  },
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "controlled_textbook_content_sent": false,
+  "decision": "fail",
+  "effective_output": {
+    "responses_finished_by_length": 0,
+    "responses_with_reasoning_content": 15
+  },
+  "estimated_cost": {
+    "estimated_cny": null,
+    "estimated_usd": null,
+    "note": "Third-party aggregator pricing is unknown; consult its billing record.",
+    "provider": "www.packyapi.ai"
+  },
+  "final_results": [
+    {
+      "case_id": "primary_sound_valid",
+      "expected_decision": "publish",
+      "final_decision": "block",
+      "oracle_match": false,
+      "semantic_calls": 3
+    },
+    {
+      "case_id": "middle_perfect_square_valid",
+      "expected_decision": "publish",
+      "final_decision": "block",
+      "oracle_match": false,
+      "semantic_calls": 3
+    },
+    {
+      "case_id": "temporary_vacuum_valid",
+      "expected_decision": "publish",
+      "final_decision": "publish",
+      "oracle_match": true,
+      "semantic_calls": 3
+    },
+    {
+      "case_id": "missing_stage_context",
+      "expected_decision": "publish",
+      "final_decision": "block",
+      "oracle_match": false,
+      "semantic_calls": 3
+    },
+    {
+      "case_id": "declared_advanced_path",
+      "expected_decision": "publish",
+      "final_decision": "block",
+      "oracle_match": false,
+      "semantic_calls": 3
+    },
+    {
+      "case_id": "cross_stage_source_mixing",
+      "expected_decision": "block",
+      "final_decision": "block",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "absent_evidence",
+      "expected_decision": "unverified_generate",
+      "final_decision": "unverified_generate",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "no_atom_no_authoritative_source",
+      "expected_decision": "unverified_generate",
+      "final_decision": "unverified_generate",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "verification_conflict",
+      "expected_decision": "block",
+      "final_decision": "block",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "missing_page",
+      "expected_decision": "unverified_generate",
+      "final_decision": "unverified_generate",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "ocr_error",
+      "expected_decision": "block",
+      "final_decision": "block",
+      "oracle_match": true,
+      "semantic_calls": 0
+    },
+    {
+      "case_id": "prompt_injection",
+      "expected_decision": "block",
+      "final_decision": "block",
+      "oracle_match": true,
+      "semantic_calls": 0
+    }
+  ],
+  "latency_ms": {
+    "max": 21635,
+    "mean": 8622,
+    "min": 2709
+  },
+  "limits": [
+    "Only synthetic fixtures were sent; no textbook or child data was sent.",
+    "One run does not establish repeat stability or education accuracy.",
+    "PackyAPI model mapping and parameter enforcement were not independently verified."
+  ],
+  "local_results": [
+    {
+      "case_id": "primary_sound_valid",
+      "expected_decision": "publish",
+      "local_decision": "publish",
+      "local_oracle_match": true,
+      "local_reasons": []
+    },
+    {
+      "case_id": "middle_perfect_square_valid",
+      "expected_decision": "publish",
+      "local_decision": "publish",
+      "local_oracle_match": true,
+      "local_reasons": []
+    },
+    {
+      "case_id": "temporary_vacuum_valid",
+      "expected_decision": "publish",
+      "local_decision": "publish",
+      "local_oracle_match": true,
+      "local_reasons": []
+    },
+    {
+      "case_id": "missing_stage_context",
+      "expected_decision": "publish",
+      "local_decision": "publish",
+      "local_oracle_match": true,
+      "local_reasons": []
+    },
+    {
+      "case_id": "declared_advanced_path",
+      "expected_decision": "publish",
+      "local_decision": "publish",
+      "local_oracle_match": true,
+      "local_reasons": []
+    },
+    {
+      "case_id": "cross_stage_source_mixing",
+      "expected_decision": "block",
+      "local_decision": "block",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "CROSS_STAGE_SOURCE_MIXING",
+        "TEXTBOOK_EDITION_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "absent_evidence",
+      "expected_decision": "unverified_generate",
+      "local_decision": "unverified_generate",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "CRITICAL_CLAIM_WITHOUT_EVIDENCE"
+      ]
+    },
+    {
+      "case_id": "no_atom_no_authoritative_source",
+      "expected_decision": "unverified_generate",
+      "local_decision": "unverified_generate",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "CRITICAL_CLAIM_WITHOUT_EVIDENCE",
+        "NO_RELIABLE_SOURCE"
+      ]
+    },
+    {
+      "case_id": "verification_conflict",
+      "expected_decision": "block",
+      "local_decision": "block",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "INDEPENDENT_CHECK_CONFLICT"
+      ]
+    },
+    {
+      "case_id": "missing_page",
+      "expected_decision": "unverified_generate",
+      "local_decision": "unverified_generate",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "EVIDENCE_PAGE_MISSING",
+        "PAGE_MISSING"
+      ]
+    },
+    {
+      "case_id": "ocr_error",
+      "expected_decision": "block",
+      "local_decision": "block",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "EVIDENCE_QUOTE_NOT_FOUND",
+        "OCR_LOW_CONFIDENCE",
+        "OCR_OVERRIDE_UNTRUSTED"
+      ]
+    },
+    {
+      "case_id": "prompt_injection",
+      "expected_decision": "block",
+      "local_decision": "block",
+      "local_oracle_match": true,
+      "local_reasons": [
+        "PROMPT_INJECTION_DETECTED"
+      ]
+    }
+  ],
+  "metrics": {
+    "final_route_accuracy": {
+      "denominator": 12,
+      "numerator": 8
+    },
+    "local_route_accuracy": {
+      "denominator": 12,
+      "numerator": 12
+    },
+    "semantic_pass_rate_for_positive_candidates": {
+      "denominator": 15,
+      "numerator": 9
+    },
+    "semantic_schema_validity": {
+      "denominator": 15,
+      "numerator": 14
+    }
+  },
+  "request_model": "deepseek-v4-flash",
+  "requests": {
+    "automatic_retries": 0,
+    "completed": 15,
+    "planned": 15
+  },
+  "run_at": "2026-07-29T08:34:05.114511+00:00",
+  "semantic_call_results": [
+    {
+      "case_id": "primary_sound_valid",
+      "finish_reason": "stop",
+      "latency_ms": 6758,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 3254,
+      "response_hash": "sha256:a6d377de96acea18e2fa128a41b78cdbfc77383e62b9dbc2377e02e8b362b58a",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "semantic_evidence_check",
+      "usage": {
+        "completion_tokens": 754,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 488,
+        "total_tokens": 1242
+      }
+    },
+    {
+      "case_id": "primary_sound_valid",
+      "finish_reason": "stop",
+      "latency_ms": 16706,
+      "output_errors": [],
+      "reason_codes": [
+        "EXPLANATION_NOT_ADAPTABLE"
+      ],
+      "reasoning_content_character_count": 8172,
+      "response_hash": "sha256:154c02cb9a2b426e90c96ee7bbac986c05619a52c897787c0309ec6e50f3d1fd",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "fail",
+      "step": "pedagogy_semantic_check",
+      "usage": {
+        "completion_tokens": 1762,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 359,
+        "total_tokens": 2121
+      }
+    },
+    {
+      "case_id": "primary_sound_valid",
+      "finish_reason": "stop",
+      "latency_ms": 9300,
+      "output_errors": [],
+      "reason_codes": [
+        "TRANSFER_NOT_SEMANTICALLY_DISTINCT"
+      ],
+      "reasoning_content_character_count": 4737,
+      "response_hash": "sha256:b8c555950a7ec74212ef5b01ac3331de91de12657b9a7bbe55d64b1677ea3649",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "fail",
+      "step": "transfer_semantic_check",
+      "usage": {
+        "completion_tokens": 1049,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 269,
+        "total_tokens": 1318
+      }
+    },
+    {
+      "case_id": "middle_perfect_square_valid",
+      "finish_reason": "stop",
+      "latency_ms": 12796,
+      "output_errors": [
+        "$.evidence_refs[0]: expected string",
+        "$.evidence_refs[1]: expected string",
+        "$.evidence_refs[2]: expected string"
+      ],
+      "reason_codes": [
+        "MODEL_OUTPUT_INVALID"
+      ],
+      "reasoning_content_character_count": 6054,
+      "response_hash": "sha256:088c6f8ccbfeddea2bef2ccb3202841af672a9690dc99a017ee134a0b2d5503f",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": false,
+      "source": "api",
+      "status": "invalid",
+      "step": "semantic_evidence_check",
+      "usage": {
+        "completion_tokens": 1449,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 660,
+        "total_tokens": 2109
+      }
+    },
+    {
+      "case_id": "middle_perfect_square_valid",
+      "finish_reason": "stop",
+      "latency_ms": 6520,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 2430,
+      "response_hash": "sha256:af90991d06eb495fe8c07f3c022a32d46933b5ec3f1d74ce421b7010d0f2004b",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "pedagogy_semantic_check",
+      "usage": {
+        "completion_tokens": 586,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 384,
+        "total_tokens": 970
+      }
+    },
+    {
+      "case_id": "middle_perfect_square_valid",
+      "finish_reason": "stop",
+      "latency_ms": 6447,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 2623,
+      "response_hash": "sha256:0480d98ff2ace92f57fcdfdfe8abddc43b096d3fe440fc5fe19582f2bc3b25e2",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "transfer_semantic_check",
+      "usage": {
+        "completion_tokens": 612,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 279,
+        "total_tokens": 891
+      }
+    },
+    {
+      "case_id": "temporary_vacuum_valid",
+      "finish_reason": "stop",
+      "latency_ms": 3623,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 995,
+      "response_hash": "sha256:1d872ad7074c0c9fcb48ba6db7e7395b8a52ec6df340db0b44ae468c70ff2da2",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "semantic_evidence_check",
+      "usage": {
+        "completion_tokens": 274,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 430,
+        "total_tokens": 704
+      }
+    },
+    {
+      "case_id": "temporary_vacuum_valid",
+      "finish_reason": "stop",
+      "latency_ms": 6398,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 2432,
+      "response_hash": "sha256:c4edc439f56d0be052e1b4f670a3027fb56bbb086cfc8489502f69318a86254d",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "pedagogy_semantic_check",
+      "usage": {
+        "completion_tokens": 590,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 372,
+        "total_tokens": 962
+      }
+    },
+    {
+      "case_id": "temporary_vacuum_valid",
+      "finish_reason": "stop",
+      "latency_ms": 6069,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 2154,
+      "response_hash": "sha256:464b3e4801f1ea343f68c97ceeb08231ebf06c95a6ae8cb32bce326a6180d63a",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "transfer_semantic_check",
+      "usage": {
+        "completion_tokens": 491,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 272,
+        "total_tokens": 763
+      }
+    },
+    {
+      "case_id": "missing_stage_context",
+      "finish_reason": "stop",
+      "latency_ms": 5401,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 1662,
+      "response_hash": "sha256:22d1c52b7642f8500bdb173aedf13720e03e9d359ab0ec15a21cf0b8a1e936ba",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "semantic_evidence_check",
+      "usage": {
+        "completion_tokens": 387,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 323,
+        "total_tokens": 710
+      }
+    },
+    {
+      "case_id": "missing_stage_context",
+      "finish_reason": "stop",
+      "latency_ms": 6374,
+      "output_errors": [],
+      "reason_codes": [
+        "EXPLANATION_NOT_ADAPTABLE"
+      ],
+      "reasoning_content_character_count": 2344,
+      "response_hash": "sha256:7c649b9cc044c308e37148a2eaeb0f0edcbe2185f4c29b2ed44fa67773d30d7c",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "fail",
+      "step": "pedagogy_semantic_check",
+      "usage": {
+        "completion_tokens": 546,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 318,
+        "total_tokens": 864
+      }
+    },
+    {
+      "case_id": "missing_stage_context",
+      "finish_reason": "stop",
+      "latency_ms": 21635,
+      "output_errors": [],
+      "reason_codes": [
+        "TRANSFER_NOT_SEMANTICALLY_DISTINCT",
+        "TRANSFER_CANNOT_TEST_REASONING"
+      ],
+      "reasoning_content_character_count": 10851,
+      "response_hash": "sha256:650fe4eb553014661140174a8a84268b8d5bbd00e96a3f56ca0fc7f9acfb4131",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "fail",
+      "step": "transfer_semantic_check",
+      "usage": {
+        "completion_tokens": 2314,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 252,
+        "total_tokens": 2566
+      }
+    },
+    {
+      "case_id": "declared_advanced_path",
+      "finish_reason": "stop",
+      "latency_ms": 2709,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 340,
+      "response_hash": "sha256:9efefbfaefab4c9d22b1a877a1600d000213784d2944f1623a2449c7e692d711",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "semantic_evidence_check",
+      "usage": {
+        "completion_tokens": 117,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 221,
+        "total_tokens": 338
+      }
+    },
+    {
+      "case_id": "declared_advanced_path",
+      "finish_reason": "stop",
+      "latency_ms": 12227,
+      "output_errors": [],
+      "reason_codes": [],
+      "reasoning_content_character_count": 5730,
+      "response_hash": "sha256:6731a58896cab57d3c5c16417762f0e9f076f61294b8c94025e2f2c9ee123b83",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "pass",
+      "step": "pedagogy_semantic_check",
+      "usage": {
+        "completion_tokens": 1292,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 222,
+        "total_tokens": 1514
+      }
+    },
+    {
+      "case_id": "declared_advanced_path",
+      "finish_reason": "stop",
+      "latency_ms": 6367,
+      "output_errors": [],
+      "reason_codes": [
+        "TRANSFER_NOT_SEMANTICALLY_DISTINCT"
+      ],
+      "reasoning_content_character_count": 2985,
+      "response_hash": "sha256:fd5d5bba1eaa9921bde421bc1d0f7b3a4644bb3cab03e842dcf76673994b7b14",
+      "response_model": "deepseek-v4-flash-202605",
+      "schema_valid": true,
+      "source": "api",
+      "status": "fail",
+      "step": "transfer_semantic_check",
+      "usage": {
+        "completion_tokens": 710,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0,
+        "prompt_tokens": 131,
+        "total_tokens": 841
+      }
+    }
+  ],
+  "slice": "TS-02-real-model-hybrid",
+  "usage": {
+    "completion_tokens": 12933,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 0,
+    "prompt_tokens": 4980,
+    "total_tokens": 17913
+  }
+}
