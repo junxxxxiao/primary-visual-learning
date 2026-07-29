@@ -1,0 +1,42 @@
+{
+  "baseline_sha": "27c80343836dcd88b10b8abd9ceacf57d1567a95",
+  "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+  "case_results": [
+    { "case_id": "benign_offscreen_render", "status": "completed", "reason": "clean_exit", "duration_ms": 19, "accepted_events": 1, "code_hash": "sha256:25f6e3d3924af3db575b2491df349a6090607ce589ca606c616970ffe0130aec", "pass": true },
+    { "case_id": "network_and_resource_access", "status": "completed", "reason": "clean_exit", "duration_ms": 28, "accepted_events": 1, "code_hash": "sha256:52d6defc57535f28745d2c6a55dceb5e6354701f7779ff287c888139648b8338", "pass": true },
+    { "case_id": "storage_cookie_and_main_dom_access", "status": "completed", "reason": "clean_exit", "duration_ms": 17, "accepted_events": 1, "code_hash": "sha256:aba420b60aa4aeed52ba9cb070691fdab012ebc1d3dd65e339b773354437b2a5", "pass": true },
+    { "case_id": "camera_microphone_clipboard_access", "status": "completed", "reason": "clean_exit", "duration_ms": 30, "accepted_events": 1, "code_hash": "sha256:5be7b0b1d41e4197efd4e009e5c8f5b129f8239d5a5d05f2ade3c1e0e114302c", "pass": true },
+    { "case_id": "worker_and_iframe_escape", "status": "completed", "reason": "clean_exit", "duration_ms": 16, "accepted_events": 1, "code_hash": "sha256:42148ec26145bbe928cce4947246b5faed51647fbb0ed0541a469c1151ddd8a9", "pass": true },
+    { "case_id": "raw_postmessage_forgery", "status": "completed", "reason": "clean_exit", "duration_ms": 34, "accepted_events": 1, "code_hash": "sha256:616e5a5fd5299834d1ed899b0ac188a81b9ffd3c782f8251ed00a8e7ee73843b", "pass": true },
+    { "case_id": "allowed_event_flood", "status": "terminated", "reason": "event_limit", "duration_ms": 16, "accepted_events": 32, "code_hash": "sha256:f1a5c44cb7a93a09c15958523b42dfe0675ddc50356fdc3f348e07f57acccf0a", "pass": true },
+    { "case_id": "oversized_output_payload", "status": "terminated", "reason": "output_violation", "duration_ms": 39, "accepted_events": 0, "code_hash": "sha256:2b4241e9293ea47867f69608b489e3559bd2b32e435a834cbd078d67e52c8e7e", "pass": true },
+    { "case_id": "infinite_loop", "status": "terminated", "reason": "execution_budget", "duration_ms": 259, "accepted_events": 0, "code_hash": "sha256:dd6fd499a6e4b561d738acf6fafb5ad37174a49ffaa95aeac17486fcb9271293", "pass": true },
+    { "case_id": "memory_growth", "status": "terminated", "reason": "execution_budget", "duration_ms": 264, "accepted_events": 0, "code_hash": "sha256:8d80a43155007544087427a900343af21b96e204c96923dcaf7a9caeced7328f", "pass": true },
+    { "case_id": "generated_code_crash", "status": "runtime_error", "reason": "generated_code_error", "duration_ms": 20, "accepted_events": 0, "code_hash": "sha256:6506657e1913f89ef69a766cffa257f63e8401d6789cbc6200638d14fbb5b153", "pass": true }
+  ],
+  "code_hashes_present": true,
+  "cost": { "currency": "CNY", "amount": 0, "external_services": false },
+  "decision": "conditional_pass",
+  "fixture_version": "ts04a-attacks/1.0",
+  "forbidden_access_successes": 0,
+  "host_state_preserved": true,
+  "input_schema_rejection_target": 3,
+  "input_schema_rejections": 3,
+  "lifecycle_passes": 20,
+  "lifecycle_runs": 20,
+  "pass": true,
+  "passed_cases": 11,
+  "policy_version": "ts04a-sandbox-policy/1.0",
+  "protocol_version": "ts04a-browser-protocol/1.0",
+  "residual_iframes": 0,
+  "run_at": "2026-07-29T10:25:46.643Z",
+  "supplemental_timing_result": "timing-summary.json",
+  "total_cases": 11,
+  "unverified": [
+    "Safari, iOS, Android and WeChat WebView",
+    "process-level CPU and heap quotas",
+    "professional penetration testing",
+    "visual correctness and layout contracts",
+    "long-running and concurrent stress"
+  ]
+}

@@ -2,7 +2,7 @@
 
 当前入口：
 
-- [技术验证 v3](2026-07-28-primary-visual-tutor-technical-validation-v3.md)
+- [技术验证 v3.2](2026-07-28-primary-visual-tutor-technical-validation-v3.md)
 - [技术验证 v2（历史）](2026-07-22-primary-visual-tutor-technical-validation-v2.md)
 - [技术验证 v1（历史）](2026-07-17-primary-visual-tutor-technical-validation.md)
 - [系统级 ADR](../adr/)

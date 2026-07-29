@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-sandbox-input/1.0",
+  "title": "De-identified visual sandbox input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scene_id", "width", "height", "parameters"],
+  "properties": {
+    "scene_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$" },
+    "width": { "type": "integer", "minimum": 1, "maximum": 2048 },
+    "height": { "type": "integer", "minimum": 1, "maximum": 2048 },
+    "parameters": { "type": "object", "maxProperties": 64 }
+  }
+}

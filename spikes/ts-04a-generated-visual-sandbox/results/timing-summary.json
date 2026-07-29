@@ -1,0 +1,57 @@
+{
+  "baseline_sha": "27c80343836dcd88b10b8abd9ceacf57d1567a95",
+  "browser": "HeadlessChrome/150.0.0.0",
+  "contract_version": "stage-timing/1.0",
+  "protocol_version": "ts04a-browser-protocol/1.1",
+  "run_at": "2026-07-29T11:53:36.985Z",
+  "clock": "performance.now monotonic milliseconds",
+  "budget_semantics": {
+    "worker_boot_budget": "measured separately from iframe creation until worker-ready",
+    "execution_budget_ms": 250,
+    "execution_budget_start": "worker-ready",
+    "parallel_span_rule": "overlapping spans share one monotonic clock and must not be summed"
+  },
+  "summary": {
+    "completed_total": {
+      "sample_count": 6,
+      "p50_ms": 119,
+      "p80_ms": 173,
+      "p95_ms": 281,
+      "max_ms": 281
+    },
+    "execution_budget_termination_total": {
+      "sample_count": 2,
+      "p50_ms": 316,
+      "p80_ms": 378,
+      "p95_ms": 378,
+      "max_ms": 378
+    },
+    "lifecycle_total": {
+      "sample_count": 20,
+      "p50_ms": 128,
+      "p80_ms": 191,
+      "p95_ms": 231,
+      "max_ms": 254
+    }
+  },
+  "stages": {
+    "sandbox.create.success": { "sample_count": 31, "p50_ms": 73.6, "p80_ms": 120.8, "p95_ms": 195, "max_ms": 201.9 },
+    "sandbox.worker_boot.success": { "sample_count": 31, "p50_ms": 41.2, "p80_ms": 51.7, "p95_ms": 88.6, "max_ms": 200.9 },
+    "sandbox.execute.success": { "sample_count": 26, "p50_ms": 0.1, "p80_ms": 0.5, "p95_ms": 1.1, "max_ms": 3.6 },
+    "sandbox.execute.failure": { "sample_count": 3, "p50_ms": 0.6, "p80_ms": 1.4, "p95_ms": 1.4, "max_ms": 1.4 },
+    "sandbox.execute.timeout": { "sample_count": 2, "p50_ms": 251.5, "p80_ms": 252.4, "p95_ms": 252.4, "max_ms": 252.4 },
+    "sandbox.terminate.success": { "sample_count": 31, "p50_ms": 0, "p80_ms": 0, "p95_ms": 0.1, "max_ms": 0.1 },
+    "sandbox.destroy.success": { "sample_count": 31, "p50_ms": 0.2, "p80_ms": 0.2, "p95_ms": 0.3, "max_ms": 0.3 }
+  },
+  "interpretation": {
+    "decision_use": "diagnostic_only",
+    "average_reported": false,
+    "reason": "Percentiles and maximum expose tail latency; an average would hide the small sample's distribution.",
+    "limitations": [
+      "single Headless Chromium version on one local machine",
+      "small synthetic sample",
+      "no concurrent load, mobile device or production network",
+      "not an end-to-end latency decision and not a production SLO"
+    ]
+  }
+}

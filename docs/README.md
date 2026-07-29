@@ -2,7 +2,7 @@
 
 ## 当前事实源
 
-1. [PRD v5.0](product/2026-07-28-primary-visual-tutor-prd-v5.md)
+1. [PRD v5.2](product/2026-07-28-primary-visual-tutor-prd-v5.md)
 2. [声音价值 Demo 规范](design/2026-07-22-sound-value-demo-spec.md)
 3. [当前中低保真原型规范](design/2026-07-17-low-mid-fidelity-prototype-spec.md)
 4. [技术验证 v3](technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md)

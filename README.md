@@ -92,14 +92,14 @@ python3 -m http.server 4173 --directory prototype
 
 ### 产品与设计
 
-- [中小学互动视觉家教 PRD v5.0](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)
+- [中小学互动视觉家教 PRD v5.2](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)
 - [声音高保真价值 Demo 规范](docs/design/2026-07-22-sound-value-demo-spec.md)
 - [中低保真研究原型规范](docs/design/2026-07-17-low-mid-fidelity-prototype-spec.md)
 - [高保真设计工作区](design/high-fidelity/README.md)
 
 ### 技术
 
-- [技术验证 v3](docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md)
+- [技术验证 v3.2](docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md)
 - [系统级 ADR](docs/adr/)
 - [技术切片工作区](spikes/README.md)
 - [切片模板](spikes/_template/README.md)
@@ -200,10 +200,10 @@ python3 -m http.server 4173 --directory prototype
 - [x] 完整中低保真原型
 - [x] PRD v5 与领域词汇
 - [x] 声音价值 Demo 规范与执行 Brief
-- [x] 技术验证 v3 与系统 ADR
+- [x] 技术验证 v3.2 与系统 ADR
 - [x] 完成并发布声音高保真价值 Demo
 - [ ] 社交媒体问卷与种子家庭招募
-- [ ] P0 技术切片 TS-00、TS-02、TS-04A、TS-04B、TS-03、TS-05、TS-06
+- [ ] P0 技术切片 TS-00、TS-02、TS-04A、TS-04B、TS-03、TS-04C、TS-07、TS-05、TS-06
 - [ ] 完整产品高保真视觉方向与关键屏幕
 - [ ] 首个端到端声音主题 MVP
 - [ ] 分数主题与受控内容扩展

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-sandbox-output/1.0",
+  "title": "Visual sandbox execution result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "reason", "events", "accepted_event_count", "duration_ms", "code_hash", "policy_version", "input_schema_version", "output_schema_version", "timing"],
+  "properties": {
+    "status": { "enum": ["completed", "terminated", "runtime_error"] },
+    "reason": { "enum": ["clean_exit", "worker_boot_budget", "execution_budget", "event_limit", "output_violation", "worker_crash", "generated_code_error", "host_watchdog"] },
+    "events": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "payload"],
+        "properties": {
+          "name": { "enum": ["render_complete", "interaction"] },
+          "payload": { "type": "object" }
+        }
+      }
+    },
+    "accepted_event_count": { "type": "integer", "minimum": 0, "maximum": 32 },
+    "duration_ms": { "type": "integer", "minimum": 0 },
+    "code_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "policy_version": { "const": "ts04a-sandbox-policy/1.0" },
+    "input_schema_version": { "const": "visual-sandbox-input/1.0" },
+    "output_schema_version": { "const": "visual-sandbox-output/1.0" },
+    "timing": { "$ref": "../../shared/schemas/stage-timing.schema.json" }
+  }
+}

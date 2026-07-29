@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TS-04A 生成视觉代码沙箱</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p>TS-04A</p>
+      <h1>生成视觉代码沙箱验证</h1>
+      <span id="status" data-state="running">正在运行浏览器攻击夹具...</span>
+    </header>
+    <section aria-labelledby="summary-title">
+      <h2 id="summary-title">验证摘要</h2>
+      <dl id="metrics"></dl>
+    </section>
+    <section aria-labelledby="cases-title">
+      <h2 id="cases-title">逐项结果</h2>
+      <ol id="cases"></ol>
+    </section>
+    <details>
+      <summary>机器可读结果</summary>
+      <pre id="result-json"></pre>
+    </details>
+  </main>
+  <div id="sandbox-root" aria-hidden="true"></div>
+  <script type="module" src="./src/test-runner.js"></script>
+</body>
+</html>

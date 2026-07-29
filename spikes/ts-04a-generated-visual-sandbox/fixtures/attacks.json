@@ -1,0 +1,82 @@
+{
+  "fixture_version": "ts04a-attacks/1.0",
+  "cases": [
+    {
+      "id": "benign_offscreen_render",
+      "code": "const context = api.canvas.getContext('2d'); context.fillStyle = input.parameters.color; context.fillRect(0, 0, input.width, input.height); api.emit('render_complete', { frame: 1 });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "network_and_resource_access",
+      "code": "const blocked = ['fetch','XMLHttpRequest','WebSocket','WebSocketStream','WebTransport','EventSource','importScripts','RTCPeerConnection'].every(name => typeof globalThis[name] === 'undefined'); if (!blocked) throw new Error('NETWORK_CAPABILITY_EXPOSED'); api.emit('render_complete', { probe: 'network' });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "storage_cookie_and_main_dom_access",
+      "code": "const blocked = typeof document === 'undefined' && typeof window === 'undefined' && typeof localStorage === 'undefined' && typeof sessionStorage === 'undefined' && typeof parent === 'undefined'; if (!blocked) throw new Error('HOST_OR_STORAGE_EXPOSED'); api.emit('render_complete', { probe: 'host' });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "camera_microphone_clipboard_access",
+      "code": "const mediaBlocked = !navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function'; const clipboardBlocked = !navigator.clipboard; if (!mediaBlocked || !clipboardBlocked) throw new Error('DEVICE_CAPABILITY_EXPOSED'); api.emit('render_complete', { probe: 'device' });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "worker_and_iframe_escape",
+      "code": "if (typeof Worker !== 'undefined' || typeof SharedWorker !== 'undefined' || typeof document !== 'undefined') throw new Error('NESTED_EXECUTION_EXPOSED'); api.emit('render_complete', { probe: 'escape' });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "raw_postmessage_forgery",
+      "code": "for (let index = 0; index < 100; index += 1) postMessage({ kind: 'candidate-event', name: 'interaction', payload: { forged: true } }); api.emit('render_complete', { forged_messages_ignored: true });",
+      "expected_status": "completed",
+      "expected_reason": "clean_exit",
+      "expected_events": 1
+    },
+    {
+      "id": "allowed_event_flood",
+      "code": "for (let index = 0; index < 100; index += 1) api.emit('interaction', { index });",
+      "expected_status": "terminated",
+      "expected_reason": "event_limit",
+      "expected_events": 32
+    },
+    {
+      "id": "oversized_output_payload",
+      "code": "api.emit('interaction', { value: 'x'.repeat(9000) });",
+      "expected_status": "terminated",
+      "expected_reason": "output_violation",
+      "expected_events": 0
+    },
+    {
+      "id": "infinite_loop",
+      "code": "while (true) {}",
+      "expected_status": "terminated",
+      "expected_reason": "execution_budget",
+      "expected_events": 0
+    },
+    {
+      "id": "memory_growth",
+      "code": "return new Promise(() => { const chunks = []; setInterval(() => chunks.push(new Uint8Array(262144)), 1); });",
+      "expected_status": "terminated",
+      "expected_reason": "execution_budget",
+      "expected_events": 0
+    },
+    {
+      "id": "generated_code_crash",
+      "code": "throw new Error('synthetic crash');",
+      "expected_status": "runtime_error",
+      "expected_reason": "generated_code_error",
+      "expected_events": 0
+    }
+  ]
+}
