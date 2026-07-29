@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-scene-validation-result/1.0",
+  "title": "TS-04B machine-readable validation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version", "scene_version", "viewport", "state", "result", "violations"],
+  "properties": {
+    "contract_version": { "const": "visual-layout/v1" },
+    "scene_version": { "type": "string", "minLength": 1 },
+    "viewport": { "enum": ["phone", "tablet"] },
+    "state": { "type": "string", "minLength": 1 },
+    "result": { "enum": ["pass", "fail"] },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "target", "message", "actual", "expected"],
+        "properties": {
+          "code": { "type": "string", "minLength": 1 },
+          "target": { "type": "string", "minLength": 1 },
+          "message": { "type": "string", "minLength": 1 },
+          "actual": { "type": ["object", "string", "number", "boolean", "null"] },
+          "expected": { "type": ["object", "string", "number", "boolean", "null"] }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2919 @@
+{
+  "cases": [
+    {
+      "admitted": true,
+      "cache_writes": 2,
+      "case_id": "sound_valid",
+      "displayed": true,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": true,
+      "cache_writes": 2,
+      "case_id": "math_valid",
+      "displayed": true,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "sound_opposite_relationship",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "fail",
+        "violations": [
+          {
+            "actual": "pitch_increases",
+            "code": "teaching.fact_mismatch",
+            "expected": "pitch_unchanged",
+            "message": "Rendered or narrated claim contradicts the controlled fact",
+            "target": "teaching.facts.force-vs-pitch.visual"
+          },
+          {
+            "actual": "pitch_increases",
+            "code": "teaching.fact_mismatch",
+            "expected": "pitch_unchanged",
+            "message": "Rendered or narrated claim contradicts the controlled fact",
+            "target": "teaching.facts.force-vs-pitch.narration"
+          }
+        ]
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "math_opposite_relationship",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "fail",
+        "violations": [
+          {
+            "actual": "a2-2ab+b2",
+            "code": "teaching.fact_mismatch",
+            "expected": "a2+2ab+b2",
+            "message": "Rendered or narrated claim contradicts the controlled fact",
+            "target": "teaching.facts.square-of-sum.visual"
+          },
+          {
+            "actual": {
+              "narration": "a2+2ab+b2",
+              "visual": "a2-2ab+b2"
+            },
+            "code": "teaching.modality_mismatch",
+            "expected": {
+              "narration": "a2+2ab+b2",
+              "visual": "a2+2ab+b2"
+            },
+            "message": "Visual and narration cues disagree",
+            "target": "teaching.facts.square-of-sum"
+          }
+        ]
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "sound_ambiguous",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "fail",
+        "violations": [
+          {
+            "actual": "ambiguous",
+            "code": "teaching.ambiguous",
+            "expected": "ready",
+            "message": "Teaching validation must complete unambiguously before admission",
+            "target": "teaching.status"
+          }
+        ]
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "math_timeout",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "fail",
+        "violations": [
+          {
+            "actual": "timeout",
+            "code": "teaching.timeout",
+            "expected": "ready",
+            "message": "Teaching validation must complete unambiguously before admission",
+            "target": "teaching.status"
+          }
+        ]
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "element_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": {
+                "height": 64,
+                "width": 150,
+                "x": 350,
+                "y": 110
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 600,
+                "width": 358,
+                "x": 16,
+                "y": 16
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "phone.key-process.relation-label"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "local_safe_region_violation",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": {
+                "height": 50,
+                "width": 110,
+                "x": 172,
+                "y": 330
+              },
+              "code": "layout.local_safe_region",
+              "expected": {
+                "height": 80,
+                "width": 140,
+                "x": 185,
+                "y": 315
+              },
+              "message": "Element exceeds its non-rectangular container safe region",
+              "target": "phone.initial.bubble-copy"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "hidden_clipping",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.horizontal_scroll",
+              "expected": {
+                "scroll_width": 1024
+              },
+              "message": "Visual canvas must not create horizontal scrolling",
+              "target": "tablet.container"
+            },
+            {
+              "actual": {
+                "client_height": 728,
+                "client_width": 1024,
+                "clip": false,
+                "mask": false,
+                "overflow": "hidden",
+                "scroll_height": 728,
+                "scroll_width": 1040
+              },
+              "code": "layout.hidden_clipping",
+              "expected": {
+                "clip": false,
+                "mask": false,
+                "overflow": "auto or visible"
+              },
+              "message": "Overflow, clip, or mask cannot conceal content from validation",
+              "target": "tablet.container"
+            }
+          ]
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "mid_trajectory_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": {
+                "height": 230,
+                "width": 150,
+                "x": 2,
+                "y": 80
+              },
+              "code": "layout.motion_envelope_out_of_bounds",
+              "expected": {
+                "height": 600,
+                "width": 358,
+                "x": 16,
+                "y": 16
+              },
+              "message": "Complete motion trajectory exceeds the canvas inner bounds",
+              "target": "phone.key-process.tuning-fork.motion_envelope"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "paused_state_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "height": 420,
+                "width": 480,
+                "x": 80,
+                "y": 690
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 680,
+                "width": 976,
+                "x": 24,
+                "y": 24
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "tablet.paused.area-model"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "resumed_state_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "height": 80,
+                "width": 260,
+                "x": 960,
+                "y": 180
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 680,
+                "width": 976,
+                "x": 24,
+                "y": 24
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "tablet.resumed.relation-label"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "post_interaction_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": {
+                "height": 250,
+                "width": 310,
+                "x": 40,
+                "y": 590
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 600,
+                "width": 358,
+                "x": 16,
+                "y": 16
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "phone.post-interaction.area-model"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "reduced_motion_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": {
+                "height": 64,
+                "width": 150,
+                "x": 185,
+                "y": 590
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 600,
+                "width": 358,
+                "x": 16,
+                "y": 16
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "phone.reduced-motion.relation-label"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "viewport_switch_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "height": 80,
+                "width": 300,
+                "x": 970,
+                "y": 210
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 680,
+                "width": 976,
+                "x": 24,
+                "y": 24
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "tablet.final.formula"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "static_fallback_out_of_bounds",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "primary-sound-force-pitch/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": [
+            {
+              "actual": {
+                "height": 300,
+                "width": 260,
+                "x": 980,
+                "y": 150
+              },
+              "code": "layout.element_out_of_bounds",
+              "expected": {
+                "height": 680,
+                "width": 976,
+                "x": 24,
+                "y": 24
+              },
+              "message": "Element exceeds the canvas inner bounds",
+              "target": "tablet.static-fallback.tuning-fork"
+            }
+          ]
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    },
+    {
+      "admitted": false,
+      "cache_writes": 0,
+      "case_id": "unreadable_phone_text",
+      "displayed": false,
+      "layout_results": [
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "fail",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "phone",
+          "violations": [
+            {
+              "actual": 11,
+              "code": "layout.unreadable_text",
+              "expected": 16,
+              "message": "Text is below the viewport minimum readable size",
+              "target": "phone.initial.formula"
+            }
+          ]
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "phone",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "initial",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "key-process",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "final",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "paused",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "resumed",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "post-interaction",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "reduced-motion",
+          "viewport": "tablet",
+          "violations": []
+        },
+        {
+          "contract_version": "visual-layout/v1",
+          "result": "pass",
+          "scene_version": "middle-perfect-square-area/1.0",
+          "state": "static-fallback",
+          "viewport": "tablet",
+          "violations": []
+        }
+      ],
+      "structure_violations": [],
+      "teaching_result": {
+        "result": "pass",
+        "violations": []
+      }
+    }
+  ]
+}

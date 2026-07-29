@@ -1,0 +1,120 @@
+{
+  "fixture_version": "ts04b-cases/1.0",
+  "cases": [
+    { "case_id": "sound_valid", "base_scene": "sound", "expected": "pass", "category": "valid" },
+    { "case_id": "math_valid", "base_scene": "math", "expected": "pass", "category": "valid" },
+    {
+      "case_id": "sound_opposite_relationship",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "teaching_opposite",
+      "mutations": [
+        { "path": "teaching.facts.0.visual", "value": "pitch_increases" },
+        { "path": "teaching.facts.0.narration", "value": "pitch_increases" }
+      ]
+    },
+    {
+      "case_id": "math_opposite_relationship",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "teaching_opposite",
+      "mutations": [
+        { "path": "teaching.facts.0.visual", "value": "a2-2ab+b2" }
+      ]
+    },
+    {
+      "case_id": "sound_ambiguous",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "teaching_ambiguous",
+      "mutations": [{ "path": "teaching.status", "value": "ambiguous" }]
+    },
+    {
+      "case_id": "math_timeout",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "teaching_timeout",
+      "mutations": [{ "path": "teaching.status", "value": "timeout" }]
+    },
+    {
+      "case_id": "element_out_of_bounds",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_element_bounds",
+      "mutations": [{ "path": "viewport_profiles.phone.states.1.elements.1.bounds.x", "value": 350 }]
+    },
+    {
+      "case_id": "local_safe_region_violation",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_local_safe_region",
+      "mutations": [{ "path": "viewport_profiles.phone.states.0.elements.2.bounds.x", "value": 172 }]
+    },
+    {
+      "case_id": "hidden_clipping",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "layout_hidden_clipping",
+      "mutations": [
+        { "path": "viewport_profiles.tablet.container_metrics.scroll_width", "value": 1040 },
+        { "path": "viewport_profiles.tablet.container_metrics.overflow", "value": "hidden" }
+      ]
+    },
+    {
+      "case_id": "mid_trajectory_out_of_bounds",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_motion_envelope",
+      "mutations": [{ "path": "viewport_profiles.phone.states.1.motion_envelopes.0.bounds.x", "value": 2 }]
+    },
+    {
+      "case_id": "paused_state_out_of_bounds",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "layout_paused",
+      "mutations": [{ "path": "viewport_profiles.tablet.states.3.elements.0.bounds.y", "value": 690 }]
+    },
+    {
+      "case_id": "resumed_state_out_of_bounds",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_resumed",
+      "mutations": [{ "path": "viewport_profiles.tablet.states.4.elements.1.bounds.x", "value": 960 }]
+    },
+    {
+      "case_id": "post_interaction_out_of_bounds",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "layout_post_interaction",
+      "mutations": [{ "path": "viewport_profiles.phone.states.5.elements.0.bounds.y", "value": 590 }]
+    },
+    {
+      "case_id": "reduced_motion_out_of_bounds",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_reduced_motion",
+      "mutations": [{ "path": "viewport_profiles.phone.states.6.elements.1.bounds.y", "value": 590 }]
+    },
+    {
+      "case_id": "viewport_switch_out_of_bounds",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "layout_viewport_switch",
+      "mutations": [{ "path": "viewport_profiles.tablet.states.2.elements.1.bounds.x", "value": 970 }]
+    },
+    {
+      "case_id": "static_fallback_out_of_bounds",
+      "base_scene": "sound",
+      "expected": "fail",
+      "category": "layout_static_fallback",
+      "mutations": [{ "path": "viewport_profiles.tablet.states.7.elements.0.bounds.x", "value": 980 }]
+    },
+    {
+      "case_id": "unreadable_phone_text",
+      "base_scene": "math",
+      "expected": "fail",
+      "category": "layout_readability",
+      "mutations": [{ "path": "viewport_profiles.phone.states.0.elements.1.font_size", "value": 11 }]
+    }
+  ]
+}

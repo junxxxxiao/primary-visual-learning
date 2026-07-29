@@ -1,0 +1,477 @@
+{
+  "baseline_sha": "d447b5afe850a39873688777cde714a8483b3391",
+  "cache_invalidation_results": [
+    {
+      "changed_field": "learning_goal",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "knowledge_version",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "teaching_contract_version",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "layout_contract_version",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "scene_version",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "code_hash",
+      "pass": true,
+      "status": "invalidated"
+    },
+    {
+      "changed_field": "test_version",
+      "pass": true,
+      "status": "invalidated"
+    }
+  ],
+  "case_count": 17,
+  "case_results": [
+    {
+      "actual": "pass",
+      "case_id": "sound_valid",
+      "category": "valid",
+      "displayed": true,
+      "expected": "pass",
+      "pass": true,
+      "valid_cache_records": 2,
+      "violation_codes": []
+    },
+    {
+      "actual": "pass",
+      "case_id": "math_valid",
+      "category": "valid",
+      "displayed": true,
+      "expected": "pass",
+      "pass": true,
+      "valid_cache_records": 2,
+      "violation_codes": []
+    },
+    {
+      "actual": "fail",
+      "case_id": "sound_opposite_relationship",
+      "category": "teaching_opposite",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "teaching.fact_mismatch"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "math_opposite_relationship",
+      "category": "teaching_opposite",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "teaching.fact_mismatch",
+        "teaching.modality_mismatch"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "sound_ambiguous",
+      "category": "teaching_ambiguous",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "teaching.ambiguous"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "math_timeout",
+      "category": "teaching_timeout",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "teaching.timeout"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "element_out_of_bounds",
+      "category": "layout_element_bounds",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "local_safe_region_violation",
+      "category": "layout_local_safe_region",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.local_safe_region"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "hidden_clipping",
+      "category": "layout_hidden_clipping",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.hidden_clipping",
+        "layout.horizontal_scroll"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "mid_trajectory_out_of_bounds",
+      "category": "layout_motion_envelope",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.motion_envelope_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "paused_state_out_of_bounds",
+      "category": "layout_paused",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "resumed_state_out_of_bounds",
+      "category": "layout_resumed",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "post_interaction_out_of_bounds",
+      "category": "layout_post_interaction",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "reduced_motion_out_of_bounds",
+      "category": "layout_reduced_motion",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "viewport_switch_out_of_bounds",
+      "category": "layout_viewport_switch",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "static_fallback_out_of_bounds",
+      "category": "layout_static_fallback",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.element_out_of_bounds"
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "unreadable_phone_text",
+      "category": "layout_readability",
+      "displayed": false,
+      "expected": "fail",
+      "pass": true,
+      "valid_cache_records": 0,
+      "violation_codes": [
+        "layout.unreadable_text"
+      ]
+    }
+  ],
+  "contract_versions": {
+    "cache": "validated-visual-cache/1.0",
+    "layout": "visual-layout/v1",
+    "scene": "visual-scene/1.0",
+    "teaching": "teaching-consistency/1.0",
+    "timing": "stage-timing/1.0"
+  },
+  "cost": {
+    "amount": 0,
+    "currency": "CNY",
+    "external_services": false
+  },
+  "decision": "conditional_pass",
+  "environment": {
+    "external_services": false,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "fixture_versions": [
+    "ts04b-base-scenes/1.0",
+    "ts04b-cases/1.0"
+  ],
+  "head_contains_baseline": true,
+  "pass": true,
+  "passed_case_count": 17,
+  "run_at": "2026-07-29T13:11:00.447354+00:00",
+  "slice_id": "TS-04B",
+  "thresholds": {
+    "cache_version_invalidation_rate": {
+      "actual": 1.0,
+      "target": 1.0
+    },
+    "failed_scene_display_count": {
+      "actual": 0,
+      "target": 0
+    },
+    "failed_scene_valid_cache_write_count": {
+      "actual": 0,
+      "target": 0
+    },
+    "known_layout_violation_block_rate": {
+      "actual": 1.0,
+      "target": 1.0
+    },
+    "opposite_relationship_block_rate": {
+      "actual": 1.0,
+      "target": 1.0
+    },
+    "validated_cache_p80_ms": {
+      "actual": 0.0095,
+      "target_max": 8000
+    }
+  },
+  "timing_by_stage": {
+    "cache.read": {
+      "count": 97,
+      "failure_rate": 0.0,
+      "max_ms": 0.013292,
+      "p50_ms": 0.007959,
+      "p80_ms": 0.008167,
+      "p95_ms": 0.01025
+    },
+    "cache.version_invalidation": {
+      "count": 7,
+      "failure_rate": 0.0,
+      "max_ms": 0.006083,
+      "p50_ms": 0.00475,
+      "p80_ms": 0.004909,
+      "p95_ms": 0.005733
+    },
+    "cache.write": {
+      "count": 34,
+      "failure_rate": 0.0,
+      "max_ms": 0.016542,
+      "p50_ms": 0.000166,
+      "p80_ms": 0.000183,
+      "p95_ms": 0.005623
+    },
+    "layout.phone.final": {
+      "count": 17,
+      "failure_rate": 0.0,
+      "max_ms": 0.002166,
+      "p50_ms": 0.001958,
+      "p80_ms": 0.002034,
+      "p95_ms": 0.002133
+    },
+    "layout.phone.initial": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.004958,
+      "p50_ms": 0.002167,
+      "p80_ms": 0.002426,
+      "p95_ms": 0.003192
+    },
+    "layout.phone.key_process": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.002875,
+      "p50_ms": 0.002208,
+      "p80_ms": 0.002375,
+      "p95_ms": 0.002709
+    },
+    "layout.phone.paused": {
+      "count": 17,
+      "failure_rate": 0.0,
+      "max_ms": 0.001709,
+      "p50_ms": 0.001666,
+      "p80_ms": 0.001667,
+      "p95_ms": 0.001709
+    },
+    "layout.phone.post_interaction": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.001625,
+      "p50_ms": 0.0015,
+      "p80_ms": 0.001542,
+      "p95_ms": 0.001591
+    },
+    "layout.phone.reduced_motion": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.001584,
+      "p50_ms": 0.001458,
+      "p80_ms": 0.0015,
+      "p95_ms": 0.001583
+    },
+    "layout.phone.resumed": {
+      "count": 17,
+      "failure_rate": 0.0,
+      "max_ms": 0.001917,
+      "p50_ms": 0.001666,
+      "p80_ms": 0.001708,
+      "p95_ms": 0.001751
+    },
+    "layout.phone.static_fallback": {
+      "count": 17,
+      "failure_rate": 0.0,
+      "max_ms": 0.001583,
+      "p50_ms": 0.001458,
+      "p80_ms": 0.0015,
+      "p95_ms": 0.00155
+    },
+    "layout.tablet.final": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.001791,
+      "p50_ms": 0.001417,
+      "p80_ms": 0.001459,
+      "p95_ms": 0.001592
+    },
+    "layout.tablet.initial": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.002167,
+      "p50_ms": 0.001875,
+      "p80_ms": 0.001992,
+      "p95_ms": 0.002101
+    },
+    "layout.tablet.key_process": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.002166,
+      "p50_ms": 0.001584,
+      "p80_ms": 0.001667,
+      "p95_ms": 0.0018
+    },
+    "layout.tablet.paused": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.002,
+      "p50_ms": 0.001667,
+      "p80_ms": 0.001708,
+      "p95_ms": 0.0019
+    },
+    "layout.tablet.post_interaction": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.001875,
+      "p50_ms": 0.001459,
+      "p80_ms": 0.001584,
+      "p95_ms": 0.001642
+    },
+    "layout.tablet.reduced_motion": {
+      "count": 17,
+      "failure_rate": 0.058824,
+      "max_ms": 0.001791,
+      "p50_ms": 0.001417,
+      "p80_ms": 0.001542,
+      "p95_ms": 0.001625
+    },
+    "layout.tablet.resumed": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.001959,
+      "p50_ms": 0.001666,
+      "p80_ms": 0.001709,
+      "p95_ms": 0.001859
+    },
+    "layout.tablet.static_fallback": {
+      "count": 17,
+      "failure_rate": 0.117647,
+      "max_ms": 0.001834,
+      "p50_ms": 0.001459,
+      "p80_ms": 0.0015,
+      "p95_ms": 0.001734
+    },
+    "scene.structure": {
+      "count": 17,
+      "failure_rate": 0.0,
+      "max_ms": 0.008333,
+      "p50_ms": 0.002458,
+      "p80_ms": 0.002775,
+      "p95_ms": 0.0073
+    },
+    "teaching.check": {
+      "count": 17,
+      "failure_rate": 0.235294,
+      "max_ms": 0.001541,
+      "p50_ms": 0.000584,
+      "p80_ms": 0.000934,
+      "p95_ms": 0.001408
+    }
+  },
+  "unverified": [
+    "real model-generated scenes and automatic repair",
+    "browser DOM, SVG, Canvas and OffscreenCanvas measurement adapters",
+    "real phone, tablet and WeChat WebView geometry",
+    "production cache backend, concurrency, eviction and persistence",
+    "human subject-matter and product visual review",
+    "end-to-end generation latency and cost"
+  ],
+  "viewport_state_result_count": 272
+}
