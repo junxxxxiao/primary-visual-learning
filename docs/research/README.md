@@ -4,6 +4,8 @@
 
 - [步步高与学而思学习机线下调研](2026-07-15-learning-machine-field-research.md)
 - [TS-02 大模型 API 首轮选型研究](2026-07-28-ts-02-llm-api-selection.md)
+- [ChinaTextbook 数学与科学教材原子知识库成本评估](2026-07-28-china-textbook-atomic-knowledge-base-cost-assessment.md)
+- [GitHub 中文 K12 数学与科学结构化知识源评估](2026-07-28-github-structured-k12-knowledge-sources.md)
 
 后续建议按类型归档：
 
