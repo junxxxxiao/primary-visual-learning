@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-scene-cache-record/1.0",
+  "title": "TS-04B validated visual cache record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cache_key", "identity", "validation_status", "scene_id"],
+  "properties": {
+    "cache_key": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["learning_goal", "knowledge_version", "teaching_contract_version", "layout_contract_version", "scene_version", "viewport", "code_hash", "test_version"],
+      "properties": {
+        "learning_goal": { "type": "string" },
+        "knowledge_version": { "type": "string" },
+        "teaching_contract_version": { "type": "string" },
+        "layout_contract_version": { "type": "string" },
+        "scene_version": { "type": "string" },
+        "viewport": { "enum": ["phone", "tablet"] },
+        "code_hash": { "type": "string" },
+        "test_version": { "type": "string" }
+      }
+    },
+    "validation_status": { "const": "pass" },
+    "scene_id": { "type": "string", "minLength": 1 }
+  }
+}

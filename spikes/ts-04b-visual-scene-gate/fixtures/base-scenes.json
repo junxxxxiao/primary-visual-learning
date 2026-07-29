@@ -1,0 +1,213 @@
+{
+  "fixture_version": "ts04b-base-scenes/1.0",
+  "scenes": {
+    "sound": {
+      "schema_version": "visual-scene/1.0",
+      "scene_id": "primary-sound-force-pitch",
+      "scene_version": "primary-sound-force-pitch/1.0",
+      "learning_goal": "distinguish_amplitude_from_pitch",
+      "knowledge_version": "synthetic-primary-sound/1.0",
+      "teaching_contract_version": "teaching-consistency/1.0",
+      "layout_contract_version": "visual-layout/v1",
+      "code_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "test_version": "ts04b-validator/1.0",
+      "teaching": {
+        "status": "ready",
+        "facts": [
+          { "fact_id": "force-vs-pitch", "expected": "pitch_unchanged", "visual": "pitch_unchanged", "narration": "pitch_unchanged" },
+          { "fact_id": "force-vs-amplitude", "expected": "amplitude_increases", "visual": "amplitude_increases", "narration": "amplitude_increases" }
+        ]
+      },
+      "viewport_profiles": {
+        "phone": {
+          "layout_mode": "vertical-stack",
+          "canvas_inner_bounds": { "x": 16, "y": 16, "width": 358, "height": 600 },
+          "local_safe_regions": { "explanation-bubble": { "x": 185, "y": 315, "width": 140, "height": 80 } },
+          "readability_limits": { "min_font_size": 16, "min_graphic_size": 24, "min_touch_size": 44 },
+          "container_metrics": { "client_width": 390, "client_height": 632, "scroll_width": 390, "scroll_height": 632, "overflow": "visible", "clip": false, "mask": false },
+          "states": [
+            { "state_id": "initial", "kind": "initial", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "bubble-copy", "bounds": { "x": 195, "y": 330, "width": 110, "height": 50 }, "font_size": 16, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": "explanation-bubble" }
+            ], "motion_envelopes": [] },
+            { "state_id": "key-process", "kind": "key_process", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "bubble-copy", "bounds": { "x": 195, "y": 330, "width": 110, "height": 50 }, "font_size": 16, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": "explanation-bubble" }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 30, "y": 80, "width": 150, "height": 230 } }] },
+            { "state_id": "final", "kind": "final", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "bubble-copy", "bounds": { "x": 195, "y": 330, "width": 110, "height": 50 }, "font_size": 16, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": "explanation-bubble" }
+            ], "motion_envelopes": [] },
+            { "state_id": "paused", "kind": "paused", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 30, "y": 80, "width": 150, "height": 230 } }] },
+            { "state_id": "resumed", "kind": "resumed", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 30, "y": 80, "width": 150, "height": 230 } }] },
+            { "state_id": "post-interaction", "kind": "post_interaction", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": true, "touch_size": 48, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "reduced-motion", "kind": "reduced_motion", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "static-fallback", "kind": "static_fallback", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 40, "y": 90, "width": 120, "height": 200 }, "font_size": 0, "min_graphic_size": 64, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 185, "y": 110, "width": 150, "height": 64 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] }
+          ]
+        },
+        "tablet": {
+          "layout_mode": "horizontal-comparison",
+          "canvas_inner_bounds": { "x": 24, "y": 24, "width": 976, "height": 680 },
+          "local_safe_regions": { "explanation-bubble": { "x": 500, "y": 360, "width": 300, "height": 120 } },
+          "readability_limits": { "min_font_size": 18, "min_graphic_size": 28, "min_touch_size": 44 },
+          "container_metrics": { "client_width": 1024, "client_height": 728, "scroll_width": 1024, "scroll_height": 728, "overflow": "visible", "clip": false, "mask": false },
+          "states": [
+            { "state_id": "initial", "kind": "initial", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "bubble-copy", "bounds": { "x": 525, "y": 385, "width": 250, "height": 70 }, "font_size": 18, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": "explanation-bubble" }
+            ], "motion_envelopes": [] },
+            { "state_id": "key-process", "kind": "key_process", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 80, "y": 130, "width": 300, "height": 340 } }] },
+            { "state_id": "final", "kind": "final", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "paused", "kind": "paused", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 80, "y": 130, "width": 300, "height": 340 } }] },
+            { "state_id": "resumed", "kind": "resumed", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "tuning-fork", "bounds": { "x": 80, "y": 130, "width": 300, "height": 340 } }] },
+            { "state_id": "post-interaction", "kind": "post_interaction", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": true, "touch_size": 48, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "reduced-motion", "kind": "reduced_motion", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "static-fallback", "kind": "static_fallback", "elements": [
+              { "element_id": "tuning-fork", "bounds": { "x": 100, "y": 150, "width": 260, "height": 300 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "relation-label", "bounds": { "x": 480, "y": 180, "width": 260, "height": 80 }, "font_size": 22, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] }
+          ]
+        }
+      }
+    },
+    "math": {
+      "schema_version": "visual-scene/1.0",
+      "scene_id": "middle-perfect-square-area",
+      "scene_version": "middle-perfect-square-area/1.0",
+      "learning_goal": "derive_square_of_sum_with_area_model",
+      "knowledge_version": "synthetic-middle-perfect-square/1.0",
+      "teaching_contract_version": "teaching-consistency/1.0",
+      "layout_contract_version": "visual-layout/v1",
+      "code_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "test_version": "ts04b-validator/1.0",
+      "teaching": {
+        "status": "ready",
+        "facts": [
+          { "fact_id": "square-of-sum", "expected": "a2+2ab+b2", "visual": "a2+2ab+b2", "narration": "a2+2ab+b2" },
+          { "fact_id": "cross-term-count", "expected": "two_ab_regions", "visual": "two_ab_regions", "narration": "two_ab_regions" }
+        ]
+      },
+      "viewport_profiles": {
+        "phone": {
+          "layout_mode": "vertical-derivation",
+          "canvas_inner_bounds": { "x": 16, "y": 16, "width": 358, "height": 600 },
+          "local_safe_regions": { "area-model": { "x": 45, "y": 105, "width": 300, "height": 240 } },
+          "readability_limits": { "min_font_size": 16, "min_graphic_size": 24, "min_touch_size": 44 },
+          "container_metrics": { "client_width": 390, "client_height": 632, "scroll_width": 390, "scroll_height": 632, "overflow": "visible", "clip": false, "mask": false },
+          "states": [
+            { "state_id": "initial", "kind": "initial", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "key-process", "kind": "key_process", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 35, "y": 95, "width": 320, "height": 260 } }] },
+            { "state_id": "final", "kind": "final", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "paused", "kind": "paused", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 35, "y": 95, "width": 320, "height": 260 } }] },
+            { "state_id": "resumed", "kind": "resumed", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 35, "y": 95, "width": 320, "height": 260 } }] },
+            { "state_id": "post-interaction", "kind": "post_interaction", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": true, "touch_size": 48, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "reduced-motion", "kind": "reduced_motion", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "static-fallback", "kind": "static_fallback", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 40, "y": 100, "width": 310, "height": 250 }, "font_size": 0, "min_graphic_size": 96, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 65, "y": 380, "width": 260, "height": 60 }, "font_size": 20, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] }
+          ]
+        },
+        "tablet": {
+          "layout_mode": "side-by-side-derivation",
+          "canvas_inner_bounds": { "x": 24, "y": 24, "width": 976, "height": 680 },
+          "local_safe_regions": { "area-model": { "x": 100, "y": 120, "width": 440, "height": 380 } },
+          "readability_limits": { "min_font_size": 18, "min_graphic_size": 28, "min_touch_size": 44 },
+          "container_metrics": { "client_width": 1024, "client_height": 728, "scroll_width": 1024, "scroll_height": 728, "overflow": "visible", "clip": false, "mask": false },
+          "states": [
+            { "state_id": "initial", "kind": "initial", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "key-process", "kind": "key_process", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 70, "y": 90, "width": 500, "height": 440 } }] },
+            { "state_id": "final", "kind": "final", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "paused", "kind": "paused", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 70, "y": 90, "width": 500, "height": 440 } }] },
+            { "state_id": "resumed", "kind": "resumed", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [{ "element_id": "area-model", "bounds": { "x": 70, "y": 90, "width": 500, "height": 440 } }] },
+            { "state_id": "post-interaction", "kind": "post_interaction", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": true, "touch_size": 48, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "reduced-motion", "kind": "reduced_motion", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] },
+            { "state_id": "static-fallback", "kind": "static_fallback", "elements": [
+              { "element_id": "area-model", "bounds": { "x": 80, "y": 100, "width": 480, "height": 420 }, "font_size": 0, "min_graphic_size": 128, "interactive": false, "touch_size": 0, "local_safe_region": null },
+              { "element_id": "formula", "bounds": { "x": 600, "y": 210, "width": 300, "height": 80 }, "font_size": 24, "min_graphic_size": 0, "interactive": false, "touch_size": 0, "local_safe_region": null }
+            ], "motion_envelopes": [] }
+          ]
+        }
+      }
+    }
+  }
+}
