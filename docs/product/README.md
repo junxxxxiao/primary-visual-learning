@@ -2,7 +2,7 @@
 
 当前实现依据：
 
-- [中小学互动视觉家教 PRD v5.2](2026-07-28-primary-visual-tutor-prd-v5.md)
+- [中小学互动视觉家教 PRD v5.3](2026-07-28-primary-visual-tutor-prd-v5.md)
 
 历史版本：
 

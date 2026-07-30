@@ -22,6 +22,7 @@
       --yellow: #f4d45d;
       --radius-card: 30px;
       --radius-control: 999px;
+      --lesson-shell-gap: clamp(12px, 1.6vw, 20px);
       --shadow: 0 26px 70px rgba(0, 0, 0, .16);
       --font: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
     }
@@ -324,7 +325,7 @@
 
     /* Lesson */
     .lesson-screen { padding: 2.1%; background: #e6e8e2; }
-    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: 1.6%; }
+    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: var(--lesson-shell-gap); }
     .lesson-appbar {
       min-height: 62px;
       padding: 0 2%;
@@ -638,7 +639,6 @@
     body.phone-review .progress-item { grid-template-columns: 18px 1fr; gap: 4px; font-size: 7px; }
     body.phone-review .progress-item i { width: 18px; height: 18px; }
     body.phone-review .rail-note { display: none; }
-    body.phone-review [data-screen="prediction"] .prediction-main { padding: 16px 15px; }
     body.phone-review .prediction-head { gap: 8px; }
     body.phone-review .prediction-head h1 { font-size: 27px; }
     body.phone-review .voice-cue { min-width: 0; padding: 8px; font-size: 8px; }
@@ -900,7 +900,7 @@
       <div class="review-navs">
         <div class="viewport-tabs" aria-label="切换审阅画布"><button type="button" aria-pressed="true" data-viewport="tablet">平板</button><button type="button" aria-pressed="false" data-viewport="phone">手机</button></div>
         <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
-          <button role="tab" aria-selected="true" data-target="entry">S01 入口</button><button role="tab" aria-selected="false" data-target="ask">S02 提问</button><button role="tab" aria-selected="false" data-target="confirm">S03 确认</button><button role="tab" aria-selected="false" data-target="calibration">S04 校准</button><button role="tab" aria-selected="false" data-target="prediction">S05 预测</button><button role="tab" aria-selected="false" data-target="loading">S06 准备</button><button role="tab" aria-selected="false" data-target="intro">S07 引入</button><button role="tab" aria-selected="false" data-target="lesson">S08 讲解</button><button role="tab" aria-selected="false" data-target="lesson-exit">S08 返回确认</button><button role="tab" aria-selected="false" data-target="experiment">S09 实验</button><button role="tab" aria-selected="false" data-target="followup">S10 追问</button><button role="tab" aria-selected="false" data-target="vacuum">S11 真空</button><button role="tab" aria-selected="false" data-target="fork">S12 音叉</button><button role="tab" aria-selected="false" data-target="xylophone">S13 木琴</button><button role="tab" aria-selected="false" data-target="feedback">S14 反馈</button><button role="tab" aria-selected="false" data-target="result">S15 结果</button>
+          <button role="tab" aria-selected="true" data-target="entry">S01 入口</button><button role="tab" aria-selected="false" data-target="ask">S02 提问</button><button role="tab" aria-selected="false" data-target="confirm">S03 确认</button><button role="tab" aria-selected="false" data-target="loading">S06 准备</button><button role="tab" aria-selected="false" data-target="intro">S07 引入</button><button role="tab" aria-selected="false" data-target="lesson">S08 讲解</button><button role="tab" aria-selected="false" data-target="lesson-exit">S08 返回确认</button><button role="tab" aria-selected="false" data-target="experiment">S09 实验</button><button role="tab" aria-selected="false" data-target="followup">S10 追问</button><button role="tab" aria-selected="false" data-target="vacuum">S11 真空</button><button role="tab" aria-selected="false" data-target="fork">S12 音叉</button><button role="tab" aria-selected="false" data-target="xylophone">S13 木琴</button><button role="tab" aria-selected="false" data-target="feedback">S14 反馈</button><button role="tab" aria-selected="false" data-target="result">S15 结果</button>
         </nav>
       </div>
     </header>
@@ -916,7 +916,7 @@
             <div class="entry-copy">
               <p class="eyebrow">固定声音主题体验</p>
               <h1>你问为什么，<br>小知<em>现场演</em>给你看。</h1>
-              <p class="entry-lead">从一个真实问题出发，先预测，再看见琴弦怎样振动，最后亲手验证自己的想法。</p>
+              <p class="entry-lead">从一个真实问题出发，确认后直接看琴弦怎样振动，最后亲手验证讲解中的规律。</p>
               <div class="entry-buttons"><span class="cta primary">开始体验 →</span></div>
               <div class="privacy-note"><strong>数据说明</strong><span>体验不会调用相机或麦克风，不保存儿童姓名、照片或原始语音。</span></div>
             </div>
@@ -945,43 +945,8 @@
           </div></div></div>
         </section>
 
-        <section class="concept-screen prediction-screen" data-screen="calibration" hidden>
-          <div class="prediction-shell">
-            <aside class="progress-rail"><div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div><div class="progress-list"><div class="progress-item active"><i>1</i><span>听懂“响”和“高”</span></div><div class="progress-item"><i>2</i><span>先做一个预测</span></div><div class="progress-item"><i>3</i><span>问题讲解</span></div></div><div class="rail-note">先分清两个词，再带着自己的预测进入问题讲解。</div></aside>
-            <main class="prediction-main calibration-main"><div><h1 class="static-title">先把“响”和“高”分清楚</h1><p class="static-lead">按顺序播放两组固定声音。这里先建立词义，不提前告诉你振幅和频率的关系。</p><div class="calibration-pair"><article class="cal-card"><span class="sound">响</span><h2>响度</h2><p>听起来有多响。第一声较轻，第二声明显更响。</p><span class="cta">▶ 播放示例</span></article><article class="cal-card locked"><span class="sound" style="background:var(--violet)">高</span><h2>音调</h2><p>听起来有多高。听完响度示例后解锁。</p><span class="cta disabled">先听响度</span></article></div></div><div class="prediction-footer"><p>先听响度，再听音调。</p><span class="cta primary disabled">我分清了，继续猜 →</span></div></main>
-          </div>
-        </section>
-
-        <section id="screen-prediction" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-prediction" data-screen="prediction" hidden>
-          <div class="prediction-shell">
-            <aside class="progress-rail">
-              <div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div>
-              <div class="progress-list">
-                <div class="progress-item done"><i>✓</i><span>听懂“响”和“高”</span></div>
-                <div class="progress-item active"><i>2</i><span>先做一个预测</span></div>
-                <div class="progress-item"><i>3</i><span>问题讲解</span></div>
-              </div>
-              <div class="rail-note">猜错也没关系。预测只是为了让接下来的观察更有目标。</div>
-            </aside>
-            <main class="prediction-main">
-              <div>
-                <div class="prediction-head">
-                  <div><p class="eyebrow">先猜一猜</p><h1>更用力拨同一根弦，<br>音调会更高吗？</h1></div>
-                </div>
-                <div class="condition-box"><strong>这次比较要公平</strong><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变：拨弦力度</span></div></div>
-                <div class="choice-row">
-                  <article class="answer-card"><div class="choice-mark">A</div><strong>会更高</strong><span>用力越大，音调越高</span></article>
-                  <article class="answer-card"><div class="choice-mark">B</div><strong>基本不变</strong><span>主要变化可能在响度</span></article>
-                  <article class="answer-card"><div class="choice-mark">C</div><strong>还不确定</strong><span>我想先看一看</span></article>
-                </div>
-              </div>
-              <div class="prediction-footer"><p>先选一个答案，再去验证。</p><span class="cta primary disabled">去验证 →</span></div>
-            </main>
-          </div>
-        </section>
-
         <section class="concept-screen static-screen" data-screen="loading" hidden>
-          <div class="static-shell"><header class="static-appbar"><button type="button" class="back" data-demo-back aria-label="返回 Demo 首页">‹</button><div class="brand"><span class="brand-mark">知</span><span>准备观察</span></div><span class="step">准备观察</span></header><div class="static-content"><div class="static-narrow" style="text-align:center"><p class="eyebrow">正在准备第一段观察</p><h1 class="static-title">正在校准琴弦观察画面</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">先把同一根琴弦的轻拨和用力拨放在一起比较。互动琴弦会在讲解结束后出现。</p><div class="loading-rig"><span class="load-dot"></span><svg viewBox="0 0 520 150"><path d="M0 75 C40 40 80 40 120 75 S200 110 240 75 S320 40 360 75 S440 110 520 75" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div><div class="load-track"><span></span></div></div></div></div>
+          <div class="static-shell"><header class="static-appbar"><button type="button" class="back" data-demo-back aria-label="返回 Demo 首页">‹</button><div class="brand"><span class="brand-mark">知</span><span>准备观察</span></div><span class="step">准备观察</span></header><div class="static-content"><div class="static-narrow" style="text-align:center"><p class="eyebrow">正在准备第一段观察</p><h1 class="static-title">正在准备琴弦观察画面</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">先把同一根琴弦的轻拨和用力拨放在一起比较。互动琴弦会在讲解结束后出现。</p><div class="loading-rig"><span class="load-dot"></span><svg viewBox="0 0 520 150"><path d="M0 75 C40 40 80 40 120 75 S200 110 240 75 S320 40 360 75 S440 110 520 75" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div><div class="load-track"><span></span></div></div></div></div>
         </section>
 
         <section class="concept-screen lesson-screen" data-screen="intro" hidden>
@@ -1078,13 +1043,8 @@
 
     function openExitDialog() { exitDialog.hidden = false; exitDialog.querySelector('[data-exit-cancel]').focus(); }
     function closeExitDialog() { exitDialog.hidden = true; }
-    function playConfirmationNarration() {
-      if (!window.demoNarrationAudio) window.demoNarrationAudio = new Audio(new URL('../../prototype/assets/audio/narration-confirm-text.wav', window.location.href));
-      window.demoNarrationAudio.currentTime = 0;
-      window.demoNarrationAudio.play().catch(() => {});
-    }
-
     function showScreen(name, updateUrl = true) {
+      if (name === 'calibration' || name === 'prediction') name = 'loading';
       tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.target === name)));
       screens.forEach((screen) => {
         const active = screen.dataset.screen === name;
@@ -1092,7 +1052,6 @@
         screen.hidden = !active;
       });
       if (name === 'feedback') showFeedbackReasons();
-      if (name === 'confirm') playConfirmationNarration();
       if (updateUrl) {
         const url = new URL(window.location.href);
         url.searchParams.set('screen', name);
@@ -1146,10 +1105,12 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !exitDialog.hidden) closeExitDialog();
     });
-    const initialScreen = new URLSearchParams(window.location.search).get('screen');
+    const requestedScreen = new URLSearchParams(window.location.search).get('screen');
     const initialViewport = new URLSearchParams(window.location.search).get('viewport');
-    const validScreens = ['entry','ask','confirm','calibration','prediction','loading','intro','lesson','lesson-exit','experiment','followup','vacuum','fork','xylophone','feedback','result'];
-    if (validScreens.includes(initialScreen)) showScreen(initialScreen, false);
+    const validScreens = ['entry','ask','confirm','loading','intro','lesson','lesson-exit','experiment','followup','vacuum','fork','xylophone','feedback','result'];
+    const retiredScreen = requestedScreen === 'calibration' || requestedScreen === 'prediction';
+    const initialScreen = retiredScreen ? 'loading' : validScreens.includes(requestedScreen) ? requestedScreen : 'entry';
+    showScreen(initialScreen, retiredScreen);
     if (initialViewport === 'phone') showViewport('phone', false);
   </script>
 </body>

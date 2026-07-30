@@ -3,14 +3,17 @@
 
 import json
 import platform
+from hashlib import sha256
 from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT.parent / "shared"))
 
 from pipeline import STAGE_FIELDS, build_source_index, validate_case  # noqa: E402
 from schema_validation import validate  # noqa: E402
+from evidence_provenance import seal_knowledge_package  # noqa: E402
 
 
 def read_json(path):
@@ -59,6 +62,23 @@ def evidence_is_traceable(claim, source_index):
         if source["sha256"] != source["actual_sha256"]:
             return False
     return True
+
+
+def exported_knowledge(result):
+    package = result["package"]
+    return seal_knowledge_package(
+        {
+            "package_version": f"ts02-knowledge-export/{result['case_id']}/1.0",
+            "producer_slice": "TS-02",
+            "package_case_id": result["case_id"],
+            "source_scope": "synthetic_fixture",
+            "verification_status": package["verification_status"],
+            "review_method": package["review_method"],
+            "evidence_status": package["evidence_status"],
+            "source_refs": package["source_refs"],
+            "claims": package["claims"],
+        }
+    )
 
 
 def main():
@@ -136,7 +156,14 @@ def main():
         "baseline_sha": "b1632717167bc620154a82aa31cb83eb1f4fd094",
         "environment": {"python": platform.python_version(), "platform": platform.platform(), "network_access": "disabled_by_design", "model_service": "none-deterministic-spike"},
         "cost": {"model_calls": 0, "network_requests": 0, "external_service_cost": 0, "currency": "CNY", "production_cost_validated": False},
-        "sample_sizes": {"total_cases": len(cases), "expected_publish": 5, "expected_unverified_generate": 3, "expected_block": 4, "published_critical_claims": len(published_claims), "schema_instances": len(schema_checks)},
+        "sample_sizes": {
+            "total_cases": len(cases),
+            "expected_publish": sum(case["expected_decision"] == "publish" for case in cases),
+            "expected_unverified_generate": sum(case["expected_decision"] == "unverified_generate" for case in cases),
+            "expected_block": sum(case["expected_decision"] == "block" for case in cases),
+            "published_critical_claims": len(published_claims),
+            "schema_instances": len(schema_checks),
+        },
         "metrics": metrics,
         "schema_failures": unexpected_schema_failures,
         "case_results": [{"case_id": result["case_id"], "expected_decision": result["expected_decision"], "actual_decision": result["actual_decision"], "oracle_match": result["oracle_match"], "failed_steps": [step["step"] for step in result["steps"] if step["status"] == "fail"], "routing_reasons": result["package"]["routing_reasons"]} for result in results],
@@ -161,8 +188,22 @@ def main():
 
     results_dir = ROOT / "results"
     results_dir.mkdir(exist_ok=True)
+    manifest_bytes = (ROOT / "fixtures" / "source-manifest.json").read_bytes()
+    knowledge_exports = {
+        "schema_version": "ts02-knowledge-exports/1.0",
+        "producer_slice": "TS-02",
+        "source_manifest_sha256": f"sha256:{sha256(manifest_bytes).hexdigest()}",
+        "packages": {
+            result["case_id"]: exported_knowledge(result)
+            for result in published_results
+        },
+    }
     (results_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (results_dir / "failures.json").write_text(json.dumps(failures, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (results_dir / "knowledge-packages.json").write_text(
+        json.dumps(knowledge_exports, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     print(f"\nverdict={verdict} metrics_pass={hard_metrics_pass} cases={len(cases)} schema_instances={len(schema_checks)}")
     return 0 if hard_metrics_pass else 1
 

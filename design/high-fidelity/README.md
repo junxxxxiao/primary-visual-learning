@@ -7,8 +7,8 @@
 已确认视觉方向 A，并形成三个本地可审阅资产：
 
 - [视觉方向板](visual-direction-board.html)：颜色、排版、形状、组件与教学画面基调；
-- [关键页面高保真](key-screen-concepts.html)：公开入口、预测页与核心琴弦讲解页；
-- [声音 Demo 全页面高保真](sound-demo-screen-concepts.html)：S01–S15 全部页面及 S08 返回确认状态的静态视觉审阅稿，内含 `1180×820` 平板横屏与 `390×844` 手机竖屏两套构图；仅允许画板和设备切换，不包含产品交互。
+- [关键页面高保真](key-screen-concepts.html)：公开入口、讲解准备页与核心琴弦讲解页；
+- [声音 Demo 全页面高保真](sound-demo-screen-concepts.html)：当前可达页面及 S08 返回确认状态的静态视觉审阅稿，内含 `1180×820` 平板横屏与 `390×844` 手机竖屏两套构图；旧 S04 校准和 S05 预测页面已随产品决策退出，仅允许画板和设备切换，不包含产品交互。
 
 声音 Demo 后续高保真页面和状态以[页面与状态矩阵](../../docs/design/2026-07-23-sound-value-demo-page-state-matrix.md)为制作清单。
 

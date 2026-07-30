@@ -1,0 +1,1189 @@
+{
+  "fixture_version": "ts03-plans/1.5",
+  "fixture_kind": "gold_fixture",
+  "plans": {
+    "primary_sound": {
+      "schema_version": "lesson-plan/1.3",
+      "plan_id": "primary-sound-plan-v1",
+      "fixture_id": "primary_sound",
+      "stage_profile": {
+        "school_stage": "primary",
+        "grade": 4,
+        "curriculum": "synthetic-national-curriculum-2026",
+        "textbook_edition": "synthetic-primary-science-2026",
+        "profile_version": "1.0"
+      },
+      "stage_rules": {
+        "rule_id": "primary-science-g4/1.0",
+        "allowed_prerequisite_refs": [
+          "science.sound.vibration.basic"
+        ],
+        "allowed_terms": [
+          "振动",
+          "振幅",
+          "响度",
+          "音调"
+        ],
+        "max_formula_symbols_per_segment": 0,
+        "max_visual_elements": 6,
+        "transfer_difficulty": "single-variable-comparison"
+      },
+      "knowledge": {
+        "claims": [
+          {
+            "claim_id": "force-amplitude-pitch",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 12,
+                "quote": "plucking it harder mainly increases vibration amplitude",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振幅",
+              "响度",
+              "音调"
+            ],
+            "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+          },
+          {
+            "claim_id": "pitch-frequency-loudness-amplitude",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 13,
+                "quote": "Pitch describes how high or low a sound seems",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振动",
+              "振幅",
+              "频率",
+              "响度",
+              "音调"
+            ],
+            "text": "Pitch relates to frequency while loudness relates here to amplitude."
+          }
+        ],
+        "evidence_status": "exploratory_only",
+        "package_case_id": "primary_sound_valid",
+        "package_sha256": "sha256:cf82807f47a57918e17b1234524a5b0004fd771264d598b9e77b3da1e1f81548",
+        "package_version": "ts02-knowledge-export/primary_sound_valid/1.0",
+        "producer_slice": "TS-02",
+        "review_method": "ai_only",
+        "source_refs": [
+          {
+            "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+            "edition": "synthetic-primary-science-2026",
+            "pages": [
+              12,
+              13
+            ],
+            "source_id": "primary-sound-synthetic-v1"
+          }
+        ],
+        "source_scope": "synthetic_fixture",
+        "verification_status": "verified_atom"
+      },
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "primary_object": "琴弦",
+      "segments": [
+        {
+          "segment_id": "opening-explanation",
+          "order": 1,
+          "phase": "explanation",
+          "goal": "建立同一根弦的公平比较，并区分响度和音调。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "narration": "先固定同一根琴弦的长度、松紧和粗细，只改变拨弦力度。接下来分别比较响度和音调的变化。",
+          "cues": [
+            {
+              "cue_id": "opening-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "opening-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "opening-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            }
+          ],
+          "visual": {
+            "layout_kind": "single-focus",
+            "element_count": 4,
+            "terms": [
+              "响度",
+              "音调"
+            ],
+            "formula_symbol_count": 0,
+            "states": [
+              "same-string",
+              "comparison-focus"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "annotated-sequence",
+            "steps": [
+              "同一根弦保持不变",
+              "分别记录响度和音调"
+            ],
+            "fact_refs": [
+              "force-amplitude-pitch"
+            ]
+          }
+        },
+        {
+          "segment_id": "compare",
+          "order": 2,
+          "phase": "explanation",
+          "goal": "比较轻拨和用力拨的振幅。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "narration": "更用力拨时，弦摆动得更宽，声音更响；这里改变的是振幅和响度。",
+          "cues": [
+            {
+              "cue_id": "compare-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "compare-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "compare-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "compare-highlight",
+              "at_ms": 2200,
+              "action": "highlight"
+            }
+          ],
+          "visual": {
+            "layout_kind": "side-by-side",
+            "element_count": 6,
+            "terms": [
+              "振幅",
+              "响度"
+            ],
+            "formula_symbol_count": 0,
+            "states": [
+              "light-pluck",
+              "strong-pluck",
+              "amplitude-highlight"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "comparison-panel",
+            "steps": [
+              "轻拨时摆动较窄",
+              "用力拨时摆动较宽",
+              "摆动更宽对应声音更响"
+            ],
+            "fact_refs": [
+              "force-amplitude-pitch"
+            ]
+          }
+        },
+        {
+          "segment_id": "separate",
+          "order": 3,
+          "phase": "explanation",
+          "goal": "确认音调并未随力度一起改变。",
+          "fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "narration": "两次振动的快慢保持一致，所以音调没有升高。力度、响度和音调不能混成同一件事。",
+          "cues": [
+            {
+              "cue_id": "separate-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "separate-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "separate-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "separate-conclusion",
+              "at_ms": 3000,
+              "action": "show_conclusion"
+            }
+          ],
+          "visual": {
+            "layout_kind": "side-by-side",
+            "element_count": 6,
+            "terms": [
+              "振动",
+              "响度",
+              "音调"
+            ],
+            "formula_symbol_count": 0,
+            "states": [
+              "rate-aligned",
+              "amplitude-different",
+              "conclusion"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "comparison-panel",
+            "steps": [
+              "对齐两次振动的时间",
+              "振动快慢相同",
+              "音调不变，响度改变"
+            ],
+            "fact_refs": [
+              "force-amplitude-pitch",
+              "pitch-frequency-loudness-amplitude"
+            ]
+          }
+        }
+      ],
+      "transfer": {
+        "initial": {
+          "object": "音叉",
+          "prompt": "同一把音叉被更用力敲击时，声音会怎样变化？先给结论，再说明振幅和音调分别怎样。",
+          "fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "difference_dimensions": [
+            "object",
+            "interaction"
+          ],
+          "novelty_summary": "从拨动琴弦迁移到敲击音叉。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "single-variable-comparison"
+        },
+        "retry": {
+          "object": "鼓面",
+          "prompt": "同一面鼓轻敲和重敲时，哪一项主要改变？请给结论并说明原因。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "difference_dimensions": [
+            "object",
+            "interaction"
+          ],
+          "novelty_summary": "从拨弦迁移到敲击鼓面。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "single-variable-comparison"
+        }
+      }
+    },
+    "middle_perfect_square": {
+      "schema_version": "lesson-plan/1.3",
+      "plan_id": "middle-perfect-square-plan-v1",
+      "fixture_id": "middle_perfect_square",
+      "stage_profile": {
+        "school_stage": "middle",
+        "grade": 8,
+        "curriculum": "synthetic-national-curriculum-2026",
+        "textbook_edition": "synthetic-middle-math-2026",
+        "profile_version": "1.0"
+      },
+      "stage_rules": {
+        "rule_id": "middle-math-g8/1.0",
+        "allowed_prerequisite_refs": [
+          "math.algebra.multiply_binomials",
+          "math.square.nonnegative"
+        ],
+        "allowed_terms": [
+          "完全平方",
+          "配方",
+          "非负",
+          "最大值",
+          "面积"
+        ],
+        "max_formula_symbols_per_segment": 18,
+        "max_visual_elements": 9,
+        "transfer_difficulty": "guided-symbolic-reasoning"
+      },
+      "knowledge": {
+        "claims": [
+          {
+            "claim_id": "perfect-square-identities",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 34,
+                "quote": "follow by multiplying the binomials",
+                "source_id": "middle-perfect-square-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "完全平方",
+              "配方"
+            ],
+            "text": "The perfect-square identities follow from binomial multiplication."
+          },
+          {
+            "claim_id": "complete-square-bound",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 34,
+                "quote": "a real square is nonnegative",
+                "source_id": "middle-perfect-square-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "完全平方",
+              "配方",
+              "非负",
+              "最大值"
+            ],
+            "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square."
+          },
+          {
+            "claim_id": "fence-transfer",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 35,
+                "quote": "Completing the square identifies the maximizing dimensions",
+                "source_id": "middle-perfect-square-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "面积",
+              "最大值",
+              "配方"
+            ],
+            "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+          }
+        ],
+        "evidence_status": "exploratory_only",
+        "package_case_id": "middle_perfect_square_valid",
+        "package_sha256": "sha256:3ecdc779636122f8661794225509ebdba6b1736e2648720b50c4a6815c5de24a",
+        "package_version": "ts02-knowledge-export/middle_perfect_square_valid/1.0",
+        "producer_slice": "TS-02",
+        "review_method": "ai_only",
+        "source_refs": [
+          {
+            "document_hash": "sha256:319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+            "edition": "synthetic-middle-math-2026",
+            "pages": [
+              34,
+              35
+            ],
+            "source_id": "middle-perfect-square-synthetic-v1"
+          }
+        ],
+        "source_scope": "synthetic_fixture",
+        "verification_status": "verified_atom"
+      },
+      "core_relation": "complete_square_exposes_extremum",
+      "primary_object": "靠墙围栏",
+      "segments": [
+        {
+          "segment_id": "model",
+          "order": 1,
+          "phase": "explanation",
+          "goal": "把三边围栏条件转成面积表达式。",
+          "fact_refs": [
+            "fence-transfer"
+          ],
+          "prerequisite_refs": [
+            "math.algebra.multiply_binomials"
+          ],
+          "narration": "先画出靠墙的长方形。设两条短边为 x，剩下的一条长边由总长度决定，再写出面积。",
+          "cues": [
+            {
+              "cue_id": "model-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "model-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "model-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            }
+          ],
+          "visual": {
+            "layout_kind": "step-stack",
+            "element_count": 7,
+            "terms": [
+              "面积"
+            ],
+            "formula_symbol_count": 8,
+            "states": [
+              "fence-diagram",
+              "length-labels",
+              "area-expression"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "worked-steps",
+            "steps": [
+              "设短边为 x",
+              "写出第三边",
+              "列出面积表达式"
+            ],
+            "fact_refs": [
+              "fence-transfer"
+            ]
+          }
+        },
+        {
+          "segment_id": "complete",
+          "order": 2,
+          "phase": "explanation",
+          "goal": "通过配方显露平方项。",
+          "fact_refs": [
+            "perfect-square-identities",
+            "complete-square-bound"
+          ],
+          "prerequisite_refs": [
+            "math.algebra.multiply_binomials",
+            "math.square.nonnegative"
+          ],
+          "narration": "把面积式配方后，变化部分写成一个平方项。平方项不小于零，所以它前面的负号决定了面积上界。",
+          "cues": [
+            {
+              "cue_id": "complete-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "complete-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "complete-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "complete-highlight",
+              "at_ms": 2600,
+              "action": "highlight"
+            }
+          ],
+          "visual": {
+            "layout_kind": "step-stack",
+            "element_count": 8,
+            "terms": [
+              "完全平方",
+              "配方",
+              "非负"
+            ],
+            "formula_symbol_count": 16,
+            "states": [
+              "expanded-form",
+              "completed-square",
+              "nonnegative-highlight"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "worked-steps",
+            "steps": [
+              "整理一次项",
+              "补成完全平方",
+              "标出平方项非负"
+            ],
+            "fact_refs": [
+              "perfect-square-identities",
+              "complete-square-bound"
+            ]
+          }
+        },
+        {
+          "segment_id": "justify",
+          "order": 3,
+          "phase": "explanation",
+          "goal": "用平方项的符号说明最大面积，而不只报数值。",
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "prerequisite_refs": [
+            "math.square.nonnegative"
+          ],
+          "narration": "当平方项等于零时，被减去的量最小，面积达到最大值。这个符号理由说明了答案为什么最大。",
+          "cues": [
+            {
+              "cue_id": "justify-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "justify-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "justify-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "justify-conclusion",
+              "at_ms": 2800,
+              "action": "show_conclusion"
+            }
+          ],
+          "visual": {
+            "layout_kind": "coordinate-comparison",
+            "element_count": 9,
+            "terms": [
+              "非负",
+              "最大值",
+              "面积"
+            ],
+            "formula_symbol_count": 12,
+            "states": [
+              "square-positive",
+              "square-zero",
+              "maximum-area"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "worked-steps",
+            "steps": [
+              "平方项始终非负",
+              "平方项为零时减去量最小",
+              "因此面积达到最大值"
+            ],
+            "fact_refs": [
+              "complete-square-bound",
+              "fence-transfer"
+            ]
+          }
+        }
+      ],
+      "transfer": {
+        "initial": {
+          "object": "固定周长花坛",
+          "prompt": "把固定周长的长方形面积配方，给出最大面积结论，并说明平方项为什么能证明它。",
+          "fact_refs": [
+            "complete-square-bound"
+          ],
+          "difference_dimensions": [
+            "constraint",
+            "known_conditions"
+          ],
+          "novelty_summary": "从靠墙三边围栏改为四边固定周长。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "guided-symbolic-reasoning"
+        },
+        "retry": {
+          "object": "抛物线高度",
+          "prompt": "把二次式配成平方形式，判断最高点，并用平方项的符号解释原因。",
+          "fact_refs": [
+            "complete-square-bound"
+          ],
+          "difference_dimensions": [
+            "representation",
+            "reasoning_path"
+          ],
+          "novelty_summary": "从几何面积情境迁移到抛物线代数表示。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "guided-symbolic-reasoning"
+        }
+      }
+    },
+    "primary_sound_pair": {
+      "schema_version": "lesson-plan/1.3",
+      "plan_id": "primary-sound-pair-v1",
+      "fixture_id": "primary_sound_pair",
+      "stage_profile": {
+        "school_stage": "primary",
+        "grade": 4,
+        "curriculum": "synthetic-national-curriculum-2026",
+        "textbook_edition": "synthetic-primary-science-2026",
+        "profile_version": "1.0"
+      },
+      "stage_rules": {
+        "rule_id": "primary-science-g4/1.0",
+        "allowed_prerequisite_refs": [
+          "science.sound.vibration.basic"
+        ],
+        "allowed_terms": [
+          "振动",
+          "振幅",
+          "响度",
+          "音调"
+        ],
+        "max_formula_symbols_per_segment": 0,
+        "max_visual_elements": 6,
+        "transfer_difficulty": "single-variable-comparison"
+      },
+      "knowledge": {
+        "claims": [
+          {
+            "claim_id": "force-amplitude-pitch",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 12,
+                "quote": "plucking it harder mainly increases vibration amplitude",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振幅",
+              "响度",
+              "音调"
+            ],
+            "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+          },
+          {
+            "claim_id": "pitch-frequency-loudness-amplitude",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 13,
+                "quote": "Pitch describes how high or low a sound seems",
+                "source_id": "primary-sound-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振动",
+              "振幅",
+              "频率",
+              "响度",
+              "音调"
+            ],
+            "text": "Pitch relates to frequency while loudness relates here to amplitude."
+          }
+        ],
+        "evidence_status": "exploratory_only",
+        "package_case_id": "primary_sound_valid",
+        "package_sha256": "sha256:cf82807f47a57918e17b1234524a5b0004fd771264d598b9e77b3da1e1f81548",
+        "package_version": "ts02-knowledge-export/primary_sound_valid/1.0",
+        "producer_slice": "TS-02",
+        "review_method": "ai_only",
+        "source_refs": [
+          {
+            "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+            "edition": "synthetic-primary-science-2026",
+            "pages": [
+              12,
+              13
+            ],
+            "source_id": "primary-sound-synthetic-v1"
+          }
+        ],
+        "source_scope": "synthetic_fixture",
+        "verification_status": "verified_atom"
+      },
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "primary_object": "橡皮筋",
+      "segments": [
+        {
+          "segment_id": "pair-opening-explanation",
+          "order": 1,
+          "phase": "explanation",
+          "goal": "建立同一根橡皮筋的公平比较。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "narration": "固定同一根橡皮筋，只改变拨动的力气。把轻拨和重拨放在一起，分别比较响度和音调。",
+          "cues": [
+            {
+              "cue_id": "pp-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "pp-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "pp-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            }
+          ],
+          "visual": {
+            "layout_kind": "single-focus",
+            "element_count": 3,
+            "terms": [
+              "响度",
+              "音调"
+            ],
+            "formula_symbol_count": 0,
+            "states": [
+              "light",
+              "strong"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "annotated-sequence",
+            "steps": [
+              "固定同一根橡皮筋",
+              "比较轻拨与重拨"
+            ],
+            "fact_refs": [
+              "force-amplitude-pitch"
+            ]
+          }
+        },
+        {
+          "segment_id": "pair-reveal",
+          "order": 2,
+          "phase": "explanation",
+          "goal": "用摆动宽窄解释响度变化。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "prerequisite_refs": [
+            "science.sound.vibration.basic"
+          ],
+          "narration": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+          "cues": [
+            {
+              "cue_id": "pr-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "pr-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "pr-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "pr-conclusion",
+              "at_ms": 2400,
+              "action": "show_conclusion"
+            }
+          ],
+          "visual": {
+            "layout_kind": "side-by-side",
+            "element_count": 5,
+            "terms": [
+              "振幅",
+              "响度"
+            ],
+            "formula_symbol_count": 0,
+            "states": [
+              "narrow-motion",
+              "wide-motion",
+              "loudness"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "comparison-panel",
+            "steps": [
+              "轻拨摆动窄",
+              "重拨摆动宽",
+              "摆动宽时更响"
+            ],
+            "fact_refs": [
+              "force-amplitude-pitch"
+            ]
+          }
+        }
+      ],
+      "transfer": {
+        "initial": {
+          "object": "尺子",
+          "prompt": "同一把尺子伸出长度不变，弹得更用力会怎样？给结论并说明原因。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "difference_dimensions": [
+            "object",
+            "known_conditions"
+          ],
+          "novelty_summary": "从橡皮筋迁移到固定伸出长度的尺子。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "single-variable-comparison"
+        },
+        "retry": {
+          "object": "鼓面",
+          "prompt": "同一面鼓重敲时主要改变什么？给结论并说明原因。",
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "difference_dimensions": [
+            "object",
+            "interaction"
+          ],
+          "novelty_summary": "从拨动橡皮筋迁移到敲击鼓面。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "single-variable-comparison"
+        }
+      }
+    },
+    "middle_sound_pair": {
+      "schema_version": "lesson-plan/1.3",
+      "plan_id": "middle-sound-pair-v1",
+      "fixture_id": "middle_sound_pair",
+      "stage_profile": {
+        "school_stage": "middle",
+        "grade": 8,
+        "curriculum": "synthetic-national-curriculum-2026",
+        "textbook_edition": "synthetic-middle-science-2026",
+        "profile_version": "1.0"
+      },
+      "stage_rules": {
+        "rule_id": "middle-science-g8/1.0",
+        "allowed_prerequisite_refs": [
+          "science.wave.amplitude",
+          "science.wave.frequency"
+        ],
+        "allowed_terms": [
+          "振幅",
+          "响度",
+          "频率",
+          "音调",
+          "波形"
+        ],
+        "max_formula_symbols_per_segment": 8,
+        "max_visual_elements": 9,
+        "transfer_difficulty": "guided-symbolic-reasoning"
+      },
+      "knowledge": {
+        "claims": [
+          {
+            "claim_id": "force-amplitude-frequency",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 18,
+                "quote": "increasing the driving force mainly increases vibration amplitude",
+                "source_id": "middle-sound-wave-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振幅",
+              "频率",
+              "波形"
+            ],
+            "text": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+          },
+          {
+            "claim_id": "wave-perception-map",
+            "critical": true,
+            "evidence_refs": [
+              {
+                "page": 19,
+                "quote": "amplitude is related to loudness and frequency is related to pitch",
+                "source_id": "middle-sound-wave-synthetic-v1"
+              }
+            ],
+            "supported_terms": [
+              "振幅",
+              "频率",
+              "响度",
+              "音调",
+              "波形"
+            ],
+            "text": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch."
+          }
+        ],
+        "evidence_status": "exploratory_only",
+        "package_case_id": "middle_sound_pair_valid",
+        "package_sha256": "sha256:fcee48e623dfff4d7c8c6d66a7c8a6c47ba7d9724b0c936b411e995688a318a5",
+        "package_version": "ts02-knowledge-export/middle_sound_pair_valid/1.0",
+        "producer_slice": "TS-02",
+        "review_method": "ai_only",
+        "source_refs": [
+          {
+            "document_hash": "sha256:e42f408c6f3265f9721d64fdb7e4615f41b419b2db754c9186f89d7857a06f00",
+            "edition": "synthetic-middle-science-2026",
+            "pages": [
+              18,
+              19
+            ],
+            "source_id": "middle-sound-wave-synthetic-v1"
+          }
+        ],
+        "source_scope": "synthetic_fixture",
+        "verification_status": "verified_atom"
+      },
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "primary_object": "示波器波形",
+      "segments": [
+        {
+          "segment_id": "wave-compare",
+          "order": 1,
+          "phase": "explanation",
+          "goal": "从波形分别读取振幅和周期。",
+          "fact_refs": [
+            "force-amplitude-frequency"
+          ],
+          "prerequisite_refs": [
+            "science.wave.amplitude",
+            "science.wave.frequency"
+          ],
+          "narration": "先比较两条波形的纵向高度和横向周期，判断需要分别追踪哪两个量。",
+          "cues": [
+            {
+              "cue_id": "wc-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "wc-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "wc-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            }
+          ],
+          "visual": {
+            "layout_kind": "coordinate-comparison",
+            "element_count": 7,
+            "terms": [
+              "振幅",
+              "频率",
+              "波形"
+            ],
+            "formula_symbol_count": 4,
+            "states": [
+              "axes",
+              "two-waveforms",
+              "measure-guides"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "comparison-panel",
+            "steps": [
+              "比较纵向振幅",
+              "比较横向周期",
+              "分开记录两个量"
+            ],
+            "fact_refs": [
+              "force-amplitude-frequency"
+            ]
+          }
+        },
+        {
+          "segment_id": "wave-explain",
+          "order": 2,
+          "phase": "explanation",
+          "goal": "用振幅与频率的独立变化解释听感。",
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "prerequisite_refs": [
+            "science.wave.amplitude",
+            "science.wave.frequency"
+          ],
+          "narration": "驱动力增大后波形更高，表示振幅和响度增大；横向周期不变，说明频率和音调保持不变。",
+          "cues": [
+            {
+              "cue_id": "we-start",
+              "at_ms": 0,
+              "action": "show_start_frame"
+            },
+            {
+              "cue_id": "we-narration",
+              "at_ms": 1000,
+              "action": "start_narration"
+            },
+            {
+              "cue_id": "we-visual",
+              "at_ms": 1000,
+              "action": "start_visual"
+            },
+            {
+              "cue_id": "we-conclusion",
+              "at_ms": 2600,
+              "action": "show_conclusion"
+            }
+          ],
+          "visual": {
+            "layout_kind": "coordinate-comparison",
+            "element_count": 9,
+            "terms": [
+              "振幅",
+              "响度",
+              "频率",
+              "音调",
+              "波形"
+            ],
+            "formula_symbol_count": 6,
+            "states": [
+              "amplitude-overlay",
+              "period-aligned",
+              "quantity-map"
+            ],
+            "scene_contract": {
+              "contract_version": "visual-scene/1.0",
+              "viewports": [
+                "phone",
+                "tablet"
+              ],
+              "motion_envelope_required": true
+            }
+          },
+          "static_fallback": {
+            "kind": "comparison-panel",
+            "steps": [
+              "波形高度增大",
+              "周期保持不变",
+              "响度增大而音调不变"
+            ],
+            "fact_refs": [
+              "force-amplitude-frequency",
+              "wave-perception-map"
+            ]
+          }
+        }
+      ],
+      "transfer": {
+        "initial": {
+          "object": "信号发生器",
+          "prompt": "保持频率设置不变，只增大输出幅度。判断波形和听感，并用振幅、频率说明原因。",
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "difference_dimensions": [
+            "representation",
+            "controlled_variable"
+          ],
+          "novelty_summary": "从琴弦波形迁移到电子信号的受控变量。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "guided-symbolic-reasoning"
+        },
+        "retry": {
+          "object": "扬声器膜片",
+          "prompt": "输入频率不变而电压幅度增大时，膜片运动和听感怎样？给结论并解释。",
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "difference_dimensions": [
+            "object",
+            "controlled_variable"
+          ],
+          "novelty_summary": "从波形读图迁移到扬声器膜片运动。",
+          "requires_conclusion": true,
+          "requires_reason": true,
+          "difficulty": "guided-symbolic-reasoning"
+        }
+      }
+    }
+  }
+}

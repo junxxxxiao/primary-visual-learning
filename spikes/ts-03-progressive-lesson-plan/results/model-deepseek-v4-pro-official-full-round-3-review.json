@@ -1,0 +1,40 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "official-full-round-3",
+  "review_type": "ai_assisted_semantic_pre_review",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "result": "fail",
+  "reviewed": 4,
+  "content_pre_review_passed": 2,
+  "content_pre_review_failed": 2,
+  "machine_eligible": 3,
+  "blocking_findings": [
+    {
+      "fixture_id": "primary_sound_pair",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene shows light plucking as small vibration and heavy plucking as large vibration, directly revealing the requested observation."
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "PREDICTION_ASSERTION_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene states that waveform height increases while density remains unchanged."
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "KNOWLEDGE_PACKAGE_INCOMPLETE_FOR_AUDITORY_MAPPING",
+      "severity": "critical",
+      "path": "segments[1], transfer",
+      "reason": "The output maps amplitude to loudness and frequency to pitch, but the frozen middle-school claim only states the amplitude/frequency system relation and does not separately support the auditory mapping."
+    }
+  ],
+  "content_pre_review_passed_fixtures": [
+    "primary_sound",
+    "middle_perfect_square"
+  ],
+  "decision_effect": "Round 3 remains fail. Do not send any output to TS-04C or independent human review."
+}

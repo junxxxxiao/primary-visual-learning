@@ -1,0 +1,11 @@
+TS-02 SYNTHETIC SOURCE - NOT TEXTBOOK CONTENT
+source_id: middle-sound-wave-synthetic-v1
+stage: middle
+grade: 8
+edition: synthetic-middle-science-2026
+
+[page 18]
+For the same vibrating system with unchanged boundary conditions, increasing the driving force mainly increases vibration amplitude. The system conditions determine the vibration frequency, so changing only the driving force does not by itself change the frequency.
+
+[page 19]
+On a waveform, amplitude is related to loudness and frequency is related to pitch. A taller waveform represents a larger amplitude, while equal horizontal periods represent equal frequency.

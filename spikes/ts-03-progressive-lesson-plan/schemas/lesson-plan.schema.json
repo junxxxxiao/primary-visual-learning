@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lesson-plan/1.3",
+  "title": "TS-03 progressive lesson plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "fixture_id",
+    "stage_profile",
+    "stage_rules",
+    "knowledge",
+    "core_relation",
+    "primary_object",
+    "segments",
+    "transfer"
+  ],
+  "properties": {
+    "schema_version": {"const": "lesson-plan/1.3"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "fixture_id": {"type": "string", "minLength": 1},
+    "stage_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["school_stage", "grade", "curriculum", "textbook_edition", "profile_version"],
+      "properties": {
+        "school_stage": {"enum": ["primary", "middle"]},
+        "grade": {"type": "integer", "minimum": 1, "maximum": 9},
+        "curriculum": {"type": "string", "minLength": 1},
+        "textbook_edition": {"type": "string", "minLength": 1},
+        "profile_version": {"const": "1.0"}
+      }
+    },
+    "stage_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "allowed_prerequisite_refs", "allowed_terms", "max_formula_symbols_per_segment", "max_visual_elements", "transfer_difficulty"],
+      "properties": {
+        "rule_id": {"type": "string", "minLength": 1},
+        "allowed_prerequisite_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "allowed_terms": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "max_formula_symbols_per_segment": {"type": "integer", "minimum": 0},
+        "max_visual_elements": {"type": "integer", "minimum": 1},
+        "transfer_difficulty": {"enum": ["single-variable-comparison", "guided-symbolic-reasoning", "independent-symbolic-reasoning"]}
+      }
+    },
+    "knowledge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_version", "producer_slice", "package_case_id", "package_sha256", "source_scope", "verification_status", "review_method", "evidence_status", "source_refs", "claims"],
+      "properties": {
+        "package_version": {"type": "string", "minLength": 1},
+        "producer_slice": {"const": "TS-02"},
+        "package_case_id": {"type": "string", "minLength": 1},
+        "package_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "source_scope": {"const": "synthetic_fixture"},
+        "verification_status": {"enum": ["verified_atom", "temporary_verified"]},
+        "review_method": {"const": "ai_only"},
+        "evidence_status": {"enum": ["exploratory_only", "unverified_reference_only"]},
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_id", "document_hash", "edition", "pages"],
+            "properties": {
+              "source_id": {"type": "string", "minLength": 1},
+              "document_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+              "edition": {"type": "string", "minLength": 1},
+              "pages": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 1}, "uniqueItems": true}
+            }
+          }
+        },
+        "claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim_id", "text", "critical", "evidence_refs", "supported_terms"],
+            "properties": {
+              "claim_id": {"type": "string", "minLength": 1},
+              "text": {"type": "string", "minLength": 1},
+              "critical": {"const": true},
+              "supported_terms": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+              "evidence_refs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["source_id", "page", "quote"],
+                  "properties": {
+                    "source_id": {"type": "string", "minLength": 1},
+                    "page": {"type": "integer", "minimum": 1},
+                    "quote": {"type": "string", "minLength": 1}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "core_relation": {"type": "string", "minLength": 1},
+    "primary_object": {"type": "string", "minLength": 1},
+    "segments": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["segment_id", "order", "phase", "goal", "fact_refs", "prerequisite_refs", "narration", "cues", "visual", "static_fallback"],
+        "properties": {
+          "segment_id": {"type": "string", "minLength": 1},
+          "order": {"type": "integer", "minimum": 1, "maximum": 4},
+          "phase": {"const": "explanation"},
+          "goal": {"type": "string", "minLength": 1},
+          "fact_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "prerequisite_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "narration": {"type": "string", "minLength": 1},
+          "cues": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["cue_id", "at_ms", "action"],
+              "properties": {
+                "cue_id": {"type": "string", "minLength": 1},
+                "at_ms": {"type": "integer", "minimum": 0},
+                "action": {"enum": ["show_start_frame", "start_narration", "start_visual", "highlight", "show_conclusion"]}
+              }
+            }
+          },
+          "visual": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["layout_kind", "element_count", "terms", "formula_symbol_count", "states", "scene_contract"],
+            "properties": {
+              "layout_kind": {"enum": ["single-focus", "side-by-side", "step-stack", "coordinate-comparison"]},
+              "element_count": {"type": "integer", "minimum": 1},
+              "terms": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "formula_symbol_count": {"type": "integer", "minimum": 0},
+              "states": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+              "scene_contract": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["contract_version", "viewports", "motion_envelope_required"],
+                "properties": {
+                  "contract_version": {"const": "visual-scene/1.0"},
+                  "viewports": {"type": "array", "items": {"enum": ["phone", "tablet"]}, "minItems": 2, "uniqueItems": true},
+                  "motion_envelope_required": {"const": true}
+                }
+              }
+            }
+          },
+          "static_fallback": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "steps", "fact_refs"],
+            "properties": {
+              "kind": {"enum": ["annotated-sequence", "comparison-panel", "worked-steps"]},
+              "steps": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+              "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true}
+            }
+          }
+        }
+      }
+    },
+    "transfer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["initial", "retry"],
+      "properties": {
+        "initial": {"$ref": "#/$defs/transferTask"},
+        "retry": {"$ref": "#/$defs/transferTask"}
+      }
+    }
+  },
+  "$defs": {
+    "transferTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["object", "prompt", "fact_refs", "difference_dimensions", "novelty_summary", "requires_conclusion", "requires_reason", "difficulty"],
+      "properties": {
+        "object": {"type": "string", "minLength": 1},
+        "prompt": {"type": "string", "minLength": 1},
+        "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+        "difference_dimensions": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"enum": ["object", "interaction", "constraint", "representation", "known_conditions", "reasoning_path", "controlled_variable"]}
+        },
+        "novelty_summary": {"type": "string", "minLength": 1},
+        "requires_conclusion": {"const": true},
+        "requires_reason": {"const": true},
+        "difficulty": {"enum": ["single-variable-comparison", "guided-symbolic-reasoning", "independent-symbolic-reasoning"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "call_results": [
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "primary_sound",
+      "latency_ms": 657,
+      "output_errors": [
+        "API HTTP 403: error code: 1010\n"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "middle_perfect_square",
+      "latency_ms": 475,
+      "output_errors": [
+        "API HTTP 403: error code: 1010\n"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "primary_sound_pair",
+      "latency_ms": 527,
+      "output_errors": [
+        "API HTTP 403: error code: 1010\n"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "middle_sound_pair",
+      "latency_ms": 810,
+      "output_errors": [
+        "API HTTP 403: error code: 1010\n"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    }
+  ],
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "decision": "fail",
+  "human_review": {
+    "status": "not_eligible"
+  },
+  "latency_ms": {
+    "max": 810,
+    "mean": 617,
+    "min": 475
+  },
+  "limits": [
+    "A non-streaming response makes first-segment and complete-plan availability occur at the same response boundary.",
+    "Four synthetic fixtures do not establish repeat stability or broad subject coverage.",
+    "Machine checks do not replace independent subject and product review."
+  ],
+  "metrics": {
+    "contract_gate_pass": {
+      "denominator": 4,
+      "numerator": 0
+    },
+    "paired_stage_contract": "fail",
+    "schema_validity": {
+      "denominator": 4,
+      "numerator": 0,
+      "threshold": ">=99%"
+    }
+  },
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "automatic_retries": 0,
+    "completed": 0,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T15:11:54.475248+00:00",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "synthetic_fixture_only": true,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

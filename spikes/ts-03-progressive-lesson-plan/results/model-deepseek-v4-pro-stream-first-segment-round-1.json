@@ -1,0 +1,124 @@
+{
+  "call_results": [
+    {
+      "content_character_count": 0,
+      "reasoning_character_count": 6640,
+      "sse_event_count": 1865,
+      "finish_reason": null,
+      "fixture_id": "primary_sound",
+      "gate_result": "fail",
+      "metrics": {
+        "first_content_delta_ms": null,
+        "first_meaningful_ready_ms": null,
+        "first_reasoning_delta_ms": 1694,
+        "first_sse_event_ms": 1617,
+        "response_headers_ms": 1617
+      },
+      "output_kind": "candidate_output",
+      "parse_error": "stream exceeded 30s deadline",
+      "raw_stream_hash": "sha256:d46145830f30f28ebc6262236c12f6ac2b033257ada7cf5388228df8bcca7505",
+      "response_model": "deepseek-v4-pro",
+      "timed_out": true,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 0,
+      "reasoning_character_count": 6409,
+      "sse_event_count": 1614,
+      "finish_reason": null,
+      "fixture_id": "middle_perfect_square",
+      "gate_result": "fail",
+      "metrics": {
+        "first_content_delta_ms": null,
+        "first_meaningful_ready_ms": null,
+        "first_reasoning_delta_ms": 1862,
+        "first_sse_event_ms": 1689,
+        "response_headers_ms": 1689
+      },
+      "output_kind": "candidate_output",
+      "parse_error": "stream exceeded 30s deadline",
+      "raw_stream_hash": "sha256:1f0403d7f7a7a54b0fe20e58f45ed8f19ea5d12a447987fa9d768c11bc50fb3a",
+      "response_model": "deepseek-v4-pro",
+      "timed_out": true,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 0,
+      "reasoning_character_count": 6682,
+      "sse_event_count": 1774,
+      "finish_reason": null,
+      "fixture_id": "primary_sound_pair",
+      "gate_result": "fail",
+      "metrics": {
+        "first_content_delta_ms": null,
+        "first_meaningful_ready_ms": null,
+        "first_reasoning_delta_ms": 1580,
+        "first_sse_event_ms": 1438,
+        "response_headers_ms": 1438
+      },
+      "output_kind": "candidate_output",
+      "parse_error": "stream exceeded 30s deadline",
+      "raw_stream_hash": "sha256:0a15e1d92689d3af1a0a8daaf5a9c86bc0a39914c6e7788995fc3fa986ddce50",
+      "response_model": "deepseek-v4-pro",
+      "timed_out": true,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 0,
+      "reasoning_character_count": 6485,
+      "sse_event_count": 1547,
+      "finish_reason": null,
+      "fixture_id": "middle_sound_pair",
+      "gate_result": "fail",
+      "metrics": {
+        "first_content_delta_ms": null,
+        "first_meaningful_ready_ms": null,
+        "first_reasoning_delta_ms": 1575,
+        "first_sse_event_ms": 1479,
+        "response_headers_ms": 1479
+      },
+      "output_kind": "candidate_output",
+      "parse_error": "stream exceeded 30s deadline",
+      "raw_stream_hash": "sha256:99837394e6f891e0cde1891dc04d6d41d9e56a81c8fcdfd8ed27401d60f855d0",
+      "response_model": "deepseek-v4-pro",
+      "timed_out": true,
+      "violation_codes": []
+    }
+  ],
+  "cost": "unverified; consult provider billing",
+  "decision_effect": "This diagnostic does not replace or overwrite the formal round-3 TS-03 failure.",
+  "diagnostic": "streamed_first_meaningful_segment",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "deadline_seconds": 30,
+    "max_tokens": 3000,
+    "response_format": "json_object",
+    "stream": true,
+    "temperature": 0
+  },
+  "metrics": {
+    "first_content_delta_count": 0,
+    "first_content_delta_p80_ms": null,
+    "first_reasoning_delta_count": 4,
+    "first_reasoning_delta_p80_ms": 1761,
+    "first_meaningful_ready_p80_ms": null,
+    "first_segment_gate_pass": {
+      "denominator": 4,
+      "numerator": 0
+    },
+    "first_sse_event_count": 4,
+    "first_sse_event_p80_ms": 1646,
+    "reasoning_only_stream_count": 4,
+    "threshold_ms": 8000
+  },
+  "provider": "PackyAPI",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T15:58:57.971735+00:00",
+  "run_label": "stream-first-segment-round-1",
+  "slice_id": "TS-03",
+  "status": "fail"
+}

@@ -1,5 +1,5 @@
 {
-  "manifest_version": "1.0",
+  "manifest_version": "1.1",
   "access": "Repository-local synthetic fixtures under fixtures/sources; no external access or authorization is required.",
   "copyright_status": "Original synthetic validation text; not copied from textbooks or external publications.",
   "sources": [
@@ -24,6 +24,17 @@
       "source_tier": 1,
       "independence_group": "synthetic-textbook-middle",
       "pages": [34, 35]
+    },
+    {
+      "source_id": "middle-sound-wave-synthetic-v1",
+      "path": "fixtures/sources/middle-sound-wave.synthetic.txt",
+      "sha256": "e42f408c6f3265f9721d64fdb7e4615f41b419b2db754c9186f89d7857a06f00",
+      "edition": "synthetic-middle-science-2026",
+      "school_stage": "middle",
+      "grade": 8,
+      "source_tier": 1,
+      "independence_group": "synthetic-textbook-middle-science",
+      "pages": [18, 19]
     },
     {
       "source_id": "public-education-sound-a-v1",

@@ -19,6 +19,14 @@
     },
     {
       "actual_decision": "publish",
+      "case_id": "middle_sound_pair_valid",
+      "expected_decision": "publish",
+      "failed_steps": [],
+      "oracle_match": true,
+      "routing_reasons": []
+    },
+    {
+      "actual_decision": "publish",
       "case_id": "temporary_vacuum_valid",
       "expected_decision": "publish",
       "failed_steps": [],
@@ -508,7 +516,7 @@
     "platform": "macOS-26.5.2-arm64-arm-64bit",
     "python": "3.9.6"
   },
-  "fixture_version": "1.0",
+  "fixture_version": "1.1",
   "metrics": {
     "blocked_route_accuracy": {
       "comparator": "equals",
@@ -543,40 +551,40 @@
     },
     "oracle_decision_accuracy": {
       "comparator": "equals",
-      "denominator": 12,
-      "numerator": 12,
+      "denominator": 13,
+      "numerator": 13,
       "pass": true,
       "threshold": 1.0,
       "value": 1.0
     },
     "provided_stage_context_completeness": {
       "comparator": "equals",
-      "denominator": 24,
-      "numerator": 24,
+      "denominator": 30,
+      "numerator": 30,
       "pass": true,
       "threshold": 1.0,
       "value": 1.0
     },
     "review_method_ai_only": {
       "comparator": "equals",
-      "denominator": 12,
-      "numerator": 12,
+      "denominator": 13,
+      "numerator": 13,
       "pass": true,
       "threshold": 1.0,
       "value": 1.0
     },
     "schema_validity": {
       "comparator": "at_least",
-      "denominator": 100,
-      "numerator": 100,
+      "denominator": 109,
+      "numerator": 109,
       "pass": true,
       "threshold": 0.99,
       "value": 1.0
     },
     "source_page_traceability": {
       "comparator": "equals",
-      "denominator": 8,
-      "numerator": 8,
+      "denominator": 10,
+      "numerator": 10,
       "pass": true,
       "threshold": 1.0,
       "value": 1.0
@@ -630,11 +638,11 @@
   "run_date": "2026-07-28",
   "sample_sizes": {
     "expected_block": 4,
-    "expected_publish": 5,
+    "expected_publish": 6,
     "expected_unverified_generate": 3,
-    "published_critical_claims": 8,
-    "schema_instances": 100,
-    "total_cases": 12
+    "published_critical_claims": 10,
+    "schema_instances": 109,
+    "total_cases": 13
   },
   "schema_failures": [],
   "slice": "TS-02",

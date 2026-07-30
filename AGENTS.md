@@ -49,6 +49,24 @@ Archived documents provide background and are not active requirements.
 - Every completed slice must state its effect on the PRD, high-fidelity design, architecture, data, and privacy.
 - Record what was verified and what remains unverified.
 
+## 技术验证授权门禁
+
+- 开始涉及模型、供应商、外部服务或其他候选实现的技术验证前，必须明确被测对象、候选供应商、模型或服务版本、调用方式、固定参数、调用预算和数据边界。
+- 如果上述选择会实质影响验证结果、成本、隐私或架构结论，且用户尚未明确指定，代理必须先询问用户，不得自行选择，也不得用当前对话模型或其他未授权对象代替。
+- 被测对象未确定时可以搭建测试框架，但状态只能记录为 `harness_ready`；不得表述为“已验证”“通过”或“有条件通过”，门禁自测结果也不得作为候选对象的能力证据。
+- 人工、Codex 或其他非被测模型生成的夹具必须标记为 `gold_fixture` 或 `adversarial_fixture`，不得计入候选对象的正式评测分母。
+- 只有通过已确认调用方式获得、可追溯到固定候选对象的输出可以标记为 `candidate_output`。结果必须记录供应商、版本、固定参数、运行时间、响应哈希、Token 或等价用量、成本和失败样例；无法取得的字段必须明确标记为未验证。
+- 技术切片状态必须按证据推进：`not_started` → `harness_ready` → `candidate_run_complete` → `human_review_complete` → `conditional_pass|pass|fail`。不得跳过候选对象运行或所需人工评审直接给出最终结论。
+
+## 证据来源门禁
+
+- 任何开发、测试、技术切片或产品流程把事实标记为 `verified`、`verified_atom`、`temporary_verified`、可发布或等价状态前，必须存在上游产物，逐条保存来源标识、版本、页码或稳定定位、证据摘录、来源文件哈希、审核方法和内容包哈希。
+- 下游流程只能消费上游导出的密封知识包，不得手工新增 claim、替换来源、复用无关 `source_refs` 或自行升级核验状态。消费前必须重新校验包哈希、来源文件哈希、页码和证据摘录；任一不一致必须在外部调用、展示、缓存或正式评测前失败。
+- 来源名称、文件名、既有状态字段和引用 ID 不是证据。修改 claim 或发现知识缺口时必须打开对应原文核对；没有支持当前结论的证据时，应回到知识核验流程补齐，或明确降级为未核验/阻断，不得为了让测试通过而给旧来源挂新结论。
+- 合成材料只能证明测试管线和门禁行为，必须明确标记为 synthetic，不得表述为真实教材、权威外部资料或生产知识证据。真实产品结论仍须使用已授权、可追溯的真实来源并完成规定人工审核。
+- 哈希、页码和摘录存在性只能证明可追溯与防篡改，不能证明证据在学科语义上支持 claim。非 synthetic 的已核验/可发布包还必须携带独立语义审核通过产物；作者自审、字段自报或仅字符串匹配不得替代。
+- 修改知识、评测 oracle、gold fixture 或来源映射时，必须增加能复现本次错误的负向回归，并同时验证上游发布和至少一个下游消费入口；只验证 Schema 或引用存在性不算完成。
+
 ## Safety boundaries
 
 - Never commit real child voice recordings, photos, identity data, credentials, or production logs.

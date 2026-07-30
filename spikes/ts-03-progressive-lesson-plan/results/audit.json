@@ -1,0 +1,647 @@
+{
+  "cases": [
+    {
+      "actual": "pass",
+      "case_id": "primary_sound_valid",
+      "category": "positive",
+      "expected": "pass",
+      "pass": true,
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "actual": "pass",
+      "case_id": "middle_math_valid",
+      "category": "positive",
+      "expected": "pass",
+      "pass": true,
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "actual": "pass",
+      "case_id": "primary_sound_pair_valid",
+      "category": "positive",
+      "expected": "pass",
+      "pass": true,
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "actual": "pass",
+      "case_id": "middle_sound_pair_valid",
+      "category": "positive",
+      "expected": "pass",
+      "pass": true,
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "actual": "fail",
+      "case_id": "segment_order_gap",
+      "category": "critical_order",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "SEGMENT_ORDER_INVALID"
+      ],
+      "violations": [
+        {
+          "code": "SEGMENT_ORDER_INVALID",
+          "message": "expected [1, 2, 3], got [1, 3, 3]",
+          "path": "segments"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "start_frame_hold_too_short",
+      "category": "critical_order",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "START_HOLD_TOO_SHORT"
+      ],
+      "violations": [
+        {
+          "code": "START_HOLD_TOO_SHORT",
+          "message": "start_narration must wait at least 1000ms",
+          "path": "segments[0].cues"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "undeclared_prerequisite",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "UNDECLARED_PREREQUISITE"
+      ],
+      "violations": [
+        {
+          "code": "UNDECLARED_PREREQUISITE",
+          "message": "science.wave.calculus",
+          "path": "segments[1].prerequisite_refs"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "term_outside_stage_rule",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "EXPLANATION_TERM_UNSUPPORTED",
+        "TERM_OUTSIDE_STAGE_RULE"
+      ],
+      "violations": [
+        {
+          "code": "TERM_OUTSIDE_STAGE_RULE",
+          "message": "傅里叶变换",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '傅里叶变换' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "model_widens_stage_rules",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "EXPLANATION_TERM_UNSUPPORTED",
+        "IMMUTABLE_CONTEXT_CHANGED"
+      ],
+      "violations": [
+        {
+          "code": "IMMUTABLE_CONTEXT_CHANGED",
+          "message": "generated output must preserve the supplied planning context exactly",
+          "path": "stage_rules"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '傅里叶变换' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "formula_density_over_limit",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "FORMULA_DENSITY_EXCEEDED"
+      ],
+      "violations": [
+        {
+          "code": "FORMULA_DENSITY_EXCEEDED",
+          "message": "limit is 0",
+          "path": "segments[1].visual.formula_symbol_count"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "visual_density_over_limit",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "VISUAL_DENSITY_EXCEEDED"
+      ],
+      "violations": [
+        {
+          "code": "VISUAL_DENSITY_EXCEEDED",
+          "message": "limit is 9",
+          "path": "segments[1].visual.element_count"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "missing_static_fallback",
+      "category": "fallback",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ],
+      "violations": [
+        {
+          "code": "SCHEMA_INVALID",
+          "message": "$.segments[1]: missing required property static_fallback",
+          "path": "$"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "unsupported_fact_reference",
+      "category": "source_support",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "UNSUPPORTED_FACT_REF"
+      ],
+      "violations": [
+        {
+          "code": "UNSUPPORTED_FACT_REF",
+          "message": "unknown fact reference invented-claim",
+          "path": "segments[2]"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_reuses_lesson_object",
+      "category": "transfer_skin_swap",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_OBJECT_NOT_APPROVED",
+        "TRANSFER_PREEXPOSED_IN_LESSON",
+        "TRANSFER_SKIN_SWAP"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_SKIN_SWAP",
+          "message": "initial transfer must use a different object",
+          "path": "transfer.initial.object"
+        },
+        {
+          "code": "TRANSFER_OBJECT_NOT_APPROVED",
+          "message": "琴弦",
+          "path": "transfer.initial.object"
+        },
+        {
+          "code": "TRANSFER_PREEXPOSED_IN_LESSON",
+          "message": "contains transfer object '琴弦'",
+          "path": "segments[0].narration"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "retry_reuses_first_transfer",
+      "category": "transfer_skin_swap",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_OBJECT_NOT_APPROVED",
+        "TRANSFER_RETRY_NOT_NEW"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_RETRY_NOT_NEW",
+          "message": "retry must use a third object",
+          "path": "transfer.retry.object"
+        },
+        {
+          "code": "TRANSFER_OBJECT_NOT_APPROVED",
+          "message": "音叉",
+          "path": "transfer.retry.object"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_difficulty_mismatch",
+      "category": "stage_context",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_DIFFICULTY_MISMATCH"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_DIFFICULTY_MISMATCH",
+          "message": "must match the declared stage rule",
+          "path": "transfer.initial.difficulty"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_object_not_approved",
+      "category": "semantic_transfer",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_OBJECT_NOT_APPROVED"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_OBJECT_NOT_APPROVED",
+          "message": "矩形花圃",
+          "path": "transfer.initial.object"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_preexposed_in_lesson",
+      "category": "semantic_transfer",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_PREEXPOSED_IN_LESSON"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_PREEXPOSED_IN_LESSON",
+          "message": "contains transfer object '固定周长花坛'",
+          "path": "segments[2].static_fallback.steps[3]"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_fact_support_incomplete",
+      "category": "semantic_source_support",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_FACT_SUPPORT_INCOMPLETE"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+          "message": "pitch-frequency-loudness-amplitude",
+          "path": "transfer.initial.fact_refs"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "explanation_term_support_incomplete",
+      "category": "semantic_source_support",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "EXPLANATION_TERM_UNSUPPORTED"
+      ],
+      "violations": [
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '响度' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '音调' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "middle_transfer_fact_support_incomplete",
+      "category": "semantic_source_support",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_FACT_SUPPORT_INCOMPLETE"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+          "message": "wave-perception-map",
+          "path": "transfer.initial.fact_refs"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_difference_dimension_missing",
+      "category": "semantic_transfer",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ],
+      "violations": [
+        {
+          "code": "SCHEMA_INVALID",
+          "message": "$.transfer.initial.difference_dimensions: fewer than minItems",
+          "path": "$"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "transfer_prompt_adds_unverified_formula",
+      "category": "semantic_source_support",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "TRANSFER_PROMPT_NOT_APPROVED",
+        "TRANSFER_REQUIRED_CONTEXT_MISSING"
+      ],
+      "violations": [
+        {
+          "code": "TRANSFER_PROMPT_NOT_APPROVED",
+          "message": "must exactly match the approved transfer prompt",
+          "path": "transfer.retry.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "二次式",
+          "path": "transfer.retry.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "最高点",
+          "path": "transfer.retry.prompt"
+        }
+      ]
+    },
+    {
+      "actual": "fail",
+      "case_id": "stage_label_only_copy",
+      "category": "stage_label_swap",
+      "expected": "fail",
+      "pass": true,
+      "violation_codes": [
+        "EXPLANATION_TERM_UNSUPPORTED",
+        "FORMULA_DENSITY_EXCEEDED",
+        "TERM_OUTSIDE_STAGE_RULE",
+        "TRANSFER_DIFFERENCE_MISSING",
+        "TRANSFER_DIFFICULTY_MISMATCH",
+        "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+        "TRANSFER_OBJECT_NOT_APPROVED",
+        "TRANSFER_PROMPT_NOT_APPROVED",
+        "TRANSFER_REQUIRED_CONTEXT_MISSING",
+        "UNDECLARED_PREREQUISITE",
+        "UNSUPPORTED_FACT_REF",
+        "UNSUPPORTED_TRANSFER_FACT",
+        "VISUAL_DENSITY_EXCEEDED"
+      ],
+      "violations": [
+        {
+          "code": "UNSUPPORTED_FACT_REF",
+          "message": "unknown fact reference force-amplitude-frequency",
+          "path": "segments[0]"
+        },
+        {
+          "code": "UNDECLARED_PREREQUISITE",
+          "message": "science.wave.amplitude",
+          "path": "segments[0].prerequisite_refs"
+        },
+        {
+          "code": "UNDECLARED_PREREQUISITE",
+          "message": "science.wave.frequency",
+          "path": "segments[0].prerequisite_refs"
+        },
+        {
+          "code": "TERM_OUTSIDE_STAGE_RULE",
+          "message": "波形",
+          "path": "segments[0].visual.terms"
+        },
+        {
+          "code": "TERM_OUTSIDE_STAGE_RULE",
+          "message": "频率",
+          "path": "segments[0].visual.terms"
+        },
+        {
+          "code": "FORMULA_DENSITY_EXCEEDED",
+          "message": "limit is 0",
+          "path": "segments[0].visual.formula_symbol_count"
+        },
+        {
+          "code": "VISUAL_DENSITY_EXCEEDED",
+          "message": "limit is 6",
+          "path": "segments[0].visual.element_count"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '振幅' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[0].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '频率' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[0].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '波形' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[0].visual.terms"
+        },
+        {
+          "code": "UNSUPPORTED_FACT_REF",
+          "message": "unknown fact reference force-amplitude-frequency",
+          "path": "segments[1]"
+        },
+        {
+          "code": "UNSUPPORTED_FACT_REF",
+          "message": "unknown fact reference wave-perception-map",
+          "path": "segments[1]"
+        },
+        {
+          "code": "UNDECLARED_PREREQUISITE",
+          "message": "science.wave.amplitude",
+          "path": "segments[1].prerequisite_refs"
+        },
+        {
+          "code": "UNDECLARED_PREREQUISITE",
+          "message": "science.wave.frequency",
+          "path": "segments[1].prerequisite_refs"
+        },
+        {
+          "code": "TERM_OUTSIDE_STAGE_RULE",
+          "message": "波形",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "TERM_OUTSIDE_STAGE_RULE",
+          "message": "频率",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "FORMULA_DENSITY_EXCEEDED",
+          "message": "limit is 0",
+          "path": "segments[1].visual.formula_symbol_count"
+        },
+        {
+          "code": "VISUAL_DENSITY_EXCEEDED",
+          "message": "limit is 6",
+          "path": "segments[1].visual.element_count"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '振幅' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '响度' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '频率' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '音调' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "EXPLANATION_TERM_UNSUPPORTED",
+          "message": "term '波形' is not supported by the segment's cited claims or declared prerequisites",
+          "path": "segments[1].visual.terms"
+        },
+        {
+          "code": "UNSUPPORTED_TRANSFER_FACT",
+          "message": "force-amplitude-frequency",
+          "path": "transfer.initial.fact_refs"
+        },
+        {
+          "code": "UNSUPPORTED_TRANSFER_FACT",
+          "message": "wave-perception-map",
+          "path": "transfer.initial.fact_refs"
+        },
+        {
+          "code": "TRANSFER_DIFFICULTY_MISMATCH",
+          "message": "must match the declared stage rule",
+          "path": "transfer.initial.difficulty"
+        },
+        {
+          "code": "TRANSFER_OBJECT_NOT_APPROVED",
+          "message": "信号发生器",
+          "path": "transfer.initial.object"
+        },
+        {
+          "code": "TRANSFER_PROMPT_NOT_APPROVED",
+          "message": "must exactly match the approved transfer prompt",
+          "path": "transfer.initial.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "尺子",
+          "path": "transfer.initial.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "伸出长度不变",
+          "path": "transfer.initial.prompt"
+        },
+        {
+          "code": "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+          "message": "force-amplitude-pitch",
+          "path": "transfer.initial.fact_refs"
+        },
+        {
+          "code": "TRANSFER_DIFFERENCE_MISSING",
+          "message": "known_conditions",
+          "path": "transfer.initial.difference_dimensions"
+        },
+        {
+          "code": "TRANSFER_DIFFERENCE_MISSING",
+          "message": "object",
+          "path": "transfer.initial.difference_dimensions"
+        },
+        {
+          "code": "UNSUPPORTED_TRANSFER_FACT",
+          "message": "force-amplitude-frequency",
+          "path": "transfer.retry.fact_refs"
+        },
+        {
+          "code": "UNSUPPORTED_TRANSFER_FACT",
+          "message": "wave-perception-map",
+          "path": "transfer.retry.fact_refs"
+        },
+        {
+          "code": "TRANSFER_DIFFICULTY_MISMATCH",
+          "message": "must match the declared stage rule",
+          "path": "transfer.retry.difficulty"
+        },
+        {
+          "code": "TRANSFER_OBJECT_NOT_APPROVED",
+          "message": "扬声器膜片",
+          "path": "transfer.retry.object"
+        },
+        {
+          "code": "TRANSFER_PROMPT_NOT_APPROVED",
+          "message": "must exactly match the approved transfer prompt",
+          "path": "transfer.retry.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "鼓",
+          "path": "transfer.retry.prompt"
+        },
+        {
+          "code": "TRANSFER_REQUIRED_CONTEXT_MISSING",
+          "message": "重敲",
+          "path": "transfer.retry.prompt"
+        },
+        {
+          "code": "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+          "message": "force-amplitude-pitch",
+          "path": "transfer.retry.fact_refs"
+        },
+        {
+          "code": "TRANSFER_DIFFERENCE_MISSING",
+          "message": "interaction",
+          "path": "transfer.retry.difference_dimensions"
+        }
+      ]
+    }
+  ],
+  "stage_pair": {
+    "result": "pass",
+    "violations": []
+  }
+}

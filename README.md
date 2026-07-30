@@ -92,7 +92,7 @@ python3 -m http.server 4173 --directory prototype
 
 ### 产品与设计
 
-- [中小学互动视觉家教 PRD v5.2](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)
+- [中小学互动视觉家教 PRD v5.3](docs/product/2026-07-28-primary-visual-tutor-prd-v5.md)
 - [声音高保真价值 Demo 规范](docs/design/2026-07-22-sound-value-demo-spec.md)
 - [中低保真研究原型规范](docs/design/2026-07-17-low-mid-fidelity-prototype-spec.md)
 - [高保真设计工作区](design/high-fidelity/README.md)

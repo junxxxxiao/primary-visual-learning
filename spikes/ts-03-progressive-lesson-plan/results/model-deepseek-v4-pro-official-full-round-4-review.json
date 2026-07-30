@@ -1,0 +1,68 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "official-full-round-4",
+  "review_type": "ai_assisted_semantic_pre_review",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "result": "fail",
+  "reviewed": 4,
+  "content_pre_review_passed": 1,
+  "content_pre_review_failed": 3,
+  "machine_eligible": 3,
+  "blocking_findings": [
+    {
+      "fixture_id": "primary_sound",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene explicitly contrasts small vibration after a light pluck with large vibration after a strong pluck."
+    },
+    {
+      "fixture_id": "primary_sound",
+      "code": "KNOWLEDGE_APPLICABILITY_OVERREACH",
+      "severity": "critical",
+      "path": "transfer.initial, transfer.retry",
+      "reason": "The cited force-amplitude-pitch claim is bounded to the same string, but the transfer tasks apply it to a tuning fork and drum without an exported claim covering those objects."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "SEGMENT_FACT_SUPPORT_INCOMPLETE",
+      "severity": "critical",
+      "path": "segments[1].fact_refs",
+      "reason": "The explanation derives the wall-side fence dimensions and area expression but omits the exported fence-transfer claim that supports that model."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "TRANSFER_FACT_SUPPORT_INCOMPLETE",
+      "severity": "critical",
+      "path": "transfer.initial.fact_refs",
+      "reason": "The fixed-perimeter rectangle task cites only the generic square-bound claim; the supplied package does not support constructing that new perimeter model."
+    },
+    {
+      "fixture_id": "primary_sound_pair",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene explicitly shows light plucking with small amplitude and strong plucking with large amplitude."
+    },
+    {
+      "fixture_id": "primary_sound_pair",
+      "code": "KNOWLEDGE_APPLICABILITY_OVERREACH",
+      "severity": "critical",
+      "path": "primary_object, transfer",
+      "reason": "The frozen package claim is bounded to the same string, but the lesson and transfers apply it to a rubber band, ruler, and drum."
+    }
+  ],
+  "machine_gate_false_positives": [
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "PREDICTION_ASSERTION_LEAK",
+      "path": "segments[0].static_fallback.steps[2]",
+      "reason": "The gate matched 'increase driving force' and 'waveform height' in an open question. The text asks how height changes and does not assert that height increases."
+    }
+  ],
+  "content_pre_review_passed_fixtures": [
+    "middle_sound_pair"
+  ],
+  "decision_effect": "Round 4 remains fail. Do not send any output to TS-04C or independent human review. Fix the false-positive assertion rule and add deterministic applicability/support gates before another paid run."
+}

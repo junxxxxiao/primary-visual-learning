@@ -33,6 +33,7 @@
       --yellow: #f4d45d;
       --radius-card: 30px;
       --radius-control: 999px;
+      --lesson-shell-gap: clamp(12px, 1.6vw, 20px);
       --shadow: 0 26px 70px rgba(0, 0, 0, .16);
       --font: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
       --motion-out: cubic-bezier(.23, 1, .32, 1);
@@ -339,7 +340,7 @@
 
     /* Lesson */
     .lesson-screen { padding: 2.1%; background: #e6e8e2; }
-    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: 1.6%; }
+    .lesson-shell { height: 100%; display: flex; flex-direction: column; gap: var(--lesson-shell-gap); }
     .lesson-appbar {
       min-height: 62px;
       padding: 0 2%;
@@ -717,7 +718,6 @@
     body.phone-review .progress-item { grid-template-columns: 18px 1fr; gap: 4px; font-size: 7px; }
     body.phone-review .progress-item i { width: 18px; height: 18px; }
     body.phone-review .rail-note { display: none; }
-    body.phone-review [data-screen="prediction"] .prediction-main { padding: 16px 15px; }
     body.phone-review .prediction-head { gap: 8px; }
     body.phone-review .prediction-head h1 { font-size: 27px; }
     body.phone-review .voice-cue { min-width: 0; padding: 8px; font-size: 8px; }
@@ -1328,7 +1328,7 @@
 
     @media (min-width: 701px) and (orientation: landscape) {
       body.runtime-demo .lesson-grid { align-items: stretch; }
-      body.runtime-demo .tutor-panel { max-height: min(76vh, 760px); max-height: min(76dvh, 760px); position: sticky; top: 82px; }
+      body.runtime-demo .tutor-panel { height: 100%; max-height: none; align-self: stretch; position: sticky; top: 82px; }
     }
 
     @media (max-width: 700px), (orientation: portrait) {
@@ -1362,7 +1362,7 @@
       <div class="review-navs">
         <div class="viewport-tabs" aria-label="切换审阅画布"><button type="button" aria-pressed="true" data-viewport="tablet">平板</button><button type="button" aria-pressed="false" data-viewport="phone">手机</button></div>
         <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
-          <button role="tab" aria-selected="true" data-target="entry">S01 入口</button><button role="tab" aria-selected="false" data-target="ask">S02 提问</button><button role="tab" aria-selected="false" data-target="confirm">S03 确认</button><button role="tab" aria-selected="false" data-target="calibration">S04 校准</button><button role="tab" aria-selected="false" data-target="prediction">S05 预测</button><button role="tab" aria-selected="false" data-target="loading">S06 准备</button><button role="tab" aria-selected="false" data-target="intro">S07 引入</button><button role="tab" aria-selected="false" data-target="lesson">S08 讲解</button><button role="tab" aria-selected="false" data-target="lesson-exit">S08 返回确认</button><button role="tab" aria-selected="false" data-target="experiment">S09 实验</button><button role="tab" aria-selected="false" data-target="followup">S10 追问</button><button role="tab" aria-selected="false" data-target="vacuum">S11 真空</button><button role="tab" aria-selected="false" data-target="fork">S12 音叉</button><button role="tab" aria-selected="false" data-target="xylophone">S13 木琴</button><button role="tab" aria-selected="false" data-target="feedback">S14 反馈</button><button role="tab" aria-selected="false" data-target="result">S15 结果</button>
+          <button role="tab" aria-selected="true" data-target="entry">S01 入口</button><button role="tab" aria-selected="false" data-target="ask">S02 提问</button><button role="tab" aria-selected="false" data-target="confirm">S03 确认</button><button role="tab" aria-selected="false" data-target="loading">S06 准备</button><button role="tab" aria-selected="false" data-target="intro">S07 引入</button><button role="tab" aria-selected="false" data-target="lesson">S08 讲解</button><button role="tab" aria-selected="false" data-target="lesson-exit">S08 返回确认</button><button role="tab" aria-selected="false" data-target="experiment">S09 实验</button><button role="tab" aria-selected="false" data-target="followup">S10 追问</button><button role="tab" aria-selected="false" data-target="vacuum">S11 真空</button><button role="tab" aria-selected="false" data-target="fork">S12 音叉</button><button role="tab" aria-selected="false" data-target="xylophone">S13 木琴</button><button role="tab" aria-selected="false" data-target="feedback">S14 反馈</button><button role="tab" aria-selected="false" data-target="result">S15 结果</button>
         </nav>
       </div>
     </header>
@@ -1408,43 +1408,8 @@
           </div></div></div>
         </section>
 
-        <section class="concept-screen prediction-screen" data-screen="calibration" hidden>
-          <div class="prediction-shell">
-            <aside class="progress-rail"><div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div><div class="progress-list"><div class="progress-item active"><i>1</i><span>听懂“响”和“高”</span></div><div class="progress-item"><i>2</i><span>先做一个预测</span></div><div class="progress-item"><i>3</i><span>问题讲解</span></div></div><div class="rail-note">先分清两个词，再带着自己的预测进入问题讲解。</div></aside>
-            <main class="prediction-main calibration-main"><div><h1 class="static-title">先把“响”和“高”分清楚</h1><p class="static-lead">按顺序播放两组固定声音。这里先建立词义，不提前告诉你振幅和频率的关系。</p><div class="calibration-pair"><article class="cal-card"><span class="sound">响</span><h2>响度</h2><p>听起来有多响。第一声较轻，第二声明显更响。</p><span class="cta">▶ 播放示例</span></article><article class="cal-card locked"><span class="sound" style="background:var(--violet)">高</span><h2>音调</h2><p>听起来有多高。听完响度示例后解锁。</p><span class="cta disabled">先听响度</span></article></div></div><div class="prediction-footer"><p>先听响度，再听音调。</p><span class="cta primary disabled">我分清了，继续猜 →</span></div></main>
-          </div>
-        </section>
-
-        <section id="screen-prediction" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-prediction" data-screen="prediction" hidden>
-          <div class="prediction-shell">
-            <aside class="progress-rail">
-              <div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div>
-              <div class="progress-list">
-                <div class="progress-item done"><i>✓</i><span>听懂“响”和“高”</span></div>
-                <div class="progress-item active"><i>2</i><span>先做一个预测</span></div>
-                <div class="progress-item"><i>3</i><span>问题讲解</span></div>
-              </div>
-              <div class="rail-note">猜错也没关系。预测只是为了让接下来的观察更有目标。</div>
-            </aside>
-            <main class="prediction-main">
-              <div>
-                <div class="prediction-head">
-                  <div><p class="eyebrow">先猜一猜</p><h1>更用力拨同一根弦，<br>音调会更高吗？</h1></div>
-                </div>
-                <div class="condition-box"><strong>这次比较要公平</strong><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变：拨弦力度</span></div></div>
-                <div class="choice-row">
-                  <article class="answer-card"><div class="choice-mark">A</div><strong>会更高</strong><span>用力越大，音调越高</span></article>
-                  <article class="answer-card"><div class="choice-mark">B</div><strong>基本不变</strong><span>主要变化可能在响度</span></article>
-                  <article class="answer-card"><div class="choice-mark">C</div><strong>还不确定</strong><span>我想先看一看</span></article>
-                </div>
-              </div>
-              <div class="prediction-footer"><p>先选一个答案，再去验证。</p><span class="cta primary disabled">去验证 →</span></div>
-            </main>
-          </div>
-        </section>
-
         <section class="concept-screen static-screen" data-screen="loading" hidden>
-          <div class="static-shell"><header class="static-appbar"><button type="button" class="back" data-demo-back aria-label="返回 Demo 首页">‹</button><div class="brand"><span class="brand-mark">知</span><span>准备观察</span></div><span class="step">准备观察</span></header><div class="static-content"><div class="static-narrow" style="text-align:center"><p class="eyebrow">正在准备第一段观察</p><h1 class="static-title">正在校准琴弦观察画面</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">先把同一根琴弦的轻拨和用力拨放在一起比较。互动琴弦会在讲解结束后出现。</p><div class="loading-rig"><span class="load-dot"></span><svg viewBox="0 0 520 150"><path d="M0 75 C40 40 80 40 120 75 S200 110 240 75 S320 40 360 75 S440 110 520 75" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div><div class="load-track"><span></span></div></div></div></div>
+          <div class="static-shell"><header class="static-appbar"><button type="button" class="back" data-demo-back aria-label="返回 Demo 首页">‹</button><div class="brand"><span class="brand-mark">知</span><span>准备观察</span></div><span class="step">准备观察</span></header><div class="static-content"><div class="static-narrow" style="text-align:center"><p class="eyebrow">正在准备第一段观察</p><h1 class="static-title">正在准备琴弦观察画面</h1><p class="static-lead" style="margin-left:auto;margin-right:auto">先把同一根琴弦的轻拨和用力拨放在一起比较。互动琴弦会在讲解结束后出现。</p><div class="loading-rig"><span class="load-dot"></span><svg viewBox="0 0 520 150"><path d="M0 75 C40 40 80 40 120 75 S200 110 240 75 S320 40 360 75 S440 110 520 75" fill="none" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/></svg></div><div class="load-track"><span></span></div></div></div></div>
         </section>
 
         <section class="concept-screen lesson-screen" data-screen="intro" hidden>
@@ -1544,7 +1509,7 @@
     const confirmBackScreens = new Set(['loading', 'intro', 'lesson', 'experiment', 'followup', 'vacuum', 'fork']);
     const audioPath = name => `./assets/audio/${name}.wav`;
     const state = {
-      screen: 'entry', preset: 'sound', question: fixtureQuestion, calibration: 0, prediction: null,
+      screen: 'entry', preset: 'sound', question: fixtureQuestion,
       lessonSegment: 1, experimentStep: 0, dragFailures: 0, returnScreen: 'experiment',
       migrationStage: 'fork', migration: {}, transferResult: null,
       mathTransferAttempt: 0,
@@ -1750,8 +1715,6 @@
     function configurePreset(preset, announce = true) {
       state.preset = preset === 'math' ? 'math' : 'sound';
       state.question = state.preset === 'math' ? mathFixtureQuestion : fixtureQuestion;
-      state.calibration = 0;
-      state.prediction = null;
       state.lessonSegment = 1;
       state.migration = {};
       state.transferResult = null;
@@ -1892,18 +1855,34 @@
       const root = pageScrollRoot();
       const canvas = active?.querySelector('.lesson-canvas');
       const thread = active?.querySelector('.tutor-panel .thread');
+      const appbar = active?.querySelector('.lesson-appbar');
+      const grid = active?.querySelector('.lesson-grid');
+      const workspace = active?.querySelector('.workspace');
+      const tutorPanel = active?.querySelector('.tutor-panel');
       const drawerOpen = Boolean(active?.querySelector('.tutor-panel.drawer-open'));
       const violations = [];
+      let lessonShellGap = null;
+      let lessonColumnsBottomDelta = null;
       if (root && root.scrollWidth > root.clientWidth + 1) violations.push('horizontal-page-overflow');
       if (!drawerOpen && getComputedStyle(document.body).overflowY === 'hidden') violations.push('page-scroll-locked');
       if (canvas && getComputedStyle(canvas).overscrollBehaviorY !== 'auto') violations.push('canvas-scroll-chain-blocked');
       if (thread && getComputedStyle(thread).overflowY !== 'auto') violations.push('conversation-not-scrollable');
       if (drawerOpen && !document.body.classList.contains('tutor-overlay-open')) violations.push('drawer-background-unlocked');
+      if (appbar && grid) {
+        lessonShellGap = grid.getBoundingClientRect().top - appbar.getBoundingClientRect().bottom;
+        if (!usesTutorOverlay() && lessonShellGap < 8) violations.push('lesson-shell-gap-missing');
+      }
+      if (workspace && tutorPanel && !usesTutorOverlay()) {
+        lessonColumnsBottomDelta = Math.abs(workspace.getBoundingClientRect().bottom - tutorPanel.getBoundingClientRect().bottom);
+        if (lessonColumnsBottomDelta > 1) violations.push('lesson-columns-bottom-misaligned');
+      }
       return {
         primary_scroll_owner: document.body.classList.contains('phone-viewport-forced') ? 'review_viewport' : 'document',
         conditional_scroll_owner: canvas ? 'lesson_canvas' : null,
         conversation_scroll_owner: thread ? 'tutor_thread' : null,
         overlay_open: drawerOpen,
+        lesson_shell_gap_px: lessonShellGap === null ? null : Math.round(lessonShellGap * 1000) / 1000,
+        lesson_columns_bottom_delta_px: lessonColumnsBottomDelta === null ? null : Math.round(lessonColumnsBottomDelta * 1000) / 1000,
         horizontal_overflow: violations.includes('horizontal-page-overflow'),
         scroll_traps: violations,
         result: violations.length ? 'fail' : 'pass'
@@ -2345,6 +2324,7 @@
     }
 
     function showScreen(name, updateUrl = true, scrollMode = 'top') {
+      if (name === 'calibration' || name === 'prediction') name = 'loading';
       clearTimeout(loadingTimer);
       cancelAnimationFrame(loadingFrame);
       closeTutorDrawer(false);
@@ -2379,10 +2359,8 @@
         title.textContent = `“${state.question || fixtureQuestion}”`;
         const attachment = document.querySelector('[data-screen="confirm"] .confirm-attachment');
         attachment.hidden = state.preset !== 'math';
-        playAudio(audioPath(state.preset === 'math' ? 'narration-math-confirm' : 'narration-confirm-text'));
+        if (state.preset === 'math') playAudio(audioPath('narration-math-confirm'));
       }
-      if (name === 'calibration') playAudio(audioPath('narration-calibration'));
-      if (name === 'prediction') playAudio(audioPath('narration-prediction'));
       if (name === 'loading') { prepareLoadingContent(); startLoading(); }
       if (name === 'intro') {
         if (state.preset === 'math') { playMathSegment(1); return; }
@@ -2505,29 +2483,6 @@
         state.transitioning = false;
         onEnded?.();
       });
-    }
-
-    function updateCalibration() {
-      const screen = document.querySelector('[data-screen="calibration"]');
-      const cards = [...screen.querySelectorAll('.cal-card')];
-      const continueButton = screen.querySelector('.prediction-footer .cta');
-      if (state.calibration >= 1) {
-        cards[0].classList.add('played');
-        cards[0].querySelector('.cta').textContent = '▶ 再听一次';
-        cards[1].classList.remove('locked');
-        cards[1].querySelector('.cta').classList.remove('disabled');
-        cards[1].querySelector('.cta').textContent = state.calibration >= 2 ? '▶ 再听一次' : '▶ 播放示例';
-      }
-      if (state.calibration >= 2) {
-        cards[1].classList.add('played');
-        continueButton.classList.remove('disabled');
-      }
-    }
-
-    function updatePrediction() {
-      const screen = document.querySelector('[data-screen="prediction"]');
-      screen.querySelectorAll('.answer-card').forEach((card, index) => card.classList.toggle('selected', index === state.prediction));
-      screen.querySelector('.prediction-footer .cta').classList.toggle('disabled', state.prediction === null);
     }
 
     function resetExperimentView() {
@@ -2837,7 +2792,7 @@
       if (back) {
         event.preventDefault();
         if (confirmBackScreens.has(active)) openExitDialog();
-        else showScreen(({ ask: 'entry', confirm: 'ask', calibration: 'confirm', prediction: 'calibration' })[active] || 'entry', true, 'restore');
+        else showScreen(({ ask: 'entry', confirm: 'ask' })[active] || 'entry', true, 'restore');
         return;
       }
       if (active === 'entry' && event.target.closest('.entry-buttons .cta')) return showScreen('ask');
@@ -2858,19 +2813,7 @@
       if (active === 'confirm') {
         const buttons = [...document.querySelectorAll('[data-screen="confirm"] .cta')];
         if (event.target.closest('.cta') === buttons[0]) return showScreen('ask');
-        if (event.target.closest('.cta') === buttons[1]) return showScreen(state.preset === 'math' ? 'loading' : 'calibration');
-      }
-      if (active === 'calibration') {
-        const cards = [...document.querySelectorAll('[data-screen="calibration"] .cal-card')];
-        const card = event.target.closest('.cal-card');
-        if (card === cards[0]) { state.calibration = Math.max(1, state.calibration); playAudio(audioPath('calibration-loudness')); updateCalibration(); return; }
-        if (card === cards[1] && state.calibration >= 1) { state.calibration = 2; playAudio(audioPath('calibration-pitch')); updateCalibration(); return; }
-        if (event.target.closest('.prediction-footer .cta') && state.calibration >= 2) return showScreen('prediction');
-      }
-      if (active === 'prediction') {
-        const card = event.target.closest('.answer-card');
-        if (card) { state.prediction = [...card.parentElement.children].indexOf(card); updatePrediction(); return; }
-        if (event.target.closest('.prediction-footer .cta') && state.prediction !== null) return showScreen('loading');
+        if (event.target.closest('.cta') === buttons[1]) return showScreen('loading');
       }
       if (['intro', 'lesson', 'experiment'].includes(active) && event.target.closest('.send-action')) {
         if (state.preset === 'math') return;
@@ -3044,11 +2987,13 @@
       showViewport(responsiveViewport());
       syncTutorOverlayLock();
     });
-    const validScreens = ['entry','ask','confirm','calibration','prediction','loading','intro','lesson','experiment','vacuum','fork','xylophone','feedback','result'];
+    const validScreens = ['entry','ask','confirm','loading','intro','lesson','experiment','vacuum','fork','xylophone','feedback','result'];
     configurePreset(params.get('preset') === 'math' ? 'math' : 'sound', false);
     showViewport(responsiveViewport());
     const requestedScreen = params.get('screen') === 'followup' ? 'experiment' : params.get('screen');
-    showScreen(validScreens.includes(requestedScreen) ? requestedScreen : 'entry', params.get('screen') === 'followup');
+    const retiredScreen = requestedScreen === 'calibration' || requestedScreen === 'prediction';
+    const initialScreen = retiredScreen ? 'loading' : validScreens.includes(requestedScreen) ? requestedScreen : 'entry';
+    showScreen(initialScreen, retiredScreen || params.get('screen') === 'followup');
   </script>
 </body>
 </html>

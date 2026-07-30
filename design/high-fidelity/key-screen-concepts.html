@@ -405,7 +405,7 @@
       <div class="review-title"><strong>方向 A · 关键页面高保真</strong><span>固定声音价值 Demo / 视觉评审稿</span></div>
       <nav class="review-tabs" role="tablist" aria-label="切换高保真页面">
         <button id="tab-entry" role="tab" aria-controls="screen-entry" aria-selected="true" data-target="entry">01 公开入口</button>
-        <button id="tab-prediction" role="tab" aria-controls="screen-prediction" aria-selected="false" data-target="prediction">02 预测页</button>
+        <button id="tab-loading" role="tab" aria-controls="screen-loading" aria-selected="false" data-target="loading">02 讲解准备</button>
         <button id="tab-lesson" role="tab" aria-controls="screen-lesson" aria-selected="false" data-target="lesson">03 核心讲解</button>
       </nav>
     </header>
@@ -421,7 +421,7 @@
             <div class="entry-copy">
               <p class="eyebrow">固定声音主题体验</p>
               <h1>你问为什么，<br>小知<em>现场演</em>给你看。</h1>
-              <p class="entry-lead">从一个真实问题出发，先预测，再看见琴弦怎样振动，最后亲手验证自己的想法。</p>
+              <p class="entry-lead">从一个真实问题出发，确认后直接看琴弦怎样振动，最后亲手验证讲解中的规律。</p>
               <div class="entry-buttons"><span class="cta primary">开始体验 →</span><span class="cta">先看看怎么玩</span></div>
               <div class="privacy-note"><strong>数据说明</strong><span>体验不会调用相机或麦克风，不保存儿童姓名、照片或原始语音。</span></div>
             </div>
@@ -435,31 +435,26 @@
           </div>
         </section>
 
-        <section id="screen-prediction" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-prediction" data-screen="prediction" hidden>
+        <section id="screen-loading" class="concept-screen prediction-screen" role="tabpanel" aria-labelledby="tab-loading" data-screen="loading" hidden>
           <div class="prediction-shell">
             <aside class="progress-rail">
-              <div class="progress-brand"><span class="brand-mark">知</span><span>先想，再验证</span></div>
+              <div class="progress-brand"><span class="brand-mark">知</span><span>看懂，再验证</span></div>
               <div class="progress-list">
-                <div class="progress-item done"><i>✓</i><span>听懂“响”和“高”</span></div>
-                <div class="progress-item active"><i>2</i><span>先做一个预测</span></div>
+                <div class="progress-item done"><i>✓</i><span>确认问题</span></div>
+                <div class="progress-item active"><i>2</i><span>准备第一段讲解</span></div>
                 <div class="progress-item"><i>3</i><span>观察琴弦并验证</span></div>
               </div>
-              <div class="rail-note">猜错也没关系。预测只是为了让接下来的观察更有目标。</div>
+              <div class="rail-note">问题确认后直接加载讲解，不要求先猜答案。</div>
             </aside>
             <main class="prediction-main">
               <div>
                 <div class="prediction-head">
-                  <div><p class="eyebrow">先猜一猜</p><h1>更用力拨同一根弦，<br>音调会更高吗？</h1></div>
-                  <div class="voice-cue"><b>▶</b><span>小知正在引导你猜<br>可以重听</span></div>
+                  <div><p class="eyebrow">正在准备第一段观察</p><h1>正在准备琴弦观察画面</h1></div>
+                  <div class="voice-cue"><b>•••</b><span>准备完成后<br>自动开始</span></div>
                 </div>
-                <div class="condition-box"><strong>这次比较要公平</strong><div class="chip-row"><span class="condition-chip">弦长不变</span><span class="condition-chip">松紧不变</span><span class="condition-chip">粗细不变</span><span class="condition-chip change">只改变：拨弦力度</span></div></div>
-                <div class="choice-row">
-                  <article class="answer-card"><div class="choice-mark">A</div><strong>会更高</strong><span>用力越大，音调越高</span></article>
-                  <article class="answer-card selected"><div class="choice-mark">✓</div><strong>基本不变</strong><span>主要变化可能在响度</span></article>
-                  <article class="answer-card"><div class="choice-mark">C</div><strong>还不确定</strong><span>我想先看一看</span></article>
-                </div>
+                <div class="condition-box"><strong>讲解即将开始</strong><div class="chip-row"><span class="condition-chip">同一根弦</span><span class="condition-chip">轻拨和用力拨</span><span class="condition-chip change">先比较，再解释</span></div></div>
               </div>
-              <div class="prediction-footer"><p>你的选择不会限制后面的讲解路径。</p><span class="cta primary">去验证 →</span></div>
+              <div class="prediction-footer"><p>互动琴弦会在讲解结束后出现。</p><span class="cta primary disabled">正在准备</span></div>
             </main>
           </div>
         </section>

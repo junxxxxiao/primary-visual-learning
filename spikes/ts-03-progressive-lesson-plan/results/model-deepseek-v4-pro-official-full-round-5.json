@@ -1,0 +1,144 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound",
+      "latency_ms": 18716,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:de9321cecf93571440a0acf9d86c722e214380e4c8a88234ff7dbc4c2e685cbb",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1952,
+        "prompt_tokens": 3330,
+        "total_tokens": 5282
+      },
+      "violation_codes": [
+        "EXPLANATION_TERM_UNSUPPORTED"
+      ]
+    },
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "middle_perfect_square",
+      "latency_ms": 23649,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:ebddb87297ebf5ba3d07e2caada64d93a8f7619dd2894462fbecc7ea14b6150d",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 2170,
+        "prompt_tokens": 3400,
+        "total_tokens": 5570
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound_pair",
+      "latency_ms": 19454,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:37a079b0507f5804f3595ca20a07a58f2bcb34ceb45a9746e178be1c7496f3d5",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1898,
+        "prompt_tokens": 3307,
+        "total_tokens": 5205
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "middle_sound_pair",
+      "latency_ms": 17505,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:6cae7c5d8eee18233f3b7405f7815748b23a68f5dd24fe94be87426cb935a1dd",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1798,
+        "prompt_tokens": 3351,
+        "total_tokens": 5149
+      },
+      "violation_codes": []
+    }
+  ],
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "decision": "fail",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 8000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_eligible"
+  },
+  "latency_ms": {
+    "max": 23649,
+    "mean": 19831,
+    "min": 17505,
+    "p50": 19085,
+    "p80": 21132,
+    "p95": 23020
+  },
+  "limits": [
+    "A non-streaming response makes first-segment and complete-plan availability occur at the same response boundary.",
+    "Four synthetic fixtures do not establish repeat stability or broad subject coverage.",
+    "Machine checks do not replace independent subject and product review."
+  ],
+  "metrics": {
+    "contract_gate_pass": {
+      "denominator": 4,
+      "numerator": 3
+    },
+    "paired_stage_contract": "pass",
+    "schema_validity": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": ">=99%"
+    }
+  },
+  "provider": "DeepSeek official API",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "automatic_retries": 0,
+    "completed": 4,
+    "planned": 4
+  },
+  "run_at": "2026-07-30T10:51:11.364634+00:00",
+  "run_label": "official-full-round-5",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "synthetic_fixture_only": true,
+  "usage": {
+    "completion_tokens": 7818,
+    "prompt_tokens": 13388,
+    "total_tokens": 21206
+  }
+}

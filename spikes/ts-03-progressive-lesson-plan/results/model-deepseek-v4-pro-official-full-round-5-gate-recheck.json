@@ -1,0 +1,56 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "official-full-round-5",
+  "recheck_label": "official-full-round-5-prerequisite-aware-gate-recheck",
+  "rechecked_at": "2026-07-30T11:11:32Z",
+  "source_result_path": "results/model-deepseek-v4-pro-official-full-round-5.json",
+  "generation_policy_version": "ts03-generation-policies/1.4",
+  "model_requests_made": 0,
+  "candidate_outputs_modified": false,
+  "rule_change": {
+    "before": "Every visual term required support from a claim cited by the same segment.",
+    "after": "A visual term may be supported by a claim cited by the same segment or by an explicit prerequisite-to-term mapping in the controlled generation policy. Answer-bearing factual conclusions still require claim references.",
+    "reason": "Basic terms such as 振动 may be licensed by declared prerequisite knowledge without restating them as a new factual claim in every segment."
+  },
+  "original_contract_gate_pass": {
+    "numerator": 3,
+    "denominator": 4
+  },
+  "rechecked_contract_gate_pass": {
+    "numerator": 4,
+    "denominator": 4
+  },
+  "paired_stage_contract": "pass",
+  "call_results": [
+    {
+      "fixture_id": "primary_sound",
+      "response_hash": "sha256:de9321cecf93571440a0acf9d86c722e214380e4c8a88234ff7dbc4c2e685cbb",
+      "contract_result": "pass",
+      "violation_codes": []
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "response_hash": "sha256:ebddb87297ebf5ba3d07e2caada64d93a8f7619dd2894462fbecc7ea14b6150d",
+      "contract_result": "pass",
+      "violation_codes": []
+    },
+    {
+      "fixture_id": "primary_sound_pair",
+      "response_hash": "sha256:37a079b0507f5804f3595ca20a07a58f2bcb34ceb45a9746e178be1c7496f3d5",
+      "contract_result": "pass",
+      "violation_codes": []
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "response_hash": "sha256:6cae7c5d8eee18233f3b7405f7815748b23a68f5dd24fe94be87426cb935a1dd",
+      "contract_result": "pass",
+      "violation_codes": []
+    }
+  ],
+  "human_review": {
+    "status": "pending",
+    "independent_review_required": true
+  },
+  "status": "candidate_run_complete",
+  "decision": "candidate_run_complete"
+}

@@ -1,0 +1,48 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "round-2",
+  "status": "invalid_incomplete_run",
+  "request_model": "deepseek-v4-pro",
+  "response_model": "deepseek-v4-pro",
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "run_started_at": "2026-07-29T15:13:04+00:00",
+  "synthetic_fixture_only": true,
+  "controlled_textbook_content_sent": false,
+  "child_data_sent": false,
+  "requests": {
+    "planned": 4,
+    "attempted": 2,
+    "completed": 1,
+    "timed_out": 1,
+    "not_attempted_after_runner_error": 2,
+    "automatic_retries": 0
+  },
+  "completed_candidate_output": {
+    "fixture_id": "primary_sound",
+    "schema_valid": true,
+    "contract_result": "fail",
+    "violation_codes": ["TERM_OUTSIDE_STAGE_RULE"],
+    "generated_disallowed_terms": ["琴弦"],
+    "latency_ms": 55363,
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 2174,
+      "completion_tokens": 3727,
+      "reasoning_tokens": 2261,
+      "total_tokens": 5901
+    },
+    "response_hash": "sha256:1c688a0072b026ba84139b554d2621aefc696d2934ab88d77068cdfd5fc439a9"
+  },
+  "interruption": {
+    "fixture_id": "middle_perfect_square",
+    "error_code": "REQUEST_READ_TIMEOUT",
+    "timeout_seconds": 60,
+    "runner_error": "socket.timeout was not caught, so the process exited before the remaining two fixtures"
+  },
+  "decision": "not_eligible_for_slice_decision",
+  "next_run_requirements": [
+    "Catch socket.timeout and checkpoint every attempted fixture",
+    "Clarify that visual.terms contains only subject vocabulary from stage_rules.allowed_terms",
+    "Obtain user approval for a fresh four-request run budget"
+  ]
+}

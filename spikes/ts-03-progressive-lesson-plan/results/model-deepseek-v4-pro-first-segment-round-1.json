@@ -1,0 +1,98 @@
+{
+  "call_results": [
+    {
+      "error": "The read operation timed out",
+      "first_meaningful_ready_ms": null,
+      "fixture_id": "primary_sound",
+      "gate_result": "fail",
+      "output_kind": "candidate_output",
+      "request_duration_ms": 30429,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "error": "The read operation timed out",
+      "first_meaningful_ready_ms": null,
+      "fixture_id": "middle_perfect_square",
+      "gate_result": "fail",
+      "output_kind": "candidate_output",
+      "request_duration_ms": 30405,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "error": "The read operation timed out",
+      "first_meaningful_ready_ms": null,
+      "fixture_id": "primary_sound_pair",
+      "gate_result": "fail",
+      "output_kind": "candidate_output",
+      "request_duration_ms": 30494,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "error": "The read operation timed out",
+      "first_meaningful_ready_ms": null,
+      "fixture_id": "middle_sound_pair",
+      "gate_result": "fail",
+      "output_kind": "candidate_output",
+      "request_duration_ms": 30387,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      }
+    }
+  ],
+  "cost": "unverified; consult provider billing",
+  "decision_effect": "This diagnostic does not replace or overwrite the formal round-3 TS-03 failure.",
+  "diagnostic": "staged_first_meaningful_segment",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 3000,
+    "response_format": "json_object",
+    "temperature": 0,
+    "timeout_seconds": 30
+  },
+  "metrics": {
+    "first_meaningful_ready_p80_ms": null,
+    "first_segment_gate_pass": {
+      "denominator": 4,
+      "numerator": 0
+    },
+    "threshold_ms": 8000
+  },
+  "provider": "PackyAPI",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "completed": 0,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T15:41:12.243837+00:00",
+  "run_label": "first-segment-round-1",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "first-segment/1.2",
+  "title": "TS-03 staged first meaningful segment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_id", "segment"],
+  "properties": {
+    "schema_version": {"const": "first-segment/1.2"},
+    "fixture_id": {"type": "string", "minLength": 1},
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "order", "phase", "goal", "fact_refs", "prerequisite_refs", "narration", "cues", "visual", "static_fallback"],
+      "properties": {
+        "segment_id": {"type": "string", "minLength": 1},
+        "order": {"const": 1},
+        "phase": {"const": "explanation"},
+        "goal": {"type": "string", "minLength": 1},
+        "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+        "prerequisite_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "narration": {"type": "string", "minLength": 1},
+        "cues": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cue_id", "at_ms", "action"],
+            "properties": {
+              "cue_id": {"type": "string", "minLength": 1},
+              "at_ms": {"type": "integer", "minimum": 0},
+              "action": {"enum": ["show_start_frame", "start_narration", "start_visual", "highlight"]}
+            }
+          }
+        },
+        "visual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["layout_kind", "element_count", "terms", "formula_symbol_count", "states", "scene_contract"],
+          "properties": {
+            "layout_kind": {"enum": ["single-focus", "side-by-side", "step-stack", "coordinate-comparison"]},
+            "element_count": {"type": "integer", "minimum": 1},
+            "terms": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+            "formula_symbol_count": {"type": "integer", "minimum": 0},
+            "states": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+            "scene_contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["contract_version", "viewports", "motion_envelope_required"],
+              "properties": {
+                "contract_version": {"const": "visual-scene/1.0"},
+                "viewports": {"type": "array", "minItems": 2, "items": {"enum": ["phone", "tablet"]}, "uniqueItems": true},
+                "motion_envelope_required": {"const": true}
+              }
+            }
+          }
+        },
+        "static_fallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "steps", "fact_refs"],
+          "properties": {
+            "kind": {"enum": ["annotated-sequence", "comparison-panel", "worked-steps"]},
+            "steps": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+            "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound",
+      "latency_ms": 15807,
+      "output_errors": [
+        "$.segments[0].static_fallback.fact_refs: fewer than minItems"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:2422abe41268fb6144328944312ea692e3d495025e9f7493338bd54480ff8b61",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 1561,
+        "prompt_tokens": 2639,
+        "total_tokens": 4200
+      },
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "middle_perfect_square",
+      "latency_ms": 26940,
+      "output_errors": [
+        "$.segments[0].static_fallback.fact_refs: fewer than minItems"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:c6a57235c79ee02bf5043c01e0c8d98fb6ce073b94d256889aff5c46c210665e",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 2639,
+        "prompt_tokens": 2672,
+        "total_tokens": 5311
+      },
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound_pair",
+      "latency_ms": 16041,
+      "output_errors": [
+        "$.segments[0].static_fallback.fact_refs: fewer than minItems"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:17779cb8d26c78f7245d5c4e970b962cddfbffbbeded0c495a45d4ce7b66fca1",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 1550,
+        "prompt_tokens": 2570,
+        "total_tokens": 4120
+      },
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "middle_sound_pair",
+      "latency_ms": 20886,
+      "output_errors": [
+        "$.segments[0].static_fallback.fact_refs: fewer than minItems"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:c8f6fd800f7873a9e9832b2c4e7a47ea60d2369b13131d5d5ccf6b12e346e7c1",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 2027,
+        "prompt_tokens": 2616,
+        "total_tokens": 4643
+      },
+      "violation_codes": [
+        "SCHEMA_INVALID"
+      ]
+    }
+  ],
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "decision": "fail",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 8000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_eligible"
+  },
+  "ai_assisted_pre_review": {
+    "result": "fail",
+    "review_path": "results/model-deepseek-v4-pro-official-full-round-2-review.json",
+    "reviewer_type": "codex_ai_assisted_pre_review",
+    "does_not_count_as_independent_human_review": true
+  },
+  "latency_ms": {
+    "max": 26940,
+    "mean": 19918,
+    "min": 15807,
+    "p50": 18464,
+    "p80": 23308,
+    "p95": 26032
+  },
+  "limits": [
+    "A non-streaming response makes first-segment and complete-plan availability occur at the same response boundary.",
+    "Four synthetic fixtures do not establish repeat stability or broad subject coverage.",
+    "Machine checks do not replace independent subject and product review."
+  ],
+  "metrics": {
+    "contract_gate_pass": {
+      "denominator": 4,
+      "numerator": 0
+    },
+    "paired_stage_contract": "pass",
+    "schema_validity": {
+      "denominator": 4,
+      "numerator": 0,
+      "threshold": ">=99%"
+    }
+  },
+  "provider": "DeepSeek official API",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "automatic_retries": 0,
+    "completed": 4,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T17:11:09.988758+00:00",
+  "run_label": "official-full-round-2",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "synthetic_fixture_only": true,
+  "usage": {
+    "completion_tokens": 7777,
+    "prompt_tokens": 10497,
+    "total_tokens": 18274
+  }
+}

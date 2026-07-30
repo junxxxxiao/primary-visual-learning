@@ -1,0 +1,316 @@
+{
+  "fixture_version": "ts03-cases/1.5",
+  "fixture_kinds": {
+    "positive": "gold_fixture",
+    "negative": "adversarial_fixture"
+  },
+  "cases": [
+    {
+      "case_id": "primary_sound_valid",
+      "base_plan": "primary_sound",
+      "expected": "pass",
+      "category": "positive"
+    },
+    {
+      "case_id": "middle_math_valid",
+      "base_plan": "middle_perfect_square",
+      "expected": "pass",
+      "category": "positive"
+    },
+    {
+      "case_id": "primary_sound_pair_valid",
+      "base_plan": "primary_sound_pair",
+      "expected": "pass",
+      "category": "positive"
+    },
+    {
+      "case_id": "middle_sound_pair_valid",
+      "base_plan": "middle_sound_pair",
+      "expected": "pass",
+      "category": "positive"
+    },
+    {
+      "case_id": "segment_order_gap",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "critical_order",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "segments.1.order",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "case_id": "start_frame_hold_too_short",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "critical_order",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "segments.0.cues.1.at_ms",
+          "value": 500
+        }
+      ]
+    },
+    {
+      "case_id": "undeclared_prerequisite",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "append",
+          "path": "segments.1.prerequisite_refs",
+          "value": "science.wave.calculus"
+        }
+      ]
+    },
+    {
+      "case_id": "term_outside_stage_rule",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "append",
+          "path": "segments.1.visual.terms",
+          "value": "傅里叶变换"
+        }
+      ]
+    },
+    {
+      "case_id": "model_widens_stage_rules",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "append",
+          "path": "stage_rules.allowed_terms",
+          "value": "傅里叶变换"
+        },
+        {
+          "op": "append",
+          "path": "segments.1.visual.terms",
+          "value": "傅里叶变换"
+        }
+      ]
+    },
+    {
+      "case_id": "formula_density_over_limit",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "segments.1.visual.formula_symbol_count",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "case_id": "visual_density_over_limit",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "segments.1.visual.element_count",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "case_id": "missing_static_fallback",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "fallback",
+      "mutations": [
+        {
+          "op": "remove",
+          "path": "segments.1.static_fallback"
+        }
+      ]
+    },
+    {
+      "case_id": "unsupported_fact_reference",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "source_support",
+      "mutations": [
+        {
+          "op": "append",
+          "path": "segments.2.fact_refs",
+          "value": "invented-claim"
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_reuses_lesson_object",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "transfer_skin_swap",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.object",
+          "value": "琴弦"
+        }
+      ]
+    },
+    {
+      "case_id": "retry_reuses_first_transfer",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "transfer_skin_swap",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.retry.object",
+          "value": "音叉"
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_difficulty_mismatch",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "stage_context",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.difficulty",
+          "value": "single-variable-comparison"
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_object_not_approved",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "semantic_transfer",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.object",
+          "value": "矩形花圃"
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_preexposed_in_lesson",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "semantic_transfer",
+      "mutations": [
+        {
+          "op": "append",
+          "path": "segments.2.static_fallback.steps",
+          "value": "固定周长花坛的完整答案已经展示。"
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_fact_support_incomplete",
+      "base_plan": "primary_sound",
+      "expected": "fail",
+      "category": "semantic_source_support",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.fact_refs",
+          "value": [
+            "force-amplitude-pitch"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "explanation_term_support_incomplete",
+      "base_plan": "middle_sound_pair",
+      "expected": "fail",
+      "category": "semantic_source_support",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "segments.1.fact_refs",
+          "value": [
+            "force-amplitude-frequency"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "middle_transfer_fact_support_incomplete",
+      "base_plan": "middle_sound_pair",
+      "expected": "fail",
+      "category": "semantic_source_support",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.fact_refs",
+          "value": [
+            "force-amplitude-frequency"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_difference_dimension_missing",
+      "base_plan": "primary_sound_pair",
+      "expected": "fail",
+      "category": "semantic_transfer",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.initial.difference_dimensions",
+          "value": [
+            "object"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "transfer_prompt_adds_unverified_formula",
+      "base_plan": "middle_perfect_square",
+      "expected": "fail",
+      "category": "semantic_source_support",
+      "mutations": [
+        {
+          "op": "set",
+          "path": "transfer.retry.prompt",
+          "value": "物体高度h=v0t-gt²/2，求最大高度。"
+        }
+      ]
+    },
+    {
+      "case_id": "stage_label_only_copy",
+      "base_plan": "primary_sound_pair",
+      "expected": "fail",
+      "category": "stage_label_swap",
+      "mutations": [
+        {
+          "op": "replace_from_plan",
+          "path": "segments",
+          "source_plan": "middle_sound_pair",
+          "source_path": "segments"
+        },
+        {
+          "op": "replace_from_plan",
+          "path": "transfer",
+          "source_plan": "middle_sound_pair",
+          "source_path": "transfer"
+        }
+      ]
+    }
+  ],
+  "paired_stage_audit": {
+    "primary": "primary_sound_pair",
+    "middle": "middle_sound_pair"
+  }
+}

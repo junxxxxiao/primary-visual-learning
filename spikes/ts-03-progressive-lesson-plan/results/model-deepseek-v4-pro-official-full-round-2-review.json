@@ -1,0 +1,60 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "official-full-round-2",
+  "review_type": "ai_assisted_semantic_pre_review",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "result": "fail",
+  "reviewed": 4,
+  "content_pre_review_passed": 1,
+  "content_pre_review_failed": 3,
+  "machine_eligible": 0,
+  "blocking_findings": [
+    {
+      "fixture_id": "all",
+      "code": "FIRST_FALLBACK_FACT_REFS_EMPTY",
+      "severity": "critical",
+      "path": "segments[0].static_fallback.fact_refs",
+      "reason": "All four outputs omitted required provenance metadata, so Schema validity and contract pass were 0/4."
+    },
+    {
+      "fixture_id": "primary_sound_pair",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene explicitly shows the heavy-pluck amplitude as larger."
+    },
+    {
+      "fixture_id": "primary_sound_pair",
+      "code": "UNSUPPORTED_EXPLANATION_CLAIM",
+      "severity": "critical",
+      "path": "segments[1]",
+      "reason": "The cited pair-relation claim supports amplitude and loudness, but the output additionally concludes that pitch is unchanged."
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].visual.states, segments[0].static_fallback.steps",
+      "reason": "The prediction scene explicitly shows amplitude increasing and frequency or period remaining unchanged."
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "UNSUPPORTED_ENERGY_CLAIM",
+      "severity": "major",
+      "path": "segments[1].narration",
+      "reason": "The narration adds an energy explanation that is absent from the frozen claims."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "TRANSFER_ADDS_UNVERIFIED_FORMULA",
+      "severity": "critical",
+      "path": "transfer.retry.prompt",
+      "reason": "The retry invents a vertical-motion formula and physics context not present in the frozen knowledge package."
+    }
+  ],
+  "content_pre_review_passed_fixtures": [
+    "primary_sound"
+  ],
+  "decision_effect": "Round 2 remains fail. Do not repair or selectively rerun these outputs; any next attempt must use a new frozen run label and a newly confirmed four-request budget."
+}

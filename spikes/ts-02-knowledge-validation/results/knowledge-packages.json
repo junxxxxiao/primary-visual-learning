@@ -1,0 +1,314 @@
+{
+  "packages": {
+    "declared_advanced_path": {
+      "claims": [
+        {
+          "claim_id": "advanced-square-bound",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "a real square is nonnegative",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "text": "A real square is nonnegative."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "declared_advanced_path",
+      "package_sha256": "sha256:4d29e3b8813d097188d545bca745f94a617ecb603d3ab7273a18717e975c7aa7",
+      "package_version": "ts02-knowledge-export/declared_advanced_path/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+          "edition": "synthetic-middle-math-2026",
+          "pages": [
+            34
+          ],
+          "source_id": "middle-perfect-square-synthetic-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "verified_atom"
+    },
+    "middle_perfect_square_valid": {
+      "claims": [
+        {
+          "claim_id": "perfect-square-identities",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "follow by multiplying the binomials",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "完全平方",
+            "配方"
+          ],
+          "text": "The perfect-square identities follow from binomial multiplication."
+        },
+        {
+          "claim_id": "complete-square-bound",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "a real square is nonnegative",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "完全平方",
+            "配方",
+            "非负",
+            "最大值"
+          ],
+          "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square."
+        },
+        {
+          "claim_id": "fence-transfer",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 35,
+              "quote": "Completing the square identifies the maximizing dimensions",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "面积",
+            "最大值",
+            "配方"
+          ],
+          "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "middle_perfect_square_valid",
+      "package_sha256": "sha256:3ecdc779636122f8661794225509ebdba6b1736e2648720b50c4a6815c5de24a",
+      "package_version": "ts02-knowledge-export/middle_perfect_square_valid/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:319391b06fcbd45f0e4942a95a06f7701c292da44cf2f9a3297abe6179d7fc5c",
+          "edition": "synthetic-middle-math-2026",
+          "pages": [
+            34,
+            35
+          ],
+          "source_id": "middle-perfect-square-synthetic-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "verified_atom"
+    },
+    "middle_sound_pair_valid": {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-frequency",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 18,
+              "quote": "increasing the driving force mainly increases vibration amplitude",
+              "source_id": "middle-sound-wave-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "频率",
+            "波形"
+          ],
+          "text": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+        },
+        {
+          "claim_id": "wave-perception-map",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 19,
+              "quote": "amplitude is related to loudness and frequency is related to pitch",
+              "source_id": "middle-sound-wave-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "频率",
+            "响度",
+            "音调",
+            "波形"
+          ],
+          "text": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "middle_sound_pair_valid",
+      "package_sha256": "sha256:fcee48e623dfff4d7c8c6d66a7c8a6c47ba7d9724b0c936b411e995688a318a5",
+      "package_version": "ts02-knowledge-export/middle_sound_pair_valid/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:e42f408c6f3265f9721d64fdb7e4615f41b419b2db754c9186f89d7857a06f00",
+          "edition": "synthetic-middle-science-2026",
+          "pages": [
+            18,
+            19
+          ],
+          "source_id": "middle-sound-wave-synthetic-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "verified_atom"
+    },
+    "missing_stage_context": {
+      "claims": [
+        {
+          "claim_id": "missing-grade",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "text": "More force mainly changes amplitude."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "missing_stage_context",
+      "package_sha256": "sha256:80746c3716de66a90622b92c1e5bee6324d35edf6ff3e10adba5043bb783a4b6",
+      "package_version": "ts02-knowledge-export/missing_stage_context/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+          "edition": "synthetic-primary-science-2026",
+          "pages": [
+            12
+          ],
+          "source_id": "primary-sound-synthetic-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "verified_atom"
+    },
+    "primary_sound_valid": {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        },
+        {
+          "claim_id": "pitch-frequency-loudness-amplitude",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 13,
+              "quote": "Pitch describes how high or low a sound seems",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振动",
+            "振幅",
+            "频率",
+            "响度",
+            "音调"
+          ],
+          "text": "Pitch relates to frequency while loudness relates here to amplitude."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "primary_sound_valid",
+      "package_sha256": "sha256:cf82807f47a57918e17b1234524a5b0004fd771264d598b9e77b3da1e1f81548",
+      "package_version": "ts02-knowledge-export/primary_sound_valid/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:835f1b32b7fa7d07bbbae205f602d76118aaf5bf804657f520b0dbb8cc57e3ca",
+          "edition": "synthetic-primary-science-2026",
+          "pages": [
+            12,
+            13
+          ],
+          "source_id": "primary-sound-synthetic-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "verified_atom"
+    },
+    "temporary_vacuum_valid": {
+      "claims": [
+        {
+          "claim_id": "vacuum-transmission",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 7,
+              "quote": "Sound needs matter such as air, water, or a solid",
+              "source_id": "public-education-sound-a-v1"
+            },
+            {
+              "page": 21,
+              "quote": "without a material medium its sound cannot propagate",
+              "source_id": "public-education-sound-b-v1"
+            }
+          ],
+          "text": "A source may vibrate in a vacuum, but ordinary sound cannot travel to a listener without a material medium."
+        }
+      ],
+      "evidence_status": "exploratory_only",
+      "package_case_id": "temporary_vacuum_valid",
+      "package_sha256": "sha256:db9793f8295a91aa1d3a84b34f042cbe1e08c412bfb1819bf0a7eba57b707297",
+      "package_version": "ts02-knowledge-export/temporary_vacuum_valid/1.0",
+      "producer_slice": "TS-02",
+      "review_method": "ai_only",
+      "source_refs": [
+        {
+          "document_hash": "sha256:149c0e327c1c9dd5f15478478a3e64b0c8188a3f89a7f7343a0cbfc4f450c83c",
+          "edition": "synthetic-public-education-a-2026",
+          "pages": [
+            7
+          ],
+          "source_id": "public-education-sound-a-v1"
+        },
+        {
+          "document_hash": "sha256:29076a79f72fa85c146a56fda0e2669ebbc9af065ee926cfb0fec2536fd29443",
+          "edition": "synthetic-public-education-b-2026",
+          "pages": [
+            21
+          ],
+          "source_id": "public-education-sound-b-v1"
+        }
+      ],
+      "source_scope": "synthetic_fixture",
+      "verification_status": "temporary_verified"
+    }
+  },
+  "producer_slice": "TS-02",
+  "schema_version": "ts02-knowledge-exports/1.0",
+  "source_manifest_sha256": "sha256:817dc72af034dee07d7e1fcd95b6607b9220c8ecbf151312afa38fde9cc8b8e7"
+}

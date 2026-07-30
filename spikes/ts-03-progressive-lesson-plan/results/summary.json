@@ -1,0 +1,293 @@
+{
+  "ai_assisted_pre_review": {
+    "executed": false,
+    "failed": 0,
+    "independent_human_review": false,
+    "passed": 0,
+    "reason": "The corrected prerequisite-aware machine gate now passes 4/4; no AI-assisted semantic pre-review has been run yet.",
+    "result": "not_run",
+    "review_path": null,
+    "reviewed": 0
+  },
+  "baseline": "da6698bc1927fa41c3a105d403a6ac6749a70fd3",
+  "cases": {
+    "all_expected_outcomes_matched": true,
+    "passed": 24,
+    "total": 24
+  },
+  "claims_not_supported_by_this_run": [
+    "Real model repeat stability or provider billing cost",
+    "Real textbook or production knowledge validity; all current source packages are synthetic fixtures",
+    "Production readiness or coverage beyond the four synthetic plans",
+    "Child comprehension and whether the explanation depth is sufficient in household use"
+  ],
+  "contract_versions": [
+    "lesson-plan/1.3",
+    "first-segment/1.2",
+    "stage-timing/1.0",
+    "visual-scene/1.0"
+  ],
+  "decision": "pass",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "fixture_versions": [
+    "ts03-plans/1.5",
+    "ts03-cases/1.5",
+    "ts03-generation-policies/1.4"
+  ],
+  "followup_diagnostics": [
+    {
+      "decision_effect": "does_not_replace_formal_round_3",
+      "diagnostic": "staged_first_meaningful_segment",
+      "first_meaningful_ready_p80_ms": null,
+      "first_segment_gate_pass": "0/4",
+      "fixed_parameters": {
+        "automatic_retries": 0,
+        "max_tokens": 3000,
+        "response_format": "json_object",
+        "temperature": 0,
+        "timeout_seconds": 30
+      },
+      "result_path": "results/model-deepseek-v4-pro-first-segment-round-1.json",
+      "run_label": "first-segment-round-1",
+      "status": "fail",
+      "threshold_ms": 8000,
+      "timed_out_requests": 4
+    },
+    {
+      "decision_effect": "does_not_replace_formal_round_3",
+      "diagnostic": "streamed_first_meaningful_segment",
+      "first_content_delta_count": 0,
+      "first_meaningful_ready_p80_ms": null,
+      "first_reasoning_delta_p80_ms": 1761,
+      "first_segment_gate_pass": "0/4",
+      "first_sse_event_p80_ms": 1646,
+      "fixed_parameters": {
+        "automatic_retries": 0,
+        "deadline_seconds": 30,
+        "max_tokens": 3000,
+        "response_format": "json_object",
+        "stream": true,
+        "temperature": 0
+      },
+      "reasoning_only_stream_count": 4,
+      "result_path": "results/model-deepseek-v4-pro-stream-first-segment-round-1.json",
+      "run_label": "stream-first-segment-round-1",
+      "status": "fail",
+      "threshold_ms": 8000
+    },
+    {
+      "decision_effect": "does_not_replace_formal_round_3",
+      "diagnostic": "streamed_first_meaningful_segment",
+      "first_content_delta_count": 4,
+      "first_content_delta_p80_ms": 2094,
+      "first_meaningful_ready_p80_ms": 6806,
+      "first_reasoning_delta_p80_ms": null,
+      "first_segment_gate_pass": "4/4",
+      "first_sse_event_p80_ms": 392,
+      "fixed_parameters": {
+        "automatic_retries": 0,
+        "deadline_seconds": 30,
+        "max_tokens": 3000,
+        "response_format": "json_object",
+        "stream": true,
+        "temperature": 0,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "provider": "DeepSeek official API",
+      "reasoning_only_stream_count": 0,
+      "result_path": "results/model-deepseek-v4-pro-official-stream-first-segment-round-1.json",
+      "run_label": "official-stream-first-segment-round-1",
+      "status": "pass",
+      "threshold_ms": 8000
+    }
+  ],
+  "human_review": {
+    "approved_to_pass_ts03": true,
+    "executed": true,
+    "failed": 0,
+    "independent_from_candidate_model": true,
+    "new_model_round_required": false,
+    "overall_observation": "The generated explanations may be too simple and concise, with limited explanatory depth.",
+    "passed": 4,
+    "result": "pass",
+    "review_packet_path": "results/official-full-round-5-human-review-zh.md",
+    "review_path": "results/model-deepseek-v4-pro-official-full-round-5-human-review.json",
+    "reviewed": 4,
+    "reviewers": {
+      "product": "jun",
+      "subject": "jun"
+    },
+    "separate_role_reviewers": false,
+    "status": "human_review_complete"
+  },
+  "metrics": {
+    "critical_sequence_pass_rate": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": ">=90%"
+    },
+    "knowledge_provenance_validity": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": "100%"
+    },
+    "negative_category_detection": {
+      "critical_order": {
+        "passed": 2,
+        "total": 2
+      },
+      "fallback": {
+        "passed": 1,
+        "total": 1
+      },
+      "semantic_source_support": {
+        "passed": 4,
+        "total": 4
+      },
+      "semantic_transfer": {
+        "passed": 3,
+        "total": 3
+      },
+      "source_support": {
+        "passed": 1,
+        "total": 1
+      },
+      "stage_context": {
+        "passed": 6,
+        "total": 6
+      },
+      "stage_label_swap": {
+        "passed": 1,
+        "total": 1
+      },
+      "transfer_skin_swap": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "paired_stage_contract": {
+      "result": "pass",
+      "threshold": "pass"
+    },
+    "positive_plan_schema_validity": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": ">=99%"
+    },
+    "segments_without_static_fallback_admitted": {
+      "denominator": 1,
+      "numerator": 0,
+      "threshold": "0"
+    },
+    "skin_swap_transfers_admitted": {
+      "denominator": 2,
+      "numerator": 0,
+      "threshold": "0"
+    },
+    "stage_context_complete": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": "100%"
+    },
+    "stage_label_only_plans_admitted": {
+      "denominator": 1,
+      "numerator": 0,
+      "threshold": "0"
+    },
+    "unsupported_fact_refs_admitted": {
+      "denominator": 1,
+      "numerator": 0,
+      "threshold": "0"
+    }
+  },
+  "model_generation": {
+    "adjudication_path": "results/model-deepseek-v4-pro-official-full-round-5-gate-recheck.json",
+    "completed_requests": 4,
+    "contract_gate_pass": "4/4",
+    "contract_version": "lesson-plan/1.3",
+    "cost": "unverified; consult provider billing",
+    "current_harness_contract_version": "lesson-plan/1.3",
+    "current_harness_retested": true,
+    "decision": "candidate_run_complete",
+    "executed": true,
+    "formal_run_label": "official-full-round-5",
+    "latency_p50_ms": 19085,
+    "latency_p80_ms": 21132,
+    "latency_p95_ms": 23020,
+    "original_contract_gate_pass": "3/4",
+    "paired_stage_contract": "pass",
+    "planned_requests": 4,
+    "provider": "DeepSeek official API",
+    "recorded_total_tokens": 21206,
+    "request_model": "deepseek-v4-pro",
+    "result_path": "results/model-deepseek-v4-pro-official-full-round-5.json",
+    "schema_validity": "4/4",
+    "timed_out_requests": 0
+  },
+  "run_at": "2026-07-30T11:54:17.940029+00:00",
+  "slice_id": "TS-03",
+  "status": "pass",
+  "timing_by_stage": {
+    "plan.complete_available": {
+      "count": 4,
+      "failure_rate": 0.0,
+      "max_ms": 0.000209,
+      "p50_ms": 8.3e-05,
+      "p80_ms": 0.000134,
+      "p95_ms": 0.00019
+    },
+    "plan.contract_validation.negative_fixture": {
+      "count": 20,
+      "failure_rate": 1.0,
+      "max_ms": 0.274334,
+      "p50_ms": 0.248771,
+      "p80_ms": 0.263933,
+      "p95_ms": 0.269464
+    },
+    "plan.contract_validation.positive": {
+      "count": 4,
+      "failure_rate": 0.0,
+      "max_ms": 0.412709,
+      "p50_ms": 0.285834,
+      "p80_ms": 0.360909,
+      "p95_ms": 0.399759
+    },
+    "plan.first_segment_available": {
+      "count": 4,
+      "failure_rate": 0.0,
+      "max_ms": 0.000292,
+      "p50_ms": 0.000104,
+      "p80_ms": 0.000192,
+      "p95_ms": 0.000267
+    },
+    "plan.stage_pair_validation": {
+      "count": 1,
+      "failure_rate": 0.0,
+      "max_ms": 0.001916,
+      "p50_ms": 0.001916,
+      "p80_ms": 0.001916,
+      "p95_ms": 0.001916
+    },
+    "plan.static_fallback_available": {
+      "count": 4,
+      "failure_rate": 0.0,
+      "max_ms": 0.000541,
+      "p50_ms": 0.000271,
+      "p80_ms": 0.000416,
+      "p95_ms": 0.00051
+    },
+    "plan.transfer_available": {
+      "count": 4,
+      "failure_rate": 0.0,
+      "max_ms": 0.000125,
+      "p50_ms": 0.000104,
+      "p80_ms": 0.000125,
+      "p95_ms": 0.000125
+    }
+  }
+}

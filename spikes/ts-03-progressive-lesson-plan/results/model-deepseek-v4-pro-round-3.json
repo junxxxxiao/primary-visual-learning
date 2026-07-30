@@ -1,0 +1,139 @@
+{
+  "base_url_origin": "https://www.packyapi.ai/v1",
+  "call_results": [
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound",
+      "latency_ms": 46116,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:db1871413b015bf958a27e4629e9f0df36b97efbe70789f493d06655c91153d9",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 3496,
+        "prompt_tokens": 2203,
+        "total_tokens": 5699
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "middle_perfect_square",
+      "latency_ms": 60406,
+      "output_errors": [
+        "The read operation timed out"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "primary_sound_pair",
+      "latency_ms": 60380,
+      "output_errors": [
+        "The read operation timed out"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": null,
+      "fixture_id": "middle_sound_pair",
+      "latency_ms": 60385,
+      "output_errors": [
+        "The read operation timed out"
+      ],
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "schema_valid": false,
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_FAILED"
+      ]
+    }
+  ],
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "decision": "fail",
+  "human_review": {
+    "status": "not_eligible"
+  },
+  "latency_ms": {
+    "max": 60406,
+    "mean": 56822,
+    "min": 46116
+  },
+  "limits": [
+    "A non-streaming response makes first-segment and complete-plan availability occur at the same response boundary.",
+    "Four synthetic fixtures do not establish repeat stability or broad subject coverage.",
+    "Machine checks do not replace independent subject and product review."
+  ],
+  "metrics": {
+    "contract_gate_pass": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "paired_stage_contract": "fail",
+    "schema_validity": {
+      "denominator": 4,
+      "numerator": 1,
+      "threshold": ">=99%"
+    }
+  },
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "automatic_retries": 0,
+    "completed": 1,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T15:24:57.654422+00:00",
+  "run_label": "round-3",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "synthetic_fixture_only": true,
+  "usage": {
+    "completion_tokens": 3496,
+    "prompt_tokens": 2203,
+    "total_tokens": 5699
+  }
+}

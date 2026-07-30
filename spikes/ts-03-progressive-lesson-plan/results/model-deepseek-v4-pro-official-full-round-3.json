@@ -1,0 +1,150 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound",
+      "latency_ms": 20226,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:d32d6fb58c9377af0255adacfa63e0a2c7958f1fe023ab3cb5aae583c7e60cd0",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1949,
+        "prompt_tokens": 2756,
+        "total_tokens": 4705
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "middle_perfect_square",
+      "latency_ms": 22917,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:1880f2c30df1a748239c73ce8f9af06f3635bbaa01d9fe3b3656e250117b1a6a",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1977,
+        "prompt_tokens": 2747,
+        "total_tokens": 4724
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "pass",
+      "finish_reason": "stop",
+      "fixture_id": "primary_sound_pair",
+      "latency_ms": 15828,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:2ef6931cb72701340e01b9b5a59c49376e2d3f5091d32b8fd91d6b2b2f1fc70d",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1438,
+        "prompt_tokens": 2672,
+        "total_tokens": 4110
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_result": "fail",
+      "finish_reason": "stop",
+      "fixture_id": "middle_sound_pair",
+      "latency_ms": 17918,
+      "output_errors": [],
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:77157aecee75134995b521ddf29bdad04ccace28e894170d098fd20b5a67057c",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1653,
+        "prompt_tokens": 2726,
+        "total_tokens": 4379
+      },
+      "violation_codes": [
+        "PREDICTION_ASSERTION_LEAK"
+      ]
+    }
+  ],
+  "child_data_sent": false,
+  "controlled_textbook_content_sent": false,
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "decision": "fail",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 8000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_eligible"
+  },
+  "ai_assisted_pre_review": {
+    "result": "fail",
+    "review_path": "results/model-deepseek-v4-pro-official-full-round-3-review.json",
+    "reviewer_type": "codex_ai_assisted_pre_review",
+    "does_not_count_as_independent_human_review": true
+  },
+  "latency_ms": {
+    "max": 22917,
+    "mean": 19222,
+    "min": 15828,
+    "p50": 19072,
+    "p80": 21302,
+    "p95": 22513
+  },
+  "limits": [
+    "A non-streaming response makes first-segment and complete-plan availability occur at the same response boundary.",
+    "Four synthetic fixtures do not establish repeat stability or broad subject coverage.",
+    "Machine checks do not replace independent subject and product review."
+  ],
+  "metrics": {
+    "contract_gate_pass": {
+      "denominator": 4,
+      "numerator": 3
+    },
+    "paired_stage_contract": "pass",
+    "schema_validity": {
+      "denominator": 4,
+      "numerator": 4,
+      "threshold": ">=99%"
+    }
+  },
+  "provider": "DeepSeek official API",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "automatic_retries": 0,
+    "completed": 4,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T17:48:26.125924+00:00",
+  "run_label": "official-full-round-3",
+  "slice_id": "TS-03",
+  "status": "fail",
+  "synthetic_fixture_only": true,
+  "usage": {
+    "completion_tokens": 7017,
+    "prompt_tokens": 10901,
+    "total_tokens": 17918
+  }
+}

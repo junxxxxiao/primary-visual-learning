@@ -1,0 +1,69 @@
+{
+  "slice_id": "TS-03",
+  "run_label": "official-full-round-1",
+  "review_type": "ai_assisted_semantic_pre_review",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "result": "fail",
+  "reviewed": 4,
+  "passed": 1,
+  "failed": 3,
+  "blocking_findings": [
+    {
+      "fixture_id": "primary_sound",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].narration",
+      "evidence": "但是，两次听到的音调高低是一样的。",
+      "reason": "The first segment directly answers the prediction question before the learner observes or commits an answer."
+    },
+    {
+      "fixture_id": "primary_sound",
+      "code": "UNSUPPORTED_TRANSFER_GENERALIZATION",
+      "severity": "critical",
+      "path": "transfer",
+      "evidence": "The cited claim is limited to the same string, while the transfer objects are a rubber band and steel ruler.",
+      "reason": "The transfer conclusion is not semantically supported by the cited frozen claim."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "TRANSFER_SKIN_SWAP",
+      "severity": "critical",
+      "path": "segments[2], transfer.initial",
+      "evidence": "The lesson changes a wall-side fence into a wall-side rectangular flower bed and repeats that same flower-bed problem as the initial transfer.",
+      "reason": "The context and solution structure remain materially identical, so this does not test transfer."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "TRANSFER_ANSWER_PREEXPOSED",
+      "severity": "critical",
+      "path": "segments[2].static_fallback",
+      "evidence": "The lesson gives the complete 20-meter flower-bed derivation and answer before assigning the same initial transfer.",
+      "reason": "The learner can repeat the shown answer instead of transferring the method."
+    },
+    {
+      "fixture_id": "middle_perfect_square",
+      "code": "SEMANTIC_FACT_SUPPORT_INCOMPLETE",
+      "severity": "major",
+      "path": "segments[2].fact_refs",
+      "evidence": "The segment derives the wall-side fence model but cites only square-bound, not fence-model.",
+      "reason": "The cited claim does not support all factual steps in the segment."
+    },
+    {
+      "fixture_id": "middle_sound_pair",
+      "code": "SEMANTIC_FIRST_SEGMENT_ANSWER_LEAK",
+      "severity": "critical",
+      "path": "segments[0].static_fallback.steps",
+      "evidence": "Both first-segment fallback panels explicitly label frequency as unchanged.",
+      "reason": "The fallback reveals the requested observation before the learner predicts it."
+    }
+  ],
+  "passed_fixtures": [
+    "primary_sound_pair"
+  ],
+  "machine_gate_gap": {
+    "observed": true,
+    "summary": "Exact forbidden-phrase matching missed semantic paraphrases, and object-name inequality did not detect a materially identical transfer problem."
+  },
+  "decision_effect": "Reject this candidate output set. Keep independent subject and product human review unexecuted; do not mark TS-03 pass or unblock TS-04C."
+}

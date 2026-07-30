@@ -10,29 +10,11 @@ const NARRATION_VERSION = 'qwen-standard-1';
 const narrationAudio = name => `./assets/audio/narration-${name}.wav?v=${NARRATION_VERSION}`;
 const SURVEY_URL = window.SOUND_DEMO_CONFIG?.SURVEY_URL?.trim() || '';
 const audioSources = {
-  loudness: './assets/audio/calibration-loudness.wav',
-  pitch: './assets/audio/calibration-pitch.wav',
   light: './assets/audio/string-light.wav',
   strong: './assets/audio/string-strong.wav',
-  calibration: narrationAudio('calibration'),
   lessonIntro: narrationAudio('lesson-intro'),
-  prediction: narrationAudio('prediction'),
   practice: narrationAudio('practice'),
   returnMain: narrationAudio('return-main')
-};
-const confirmationNarration = {
-  text: {
-    source: narrationAudio('confirm-text'),
-    cue: '好，我看到你输入的问题了。这个问题很有意思，我们先把“响”和“高”分清楚。'
-  },
-  photo: {
-    source: narrationAudio('confirm-photo'),
-    cue: '我看到你拍下的是一根琴弦，图片和问题都确认好了。接下来先分清“响”和“高”。'
-  },
-  voice: {
-    source: narrationAudio('confirm-voice'),
-    cue: '好，我听清楚了。这个问题很有意思，我们先把“响”和“高”分清楚。'
-  }
 };
 const estimatedDurations = {
   main: [6, 8, 7],
@@ -42,13 +24,11 @@ const estimatedDurations = {
 const screens = {
   publicEntry: ['声音体验入口', '固定声音主题价值 Demo'],
   ask: ['发起提问', '选择一种方式，把问题交给小知'],
-  calibration: ['词义校准', '先分清响度和音调'],
   onboarding: ['首次使用', '家长授权与儿童设置'],
   home: ['儿童首页', '选择学习入口'],
   askVoice: ['语音提问', '固定夹具模拟语音输入'],
   askPhoto: ['拍照提问', '固定夹具模拟框选与隐私检查'],
   confirm: ['问题确认', '确认儿童原话与学习目标'],
-  prediction: ['诊断预测', '选择会改变后续讲解路径'],
   loading: ['渐进等待', '5–8 秒固定时序演示'],
   explore: ['核心探索', '操作、打断、分支与场景恢复'],
   migration: ['迁移验证', '使用新情境验证同一概念'],
@@ -64,8 +44,8 @@ const screens = {
 };
 
 const navGroups = [
-  ['公开体验', ['publicEntry', 'ask', 'calibration']],
-  ['核心流程', ['home', 'askVoice', 'askPhoto', 'confirm', 'prediction', 'loading', 'explore', 'migration', 'feedback', 'complete']],
+  ['公开体验', ['publicEntry', 'ask']],
+  ['核心流程', ['home', 'askVoice', 'askPhoto', 'confirm', 'loading', 'explore', 'migration', 'feedback', 'complete']],
   ['历史与家长', ['history', 'parentToday', 'parentRecords', 'parentInsights', 'parentSettings']],
   ['边界状态', ['onboarding', 'failure']]
 ];
@@ -73,7 +53,6 @@ const navGroups = [
 const state = {
   screen: 'publicEntry',
   viewport: window.innerWidth < 760 || window.innerHeight > window.innerWidth ? 'mobile' : 'tablet',
-  prediction: null,
   force: 'light',
   slow: false,
   playing: false,
@@ -113,7 +92,6 @@ const state = {
   questionText: fixtureQuestion,
   onboardingStep: 1,
   askMode: 'text',
-  calibrationPlayed: { loudness: false, pitch: false },
   operations: { light: false, strong: false },
   dragFailures: 0,
   followupsCompleted: { slow: false, vacuum: false },
@@ -358,10 +336,7 @@ function playFixedAudio(source, { timeline = false, fromProgress = 0, onEnded = 
 }
 
 function playScreenNarration(screen) {
-  const confirmation = confirmationNarration[state.inputSource] || confirmationNarration.text;
-  const source = screen === 'confirm'
-    ? confirmation.source
-    : screen === 'explore' && !state.coreStarted
+  const source = screen === 'explore' && !state.coreStarted
       ? audioSources.lessonIntro
       : audioSources[screen];
   if (!source) return;
@@ -479,12 +454,6 @@ function renderAsk() {
   </main></div>`;
 }
 
-function renderCalibration() {
-  const cards = [['loudness', '响度', '听起来有多响', '◖'], ['pitch', '音调', '听起来有多高', '⌁']];
-  const calibrationComplete = state.calibrationPlayed.loudness && state.calibrationPlayed.pitch;
-  return `<div class="app-screen public-screen"><header class="public-topbar"><button class="back-button" data-action="back" aria-label="返回提问">‹</button><div><strong>先听懂两个词</strong><small>不急着猜答案，先校准耳朵</small></div><span class="public-step">2 / 4</span></header><main class="screen-body centered public-calibration-body"><div class="calibration-wrap"><div class="eyebrow">词义校准</div><h1>你觉得“响”和“高”分别是什么？</h1><p>按顺序播放两组固定声音，先把词义分清楚。这里不会提前告诉你振幅和频率的关系。</p><div class="narration-cue compact"><span aria-hidden="true">${state.playing ? '◉' : '▶'}</span><div><strong>${state.playing ? '小知正在带你校准耳朵' : '词义引导旁白已播完'}</strong><small>先听第一组响度，再听第二组音调，用耳朵找找它们的不同。</small></div><button data-action="replay-screen-narration" aria-label="重听词义校准旁白">重听</button></div><div class="calibration-grid">${cards.map(([id,label,note,icon])=>{ const locked = id === 'pitch' && !state.calibrationPlayed.loudness; return `<article class="calibration-card ${state.calibrationPlayed[id]?'played':''} ${locked?'locked':''}"><div class="calibration-icon">${icon}</div><h2>${label}</h2><p>${note}</p><button class="calibration-play" data-calibration="${id}" ${locked?'disabled':''}>${state.calibrationPlayed[id]?'▶ 再听一次':locked?'先听响度':'▶ 播放示例'}</button><small>${state.calibrationPlayed[id]?(id === 'loudness' ? '第一声响度较低，第二声响度明显更高。' : '响度接近，第二声音调更高。'):locked?'听完第一组后解锁。':'点击后播放预生成固定声音。'}</small></article>`; }).join('')}</div><div class="button-row end"><button class="btn primary" data-screen="prediction" ${calibrationComplete?'':'disabled'}>我分清了，继续猜 <span aria-hidden="true">→</span></button></div></div></main></div>`;
-}
-
 function renderAskVoice() {
   return `<div class="app-screen">${appHeader({ back: true })}<main class="screen-body centered">
     <div class="content-narrow"><h1>把问题说给我听</h1><p>按住说话，松开后先确认文字。原型不会调用真实麦克风。</p>
@@ -519,37 +488,16 @@ function renderAskPhoto() {
 }
 
 function renderConfirm() {
-  const fromPhoto = state.inputSource === 'photo';
-  const sourceLabel = fromPhoto ? '从照片中识别到的问题' : state.inputSource === 'text' ? '你输入的问题是' : '我听到的是';
-  const narration = confirmationNarration[state.inputSource] || confirmationNarration.text;
   return `<div class="app-screen">${appHeader({ back: true })}<main class="screen-body centered">
-    <div class="content-narrow"><div class="eyebrow">${sourceLabel}</div><div class="question-quote">“${escapeHtml(state.questionText)}”</div>
-      <div class="narration-cue"><span aria-hidden="true">${state.playing ? '◉' : '▶'}</span><div><strong>${state.playing ? '小知正在和你确认' : '刚才的小知旁白已播完'}</strong><small>“${narration.cue}”</small></div><button data-action="replay-screen-narration" aria-label="重听问题确认旁白">重听</button></div>
-      ${fromPhoto ? '<div class="source-note"><strong>识别自</strong><span>已框选的课本琴弦插图</span></div>' : ''}
-      <div class="goal-box"><span>这次要弄明白</span><strong>拨弦力度、振幅、响度和音调之间的关系</strong></div>
-      <div class="notice" style="margin-top:14px">比较时保持同一根弦的长度、松紧和粗细不变。</div>
-      <div class="button-row">${fromPhoto ? '<button class="btn" data-action="retake-photo">重新拍照</button>' : ''}<button class="btn" data-screen="ask">返回入口</button><button class="btn primary" data-screen="calibration">就是这个问题</button></div>
-    </div>
-  </main></div>`;
-}
-
-function renderPrediction() {
-  const options = [
-    ['higher', '会更高', '用力越大，音调越高'],
-    ['louder', '基本不变', '主要变化可能在响度'],
-    ['unsure', '还不确定', '我想先看一看']
-  ];
-  return `<div class="app-screen">${appHeader({ back: true })}<main class="screen-body centered">
-    <div class="content-narrow"><div class="eyebrow">先猜一猜</div><h1>${fixtureQuestion}</h1><p>先凭感觉选一个。猜错也没关系，我们马上用琴弦亲自验证。</p><div class="narration-cue compact"><span aria-hidden="true">${state.playing ? '◉' : '▶'}</span><div><strong>${state.playing ? '小知正在引导你猜' : '猜一猜旁白已播完'}</strong><small>会更高、基本不变，还是你还不确定？</small></div><button data-action="replay-screen-narration" aria-label="重听猜一猜旁白">重听</button></div><div class="notice info">同一根弦，长度、松紧、粗细不变，只改变拨弦力度。</div>
-      <div class="choice-list">${options.map(([id, label, note]) => `<button class="choice ${state.prediction === id ? 'selected' : ''}" data-prediction="${id}"><span class="choice-marker">${state.prediction === id ? '✓' : ''}</span><span><strong>${label}</strong><small>${note}</small></span></button>`).join('')}</div>
-      <div class="button-row end"><button class="btn primary" data-screen="loading" ${state.prediction ? '' : 'disabled'}>去验证</button></div>
+    <div class="content-narrow"><div class="eyebrow">你想问的问题是</div><div class="question-quote">“${escapeHtml(state.questionText)}”</div>
+      <div class="button-row"><button class="btn" data-screen="ask">修改问题</button><button class="btn primary" data-screen="loading">就是这个问题</button></div>
     </div>
   </main></div>`;
 }
 
 function renderLoading() {
   return `<div class="app-screen">${appHeader({ back: true })}<main class="screen-body centered">
-    <div class="loading-wrap"><div class="loading-graphic" aria-hidden="true"><div class="loading-rig"><i></i><span></span><i></i><b></b></div><small>正在校准琴弦观察画面</small></div><h1>正在准备第一段观察</h1><p>先把同一根琴弦的轻拨和用力拨放在一起比较。</p><div class="progress-track" role="progressbar" aria-label="讲解准备进度" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar"></div></div><div class="helper">准备完成后会自动开始，互动模型将在讲解后出现</div>
+    <div class="loading-wrap"><div class="loading-graphic" aria-hidden="true"><div class="loading-rig"><i></i><span></span><i></i><b></b></div><small>正在准备琴弦观察画面</small></div><h1>正在准备第一段观察</h1><p>先把同一根琴弦的轻拨和用力拨放在一起比较。</p><div class="progress-track" role="progressbar" aria-label="讲解准备进度" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar"></div></div><div class="helper">准备完成后会自动开始，互动模型将在讲解后出现</div>
     </div>
   </main></div>`;
 }
@@ -684,7 +632,7 @@ function renderHistory() {
   const selected = records[state.historySelected];
   const selectedEvidence = parentRecordsData[state.historySelected] || parentRecordsData[0];
   const detailContent = `<div class="eyebrow">${selected.date}</div><h2>${selected.title}</h2><p>这条记录通过保存的对话、场景快照和操作事件重建，不重新调用模型。</p>
-    <div class="evidence-timeline"><div class="evidence-row"><strong>原来的想法</strong><p>${selectedEvidence.misconception}</p><small>预测节点</small></div><div class="evidence-row"><strong>关键操作</strong><p>${selectedEvidence.intervention}</p><small>互动讲解节点</small></div><div class="evidence-row"><strong>迁移结果</strong><p>${selectedEvidence.transfer}</p><small>${selectedEvidence.statusLabel}</small></div></div>
+    <div class="evidence-timeline"><div class="evidence-row"><strong>问题起点</strong><p>${selectedEvidence.misconception}</p><small>问题确认节点</small></div><div class="evidence-row"><strong>关键操作</strong><p>${selectedEvidence.intervention}</p><small>互动讲解节点</small></div><div class="evidence-row"><strong>迁移结果</strong><p>${selectedEvidence.transfer}</p><small>${selectedEvidence.statusLabel}</small></div></div>
     <div class="button-row"><button class="btn" data-action="replay">从头回放</button><button class="btn primary" data-action="continue-node">从关键节点继续问</button></div>`;
   return `<div class="app-screen">${appHeader({ back: true })}<main class="screen-body"><div class="content-wide">
     <div class="section-heading"><div><h1>我的探索</h1><p>回看当时的问题和操作，或从关键节点继续问。</p></div></div>
@@ -767,9 +715,9 @@ function renderFailure() {
 
 function render() {
   const renderers = {
-    publicEntry: renderPublicEntry, ask: renderAsk, calibration: renderCalibration,
+    publicEntry: renderPublicEntry, ask: renderAsk,
     onboarding: renderOnboarding, home: renderHome, askVoice: renderAskVoice, askPhoto: renderAskPhoto,
-    confirm: renderConfirm, prediction: renderPrediction, loading: renderLoading, explore: renderExplore,
+    confirm: renderConfirm, loading: renderLoading, explore: renderExplore,
     migration: renderMigration, feedback: renderFeedback, complete: renderComplete, history: renderHistory,
     parentPin: renderParentPin, parentToday: renderParentToday, parentRecords: renderParentRecords,
     parentInsights: renderParentInsights, parentSettings: renderParentSettings, failure: renderFailure
@@ -816,8 +764,6 @@ function goTo(screen) {
     startSegmentPlayback({ fromProgress: state.progress });
   } else if (screen === 'explore' && !state.coreStarted) {
     playScreenNarration('explore');
-  } else if (screen === 'confirm' || screen === 'calibration' || screen === 'prediction') {
-    playScreenNarration(screen);
   }
 }
 
@@ -840,14 +786,6 @@ document.addEventListener('click', (event) => {
     if (state.askMode === 'voice') state.inputSource = 'voice';
     if (state.askMode === 'text') state.inputSource = 'text';
     showToast(state.askMode === 'photo' ? '拍照入口已准备，Demo 使用固定图片' : state.askMode === 'voice' ? '语音入口已准备，Demo 使用固定转写' : '文字入口已准备');
-    render(); return;
-  }
-  const calibration = event.target.closest('[data-calibration]');
-  if (calibration) {
-    state.calibrationPlayed[calibration.dataset.calibration] = true;
-    state.playing = false;
-    playFixedAudio(audioSources[calibration.dataset.calibration]);
-    showToast(calibration.dataset.calibration === 'loudness' ? '第一声较轻，第二声明显更响' : '响度接近：第二声音调更高');
     render(); return;
   }
   const parentFilter = event.target.closest('[data-parent-filter]');
@@ -893,8 +831,6 @@ document.addEventListener('click', (event) => {
     document.querySelectorAll('[data-viewport]').forEach(b => b.classList.toggle('active', b.dataset.viewport === state.viewport));
     render(); return;
   }
-  const prediction = event.target.closest('[data-prediction]');
-  if (prediction) { state.prediction = prediction.dataset.prediction; render(); return; }
   const force = event.target.closest('[data-force]');
   if (force) {
     const nextForce = force.dataset.force;
@@ -968,7 +904,7 @@ document.addEventListener('click', (event) => {
   if (!action) return;
   const handlers = {
     back: () => {
-      const targets = { ask: 'publicEntry', confirm: 'ask', calibration: 'confirm', askVoice: 'ask', askPhoto: 'ask', prediction: 'calibration', loading: 'prediction', migration: 'explore', feedback: 'migration', history: 'home', parentPin: 'home', failure: 'loading' };
+      const targets = { ask: 'publicEntry', confirm: 'ask', askVoice: 'ask', askPhoto: 'ask', loading: 'confirm', migration: 'explore', feedback: 'migration', history: 'home', parentPin: 'home', failure: 'loading' };
       goTo(targets[state.screen] || 'home');
     },
     'replay-screen-narration': () => playScreenNarration(state.screen),
@@ -1052,7 +988,7 @@ document.addEventListener('click', (event) => {
       else { state.transferResult = 'incomplete'; goTo('feedback'); }
     },
     'open-survey': () => { if (SURVEY_URL) window.location.assign(SURVEY_URL); else showToast('问卷链接尚未开放'); },
-    'restart-demo': () => { stopCurrentNarration(); clearTimeout(followupRecordingTimer); followupRecordingTimer = null; state.screen = 'publicEntry'; state.askMode = 'text'; state.prediction = null; state.calibrationPlayed = { loudness: false, pitch: false }; state.force = 'light'; state.operations = { light: false, strong: false }; state.dragFailures = 0; state.followupsCompleted = { slow: false, vacuum: false }; state.followupSelected = 'slow'; state.followupInputMode = 'text'; state.slow = false; state.playing = false; state.segment = 1; state.progress = 0; state.lessonComplete = false; state.coreStarted = false; state.branch = false; state.branchAvailable = false; state.migrationStage = 'fork'; state.migrationConclusion = null; state.migrationReason = null; state.migrationLoudness = null; state.transferResult = null; state.feedback = null; state.savedSnapshot = null; state.pendingSnapshot = null; state.followupRecording = false; state.followupTranscriptReady = false; state.segmentLeadIn = false; state.returningFromVacuum = false; state.tutorWasPlaying = false; render(); },
+    'restart-demo': () => { stopCurrentNarration(); clearTimeout(followupRecordingTimer); followupRecordingTimer = null; state.screen = 'publicEntry'; state.askMode = 'text'; state.force = 'light'; state.operations = { light: false, strong: false }; state.dragFailures = 0; state.followupsCompleted = { slow: false, vacuum: false }; state.followupSelected = 'slow'; state.followupInputMode = 'text'; state.slow = false; state.playing = false; state.segment = 1; state.progress = 0; state.lessonComplete = false; state.coreStarted = false; state.branch = false; state.branchAvailable = false; state.migrationStage = 'fork'; state.migrationConclusion = null; state.migrationReason = null; state.migrationLoudness = null; state.transferResult = null; state.feedback = null; state.savedSnapshot = null; state.pendingSnapshot = null; state.followupRecording = false; state.followupTranscriptReady = false; state.segmentLeadIn = false; state.returningFromVacuum = false; state.tutorWasPlaying = false; render(); },
     replay: () => { state.force = 'strong'; state.slow = true; state.branch = false; state.branchAvailable = true; state.segment = 1; state.lessonComplete = false; goTo('explore'); showToast('正在按保存事件重建现场'); },
     'continue-node': () => { state.historyDetail = true; render(); },
     'close-history-modal': () => { state.historyDetail = false; render(); },

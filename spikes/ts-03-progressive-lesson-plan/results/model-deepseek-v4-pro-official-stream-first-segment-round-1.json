@@ -1,0 +1,127 @@
+{
+  "call_results": [
+    {
+      "content_character_count": 1290,
+      "finish_reason": null,
+      "fixture_id": "primary_sound",
+      "gate_result": "pass",
+      "metrics": {
+        "first_content_delta_ms": 1091,
+        "first_meaningful_ready_ms": 5466,
+        "first_reasoning_delta_ms": null,
+        "first_sse_event_ms": 348,
+        "response_headers_ms": 131
+      },
+      "output_kind": "candidate_output",
+      "parse_error": null,
+      "raw_stream_hash": "sha256:746e0f878bc201691d62800acc956c87cbb6d72b34bac5c806e5c4e65f5f71e5",
+      "reasoning_character_count": 0,
+      "response_model": "deepseek-v4-pro",
+      "sse_event_count": 441,
+      "timed_out": false,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 1461,
+      "finish_reason": null,
+      "fixture_id": "middle_perfect_square",
+      "gate_result": "pass",
+      "metrics": {
+        "first_content_delta_ms": 2459,
+        "first_meaningful_ready_ms": 7612,
+        "first_reasoning_delta_ms": null,
+        "first_sse_event_ms": 392,
+        "response_headers_ms": 100
+      },
+      "output_kind": "candidate_output",
+      "parse_error": null,
+      "raw_stream_hash": "sha256:88a85b6ddbf5f6c377a2377695a27dfe3b5b8b56d73ed484b2d5c1d84eeb76ba",
+      "reasoning_character_count": 0,
+      "response_model": "deepseek-v4-pro",
+      "sse_event_count": 528,
+      "timed_out": false,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 1290,
+      "finish_reason": null,
+      "fixture_id": "primary_sound_pair",
+      "gate_result": "pass",
+      "metrics": {
+        "first_content_delta_ms": 1851,
+        "first_meaningful_ready_ms": 6268,
+        "first_reasoning_delta_ms": null,
+        "first_sse_event_ms": 258,
+        "response_headers_ms": 107
+      },
+      "output_kind": "candidate_output",
+      "parse_error": null,
+      "raw_stream_hash": "sha256:bc1c17f575039476cd5b3a83052b7a3a98b128400b97c9d6802af95cf5557795",
+      "reasoning_character_count": 0,
+      "response_model": "deepseek-v4-pro",
+      "sse_event_count": 456,
+      "timed_out": false,
+      "violation_codes": []
+    },
+    {
+      "content_character_count": 1430,
+      "finish_reason": null,
+      "fixture_id": "middle_sound_pair",
+      "gate_result": "pass",
+      "metrics": {
+        "first_content_delta_ms": 1416,
+        "first_meaningful_ready_ms": 5817,
+        "first_reasoning_delta_ms": null,
+        "first_sse_event_ms": 392,
+        "response_headers_ms": 107
+      },
+      "output_kind": "candidate_output",
+      "parse_error": null,
+      "raw_stream_hash": "sha256:ec55a38f15ead4422a7de4df9b4964d886f99ce7447de902f69efe9bb52e4b5b",
+      "reasoning_character_count": 0,
+      "response_model": "deepseek-v4-pro",
+      "sse_event_count": 480,
+      "timed_out": false,
+      "violation_codes": []
+    }
+  ],
+  "cost": "unverified; consult provider billing",
+  "decision_effect": "This diagnostic does not replace or overwrite the formal round-3 TS-03 failure.",
+  "diagnostic": "streamed_first_meaningful_segment",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "deadline_seconds": 30,
+    "max_tokens": 3000,
+    "response_format": "json_object",
+    "stream": true,
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "metrics": {
+    "first_content_delta_count": 4,
+    "first_content_delta_p80_ms": 2094,
+    "first_meaningful_ready_p80_ms": 6806,
+    "first_reasoning_delta_count": 0,
+    "first_reasoning_delta_p80_ms": null,
+    "first_segment_gate_pass": {
+      "denominator": 4,
+      "numerator": 4
+    },
+    "first_sse_event_count": 4,
+    "first_sse_event_p80_ms": 392,
+    "reasoning_only_stream_count": 0,
+    "threshold_ms": 8000
+  },
+  "provider": "DeepSeek official API",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 4,
+    "planned": 4
+  },
+  "run_at": "2026-07-29T16:13:56.485058+00:00",
+  "run_label": "official-stream-first-segment-round-1",
+  "slice_id": "TS-03",
+  "status": "pass"
+}

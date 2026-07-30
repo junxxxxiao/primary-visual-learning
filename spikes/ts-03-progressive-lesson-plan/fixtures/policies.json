@@ -1,0 +1,201 @@
+{
+  "fixture_version": "ts03-generation-policies/1.4",
+  "policies": {
+    "primary_sound": {
+      "prerequisite_term_support": {
+        "science.sound.vibration.basic": [
+          "振动"
+        ]
+      },
+      "transfer": {
+        "initial": {
+          "allowed_objects": [
+            "音叉"
+          ],
+          "approved_prompt": "同一把音叉被更用力敲击时，声音会怎样变化？先给结论，再说明振幅和音调分别怎样。",
+          "required_prompt_fragments": [
+            "音叉",
+            "更用力"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "required_difference_dimensions": [
+            "object",
+            "interaction"
+          ]
+        },
+        "retry": {
+          "allowed_objects": [
+            "鼓面"
+          ],
+          "approved_prompt": "同一面鼓轻敲和重敲时，哪一项主要改变？请给结论并说明原因。",
+          "required_prompt_fragments": [
+            "鼓",
+            "重敲"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "required_difference_dimensions": [
+            "object",
+            "interaction"
+          ]
+        }
+      }
+    },
+    "middle_perfect_square": {
+      "prerequisite_term_support": {
+        "math.algebra.multiply_binomials": [
+          "完全平方",
+          "配方"
+        ],
+        "math.square.nonnegative": [
+          "非负"
+        ]
+      },
+      "transfer": {
+        "initial": {
+          "allowed_objects": [
+            "固定周长花坛"
+          ],
+          "approved_prompt": "把固定周长的长方形面积配方，给出最大面积结论，并说明平方项为什么能证明它。",
+          "required_prompt_fragments": [
+            "固定周长",
+            "长方形"
+          ],
+          "forbidden_prompt_fragments": [
+            "靠墙",
+            "三边"
+          ],
+          "required_fact_refs": [
+            "complete-square-bound"
+          ],
+          "required_difference_dimensions": [
+            "constraint",
+            "known_conditions"
+          ]
+        },
+        "retry": {
+          "allowed_objects": [
+            "抛物线高度"
+          ],
+          "approved_prompt": "把二次式配成平方形式，判断最高点，并用平方项的符号解释原因。",
+          "required_prompt_fragments": [
+            "二次式",
+            "最高点"
+          ],
+          "forbidden_prompt_fragments": [
+            "围栏",
+            "花坛"
+          ],
+          "required_fact_refs": [
+            "complete-square-bound"
+          ],
+          "required_difference_dimensions": [
+            "representation",
+            "reasoning_path"
+          ]
+        }
+      }
+    },
+    "primary_sound_pair": {
+      "prerequisite_term_support": {
+        "science.sound.vibration.basic": [
+          "振动"
+        ]
+      },
+      "transfer": {
+        "initial": {
+          "allowed_objects": [
+            "尺子"
+          ],
+          "approved_prompt": "同一把尺子伸出长度不变，弹得更用力会怎样？给结论并说明原因。",
+          "required_prompt_fragments": [
+            "尺子",
+            "伸出长度不变"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "required_difference_dimensions": [
+            "object",
+            "known_conditions"
+          ]
+        },
+        "retry": {
+          "allowed_objects": [
+            "鼓面"
+          ],
+          "approved_prompt": "同一面鼓重敲时主要改变什么？给结论并说明原因。",
+          "required_prompt_fragments": [
+            "鼓",
+            "重敲"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "required_difference_dimensions": [
+            "object",
+            "interaction"
+          ]
+        }
+      }
+    },
+    "middle_sound_pair": {
+      "prerequisite_term_support": {
+        "science.wave.amplitude": [
+          "振幅"
+        ],
+        "science.wave.frequency": [
+          "频率"
+        ]
+      },
+      "transfer": {
+        "initial": {
+          "allowed_objects": [
+            "信号发生器"
+          ],
+          "approved_prompt": "保持频率设置不变，只增大输出幅度。判断波形和听感，并用振幅、频率说明原因。",
+          "required_prompt_fragments": [
+            "频率设置不变",
+            "输出幅度"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "required_difference_dimensions": [
+            "representation",
+            "controlled_variable"
+          ]
+        },
+        "retry": {
+          "allowed_objects": [
+            "扬声器膜片"
+          ],
+          "approved_prompt": "输入频率不变而电压幅度增大时，膜片运动和听感怎样？给结论并解释。",
+          "required_prompt_fragments": [
+            "频率不变",
+            "电压幅度"
+          ],
+          "forbidden_prompt_fragments": [],
+          "required_fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "required_difference_dimensions": [
+            "object",
+            "controlled_variable"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const html = fs.readFileSync(new URL('../sound-demo.html', import.meta.url), 'utf8');
+const designHtml = fs.readFileSync(new URL('../../design/high-fidelity/sound-demo-screen-concepts.html', import.meta.url), 'utf8');
 const failures = [];
 const requireMatch = (condition, message) => {
   if (!condition) failures.push(message);
@@ -102,7 +103,24 @@ requireMatch(/document\.body\.classList\.toggle\('tutor-overlay-open', drawerOpe
 requireMatch(/phone-viewport-forced \.screen-scroll \{[^}]*overflow-x:\s*hidden;[^}]*overflow-y:\s*auto;/.test(html), '固定手机审阅画布必须在模拟页面视口内部滚动');
 requireMatch(/const contentBounds = \{ left: 0, top: 0, right: canvas\.scrollWidth, bottom: canvas\.scrollHeight \}/.test(html), '画布边界审计必须以完整可滚内容范围为准');
 requireMatch(/function auditScrollOwnership\(\)/.test(html) && /window\.__demoAuditScrollOwnership = auditScrollOwnership/.test(html), 'Demo 必须暴露机器可读的分层滚动契约审计入口');
+requireMatch(/lessonShellGap < 8[\s\S]{0,100}lesson-shell-gap-missing/.test(html), '共享布局审计必须拦截导航和讲解网格之间缺少间距');
+requireMatch(/lessonColumnsBottomDelta > 1[\s\S]{0,100}lesson-columns-bottom-misaligned/.test(html), '共享布局审计必须拦截工作区与对话栏底边不对齐');
 requireMatch(/function syncTutorOverlayLock\(\)/.test(html) && /window\.addEventListener\('resize',[\s\S]{0,180}syncTutorOverlayLock\(\)/.test(html), '旋转或断点变化后必须重新同步小知抽屉的背景锁定');
+requireMatch(
+  /--lesson-shell-gap:\s*clamp\(12px,\s*1\.6vw,\s*20px\);/.test(html)
+    && /\.lesson-shell \{[^}]*gap:\s*var\(--lesson-shell-gap\);/.test(html)
+    && /--lesson-shell-gap:\s*clamp\(12px,\s*1\.6vw,\s*20px\);/.test(designHtml)
+    && /\.lesson-shell \{[^}]*gap:\s*var\(--lesson-shell-gap\);/.test(designHtml),
+  '原型和高保真共享讲解外壳必须消费统一间距 Token，不得使用在自适应高度下归零的百分比 gap'
+);
+requireMatch(/@media \(min-width: 701px\) and \(orientation: landscape\) \{[\s\S]{0,240}body\.runtime-demo \.tutor-panel \{[^}]*height:\s*100%;[^}]*max-height:\s*none;[^}]*align-self:\s*stretch;/.test(html), '平板共享对话栏必须与讲解工作区使用同一网格行并等高到底');
+requireMatch(!/math-mode[^{}]*lesson-(?:shell|grid)|math-mode[^{}]*tutor-panel[^{}]*\{[^}]*(?:height|max-height|align-self|gap):/.test(html), '声音和数学不得分别覆盖共享讲解外壳的间距或对齐');
+requireMatch(!/data-screen="(?:calibration|prediction)"/.test(html), '主原型不得保留已退出的校准或预测页面 DOM');
+requireMatch(/if \(name === 'calibration' \|\| name === 'prediction'\) name = 'loading';/.test(html), '主原型必须把旧校准和预测路由归一到加载页');
+requireMatch(!/narration-confirm-text\.wav|playConfirmationNarration/.test(designHtml), '高保真确认页不得播放已废弃的校准或预测旁白');
+requireMatch(!/data-screen="(?:calibration|prediction)"/.test(designHtml), '高保真设计不得保留已退出的校准或预测页面 DOM');
+requireMatch(/if \(name === 'calibration' \|\| name === 'prediction'\) name = 'loading';/.test(designHtml), '高保真设计必须把旧校准和预测路由归一到加载页');
+requireMatch(!/const validScreens = \[[^\]]*(?:calibration|prediction)/.test(designHtml), '高保真有效页面列表不得重新启用退休状态');
 
 if (failures.length) {
   console.error(failures.map(failure => `- ${failure}`).join('\n'));

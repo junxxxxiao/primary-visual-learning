@@ -1,5 +1,5 @@
 {
-  "fixture_version": "1.0",
+  "fixture_version": "1.1",
   "cases": [
     {
       "schema_version": "1.0",
@@ -18,12 +18,14 @@
         {
           "claim_id": "force-amplitude-pitch",
           "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+          "supported_terms": ["振幅", "响度", "音调"],
           "critical": true,
           "evidence_refs": [{"source_id": "primary-sound-synthetic-v1", "page": 12, "quote": "plucking it harder mainly increases vibration amplitude"}]
         },
         {
           "claim_id": "pitch-frequency-loudness-amplitude",
           "text": "Pitch relates to frequency while loudness relates here to amplitude.",
+          "supported_terms": ["振动", "振幅", "频率", "响度", "音调"],
           "critical": true,
           "evidence_refs": [{"source_id": "primary-sound-synthetic-v1", "page": 13, "quote": "Pitch describes how high or low a sound seems"}]
         }
@@ -52,18 +54,21 @@
         {
           "claim_id": "perfect-square-identities",
           "text": "The perfect-square identities follow from binomial multiplication.",
+          "supported_terms": ["完全平方", "配方"],
           "critical": true,
           "evidence_refs": [{"source_id": "middle-perfect-square-synthetic-v1", "page": 34, "quote": "follow by multiplying the binomials"}]
         },
         {
           "claim_id": "complete-square-bound",
           "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square.",
+          "supported_terms": ["完全平方", "配方", "非负", "最大值"],
           "critical": true,
           "evidence_refs": [{"source_id": "middle-perfect-square-synthetic-v1", "page": 34, "quote": "a real square is nonnegative"}]
         },
         {
           "claim_id": "fence-transfer",
           "text": "A wall-side fencing problem can be modeled and optimized by completing the square.",
+          "supported_terms": ["面积", "最大值", "配方"],
           "critical": true,
           "evidence_refs": [{"source_id": "middle-perfect-square-synthetic-v1", "page": 35, "quote": "Completing the square identifies the maximizing dimensions"}]
         }
@@ -73,6 +78,42 @@
       "age_appropriate_expression": "Show the identity, the square term, and why its sign proves the bound.",
       "prerequisites_used": ["math.algebra.multiply_binomials", "math.square.nonnegative"],
       "transfer_task": {"different_context": true, "asks_conclusion": true, "asks_reason": true, "prompt": "Use 120 metres of fencing on three sides; find the maximum area and explain why it is maximal."},
+      "expected_decision": "publish"
+    },
+    {
+      "schema_version": "1.0",
+      "case_id": "middle_sound_pair_valid",
+      "package_kind": "textbook_atom",
+      "stage_profile": {
+        "school_stage": "middle",
+        "grade": 8,
+        "curriculum": "synthetic-national-curriculum-2026",
+        "textbook_edition": "synthetic-middle-science-2026",
+        "prerequisite_refs": ["science.wave.amplitude", "science.wave.frequency"],
+        "profile_version": "1.0"
+      },
+      "source_refs": [{"source_id": "middle-sound-wave-synthetic-v1", "pages": [18, 19]}],
+      "claims": [
+        {
+          "claim_id": "force-amplitude-frequency",
+          "text": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+          "supported_terms": ["振幅", "频率", "波形"],
+          "critical": true,
+          "evidence_refs": [{"source_id": "middle-sound-wave-synthetic-v1", "page": 18, "quote": "increasing the driving force mainly increases vibration amplitude"}]
+        },
+        {
+          "claim_id": "wave-perception-map",
+          "text": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch.",
+          "supported_terms": ["振幅", "频率", "响度", "音调", "波形"],
+          "critical": true,
+          "evidence_refs": [{"source_id": "middle-sound-wave-synthetic-v1", "page": 19, "quote": "amplitude is related to loudness and frequency is related to pitch"}]
+        }
+      ],
+      "boundaries": ["same vibrating system", "unchanged boundary conditions", "driving force is the only changed variable"],
+      "learning_objective": "Use waveform amplitude and frequency to distinguish loudness from pitch under a controlled change.",
+      "age_appropriate_expression": "Compare waveform height and horizontal period as separate quantities before connecting them to hearing.",
+      "prerequisites_used": ["science.wave.amplitude", "science.wave.frequency"],
+      "transfer_task": {"different_context": true, "asks_conclusion": true, "asks_reason": true, "prompt": "Keep signal frequency fixed, increase output amplitude, and explain the waveform and auditory changes."},
       "expected_decision": "publish"
     },
     {
