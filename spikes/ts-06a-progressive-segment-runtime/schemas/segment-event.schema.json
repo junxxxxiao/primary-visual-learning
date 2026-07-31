@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "segment-event/1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "trace_id", "event_type", "session_id", "lesson_id", "manifest_version", "manifest_hash", "segment_id", "segment_version", "ordinal", "offset_ms", "attempt", "cache_status", "payload", "payload_hash"],
+  "properties": {
+    "schema_version": { "const": "segment-event/1.0" },
+    "event_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "trace_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "event_type": { "enum": ["lesson_open", "manifest_ready", "segment_ready", "visual_ready", "audio_ready", "segment_admitted", "segment_playable", "segment_started", "segment_completed", "lesson_complete", "fallback", "cancelled"] },
+    "session_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "lesson_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "manifest_version": { "type": "integer", "minimum": 1 },
+    "manifest_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "segment_id": { "type": ["string", "null"], "maxLength": 64 },
+    "segment_version": { "type": ["integer", "null"], "minimum": 1 },
+    "ordinal": { "type": ["integer", "null"], "minimum": 0 },
+    "offset_ms": { "type": "integer", "minimum": 0 },
+    "attempt": { "type": "integer", "minimum": 0 },
+    "cache_status": { "enum": ["not_applicable", "miss", "hit", "write", "invalidated"] },
+    "payload": { "type": "object" },
+    "payload_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

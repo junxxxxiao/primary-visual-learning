@@ -1,0 +1,461 @@
+{
+  "adversarial_fixture_count": 8,
+  "adversarial_fixture_pass_count": 8,
+  "baseline_sha": "5e002d1d4e04ec70e71ecd6c3b3b8af299d1e34f",
+  "candidate": {
+    "candidate_output_count": 0,
+    "model_or_service": null,
+    "parameters": null,
+    "provider": null,
+    "requests": 0,
+    "tokens_or_equivalent": 0
+  },
+  "contract_versions": [
+    "lesson-manifest/1.0",
+    "segment-envelope/1.0",
+    "segment-event/1.0",
+    "stage-timing/1.0"
+  ],
+  "cost": {
+    "amount": 0,
+    "currency": "CNY",
+    "external_services": false
+  },
+  "environment": {
+    "external_services": false,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "virtual_clock": true
+  },
+  "evidence_class": "offline_harness_only",
+  "fixture_versions": [
+    "ts-06a-base-protocol/1.0",
+    "ts-06a-scenarios/1.0"
+  ],
+  "gold_fixture_count": 6,
+  "gold_fixture_pass_count": 6,
+  "head_contains_baseline": true,
+  "pass": true,
+  "passed_scenario_count": 14,
+  "scenario_count": 14,
+  "scenario_results": [
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "full_plan_serial",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "scenario_id": "gold-full-plan-serial",
+      "work_metrics": {
+        "critical_path_ms": 5000,
+        "max_concurrency": 1,
+        "summed_work_ms": 5000
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true,
+        "work_critical_path_ms": true,
+        "work_sum_exceeds_critical_path": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_parallel",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "scenario_id": "gold-segment-parallel",
+      "work_metrics": {
+        "critical_path_ms": 2400,
+        "max_concurrency": 3,
+        "summed_work_ms": 3900
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "first_segment_independent",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "scenario_id": "gold-first-segment-independent",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "cache_hit",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8
+      },
+      "scenario_id": "gold-cache-admission",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "out_of_order_readiness",
+      "observed_codes": [
+        "event.playback_out_of_order"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14,
+        "rejected": 1
+      },
+      "scenario_id": "gold-later-ready-first",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_fallback",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 12
+      },
+      "scenario_id": "gold-admission-fallback-continues",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "duplicates",
+      "observed_codes": [
+        "event.conflicting_duplicate",
+        "event.duplicate"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "duplicate": 1,
+        "rejected": 1
+      },
+      "scenario_id": "adversarial-duplicate-events",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "identity_isolation",
+      "observed_codes": [
+        "event.cross_session",
+        "event.stale_manifest_version"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1,
+        "stale": 1
+      },
+      "scenario_id": "adversarial-cross-session",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_late",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 4,
+        "stale": 3
+      },
+      "scenario_id": "adversarial-cancel-late-response",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "fallback_ready_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "readiness_timeout",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 5,
+        "stale": 1
+      },
+      "scenario_id": "adversarial-missing-audio-timeout",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_after_admission",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 7,
+        "stale": 1
+      },
+      "scenario_id": "adversarial-cancel-after-admission",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "fallback_ready_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "hard_deadline",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 2
+      },
+      "scenario_id": "adversarial-hard-deadline",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "runtime_owned_injection",
+      "observed_codes": [
+        "event.runtime_owned"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1
+      },
+      "scenario_id": "adversarial-runtime-owned-event",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "fixture_kind": "adversarial_fixture",
+      "mode": "schema_rejection",
+      "observed_codes": [
+        "event.schema_invalid"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1
+      },
+      "scenario_id": "adversarial-malformed-event",
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    }
+  ],
+  "schema_version": "ts-06a-summary/1.0",
+  "slice_id": "TS-06A",
+  "status": "harness_ready",
+  "thresholds": {
+    "cross_session_or_stale_cache_pollution_count": {
+      "actual": 0,
+      "target": 0
+    },
+    "failed_scenario_count": {
+      "actual": 0,
+      "target": 0
+    },
+    "invalid_trace_count": {
+      "actual": 0,
+      "target": 0
+    },
+    "known_adversarial_detection_rate": {
+      "actual": 1.0,
+      "target": 1.0
+    },
+    "valid_gold_terminal_rate": {
+      "actual": 1.0,
+      "target": 1.0
+    }
+  },
+  "unverified": [
+    "real model or TTS latency, quality, streaming behavior and cost",
+    "real visual generation, sandbox, layout admission and rendering",
+    "real media timeline synchronization, pause, resume and seek",
+    "browser, device, network, concurrency and production reliability"
+  ],
+  "verified": [
+    "deterministic protocol validation and identity isolation",
+    "virtual-time readiness join and manifest-order playback",
+    "duplicate, stale, cancellation, timeout and fallback handling",
+    "critical-path wall-clock calculation for overlapping synthetic spans"
+  ]
+}
