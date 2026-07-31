@@ -27,6 +27,16 @@
     "policy_version": { "const": "ts04a-sandbox-policy/1.0" },
     "input_schema_version": { "const": "visual-sandbox-input/1.0" },
     "output_schema_version": { "const": "visual-sandbox-output/1.0" },
+    "render_stats": {
+      "type": ["object", "null"],
+      "properties": {
+        "sampled_pixels": { "type": "integer", "minimum": 0 },
+        "opaque_samples": { "type": "integer", "minimum": 0 },
+        "quantized_color_count": { "type": "integer", "minimum": 0 },
+        "error": { "type": "string" }
+      }
+    },
+    "runtime_error_message": { "type": ["string", "null"] },
     "timing": { "$ref": "../../shared/schemas/stage-timing.schema.json" }
   }
 }

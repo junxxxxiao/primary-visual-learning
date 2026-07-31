@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TS-04C 用户预览</title>
+<style>
+  :root { color-scheme: light; --ink: #17212b; --paper: #fffdf7; --panel: #ffffff; --line: #c9d0d6; --accent: #ff786a; --blue: #4c88ff; --green: #43b581; --yellow: #f4c84a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #edf1f4; color: var(--ink); font: 16px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+  .shell { min-height: 100vh; display: grid; grid-template-columns: minmax(320px, 1fr) 340px; gap: 16px; padding: 18px; }
+  .stage-wrap, .side { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .stage-wrap { display: grid; grid-template-rows: auto minmax(360px, 1fr) auto; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 20px; margin: 0; letter-spacing: 0; }
+  .tabs { display: flex; gap: 8px; }
+  button { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 7px; padding: 8px 12px; font: inherit; cursor: pointer; }
+  button[aria-pressed="true"], .play { background: #17212b; color: #fff; border-color: #17212b; }
+  canvas { width: 100%; height: 100%; min-height: 420px; background: var(--paper); display: block; }
+  .controls { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 14px 16px; border-top: 1px solid var(--line); }
+  input[type="range"] { width: 100%; accent-color: #17212b; }
+  .side { padding: 18px; display: grid; align-content: start; gap: 18px; }
+  .eyebrow { color: #6f7b86; font-size: 13px; }
+  .caption { font-size: 22px; font-weight: 750; line-height: 1.35; }
+  .note { border-left: 4px solid var(--accent); padding-left: 12px; color: #38434f; }
+  .status { color: #6f7b86; font-size: 14px; }
+  @media (max-width: 820px) { .shell { grid-template-columns: 1fr; padding: 10px; } canvas { min-height: 470px; } .topbar { align-items: flex-start; flex-direction: column; } .controls { grid-template-columns: auto 1fr; } .time { grid-column: 1 / -1; } }
+</style>
+<main class="shell">
+  <section class="stage-wrap" aria-label="讲解预览">
+    <div class="topbar">
+      <h1 id="title">讲解预览</h1>
+      <div class="tabs">
+        <button data-scene="0" aria-pressed="true">影子</button>
+        <button data-scene="1" aria-pressed="false">直线</button>
+      </div>
+    </div>
+    <canvas id="canvas" width="980" height="680"></canvas>
+    <div class="controls">
+      <button id="play" class="play" aria-label="播放">播放</button>
+      <input id="progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="讲解进度">
+      <div id="time" class="time">0.0s</div>
+    </div>
+  </section>
+  <aside class="side">
+    <div class="eyebrow">用户可见预览，不展示调试代码</div>
+    <div id="caption" class="caption"></div>
+    <div id="note" class="note">这页只验证“动态关系线”和“公式画线”进入用户画布后的表达方式，还不是完整产品页。</div>
+    <div id="status" class="status"></div>
+  </aside>
+</main>
+<script type="module" src="./src/hybrid-preview.js"></script>
+</html>

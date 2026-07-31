@@ -1,0 +1,1391 @@
+{
+  "call_results": [
+    {
+      "attempt": 1,
+      "finish_reason": "stop",
+      "gate_pass": true,
+      "latency_ms": 14566,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:3ed399003def72bbc3c79a7ad7c74fd5dfe9eb433e3ad8c5e4fed9f76ccfd4bd",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "shadow.lamp-distance-size",
+      "source_response_hash": "sha256:972ea6195d2753ed6f716685ec4f1ddbcad8cd754edd2845fa1599eef592c21b",
+      "source_violations": [
+        "schema:$.scene.nodes[10].layout.priority: above maximum",
+        "schema:$.scene.nodes[11].layout.priority: above maximum",
+        "schema:$.scene.nodes[12].layout.priority: above maximum",
+        "schema:$.scene.nodes[13].layout.priority: above maximum",
+        "schema:$.scene.nodes[14].layout.priority: above maximum",
+        "schema:$.scene.nodes[4].geometry: unexpected property x1",
+        "schema:$.scene.nodes[4].geometry: unexpected property x2",
+        "schema:$.scene.nodes[4].geometry: unexpected property y1",
+        "schema:$.scene.nodes[4].geometry: unexpected property y2",
+        "schema:$.scene.nodes[5].geometry: unexpected property x1",
+        "schema:$.scene.nodes[5].geometry: unexpected property x2",
+        "schema:$.scene.nodes[5].geometry: unexpected property y1",
+        "schema:$.scene.nodes[5].geometry: unexpected property y2",
+        "schema:$.scene.nodes[6].geometry: unexpected property x1",
+        "schema:$.scene.nodes[6].geometry: unexpected property x2",
+        "schema:$.scene.nodes[6].geometry: unexpected property y1",
+        "schema:$.scene.nodes[6].geometry: unexpected property y2",
+        "schema:$.scene.nodes[7].geometry: unexpected property x1",
+        "schema:$.scene.nodes[7].geometry: unexpected property x2",
+        "schema:$.scene.nodes[7].geometry: unexpected property y1",
+        "schema:$.scene.nodes[7].geometry: unexpected property y2"
+      ],
+      "usage": {
+        "completion_tokens": 2648,
+        "prompt_tokens": 4565,
+        "total_tokens": 7213
+      },
+      "violation_codes": []
+    },
+    {
+      "attempt": 1,
+      "finish_reason": "stop",
+      "gate_pass": true,
+      "latency_ms": 11460,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:0c9f340a16c5aa8f9f740afa422f803717482beb7389492da6aae58f8159cd64",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "lever.seesaw-balance",
+      "source_response_hash": "sha256:efdcd37ffb68ab8828598cec6be79ee8505b0a23dde3b6a2e3cc7d290675dbf5",
+      "source_violations": [
+        "schema:$.scene.nodes[0].parent_id: expected string"
+      ],
+      "usage": {
+        "completion_tokens": 2222,
+        "prompt_tokens": 3902,
+        "total_tokens": 6124
+      },
+      "violation_codes": []
+    },
+    {
+      "attempt": 1,
+      "finish_reason": "stop",
+      "gate_pass": true,
+      "latency_ms": 10438,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:0a6ee93003f5d742d2903ee05e3c02a6eb3d69158c8a6842d1e7c70de48e4a2e",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "density.layering-liquids",
+      "source_response_hash": "sha256:fd45f4f2a32ae86f8789ca9ac957cb282e6f5be78230fd0ac84f24238876174b",
+      "source_violations": [
+        "schema:$.scene.nodes[11].layout.priority: above maximum"
+      ],
+      "usage": {
+        "completion_tokens": 2037,
+        "prompt_tokens": 3729,
+        "total_tokens": 5766
+      },
+      "violation_codes": []
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "fact_refs": [
+          "shadow-ray-spread"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "shadow.lamp-distance-size",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 800,
+                "width": 20,
+                "x": 850,
+                "y": 100
+              },
+              "id": "wall",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "paper",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 80,
+                "x": 500,
+                "y": 300
+              },
+              "id": "doll",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 40,
+                "x": 150,
+                "y": 350
+              },
+              "id": "lamp-far",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 40,
+                "x": 350,
+                "y": 350
+              },
+              "id": "lamp-near",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 170,
+                    "y": 350
+                  },
+                  {
+                    "x": 540,
+                    "y": 300
+                  }
+                ]
+              },
+              "id": "ray-top-far",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 170,
+                    "y": 410
+                  },
+                  {
+                    "x": 540,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "ray-bottom-far",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 370,
+                    "y": 350
+                  },
+                  {
+                    "x": 540,
+                    "y": 300
+                  }
+                ]
+              },
+              "id": "ray-top-near",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 370,
+                    "y": 410
+                  },
+                  {
+                    "x": 540,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "ray-bottom-near",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 20,
+                "x": 830,
+                "y": 300
+              },
+              "id": "shadow-far",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "muted",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 300,
+                "width": 20,
+                "x": 810,
+                "y": 250
+              },
+              "id": "shadow-near",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "muted",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 40,
+                "x": 170,
+                "y": 350
+              },
+              "id": "angle-far",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 40,
+                "x": 370,
+                "y": 350
+              },
+              "id": "angle-near",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "content": "手电筒远",
+              "geometry": {
+                "x": 100,
+                "y": 250
+              },
+              "id": "label-far",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "手电筒近",
+              "geometry": {
+                "x": 300,
+                "y": 250
+              },
+              "id": "label-near",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "影子",
+              "geometry": {
+                "x": 820,
+                "y": 220
+              },
+              "id": "label-shadow",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "label",
+              "style_token": "muted",
+              "type": "text"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "shadow-ray-spread"
+          ],
+          "steps": [
+            "先看场景：手电筒、玩偶、墙，墙上已有影子。",
+            "从手电筒画两条光线，分别经过玩偶上下边缘，到达墙，形成影子范围。",
+            "手电筒靠近玩偶后，两条边界光线的张角变大。",
+            "张角变大，影子在墙上的范围也变大。",
+            "结论：光源越近，影子越大。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "wall",
+                    "doll",
+                    "lamp-far",
+                    "label-far",
+                    "shadow-far"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "doll",
+                    "lamp-far",
+                    "wall"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "shadow-ray-spread"
+              ],
+              "id": "beat-orient",
+              "narration": "手电筒、玩偶和墙都不动，只把手电筒慢慢靠近玩偶，墙上的影子为什么会变大？我们先看清这个场景。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "ray-top-far",
+                    "ray-bottom-far"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "ray-top-far",
+                    "ray-bottom-far"
+                  ],
+                  "type": "trace"
+                },
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 3000,
+                  "target_ids": [
+                    "shadow-far"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "shadow-ray-spread"
+              ],
+              "id": "beat-trace-far",
+              "narration": "从手电筒发出的光，经过玩偶的上下边缘，在墙上投出影子。这两条边界光线决定了影子的范围。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "lamp-near",
+                    "label-near",
+                    "ray-top-near",
+                    "ray-bottom-near",
+                    "shadow-near"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "lamp-far",
+                    "label-far",
+                    "ray-top-far",
+                    "ray-bottom-far",
+                    "shadow-far"
+                  ],
+                  "type": "hide"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "ray-top-near",
+                    "ray-bottom-near"
+                  ],
+                  "type": "trace"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 3000,
+                  "target_ids": [
+                    "shadow-near"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 6000,
+              "fact_refs": [
+                "shadow-ray-spread"
+              ],
+              "id": "beat-compare-angle",
+              "narration": "现在把手电筒移到更近的位置，两条边界光线之间的张角变大了，影子也跟着变大。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "angle-near"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "angle-near",
+                    "ray-top-near",
+                    "ray-bottom-near"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "shadow-ray-spread"
+              ],
+              "id": "beat-explain",
+              "narration": "光源越近，光线经过玩偶边缘时张角越大，照到墙上形成的影子范围就越大。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "shadow-near",
+                    "lamp-near",
+                    "doll"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "shadow-ray-spread"
+              ],
+              "id": "beat-conclude",
+              "narration": "所以，手电筒靠近玩偶时，影子变大，是因为边界光线的张角变大了。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "手电筒靠近玩偶，影子为什么变大？"
+      },
+      "sample_id": "shadow.lamp-distance-size"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "lever-moment-balance"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "lever.seesaw-balance",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 400,
+                "width": 900,
+                "x": 500,
+                "y": 500
+              },
+              "id": "seesaw-group",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "type": "group"
+            },
+            {
+              "geometry": {
+                "height": 20,
+                "width": 800,
+                "x": 500,
+                "y": 500
+              },
+              "id": "board",
+              "parent_id": "seesaw-group",
+              "role": "subject",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 30,
+                "x": 500,
+                "y": 520
+              },
+              "id": "fulcrum",
+              "parent_id": "seesaw-group",
+              "role": "context",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 80,
+                "x": 250,
+                "y": 430
+              },
+              "id": "left-person",
+              "parent_id": "seesaw-group",
+              "role": "subject",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 60,
+                "x": 750,
+                "y": 430
+              },
+              "id": "right-person",
+              "parent_id": "seesaw-group",
+              "role": "subject",
+              "style_token": "math-blue",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 250,
+                    "y": 560
+                  },
+                  {
+                    "x": 500,
+                    "y": 560
+                  }
+                ]
+              },
+              "id": "left-distance",
+              "parent_id": "seesaw-group",
+              "role": "evidence",
+              "style_token": "focus-yellow",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 500,
+                    "y": 560
+                  },
+                  {
+                    "x": 750,
+                    "y": 560
+                  }
+                ]
+              },
+              "id": "right-distance",
+              "parent_id": "seesaw-group",
+              "role": "evidence",
+              "style_token": "focus-yellow",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 250,
+                    "y": 430
+                  },
+                  {
+                    "x": 250,
+                    "y": 510
+                  }
+                ]
+              },
+              "id": "left-force",
+              "parent_id": "seesaw-group",
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 750,
+                    "y": 430
+                  },
+                  {
+                    "x": 750,
+                    "y": 490
+                  }
+                ]
+              },
+              "id": "right-force",
+              "parent_id": "seesaw-group",
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "line"
+            },
+            {
+              "content": "重",
+              "geometry": {
+                "x": 250,
+                "y": 380
+              },
+              "id": "left-label",
+              "parent_id": "seesaw-group",
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "轻",
+              "geometry": {
+                "x": 750,
+                "y": 380
+              },
+              "id": "right-label",
+              "parent_id": "seesaw-group",
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "F左×L左 = F右×L右",
+              "geometry": {
+                "x": 500,
+                "y": 650
+              },
+              "id": "balance-formula",
+              "parent_id": "seesaw-group",
+              "role": "conclusion",
+              "style_token": "ink",
+              "type": "formula"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "lever-moment-balance"
+          ],
+          "steps": [
+            "跷跷板中间是支点，左边重，右边轻。",
+            "左边力大但距离短，右边力小但距离长。",
+            "平衡时两边力与距离的乘积相等。",
+            "所以右边的人要坐得离支点更远。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "seesaw-group",
+                    "board",
+                    "fulcrum",
+                    "left-person",
+                    "right-person"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "fulcrum"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1500,
+                  "target_ids": [
+                    "left-person",
+                    "right-person"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "lever-moment-balance"
+              ],
+              "id": "beat-orient",
+              "narration": "这是一个跷跷板，中间是支点，左边坐着较重的人，右边坐着较轻的人。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-force",
+                    "right-force",
+                    "left-label",
+                    "right-label"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "left-force"
+                  ],
+                  "to": {
+                    "scale": 1.5
+                  },
+                  "type": "scale"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "right-force"
+                  ],
+                  "to": {
+                    "scale": 1.0
+                  },
+                  "type": "scale"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "lever-moment-balance"
+              ],
+              "id": "beat-forces",
+              "narration": "左边的人更重，所以向下的力更大；右边的人更轻，向下的力更小。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-distance",
+                    "right-distance"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "left-distance"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1500,
+                  "target_ids": [
+                    "right-distance"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "lever-moment-balance"
+              ],
+              "id": "beat-distances",
+              "narration": "再看距离：左边的人离支点近，右边的人离支点远。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-force",
+                    "left-distance",
+                    "right-force",
+                    "right-distance"
+                  ],
+                  "type": "compare"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "balance-formula"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "lever-moment-balance"
+              ],
+              "id": "beat-compare",
+              "narration": "平衡时，两边力与距离的乘积必须相等。左边力大但距离短，右边力小但距离长。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "right-person"
+                  ],
+                  "to": {
+                    "x": 800,
+                    "y": 430
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1500,
+                  "target_ids": [
+                    "balance-formula"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "lever-moment-balance"
+              ],
+              "id": "beat-conclude",
+              "narration": "所以，右边较轻的人要坐得离支点更远一些，才可能让跷跷板平衡。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "跷跷板平衡：力与距离的乘积"
+      },
+      "sample_id": "lever.seesaw-balance"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "liquid-density-layering"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "density.layering-liquids",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 400,
+                "width": 300,
+                "x": 500,
+                "y": 500
+              },
+              "id": "cup",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 200,
+                "x": 500,
+                "y": 300
+              },
+              "id": "honey-block",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 200,
+                "x": 500,
+                "y": 400
+              },
+              "id": "water-block",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 200,
+                "x": 500,
+                "y": 500
+              },
+              "id": "oil-block",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "content": "蜂蜜",
+              "geometry": {
+                "x": 500,
+                "y": 300
+              },
+              "id": "honey-label",
+              "layout": {
+                "flow": "overlay",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "水",
+              "geometry": {
+                "x": 500,
+                "y": 400
+              },
+              "id": "water-label",
+              "layout": {
+                "flow": "overlay",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "油",
+              "geometry": {
+                "x": 500,
+                "y": 500
+              },
+              "id": "oil-label",
+              "layout": {
+                "flow": "overlay",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "x": 200,
+                "y": 700
+              },
+              "id": "mass-compare",
+              "layout": {
+                "flow": "row",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "paper",
+              "type": "group"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 60,
+                "x": 200,
+                "y": 700
+              },
+              "id": "mass-honey",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 60,
+                "x": 300,
+                "y": 700
+              },
+              "id": "mass-water",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 60,
+                "width": 60,
+                "x": 400,
+                "y": 700
+              },
+              "id": "mass-oil",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "content": "密度：蜂蜜 > 水 > 油",
+              "geometry": {
+                "x": 500,
+                "y": 850
+              },
+              "id": "density-order",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "conclusion",
+              "style_token": "math-blue",
+              "type": "text"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "liquid-density-layering"
+          ],
+          "steps": [
+            "杯子中有体积相同的蜂蜜、水和油。",
+            "相同体积下，蜂蜜质量最大，水次之，油最小。",
+            "密度大的液体趋向位于下方。",
+            "因此蜂蜜沉底，水在中间，油在上层。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "cup",
+                    "honey-block",
+                    "water-block",
+                    "oil-block",
+                    "honey-label",
+                    "water-label",
+                    "oil-label"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "liquid-density-layering"
+              ],
+              "id": "beat-orient",
+              "narration": "看这个杯子，里面有三块体积相同的液体：蜂蜜、水和油。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "mass-compare",
+                    "mass-honey",
+                    "mass-water",
+                    "mass-oil"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "mass-honey",
+                    "mass-water",
+                    "mass-oil"
+                  ],
+                  "type": "compare"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "liquid-density-layering"
+              ],
+              "id": "beat-compare-mass",
+              "narration": "它们的体积相同，但质量不同：蜂蜜最重，水其次，油最轻。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "honey-block",
+                    "honey-label"
+                  ],
+                  "to": {
+                    "x": 500,
+                    "y": 600
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "water-block",
+                    "water-label"
+                  ],
+                  "to": {
+                    "x": 500,
+                    "y": 450
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "oil-block",
+                    "oil-label"
+                  ],
+                  "to": {
+                    "x": 500,
+                    "y": 300
+                  },
+                  "type": "move"
+                }
+              ],
+              "duration_ms": 6000,
+              "fact_refs": [
+                "liquid-density-layering"
+              ],
+              "id": "beat-rearrange",
+              "narration": "因为密度大的液体趋向位于下方，所以蜂蜜沉到最下面，水在中间，油浮在最上面。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "density-order"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "density-order"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "liquid-density-layering"
+              ],
+              "id": "beat-conclude",
+              "narration": "所以最终从上到下依次是油、水、蜂蜜，这就是密度顺序决定的分层。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "为什么蜂蜜、水和油会分层？"
+      },
+      "sample_id": "density.layering-liquids"
+    }
+  ],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "failed_candidate_outputs_sent": true,
+    "machine_violation_codes_sent": true,
+    "production_logs_sent": false,
+    "synthetic_unverified_fixtures_sent": true
+  },
+  "decision": "await_browser_gate",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_output_tokens": 5000,
+    "maximum_repairs_per_failed_sample": 1,
+    "repair_token_budget": 30000,
+    "response_format": "json_object",
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "latency_ms": {
+    "max": 14566,
+    "p50": 11460,
+    "p80": 13324,
+    "p95": 14255
+  },
+  "metrics": {
+    "browser_gate": "pending",
+    "final_contract_pass": {
+      "denominator": 10,
+      "numerator": 10
+    },
+    "formal_denominator": false,
+    "human_review": "not_started",
+    "initial_contract_pass": {
+      "denominator": 10,
+      "numerator": 7
+    },
+    "repair_contract_pass": {
+      "denominator": 3,
+      "numerator": 3
+    }
+  },
+  "provider": "deepseek_official",
+  "request_model": "deepseek-v4-flash",
+  "requests": {
+    "attempted": 3,
+    "automatic_retries": 0,
+    "completed": 3,
+    "planned": 3
+  },
+  "response_models": [
+    "deepseek-v4-flash"
+  ],
+  "run_at": "2026-07-31T06:55:35.891660+00:00",
+  "run_label": "official-open-world-v02-flash-repair-round-1",
+  "run_phase": "controlled_repair",
+  "schema_version": "open-visual-scene/0.2",
+  "slice_id": "TS-04C-v3",
+  "source_result_file": "model-deepseek-v4-flash-official-open-world-v02-flash-calibration-round-1.json",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 6907,
+    "prompt_tokens": 12196,
+    "total_tokens": 19103
+  }
+}

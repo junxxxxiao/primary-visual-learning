@@ -1,0 +1,82 @@
+{
+  "candidate_output": false,
+  "kind": "diagnostic_replay",
+  "limits": [
+    "This replay changes the declared schema version after generation and is not candidate evidence.",
+    "It only tests whether v0.2 removes known interface-caused failures."
+  ],
+  "metrics": {
+    "pass_count": 8,
+    "sample_count": 10
+  },
+  "mutation": "schema_version_only",
+  "records": [
+    {
+      "sample_id": "shadow.lamp-distance-size",
+      "v0_1_gate_pass": false,
+      "v0_2_diagnostic_gate_pass": false,
+      "violations": [
+        "timeline.unknown_target:beat1",
+        "timeline.unknown_target:beat5"
+      ]
+    },
+    {
+      "sample_id": "lever.seesaw-balance",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "fraction.equivalent-pieces",
+      "v0_1_gate_pass": false,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "water-cycle.condensation-path",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "linear-functions.moving-intersection",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "circuit.series-current-path",
+      "v0_1_gate_pass": false,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    },
+    {
+      "sample_id": "density.layering-liquids",
+      "v0_1_gate_pass": false,
+      "v0_2_diagnostic_gate_pass": false,
+      "violations": [
+        "timeline.action_out_of_beat:beat4"
+      ]
+    },
+    {
+      "sample_id": "symmetry.rotation-order",
+      "v0_1_gate_pass": true,
+      "v0_2_diagnostic_gate_pass": true,
+      "violations": []
+    }
+  ],
+  "schema_version": "open-visual-scene/0.2",
+  "source_run": "model-deepseek-v4-pro-official-open-world-calibration-round-1.json"
+}

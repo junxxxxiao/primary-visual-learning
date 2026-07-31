@@ -1,0 +1,6053 @@
+{
+  "candidate_count": 10,
+  "model": "deepseek-v4-flash",
+  "pass": false,
+  "pass_count": 7,
+  "results": [
+    {
+      "pass": false,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 18,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 1220,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3016,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3465,
+            "quantized_color_count": 35
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3016,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3016,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3465,
+            "quantized_color_count": 35
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3465,
+            "quantized_color_count": 35
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 5,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3699,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 3476,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 7158,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 8246,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 7158,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 7158,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 8246,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 8246,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5773,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "shadow.lamp-distance-size",
+      "source_attempt": "repair",
+      "violation_codes": [
+        "browser.logical_bounds",
+        "browser.screen_bounds"
+      ],
+      "violations": [
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 800,
+                "width": 20,
+                "x": 840,
+                "y": -300
+              },
+              "id": "wall"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 537.6,
+                "width": 13.440000000000001,
+                "x": 740.48,
+                "y": -173.60000000000002
+              },
+              "id": "wall",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.reduced_motion"
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1103,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1999,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2325,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1999,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1999,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2325,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2325,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2743,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3505,
+            "quantized_color_count": 31
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5384,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5952,
+            "quantized_color_count": 42
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5384,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5384,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5952,
+            "quantized_color_count": 42
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5952,
+            "quantized_color_count": 42
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3696,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "lever.seesaw-balance",
+      "source_attempt": "repair",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 4,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2348,
+            "quantized_color_count": 22
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2807,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3396,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2807,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2807,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3396,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3396,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3607,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 7939,
+            "quantized_color_count": 23
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9298,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10634,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9298,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9298,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10634,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10634,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5078,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "fraction.equivalent-pieces",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2994,
+            "quantized_color_count": 28
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3812,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4425,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3812,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3812,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4425,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4425,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2606,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9778,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11132,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11985,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11132,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11132,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11985,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11985,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3802,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 5,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2936,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3715,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3758,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3715,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3715,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3758,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3758,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4018,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9937,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11355,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11624,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11355,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11355,
+            "quantized_color_count": 26
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11624,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11624,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 6143,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "water-cycle.condensation-path",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": false,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 718,
+            "quantized_color_count": 19
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 1644,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 2160,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 1644,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 1644,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 2160,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 2160,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3581,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 1471,
+            "quantized_color_count": 17
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4261,
+            "quantized_color_count": 23
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4931,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4261,
+            "quantized_color_count": 23
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4261,
+            "quantized_color_count": 23
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4931,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 4931,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5850,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "linear-functions.moving-intersection",
+      "source_attempt": "initial",
+      "violation_codes": [
+        "browser.logical_bounds",
+        "browser.screen_bounds"
+      ],
+      "violations": [
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 246
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 176
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 140,
+                "width": 280,
+                "x": -85,
+                "y": 316
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 300
+              },
+              "id": "axes"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 100
+              },
+              "id": "line1"
+            },
+            {
+              "bounds": {
+                "height": 400,
+                "width": 800,
+                "x": -300,
+                "y": 500
+              },
+              "id": "line2"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 229.60000000000002
+              },
+              "id": "axes",
+              "type": "axis"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 95.2
+              },
+              "id": "line1",
+              "type": "line"
+            },
+            {
+              "bounds": {
+                "height": 268.8,
+                "width": 537.6,
+                "x": -25.600000000000023,
+                "y": 364
+              },
+              "id": "line2",
+              "type": "line"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.reduced_motion"
+        }
+      ]
+    },
+    {
+      "pass": false,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 12265,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 12947,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 8,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 13222,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 12947,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 12947,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 13222,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 13222,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3029,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 43966,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45026,
+            "quantized_color_count": 21
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45387,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45026,
+            "quantized_color_count": 21
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45026,
+            "quantized_color_count": 21
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45387,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "pixel_stats": {
+            "non_background_samples": 45387,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4181,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "source_attempt": "initial",
+      "violation_codes": [
+        "browser.logical_bounds",
+        "browser.screen_bounds"
+      ],
+      "violations": [
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "phone.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 210,
+                "width": 210,
+                "x": -15,
+                "y": 106
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "phone.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.initial"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.key_process"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.final"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.paused"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.resumed"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.post_interaction"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 600,
+                "width": 600,
+                "x": -100,
+                "y": -100
+              },
+              "id": "outer-frame"
+            }
+          ],
+          "code": "browser.logical_bounds",
+          "target": "tablet.reduced_motion"
+        },
+        {
+          "actual": [
+            {
+              "bounds": {
+                "height": 403.20000000000005,
+                "width": 403.20000000000005,
+                "x": 108.8,
+                "y": -39.2
+              },
+              "id": "outer-frame",
+              "type": "shape"
+            }
+          ],
+          "code": "browser.screen_bounds",
+          "target": "tablet.reduced_motion"
+        }
+      ]
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1299,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1319,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2297,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1319,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1319,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2297,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2297,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2725,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3555,
+            "quantized_color_count": 29
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3623,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4810,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3623,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3623,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 15,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4810,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4810,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 18,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3759,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "circuit.series-current-path",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4047,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4375,
+            "quantized_color_count": 38
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4647,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4375,
+            "quantized_color_count": 38
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4375,
+            "quantized_color_count": 38
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4647,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4647,
+            "quantized_color_count": 41
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2619,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 14750,
+            "quantized_color_count": 35
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15815,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16263,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15815,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15815,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16263,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16263,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3583,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "density.layering-liquids",
+      "source_attempt": "repair",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 5,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3067,
+            "quantized_color_count": 19
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3111,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3232,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3111,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3111,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3232,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3232,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2882,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10617,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10653,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10825,
+            "quantized_color_count": 22
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10653,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10653,
+            "quantized_color_count": 20
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10825,
+            "quantized_color_count": 22
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10825,
+            "quantized_color_count": 22
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3861,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 5,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "symmetry.rotation-order",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    }
+  ],
+  "run_label": "v4-flash-v02-repaired-browser-round-1",
+  "schema_version": "open-visual-scene/0.2",
+  "slice_id": "TS-04C-v3",
+  "state_run_count": 160
+}

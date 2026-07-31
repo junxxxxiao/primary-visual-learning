@@ -1,0 +1,49 @@
+{
+  "artifact_kind": "motion_canvas_runtime_result",
+  "status": "conditional_pass",
+  "source_kind": "synthetic_unverified",
+  "runtime": {
+    "motion_canvas_core": "3.17.2",
+    "motion_canvas_2d": "3.17.2",
+    "motion_canvas_vite_plugin": "3.17.2",
+    "motion_canvas_ffmpeg": "1.1.0",
+    "node": "v24.16.0",
+    "npm": "11.13.0"
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "modules_transformed": 1091
+  },
+  "render": {
+    "exporter": "image_sequence",
+    "format": "png",
+    "frames": 158,
+    "scenes": 2,
+    "representative_frames": [
+      {
+        "scene": "shadow",
+        "file": "output/project/000040.png",
+        "sha256": "89dafb918b736c770144a98cecd1322763bf15e5f7c71ef750a9f69c20fd6300"
+      },
+      {
+        "scene": "lines",
+        "file": "output/project/000157.png",
+        "sha256": "6901e96f974c83739e640c262b5ed55c4aad355eca3da317152ea4c30526b368"
+      }
+    ]
+  },
+  "responsive_checks": [
+    {"viewport": "390x844", "scroll_width": 390, "client_width": 390, "passed": true},
+    {"viewport": "768x1024", "scroll_width": 768, "client_width": 768, "passed": true}
+  ],
+  "not_verified": [
+    "real model output",
+    "real TTS synchronization",
+    "learning quality",
+    "production performance",
+    "video export",
+    "full mobile and tablet state matrix"
+  ],
+  "dependency_audit": {"vulnerabilities": 3, "low": 1, "moderate": 1, "high": 1, "audit_fix_force": false}
+}

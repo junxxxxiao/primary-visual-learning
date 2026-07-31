@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>TS-04C hybrid DSL harness</title>
+<style>
+  body { margin: 0; background: #eef1f3; color: #17212b; font: 16px system-ui, sans-serif; }
+  main { display: grid; grid-template-columns: minmax(320px, 760px) 360px; gap: 16px; padding: 20px; max-width: 1180px; margin: auto; }
+  canvas { width: 100%; background: #fffdf7; border: 1px solid #c9d0d6; }
+  aside { background: #fff; border: 1px solid #c9d0d6; padding: 16px; }
+  label { display: block; margin: 12px 0 6px; }
+  input { width: 100%; }
+  pre { white-space: pre-wrap; overflow: auto; max-height: 280px; font-size: 12px; background: #f6f7f8; padding: 10px; }
+  @media (max-width: 800px) { main { grid-template-columns: 1fr; } }
+</style>
+<main>
+  <section><canvas id="canvas" width="760" height="620"></canvas></section>
+  <aside>
+    <strong>DSL → trusted adapter</strong>
+    <label for="progress">手电筒移动进度</label>
+    <input id="progress" type="range" min="0" max="1" step="0.01" value="0">
+    <p id="status">加载中</p>
+    <pre id="adapter"></pre>
+  </aside>
+</main>
+<script type="module" src="./src/hybrid-harness.js"></script>
+</html>

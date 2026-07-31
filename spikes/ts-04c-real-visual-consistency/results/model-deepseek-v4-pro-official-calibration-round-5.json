@@ -1,0 +1,2097 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60142,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.opening-explanation",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60176,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.compare",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "Unterminated string starting at: line 864 column 19 (char 31161)",
+      "finish_reason": null,
+      "latency_ms": 64846,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.separate",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60176,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "Unterminated string starting at: line 1063 column 19 (char 35425)",
+      "finish_reason": null,
+      "latency_ms": 62963,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60160,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.model",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60169,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.complete",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 37817,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:d95cee23ba27acf58a94d9847df2eacd5a881e576a3593bf12f2944769f9fcf4",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.justify",
+      "schema_valid": true,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 4748,
+        "prompt_tokens": 1504,
+        "total_tokens": 6252
+      },
+      "violation_codes": [
+        "layout.missing_states",
+        "layout.responsive_reflow",
+        "scene.layout_contract_version"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 53287,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:bc4cf402a6739cc0bf6fb4bcb734ebd17324e70fd9636b4857b84bebb0b813a0",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_sound_pair.wave-compare",
+      "schema_valid": true,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 6666,
+        "prompt_tokens": 1363,
+        "total_tokens": 8029
+      },
+      "violation_codes": [
+        "layout.missing_states",
+        "layout.responsive_reflow",
+        "scene.layout_contract_version"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60211,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_sound_pair.wave-explain",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.justify",
+        "scene_code": "(function(){var c=api.canvas;var p=input.parameters;var s=p.state;var v=p.viewport;var w=v.width;var h=v.height;var cx=w/2;var cy=h/2;var scale=Math.min(w/390,h/632);function drawInitial(){c.clearRect(0,0,w,h);c.fillStyle='#f0f0f0';c.fillRect(0,0,w,h);c.font=(16*scale)+'px sans-serif';c.fillStyle='#000';c.textAlign='center';c.fillText('平方项非负',cx,cy-20*scale);c.fillText('面积表达式：A = - (x-5)² + 25',cx,cy+10*scale);c.fillText('平方项 (x-5)² ≥ 0',cx,cy+40*scale);api.emit('render_complete');}function drawKeyProcess(){c.clearRect(0,0,w,h);c.fillStyle='#f0f0f0';c.fillRect(0,0,w,h);c.font=(16*scale)+'px sans-serif';c.fillStyle='#000';c.textAlign='center';c.fillText('当平方项为零时',cx,cy-20*scale);c.fillText('(x-5)² = 0  →  x = 5',cx,cy+10*scale);c.fillText('此时减去量最小，面积最大',cx,cy+40*scale);api.emit('render_complete');}function drawFinal(){c.clearRect(0,0,w,h);c.fillStyle='#f0f0f0';c.fillRect(0,0,w,h);c.font=(16*scale)+'px sans-serif';c.fillStyle='#000';c.textAlign='center';c.fillText('最大面积：A = 25',cx,cy-20*scale);c.fillText('当 x = 5 时取得',cx,cy+10*scale);c.fillText('平方项非负保证了这是最大值',cx,cy+40*scale);api.emit('render_complete');}function drawPaused(){drawInitial();}function drawResumed(){drawInitial();}function drawPostInteraction(){drawFinal();}function drawReducedMotion(){c.clearRect(0,0,w,h);c.fillStyle='#f0f0f0';c.fillRect(0,0,w,h);c.font=(16*scale)+'px sans-serif';c.fillStyle='#000';c.textAlign='center';c.fillText('平方项非负 → 平方项为零时面积最大',cx,cy);api.emit('render_complete');}function drawStaticFallback(){c.clearRect(0,0,w,h);c.fillStyle='#f0f0f0';c.fillRect(0,0,w,h);c.font=(14*scale)+'px sans-serif';c.fillStyle='#000';c.textAlign='left';var steps=['平方项始终非负','平方项为零时减去量最小','因此面积达到最大值'];var y=cy-30*scale;for(var i=0;i<steps.length;i++){c.fillText((i+1)+'. '+steps[i],cx-100*scale,y);y+=30*scale;}api.emit('render_complete');}switch(s){case'initial':drawInitial();break;case'key_process':drawKeyProcess();break;case'final':drawFinal();break;case'paused':drawPaused();break;case'resumed':drawResumed();break;case'post_interaction':drawPostInteraction();break;case'reduced_motion':drawReducedMotion();break;case'static_fallback':drawStaticFallback();break;default:drawInitial();}})();",
+        "scene_declaration": {
+          "code_hash": "sha256:92d688bce60d076c6de455442a1996d0f9f0af09430fa5e53d839935b41676d9",
+          "knowledge_version": "1.0.0",
+          "layout_contract_version": "1.0.0",
+          "learning_goal": "用平方项的符号说明最大面积，而不只报数值。",
+          "scene_id": "middle_perfect_square_justify",
+          "scene_version": "1.0.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "facts": [
+              {
+                "claim_id": "complete-square-bound",
+                "expected": "平方项始终非负",
+                "narration": "平方项始终非负",
+                "visual": "显示面积表达式和平方项非负"
+              },
+              {
+                "claim_id": "fence-transfer",
+                "expected": "平方项为零时减去量最小",
+                "narration": "平方项为零时减去量最小",
+                "visual": "显示平方项为零时面积最大"
+              }
+            ]
+          },
+          "teaching_contract_version": "1.0.0",
+          "test_version": "1.0.0",
+          "viewport_profiles": {
+            "phone": {
+              "states": [
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "initial"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "当平方项为零时",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "(x-5)² = 0  →  x = 5",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "此时减去量最小，面积最大",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "key_process"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "最大面积：A = 25",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "当 x = 5 时取得",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项非负保证了这是最大值",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "final"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "paused"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "resumed"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "最大面积：A = 25",
+                      "position": {
+                        "x": 195,
+                        "y": 296
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "当 x = 5 时取得",
+                      "position": {
+                        "x": 195,
+                        "y": 326
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项非负保证了这是最大值",
+                      "position": {
+                        "x": 195,
+                        "y": 356
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "post_interaction"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负 → 平方项为零时面积最大",
+                      "position": {
+                        "x": 195,
+                        "y": 316
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "reduced_motion"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "1. 平方项始终非负",
+                      "position": {
+                        "x": 95,
+                        "y": 286
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "2. 平方项为零时减去量最小",
+                      "position": {
+                        "x": 95,
+                        "y": 316
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "3. 因此面积达到最大值",
+                      "position": {
+                        "x": 95,
+                        "y": 346
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "static_fallback"
+                }
+              ]
+            },
+            "tablet": {
+              "states": [
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "initial"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "当平方项为零时",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "(x-5)² = 0  →  x = 5",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "此时减去量最小，面积最大",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "key_process"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "最大面积：A = 25",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "当 x = 5 时取得",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项非负保证了这是最大值",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "final"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "paused"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "面积表达式：A = - (x-5)² + 25",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项 (x-5)² ≥ 0",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "resumed"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "最大面积：A = 25",
+                      "position": {
+                        "x": 512,
+                        "y": 344
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "当 x = 5 时取得",
+                      "position": {
+                        "x": 512,
+                        "y": 374
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "平方项非负保证了这是最大值",
+                      "position": {
+                        "x": 512,
+                        "y": 404
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "post_interaction"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "平方项非负 → 平方项为零时面积最大",
+                      "position": {
+                        "x": 512,
+                        "y": 364
+                      },
+                      "style": {
+                        "align": "center",
+                        "color": "#000",
+                        "font": "16px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "reduced_motion"
+                },
+                {
+                  "elements": [
+                    {
+                      "content": "1. 平方项始终非负",
+                      "position": {
+                        "x": 412,
+                        "y": 334
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "2. 平方项为零时减去量最小",
+                      "position": {
+                        "x": 412,
+                        "y": 364
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    },
+                    {
+                      "content": "3. 因此面积达到最大值",
+                      "position": {
+                        "x": 412,
+                        "y": 394
+                      },
+                      "style": {
+                        "align": "left",
+                        "color": "#000",
+                        "font": "14px sans-serif"
+                      },
+                      "type": "text"
+                    }
+                  ],
+                  "kind": "text",
+                  "motion_envelopes": [],
+                  "state_id": "static_fallback"
+                }
+              ]
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "平方项始终非负",
+            "平方项为零时减去量最小",
+            "因此面积达到最大值"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.justify"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_sound_pair.wave-compare",
+        "scene_code": "(function(){var c=api.canvas;var p=input.parameters;var s=p.state;var v=p.viewport;var w=v.width;var h=v.height;var ctx=c.getContext('2d');function drawAxes(){ctx.strokeStyle='#000';ctx.lineWidth=2;var margin=40;var x0=margin;var y0=h-margin;var x1=w-margin;var y1=margin;ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y0);ctx.stroke();ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0,y1);ctx.stroke();ctx.fillStyle='#000';ctx.font='14px sans-serif';ctx.fillText('时间',x1-30,y0-10);ctx.fillText('位移',x0+10,y1+10);}function drawWaveform(amplitude,frequency,phase,color,offsetY){ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();var margin=40;var x0=margin;var y0=h-margin;var x1=w-margin;var period=200;var cycles=Math.floor((x1-x0)/period);for(var x=x0;x<=x1;x+=1){var t=(x-x0)/period;var y=y0-offsetY-amplitude*Math.sin(2*Math.PI*frequency*t+phase);if(x===x0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();}function drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2){var margin=40;var x0=margin;var y0=h-margin;var period=200;var tPeak1=(Math.PI/2-phase1)/(2*Math.PI*frequency1);var xPeak1=x0+tPeak1*period;var yPeak1=y0-offsetY1-amplitude1;ctx.strokeStyle='#888';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(x0,yPeak1);ctx.lineTo(xPeak1,yPeak1);ctx.stroke();ctx.beginPath();ctx.moveTo(xPeak1,y0);ctx.lineTo(xPeak1,yPeak1);ctx.stroke();ctx.setLineDash([]);var tPeak2=(Math.PI/2-phase2)/(2*Math.PI*frequency2);var xPeak2=x0+tPeak2*period;var yPeak2=y0-offsetY2-amplitude2;ctx.strokeStyle='#888';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(x0,yPeak2);ctx.lineTo(xPeak2,yPeak2);ctx.stroke();ctx.beginPath();ctx.moveTo(xPeak2,y0);ctx.lineTo(xPeak2,yPeak2);ctx.stroke();ctx.setLineDash([]);var tZero1=(2*Math.PI-phase1)/(2*Math.PI*frequency1);var xZero1=x0+tZero1*period;ctx.strokeStyle='#888';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(xZero1,y0-offsetY1);ctx.lineTo(xZero1,y0-offsetY1+amplitude1);ctx.stroke();ctx.setLineDash([]);var tZero2=(2*Math.PI-phase2)/(2*Math.PI*frequency2);var xZero2=x0+tZero2*period;ctx.strokeStyle='#888';ctx.lineWidth=1;ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(xZero2,y0-offsetY2);ctx.lineTo(xZero2,y0-offsetY2+amplitude2);ctx.stroke();ctx.setLineDash([]);}var amplitude1=40;var amplitude2=60;var frequency1=1;var frequency2=1;var phase1=0;var phase2=0;var offsetY1=80;var offsetY2=160;if(s==='initial'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);}else if(s==='key_process'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}else if(s==='final'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}else if(s==='paused'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}else if(s==='resumed'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}else if(s==='post_interaction'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}else if(s==='reduced_motion'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);}else if(s==='static_fallback'){drawAxes();drawWaveform(amplitude1,frequency1,phase1,'blue',offsetY1);drawWaveform(amplitude2,frequency2,phase2,'red',offsetY2);drawMeasureGuides(amplitude1,amplitude2,frequency1,frequency2,phase1,phase2,offsetY1,offsetY2);}api.emit('render_complete');})();",
+        "scene_declaration": {
+          "code_hash": "sha256:4d665683f6572a919009227e59935afc72dd3908c53324494e4fe7499a276400",
+          "knowledge_version": "1.0.0",
+          "layout_contract_version": "1.0.0",
+          "learning_goal": "从波形分别读取振幅和周期。",
+          "scene_id": "middle_sound_pair.wave-compare",
+          "scene_version": "1.0.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "facts": [
+              {
+                "claim_id": "force-amplitude-frequency",
+                "expected": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+                "narration": "先比较两条波形的纵向高度和横向周期，判断需要分别追踪哪两个量。",
+                "visual": "Two sine waves with same frequency but different amplitudes, with measurement guides highlighting amplitude and period."
+              }
+            ]
+          },
+          "teaching_contract_version": "1.0.0",
+          "test_version": "1.0.0",
+          "viewport_profiles": {
+            "phone": {
+              "states": [
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms",
+                  "motion_envelopes": [],
+                  "state_id": "initial"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_amp1"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_amp2"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_period1"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_period2"
+                    }
+                  ],
+                  "state_id": "key_process"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "final"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "paused"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "resumed"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "post_interaction"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms",
+                  "motion_envelopes": [],
+                  "state_id": "reduced_motion"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "static_fallback"
+                }
+              ]
+            },
+            "tablet": {
+              "states": [
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms",
+                  "motion_envelopes": [],
+                  "state_id": "initial"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_amp1"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_amp2"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_period1"
+                    },
+                    {
+                      "animation": "draw",
+                      "duration_ms": 500,
+                      "element_id": "guide_period2"
+                    }
+                  ],
+                  "state_id": "key_process"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "final"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "paused"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "resumed"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "post_interaction"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms",
+                  "motion_envelopes": [],
+                  "state_id": "reduced_motion"
+                },
+                {
+                  "elements": [
+                    {
+                      "id": "axes",
+                      "properties": {
+                        "x_label": "时间",
+                        "y_label": "位移"
+                      },
+                      "type": "coordinate_axes"
+                    },
+                    {
+                      "id": "wave1",
+                      "properties": {
+                        "amplitude": 40,
+                        "color": "blue",
+                        "frequency": 1,
+                        "offset_y": 80,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "wave2",
+                      "properties": {
+                        "amplitude": 60,
+                        "color": "red",
+                        "frequency": 1,
+                        "offset_y": 160,
+                        "phase": 0
+                      },
+                      "type": "waveform"
+                    },
+                    {
+                      "id": "guide_amp1",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_amp2",
+                      "properties": {
+                        "measure": "amplitude",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period1",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave1"
+                      },
+                      "type": "measure_guide"
+                    },
+                    {
+                      "id": "guide_period2",
+                      "properties": {
+                        "measure": "period",
+                        "target": "wave2"
+                      },
+                      "type": "measure_guide"
+                    }
+                  ],
+                  "kind": "axes+two-waveforms+measure-guides",
+                  "motion_envelopes": [],
+                  "state_id": "static_fallback"
+                }
+              ]
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "比较纵向振幅",
+            "比较横向周期",
+            "分开记录两个量"
+          ]
+        }
+      },
+      "sample_id": "middle_sound_pair.wave-compare"
+    }
+  ],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing is not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "sealed_synthetic_knowledge_sent": true
+  },
+  "decision": "calibration_only",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 8000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0.0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_started"
+  },
+  "latency_ms": {
+    "max": 64846,
+    "p50": 60172,
+    "p80": 60761,
+    "p95": 63999
+  },
+  "limits": [
+    "Calibration samples do not enter the formal denominator.",
+    "Declared bounds do not replace browser measurements or pixel checks.",
+    "Machine checks do not replace subject and product review."
+  ],
+  "metrics": {
+    "declaration_gate_pass": {
+      "denominator": 10,
+      "numerator": 0
+    },
+    "formal_denominator": false,
+    "sandbox_execution": "pending",
+    "schema_validity": {
+      "denominator": 10,
+      "numerator": 2
+    }
+  },
+  "provider": "deepseek",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 10,
+    "automatic_retries": 0,
+    "completed": 2,
+    "planned": 10
+  },
+  "response_models": [
+    "deepseek-v4-pro"
+  ],
+  "run_at": "2026-07-30T13:38:47.097694+00:00",
+  "run_label": "official-calibration-round-5",
+  "run_phase": "calibration",
+  "slice_id": "TS-04C",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 11414,
+    "prompt_tokens": 2867,
+    "total_tokens": 14281
+  }
+}

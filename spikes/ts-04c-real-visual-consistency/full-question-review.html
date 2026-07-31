@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>完整问题讲解评审</title>
+<style>
+  :root { --ink:#17212b; --muted:#65717c; --paper:#fffdf7; --surface:#fff; --line:#c5cdd4; --accent:#ef6558; --green:#2f9b72; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; background:#edf1f4; color:var(--ink); font:16px/1.45 system-ui,-apple-system,"PingFang SC",sans-serif; letter-spacing:0; }
+  body { min-height:100vh; }
+  .shell { width:min(1120px,100%); min-height:100vh; margin:0 auto; background:var(--surface); display:grid; grid-template-rows:auto 1fr auto; }
+  header { padding:18px 22px 14px; border-bottom:1px solid var(--line); }
+  h1 { margin:0; font-size:clamp(20px,2.3vw,30px); line-height:1.25; }
+  .segment-head { margin-top:10px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  h2 { margin:0; font-size:18px; }
+  .count { color:var(--muted); font-weight:700; white-space:nowrap; }
+  .stage { min-height:0; display:grid; grid-template-columns:minmax(0,1fr) 310px; }
+  .canvas-wrap { min-width:0; background:var(--paper); display:grid; place-items:center; border-right:1px solid var(--line); }
+  canvas { width:100%; height:auto; display:block; background:var(--paper); }
+  aside { padding:24px; display:flex; flex-direction:column; justify-content:center; gap:18px; }
+  .caption { margin:0; font-size:20px; font-weight:700; }
+  .answer { margin:0; padding:14px 0 0; border-top:3px solid var(--green); color:var(--green); font-weight:750; }
+  footer { border-top:1px solid var(--line); padding:12px 18px 16px; background:#fff; }
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-bottom:12px; }
+  .step { min-height:36px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--muted); font:inherit; font-size:13px; font-weight:700; padding:6px 8px; }
+  .step[aria-current="step"] { border-color:var(--accent); color:var(--ink); box-shadow:inset 0 -3px var(--accent); }
+  .controls { display:grid; grid-template-columns:74px minmax(0,1fr) 48px; align-items:center; gap:12px; }
+  #play { min-height:44px; border:0; border-radius:6px; background:var(--ink); color:#fff; font:inherit; font-weight:750; }
+  input { width:100%; accent-color:var(--accent); }
+  #time { color:var(--muted); font-variant-numeric:tabular-nums; text-align:right; }
+  @media (max-width:900px) {
+    .stage { grid-template-columns:1fr; }
+    .canvas-wrap { border-right:0; border-bottom:1px solid var(--line); }
+    aside { min-height:118px; padding:14px 18px; justify-content:flex-start; gap:10px; }
+    .caption { font-size:16px; }
+    .answer { font-size:14px; padding-top:8px; }
+    header { padding:12px 16px 10px; }
+    h1 { font-size:20px; }
+    h2 { font-size:15px; }
+    footer { padding:9px 12px 12px; }
+    .step { font-size:12px; min-height:34px; padding:4px; }
+  }
+  html[data-viewport="phone"] body { width:390px; min-height:844px; margin:0 auto; }
+  html[data-viewport="phone"] .shell { width:390px; min-height:844px; }
+  html[data-viewport="phone"] .stage { grid-template-columns:1fr; }
+  html[data-viewport="phone"] .canvas-wrap { border-right:0; border-bottom:1px solid var(--line); }
+  html[data-viewport="phone"] aside { min-height:118px; padding:14px 18px; justify-content:flex-start; gap:10px; }
+  html[data-viewport="phone"] .caption { font-size:16px; }
+  html[data-viewport="phone"] .answer { font-size:14px; padding-top:8px; }
+  html[data-viewport="phone"] header { padding:12px 16px 10px; }
+  html[data-viewport="phone"] h1 { font-size:20px; }
+  html[data-viewport="phone"] h2 { font-size:15px; }
+  html[data-viewport="phone"] footer { padding:9px 12px 12px; }
+  html[data-viewport="phone"] .step { font-size:12px; min-height:34px; padding:4px; }
+</style>
+<main class="shell">
+  <header>
+    <h1 id="question">加载中</h1>
+    <div class="segment-head"><h2 id="segment-title"></h2><span id="segment-count" class="count">1 / 4</span></div>
+  </header>
+  <div class="stage">
+    <div class="canvas-wrap"><canvas id="canvas" width="1000" height="680"></canvas></div>
+    <aside aria-live="polite">
+      <p id="caption" class="caption"></p>
+      <p id="answer" class="answer" hidden></p>
+    </aside>
+  </div>
+  <footer>
+    <nav class="steps" aria-label="讲解片段">
+      <button class="step" data-segment="0" aria-current="step">观察</button>
+      <button class="step" data-segment="1">盐水变化</button>
+      <button class="step" data-segment="2">比较受力</button>
+      <button class="step" data-segment="3">得出结论</button>
+    </nav>
+    <div class="controls"><button id="play" aria-label="播放">播放</button><input id="progress" type="range" min="0" max="8000" step="1" value="0" aria-label="当前片段进度"><span id="time">0.0s</span></div>
+  </footer>
+</main>
+<script type="module" src="./src/full-question-review.js"></script>
+</html>

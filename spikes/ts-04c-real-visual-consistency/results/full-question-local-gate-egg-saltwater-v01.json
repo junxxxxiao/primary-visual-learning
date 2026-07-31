@@ -1,0 +1,26 @@
+{
+  "artifact_kind": "full_question_local_compile_gate",
+  "source_result": "model-deepseek-v4-flash-full-question-egg-saltwater-v01-network-attempt-2.json",
+  "source_kind": "candidate_output",
+  "status": "fail",
+  "question_id": "synthetic.egg-saltwater-float.v01",
+  "metrics": {
+    "segment_count": 4,
+    "total_duration_ms": 32000,
+    "object_count": 15,
+    "timeline_action_count": 7
+  },
+  "semantic_violations": [
+    {
+      "segment_id": "seg3-compare",
+      "code": "visual.force_magnitude_contradiction",
+      "detail": "“浮力>重力”要求浮力箭头长于重力箭头。"
+    },
+    {
+      "segment_id": "seg4-conclusion",
+      "code": "visual.force_balance_missing",
+      "detail": "平衡结论必须显示等长的浮力与重力箭头。"
+    }
+  ],
+  "error": "semantic visual gate failed"
+}

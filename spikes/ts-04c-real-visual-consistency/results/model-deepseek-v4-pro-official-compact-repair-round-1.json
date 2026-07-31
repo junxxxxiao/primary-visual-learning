@@ -1,0 +1,635 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 13258,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:4f8e3c6a1b26e51e100a1253d1f5e6ee94c699da685aab40ead1af6145f7cdb7",
+      "response_hash": "sha256:f6093a52fdee081725272f4653b207d52f06280b43d63dd924f6996e9f2f744c",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound.opening-explanation",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1650,
+        "prompt_tokens": 3193,
+        "total_tokens": 4843
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 26827,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:f7ebf2f7b12876eaa2d9104c77be28718990cbad561c034cee419aa686af4100",
+      "response_hash": "sha256:a99b4a84f924ee17b994e5b6a1d6667ce5c616ed90629ef7232810774d9ab80c",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound.compare",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 3476,
+        "prompt_tokens": 5019,
+        "total_tokens": 8495
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 35491,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:4a36d1c0c4ee097f1c6e62e36cf6e48c71b6f1e5faac2edb3cc434af8f923371",
+      "response_hash": "sha256:ad4c15b8939a472e17eca6a2ea94b14de251a86849a26c16f2b21a0f13200fbc",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound.separate",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 4526,
+        "prompt_tokens": 6204,
+        "total_tokens": 10730
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 13042,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:caf580e9e68761e58b18ef489c3b0d9b41b9fbe64ff0066d21c3a398edf97965",
+      "response_hash": "sha256:06f97e11c04d8ec49fd60493ddb42988be04174c379bfa02e43487ac5dba9736",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1581,
+        "prompt_tokens": 4024,
+        "total_tokens": 5605
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 14595,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:be059e0c9b3ffd157bd831040306e6e1d46fc383731b17e9d5348b084c8b4240",
+      "response_hash": "sha256:10400be0e8f1dc0de2e402e738dc247680de6f61635801088c486cb1ec8cd0ed",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1841,
+        "prompt_tokens": 3413,
+        "total_tokens": 5254
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 13049,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:433a0217a53ce994341868a4acd364d09a6474a32738998b763d827909f0003d",
+      "response_hash": "sha256:d95466422a668fe122d96dafdfd6fafd8b8fc1536a2bcd51a3cdb88b7efb0b7e",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.model",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1552,
+        "prompt_tokens": 3068,
+        "total_tokens": 4620
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 16421,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:68f765ec0f6e125d937c38df84b2707a195def86903db1dbca0db8f06a1aa367",
+      "response_hash": "sha256:faca1abbdcf45510bc407b9378ec27ac709a954a8c525639c373229b361241a4",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.complete",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1783,
+        "prompt_tokens": 1663,
+        "total_tokens": 3446
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 31657,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:e6a70d790c9dbc03c4b33363d350e0a41e54d515bd2acd5121dd4d3dd9070c60",
+      "response_hash": "sha256:cf67c3e9e84d75aaf297b49cd29e23744f671022cf4c875525f89d4738ec6a1a",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.justify",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 4170,
+        "prompt_tokens": 5821,
+        "total_tokens": 9991
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 14331,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:cd13ee7e9e7fc6eed4a3f208fdd778e4fa6f14c2f258762b07dbfdc60d290eee",
+      "response_hash": "sha256:9731220cab443b42b2b093e6331dfe6cd356cf38a535e664007053d6b9a149ee",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_sound_pair.wave-compare",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 1842,
+        "prompt_tokens": 3340,
+        "total_tokens": 5182
+      },
+      "violation_codes": []
+    },
+    {
+      "candidate_contract": "pass",
+      "finish_reason": "stop",
+      "latency_ms": 31024,
+      "output_kind": "candidate_output",
+      "repair_attempt": 1,
+      "repair_of_response_hash": "sha256:1a6e192f6845528d3739a8f4eecfcdd57b0df12ed190ccaca5b09fc904ea781a",
+      "response_hash": "sha256:dc9fca1cd377c5f0f4a727f6508cee0d65ab6b12f2ef561f044d18a38ae20ef0",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_sound_pair.wave-explain",
+      "schema_valid": true,
+      "usage": {
+        "completion_tokens": 4193,
+        "prompt_tokens": 6035,
+        "total_tokens": 10228
+      },
+      "violation_codes": []
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "sample_id": "primary_sound.opening-explanation",
+        "scene_code": "const canvas = api.canvas;\nconst ctx = canvas.getContext('2d');\nconst params = input.parameters;\nconst state = params.state;\nconst viewport = params.viewport;\nconst width = viewport.width;\nconst height = viewport.height;\n\nfunction draw() {\n  ctx.clearRect(0, 0, width, height);\n\n  const isPhone = width < 600;\n  const minFontSize = isPhone ? 16 : 18;\n  const minGraphicSize = isPhone ? 24 : 28;\n  const touchSize = isPhone ? 44 : 44;\n\n  const fontSize = Math.max(minFontSize, Math.min(width, height) * 0.05);\n  const stringThickness = Math.max(minGraphicSize, 4);\n  const stringY = height * 0.4;\n  const stringLeft = width * 0.2;\n  const stringRight = width * 0.8;\n\n  const elements = [];\n\n  ctx.beginPath();\n  ctx.moveTo(stringLeft, stringY);\n  ctx.lineTo(stringRight, stringY);\n  ctx.lineWidth = stringThickness;\n  ctx.strokeStyle = '#8B4513';\n  ctx.stroke();\n\n  elements.push({\n    element_id: 'string',\n    bounds: {\n      x: stringLeft,\n      y: stringY - stringThickness / 2,\n      width: stringRight - stringLeft,\n      height: stringThickness\n    },\n    font_size: 0,\n    min_graphic_size: stringThickness,\n    interactive: false,\n    touch_size: { width: stringRight - stringLeft, height: touchSize },\n    local_safe_region: { x: 0, y: 0, width, height }\n  });\n\n  ctx.font = `${fontSize}px sans-serif`;\n  ctx.fillStyle = '#000000';\n  ctx.textAlign = 'center';\n\n  const label1Text = '同一根弦';\n  const label1Y = stringY - 30;\n  ctx.fillText(label1Text, width / 2, label1Y);\n  const label1Metrics = ctx.measureText(label1Text);\n  const label1Width = label1Metrics.width;\n  const label1Height = fontSize;\n  elements.push({\n    element_id: 'label_same_string',\n    bounds: {\n      x: width / 2 - label1Width / 2,\n      y: label1Y - label1Height,\n      width: label1Width,\n      height: label1Height\n    },\n    font_size: fontSize,\n    min_graphic_size: fontSize,\n    interactive: false,\n    touch_size: { width: label1Width, height: label1Height },\n    local_safe_region: { x: 0, y: 0, width, height }\n  });\n\n  const label2Text = '响度';\n  const label2X = width * 0.3;\n  const label2Y = stringY + 50;\n  ctx.fillText(label2Text, label2X, label2Y);\n  const label2Metrics = ctx.measureText(label2Text);\n  const label2Width = label2Metrics.width;\n  const label2Height = fontSize;\n  elements.push({\n    element_id: 'label_loudness',\n    bounds: {\n      x: label2X - label2Width / 2,\n      y: label2Y - label2Height,\n      width: label2Width,\n      height: label2Height\n    },\n    font_size: fontSize,\n    min_graphic_size: fontSize,\n    interactive: false,\n    touch_size: { width: label2Width, height: label2Height },\n    local_safe_region: { x: 0, y: 0, width, height }\n  });\n\n  const label3Text = '音调';\n  const label3X = width * 0.7;\n  const label3Y = stringY + 50;\n  ctx.fillText(label3Text, label3X, label3Y);\n  const label3Metrics = ctx.measureText(label3Text);\n  const label3Width = label3Metrics.width;\n  const label3Height = fontSize;\n  elements.push({\n    element_id: 'label_pitch',\n    bounds: {\n      x: label3X - label3Width / 2,\n      y: label3Y - label3Height,\n      width: label3Width,\n      height: label3Height\n    },\n    font_size: fontSize,\n    min_graphic_size: fontSize,\n    interactive: false,\n    touch_size: { width: label3Width, height: label3Height },\n    local_safe_region: { x: 0, y: 0, width, height }\n  });\n\n  const layout_mode = 'single-focus';\n  const canvas_inner_bounds = { x: 0, y: 0, width, height };\n  const local_safe_regions = [{ x: 0, y: 0, width, height }];\n  const readability_limits = {\n    min_font_size: minFontSize,\n    max_font_size: 24,\n    min_graphic_size: minGraphicSize\n  };\n  const container_metrics = {\n    main_area: { x: 0, y: 0, width, height }\n  };\n  const motion_envelopes = [];\n\n  api.emit('interaction', {\n    type: 'layout_measurement',\n    layout_mode,\n    canvas_inner_bounds,\n    local_safe_regions,\n    readability_limits,\n    container_metrics,\n    elements,\n    motion_envelopes\n  });\n\n  api.emit('render_complete');\n}\n\ndraw();",
+        "scene_metadata": {
+          "learning_goal": "建立同一根弦的公平比较，并区分响度和音调。",
+          "scene_id": "opening-explanation",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "fact_id": "force-amplitude-pitch",
+                "narration": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "visual": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "annotated-sequence",
+          "steps": [
+            "同一根弦保持不变",
+            "分别记录响度和音调"
+          ]
+        }
+      },
+      "sample_id": "primary_sound.opening-explanation"
+    },
+    {
+      "candidate": {
+        "sample_id": "primary_sound.compare",
+        "scene_code": "function renderScene(state, canvas, params) {\n  const ctx = canvas.getContext('2d');\n  const w = canvas.width;\n  const h = canvas.height;\n  const layout_mode = params.viewport.kind === 'phone' ? 'phone' : 'tablet';\n  const isPhone = layout_mode === 'phone';\n  const isTablet = layout_mode === 'tablet';\n  const isReducedMotion = state === 'reduced_motion';\n  const isStaticFallback = state === 'static_fallback';\n  const isInitial = state === 'initial';\n  const isKeyProcess = state === 'key_process';\n  const isFinal = state === 'final';\n  const isPaused = state === 'paused';\n  const isResumed = state === 'resumed';\n  const isPostInteraction = state === 'post_interaction';\n  const isLightPluck = isInitial || isPaused || isResumed || isPostInteraction || isReducedMotion || isStaticFallback;\n  const isStrongPluck = isKeyProcess || isFinal;\n  const isAmplitudeHighlight = isFinal || isPostInteraction;\n  const bgColor = '#f0f8ff';\n  const stringColor = '#8B4513';\n  const lightPluckColor = '#4682B4';\n  const strongPluckColor = '#B22222';\n  const highlightColor = '#FFD700';\n  const textColor = '#333';\n  const labelColor = '#555';\n  const panelBg = '#fff';\n  const panelBorder = '#ccc';\n  const panelRadius = 8;\n  const panelPadding = isPhone ? 8 : 12;\n  const panelGap = isPhone ? 8 : 16;\n  const panelWidth = (w - panelGap - 2 * panelPadding) / 2;\n  const panelHeight = h - 2 * panelPadding;\n  const panelX1 = panelPadding;\n  const panelX2 = panelPadding + panelWidth + panelGap;\n  const panelY = panelPadding;\n  const stringY = panelY + panelHeight * 0.5;\n  const stringLeft = panelX1 + panelPadding;\n  const stringRight = panelX1 + panelWidth - panelPadding;\n  const stringLength = stringRight - stringLeft;\n  const stringLeft2 = panelX2 + panelPadding;\n  const stringRight2 = panelX2 + panelWidth - panelPadding;\n  const stringLength2 = stringRight2 - stringLeft2;\n  const amplitudeLight = isPhone ? 20 : 30;\n  const amplitudeStrong = isPhone ? 40 : 60;\n  const amplitudeHighlight = isPhone ? 50 : 75;\n  const wavePoints = 20;\n  const elements = [];\n  function drawPanel(x, y, w, h) {\n    ctx.fillStyle = panelBg;\n    ctx.strokeStyle = panelBorder;\n    ctx.lineWidth = 1;\n    ctx.beginPath();\n    ctx.roundRect(x, y, w, h, panelRadius);\n    ctx.fill();\n    ctx.stroke();\n  }\n  function drawString(x1, y, x2, amplitude, color, waveOffset) {\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    const dx = (x2 - x1) / wavePoints;\n    for (let i = 0; i <= wavePoints; i++) {\n      const x = x1 + i * dx;\n      const yOffset = amplitude * Math.sin((i / wavePoints) * Math.PI * 2 + waveOffset);\n      if (i === 0) ctx.moveTo(x, y + yOffset);\n      else ctx.lineTo(x, y + yOffset);\n    }\n    ctx.stroke();\n  }\n  function drawLabel(x, y, text, color, fontSize) {\n    ctx.fillStyle = color;\n    ctx.font = `${fontSize}px sans-serif`;\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n    ctx.fillText(text, x, y);\n  }\n  function drawAmplitudeIndicator(x1, x2, y, amplitude, color, label) {\n    const midX = (x1 + x2) / 2;\n    const topY = y - amplitude;\n    const bottomY = y + amplitude;\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 1;\n    ctx.setLineDash([4, 4]);\n    ctx.beginPath();\n    ctx.moveTo(midX, topY);\n    ctx.lineTo(midX, bottomY);\n    ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillStyle = color;\n    ctx.font = `${isPhone ? 10 : 12}px sans-serif`;\n    ctx.textAlign = 'left';\n    ctx.textBaseline = 'middle';\n    ctx.fillText(label, midX + 4, topY + (bottomY - topY) / 2);\n  }\n  function drawHighlightBox(x1, x2, y, amplitude, color) {\n    const midX = (x1 + x2) / 2;\n    const topY = y - amplitude;\n    const bottomY = y + amplitude;\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 2;\n    ctx.setLineDash([]);\n    ctx.strokeRect(midX - 10, topY, 20, bottomY - topY);\n  }\n  ctx.clearRect(0, 0, w, h);\n  ctx.fillStyle = bgColor;\n  ctx.fillRect(0, 0, w, h);\n  drawPanel(panelX1, panelY, panelWidth, panelHeight);\n  drawPanel(panelX2, panelY, panelWidth, panelHeight);\n  const lightAmplitude = isLightPluck ? amplitudeLight : 0;\n  const strongAmplitude = isStrongPluck ? amplitudeStrong : 0;\n  const highlightAmplitude = isAmplitudeHighlight ? amplitudeHighlight : 0;\n  const waveOffset = isReducedMotion ? 0 : (isLightPluck || isStrongPluck ? (Date.now() / 200) % (Math.PI * 2) : 0);\n  drawString(stringLeft, stringY, stringRight, lightAmplitude, lightPluckColor, waveOffset);\n  drawString(stringLeft2, stringY, stringRight2, strongAmplitude, strongPluckColor, waveOffset);\n  if (isAmplitudeHighlight) {\n    drawHighlightBox(stringLeft2, stringRight2, stringY, highlightAmplitude, highlightColor);\n    drawAmplitudeIndicator(stringLeft2, stringRight2, stringY, highlightAmplitude, highlightColor, '振幅');\n  }\n  const labelY = panelY + panelHeight * 0.15;\n  drawLabel(panelX1 + panelWidth / 2, labelY, '轻拨', textColor, isPhone ? 16 : 18);\n  drawLabel(panelX2 + panelWidth / 2, labelY, '用力拨', textColor, isPhone ? 16 : 18);\n  const descY = panelY + panelHeight * 0.85;\n  drawLabel(panelX1 + panelWidth / 2, descY, '摆动较窄', labelColor, isPhone ? 14 : 16);\n  drawLabel(panelX2 + panelWidth / 2, descY, '摆动较宽', labelColor, isPhone ? 14 : 16);\n  if (isAmplitudeHighlight) {\n    drawLabel(panelX2 + panelWidth / 2, descY + (isPhone ? 24 : 30), '声音更响', highlightColor, isPhone ? 14 : 16);\n  }\n  const canvas_inner_bounds = { x: 0, y: 0, width: w, height: h };\n  const local_safe_regions = [\n    { x: panelX1, y: panelY, width: panelWidth, height: panelHeight },\n    { x: panelX2, y: panelY, width: panelWidth, height: panelHeight }\n  ];\n  const readability_limits = {\n    min_font_size: isPhone ? 16 : 18,\n    max_font_size: isPhone ? 24 : 28,\n    min_touch_size: 44\n  };\n  const container_metrics = {\n    panels: [\n      { x: panelX1, y: panelY, width: panelWidth, height: panelHeight },\n      { x: panelX2, y: panelY, width: panelWidth, height: panelHeight }\n    ]\n  };\n  const motion_envelopes = [\n    {\n      element_id: 'light-string',\n      bounds: { x: stringLeft, y: stringY - lightAmplitude, width: stringLength, height: lightAmplitude * 2 },\n      amplitude: lightAmplitude,\n      frequency: 1\n    },\n    {\n      element_id: 'strong-string',\n      bounds: { x: stringLeft2, y: stringY - strongAmplitude, width: stringLength2, height: strongAmplitude * 2 },\n      amplitude: strongAmplitude,\n      frequency: 1\n    }\n  ];\n  elements.push(\n    { element_id: 'light-string', bounds: { x: stringLeft, y: stringY - lightAmplitude, width: stringLength, height: lightAmplitude * 2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[0] },\n    { element_id: 'strong-string', bounds: { x: stringLeft2, y: stringY - strongAmplitude, width: stringLength2, height: strongAmplitude * 2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] },\n    { element_id: 'light-label', bounds: { x: panelX1 + panelWidth / 2 - 30, y: labelY - 10, width: 60, height: 20 }, font_size: isPhone ? 16 : 18, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[0] },\n    { element_id: 'strong-label', bounds: { x: panelX2 + panelWidth / 2 - 30, y: labelY - 10, width: 60, height: 20 }, font_size: isPhone ? 16 : 18, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] },\n    { element_id: 'light-desc', bounds: { x: panelX1 + panelWidth / 2 - 40, y: descY - 10, width: 80, height: 20 }, font_size: isPhone ? 14 : 16, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[0] },\n    { element_id: 'strong-desc', bounds: { x: panelX2 + panelWidth / 2 - 40, y: descY - 10, width: 80, height: 20 }, font_size: isPhone ? 14 : 16, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] }\n  );\n  if (isAmplitudeHighlight) {\n    elements.push(\n      { element_id: 'amplitude-indicator', bounds: { x: stringLeft2 + stringLength2 / 2 - 10, y: stringY - highlightAmplitude, width: 20, height: highlightAmplitude * 2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] },\n      { element_id: 'amplitude-label', bounds: { x: stringLeft2 + stringLength2 / 2 + 4, y: stringY - highlightAmplitude / 2 - 10, width: 40, height: 20 }, font_size: isPhone ? 10 : 12, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] },\n      { element_id: 'loudness-label', bounds: { x: panelX2 + panelWidth / 2 - 40, y: descY + (isPhone ? 24 : 30) - 10, width: 80, height: 20 }, font_size: isPhone ? 14 : 16, min_graphic_size: 0, interactive: false, touch_size: 0, local_safe_region: local_safe_regions[1] }\n    );\n  }\n  api.emit('interaction', {\n    type: 'layout_measurement',\n    layout_mode,\n    canvas_inner_bounds,\n    local_safe_regions,\n    readability_limits,\n    container_metrics,\n    elements,\n    motion_envelopes\n  });\n  api.emit('render_complete');\n}\n\nconst state = input.parameters.state;\nconst canvas = api.canvas;\nconst params = input.parameters;\nrenderScene(state, canvas, params);",
+        "scene_metadata": {
+          "learning_goal": "比较轻拨和用力拨的振幅。",
+          "scene_id": "primary_sound.compare",
+          "scene_version": "1.0.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "fact_id": "force-amplitude-pitch",
+                "narration": "更用力拨时，弦摆动得更宽，声音更响；这里改变的是振幅和响度。",
+                "visual": "更用力拨时，弦摆动得更宽，声音更响；这里改变的是振幅和响度。"
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "轻拨时摆动较窄",
+            "用力拨时摆动较宽",
+            "摆动更宽对应声音更响"
+          ]
+        }
+      },
+      "sample_id": "primary_sound.compare"
+    },
+    {
+      "candidate": {
+        "sample_id": "primary_sound.separate",
+        "scene_code": "(function(){var vw=input.parameters.viewport.width;var vh=input.parameters.viewport.height;var state=input.parameters.state;var c=api.canvas;var ctx=c.getContext('2d');var layout_mode='side-by-side';var canvas_inner_bounds={x:0,y:0,width:vw,height:vh};var local_safe_regions=[{x:0,y:0,width:vw,height:vh}];var readability_limits={min_font_size:16,max_font_size:24};var container_metrics={width:vw,height:vh};var elements=[];var motion_envelopes=[];function emitLayout(){api.emit('interaction',{type:'layout_measurement',layout_mode:layout_mode,canvas_inner_bounds:canvas_inner_bounds,local_safe_regions:local_safe_regions,readability_limits:readability_limits,container_metrics:container_metrics,elements:elements,motion_envelopes:motion_envelopes});}function drawInitial(){var leftX=vw*0.1;var rightX=vw*0.55;var waveY=vh*0.4;var waveWidth=vw*0.35;var waveHeight=vh*0.2;var labelY=vh*0.7;var titleY=vh*0.1;var titleFontSize=Math.min(vw*0.05,24);var labelFontSize=Math.min(vw*0.04,18);ctx.clearRect(0,0,vw,vh);ctx.fillStyle='#000';ctx.font=titleFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('轻拨与重拨对比',vw/2,titleY);elements.push({element_id:'title',bounds:{x:vw/2-ctx.measureText('轻拨与重拨对比').width/2,y:titleY-titleFontSize,width:ctx.measureText('轻拨与重拨对比').width,height:titleFontSize},font_size:titleFontSize,min_graphic_size:titleFontSize,interactive:false,touch_size:titleFontSize,local_safe_region:local_safe_regions[0]});ctx.font=labelFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('轻拨',leftX+waveWidth/2,labelY);elements.push({element_id:'label-left',bounds:{x:leftX+waveWidth/2-ctx.measureText('轻拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('轻拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.fillText('重拨',rightX+waveWidth/2,labelY);elements.push({element_id:'label-right',bounds:{x:rightX+waveWidth/2-ctx.measureText('重拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('重拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#00f';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=leftX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.3;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-left',bounds:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#f00';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=rightX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.6;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-right',bounds:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});motion_envelopes.push({element_id:'wave-left',envelope:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6}});motion_envelopes.push({element_id:'wave-right',envelope:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2}});emitLayout();api.emit('render_complete');}function drawKeyProcess(){var leftX=vw*0.1;var rightX=vw*0.55;var waveY=vh*0.4;var waveWidth=vw*0.35;var waveHeight=vh*0.2;var labelY=vh*0.7;var titleY=vh*0.1;var titleFontSize=Math.min(vw*0.05,24);var labelFontSize=Math.min(vw*0.04,18);ctx.clearRect(0,0,vw,vh);ctx.fillStyle='#000';ctx.font=titleFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('对齐振动时间',vw/2,titleY);elements.push({element_id:'title',bounds:{x:vw/2-ctx.measureText('对齐振动时间').width/2,y:titleY-titleFontSize,width:ctx.measureText('对齐振动时间').width,height:titleFontSize},font_size:titleFontSize,min_graphic_size:titleFontSize,interactive:false,touch_size:titleFontSize,local_safe_region:local_safe_regions[0]});ctx.font=labelFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('轻拨',leftX+waveWidth/2,labelY);elements.push({element_id:'label-left',bounds:{x:leftX+waveWidth/2-ctx.measureText('轻拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('轻拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.fillText('重拨',rightX+waveWidth/2,labelY);elements.push({element_id:'label-right',bounds:{x:rightX+waveWidth/2-ctx.measureText('重拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('重拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#00f';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=leftX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.3;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-left',bounds:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#f00';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=rightX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.6;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-right',bounds:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});motion_envelopes.push({element_id:'wave-left',envelope:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6}});motion_envelopes.push({element_id:'wave-right',envelope:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2}});emitLayout();api.emit('render_complete');}function drawFinal(){var leftX=vw*0.1;var rightX=vw*0.55;var waveY=vh*0.4;var waveWidth=vw*0.35;var waveHeight=vh*0.2;var labelY=vh*0.7;var titleY=vh*0.1;var titleFontSize=Math.min(vw*0.05,24);var labelFontSize=Math.min(vw*0.04,18);ctx.clearRect(0,0,vw,vh);ctx.fillStyle='#000';ctx.font=titleFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('振动快慢相同，音调不变',vw/2,titleY);elements.push({element_id:'title',bounds:{x:vw/2-ctx.measureText('振动快慢相同，音调不变').width/2,y:titleY-titleFontSize,width:ctx.measureText('振动快慢相同，音调不变').width,height:titleFontSize},font_size:titleFontSize,min_graphic_size:titleFontSize,interactive:false,touch_size:titleFontSize,local_safe_region:local_safe_regions[0]});ctx.font=labelFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('轻拨',leftX+waveWidth/2,labelY);elements.push({element_id:'label-left',bounds:{x:leftX+waveWidth/2-ctx.measureText('轻拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('轻拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.fillText('重拨',rightX+waveWidth/2,labelY);elements.push({element_id:'label-right',bounds:{x:rightX+waveWidth/2-ctx.measureText('重拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('重拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#00f';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=leftX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.3;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-left',bounds:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#f00';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=rightX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.6;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-right',bounds:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});motion_envelopes.push({element_id:'wave-left',envelope:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6}});motion_envelopes.push({element_id:'wave-right',envelope:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2}});emitLayout();api.emit('render_complete');}function drawPaused(){drawInitial();}function drawResumed(){drawInitial();}function drawPostInteraction(){drawInitial();}function drawReducedMotion(){drawInitial();}function drawStaticFallback(){var leftX=vw*0.1;var rightX=vw*0.55;var waveY=vh*0.4;var waveWidth=vw*0.35;var waveHeight=vh*0.2;var labelY=vh*0.7;var titleY=vh*0.1;var titleFontSize=Math.min(vw*0.05,24);var labelFontSize=Math.min(vw*0.04,18);ctx.clearRect(0,0,vw,vh);ctx.fillStyle='#000';ctx.font=titleFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('对齐两次振动的时间',vw/2,titleY);elements.push({element_id:'title',bounds:{x:vw/2-ctx.measureText('对齐两次振动的时间').width/2,y:titleY-titleFontSize,width:ctx.measureText('对齐两次振动的时间').width,height:titleFontSize},font_size:titleFontSize,min_graphic_size:titleFontSize,interactive:false,touch_size:titleFontSize,local_safe_region:local_safe_regions[0]});ctx.font=labelFontSize+'px sans-serif';ctx.textAlign='center';ctx.fillText('轻拨',leftX+waveWidth/2,labelY);elements.push({element_id:'label-left',bounds:{x:leftX+waveWidth/2-ctx.measureText('轻拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('轻拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.fillText('重拨',rightX+waveWidth/2,labelY);elements.push({element_id:'label-right',bounds:{x:rightX+waveWidth/2-ctx.measureText('重拨').width/2,y:labelY-labelFontSize,width:ctx.measureText('重拨').width,height:labelFontSize},font_size:labelFontSize,min_graphic_size:labelFontSize,interactive:false,touch_size:labelFontSize,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#00f';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=leftX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.3;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-left',bounds:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});ctx.strokeStyle='#f00';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<=waveWidth;i+=2){var x=rightX+i;var y=waveY+Math.sin(i/waveWidth*Math.PI*2)*waveHeight*0.6;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();elements.push({element_id:'wave-right',bounds:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2},font_size:0,min_graphic_size:0,interactive:false,touch_size:0,local_safe_region:local_safe_regions[0]});motion_envelopes.push({element_id:'wave-left',envelope:{x:leftX,y:waveY-waveHeight*0.3,width:waveWidth,height:waveHeight*0.6}});motion_envelopes.push({element_id:'wave-right',envelope:{x:rightX,y:waveY-waveHeight*0.6,width:waveWidth,height:waveHeight*1.2}});emitLayout();api.emit('render_complete');}switch(state){case'initial':drawInitial();break;case'key_process':drawKeyProcess();break;case'final':drawFinal();break;case'paused':drawPaused();break;case'resumed':drawResumed();break;case'post_interaction':drawPostInteraction();break;case'reduced_motion':drawReducedMotion();break;case'static_fallback':drawStaticFallback();break;default:drawInitial();}})();",
+        "scene_metadata": {
+          "learning_goal": "确认音调并未随力度一起改变。",
+          "scene_id": "primary_sound.separate",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "fact_id": "force-amplitude-pitch",
+                "narration": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "visual": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+              },
+              {
+                "expected": "Pitch relates to frequency while loudness relates here to amplitude.",
+                "fact_id": "pitch-frequency-loudness-amplitude",
+                "narration": "Pitch relates to frequency while loudness relates here to amplitude.",
+                "visual": "Pitch relates to frequency while loudness relates here to amplitude."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "对齐两次振动的时间",
+            "振动快慢相同",
+            "音调不变，响度改变"
+          ]
+        }
+      },
+      "sample_id": "primary_sound.separate"
+    },
+    {
+      "candidate": {
+        "sample_id": "primary_sound_pair.pair-opening-explanation",
+        "scene_code": "const viewport = input.parameters.viewport;\nconst width = viewport.width;\nconst height = viewport.height;\nconst state = input.parameters.state;\nconst canvas = api.canvas;\nconst ctx = canvas.getContext('2d');\n\nconst margin = 20;\nconst stringY = height * 0.4;\nconst stringLength = width - 2 * margin;\nconst stringLeft = margin;\nconst stringRight = width - margin;\nconst labelY = height * 0.7;\nconst amplitudeLight = 20;\nconst amplitudeStrong = 50;\nconst frequency = 2;\n\nfunction drawString(x1, y1, x2, y2, amplitude, phase) {\n  ctx.beginPath();\n  ctx.moveTo(x1, y1);\n  const segments = 20;\n  for (let i = 1; i < segments; i++) {\n    const t = i / segments;\n    const x = x1 + (x2 - x1) * t;\n    const y = y1 + amplitude * Math.sin(Math.PI * t * frequency + phase);\n    ctx.lineTo(x, y);\n  }\n  ctx.lineTo(x2, y2);\n  ctx.stroke();\n}\n\nfunction drawScene() {\n  const midX = width / 2;\n  ctx.strokeStyle = '#0000FF';\n  ctx.lineWidth = 2;\n  drawString(stringLeft, stringY, midX - 20, stringY, amplitudeLight, 0);\n  ctx.strokeStyle = '#FF0000';\n  ctx.lineWidth = 3;\n  drawString(midX + 20, stringY, stringRight, stringY, amplitudeStrong, 0);\n  ctx.fillStyle = '#000';\n  ctx.font = '16px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('轻拨', (stringLeft + midX - 20) / 2, labelY);\n  ctx.fillText('重拨', (midX + 20 + stringRight) / 2, labelY);\n}\n\nfunction emitLayout() {\n  const midX = width / 2;\n  const elements = [\n    {\n      element_id: 'light_string',\n      bounds: { x: stringLeft, y: stringY - amplitudeLight, width: (midX - 20) - stringLeft, height: 2 * amplitudeLight },\n      font_size: 16,\n      min_graphic_size: 2,\n      interactive: false,\n      touch_size: 44,\n      local_safe_region: { x: stringLeft, y: stringY - amplitudeLight, width: (midX - 20) - stringLeft, height: 2 * amplitudeLight }\n    },\n    {\n      element_id: 'strong_string',\n      bounds: { x: midX + 20, y: stringY - amplitudeStrong, width: stringRight - (midX + 20), height: 2 * amplitudeStrong },\n      font_size: 16,\n      min_graphic_size: 3,\n      interactive: false,\n      touch_size: 44,\n      local_safe_region: { x: midX + 20, y: stringY - amplitudeStrong, width: stringRight - (midX + 20), height: 2 * amplitudeStrong }\n    },\n    {\n      element_id: 'label_light',\n      bounds: { x: (stringLeft + midX - 20) / 2 - 30, y: labelY - 12, width: 60, height: 24 },\n      font_size: 16,\n      min_graphic_size: 16,\n      interactive: false,\n      touch_size: 44,\n      local_safe_region: { x: (stringLeft + midX - 20) / 2 - 30, y: labelY - 12, width: 60, height: 24 }\n    },\n    {\n      element_id: 'label_strong',\n      bounds: { x: (midX + 20 + stringRight) / 2 - 30, y: labelY - 12, width: 60, height: 24 },\n      font_size: 16,\n      min_graphic_size: 16,\n      interactive: false,\n      touch_size: 44,\n      local_safe_region: { x: (midX + 20 + stringRight) / 2 - 30, y: labelY - 12, width: 60, height: 24 }\n    }\n  ];\n  api.emit('interaction', {\n    type: 'layout_measurement',\n    layout_mode: 'single-focus',\n    canvas_inner_bounds: { x: 0, y: 0, width, height },\n    local_safe_regions: [{ x: 0, y: 0, width, height }],\n    readability_limits: { min_font_size: 12, max_font_size: 24 },\n    container_metrics: { width, height },\n    elements,\n    motion_envelopes: []\n  });\n}\n\nif (state === 'initial' || state === 'static_fallback') {\n  drawScene();\n  emitLayout();\n  api.emit('render_complete');\n} else if (state === 'key_process' || state === 'final' || state === 'paused' || state === 'resumed' || state === 'post_interaction' || state === 'reduced_motion') {\n  drawScene();\n  emitLayout();\n  api.emit('render_complete');\n}",
+        "scene_metadata": {
+          "learning_goal": "建立同一根橡皮筋的公平比较。",
+          "scene_id": "force-amplitude-pitch-comparison",
+          "scene_version": "1.0.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "fact_id": "force-amplitude-pitch",
+                "narration": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+                "visual": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "annotated-sequence",
+          "steps": [
+            "固定同一根橡皮筋",
+            "比较轻拨与重拨"
+          ]
+        }
+      },
+      "sample_id": "primary_sound_pair.pair-opening-explanation"
+    },
+    {
+      "candidate": {
+        "sample_id": "primary_sound_pair.pair-reveal",
+        "scene_code": "(function(api) {\n  var p = input.parameters;\n  var state = p.state;\n  var vp = p.viewport;\n  var w = vp.width;\n  var h = vp.height;\n  var ctx = api.canvas.getContext('2d');\n  ctx.clearRect(0, 0, w, h);\n  var layout_mode = 'side-by-side';\n  var canvas_inner_bounds = {x:0, y:0, width:w, height:h};\n  var local_safe_regions = [{x:0, y:0, width:w, height:h}];\n  var readability_limits = {min_font_size:16, max_font_size:24};\n  var container_metrics = {width:w, height:h};\n  var elements = [];\n  var motion_envelopes = [];\n  function addElement(id, bounds, font_size, min_graphic_size, interactive, touch_size, local_safe_region) {\n    elements.push({element_id:id, bounds:bounds, font_size:font_size, min_graphic_size:min_graphic_size, interactive:interactive, touch_size:touch_size, local_safe_region:local_safe_region});\n  }\n  var leftX = w*0.1;\n  var rightX = w*0.55;\n  var stringY = h*0.4;\n  var stringLength = w*0.3;\n  var leftStringStart = {x:leftX, y:stringY};\n  var leftStringEnd = {x:leftX+stringLength, y:stringY};\n  var rightStringStart = {x:rightX, y:stringY};\n  var rightStringEnd = {x:rightX+stringLength, y:stringY};\n  var leftAmplitude, rightAmplitude;\n  if (state === 'initial' || state === 'static_fallback') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  } else if (state === 'key_process') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  } else if (state === 'final') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  } else if (state === 'paused' || state === 'resumed') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  } else if (state === 'post_interaction') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  } else if (state === 'reduced_motion') {\n    leftAmplitude = 10;\n    rightAmplitude = 30;\n  }\n  function drawString(start, end, amplitude) {\n    ctx.beginPath();\n    ctx.moveTo(start.x, start.y);\n    var midX = (start.x+end.x)/2;\n    var midY = start.y + amplitude;\n    ctx.quadraticCurveTo(midX, midY, end.x, end.y);\n    ctx.strokeStyle = '#000';\n    ctx.lineWidth = 2;\n    ctx.stroke();\n  }\n  drawString(leftStringStart, leftStringEnd, leftAmplitude);\n  drawString(rightStringStart, rightStringEnd, rightAmplitude);\n  var leftLabelBounds = {x:leftX, y:stringY-30, width:80, height:20};\n  ctx.font = '16px sans-serif';\n  ctx.fillStyle = '#000';\n  ctx.fillText('轻拨', leftLabelBounds.x, leftLabelBounds.y+16);\n  addElement('left-label', leftLabelBounds, 16, 24, false, {width:80, height:20}, local_safe_regions[0]);\n  var rightLabelBounds = {x:rightX, y:stringY-30, width:80, height:20};\n  ctx.fillText('重拨', rightLabelBounds.x, rightLabelBounds.y+16);\n  addElement('right-label', rightLabelBounds, 16, 24, false, {width:80, height:20}, local_safe_regions[0]);\n  var leftAmpBounds = {x:leftX+stringLength/2-20, y:stringY+leftAmplitude+10, width:40, height:20};\n  ctx.font = '14px sans-serif';\n  ctx.fillText('振幅小', leftAmpBounds.x, leftAmpBounds.y+14);\n  addElement('left-amp-label', leftAmpBounds, 14, 24, false, {width:40, height:20}, local_safe_regions[0]);\n  var rightAmpBounds = {x:rightX+stringLength/2-20, y:stringY+rightAmplitude+10, width:40, height:20};\n  ctx.fillText('振幅大', rightAmpBounds.x, rightAmpBounds.y+14);\n  addElement('right-amp-label', rightAmpBounds, 14, 24, false, {width:40, height:20}, local_safe_regions[0]);\n  var leftLoudnessBounds = {x:leftX, y:stringY+60, width:80, height:20};\n  ctx.font = '16px sans-serif';\n  ctx.fillText('响度小', leftLoudnessBounds.x, leftLoudnessBounds.y+16);\n  addElement('left-loudness-label', leftLoudnessBounds, 16, 24, false, {width:80, height:20}, local_safe_regions[0]);\n  var rightLoudnessBounds = {x:rightX, y:stringY+60, width:80, height:20};\n  ctx.fillText('响度大', rightLoudnessBounds.x, rightLoudnessBounds.y+16);\n  addElement('right-loudness-label', rightLoudnessBounds, 16, 24, false, {width:80, height:20}, local_safe_regions[0]);\n  motion_envelopes.push({element_id:'left-string', bounds:{x:leftX, y:stringY-20, width:stringLength, height:40}});\n  motion_envelopes.push({element_id:'right-string', bounds:{x:rightX, y:stringY-20, width:stringLength, height:40}});\n  api.emit('interaction', {type:'layout_measurement', layout_mode:layout_mode, canvas_inner_bounds:canvas_inner_bounds, local_safe_regions:local_safe_regions, readability_limits:readability_limits, container_metrics:container_metrics, elements:elements, motion_envelopes:motion_envelopes});\n  api.emit('render_complete');\n})(api);",
+        "scene_metadata": {
+          "learning_goal": "用摆动宽窄解释响度变化。",
+          "scene_id": "force-amplitude-pitch-scene",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+                "fact_id": "force-amplitude-pitch",
+                "narration": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+                "visual": "左侧轻拨摆动窄，右侧重拨摆动宽，并标注振幅和响度。"
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "轻拨摆动窄",
+            "重拨摆动宽",
+            "摆动宽时更响"
+          ]
+        }
+      },
+      "sample_id": "primary_sound_pair.pair-reveal"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.model",
+        "scene_code": "(function(){var vw=input.parameters.viewport.width;var vh=input.parameters.viewport.height;var state=input.parameters.state;var canvas=api.canvas;var ctx=canvas.getContext('2d');var layout_mode='step-stack';var canvas_inner_bounds={x:0,y:0,width:vw,height:vh};var local_safe_regions=[{x:0,y:0,width:vw,height:vh}];var readability_limits={min_font_size:16,max_font_size:24};var container_metrics={width:vw,height:vh};var elements=[];var motion_envelopes=[];function drawFenceDiagram(){var x=50;var y=50;var w=vw-100;var h=vh-200;ctx.strokeStyle='#000';ctx.lineWidth=2;ctx.strokeRect(x,y,w,h);ctx.fillStyle='#000';ctx.font='16px sans-serif';ctx.fillText('墙',x+w/2-10,y-10);elements.push({element_id:'wall',bounds:{x:x+w/2-10,y:y-20,width:20,height:20},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});var shortSide=80;var longSide=w-2*shortSide;ctx.beginPath();ctx.moveTo(x,y+h);ctx.lineTo(x+shortSide,y+h);ctx.lineTo(x+shortSide,y+h-shortSide);ctx.strokeStyle='#00f';ctx.stroke();ctx.fillStyle='#00f';ctx.font='16px sans-serif';ctx.fillText('x',x+shortSide/2-5,y+h+15);elements.push({element_id:'short-side',bounds:{x:x+shortSide/2-5,y:y+h+5,width:10,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});ctx.beginPath();ctx.moveTo(x+w-shortSide,y+h);ctx.lineTo(x+w,y+h);ctx.lineTo(x+w,y+h-shortSide);ctx.strokeStyle='#00f';ctx.stroke();ctx.fillText('x',x+w-shortSide/2-5,y+h+15);elements.push({element_id:'short-side-2',bounds:{x:x+w-shortSide/2-5,y:y+h+5,width:10,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});ctx.beginPath();ctx.moveTo(x+shortSide,y+h-shortSide);ctx.lineTo(x+w-shortSide,y+h-shortSide);ctx.strokeStyle='#f00';ctx.stroke();ctx.fillStyle='#f00';ctx.fillText('L-2x',x+w/2-15,y+h-shortSide-5);elements.push({element_id:'long-side',bounds:{x:x+w/2-15,y:y+h-shortSide-15,width:30,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});}function drawAreaExpression(){var x=50;var y=vh-100;ctx.fillStyle='#000';ctx.font='18px sans-serif';ctx.fillText('面积 = x(L-2x)',x,y);elements.push({element_id:'area-expr',bounds:{x:x,y:y-18,width:120,height:18},font_size:18,min_graphic_size:18,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});}if(state==='initial'||state==='key_process'||state==='final'||state==='paused'||state==='resumed'||state==='post_interaction'||state==='reduced_motion'){drawFenceDiagram();drawAreaExpression();}else if(state==='static_fallback'){ctx.fillStyle='#000';ctx.font='16px sans-serif';ctx.fillText('设短边为 x',50,50);ctx.fillText('写出第三边',50,80);ctx.fillText('列出面积表达式',50,110);elements.push({element_id:'step1',bounds:{x:50,y:34,width:80,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});elements.push({element_id:'step2',bounds:{x:50,y:64,width:80,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});elements.push({element_id:'step3',bounds:{x:50,y:94,width:120,height:16},font_size:16,min_graphic_size:16,interactive:false,touch_size:44,local_safe_region:{x:0,y:0,width:vw,height:vh}});}api.emit('interaction',{type:'layout_measurement',layout_mode:layout_mode,canvas_inner_bounds:canvas_inner_bounds,local_safe_regions:local_safe_regions,readability_limits:readability_limits,container_metrics:container_metrics,elements:elements,motion_envelopes:motion_envelopes});api.emit('render_complete');})();",
+        "scene_metadata": {
+          "learning_goal": "把三边围栏条件转成面积表达式。",
+          "scene_id": "fence-area-model",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "A wall-side fencing problem can be modeled and optimized by completing the square.",
+                "fact_id": "fence-transfer",
+                "narration": "A wall-side fencing problem can be modeled and optimized by completing the square.",
+                "visual": "A wall-side fencing problem can be modeled and optimized by completing the square."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "fence-transfer"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "设短边为 x",
+            "写出第三边",
+            "列出面积表达式"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.model"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.complete",
+        "scene_code": "const canvas = api.canvas;\nconst ctx = canvas.getContext('2d');\n\nconst width = canvas.width;\nconst height = canvas.height;\n\nconst state = input.parameters.state;\n\nconst isPhone = width < 600;\nconst fontSize = isPhone ? 16 : 18;\nconst minGraphicSize = isPhone ? 24 : 28;\nconst touchSize = 44;\n\nconst padding = isPhone ? 16 : 24;\nconst lineHeight = fontSize * 1.6;\n\nconst colors = {\n  background: '#f9f9f9',\n  text: '#333',\n  highlight: '#e74c3c',\n  box: '#3498db',\n  boxBg: 'rgba(52, 152, 219, 0.1)',\n  arrow: '#2ecc71'\n};\n\nfunction drawBackground() {\n  ctx.fillStyle = colors.background;\n  ctx.fillRect(0, 0, width, height);\n}\n\nfunction drawText(text, x, y, color = colors.text, size = fontSize) {\n  ctx.fillStyle = color;\n  ctx.font = `${size}px sans-serif`;\n  ctx.textBaseline = 'top';\n  ctx.fillText(text, x, y);\n}\n\nfunction drawBox(x, y, w, h) {\n  ctx.strokeStyle = colors.box;\n  ctx.lineWidth = 2;\n  ctx.strokeRect(x, y, w, h);\n  ctx.fillStyle = colors.boxBg;\n  ctx.fillRect(x, y, w, h);\n}\n\nfunction drawArrow(x1, y1, x2, y2) {\n  ctx.strokeStyle = colors.arrow;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  ctx.moveTo(x1, y1);\n  ctx.lineTo(x2, y2);\n  ctx.stroke();\n  // arrowhead\n  const angle = Math.atan2(y2 - y1, x2 - x1);\n  const headLength = 10;\n  ctx.beginPath();\n  ctx.moveTo(x2, y2);\n  ctx.lineTo(x2 - headLength * Math.cos(angle - Math.PI / 6), y2 - headLength * Math.sin(angle - Math.PI / 6));\n  ctx.lineTo(x2 - headLength * Math.cos(angle + Math.PI / 6), y2 - headLength * Math.sin(angle + Math.PI / 6));\n  ctx.closePath();\n  ctx.fillStyle = colors.arrow;\n  ctx.fill();\n}\n\nfunction drawExpandedForm() {\n  const startX = padding;\n  let y = padding + lineHeight;\n  drawText('面积式：', startX, y);\n  y += lineHeight;\n  drawText('A = x² + 6x + 5', startX + 20, y);\n  y += lineHeight * 1.5;\n  drawText('配方：', startX, y);\n  y += lineHeight;\n  drawText('A = (x² + 6x + 9) - 9 + 5', startX + 20, y);\n  y += lineHeight;\n  drawText('A = (x + 3)² - 4', startX + 20, y);\n}\n\nfunction drawCompletedSquare() {\n  const startX = padding;\n  let y = padding + lineHeight;\n  drawText('配方后：', startX, y);\n  y += lineHeight;\n  drawText('A = (x + 3)² - 4', startX + 20, y);\n  y += lineHeight * 1.5;\n  drawText('平方项：', startX, y);\n  y += lineHeight;\n  drawText('(x + 3)² ≥ 0', startX + 20, y);\n  y += lineHeight;\n  drawText('所以 A ≥ -4', startX + 20, y);\n  y += lineHeight;\n  drawText('最小值 -4 当 x = -3', startX + 20, y);\n}\n\nfunction drawNonnegativeHighlight() {\n  const startX = padding;\n  let y = padding + lineHeight;\n  drawText('配方后：', startX, y);\n  y += lineHeight;\n  drawText('A = (x + 3)² - 4', startX + 20, y);\n  y += lineHeight * 1.5;\n  drawText('平方项非负：', startX, y);\n  y += lineHeight;\n  const textX = startX + 20;\n  const textY = y;\n  const text = '(x + 3)² ≥ 0';\n  const textWidth = ctx.measureText(text).width;\n  drawText(text, textX, textY, colors.highlight);\n  drawBox(textX - 4, textY - 2, textWidth + 8, fontSize + 4);\n  y += lineHeight;\n  drawText('所以 A ≤ -4', startX + 20, y);\n  y += lineHeight;\n  drawText('最大值 -4 当 x = -3', startX + 20, y);\n}\n\nfunction drawLayoutMeasurement() {\n  // emit interaction/layout_measurement\n  api.interaction.emit({\n    type: 'layout_measurement',\n    viewport: { width, height },\n    elements: [\n      { id: 'expanded-form', bounds: { x: 0, y: 0, width, height } },\n      { id: 'completed-square', bounds: { x: 0, y: 0, width, height } },\n      { id: 'nonnegative-highlight', bounds: { x: 0, y: 0, width, height } }\n    ]\n  });\n}\n\nfunction render() {\n  drawBackground();\n  if (state === 'expanded-form') {\n    drawExpandedForm();\n  } else if (state === 'completed-square') {\n    drawCompletedSquare();\n  } else if (state === 'nonnegative-highlight') {\n    drawNonnegativeHighlight();\n  }\n  drawLayoutMeasurement();\n  api.interaction.emit({ type: 'render_complete' });\n}\n\nrender();",
+        "scene_metadata": {
+          "learning_goal": "通过配方显露平方项。",
+          "scene_id": "middle_perfect_square.complete",
+          "scene_version": "1.0.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "perfect-square-identities",
+                "fact_id": "perfect-square-identities",
+                "narration": "perfect-square-identities",
+                "visual": "perfect-square-identities"
+              },
+              {
+                "expected": "complete-square-bound",
+                "fact_id": "complete-square-bound",
+                "narration": "complete-square-bound",
+                "visual": "complete-square-bound"
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "perfect-square-identities",
+            "complete-square-bound"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "整理一次项",
+            "补成完全平方",
+            "标出平方项非负"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.complete"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.justify",
+        "scene_code": "const viewport = input.parameters.viewport;\nconst width = viewport.width;\nconst height = viewport.height;\nconst state = input.parameters.state;\nconst canvas = api.canvas;\nconst ctx = canvas.getContext('2d');\n\n// Layout constants\nconst margin = 20;\nconst topAreaHeight = height * 0.3;\nconst bottomAreaHeight = height * 0.7;\nconst graphWidth = width * 0.6;\nconst graphHeight = bottomAreaHeight - 2 * margin;\nconst graphX = margin;\nconst graphY = topAreaHeight + margin;\nconst formulaX = graphX + graphWidth + margin;\nconst formulaY = graphY;\nconst formulaWidth = width - formulaX - margin;\nconst formulaHeight = graphHeight;\n\n// Colors\nconst colors = {\n  background: '#FFFFFF',\n  text: '#000000',\n  axis: '#333333',\n  curve: '#1f77b4',\n  point: '#d62728',\n  highlight: '#ff7f0e',\n  grid: '#e0e0e0',\n  fence: '#2ca02c',\n  area: 'rgba(44, 160, 44, 0.2)'\n};\n\n// Helper functions\nfunction drawText(text, x, y, fontSize, color, align = 'left', baseline = 'top') {\n  ctx.font = `${fontSize}px sans-serif`;\n  ctx.fillStyle = color;\n  ctx.textAlign = align;\n  ctx.textBaseline = baseline;\n  ctx.fillText(text, x, y);\n}\n\nfunction drawLine(x1, y1, x2, y2, color, lineWidth = 1) {\n  ctx.strokeStyle = color;\n  ctx.lineWidth = lineWidth;\n  ctx.beginPath();\n  ctx.moveTo(x1, y1);\n  ctx.lineTo(x2, y2);\n  ctx.stroke();\n}\n\nfunction drawRect(x, y, w, h, color, fill = false) {\n  if (fill) {\n    ctx.fillStyle = color;\n    ctx.fillRect(x, y, w, h);\n  } else {\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 1;\n    ctx.strokeRect(x, y, w, h);\n  }\n}\n\nfunction drawCircle(x, y, radius, color, fill = false) {\n  ctx.beginPath();\n  ctx.arc(x, y, radius, 0, 2 * Math.PI);\n  if (fill) {\n    ctx.fillStyle = color;\n    ctx.fill();\n  } else {\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 1;\n    ctx.stroke();\n  }\n}\n\n// Clear background\nctx.fillStyle = colors.background;\nctx.fillRect(0, 0, width, height);\n\n// Top area: title and narration\nconst titleFontSize = Math.min(24, width * 0.05);\nconst narrationFontSize = Math.min(16, width * 0.035);\ndrawText('完全平方与最大面积', margin, margin, titleFontSize, colors.text);\ndrawText(input.parameters.narration, margin, margin + titleFontSize + 10, narrationFontSize, colors.text, 'left', 'top');\n\n// Bottom area: graph and formula\n// Draw graph axes\nconst axisX = graphX;\nconst axisY = graphY + graphHeight;\nconst axisLength = graphWidth;\nconst axisHeight = graphHeight;\n\n// X-axis\ndrawLine(axisX, axisY, axisX + axisLength, axisY, colors.axis, 2);\n// Y-axis\ndrawLine(axisX, axisY, axisX, axisY - axisHeight, colors.axis, 2);\n\n// Axis labels\nconst axisLabelFontSize = Math.min(12, width * 0.025);\ndrawText('x (宽度)', axisX + axisLength / 2, axisY + 5, axisLabelFontSize, colors.text, 'center', 'top');\nctx.save();\nctx.translate(axisX - 15, axisY - axisHeight / 2);\nctx.rotate(-Math.PI / 2);\ndrawText('面积 A', 0, 0, axisLabelFontSize, colors.text, 'center', 'bottom');\nctx.restore();\n\n// Grid lines\nconst gridCount = 5;\nfor (let i = 1; i <= gridCount; i++) {\n  const x = axisX + (i / gridCount) * axisLength;\n  const y = axisY - (i / gridCount) * axisHeight;\n  drawLine(x, axisY, x, axisY - axisHeight, colors.grid, 0.5);\n  drawLine(axisX, y, axisX + axisLength, y, colors.grid, 0.5);\n}\n\n// Define the quadratic function: A = -x^2 + 10x (example)\n// Completing square: A = -(x - 5)^2 + 25, max at x=5, A=25\nconst a = -1, b = 10, c = 0;\nconst vertexX = -b / (2 * a); // 5\nconst vertexY = a * vertexX * vertexX + b * vertexX + c; // 25\n\n// Scale factors\nconst xMin = 0, xMax = 10;\nconst yMin = 0, yMax = 30;\nconst xScale = axisLength / (xMax - xMin);\nconst yScale = axisHeight / (yMax - yMin);\n\nfunction toCanvasX(x) { return axisX + (x - xMin) * xScale; }\nfunction toCanvasY(y) { return axisY - (y - yMin) * yScale; }\n\n// Draw curve\nctx.strokeStyle = colors.curve;\nctx.lineWidth = 2;\nctx.beginPath();\nlet first = true;\nfor (let x = xMin; x <= xMax; x += 0.1) {\n  const y = a * x * x + b * x + c;\n  const cx = toCanvasX(x);\n  const cy = toCanvasY(y);\n  if (first) {\n    ctx.moveTo(cx, cy);\n    first = false;\n  } else {\n    ctx.lineTo(cx, cy);\n  }\n}\nctx.stroke();\n\n// Draw vertex point\nconst vertexCanvasX = toCanvasX(vertexX);\nconst vertexCanvasY = toCanvasY(vertexY);\ndrawCircle(vertexCanvasX, vertexCanvasY, 5, colors.point, true);\n\n// Draw dashed lines from vertex to axes\nctx.setLineDash([5, 5]);\ndrawLine(vertexCanvasX, vertexCanvasY, vertexCanvasX, axisY, colors.point, 1);\ndrawLine(vertexCanvasX, vertexCanvasY, axisX, vertexCanvasY, colors.point, 1);\nctx.setLineDash([]);\n\n// Label vertex coordinates\nconst vertexLabelFontSize = Math.min(12, width * 0.025);\ndrawText(`(${vertexX}, ${vertexY})`, vertexCanvasX + 5, vertexCanvasY - 10, vertexLabelFontSize, colors.point);\n\n// Draw fence representation (wall on left, fence on three sides)\nconst fenceX = graphX + graphWidth + 20;\nconst fenceY = graphY + graphHeight - 100;\nconst fenceWidth = 80;\nconst fenceHeight = 60;\n\n// Wall (thick line on left)\ndrawLine(fenceX, fenceY, fenceX, fenceY + fenceHeight, colors.text, 4);\n// Fence (three sides)\ndrawRect(fenceX, fenceY, fenceWidth, fenceHeight, colors.fence);\n// Area fill\ndrawRect(fenceX, fenceY, fenceWidth, fenceHeight, colors.area, true);\n\n// Labels for fence dimensions\nconst fenceLabelFontSize = Math.min(10, width * 0.02);\ndrawText('墙', fenceX - 15, fenceY + fenceHeight / 2, fenceLabelFontSize, colors.text, 'right', 'middle');\ndrawText('x', fenceX + fenceWidth / 2, fenceY + fenceHeight + 5, fenceLabelFontSize, colors.text, 'center', 'top');\ndrawText('y', fenceX + fenceWidth + 5, fenceY + fenceHeight / 2, fenceLabelFontSize, colors.text, 'left', 'middle');\n\n// Formula area\nconst formulaFontSize = Math.min(14, width * 0.03);\nconst formulaLineHeight = formulaFontSize * 1.5;\nlet formulaTextY = formulaY;\n\n// Display completing square steps based on state\nif (state === 'initial' || state === 'key_process') {\n  drawText('A = -x² + 10x', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('  = -(x² - 10x)', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('  = -(x² - 10x + 25 - 25)', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('  = -(x - 5)² + 25', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  if (state === 'key_process') {\n    drawText('平方项 -(x-5)² ≤ 0', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n    formulaTextY += formulaLineHeight;\n    drawText('当 x=5 时为零', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n    formulaTextY += formulaLineHeight;\n    drawText('此时 A 最大 = 25', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n  }\n} else if (state === 'final' || state === 'post_interaction') {\n  drawText('A = -(x - 5)² + 25', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('平方项 ≤ 0', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n  formulaTextY += formulaLineHeight;\n  drawText('当 x=5 时为零', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n  formulaTextY += formulaLineHeight;\n  drawText('最大面积 = 25', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n} else if (state === 'paused' || state === 'resumed' || state === 'reduced_motion') {\n  drawText('A = -(x - 5)² + 25', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('平方项 ≤ 0', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n  formulaTextY += formulaLineHeight;\n  drawText('当 x=5 时为零', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n  formulaTextY += formulaLineHeight;\n  drawText('最大面积 = 25', formulaX, formulaTextY, formulaFontSize, colors.highlight);\n} else if (state === 'static_fallback') {\n  drawText('平方项始终非负', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('平方项为零时减去量最小', formulaX, formulaTextY, formulaFontSize, colors.text);\n  formulaTextY += formulaLineHeight;\n  drawText('因此面积达到最大值', formulaX, formulaTextY, formulaFontSize, colors.text);\n}\n\n// Collect elements for layout measurement\nconst elements = [\n  {\n    element_id: 'title',\n    bounds: { x: margin, y: margin, width: width - 2 * margin, height: titleFontSize },\n    font_size: titleFontSize,\n    min_graphic_size: titleFontSize,\n    interactive: false,\n    touch_size: titleFontSize,\n    local_safe_region: { x: margin, y: margin, width: width - 2 * margin, height: titleFontSize }\n  },\n  {\n    element_id: 'narration',\n    bounds: { x: margin, y: margin + titleFontSize + 10, width: width - 2 * margin, height: narrationFontSize * 2 },\n    font_size: narrationFontSize,\n    min_graphic_size: narrationFontSize,\n    interactive: false,\n    touch_size: narrationFontSize,\n    local_safe_region: { x: margin, y: margin + titleFontSize + 10, width: width - 2 * margin, height: narrationFontSize * 2 }\n  },\n  {\n    element_id: 'graph',\n    bounds: { x: graphX, y: graphY, width: graphWidth, height: graphHeight },\n    font_size: axisLabelFontSize,\n    min_graphic_size: 5,\n    interactive: false,\n    touch_size: 20,\n    local_safe_region: { x: graphX, y: graphY, width: graphWidth, height: graphHeight }\n  },\n  {\n    element_id: 'vertex_point',\n    bounds: { x: vertexCanvasX - 5, y: vertexCanvasY - 5, width: 10, height: 10 },\n    font_size: vertexLabelFontSize,\n    min_graphic_size: 5,\n    interactive: true,\n    touch_size: 20,\n    local_safe_region: { x: vertexCanvasX - 10, y: vertexCanvasY - 10, width: 20, height: 20 }\n  },\n  {\n    element_id: 'fence_diagram',\n    bounds: { x: fenceX, y: fenceY, width: fenceWidth, height: fenceHeight },\n    font_size: fenceLabelFontSize,\n    min_graphic_size: 10,\n    interactive: false,\n    touch_size: 20,\n    local_safe_region: { x: fenceX, y: fenceY, width: fenceWidth, height: fenceHeight }\n  },\n  {\n    element_id: 'formula_area',\n    bounds: { x: formulaX, y: formulaY, width: formulaWidth, height: formulaHeight },\n    font_size: formulaFontSize,\n    min_graphic_size: formulaFontSize,\n    interactive: false,\n    touch_size: formulaFontSize,\n    local_safe_region: { x: formulaX, y: formulaY, width: formulaWidth, height: formulaHeight }\n  }\n];\n\n// Emit layout measurement\napi.emit('interaction', {\n  type: 'layout_measurement',\n  layout_mode: 'coordinate-comparison',\n  canvas_inner_bounds: { x: 0, y: 0, width: width, height: height },\n  local_safe_regions: [\n    { x: margin, y: margin, width: width - 2 * margin, height: topAreaHeight - margin },\n    { x: graphX, y: graphY, width: graphWidth + formulaWidth + margin, height: graphHeight }\n  ],\n  readability_limits: {\n    min_font_size: 10,\n    max_font_size: 24,\n    min_touch_size: 20\n  },\n  container_metrics: {\n    top_area: { x: margin, y: margin, width: width - 2 * margin, height: topAreaHeight - margin },\n    bottom_area: { x: graphX, y: graphY, width: graphWidth + formulaWidth + margin, height: graphHeight }\n  },\n  elements: elements,\n  motion_envelopes: [\n    {\n      element_id: 'vertex_point',\n      envelope: { x: vertexCanvasX - 10, y: vertexCanvasY - 10, width: 20, height: 20 }\n    }\n  ]\n});\n\n// Emit render complete\napi.emit('render_complete');",
+        "scene_metadata": {
+          "learning_goal": "用平方项的符号说明最大面积，而不只报数值。",
+          "scene_id": "middle_perfect_square.justify",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "平方项始终非负",
+                "fact_id": "complete-square-bound",
+                "narration": "平方项始终非负",
+                "visual": "平方项始终非负"
+              },
+              {
+                "expected": "平方项为零时减去量最小",
+                "fact_id": "fence-transfer",
+                "narration": "平方项为零时减去量最小",
+                "visual": "平方项为零时减去量最小"
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "平方项始终非负",
+            "平方项为零时减去量最小",
+            "因此面积达到最大值"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.justify"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_sound_pair.wave-compare",
+        "scene_code": "const canvas = api.canvas;\nconst ctx = canvas.getContext('2d');\nconst params = input.parameters;\nconst state = params.state;\nconst viewport = params.viewport;\nconst width = viewport.width;\nconst height = viewport.height;\n\nfunction drawAxes() {\n  ctx.strokeStyle = '#000';\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  ctx.moveTo(50, height/2);\n  ctx.lineTo(width-50, height/2);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.moveTo(50, 50);\n  ctx.lineTo(50, height-50);\n  ctx.stroke();\n}\n\nfunction drawWaveform(amplitude, frequency, phase, color, yOffset) {\n  ctx.strokeStyle = color;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  const startX = 50;\n  const endX = width-50;\n  const period = (endX - startX) / (2 * Math.PI * frequency);\n  for (let x = startX; x <= endX; x++) {\n    const t = (x - startX) / period;\n    const y = yOffset + amplitude * Math.sin(t + phase);\n    if (x === startX) {\n      ctx.moveTo(x, y);\n    } else {\n      ctx.lineTo(x, y);\n    }\n  }\n  ctx.stroke();\n}\n\nfunction drawMeasureGuides(amplitude1, amplitude2, yOffset1, yOffset2) {\n  ctx.strokeStyle = '#888';\n  ctx.lineWidth = 1;\n  ctx.setLineDash([5, 5]);\n  const xPos = width - 100;\n  ctx.beginPath();\n  ctx.moveTo(xPos, yOffset1 - amplitude1);\n  ctx.lineTo(xPos, yOffset1 + amplitude1);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.moveTo(xPos + 20, yOffset2 - amplitude2);\n  ctx.lineTo(xPos + 20, yOffset2 + amplitude2);\n  ctx.stroke();\n  ctx.setLineDash([]);\n}\n\nfunction drawLabels() {\n  ctx.fillStyle = '#000';\n  ctx.font = '16px sans-serif';\n  ctx.fillText('振幅', width-80, height/2 - 60);\n  ctx.fillText('周期', width-80, height/2 + 60);\n}\n\nfunction draw() {\n  ctx.clearRect(0, 0, width, height);\n  drawAxes();\n  const amp1 = 40;\n  const amp2 = 60;\n  const freq1 = 0.02;\n  const freq2 = 0.02;\n  const phase1 = 0;\n  const phase2 = 0;\n  const yOffset1 = height/2 - 80;\n  const yOffset2 = height/2 + 80;\n  drawWaveform(amp1, freq1, phase1, 'blue', yOffset1);\n  drawWaveform(amp2, freq2, phase2, 'red', yOffset2);\n  if (state === 'final' || state === 'post_interaction') {\n    drawMeasureGuides(amp1, amp2, yOffset1, yOffset2);\n    drawLabels();\n  }\n  const elements = [\n    { element_id: 'axis-x', bounds: { x: 50, y: height/2 - 1, width: width-100, height: 2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'axis-y', bounds: { x: 49, y: 50, width: 2, height: height-100 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'waveform1', bounds: { x: 50, y: yOffset1 - amp1, width: width-100, height: 2*amp1 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'waveform2', bounds: { x: 50, y: yOffset2 - amp2, width: width-100, height: 2*amp2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'guide1', bounds: { x: width-101, y: yOffset1 - amp1, width: 2, height: 2*amp1 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'guide2', bounds: { x: width-81, y: yOffset2 - amp2, width: 2, height: 2*amp2 }, font_size: 0, min_graphic_size: 2, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'label-amplitude', bounds: { x: width-80, y: height/2 - 70, width: 30, height: 20 }, font_size: 16, min_graphic_size: 16, interactive: false, touch_size: 0, local_safe_region: 'center' },\n    { element_id: 'label-period', bounds: { x: width-80, y: height/2 + 50, width: 30, height: 20 }, font_size: 16, min_graphic_size: 16, interactive: false, touch_size: 0, local_safe_region: 'center' }\n  ];\n  api.emit('interaction', {\n    type: 'layout_measurement',\n    layout_mode: 'coordinate-comparison',\n    canvas_inner_bounds: { x: 0, y: 0, width: width, height: height },\n    local_safe_regions: [{ id: 'center', x: 50, y: 50, width: width-100, height: height-100 }],\n    readability_limits: { min_font_size: 12, max_font_size: 24 },\n    container_metrics: { width: width, height: height },\n    elements: elements,\n    motion_envelopes: []\n  });\n  api.emit('render_complete');\n}\n\ndraw();",
+        "scene_metadata": {
+          "learning_goal": "从波形分别读取振幅和周期。",
+          "scene_id": "wave-compare",
+          "scene_version": "1.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+                "fact_id": "force-amplitude-frequency",
+                "narration": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+                "visual": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "比较纵向振幅",
+            "比较横向周期",
+            "分开记录两个量"
+          ]
+        }
+      },
+      "sample_id": "middle_sound_pair.wave-compare"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_sound_pair.wave-explain",
+        "scene_code": "function drawScene(state) {\n  const canvas = api.canvas;\n  const ctx = canvas.getContext('2d');\n  const width = canvas.width;\n  const height = canvas.height;\n  const params = input.parameters;\n  const viewport = params.viewport;\n  const layoutMode = viewport.kind;\n  const isPhone = layoutMode === 'phone';\n  const isTablet = layoutMode === 'tablet';\n  const isReducedMotion = state === 'reduced_motion';\n  const isStaticFallback = state === 'static_fallback';\n  const isInitial = state === 'initial';\n  const isKeyProcess = state === 'key_process';\n  const isFinal = state === 'final';\n  const isPaused = state === 'paused';\n  const isResumed = state === 'resumed';\n  const isPostInteraction = state === 'post_interaction';\n\n  ctx.clearRect(0, 0, width, height);\n\n  const bgColor = '#F5F5F5';\n  const axisColor = '#333333';\n  const waveColorBefore = '#1f77b4';\n  const waveColorAfter = '#ff7f0e';\n  const labelColor = '#333333';\n  const annotationColor = '#d62728';\n  const gridColor = '#e0e0e0';\n\n  const margin = isPhone ? 20 : 40;\n  const plotLeft = margin * 2;\n  const plotRight = width - margin;\n  const plotTop = margin * 2;\n  const plotBottom = height - margin * 3;\n  const plotWidth = plotRight - plotLeft;\n  const plotHeight = plotBottom - plotTop;\n\n  const amplitudeBefore = 0.3;\n  const amplitudeAfter = 0.6;\n  const frequency = 2;\n  const numPoints = 200;\n\n  function mapX(t) {\n    return plotLeft + t * plotWidth;\n  }\n\n  function mapY(val) {\n    return plotTop + plotHeight / 2 - val * (plotHeight / 2);\n  }\n\n  ctx.fillStyle = bgColor;\n  ctx.fillRect(0, 0, width, height);\n\n  ctx.strokeStyle = gridColor;\n  ctx.lineWidth = 1;\n  for (let i = 0; i <= 4; i++) {\n    const y = plotTop + (i / 4) * plotHeight;\n    ctx.beginPath();\n    ctx.moveTo(plotLeft, y);\n    ctx.lineTo(plotRight, y);\n    ctx.stroke();\n  }\n  for (let i = 0; i <= 4; i++) {\n    const x = plotLeft + (i / 4) * plotWidth;\n    ctx.beginPath();\n    ctx.moveTo(x, plotTop);\n    ctx.lineTo(x, plotBottom);\n    ctx.stroke();\n  }\n\n  ctx.strokeStyle = axisColor;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  ctx.moveTo(plotLeft, plotTop + plotHeight / 2);\n  ctx.lineTo(plotRight, plotTop + plotHeight / 2);\n  ctx.stroke();\n  ctx.beginPath();\n  ctx.moveTo(plotLeft, plotTop);\n  ctx.lineTo(plotLeft, plotBottom);\n  ctx.stroke();\n\n  ctx.strokeStyle = waveColorBefore;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  for (let i = 0; i <= numPoints; i++) {\n    const t = i / numPoints;\n    const x = mapX(t);\n    const y = mapY(amplitudeBefore * Math.sin(2 * Math.PI * frequency * t));\n    if (i === 0) ctx.moveTo(x, y);\n    else ctx.lineTo(x, y);\n  }\n  ctx.stroke();\n\n  if (!isInitial && !isStaticFallback) {\n    ctx.strokeStyle = waveColorAfter;\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    for (let i = 0; i <= numPoints; i++) {\n      const t = i / numPoints;\n      const x = mapX(t);\n      const y = mapY(amplitudeAfter * Math.sin(2 * Math.PI * frequency * t));\n      if (i === 0) ctx.moveTo(x, y);\n      else ctx.lineTo(x, y);\n    }\n    ctx.stroke();\n  }\n\n  function drawAmplitudeIndicator(amplitude, color, label, xOffset) {\n    const yCenter = plotTop + plotHeight / 2;\n    const yTop = yCenter - amplitude * (plotHeight / 2);\n    const yBottom = yCenter + amplitude * (plotHeight / 2);\n    const xPos = plotLeft + xOffset;\n    ctx.strokeStyle = color;\n    ctx.lineWidth = 1;\n    ctx.setLineDash([4, 4]);\n    ctx.beginPath();\n    ctx.moveTo(xPos, yTop);\n    ctx.lineTo(xPos, yBottom);\n    ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.beginPath();\n    ctx.moveTo(xPos - 5, yTop + 5);\n    ctx.lineTo(xPos, yTop);\n    ctx.lineTo(xPos + 5, yTop + 5);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(xPos - 5, yBottom - 5);\n    ctx.lineTo(xPos, yBottom);\n    ctx.lineTo(xPos + 5, yBottom - 5);\n    ctx.stroke();\n    ctx.fillStyle = labelColor;\n    ctx.font = isPhone ? '10px sans-serif' : '12px sans-serif';\n    ctx.textAlign = 'center';\n    ctx.fillText(label, xPos, yTop - 5);\n  }\n\n  if (!isInitial && !isStaticFallback) {\n    drawAmplitudeIndicator(amplitudeBefore, waveColorBefore, '振幅小', plotWidth * 0.2);\n    drawAmplitudeIndicator(amplitudeAfter, waveColorAfter, '振幅大', plotWidth * 0.8);\n  } else {\n    drawAmplitudeIndicator(amplitudeBefore, waveColorBefore, '振幅', plotWidth * 0.5);\n  }\n\n  function drawPeriodIndicator() {\n    const period = 1 / frequency;\n    const xStart = mapX(0);\n    const xEnd = mapX(period);\n    const yPos = plotBottom + 15;\n    ctx.strokeStyle = annotationColor;\n    ctx.lineWidth = 1;\n    ctx.setLineDash([2, 2]);\n    ctx.beginPath();\n    ctx.moveTo(xStart, yPos);\n    ctx.lineTo(xEnd, yPos);\n    ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.beginPath();\n    ctx.moveTo(xStart + 5, yPos - 5);\n    ctx.lineTo(xStart, yPos);\n    ctx.lineTo(xStart + 5, yPos + 5);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(xEnd - 5, yPos - 5);\n    ctx.lineTo(xEnd, yPos);\n    ctx.lineTo(xEnd - 5, yPos + 5);\n    ctx.stroke();\n    ctx.fillStyle = labelColor;\n    ctx.font = isPhone ? '10px sans-serif' : '12px sans-serif';\n    ctx.textAlign = 'center';\n    ctx.fillText('周期不变', (xStart + xEnd) / 2, yPos + 15);\n  }\n\n  if (!isInitial && !isStaticFallback) {\n    drawPeriodIndicator();\n  }\n\n  ctx.fillStyle = labelColor;\n  ctx.font = isPhone ? '12px sans-serif' : '14px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('时间', plotLeft + plotWidth / 2, plotBottom + 30);\n  ctx.save();\n  ctx.translate(plotLeft - 15, plotTop + plotHeight / 2);\n  ctx.rotate(-Math.PI / 2);\n  ctx.fillText('位移', 0, 0);\n  ctx.restore();\n\n  const legendX = plotRight - 80;\n  const legendY = plotTop + 10;\n  ctx.font = isPhone ? '10px sans-serif' : '12px sans-serif';\n  ctx.textAlign = 'left';\n  ctx.fillStyle = waveColorBefore;\n  ctx.fillRect(legendX, legendY, 10, 10);\n  ctx.fillStyle = labelColor;\n  ctx.fillText('驱动力小', legendX + 15, legendY + 10);\n  if (!isInitial && !isStaticFallback) {\n    ctx.fillStyle = waveColorAfter;\n    ctx.fillRect(legendX, legendY + 20, 10, 10);\n    ctx.fillStyle = labelColor;\n    ctx.fillText('驱动力大', legendX + 15, legendY + 30);\n  }\n\n  if (isStaticFallback) {\n    ctx.fillStyle = '#000';\n    ctx.font = isPhone ? '12px sans-serif' : '14px sans-serif';\n    ctx.textAlign = 'center';\n    const fallbackSteps = input.parameters.static_fallback.steps;\n    fallbackSteps.forEach((step, index) => {\n      ctx.fillText(step, width / 2, plotBottom + 50 + index * 20);\n    });\n  }\n\n  const elements = [];\n  elements.push({\n    element_id: 'plot_area',\n    bounds: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight },\n    font_size: 0,\n    min_graphic_size: 0,\n    interactive: false,\n    touch_size: 0,\n    local_safe_region: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight }\n  });\n  elements.push({\n    element_id: 'wave_before',\n    bounds: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight },\n    font_size: 0,\n    min_graphic_size: 2,\n    interactive: false,\n    touch_size: 0,\n    local_safe_region: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight }\n  });\n  if (!isInitial && !isStaticFallback) {\n    elements.push({\n      element_id: 'wave_after',\n      bounds: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight },\n      font_size: 0,\n      min_graphic_size: 2,\n      interactive: false,\n      touch_size: 0,\n      local_safe_region: { x: plotLeft, y: plotTop, width: plotWidth, height: plotHeight }\n    });\n  }\n  if (!isInitial && !isStaticFallback) {\n    elements.push({\n      element_id: 'amplitude_before',\n      bounds: { x: plotLeft + plotWidth * 0.2 - 5, y: plotTop, width: 10, height: plotHeight },\n      font_size: isPhone ? 10 : 12,\n      min_graphic_size: 1,\n      interactive: false,\n      touch_size: 0,\n      local_safe_region: { x: plotLeft + plotWidth * 0.2 - 5, y: plotTop, width: 10, height: plotHeight }\n    });\n    elements.push({\n      element_id: 'amplitude_after',\n      bounds: { x: plotLeft + plotWidth * 0.8 - 5, y: plotTop, width: 10, height: plotHeight },\n      font_size: isPhone ? 10 : 12,\n      min_graphic_size: 1,\n      interactive: false,\n      touch_size: 0,\n      local_safe_region: { x: plotLeft + plotWidth * 0.8 - 5, y: plotTop, width: 10, height: plotHeight }\n    });\n  } else {\n    elements.push({\n      element_id: 'amplitude_single',\n      bounds: { x: plotLeft + plotWidth * 0.5 - 5, y: plotTop, width: 10, height: plotHeight },\n      font_size: isPhone ? 10 : 12,\n      min_graphic_size: 1,\n      interactive: false,\n      touch_size: 0,\n      local_safe_region: { x: plotLeft + plotWidth * 0.5 - 5, y: plotTop, width: 10, height: plotHeight }\n    });\n  }\n  if (!isInitial && !isStaticFallback) {\n    const period = 1 / frequency;\n    const xStart = mapX(0);\n    const xEnd = mapX(period);\n    elements.push({\n      element_id: 'period_indicator',\n      bounds: { x: xStart, y: plotBottom + 10, width: xEnd - xStart, height: 20 },\n      font_size: isPhone ? 10 : 12,\n      min_graphic_size: 1,\n      interactive: false,\n      touch_size: 0,\n      local_safe_region: { x: xStart, y: plotBottom + 10, width: xEnd - xStart, height: 20 }\n    });\n  }\n  elements.push({\n    element_id: 'legend',\n    bounds: { x: legendX, y: legendY, width: 80, height: isInitial || isStaticFallback ? 15 : 35 },\n    font_size: isPhone ? 10 : 12,\n    min_graphic_size: 10,\n    interactive: false,\n    touch_size: 0,\n    local_safe_region: { x: legendX, y: legendY, width: 80, height: isInitial || isStaticFallback ? 15 : 35 }\n  });\n  elements.push({\n    element_id: 'x_label',\n    bounds: { x: plotLeft, y: plotBottom + 20, width: plotWidth, height: 20 },\n    font_size: isPhone ? 12 : 14,\n    min_graphic_size: 0,\n    interactive: false,\n    touch_size: 0,\n    local_safe_region: { x: plotLeft, y: plotBottom + 20, width: plotWidth, height: 20 }\n  });\n  elements.push({\n    element_id: 'y_label',\n    bounds: { x: plotLeft - 30, y: plotTop, width: 20, height: plotHeight },\n    font_size: isPhone ? 12 : 14,\n    min_graphic_size: 0,\n    interactive: false,\n    touch_size: 0,\n    local_safe_region: { x: plotLeft - 30, y: plotTop, width: 20, height: plotHeight }\n  });\n\n  api.emit('interaction', {\n    type: 'layout_measurement',\n    layout_mode: layoutMode,\n    canvas_inner_bounds: { x: 0, y: 0, width: width, height: height },\n    local_safe_regions: [{ x: 0, y: 0, width: width, height: height }],\n    readability_limits: { min_font_size: 10, max_font_size: 14 },\n    container_metrics: { width: width, height: height },\n    elements: elements,\n    motion_envelopes: []\n  });\n\n  api.emit('render_complete');\n}\n\ndrawScene(input.parameters.state);",
+        "scene_metadata": {
+          "learning_goal": "用振幅与频率的独立变化解释听感。",
+          "scene_id": "wave-amplitude-comparison",
+          "scene_version": "1.0.0",
+          "teaching": {
+            "facts": [
+              {
+                "expected": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+                "fact_id": "force-amplitude-frequency",
+                "narration": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency.",
+                "visual": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+              },
+              {
+                "expected": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch.",
+                "fact_id": "wave-perception-map",
+                "narration": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch.",
+                "visual": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch."
+              }
+            ]
+          }
+        },
+        "schema_version": "compact-generated-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "kind": "comparison-panel",
+          "steps": [
+            "波形高度增大",
+            "周期保持不变",
+            "响度增大而音调不变"
+          ]
+        }
+      },
+      "sample_id": "middle_sound_pair.wave-explain"
+    }
+  ],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing is not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "sealed_synthetic_knowledge_sent": true
+  },
+  "decision": "controlled_repair_only",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 5000,
+    "maximum_repairs_per_sample": 1,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0.0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_started"
+  },
+  "latency_ms": {
+    "max": 35491,
+    "p50": 15508,
+    "p80": 31151,
+    "p95": 33766
+  },
+  "limits": [
+    "Calibration repair outputs do not enter the formal denominator.",
+    "Each sample used its single allowed repair attempt.",
+    "Machine checks do not replace subject and product review."
+  ],
+  "metrics": {
+    "compact_contract_pass": {
+      "denominator": 10,
+      "numerator": 10
+    },
+    "formal_denominator": false,
+    "sandbox_execution": "pending",
+    "schema_validity": {
+      "denominator": 10,
+      "numerator": 10
+    }
+  },
+  "provider": "deepseek",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 10,
+    "automatic_retries": 0,
+    "completed": 10,
+    "planned": 10
+  },
+  "response_models": [
+    "deepseek-v4-pro"
+  ],
+  "run_at": "2026-07-30T14:43:03.345582+00:00",
+  "run_label": "official-compact-repair-round-1",
+  "run_phase": "controlled_repair",
+  "slice_id": "TS-04C",
+  "source_browser_result_file": "browser-official-compact-calibration-round-1-browser-round-3.json",
+  "source_result_file": "model-deepseek-v4-pro-official-compact-calibration-round-1.json",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 26614,
+    "prompt_tokens": 41780,
+    "total_tokens": 68394
+  }
+}

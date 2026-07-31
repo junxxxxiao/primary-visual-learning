@@ -1,0 +1,332 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "candidate": {
+    "answer_summary": "盐溶解使盐水密度增大，鸡蛋排开液体体积相近时浮力增大，浮力大于重力时鸡蛋上浮，最终平衡。",
+    "fact_refs": [
+      "salt-increases-solution-density",
+      "buoyancy-depends-on-liquid-density",
+      "motion-follows-force-balance"
+    ],
+    "question": "往水里加盐，鸡蛋为什么会慢慢浮起来？",
+    "question_id": "synthetic.egg-saltwater-float.v01",
+    "schema_version": "full-question-lesson/0.1",
+    "segments": [
+      {
+        "duration_ms": 8000,
+        "fact_refs": [
+          "salt-increases-solution-density"
+        ],
+        "narration": "我们先观察一个现象：把鸡蛋放进清水里，鸡蛋会沉到水底；往水里加盐并搅拌后，鸡蛋竟然慢慢浮起来了。",
+        "scene": {
+          "objects": [
+            {
+              "height": 360,
+              "id": "tank1",
+              "kind": "tank",
+              "label": "清水",
+              "style": "water",
+              "width": 600,
+              "x": 500,
+              "y": 400
+            },
+            {
+              "height": 160,
+              "id": "egg1",
+              "kind": "ellipse",
+              "label": "鸡蛋",
+              "style": "egg",
+              "width": 120,
+              "x": 500,
+              "y": 500
+            },
+            {
+              "height": 60,
+              "id": "label1",
+              "kind": "label",
+              "label": "鸡蛋沉在清水底部",
+              "style": "neutral",
+              "width": 400,
+              "x": 500,
+              "y": 100
+            }
+          ],
+          "timeline": [
+            {
+              "end_ms": 2500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 1000,
+              "target_id": "label1",
+              "to": 1
+            }
+          ]
+        },
+        "segment_id": "seg1-observe",
+        "title": "观察现象"
+      },
+      {
+        "duration_ms": 8000,
+        "fact_refs": [
+          "salt-increases-solution-density",
+          "buoyancy-depends-on-liquid-density"
+        ],
+        "narration": "盐溶解后，盐水密度比原来水更大。虽然鸡蛋排开液体体积相近，但液体密度增大，鸡蛋受到的浮力也增大了。",
+        "scene": {
+          "objects": [
+            {
+              "height": 360,
+              "id": "tank2",
+              "kind": "tank",
+              "label": "盐水",
+              "style": "saltwater",
+              "width": 600,
+              "x": 500,
+              "y": 400
+            },
+            {
+              "height": 160,
+              "id": "egg2",
+              "kind": "ellipse",
+              "label": "鸡蛋",
+              "style": "egg",
+              "width": 120,
+              "x": 500,
+              "y": 450
+            },
+            {
+              "height": 200,
+              "id": "particles2",
+              "kind": "particles",
+              "label": "盐粒",
+              "style": "salt",
+              "width": 400,
+              "x": 500,
+              "y": 350
+            },
+            {
+              "height": 60,
+              "id": "label2",
+              "kind": "label",
+              "label": "盐水密度增大，浮力增大",
+              "style": "highlight",
+              "width": 500,
+              "x": 500,
+              "y": 100
+            }
+          ],
+          "timeline": [
+            {
+              "end_ms": 2500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 1000,
+              "target_id": "particles2",
+              "to": 1
+            },
+            {
+              "end_ms": 4500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 3000,
+              "target_id": "label2",
+              "to": 1
+            }
+          ]
+        },
+        "segment_id": "seg2-saltwater",
+        "title": "解释盐水变化"
+      },
+      {
+        "duration_ms": 8000,
+        "fact_refs": [
+          "buoyancy-depends-on-liquid-density",
+          "motion-follows-force-balance"
+        ],
+        "narration": "当浮力大于重力时，鸡蛋就会向上运动；当浮力小于重力时，鸡蛋下沉；两者平衡时，鸡蛋停止加速。",
+        "scene": {
+          "objects": [
+            {
+              "height": 360,
+              "id": "tank3",
+              "kind": "tank",
+              "label": "盐水",
+              "style": "saltwater",
+              "width": 600,
+              "x": 500,
+              "y": 400
+            },
+            {
+              "height": 160,
+              "id": "egg3",
+              "kind": "ellipse",
+              "label": "鸡蛋",
+              "style": "egg",
+              "width": 120,
+              "x": 500,
+              "y": 350
+            },
+            {
+              "height": 120,
+              "id": "arrow-up",
+              "kind": "arrow",
+              "label": "浮力",
+              "style": "force-up",
+              "width": 20,
+              "x": 500,
+              "y": 250
+            },
+            {
+              "height": 120,
+              "id": "arrow-down",
+              "kind": "arrow",
+              "label": "重力",
+              "style": "force-down",
+              "width": 20,
+              "x": 500,
+              "y": 450
+            },
+            {
+              "height": 200,
+              "id": "meter3",
+              "kind": "meter",
+              "label": "浮力>重力",
+              "style": "highlight",
+              "width": 100,
+              "x": 800,
+              "y": 300
+            }
+          ],
+          "timeline": [
+            {
+              "end_ms": 2500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 1000,
+              "target_id": "arrow-up",
+              "to": 1
+            },
+            {
+              "end_ms": 2500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 1000,
+              "target_id": "arrow-down",
+              "to": 1
+            },
+            {
+              "end_ms": 4500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 3000,
+              "target_id": "meter3",
+              "to": 1
+            }
+          ]
+        },
+        "segment_id": "seg3-compare",
+        "title": "比较浮力与重力"
+      },
+      {
+        "duration_ms": 8000,
+        "fact_refs": [
+          "salt-increases-solution-density",
+          "buoyancy-depends-on-liquid-density",
+          "motion-follows-force-balance"
+        ],
+        "narration": "所以，加盐使盐水密度增大，浮力随之增大，当浮力大于重力时鸡蛋上浮，最终浮力与重力平衡，鸡蛋就浮在水面了。",
+        "scene": {
+          "objects": [
+            {
+              "height": 360,
+              "id": "tank4",
+              "kind": "tank",
+              "label": "盐水",
+              "style": "saltwater",
+              "width": 600,
+              "x": 500,
+              "y": 400
+            },
+            {
+              "height": 160,
+              "id": "egg4",
+              "kind": "ellipse",
+              "label": "鸡蛋",
+              "style": "egg",
+              "width": 120,
+              "x": 500,
+              "y": 250
+            },
+            {
+              "height": 60,
+              "id": "label4",
+              "kind": "label",
+              "label": "浮力增大，鸡蛋上浮",
+              "style": "highlight",
+              "width": 600,
+              "x": 500,
+              "y": 100
+            }
+          ],
+          "timeline": [
+            {
+              "end_ms": 2500,
+              "from": 0,
+              "property": "opacity",
+              "start_ms": 1000,
+              "target_id": "label4",
+              "to": 1
+            }
+          ]
+        },
+        "segment_id": "seg4-conclusion",
+        "title": "总结因果"
+      }
+    ]
+  },
+  "contract_pass": true,
+  "data_boundary": {
+    "child_data": false,
+    "controlled_textbook_content": false,
+    "synthetic_unverified_only": true
+  },
+  "error": null,
+  "evidence": {
+    "fixture_hash": "sha256:c717c6eedc3b53051069b1b1dffaa2cc088bcca58fb847f2e5fa5fc495a6248e",
+    "schema_hash": "sha256:29f78d662595a6a4618350532b7e29c43547644edeafd697f58bee9d80d7125d"
+  },
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_output_tokens": 5000,
+    "repairs": 0,
+    "request_limit": 1,
+    "response_format": "json_object",
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60,
+    "token_limit": 25000
+  },
+  "latency_ms": 11587,
+  "limits": [
+    "One synthetic unverified question only.",
+    "A local renderer does not establish open-world model capability.",
+    "Human teaching-quality review is pending."
+  ],
+  "provider": "deepseek_official",
+  "request_model": "deepseek-v4-flash",
+  "response_hash": "sha256:35b944f7cc6f8253bd8569975ff84f33e37265c200daebfd625f20e887348a1d",
+  "response_model": "deepseek-v4-flash",
+  "response_received": true,
+  "run_at": "2026-07-31T13:51:18.643149+00:00",
+  "run_label": "full-question-egg-saltwater-v01-network-attempt-2",
+  "run_phase": "single_full_question_calibration",
+  "slice_id": "TS-04C-full-question-v01",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 1945,
+    "prompt_tokens": 2764,
+    "total_tokens": 4709
+  },
+  "violation_codes": []
+}

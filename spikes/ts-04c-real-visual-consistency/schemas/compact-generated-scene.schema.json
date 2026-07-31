@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compact-generated-scene/0.2",
+  "title": "TS-04C compact generated scene",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "scene_code", "scene_metadata", "static_fallback"],
+  "properties": {
+    "schema_version": {"const": "compact-generated-scene/0.2"},
+    "sample_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+    "scene_code": {"type": "string", "minLength": 1, "maxLength": 65536},
+    "scene_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scene_id", "scene_version", "learning_goal", "teaching"],
+      "properties": {
+        "scene_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"},
+        "scene_version": {"type": "string", "minLength": 1},
+        "learning_goal": {"type": "string", "minLength": 1},
+        "teaching": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["facts"],
+          "properties": {
+            "facts": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["fact_id", "expected", "visual", "narration"],
+                "properties": {
+                  "fact_id": {"type": "string", "minLength": 1},
+                  "expected": {"type": "string", "minLength": 1},
+                  "visual": {"type": "string", "minLength": 1},
+                  "narration": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "static_fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "steps", "fact_refs"],
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "steps": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

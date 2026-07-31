@@ -1,0 +1,3239 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": false,
+      "latency_ms": 13895,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:972ea6195d2753ed6f716685ec4f1ddbcad8cd754edd2845fa1599eef592c21b",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "shadow.lamp-distance-size",
+      "usage": {
+        "completion_tokens": 2307,
+        "prompt_tokens": 2828,
+        "total_tokens": 5135
+      },
+      "violation_codes": [
+        "schema:$.scene.nodes[10].layout.priority: above maximum",
+        "schema:$.scene.nodes[11].layout.priority: above maximum",
+        "schema:$.scene.nodes[12].layout.priority: above maximum",
+        "schema:$.scene.nodes[13].layout.priority: above maximum",
+        "schema:$.scene.nodes[14].layout.priority: above maximum",
+        "schema:$.scene.nodes[4].geometry: unexpected property x1",
+        "schema:$.scene.nodes[4].geometry: unexpected property x2",
+        "schema:$.scene.nodes[4].geometry: unexpected property y1",
+        "schema:$.scene.nodes[4].geometry: unexpected property y2",
+        "schema:$.scene.nodes[5].geometry: unexpected property x1",
+        "schema:$.scene.nodes[5].geometry: unexpected property x2",
+        "schema:$.scene.nodes[5].geometry: unexpected property y1",
+        "schema:$.scene.nodes[5].geometry: unexpected property y2",
+        "schema:$.scene.nodes[6].geometry: unexpected property x1",
+        "schema:$.scene.nodes[6].geometry: unexpected property x2",
+        "schema:$.scene.nodes[6].geometry: unexpected property y1",
+        "schema:$.scene.nodes[6].geometry: unexpected property y2",
+        "schema:$.scene.nodes[7].geometry: unexpected property x1",
+        "schema:$.scene.nodes[7].geometry: unexpected property x2",
+        "schema:$.scene.nodes[7].geometry: unexpected property y1",
+        "schema:$.scene.nodes[7].geometry: unexpected property y2"
+      ]
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": false,
+      "latency_ms": 12014,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:efdcd37ffb68ab8828598cec6be79ee8505b0a23dde3b6a2e3cc7d290675dbf5",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "lever.seesaw-balance",
+      "usage": {
+        "completion_tokens": 1958,
+        "prompt_tokens": 2816,
+        "total_tokens": 4774
+      },
+      "violation_codes": [
+        "schema:$.scene.nodes[0].parent_id: expected string"
+      ]
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": true,
+      "latency_ms": 14126,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:3d6e9af43f8a00ef90555a42dcdbcdfac6188d050407bba837013b26e1f6d356",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "fraction.equivalent-pieces",
+      "usage": {
+        "completion_tokens": 2436,
+        "prompt_tokens": 2836,
+        "total_tokens": 5272
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "adversarial_fixture",
+      "gate_pass": true,
+      "latency_ms": 11161,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:06cf05949fa49077fadc3a7d3c1cb9849865187ba374c7f9aceee71a29077989",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "usage": {
+        "completion_tokens": 1986,
+        "prompt_tokens": 2810,
+        "total_tokens": 4796
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": true,
+      "latency_ms": 10542,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:dc11c520b2f319c98f6edba4c398473339a5a3e9fff51b2a5b58435411e95f68",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "water-cycle.condensation-path",
+      "usage": {
+        "completion_tokens": 1810,
+        "prompt_tokens": 2818,
+        "total_tokens": 4628
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": true,
+      "latency_ms": 11175,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:7b38e462b6522f7763c470b037bbcf67c7c7a9b38a2d4f88373c02bfe05fa9cd",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "linear-functions.moving-intersection",
+      "usage": {
+        "completion_tokens": 1898,
+        "prompt_tokens": 2824,
+        "total_tokens": 4722
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": true,
+      "latency_ms": 11492,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:59c740b59b4614417e0c5f61eebc44e2c4f2613bf6c3036d1548f19595a9003a",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "usage": {
+        "completion_tokens": 1935,
+        "prompt_tokens": 2829,
+        "total_tokens": 4764
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "adversarial_fixture",
+      "gate_pass": true,
+      "latency_ms": 17068,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:ea4e018a078ce7426d1f9456432c218b7aee73a910172c7de4d957b0d7c6f2f9",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "circuit.series-current-path",
+      "usage": {
+        "completion_tokens": 3020,
+        "prompt_tokens": 2838,
+        "total_tokens": 5858
+      },
+      "violation_codes": []
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": false,
+      "latency_ms": 10834,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:fd45f4f2a32ae86f8789ca9ac957cb282e6f5be78230fd0ac84f24238876174b",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "density.layering-liquids",
+      "usage": {
+        "completion_tokens": 1911,
+        "prompt_tokens": 2818,
+        "total_tokens": 4729
+      },
+      "violation_codes": [
+        "schema:$.scene.nodes[11].layout.priority: above maximum"
+      ]
+    },
+    {
+      "finish_reason": "stop",
+      "fixture_kind": "gold_fixture",
+      "gate_pass": true,
+      "latency_ms": 11158,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:1b1788afe2cbe559f8e017e3b4808e1ef95e6c6567e3ef5e39ac3c6d32a1d7c7",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "symmetry.rotation-order",
+      "usage": {
+        "completion_tokens": 1985,
+        "prompt_tokens": 2826,
+        "total_tokens": 4811
+      },
+      "violation_codes": []
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "fact_refs": [
+          "fraction-equivalent-partition"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "fraction.equivalent-pieces",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 250,
+                "y": 400
+              },
+              "id": "paper-left",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "paper",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 650,
+                "y": 400
+              },
+              "id": "paper-right",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "paper",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 150,
+                "x": 250,
+                "y": 400
+              },
+              "id": "left-half",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 150,
+                "x": 650,
+                "y": 400
+              },
+              "id": "right-half",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 0,
+                "x": 400,
+                "y": 400
+              },
+              "id": "left-divider",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 0,
+                "x": 800,
+                "y": 400
+              },
+              "id": "right-divider",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 0,
+                "x": 325,
+                "y": 400
+              },
+              "id": "left-quarter-line",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 0,
+                "x": 725,
+                "y": 400
+              },
+              "id": "right-quarter-line",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "content": "1/2",
+              "geometry": {
+                "height": 40,
+                "width": 100,
+                "x": 250,
+                "y": 640
+              },
+              "id": "left-label",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "2/4",
+              "geometry": {
+                "height": 40,
+                "width": 100,
+                "x": 650,
+                "y": 640
+              },
+              "id": "right-label",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 75,
+                "x": 250,
+                "y": 400
+              },
+              "id": "left-quarter-shade",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 75,
+                "x": 650,
+                "y": 400
+              },
+              "id": "right-quarter-shade",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 75,
+                "x": 325,
+                "y": 400
+              },
+              "id": "left-second-quarter-shade",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 75,
+                "x": 725,
+                "y": 400
+              },
+              "id": "right-second-quarter-shade",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "content": "=",
+              "geometry": {
+                "height": 40,
+                "width": 40,
+                "x": 480,
+                "y": 500
+              },
+              "id": "equal-sign",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "conclusion",
+              "style_token": "ink",
+              "type": "text"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "fraction-equivalent-partition"
+          ],
+          "steps": [
+            "两张同样大的纸，左边涂二分之一，右边涂四分之二。",
+            "左边一条竖线分成两半，涂色占一半。",
+            "把左边每一半再等分，涂色变成两个小块。",
+            "右边两条竖线分成四份，涂色占两份。",
+            "左右涂色总面积相同，所以二分之一等于四分之二。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "paper-left",
+                    "paper-right",
+                    "left-half",
+                    "right-half",
+                    "left-divider",
+                    "right-divider",
+                    "left-label",
+                    "right-label"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-orient",
+              "narration": "这里有两张同样大的纸，左边涂了二分之一，右边涂了四分之二。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-half",
+                    "left-divider"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-observe",
+              "narration": "先看左边，一条竖线把纸分成两个一样大的小块，涂色的是其中一块。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-quarter-line"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "left-quarter-shade",
+                    "left-second-quarter-shade"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-partition-left",
+              "narration": "现在把左边的每一半再等分成两块，原来的涂色部分就变成了两个小块。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "right-quarter-line",
+                    "right-quarter-shade",
+                    "right-second-quarter-shade"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-partition-right",
+              "narration": "右边本来就有两条竖线，分成四个一样大的小块，涂色的是其中两块。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-quarter-shade",
+                    "left-second-quarter-shade",
+                    "right-quarter-shade",
+                    "right-second-quarter-shade"
+                  ],
+                  "type": "compare"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "equal-sign"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-compare",
+              "narration": "把左右两边放在一起看，涂色的总面积完全一样，只是分块的数目不同。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "left-label",
+                    "right-label",
+                    "equal-sign"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "fraction-equivalent-partition"
+              ],
+              "id": "beat-conclude",
+              "narration": "所以二分之一等于四分之二，因为只是把每一半再等分，涂色范围没有变。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "为什么二分之一等于四分之二"
+      },
+      "sample_id": "fraction.equivalent-pieces"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "same-perimeter-different-area"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "geometry.perimeter-area-counterexample",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 240,
+                "width": 160,
+                "x": 200,
+                "y": 300
+              },
+              "id": "rect1",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "math-blue",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 160,
+                "width": 240,
+                "x": 600,
+                "y": 300
+              },
+              "id": "rect2",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "content": "长8 宽2",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 200,
+                "y": 560
+              },
+              "id": "label1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "长6 宽4",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 600,
+                "y": 560
+              },
+              "id": "label2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "周长=20厘米",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 200,
+                "y": 620
+              },
+              "id": "perimeter1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "evidence",
+              "style_token": "muted",
+              "type": "text"
+            },
+            {
+              "content": "周长=20厘米",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 600,
+                "y": 620
+              },
+              "id": "perimeter2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "evidence",
+              "style_token": "muted",
+              "type": "text"
+            },
+            {
+              "content": "面积=16平方厘米",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 200,
+                "y": 680
+              },
+              "id": "area1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "conclusion",
+              "style_token": "signal-coral",
+              "type": "text"
+            },
+            {
+              "content": "面积=24平方厘米",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 600,
+                "y": 680
+              },
+              "id": "area2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "conclusion",
+              "style_token": "signal-coral",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "height": 240,
+                "width": 160,
+                "x": 200,
+                "y": 300
+              },
+              "id": "grid1",
+              "layout": {
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "context",
+              "type": "group"
+            },
+            {
+              "geometry": {
+                "height": 160,
+                "width": 240,
+                "x": 600,
+                "y": 300
+              },
+              "id": "grid2",
+              "layout": {
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "context",
+              "type": "group"
+            },
+            {
+              "content": "两个长方形周长都是20厘米，面积一定相同吗？",
+              "geometry": {
+                "height": 80,
+                "width": 400,
+                "x": 300,
+                "y": 100
+              },
+              "id": "question",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "不一定相同",
+              "geometry": {
+                "height": 60,
+                "width": 200,
+                "x": 400,
+                "y": 800
+              },
+              "id": "answer",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "conclusion",
+              "style_token": "signal-coral",
+              "type": "text"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "same-perimeter-different-area"
+          ],
+          "steps": [
+            "展示两个长方形：一个长8宽2，另一个长6宽4。",
+            "计算周长：第一个(8+2)×2=20，第二个(6+4)×2=20。",
+            "计算面积：第一个8×2=16，第二个6×4=24。",
+            "结论：周长相同，面积不一定相同。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "rect1",
+                    "rect2",
+                    "label1",
+                    "label2",
+                    "perimeter1",
+                    "perimeter2"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "same-perimeter-different-area"
+              ],
+              "id": "beat1",
+              "narration": "我们来看两个长方形，它们的周长都是20厘米。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "rect1"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "perimeter1"
+                  ],
+                  "type": "update_value",
+                  "value": "周长=20厘米"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "same-perimeter-different-area"
+              ],
+              "id": "beat2",
+              "narration": "第一个长方形长8厘米，宽2厘米，周长是20厘米。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "rect2"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "perimeter2"
+                  ],
+                  "type": "update_value",
+                  "value": "周长=20厘米"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "same-perimeter-different-area"
+              ],
+              "id": "beat3",
+              "narration": "第二个长方形长6厘米，宽4厘米，周长也是20厘米。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "area1",
+                    "area2"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "area1",
+                    "area2"
+                  ],
+                  "type": "compare"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "same-perimeter-different-area"
+              ],
+              "id": "beat4",
+              "narration": "比较它们的面积：第一个是16平方厘米，第二个是24平方厘米。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "answer"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "answer"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "same-perimeter-different-area"
+              ],
+              "id": "beat5",
+              "narration": "所以周长相同，面积不一定相同。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "周长相同，面积一定相同吗？"
+      },
+      "sample_id": "geometry.perimeter-area-counterexample"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "water-vapor-condensation"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "water-cycle.condensation-path",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 200,
+                "y": 700
+              },
+              "id": "pot",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 260,
+                "x": 220,
+                "y": 800
+              },
+              "id": "water",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 30,
+                "width": 340,
+                "x": 180,
+                "y": 300
+              },
+              "id": "lid",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 60,
+                "x": 350,
+                "y": 500
+              },
+              "id": "steam",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "muted",
+              "type": "particles"
+            },
+            {
+              "geometry": {
+                "height": 40,
+                "width": 100,
+                "x": 300,
+                "y": 280
+              },
+              "id": "droplets",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "particles"
+            },
+            {
+              "content": "水蒸气（看不见）",
+              "geometry": {
+                "height": 40,
+                "width": 200,
+                "x": 420,
+                "y": 520
+              },
+              "id": "label-steam",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "muted",
+              "type": "text"
+            },
+            {
+              "content": "小水滴（看得见）",
+              "geometry": {
+                "height": 40,
+                "width": 200,
+                "x": 300,
+                "y": 220
+              },
+              "id": "label-droplets",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "label",
+              "style_token": "science-green",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 10,
+                "x": 350,
+                "y": 600
+              },
+              "id": "arrow-up",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "relation",
+              "style_token": "muted",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 100,
+                "width": 10,
+                "x": 350,
+                "y": 400
+              },
+              "id": "arrow-down",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "relation",
+              "style_token": "focus-yellow",
+              "type": "line"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "water-vapor-condensation"
+          ],
+          "steps": [
+            "烧水时，锅里的水受热变成水蒸气，水蒸气是看不见的。",
+            "水蒸气从水面上升，向冷杯盖移动。",
+            "杯盖比较冷，水蒸气遇到冷表面后温度降低。",
+            "降温后，水蒸气凝结成许多小水滴，聚集在杯盖下。",
+            "所以，看不见的水蒸气遇冷凝结，就变成了看得见的小水滴。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "pot",
+                    "water",
+                    "lid",
+                    "steam",
+                    "label-steam"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "water"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "steam"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "water-vapor-condensation"
+              ],
+              "id": "beat-orient",
+              "narration": "烧水时，锅里的水受热变成水蒸气，水蒸气是看不见的。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "steam"
+                  ],
+                  "to": {
+                    "x": 350,
+                    "y": 350
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "label-steam"
+                  ],
+                  "to": {
+                    "x": 420,
+                    "y": 380
+                  },
+                  "type": "move"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "water-vapor-condensation"
+              ],
+              "id": "beat-rise",
+              "narration": "水蒸气从水面上升，向冷杯盖移动。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "lid"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 1500,
+                  "target_ids": [
+                    "steam"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 1500,
+                  "target_ids": [
+                    "steam"
+                  ],
+                  "type": "update_value",
+                  "value": "冷却"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "water-vapor-condensation"
+              ],
+              "id": "beat-cool",
+              "narration": "杯盖比较冷，水蒸气遇到冷表面后温度降低。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "steam"
+                  ],
+                  "type": "hide"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "droplets",
+                    "label-droplets"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "droplets"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "water-vapor-condensation"
+              ],
+              "id": "beat-condense",
+              "narration": "降温后，水蒸气凝结成许多小水滴，聚集在杯盖下。",
+              "purpose": "derive"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "droplets",
+                    "label-droplets"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "lid"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "water-vapor-condensation"
+              ],
+              "id": "beat-conclude",
+              "narration": "所以，看不见的水蒸气遇冷凝结，就变成了看得见的小水滴。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "水蒸气遇冷变成小水滴"
+      },
+      "sample_id": "water-cycle.condensation-path"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "line-intersection-common-solution"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "linear-functions.moving-intersection",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 400,
+                "width": 800,
+                "x": 100,
+                "y": 500
+              },
+              "id": "axes",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "axis"
+            },
+            {
+              "geometry": {
+                "height": 400,
+                "width": 800,
+                "x": 100,
+                "y": 300
+              },
+              "id": "line1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "math-blue",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 400,
+                "width": 800,
+                "x": 100,
+                "y": 700
+              },
+              "id": "line2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "content": "y=2x+1",
+              "geometry": {
+                "height": 40,
+                "width": 120,
+                "x": 700,
+                "y": 200
+              },
+              "id": "label1",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "y=-x+7",
+              "geometry": {
+                "height": 40,
+                "width": 120,
+                "x": 700,
+                "y": 800
+              },
+              "id": "label2",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "signal-coral",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "radius": 10,
+                "x": 300,
+                "y": 500
+              },
+              "id": "intersection",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "content": "x=2",
+              "geometry": {
+                "height": 30,
+                "width": 60,
+                "x": 280,
+                "y": 520
+              },
+              "id": "x-coord",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "y=5",
+              "geometry": {
+                "height": 30,
+                "width": 60,
+                "x": 320,
+                "y": 460
+              },
+              "id": "y-coord",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "2×2+1=5",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 150,
+                "y": 150
+              },
+              "id": "check1",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "formula"
+            },
+            {
+              "content": "-2+7=5",
+              "geometry": {
+                "height": 40,
+                "width": 160,
+                "x": 150,
+                "y": 850
+              },
+              "id": "check2",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "formula"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "line-intersection-common-solution"
+          ],
+          "steps": [
+            "在同一坐标系中画出两条直线 y=2x+1 和 y=-x+7。",
+            "观察它们相交于一个点，该点同时位于两条直线上。",
+            "读出交点坐标约为 (2,5)。",
+            "将 x=2 代入 y=2x+1 得 y=5，代入 y=-x+7 也得 y=5。",
+            "因此交点坐标同时满足两个一次函数关系，是两直线唯一的公共解。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "axes"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "line1",
+                    "line2"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "label1",
+                    "label2"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "line-intersection-common-solution"
+              ],
+              "id": "beat1",
+              "narration": "我们先建立同一个坐标系，把两条直线 y=2x+1 和 y=-x+7 都画出来。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "line1",
+                    "line2"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "intersection"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "line-intersection-common-solution"
+              ],
+              "id": "beat2",
+              "narration": "注意看，两条直线在坐标系里交叉，它们只在一个点相遇。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "intersection"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "x-coord",
+                    "y-coord"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "line-intersection-common-solution"
+              ],
+              "id": "beat3",
+              "narration": "这个交点同时位于两条直线上，所以它的坐标同时满足两个一次函数关系。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "check1"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "check2"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 4000,
+                  "target_ids": [
+                    "check1",
+                    "check2"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 6000,
+              "fact_refs": [
+                "line-intersection-common-solution"
+              ],
+              "id": "beat4",
+              "narration": "把 x=2 分别代入两个式子，都得到 y=5，说明这个点确实同时满足两个方程。",
+              "purpose": "derive"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "intersection"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "line1",
+                    "line2"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "line-intersection-common-solution"
+              ],
+              "id": "beat5",
+              "narration": "因为两条直线斜率不同，它们不会平行或重合，所以只有一个交点，这个点就是两个一次函数关系的共同解。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "两条直线的交点为什么唯一"
+      },
+      "sample_id": "linear-functions.moving-intersection"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "pythagorean-dissection-area"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "pythagorean.dissection-rearrangement",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 600,
+                "width": 600,
+                "x": 200,
+                "y": 200
+              },
+              "id": "outer-frame",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 200,
+                "y": 200
+              },
+              "id": "tri-1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 500,
+                "y": 200
+              },
+              "id": "tri-2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 200,
+                "y": 400
+              },
+              "id": "tri-3",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "height": 200,
+                "width": 300,
+                "x": 500,
+                "y": 400
+              },
+              "id": "tri-4",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "content": "a",
+              "geometry": {
+                "x": 180,
+                "y": 380
+              },
+              "id": "label-a",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "b",
+              "geometry": {
+                "x": 380,
+                "y": 180
+              },
+              "id": "label-b",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "c",
+              "geometry": {
+                "x": 380,
+                "y": 380
+              },
+              "id": "label-c",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "a²+b²",
+              "geometry": {
+                "x": 350,
+                "y": 500
+              },
+              "id": "area-left",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "c²",
+              "geometry": {
+                "x": 650,
+                "y": 500
+              },
+              "id": "area-right",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "a²+b²=c²",
+              "geometry": {
+                "x": 400,
+                "y": 700
+              },
+              "id": "eq-formula",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "conclusion",
+              "style_token": "focus-yellow",
+              "type": "formula"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "pythagorean-dissection-area"
+          ],
+          "steps": [
+            "固定外框，放入四个全等直角三角形。",
+            "标出直角边 a、b 和斜边 c。",
+            "重新排列四个三角形，外框面积不变。",
+            "比较剩余区域：左边 a²+b²，右边 c²。",
+            "外框面积相同，所以 a²+b²=c²。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "outer-frame",
+                    "tri-1",
+                    "tri-2",
+                    "tri-3",
+                    "tri-4"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "outer-frame"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "pythagorean-dissection-area"
+              ],
+              "id": "beat-orient",
+              "narration": "先看这个固定的大正方形外框，里面放了四个完全相同的直角三角形。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "label-a",
+                    "label-b",
+                    "label-c"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1500,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "label-a",
+                    "label-b",
+                    "label-c"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "pythagorean-dissection-area"
+              ],
+              "id": "beat-observe",
+              "narration": "注意每个三角形两条直角边分别是 a 和 b，斜边是 c。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "tri-1"
+                  ],
+                  "to": {
+                    "x": 200,
+                    "y": 200
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "tri-2"
+                  ],
+                  "to": {
+                    "x": 500,
+                    "y": 200
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "tri-3"
+                  ],
+                  "to": {
+                    "x": 200,
+                    "y": 400
+                  },
+                  "type": "move"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "tri-4"
+                  ],
+                  "to": {
+                    "x": 500,
+                    "y": 400
+                  },
+                  "type": "move"
+                }
+              ],
+              "duration_ms": 6000,
+              "fact_refs": [
+                "pythagorean-dissection-area"
+              ],
+              "id": "beat-move",
+              "narration": "现在把四个三角形重新排列，但外框大小不变，所以外框总面积始终相同。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "area-left",
+                    "area-right"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "area-left",
+                    "area-right"
+                  ],
+                  "type": "compare"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "pythagorean-dissection-area"
+              ],
+              "id": "beat-compare",
+              "narration": "比较两种拼法：左边剩余面积是 a²+b²，右边剩余面积是 c²。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "eq-formula"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "eq-formula"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "pythagorean-dissection-area"
+              ],
+              "id": "beat-conclude",
+              "narration": "因为外框面积相同，去掉四个三角形后，剩余面积也相等，所以 a²+b²=c²。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "勾股定理的拼图证明"
+      },
+      "sample_id": "pythagorean.dissection-rearrangement"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "series-current-not-consumed"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "circuit.series-current-path",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 120,
+                "width": 80,
+                "x": 150,
+                "y": 500
+              },
+              "id": "battery",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "science-green",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 190,
+                    "y": 440
+                  },
+                  {
+                    "x": 500,
+                    "y": 440
+                  }
+                ]
+              },
+              "id": "wire-top",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 80,
+                "x": 500,
+                "y": 400
+              },
+              "id": "bulb1",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "subject",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 580,
+                    "y": 440
+                  },
+                  {
+                    "x": 700,
+                    "y": 440
+                  }
+                ]
+              },
+              "id": "wire-mid",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 80,
+                "width": 80,
+                "x": 700,
+                "y": 400
+              },
+              "id": "bulb2",
+              "layout": {
+                "flow": "free",
+                "priority": 4
+              },
+              "role": "subject",
+              "style_token": "focus-yellow",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 780,
+                    "y": 480
+                  },
+                  {
+                    "x": 780,
+                    "y": 560
+                  },
+                  {
+                    "x": 190,
+                    "y": 560
+                  },
+                  {
+                    "x": 190,
+                    "y": 560
+                  }
+                ]
+              },
+              "id": "wire-bottom",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "context",
+              "style_token": "ink",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 250,
+                "y": 430
+              },
+              "id": "charge1",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 320,
+                "y": 430
+              },
+              "id": "charge2",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 390,
+                "y": 430
+              },
+              "id": "charge3",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 460,
+                "y": 430
+              },
+              "id": "charge4",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 620,
+                "y": 430
+              },
+              "id": "charge5",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 12,
+                "x": 660,
+                "y": 430
+              },
+              "id": "charge6",
+              "layout": {
+                "flow": "free",
+                "priority": 5
+              },
+              "role": "evidence",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "content": "电池",
+              "geometry": {
+                "height": 30,
+                "width": 80,
+                "x": 100,
+                "y": 500
+              },
+              "id": "label-battery",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "灯泡1",
+              "geometry": {
+                "height": 30,
+                "width": 80,
+                "x": 500,
+                "y": 360
+              },
+              "id": "label-bulb1",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "灯泡2",
+              "geometry": {
+                "height": 30,
+                "width": 80,
+                "x": 700,
+                "y": 360
+              },
+              "id": "label-bulb2",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 250,
+                    "y": 470
+                  },
+                  {
+                    "x": 250,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 320,
+                    "y": 470
+                  },
+                  {
+                    "x": 320,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 390,
+                    "y": 470
+                  },
+                  {
+                    "x": 390,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow3",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 460,
+                    "y": 470
+                  },
+                  {
+                    "x": 460,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow4",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 620,
+                    "y": 470
+                  },
+                  {
+                    "x": 620,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow5",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "points": [
+                  {
+                    "x": 660,
+                    "y": 470
+                  },
+                  {
+                    "x": 660,
+                    "y": 500
+                  }
+                ]
+              },
+              "id": "arrow6",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "relation",
+              "style_token": "signal-coral",
+              "type": "line"
+            },
+            {
+              "content": "电流方向",
+              "geometry": {
+                "height": 30,
+                "width": 200,
+                "x": 300,
+                "y": 520
+              },
+              "id": "current-label",
+              "layout": {
+                "flow": "free",
+                "priority": 1
+              },
+              "role": "label",
+              "style_token": "ink",
+              "type": "text"
+            },
+            {
+              "content": "流率: 3",
+              "geometry": {
+                "height": 30,
+                "width": 100,
+                "x": 450,
+                "y": 550
+              },
+              "id": "flow-rate1",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "流率: 3",
+              "geometry": {
+                "height": 30,
+                "width": 100,
+                "x": 650,
+                "y": 550
+              },
+              "id": "flow-rate2",
+              "layout": {
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "evidence",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "电流不消耗，能量被转化",
+              "geometry": {
+                "height": 60,
+                "width": 400,
+                "x": 300,
+                "y": 650
+              },
+              "id": "energy-note",
+              "layout": {
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "conclusion",
+              "style_token": "science-green",
+              "type": "text"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "series-current-not-consumed"
+          ],
+          "steps": [
+            "串联电路只有一条闭合路径。",
+            "电荷沿路径连续运动，经过灯泡1和灯泡2。",
+            "两处单位时间通过电荷数相同，电流相同。",
+            "电流不消耗，能量被转化。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "battery",
+                    "wire-top",
+                    "bulb1",
+                    "wire-mid",
+                    "bulb2",
+                    "wire-bottom"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "label-battery",
+                    "label-bulb1",
+                    "label-bulb2"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "series-current-not-consumed"
+              ],
+              "id": "beat1",
+              "narration": "这是一个串联电路，电池、灯泡1、灯泡2用导线连成一个圈。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "charge1",
+                    "charge2",
+                    "charge3",
+                    "charge4",
+                    "charge5",
+                    "charge6"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 3000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "charge1",
+                    "charge2",
+                    "charge3",
+                    "charge4",
+                    "charge5",
+                    "charge6"
+                  ],
+                  "to": {
+                    "x": 250,
+                    "y": 430
+                  },
+                  "type": "move"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "series-current-not-consumed"
+              ],
+              "id": "beat2",
+              "narration": "注意，整个电路只有一条闭合路径，电荷只能沿着这条路径一个接一个地运动。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 5000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "charge1",
+                    "charge2",
+                    "charge3",
+                    "charge4",
+                    "charge5",
+                    "charge6"
+                  ],
+                  "to": {
+                    "x": 250,
+                    "y": 430
+                  },
+                  "type": "move"
+                }
+              ],
+              "duration_ms": 6000,
+              "fact_refs": [
+                "series-current-not-consumed"
+              ],
+              "id": "beat3",
+              "narration": "这些电荷从电池出发，经过灯泡1，再经过灯泡2，最后回到电池，形成循环。",
+              "purpose": "explain"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "flow-rate1",
+                    "flow-rate2"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "flow-rate1",
+                    "flow-rate2"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "series-current-not-consumed"
+              ],
+              "id": "beat4",
+              "narration": "在灯泡1和灯泡2处，单位时间通过的电荷数量相同，都是3个，所以电流大小相同。",
+              "purpose": "compare"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "energy-note"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 1000,
+                  "target_ids": [
+                    "energy-note"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 5000,
+              "fact_refs": [
+                "series-current-not-consumed"
+              ],
+              "id": "beat5",
+              "narration": "所以电流不会被灯泡1消耗掉，灯泡只是把电能转化为光能，电荷流保持不变。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "串联电路电流是否被消耗？"
+      },
+      "sample_id": "circuit.series-current-path"
+    },
+    {
+      "candidate": {
+        "fact_refs": [
+          "square-rotational-order"
+        ],
+        "interaction": {
+          "kind": "none",
+          "target_ids": []
+        },
+        "sample_id": "symmetry.rotation-order",
+        "scene": {
+          "coordinate_space": {
+            "height": 1000,
+            "width": 1000
+          },
+          "nodes": [
+            {
+              "geometry": {
+                "height": 300,
+                "rotation_deg": 0,
+                "width": 300,
+                "x": 500,
+                "y": 500
+              },
+              "id": "square",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "free",
+                "priority": 3
+              },
+              "role": "subject",
+              "style_token": "ink",
+              "type": "shape"
+            },
+            {
+              "geometry": {
+                "radius": 8,
+                "x": 500,
+                "y": 500
+              },
+              "id": "center",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 5
+              },
+              "role": "context",
+              "style_token": "signal-coral",
+              "type": "shape"
+            },
+            {
+              "content": "0°",
+              "geometry": {
+                "height": 40,
+                "width": 80,
+                "x": 700,
+                "y": 300
+              },
+              "id": "angle-label",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "label",
+              "style_token": "math-blue",
+              "type": "text"
+            },
+            {
+              "content": "重合次数：0",
+              "geometry": {
+                "height": 50,
+                "width": 200,
+                "x": 100,
+                "y": 100
+              },
+              "id": "count-label",
+              "layout": {
+                "allow_reflow": true,
+                "flow": "free",
+                "priority": 2
+              },
+              "role": "label",
+              "style_token": "focus-yellow",
+              "type": "text"
+            },
+            {
+              "geometry": {
+                "height": 0,
+                "rotation_deg": 90,
+                "width": 200,
+                "x": 500,
+                "y": 500
+              },
+              "id": "trace-90",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 0,
+                "rotation_deg": 180,
+                "width": 200,
+                "x": 500,
+                "y": 500
+              },
+              "id": "trace-180",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 0,
+                "rotation_deg": 270,
+                "width": 200,
+                "x": 500,
+                "y": 500
+              },
+              "id": "trace-270",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "evidence",
+              "style_token": "science-green",
+              "type": "line"
+            },
+            {
+              "geometry": {
+                "height": 0,
+                "rotation_deg": 360,
+                "width": 200,
+                "x": 500,
+                "y": 500
+              },
+              "id": "trace-360",
+              "layout": {
+                "allow_reflow": false,
+                "flow": "overlay",
+                "priority": 1
+              },
+              "role": "evidence",
+              "style_token": "muted",
+              "type": "line"
+            }
+          ]
+        },
+        "schema_version": "open-visual-scene/0.2",
+        "static_fallback": {
+          "fact_refs": [
+            "square-rotational-order"
+          ],
+          "steps": [
+            "固定正方形中心，从 0° 开始旋转。",
+            "旋转到 90° 时完全重合，计数 1。",
+            "旋转到 180° 时完全重合，计数 2。",
+            "旋转到 270° 时完全重合，计数 3。",
+            "不到 360° 共有 3 次重合。"
+          ]
+        },
+        "timeline": {
+          "beats": [
+            {
+              "actions": [
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "square",
+                    "center",
+                    "angle-label",
+                    "count-label"
+                  ],
+                  "type": "show"
+                },
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 500,
+                  "target_ids": [
+                    "center"
+                  ],
+                  "type": "emphasize"
+                }
+              ],
+              "duration_ms": 3000,
+              "fact_refs": [
+                "square-rotational-order"
+              ],
+              "id": "beat-orient",
+              "narration": "我们看一个正方形，绕它的中心旋转。先固定中心点，观察正方形的位置。",
+              "purpose": "orient"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "square"
+                  ],
+                  "to": {
+                    "rotation_deg": 90
+                  },
+                  "type": "rotate"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "angle-label"
+                  ],
+                  "type": "update_value",
+                  "value": "90°"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "count-label"
+                  ],
+                  "type": "update_value",
+                  "value": "重合次数：1"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "trace-90"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "square-rotational-order"
+              ],
+              "id": "beat-rotate-90",
+              "narration": "旋转 90 度，正方形和原来的位置完全重合。这是第一次重合。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "square"
+                  ],
+                  "to": {
+                    "rotation_deg": 180
+                  },
+                  "type": "rotate"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "angle-label"
+                  ],
+                  "type": "update_value",
+                  "value": "180°"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "count-label"
+                  ],
+                  "type": "update_value",
+                  "value": "重合次数：2"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "trace-180"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "square-rotational-order"
+              ],
+              "id": "beat-rotate-180",
+              "narration": "继续旋转到 180 度，又完全重合。这是第二次。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 2000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "square"
+                  ],
+                  "to": {
+                    "rotation_deg": 270
+                  },
+                  "type": "rotate"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "angle-label"
+                  ],
+                  "type": "update_value",
+                  "value": "270°"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "count-label"
+                  ],
+                  "type": "update_value",
+                  "value": "重合次数：3"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 2000,
+                  "target_ids": [
+                    "trace-270"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 4000,
+              "fact_refs": [
+                "square-rotational-order"
+              ],
+              "id": "beat-rotate-270",
+              "narration": "旋转到 270 度，第三次完全重合。",
+              "purpose": "observe"
+            },
+            {
+              "actions": [
+                {
+                  "duration_ms": 1000,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "count-label"
+                  ],
+                  "type": "emphasize"
+                },
+                {
+                  "duration_ms": 500,
+                  "start_ms": 0,
+                  "target_ids": [
+                    "trace-360"
+                  ],
+                  "type": "show"
+                }
+              ],
+              "duration_ms": 3000,
+              "fact_refs": [
+                "square-rotational-order"
+              ],
+              "id": "beat-conclude",
+              "narration": "不到一整圈，也就是小于 360 度，正方形共有三次完全重合。",
+              "purpose": "conclude"
+            }
+          ],
+          "start_hold_ms": 1000
+        },
+        "title": "正方形旋转对称次数"
+      },
+      "sample_id": "symmetry.rotation-order"
+    }
+  ],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing was not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "production_logs_sent": false,
+    "synthetic_unverified_fixtures_sent": true
+  },
+  "decision": "await_browser_and_human_review",
+  "evidence": {
+    "fixture_hash": "sha256:2f9236b35062eef53aee7a77967de4078fdd7df3b3807d7688eadefedbee8a2a",
+    "schema_hash": "sha256:e18aeac3191f21225bb94e75cbb69ec265320329a7c81c98be38e85650542efd"
+  },
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_output_tokens": 5000,
+    "repairs": 0,
+    "response_format": "json_object",
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60,
+    "token_budget": 100000
+  },
+  "latency_ms": {
+    "max": 17068,
+    "p50": 11334,
+    "p80": 13941,
+    "p95": 15744
+  },
+  "metrics": {
+    "browser_gate": "not_started",
+    "contract_pass": {
+      "denominator": 10,
+      "numerator": 7
+    },
+    "formal_denominator": false,
+    "human_review": "not_started"
+  },
+  "provider": "deepseek_official",
+  "request_model": "deepseek-v4-flash",
+  "requests": {
+    "attempted": 10,
+    "automatic_retries": 0,
+    "completed": 10,
+    "planned": 10,
+    "repairs": 0
+  },
+  "response_models": [
+    "deepseek-v4-flash"
+  ],
+  "run_at": "2026-07-31T06:37:30.732179+00:00",
+  "run_label": "official-open-world-v02-flash-calibration-round-1",
+  "run_phase": "calibration",
+  "schema_version": "open-visual-scene/0.2",
+  "slice_id": "TS-04C-v3",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 21246,
+    "prompt_tokens": 28243,
+    "total_tokens": 49489
+  }
+}

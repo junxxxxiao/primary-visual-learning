@@ -1,0 +1,4381 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 66880,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:667558b963306d79e8234692c1d45422936c607ce6cdfee0f6eccd5a4898f805",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound.opening-explanation",
+      "schema_valid": true,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 8233,
+        "prompt_tokens": 1340,
+        "total_tokens": 9573
+      },
+      "violation_codes": [
+        "DECLARATION_GATE_EXCEPTION:AttributeError"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60140,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.compare",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60176,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.separate",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 56991,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:82046120c9d48efa84306e0ac6a07c6b661ca0fdfd774f13bc9c3f59544c36ae",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "schema_valid": true,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 6945,
+        "prompt_tokens": 1331,
+        "total_tokens": 8276
+      },
+      "violation_codes": [
+        "DECLARATION_GATE_EXCEPTION:AttributeError"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60199,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 61959,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:9263e6e00a5f90de066fddcf279e8576da29cc9ad683e3b0b25f32580cf7bd31",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.model",
+      "schema_valid": true,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 7718,
+        "prompt_tokens": 1314,
+        "total_tokens": 9032
+      },
+      "violation_codes": [
+        "DECLARATION_GATE_EXCEPTION:AttributeError"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "Expecting property name enclosed in double quotes: line 1149 column 16 (char 44026)",
+      "finish_reason": null,
+      "latency_ms": 92203,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.complete",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "finish_reason": "stop",
+      "latency_ms": 57412,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:ab1c0048dd4a514dbf93494cbf9c60db078a381b445c5f7957530e94631d6dce",
+      "response_model": "deepseek-v4-pro",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.justify",
+      "schema_valid": true,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 6501,
+        "prompt_tokens": 1460,
+        "total_tokens": 7961
+      },
+      "violation_codes": [
+        "DECLARATION_GATE_EXCEPTION:AttributeError"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60161,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_sound_pair.wave-compare",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60189,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_sound_pair.wave-explain",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "sample_id": "primary_sound.opening-explanation",
+        "scene_code": "function renderScene(api, input) {\n  const canvas = api.canvas;\n  const ctx = canvas.getContext('2d');\n  const params = input.parameters;\n  const state = params.state;\n  const viewport = params.viewport;\n  const width = viewport.width;\n  const height = viewport.height;\n\n  // Clear canvas\n  ctx.clearRect(0, 0, width, height);\n\n  // Define colors\n  const bgColor = '#F0F8FF';\n  const stringColor = '#8B4513';\n  const handColor = '#FFDAB9';\n  const arrowColor = '#FF4500';\n  const textColor = '#000000';\n  const labelColor = '#333333';\n\n  // Draw background\n  ctx.fillStyle = bgColor;\n  ctx.fillRect(0, 0, width, height);\n\n  // Determine layout based on viewport\n  let stringY, stringStartX, stringEndX, handX, handY, arrowStartX, arrowEndX, arrowY;\n  let amplitudeArrowLength, loudnessBarHeight, pitchLabelY, loudnessLabelY;\n  let fontSize, labelFontSize;\n\n  if (viewport.name === 'phone') {\n    // Phone layout: 390x632\n    stringY = 200;\n    stringStartX = 50;\n    stringEndX = 340;\n    handX = 195;\n    handY = 180;\n    arrowStartX = 195;\n    arrowEndX = 195;\n    arrowY = 220;\n    amplitudeArrowLength = 60;\n    loudnessBarHeight = 100;\n    pitchLabelY = 400;\n    loudnessLabelY = 500;\n    fontSize = 18;\n    labelFontSize = 16;\n  } else {\n    // Tablet layout: 1024x728\n    stringY = 300;\n    stringStartX = 100;\n    stringEndX = 924;\n    handX = 512;\n    handY = 270;\n    arrowStartX = 512;\n    arrowEndX = 512;\n    arrowY = 320;\n    amplitudeArrowLength = 80;\n    loudnessBarHeight = 150;\n    pitchLabelY = 550;\n    loudnessLabelY = 650;\n    fontSize = 24;\n    labelFontSize = 20;\n  }\n\n  // Draw string (horizontal line)\n  ctx.strokeStyle = stringColor;\n  ctx.lineWidth = 3;\n  ctx.beginPath();\n  ctx.moveTo(stringStartX, stringY);\n  ctx.lineTo(stringEndX, stringY);\n  ctx.stroke();\n\n  // Draw hand (simplified as circle)\n  ctx.fillStyle = handColor;\n  ctx.beginPath();\n  ctx.arc(handX, handY, 20, 0, 2 * Math.PI);\n  ctx.fill();\n  ctx.strokeStyle = '#000000';\n  ctx.lineWidth = 1;\n  ctx.stroke();\n\n  // State-dependent drawing\n  if (state === 'initial' || state === 'static_fallback') {\n    // Initial state: string at rest, no arrows, labels present but no emphasis\n    // Draw labels\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('同一根弦保持不变', width / 2, pitchLabelY);\n    ctx.fillText('分别记录响度和音调', width / 2, loudnessLabelY);\n  } else if (state === 'key_process') {\n    // Key process: show plucking force arrow and amplitude arrow\n    // Draw force arrow (downward from hand)\n    ctx.strokeStyle = arrowColor;\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.moveTo(handX, handY + 20);\n    ctx.lineTo(handX, handY + 60);\n    ctx.stroke();\n    // Arrowhead\n    ctx.beginPath();\n    ctx.moveTo(handX - 5, handY + 55);\n    ctx.lineTo(handX, handY + 60);\n    ctx.lineTo(handX + 5, handY + 55);\n    ctx.fillStyle = arrowColor;\n    ctx.fill();\n\n    // Draw amplitude arrow (vertical, showing vibration)\n    ctx.strokeStyle = arrowColor;\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX, arrowY);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.stroke();\n    // Arrowhead\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX - 5, arrowY + amplitudeArrowLength - 5);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.lineTo(arrowStartX + 5, arrowY + amplitudeArrowLength - 5);\n    ctx.fill();\n\n    // Draw loudness bar (rectangle)\n    ctx.fillStyle = '#FFA500';\n    ctx.fillRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n    ctx.strokeStyle = '#000000';\n    ctx.strokeRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n\n    // Labels\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('响度增大', width / 2, loudnessLabelY + 30);\n    ctx.fillText('音调不变', width / 2, pitchLabelY);\n  } else if (state === 'final') {\n    // Final state: show comparison results\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('响度：明显增大', width / 2, loudnessLabelY);\n    ctx.fillText('音调：保持不变', width / 2, pitchLabelY);\n  } else if (state === 'paused') {\n    // Paused: show current state with pause indicator\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('已暂停', width / 2, height / 2);\n  } else if (state === 'resumed') {\n    // Resumed: continue from paused\n    // Similar to key_process but maybe with motion lines\n    ctx.strokeStyle = arrowColor;\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.moveTo(handX, handY + 20);\n    ctx.lineTo(handX, handY + 60);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(handX - 5, handY + 55);\n    ctx.lineTo(handX, handY + 60);\n    ctx.lineTo(handX + 5, handY + 55);\n    ctx.fillStyle = arrowColor;\n    ctx.fill();\n\n    ctx.strokeStyle = arrowColor;\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX, arrowY);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX - 5, arrowY + amplitudeArrowLength - 5);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.lineTo(arrowStartX + 5, arrowY + amplitudeArrowLength - 5);\n    ctx.fill();\n\n    ctx.fillStyle = '#FFA500';\n    ctx.fillRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n    ctx.strokeStyle = '#000000';\n    ctx.strokeRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('响度增大', width / 2, loudnessLabelY + 30);\n    ctx.fillText('音调不变', width / 2, pitchLabelY);\n  } else if (state === 'post_interaction') {\n    // After interaction: show final state with interaction feedback\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('响度：明显增大', width / 2, loudnessLabelY);\n    ctx.fillText('音调：保持不变', width / 2, pitchLabelY);\n    ctx.fillText('✓ 已确认', width / 2, height - 50);\n  } else if (state === 'reduced_motion') {\n    // Reduced motion: static representation of key process\n    ctx.strokeStyle = arrowColor;\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.moveTo(handX, handY + 20);\n    ctx.lineTo(handX, handY + 60);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(handX - 5, handY + 55);\n    ctx.lineTo(handX, handY + 60);\n    ctx.lineTo(handX + 5, handY + 55);\n    ctx.fillStyle = arrowColor;\n    ctx.fill();\n\n    ctx.strokeStyle = arrowColor;\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX, arrowY);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(arrowStartX - 5, arrowY + amplitudeArrowLength - 5);\n    ctx.lineTo(arrowEndX, arrowY + amplitudeArrowLength);\n    ctx.lineTo(arrowStartX + 5, arrowY + amplitudeArrowLength - 5);\n    ctx.fill();\n\n    ctx.fillStyle = '#FFA500';\n    ctx.fillRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n    ctx.strokeStyle = '#000000';\n    ctx.strokeRect(width / 2 - 20, loudnessLabelY - loudnessBarHeight, 40, loudnessBarHeight);\n\n    ctx.fillStyle = textColor;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = 'center';\n    ctx.fillText('响度增大', width / 2, loudnessLabelY + 30);\n    ctx.fillText('音调不变', width / 2, pitchLabelY);\n  }\n\n  // Emit render complete\n  api.emit('render_complete');\n}",
+        "scene_declaration": {
+          "code_hash": "sha256:f0f9e578fed580a4a1823ee6477d4b5563b3f140640b9ec5c4c277129a097093",
+          "knowledge_version": "1.0.0",
+          "layout_contract_version": "1.0.0",
+          "learning_goal": "建立同一根弦的公平比较，并区分响度和音调。",
+          "scene_id": "primary_sound.opening-explanation",
+          "scene_version": "1.0.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+            "narration": "先固定同一根琴弦的长度、松紧和粗细，只改变拨弦力度。接下来分别比较响度和音调的变化。",
+            "visual": "A hand plucks a string with an arrow indicating force, an amplitude arrow appears, and a loudness bar increases while pitch label remains unchanged."
+          },
+          "teaching_contract_version": "1.0.0",
+          "test_version": "1.0.0",
+          "viewport_profiles": {
+            "phone": {
+              "height": 632,
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 480
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label1",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 480
+                      },
+                      "id": "label2",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 200
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 200
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 220
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 220
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 100,
+                        "width": 40,
+                        "x": 175,
+                        "y": 400
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 100,
+                          "width": 40,
+                          "x": 175,
+                          "y": 400
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 530
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 100,
+                        "x": 145,
+                        "y": 300
+                      },
+                      "id": "pause_indicator",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 480
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 100,
+                        "x": 145,
+                        "y": 580
+                      },
+                      "id": "confirmation",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 200
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 200
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 220
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 220
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 100,
+                        "width": 40,
+                        "x": 175,
+                        "y": 400
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 100,
+                          "width": 40,
+                          "x": 175,
+                          "y": 400
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 530
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 200
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 200
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 60,
+                        "width": 2,
+                        "x": 195,
+                        "y": 220
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 60,
+                          "width": 2,
+                          "x": 195,
+                          "y": 220
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 100,
+                        "width": 40,
+                        "x": 175,
+                        "y": 400
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 100,
+                          "width": 40,
+                          "x": 175,
+                          "y": 400
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 530
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 290,
+                        "x": 50,
+                        "y": 200
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 175,
+                        "y": 160
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 380
+                      },
+                      "id": "label1",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 30,
+                        "width": 200,
+                        "x": 95,
+                        "y": 480
+                      },
+                      "id": "label2",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "width": 390
+            },
+            "tablet": {
+              "height": 728,
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 630
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label1",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 630
+                      },
+                      "id": "label2",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 290
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 290
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 320
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 320
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 150,
+                        "width": 40,
+                        "x": 492,
+                        "y": 500
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 150,
+                          "width": 40,
+                          "x": 492,
+                          "y": 500
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 680
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 100,
+                        "x": 462,
+                        "y": 350
+                      },
+                      "id": "pause_indicator",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 630
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 100,
+                        "x": 462,
+                        "y": 680
+                      },
+                      "id": "confirmation",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 290
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 290
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 320
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 320
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 150,
+                        "width": 40,
+                        "x": 492,
+                        "y": 500
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 150,
+                          "width": 40,
+                          "x": 492,
+                          "y": 500
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 680
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 290
+                      },
+                      "id": "force_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 290
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 80,
+                        "width": 2,
+                        "x": 512,
+                        "y": 320
+                      },
+                      "id": "amplitude_arrow",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 80,
+                          "width": 2,
+                          "x": 512,
+                          "y": 320
+                        },
+                        "type": "static"
+                      },
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 150,
+                        "width": 40,
+                        "x": 492,
+                        "y": 500
+                      },
+                      "id": "loudness_bar",
+                      "motion_envelope": {
+                        "bounds": {
+                          "height": 150,
+                          "width": 40,
+                          "x": 492,
+                          "y": 500
+                        },
+                        "type": "static"
+                      },
+                      "type": "rect"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 680
+                      },
+                      "id": "label_loudness",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label_pitch",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounds": {
+                        "height": 3,
+                        "width": 824,
+                        "x": 100,
+                        "y": 300
+                      },
+                      "id": "string",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 40,
+                        "x": 492,
+                        "y": 250
+                      },
+                      "id": "hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 530
+                      },
+                      "id": "label1",
+                      "motion_envelope": null,
+                      "type": "text"
+                    },
+                    {
+                      "bounds": {
+                        "height": 40,
+                        "width": 300,
+                        "x": 362,
+                        "y": 630
+                      },
+                      "id": "label2",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "width": 1024
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "annotated-sequence",
+          "steps": [
+            "同一根弦保持不变",
+            "分别记录响度和音调"
+          ]
+        }
+      },
+      "sample_id": "primary_sound.opening-explanation"
+    },
+    {
+      "candidate": {
+        "sample_id": "primary_sound_pair.pair-opening-explanation",
+        "scene_code": "function renderScene(api, input) {\n  const canvas = api.canvas;\n  const ctx = canvas.getContext('2d');\n  const params = input.parameters;\n  const state = params.state;\n  const viewport = params.viewport;\n  const width = viewport.width;\n  const height = viewport.height;\n\n  // Clear canvas\n  ctx.clearRect(0, 0, width, height);\n\n  // Determine if phone or tablet\n  const isPhone = width <= 500;\n\n  // Layout constants\n  const rubberBandY = isPhone ? height * 0.4 : height * 0.45;\n  const rubberBandLength = isPhone ? width * 0.7 : width * 0.6;\n  const rubberBandLeft = (width - rubberBandLength) / 2;\n  const rubberBandRight = rubberBandLeft + rubberBandLength;\n  const rubberBandThickness = isPhone ? 6 : 8;\n\n  // Pluck positions\n  const pluckX = rubberBandLeft + rubberBandLength * 0.3;\n  const pluckY = rubberBandY;\n\n  // Amplitude parameters\n  const lightAmplitude = isPhone ? 15 : 20;\n  const strongAmplitude = isPhone ? 40 : 55;\n  let amplitude = 0;\n  let pluckOffset = 0;\n\n  // State handling\n  if (state === 'initial' || state === 'static_fallback') {\n    amplitude = 0;\n    pluckOffset = 0;\n  } else if (state === 'key_process') {\n    // Show both light and strong plucks side by side? Or animate?\n    // For key_process, we'll show the rubber band being plucked with strong force.\n    amplitude = strongAmplitude;\n    pluckOffset = strongAmplitude;\n  } else if (state === 'final') {\n    // Show the result: larger amplitude for strong pluck\n    amplitude = strongAmplitude;\n    pluckOffset = strongAmplitude;\n  } else if (state === 'paused') {\n    amplitude = strongAmplitude * 0.5;\n    pluckOffset = strongAmplitude * 0.5;\n  } else if (state === 'resumed') {\n    amplitude = strongAmplitude;\n    pluckOffset = strongAmplitude;\n  } else if (state === 'post_interaction') {\n    amplitude = strongAmplitude;\n    pluckOffset = strongAmplitude;\n  } else if (state === 'reduced_motion') {\n    amplitude = strongAmplitude * 0.3;\n    pluckOffset = strongAmplitude * 0.3;\n  }\n\n  // Draw rubber band\n  ctx.beginPath();\n  ctx.strokeStyle = '#8B4513';\n  ctx.lineWidth = rubberBandThickness;\n  ctx.moveTo(rubberBandLeft, rubberBandY);\n  // Draw a curve representing the plucked shape\n  const cp1x = rubberBandLeft + rubberBandLength * 0.25;\n  const cp1y = rubberBandY - pluckOffset;\n  const cp2x = rubberBandLeft + rubberBandLength * 0.75;\n  const cp2y = rubberBandY - pluckOffset;\n  ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, rubberBandRight, rubberBandY);\n  ctx.stroke();\n\n  // Draw endpoints (pegs)\n  ctx.fillStyle = '#A9A9A9';\n  ctx.beginPath();\n  ctx.arc(rubberBandLeft, rubberBandY, isPhone ? 8 : 10, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.beginPath();\n  ctx.arc(rubberBandRight, rubberBandY, isPhone ? 8 : 10, 0, Math.PI * 2);\n  ctx.fill();\n\n  // Draw plucking hand indicator (simple arrow or hand)\n  if (pluckOffset > 0) {\n    ctx.fillStyle = '#FFD700';\n    ctx.beginPath();\n    ctx.arc(pluckX, pluckY - pluckOffset, isPhone ? 12 : 15, 0, Math.PI * 2);\n    ctx.fill();\n    // Draw arrow pointing to pluck point\n    ctx.strokeStyle = '#FF4500';\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.moveTo(pluckX, pluckY - pluckOffset - (isPhone ? 20 : 25));\n    ctx.lineTo(pluckX, pluckY - pluckOffset - (isPhone ? 5 : 8));\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(pluckX - 5, pluckY - pluckOffset - (isPhone ? 15 : 20));\n    ctx.lineTo(pluckX, pluckY - pluckOffset - (isPhone ? 5 : 8));\n    ctx.lineTo(pluckX + 5, pluckY - pluckOffset - (isPhone ? 15 : 20));\n    ctx.stroke();\n  }\n\n  // Labels\n  ctx.font = isPhone ? '14px sans-serif' : '18px sans-serif';\n  ctx.fillStyle = '#000';\n  ctx.textAlign = 'center';\n  ctx.fillText('橡皮筋', width / 2, rubberBandY - (isPhone ? 50 : 60));\n\n  // Amplitude indicator\n  if (amplitude > 0) {\n    ctx.strokeStyle = '#FF0000';\n    ctx.lineWidth = 1;\n    ctx.setLineDash([5, 3]);\n    ctx.beginPath();\n    ctx.moveTo(pluckX, rubberBandY);\n    ctx.lineTo(pluckX, rubberBandY - amplitude);\n    ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillStyle = '#FF0000';\n    ctx.font = isPhone ? '12px sans-serif' : '14px sans-serif';\n    ctx.fillText('振幅', pluckX, rubberBandY - amplitude - 5);\n  }\n\n  // Force label\n  ctx.fillStyle = '#000';\n  ctx.font = isPhone ? '12px sans-serif' : '14px sans-serif';\n  if (state === 'initial' || state === 'static_fallback') {\n    ctx.fillText('轻拨', pluckX, rubberBandY + (isPhone ? 30 : 40));\n  } else {\n    ctx.fillText('重拨', pluckX, rubberBandY + (isPhone ? 30 : 40));\n  }\n\n  // Teaching facts\n  ctx.fillStyle = '#000';\n  ctx.font = isPhone ? '12px sans-serif' : '14px sans-serif';\n  ctx.textAlign = 'left';\n  ctx.fillText('固定同一根橡皮筋，只改变拨动的力气。', 10, height - 40);\n  ctx.fillText('轻拨：振幅小，响度小；重拨：振幅大，响度大。', 10, height - 20);\n  ctx.fillText('音调不变。', 10, height - 5);\n\n  api.emit('render_complete');\n}\n",
+        "scene_declaration": {
+          "code_hash": "sha256:351da3cebf27e9d86d5db9917d2174ea36c5875a869d8dfcae4a3301e06f689e",
+          "knowledge_version": "1.0",
+          "layout_contract_version": "1.0",
+          "learning_goal": "建立同一根橡皮筋的公平比较。",
+          "scene_id": "primary_sound_pair.pair-opening-explanation",
+          "scene_version": "1.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "expected": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch.",
+            "fact_refs": [
+              "force-amplitude-pitch"
+            ],
+            "narration": "固定同一根橡皮筋，只改变拨动的力气。把轻拨和重拨放在一起，分别比较响度和音调。",
+            "visual": "固定同一根橡皮筋，只改变拨动的力气。把轻拨和重拨放在一起，分别比较响度和音调。"
+          },
+          "teaching_contract_version": "1.0",
+          "test_version": "1.0",
+          "viewport_profiles": {
+            "phone": {
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        212.8,
+                        270,
+                        46
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        212.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        212.8,
+                        0,
+                        40
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        252.8,
+                        270,
+                        6
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        212.8,
+                        270,
+                        46
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": {
+                        "direction": "up",
+                        "max_displacement": 40,
+                        "type": "vertical_displacement"
+                      },
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        212.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": {
+                        "direction": "up",
+                        "max_displacement": 40,
+                        "type": "vertical_displacement"
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        212.8,
+                        0,
+                        40
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        232.8,
+                        270,
+                        26
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        232.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        232.8,
+                        0,
+                        20
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        212.8,
+                        270,
+                        46
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        212.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        212.8,
+                        0,
+                        40
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        240.8,
+                        270,
+                        10
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        240.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        240.8,
+                        0,
+                        12
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        212.8,
+                        270,
+                        46
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        129,
+                        212.8,
+                        24,
+                        24
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        141,
+                        212.8,
+                        0,
+                        40
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        60,
+                        252.8,
+                        270,
+                        6
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        52,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        322,
+                        244.8,
+                        16,
+                        16
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        150,
+                        202.8,
+                        90,
+                        14
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "viewport": [
+                390,
+                632
+              ]
+            },
+            "tablet": {
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        272.6,
+                        614.4,
+                        63
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        272.6,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        272.6,
+                        0,
+                        55
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        327.6,
+                        614.4,
+                        8
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        272.6,
+                        614.4,
+                        63
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": {
+                        "direction": "up",
+                        "max_displacement": 55,
+                        "type": "vertical_displacement"
+                      },
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        272.6,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": {
+                        "direction": "up",
+                        "max_displacement": 55,
+                        "type": "vertical_displacement"
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        272.6,
+                        0,
+                        55
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        300.1,
+                        614.4,
+                        35.5
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        300.1,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        300.1,
+                        0,
+                        27.5
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        272.6,
+                        614.4,
+                        63
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        272.6,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        272.6,
+                        0,
+                        55
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        311.1,
+                        614.4,
+                        13.5
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        311.1,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        311.1,
+                        0,
+                        16.5
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        272.6,
+                        614.4,
+                        63
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        374.2,
+                        272.6,
+                        30,
+                        30
+                      ],
+                      "id": "pluck_hand",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        389.2,
+                        272.6,
+                        0,
+                        55
+                      ],
+                      "id": "amplitude_indicator",
+                      "motion_envelope": null,
+                      "type": "line"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounding_box": [
+                        204.8,
+                        327.6,
+                        614.4,
+                        8
+                      ],
+                      "id": "rubber_band",
+                      "motion_envelope": null,
+                      "type": "bezier_curve"
+                    },
+                    {
+                      "bounding_box": [
+                        194.8,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "left_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        809.2,
+                        317.6,
+                        20,
+                        20
+                      ],
+                      "id": "right_peg",
+                      "motion_envelope": null,
+                      "type": "circle"
+                    },
+                    {
+                      "bounding_box": [
+                        467,
+                        267.6,
+                        90,
+                        18
+                      ],
+                      "id": "label",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "viewport": [
+                1024,
+                728
+              ]
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "kind": "annotated-sequence",
+          "steps": [
+            "固定同一根橡皮筋",
+            "比较轻拨与重拨"
+          ]
+        }
+      },
+      "sample_id": "primary_sound_pair.pair-opening-explanation"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.model",
+        "scene_code": "function renderScene(api, input) {\n  const canvas = api.canvas;\n  const ctx = canvas.getContext('2d');\n  const params = input.parameters;\n  const state = params.state;\n  const viewport = params.viewport;\n  const width = viewport.width;\n  const height = viewport.height;\n\n  // Clear canvas\n  ctx.clearRect(0, 0, width, height);\n\n  // Determine if phone or tablet\n  const isPhone = width <= 500;\n\n  // Layout constants\n  const margin = isPhone ? 20 : 40;\n  const diagramWidth = isPhone ? width - 2 * margin : (width - 2 * margin) * 0.6;\n  const diagramHeight = isPhone ? height * 0.4 : height * 0.5;\n  const diagramX = margin;\n  const diagramY = isPhone ? margin : height * 0.1;\n\n  // Colors\n  const wallColor = '#8B4513';\n  const fenceColor = '#2E8B57';\n  const labelColor = '#000000';\n  const bgColor = '#FFFFFF';\n\n  // Draw background\n  ctx.fillStyle = bgColor;\n  ctx.fillRect(0, 0, width, height);\n\n  // Draw wall (left side)\n  ctx.fillStyle = wallColor;\n  ctx.fillRect(diagramX, diagramY, 10, diagramHeight);\n\n  // Draw fence (three sides)\n  ctx.strokeStyle = fenceColor;\n  ctx.lineWidth = 3;\n  ctx.beginPath();\n  // Top side\n  ctx.moveTo(diagramX + 10, diagramY);\n  ctx.lineTo(diagramX + diagramWidth, diagramY);\n  // Right side\n  ctx.lineTo(diagramX + diagramWidth, diagramY + diagramHeight);\n  // Bottom side\n  ctx.lineTo(diagramX + 10, diagramY + diagramHeight);\n  ctx.stroke();\n\n  // Labels\n  ctx.fillStyle = labelColor;\n  ctx.font = isPhone ? '14px sans-serif' : '18px sans-serif';\n  ctx.textAlign = 'center';\n\n  // Label for short side (x)\n  const shortSideLabelX = diagramX + diagramWidth + 20;\n  const shortSideLabelY = diagramY + diagramHeight / 2;\n  ctx.fillText('x', shortSideLabelX, shortSideLabelY);\n\n  // Label for long side (L - 2x)\n  const longSideLabelX = diagramX + diagramWidth / 2;\n  const longSideLabelY = diagramY - 10;\n  ctx.fillText('L - 2x', longSideLabelX, longSideLabelY);\n\n  // Area expression\n  const areaText = '面积 = x(L - 2x)';\n  ctx.font = isPhone ? '16px sans-serif' : '20px sans-serif';\n  ctx.textAlign = 'left';\n  const areaTextX = margin;\n  const areaTextY = diagramY + diagramHeight + (isPhone ? 30 : 50);\n  ctx.fillText(areaText, areaTextX, areaTextY);\n\n  // Handle states\n  if (state === 'initial') {\n    // Show static diagram\n  } else if (state === 'key_process') {\n    // Animate? For simplicity, just draw.\n  } else if (state === 'final') {\n    // Show completed expression\n  } else if (state === 'paused') {\n    // Paused state, maybe dim?\n  } else if (state === 'resumed') {\n    // Resume\n  } else if (state === 'post_interaction') {\n    // After interaction\n  } else if (state === 'reduced_motion') {\n    // Reduced motion\n  } else if (state === 'static_fallback') {\n    // Static fallback: show steps\n    ctx.fillStyle = '#000';\n    ctx.font = isPhone ? '14px sans-serif' : '18px sans-serif';\n    const steps = params.static_fallback.steps;\n    let y = areaTextY + 40;\n    for (const step of steps) {\n      ctx.fillText(step, margin, y);\n      y += 30;\n    }\n  }\n\n  api.emit('render_complete');\n}",
+        "scene_declaration": {
+          "code_hash": "sha256:d0f4244882b735434b0ef6aa8bf039614c1c995c9b1042b0dea3d87e8ab11127",
+          "knowledge_version": "1.0",
+          "layout_contract_version": "1.0",
+          "learning_goal": "把三边围栏条件转成面积表达式。",
+          "scene_id": "middle_perfect_square.model",
+          "scene_version": "1.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "claims": [
+              {
+                "claim_id": "fence-transfer",
+                "critical": true,
+                "evidence_refs": [
+                  {
+                    "page": 35,
+                    "quote": "Completing the square identifies the maximizing dimensions",
+                    "source_id": "middle-perfect-square-synthetic-v1"
+                  }
+                ],
+                "supported_terms": [
+                  "面积",
+                  "最大值",
+                  "配方"
+                ],
+                "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+              }
+            ],
+            "core_relation": "complete_square_exposes_extremum",
+            "cues": [
+              {
+                "action": "show_start_frame",
+                "at_ms": 0,
+                "cue_id": "model-start"
+              },
+              {
+                "action": "start_narration",
+                "at_ms": 1000,
+                "cue_id": "model-narration"
+              },
+              {
+                "action": "start_visual",
+                "at_ms": 1000,
+                "cue_id": "model-visual"
+              }
+            ],
+            "fixture_kind": "gold_fixture",
+            "input_hash": "sha256:417a386ee9194111e91126f1f2c3f3c148442d2bfd0bf67522cc916b7df08854",
+            "learning_goal": "把三边围栏条件转成面积表达式。",
+            "narration": "先画出靠墙的长方形。设两条短边为 x，剩下的一条长边由总长度决定，再写出面积。",
+            "sample_id": "middle_perfect_square.model",
+            "school_stage": "middle",
+            "source_fixture_hash": "sha256:6b73c919e4481a228809bc62c5550157faea04a4a6a7589e2b103cb3649213b1",
+            "source_kind": "synthetic_gold_fixture",
+            "source_plan_schema": "lesson-plan/1.3",
+            "source_run_label": "ts03-gold-fixtures",
+            "stage_profile": {
+              "curriculum": "synthetic-national-curriculum-2026",
+              "grade": 8,
+              "profile_version": "1.0",
+              "school_stage": "middle",
+              "textbook_edition": "synthetic-middle-math-2026"
+            },
+            "static_fallback": {
+              "fact_refs": [
+                "fence-transfer"
+              ],
+              "kind": "worked-steps",
+              "steps": [
+                "设短边为 x",
+                "写出第三边",
+                "列出面积表达式"
+              ]
+            },
+            "visual_contract": {
+              "element_count": 7,
+              "formula_symbol_count": 8,
+              "layout_kind": "step-stack",
+              "scene_contract": {
+                "contract_version": "visual-scene/1.0",
+                "motion_envelope_required": true,
+                "viewports": [
+                  "phone",
+                  "tablet"
+                ]
+              },
+              "states": [
+                "fence-diagram",
+                "length-labels",
+                "area-expression"
+              ],
+              "terms": [
+                "面积"
+              ]
+            }
+          },
+          "teaching_contract_version": "1.0",
+          "test_version": "1.0",
+          "viewport_profiles": {
+            "phone": {
+              "height": 632,
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 252,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 20,
+                      "y": 20
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          30,
+                          20
+                        ],
+                        [
+                          350,
+                          20
+                        ],
+                        [
+                          350,
+                          272
+                        ],
+                        [
+                          30,
+                          272
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 370,
+                      "y": 146
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 190,
+                      "y": 10
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "16px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 20,
+                      "y": 302
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "step1",
+                      "text": "设短边为 x",
+                      "type": "text",
+                      "x": 20,
+                      "y": 342
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "step2",
+                      "text": "写出第三边",
+                      "type": "text",
+                      "x": 20,
+                      "y": 372
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "14px sans-serif",
+                      "id": "step3",
+                      "text": "列出面积表达式",
+                      "type": "text",
+                      "x": 20,
+                      "y": 402
+                    }
+                  ]
+                }
+              },
+              "width": 390
+            },
+            "tablet": {
+              "height": 728,
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "color": "#8B4513",
+                      "height": 364,
+                      "id": "wall",
+                      "type": "rect",
+                      "width": 10,
+                      "x": 40,
+                      "y": 72
+                    },
+                    {
+                      "color": "#2E8B57",
+                      "id": "fence",
+                      "lineWidth": 3,
+                      "points": [
+                        [
+                          50,
+                          72
+                        ],
+                        [
+                          614,
+                          72
+                        ],
+                        [
+                          614,
+                          436
+                        ],
+                        [
+                          50,
+                          436
+                        ]
+                      ],
+                      "type": "path"
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_x",
+                      "text": "x",
+                      "type": "text",
+                      "x": 634,
+                      "y": 254
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "label_L_minus_2x",
+                      "text": "L - 2x",
+                      "type": "text",
+                      "x": 332,
+                      "y": 62
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "20px sans-serif",
+                      "id": "area_expression",
+                      "text": "面积 = x(L - 2x)",
+                      "type": "text",
+                      "x": 40,
+                      "y": 486
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "step1",
+                      "text": "设短边为 x",
+                      "type": "text",
+                      "x": 40,
+                      "y": 526
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "step2",
+                      "text": "写出第三边",
+                      "type": "text",
+                      "x": 40,
+                      "y": 556
+                    },
+                    {
+                      "color": "#000000",
+                      "font": "18px sans-serif",
+                      "id": "step3",
+                      "text": "列出面积表达式",
+                      "type": "text",
+                      "x": 40,
+                      "y": 586
+                    }
+                  ]
+                }
+              },
+              "width": 1024
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "fence-transfer"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "设短边为 x",
+            "写出第三边",
+            "列出面积表达式"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.model"
+    },
+    {
+      "candidate": {
+        "sample_id": "middle_perfect_square.justify",
+        "scene_code": "function renderScene(api, input) {\n  const canvas = api.canvas;\n  const ctx = canvas.getContext('2d');\n  const state = input.parameters.state;\n  const viewport = input.parameters.viewport;\n  const width = viewport[0];\n  const height = viewport[1];\n\n  // Clear canvas\n  ctx.clearRect(0, 0, width, height);\n\n  // Define colors\n  const colors = {\n    background: '#f9f9f9',\n    fence: '#8B4513',\n    wall: '#555555',\n    area: '#90EE90',\n    text: '#000000',\n    highlight: '#FFD700',\n    axis: '#000000',\n    curve: '#0000FF',\n    point: '#FF0000'\n  };\n\n  // Helper function to draw text\n  function drawText(text, x, y, fontSize, color, align) {\n    ctx.fillStyle = color;\n    ctx.font = `${fontSize}px Arial`;\n    ctx.textAlign = align || 'left';\n    ctx.fillText(text, x, y);\n  }\n\n  // Helper function to draw rectangle\n  function drawRect(x, y, w, h, color) {\n    ctx.fillStyle = color;\n    ctx.fillRect(x, y, w, h);\n  }\n\n  // Helper function to draw line\n  function drawLine(x1, y1, x2, y2, color, lineWidth) {\n    ctx.strokeStyle = color;\n    ctx.lineWidth = lineWidth || 1;\n    ctx.beginPath();\n    ctx.moveTo(x1, y1);\n    ctx.lineTo(x2, y2);\n    ctx.stroke();\n  }\n\n  // Helper function to draw circle\n  function drawCircle(x, y, radius, color) {\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.arc(x, y, radius, 0, 2 * Math.PI);\n    ctx.fill();\n  }\n\n  // Layout parameters based on viewport\n  let layout;\n  if (width === 390 && height === 632) { // phone\n    layout = {\n      graphX: 20, graphY: 20, graphW: 350, graphH: 200,\n      fenceX: 20, fenceY: 240, fenceW: 350, fenceH: 200,\n      textX: 20, textY: 460, textW: 350, textH: 150,\n      fontSizeSmall: 12, fontSizeMedium: 14, fontSizeLarge: 16\n    };\n  } else { // tablet\n    layout = {\n      graphX: 50, graphY: 30, graphW: 400, graphH: 250,\n      fenceX: 500, fenceY: 30, fenceW: 474, fenceH: 250,\n      textX: 50, textY: 310, textW: 924, textH: 388,\n      fontSizeSmall: 14, fontSizeMedium: 18, fontSizeLarge: 22\n    };\n  }\n\n  // Draw background\n  drawRect(0, 0, width, height, colors.background);\n\n  // State-specific rendering\n  if (state === 'static_fallback') {\n    // Render static fallback: worked steps\n    const steps = [\n      \"平方项始终非负\",\n      \"平方项为零时减去量最小\",\n      \"因此面积达到最大值\"\n    ];\n    let y = layout.textY + 30;\n    drawText(\"推理步骤:\", layout.textX, y, layout.fontSizeLarge, colors.text, 'left');\n    y += 30;\n    steps.forEach(step => {\n      drawText(step, layout.textX + 20, y, layout.fontSizeMedium, colors.text, 'left');\n      y += 25;\n    });\n    api.emit('render_complete');\n    return;\n  }\n\n  // Common elements for all states\n  // Draw graph area (coordinate system)\n  const graphX = layout.graphX;\n  const graphY = layout.graphY;\n  const graphW = layout.graphW;\n  const graphH = layout.graphH;\n\n  // Draw axes\n  drawLine(graphX, graphY + graphH, graphX + graphW, graphY + graphH, colors.axis, 2); // x-axis\n  drawLine(graphX, graphY, graphX, graphY + graphH, colors.axis, 2); // y-axis\n\n  // Labels\n  drawText('x', graphX + graphW + 5, graphY + graphH, layout.fontSizeSmall, colors.text);\n  drawText('A', graphX - 15, graphY - 5, layout.fontSizeSmall, colors.text);\n\n  // Draw parabola (A = -x^2 + 10x, simplified for visualization)\n  // We'll draw a parabola that opens downward, vertex at (5,25)\n  const scaleX = graphW / 10;\n  const scaleY = graphH / 30;\n  ctx.strokeStyle = colors.curve;\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  for (let i = 0; i <= 10; i += 0.1) {\n    const x = i;\n    const y = -x * x + 10 * x;\n    const canvasX = graphX + x * scaleX;\n    const canvasY = graphY + graphH - y * scaleY;\n    if (i === 0) {\n      ctx.moveTo(canvasX, canvasY);\n    } else {\n      ctx.lineTo(canvasX, canvasY);\n    }\n  }\n  ctx.stroke();\n\n  // Draw fence diagram (wall and rectangle)\n  const fenceX = layout.fenceX;\n  const fenceY = layout.fenceY;\n  const fenceW = layout.fenceW;\n  const fenceH = layout.fenceH;\n\n  // Wall\n  drawRect(fenceX, fenceY, 10, fenceH, colors.wall);\n  drawText('墙', fenceX + 5, fenceY + fenceH/2, layout.fontSizeSmall, colors.text, 'center');\n\n  // Rectangle (fence)\n  const rectX = fenceX + 10;\n  const rectY = fenceY + 20;\n  const rectW = fenceW - 30;\n  const rectH = fenceH - 40;\n  drawRect(rectX, rectY, rectW, rectH, colors.area);\n  drawText('面积 A', rectX + rectW/2, rectY + rectH/2, layout.fontSizeMedium, colors.text, 'center');\n\n  // Fence lines\n  drawLine(rectX, rectY, rectX + rectW, rectY, colors.fence, 3);\n  drawLine(rectX + rectW, rectY, rectX + rectW, rectY + rectH, colors.fence, 3);\n  drawLine(rectX, rectY + rectH, rectX + rectW, rectY + rectH, colors.fence, 3);\n\n  // Dimensions\n  drawText('x', rectX + rectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n  drawText('10-2x', rectX + rectW + 5, rectY + rectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n  // Text area for narration\n  const textX = layout.textX;\n  const textY = layout.textY;\n  const textW = layout.textW;\n\n  // State-specific modifications\n  if (state === 'initial' || state === 'reduced_motion') {\n    // Show initial state: parabola with vertex highlighted, rectangle with x=2.5\n    // Highlight vertex on graph\n    const vertexX = graphX + 5 * scaleX;\n    const vertexY = graphY + graphH - 25 * scaleY;\n    drawCircle(vertexX, vertexY, 5, colors.point);\n    drawText('(5,25)', vertexX + 10, vertexY - 10, layout.fontSizeSmall, colors.text);\n\n    // Adjust rectangle to x=2.5 (width=5, height=5)\n    const demoRectW = 5 * (fenceW - 30) / 10; // scale to fence width\n    const demoRectH = 5 * (fenceH - 40) / 10;\n    drawRect(rectX, rectY, demoRectW, demoRectH, colors.area);\n    drawText('x=2.5', rectX + demoRectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n    drawText('10-2x=5', rectX + demoRectW + 5, rectY + demoRectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n    // Narration text\n    drawText('平方项非负，当平方项为零时面积最大。', textX, textY + 20, layout.fontSizeMedium, colors.text);\n  } else if (state === 'key_process') {\n    // Show process: square term decreasing\n    // Animate? Since synchronous, we show a snapshot: square term positive\n    // Draw parabola with a point not at vertex\n    const pointX = graphX + 3 * scaleX;\n    const pointY = graphY + graphH - ( -9 + 30 ) * scaleY; // y = -9+30=21\n    drawCircle(pointX, pointY, 5, colors.point);\n    drawText('(3,21)', pointX + 10, pointY - 10, layout.fontSizeSmall, colors.text);\n\n    // Rectangle with x=3\n    const demoRectW = 3 * (fenceW - 30) / 10;\n    const demoRectH = 4 * (fenceH - 40) / 10; // 10-2*3=4\n    drawRect(rectX, rectY, demoRectW, demoRectH, colors.area);\n    drawText('x=3', rectX + demoRectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n    drawText('10-2x=4', rectX + demoRectW + 5, rectY + demoRectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n    drawText('平方项为正，面积未达最大。', textX, textY + 20, layout.fontSizeMedium, colors.text);\n  } else if (state === 'final' || state === 'post_interaction') {\n    // Show final state: square term zero, maximum area\n    const vertexX = graphX + 5 * scaleX;\n    const vertexY = graphY + graphH - 25 * scaleY;\n    drawCircle(vertexX, vertexY, 5, colors.point);\n    drawText('(5,25)', vertexX + 10, vertexY - 10, layout.fontSizeSmall, colors.text);\n\n    const demoRectW = 5 * (fenceW - 30) / 10;\n    const demoRectH = 5 * (fenceH - 40) / 10;\n    drawRect(rectX, rectY, demoRectW, demoRectH, colors.area);\n    drawText('x=5', rectX + demoRectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n    drawText('10-2x=0?', rectX + demoRectW + 5, rectY + demoRectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n    drawText('平方项为零，面积最大！', textX, textY + 20, layout.fontSizeMedium, colors.text);\n  } else if (state === 'paused') {\n    // Paused: show intermediate state with pause indicator\n    const pointX = graphX + 4 * scaleX;\n    const pointY = graphY + graphH - ( -16 + 40 ) * scaleY; // y = -16+40=24\n    drawCircle(pointX, pointY, 5, colors.point);\n    drawText('(4,24)', pointX + 10, pointY - 10, layout.fontSizeSmall, colors.text);\n\n    const demoRectW = 4 * (fenceW - 30) / 10;\n    const demoRectH = 2 * (fenceH - 40) / 10; // 10-8=2\n    drawRect(rectX, rectY, demoRectW, demoRectH, colors.area);\n    drawText('x=4', rectX + demoRectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n    drawText('10-2x=2', rectX + demoRectW + 5, rectY + demoRectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n    drawText('已暂停', textX, textY + 20, layout.fontSizeMedium, colors.text);\n  } else if (state === 'resumed') {\n    // Resumed: similar to key_process but with resume indicator\n    const pointX = graphX + 4.5 * scaleX;\n    const pointY = graphY + graphH - ( -20.25 + 45 ) * scaleY; // y = -20.25+45=24.75\n    drawCircle(pointX, pointY, 5, colors.point);\n    drawText('(4.5,24.75)', pointX + 10, pointY - 10, layout.fontSizeSmall, colors.text);\n\n    const demoRectW = 4.5 * (fenceW - 30) / 10;\n    const demoRectH = 1 * (fenceH - 40) / 10; // 10-9=1\n    drawRect(rectX, rectY, demoRectW, demoRectH, colors.area);\n    drawText('x=4.5', rectX + demoRectW/2, rectY - 5, layout.fontSizeSmall, colors.text, 'center');\n    drawText('10-2x=1', rectX + demoRectW + 5, rectY + demoRectH/2, layout.fontSizeSmall, colors.text, 'left');\n\n    drawText('继续播放', textX, textY + 20, layout.fontSizeMedium, colors.text);\n  }\n\n  api.emit('render_complete');\n}",
+        "scene_declaration": {
+          "code_hash": "sha256:02cc0182b454255738b6efe5bf965b1e91eaa769468c6e12fc1f28d9fe01b396",
+          "knowledge_version": "1.0.0",
+          "layout_contract_version": "1.0.0",
+          "learning_goal": "用平方项的符号说明最大面积，而不只报数值。",
+          "scene_id": "middle_perfect_square_justify",
+          "scene_version": "1.0.0",
+          "schema_version": "visual-scene/1.0",
+          "teaching": {
+            "claims": [
+              {
+                "claim_id": "complete-square-bound",
+                "critical": true,
+                "evidence_refs": [
+                  {
+                    "page": 34,
+                    "quote": "a real square is nonnegative",
+                    "source_id": "middle-perfect-square-synthetic-v1"
+                  }
+                ],
+                "supported_terms": [
+                  "完全平方",
+                  "配方",
+                  "非负",
+                  "最大值"
+                ],
+                "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square."
+              },
+              {
+                "claim_id": "fence-transfer",
+                "critical": true,
+                "evidence_refs": [
+                  {
+                    "page": 35,
+                    "quote": "Completing the square identifies the maximizing dimensions",
+                    "source_id": "middle-perfect-square-synthetic-v1"
+                  }
+                ],
+                "supported_terms": [
+                  "面积",
+                  "最大值",
+                  "配方"
+                ],
+                "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+              }
+            ],
+            "core_relation": "complete_square_exposes_extremum",
+            "cues": [
+              {
+                "action": "show_start_frame",
+                "at_ms": 0,
+                "cue_id": "justify-start"
+              },
+              {
+                "action": "start_narration",
+                "at_ms": 1000,
+                "cue_id": "justify-narration"
+              },
+              {
+                "action": "start_visual",
+                "at_ms": 1000,
+                "cue_id": "justify-visual"
+              },
+              {
+                "action": "show_conclusion",
+                "at_ms": 2800,
+                "cue_id": "justify-conclusion"
+              }
+            ],
+            "narration": "当平方项等于零时，被减去的量最小，面积达到最大值。这个符号理由说明了答案为什么最大。",
+            "static_fallback": {
+              "fact_refs": [
+                "complete-square-bound",
+                "fence-transfer"
+              ],
+              "kind": "worked-steps",
+              "steps": [
+                "平方项始终非负",
+                "平方项为零时减去量最小",
+                "因此面积达到最大值"
+              ]
+            }
+          },
+          "teaching_contract_version": "1.0.0",
+          "test_version": "1.0.0",
+          "viewport_profiles": {
+            "phone": {
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        20,
+                        350,
+                        200
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        240,
+                        350,
+                        200
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        20,
+                        460,
+                        350,
+                        150
+                      ],
+                      "id": "fallback_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "viewport": [
+                390,
+                632
+              ]
+            },
+            "tablet": {
+              "states": {
+                "final": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "initial": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "key_process": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "paused": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "post_interaction": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "reduced_motion": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "resumed": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        30,
+                        400,
+                        250
+                      ],
+                      "id": "graph",
+                      "motion_envelope": null,
+                      "type": "coordinate_system"
+                    },
+                    {
+                      "bounds": [
+                        500,
+                        30,
+                        474,
+                        250
+                      ],
+                      "id": "fence_diagram",
+                      "motion_envelope": null,
+                      "type": "diagram"
+                    },
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "narration_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                },
+                "static_fallback": {
+                  "elements": [
+                    {
+                      "bounds": [
+                        50,
+                        310,
+                        924,
+                        388
+                      ],
+                      "id": "fallback_text",
+                      "motion_envelope": null,
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "viewport": [
+                1024,
+                728
+              ]
+            }
+          }
+        },
+        "schema_version": "generated-scene/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "kind": "worked-steps",
+          "steps": [
+            "平方项始终非负",
+            "平方项为零时减去量最小",
+            "因此面积达到最大值"
+          ]
+        }
+      },
+      "sample_id": "middle_perfect_square.justify"
+    }
+  ],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing is not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "sealed_synthetic_knowledge_sent": true
+  },
+  "decision": "calibration_only",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 12000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0.0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_started"
+  },
+  "latency_ms": {
+    "max": 92203,
+    "p50": 60182,
+    "p80": 62943,
+    "p95": 80808
+  },
+  "limits": [
+    "Calibration samples do not enter the formal denominator.",
+    "Declared bounds do not replace browser measurements or pixel checks.",
+    "Machine checks do not replace subject and product review."
+  ],
+  "metrics": {
+    "declaration_gate_pass": {
+      "denominator": 10,
+      "numerator": 0
+    },
+    "formal_denominator": false,
+    "sandbox_execution": "pending",
+    "schema_validity": {
+      "denominator": 10,
+      "numerator": 4
+    }
+  },
+  "provider": "deepseek",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 10,
+    "automatic_retries": 0,
+    "completed": 4,
+    "planned": 10
+  },
+  "response_models": [
+    "deepseek-v4-pro"
+  ],
+  "run_at": "2026-07-30T13:08:37.774889+00:00",
+  "run_label": "official-calibration-round-4",
+  "run_phase": "calibration",
+  "slice_id": "TS-04C",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 29397,
+    "prompt_tokens": 5445,
+    "total_tokens": 34842
+  }
+}

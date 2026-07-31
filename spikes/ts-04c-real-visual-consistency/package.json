@@ -1,0 +1,12 @@
+{
+  "name": "ts-04c-hybrid-scene-harness",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@motion-canvas/2d": "3.17.2",
+    "@motion-canvas/core": "3.17.2",
+    "@motion-canvas/create": "3.17.2",
+    "@motion-canvas/ffmpeg": "3.17.2",
+    "@motion-canvas/vite-plugin": "3.17.2"
+  }
+}

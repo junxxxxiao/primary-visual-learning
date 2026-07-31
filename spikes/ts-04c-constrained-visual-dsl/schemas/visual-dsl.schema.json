@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-dsl/0.1",
+  "title": "TS-04C constrained visual scene specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "scene_id", "scene_type", "title", "labels", "facts", "color_tokens", "interaction", "static_fallback"],
+  "properties": {
+    "schema_version": {"const": "visual-dsl/0.1"},
+    "sample_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+    "scene_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"},
+    "scene_type": {"enum": ["comparison", "sequence", "area_model", "wave"]},
+    "title": {"type": "string", "minLength": 1, "maxLength": 40},
+    "labels": {"type": "array", "minItems": 2, "maxItems": 4, "items": {"type": "string", "minLength": 1, "maxLength": 24}},
+    "facts": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"}},
+    "color_tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "accent"],
+      "properties": {
+        "primary": {"enum": ["science-green", "math-blue"]},
+        "accent": {"enum": ["signal-coral", "focus-yellow"]}
+      }
+    },
+    "interaction": {"enum": ["none", "toggle", "compare"]},
+    "static_fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steps", "fact_refs"],
+      "properties": {
+        "steps": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string", "minLength": 1, "maxLength": 60}},
+        "fact_refs": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"}}
+      }
+    }
+  }
+}

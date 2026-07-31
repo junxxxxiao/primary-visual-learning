@@ -1,0 +1,1135 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "call_results": [
+    {
+      "contract_pass": true,
+      "latency_ms": 4689,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:dfb3c627bcb9f43d0b86b1531c0a44eea7a31d727348cfd548c5039ecf8502e4",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "primary_sound.opening-explanation",
+      "usage": {
+        "completion_tokens": 932,
+        "prompt_tokens": 1959,
+        "total_tokens": 2891
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 4882,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:6e8bf807a0bf364bf59223ed48e13554a20f40417dce9de649d88dea0bc1413e",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "primary_sound.compare",
+      "usage": {
+        "completion_tokens": 874,
+        "prompt_tokens": 1949,
+        "total_tokens": 2823
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 4587,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:54df4ef6affa872a937182afb06ce69ab00249d18c43163a87bbc3cff1111ee9",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "primary_sound.separate",
+      "usage": {
+        "completion_tokens": 847,
+        "prompt_tokens": 2012,
+        "total_tokens": 2859
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 4374,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:83d36624401bfb24b29f6651b96208f50e388db6d1f7d3f88401bfad8eabbb35",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "usage": {
+        "completion_tokens": 799,
+        "prompt_tokens": 1951,
+        "total_tokens": 2750
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 4213,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:62a2c0d67d07b037a59020e0a567a0b8edab785c7d8315fa6401790aaa8445a8",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "usage": {
+        "completion_tokens": 815,
+        "prompt_tokens": 1951,
+        "total_tokens": 2766
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": false,
+      "latency_ms": 3346,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:0022d14dfd8541163e8c5425742f5f814d8efe2dd99a6127e2c14cc0ee7500ff",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.model",
+      "usage": {
+        "completion_tokens": 501,
+        "prompt_tokens": 1939,
+        "total_tokens": 2440
+      },
+      "violation_codes": [
+        "$.scene.nodes[1].width: above maximum"
+      ]
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 2839,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:5425feda06843f6467bf57dbc0fb7fc135ee8808a0a63eaa9c61c572a56a68cd",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.complete",
+      "usage": {
+        "completion_tokens": 496,
+        "prompt_tokens": 1992,
+        "total_tokens": 2488
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": true,
+      "latency_ms": 3300,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:8a1ba504814e426023108129973b25eee671a46ef79d15b02d09deb8b92da9b6",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "middle_perfect_square.justify",
+      "usage": {
+        "completion_tokens": 569,
+        "prompt_tokens": 2001,
+        "total_tokens": 2570
+      },
+      "violation_codes": []
+    },
+    {
+      "contract_pass": false,
+      "latency_ms": 4954,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:f57a111d67c43b15eddf801ec6cf2883c4a654728961604442eaa581f49783e7",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "middle_sound_pair.wave-compare",
+      "usage": {
+        "completion_tokens": 884,
+        "prompt_tokens": 1944,
+        "total_tokens": 2828
+      },
+      "violation_codes": [
+        "$.scene.nodes[0].width: above maximum",
+        "$.scene.nodes[1].height: above maximum",
+        "$.scene.nodes[4].width: above maximum",
+        "$.scene.nodes[5].height: above maximum"
+      ]
+    },
+    {
+      "contract_pass": false,
+      "latency_ms": 5283,
+      "output_kind": "candidate_output",
+      "response_hash": "sha256:208dcd489d6f7b093a0f48647e948298495b7d7f70fa7950418e886208c41bba",
+      "response_model": "deepseek-v4-flash",
+      "response_received": true,
+      "sample_id": "middle_sound_pair.wave-explain",
+      "usage": {
+        "completion_tokens": 1020,
+        "prompt_tokens": 2015,
+        "total_tokens": 3035
+      },
+      "violation_codes": [
+        "$.scene.function_lines[0].domain[0]: above maximum",
+        "$.scene.function_lines[0].domain[1]: above maximum",
+        "$.scene.function_lines[0].intercept: above maximum",
+        "$.scene.function_lines[1].domain[0]: above maximum",
+        "$.scene.function_lines[1].domain[1]: above maximum",
+        "$.scene.function_lines[1].intercept: above maximum"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "caption": "同一根琴弦，轻轻拨和用力拨，振幅和响度变化明显，音调基本不变。",
+      "fact_refs": [
+        "force-amplitude-pitch"
+      ],
+      "sample_id": "primary_sound.opening-explanation",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-string",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "string"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-string",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "string"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "loudness-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "loudness-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-pitch",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "pitch-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-pitch",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "pitch-label"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 16,
+            "id": "string",
+            "kind": "box",
+            "label": "琴弦",
+            "style": "string",
+            "width": 300,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 50,
+            "id": "soft-pluck",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 250
+          },
+          {
+            "height": 50,
+            "id": "hard-pluck",
+            "kind": "box",
+            "label": "重拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 550
+          },
+          {
+            "height": 40,
+            "id": "loudness-label",
+            "kind": "box",
+            "label": "响度",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 200
+          },
+          {
+            "height": 40,
+            "id": "pitch-label",
+            "kind": "box",
+            "label": "音调",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 600
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 1000,
+            "target_id": "soft-pluck",
+            "to": {
+              "y": 300
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "hard-pluck",
+            "to": {
+              "y": 500
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "拨弦力度与响度、音调的关系"
+    },
+    {
+      "caption": "同一根弦，轻拨时振幅小，用力拨时振幅大，声音更响。",
+      "fact_refs": [
+        "force-amplitude-pitch"
+      ],
+      "sample_id": "primary_sound.compare",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string-light"
+            },
+            "id": "conn-light-amp",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amplitude-light"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string-strong"
+            },
+            "id": "conn-strong-amp",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amplitude-strong"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-light"
+            },
+            "id": "conn-amp-loud-light",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness-light"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-strong"
+            },
+            "id": "conn-amp-loud-strong",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness-strong"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 20,
+            "id": "string-light",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "string",
+            "width": 200,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 20,
+            "id": "string-strong",
+            "kind": "box",
+            "label": "用力拨",
+            "style": "string",
+            "width": 200,
+            "x": 600,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "amplitude-light",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "amplitude",
+            "width": 120,
+            "x": 200,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "amplitude-strong",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "amplitude",
+            "width": 120,
+            "x": 600,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "loudness-light",
+            "kind": "box",
+            "label": "响度小",
+            "style": "loudness",
+            "width": 120,
+            "x": 200,
+            "y": 200
+          },
+          {
+            "height": 40,
+            "id": "loudness-strong",
+            "kind": "box",
+            "label": "响度大",
+            "style": "loudness",
+            "width": 120,
+            "x": 600,
+            "y": 200
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 1000,
+            "target_id": "string-light",
+            "to": {
+              "y": 420
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "string-strong",
+            "to": {
+              "y": 380
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "轻拨与用力拨的振幅比较"
+    },
+    {
+      "caption": "两次拨弦的振动快慢相同，音调不变；但振幅不同，响度不同。",
+      "fact_refs": [
+        "force-amplitude-pitch",
+        "pitch-frequency-loudness-amplitude"
+      ],
+      "sample_id": "primary_sound.separate",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string1"
+            },
+            "id": "conn1",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amp1"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string1"
+            },
+            "id": "conn2",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch1"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string2"
+            },
+            "id": "conn3",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amp2"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string2"
+            },
+            "id": "conn4",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch2"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 80,
+            "id": "string1",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "string",
+            "width": 120,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 80,
+            "id": "string2",
+            "kind": "box",
+            "label": "重拨",
+            "style": "string",
+            "width": 120,
+            "x": 600,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "pitch1",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "label",
+            "width": 120,
+            "x": 200,
+            "y": 600
+          },
+          {
+            "height": 60,
+            "id": "pitch2",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "label",
+            "width": 120,
+            "x": 600,
+            "y": 600
+          },
+          {
+            "height": 60,
+            "id": "amp1",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "label",
+            "width": 120,
+            "x": 200,
+            "y": 250
+          },
+          {
+            "height": 60,
+            "id": "amp2",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "label",
+            "width": 120,
+            "x": 600,
+            "y": 250
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 500,
+            "target_id": "string1",
+            "to": {
+              "y": 380
+            }
+          },
+          {
+            "duration_ms": 500,
+            "target_id": "string2",
+            "to": {
+              "y": 360
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "音调与力度无关"
+    },
+    {
+      "caption": "同一根橡皮筋，轻拨时振幅小、响度低；重拨时振幅大、响度高。两种情况下音调相同。",
+      "fact_refs": [
+        "force-amplitude-pitch"
+      ],
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "light-pluck"
+            },
+            "id": "conn-light",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "light-wave"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "strong-pluck"
+            },
+            "id": "conn-strong",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "strong-wave"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "rubber-band"
+            },
+            "id": "conn-pitch",
+            "marker_end": "none",
+            "style": "solid",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch-label"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 20,
+            "id": "rubber-band",
+            "kind": "box",
+            "label": "橡皮筋",
+            "style": "band",
+            "width": 300,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "light-pluck",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "strong-pluck",
+            "kind": "box",
+            "label": "重拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 550
+          },
+          {
+            "height": 40,
+            "id": "light-wave",
+            "kind": "box",
+            "label": "小振幅",
+            "style": "wave-small",
+            "width": 120,
+            "x": 700,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "strong-wave",
+            "kind": "box",
+            "label": "大振幅",
+            "style": "wave-large",
+            "width": 120,
+            "x": 700,
+            "y": 550
+          },
+          {
+            "height": 50,
+            "id": "pitch-label",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "note",
+            "width": 160,
+            "x": 500,
+            "y": 650
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 1000,
+            "target_id": "light-wave",
+            "to": {
+              "y": 280
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "strong-wave",
+            "to": {
+              "y": 570
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "轻拨与重拨：响度不同，音调相同"
+    },
+    {
+      "caption": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+      "fact_refs": [
+        "force-amplitude-pitch"
+      ],
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string-left"
+            },
+            "id": "conn-left",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "amplitude-left"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string-right"
+            },
+            "id": "conn-right",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "amplitude-right"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-right"
+            },
+            "id": "conn-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 40,
+            "id": "string-left",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "label",
+            "width": 80,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "string-right",
+            "kind": "box",
+            "label": "重拨",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "amplitude-left",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "amplitude",
+            "width": 100,
+            "x": 200,
+            "y": 600
+          },
+          {
+            "height": 40,
+            "id": "amplitude-right",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "amplitude",
+            "width": 100,
+            "x": 700,
+            "y": 600
+          },
+          {
+            "height": 40,
+            "id": "loudness",
+            "kind": "box",
+            "label": "响度",
+            "style": "loudness",
+            "width": 100,
+            "x": 450,
+            "y": 200
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 1000,
+            "target_id": "string-left",
+            "to": {
+              "x": 200,
+              "y": 380
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "string-right",
+            "to": {
+              "x": 700,
+              "y": 360
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "amplitude-left",
+            "to": {
+              "x": 200,
+              "y": 620
+            }
+          },
+          {
+            "duration_ms": 1000,
+            "target_id": "amplitude-right",
+            "to": {
+              "x": 700,
+              "y": 580
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "重拨时橡皮筋摆动更宽，声音更响"
+    },
+    {
+      "caption": "把面积式配方后，变化部分写成一个平方项。平方项不小于零，所以它前面的负号决定了面积上界。",
+      "fact_refs": [
+        "perfect-square-identities",
+        "complete-square-bound"
+      ],
+      "sample_id": "middle_perfect_square.complete",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "expanded"
+            },
+            "id": "arrow1",
+            "marker_end": "arrow",
+            "style": "arrow",
+            "to": {
+              "anchor": "left",
+              "node_id": "square"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "square"
+            },
+            "id": "arrow2",
+            "marker_end": "arrow",
+            "style": "arrow",
+            "to": {
+              "anchor": "left",
+              "node_id": "nonneg"
+            }
+          }
+        ],
+        "function_lines": [],
+        "nodes": [
+          {
+            "height": 60,
+            "id": "expanded",
+            "kind": "box",
+            "label": "展开式",
+            "style": "formula",
+            "width": 120,
+            "x": 150,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "square",
+            "kind": "box",
+            "label": "平方项",
+            "style": "highlight",
+            "width": 120,
+            "x": 450,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "nonneg",
+            "kind": "box",
+            "label": "非负",
+            "style": "highlight",
+            "width": 100,
+            "x": 750,
+            "y": 300
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 1000,
+            "target_id": "square",
+            "to": {
+              "x": 450,
+              "y": 300
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "配方显露平方项"
+    },
+    {
+      "caption": "当平方项等于零时，被减去的量最小，面积达到最大值。",
+      "fact_refs": [
+        "complete-square-bound",
+        "fence-transfer"
+      ],
+      "sample_id": "middle_perfect_square.justify",
+      "scene": {
+        "connectors": [
+          {
+            "from": {
+              "anchor": "left",
+              "node_id": "square_term"
+            },
+            "id": "conn_square_to_curve",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "right",
+              "node_id": "area_curve"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "area_curve"
+            },
+            "id": "conn_curve_to_max",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "max_point"
+            }
+          }
+        ],
+        "function_lines": [
+          {
+            "domain": [
+              0,
+              10
+            ],
+            "id": "parabola",
+            "intercept": 10,
+            "label": "面积",
+            "slope": -1
+          }
+        ],
+        "nodes": [
+          {
+            "height": 80,
+            "id": "area_curve",
+            "kind": "box",
+            "label": "面积曲线",
+            "style": "curve",
+            "width": 120,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "square_term",
+            "kind": "box",
+            "label": "平方项",
+            "style": "square",
+            "width": 100,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 16,
+            "id": "max_point",
+            "kind": "point",
+            "label": "最大值",
+            "style": "point",
+            "width": 16,
+            "x": 800,
+            "y": 300
+          }
+        ],
+        "schema_version": "hybrid-visual-scene/0.1",
+        "timeline": [
+          {
+            "duration_ms": 0,
+            "target_id": "square_term",
+            "to": {
+              "x": 500
+            }
+          },
+          {
+            "duration_ms": 0,
+            "target_id": "max_point",
+            "to": {
+              "y": 300
+            }
+          }
+        ]
+      },
+      "schema_version": "hybrid-generated-scene/0.1",
+      "title": "配方揭示最大面积"
+    }
+  ],
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "synthetic_unverified_only": true
+  },
+  "evidence": {
+    "fixture_hash": "sha256:8f3d35325990f3d5eb6847a8e3acae9c47ced47f2ca96f40556e44017b0a6d99",
+    "schema_hash": "sha256:a0b5c5ffd9a45de6a1973a3baaee610216ff375936ab12d4d7fe127bc6e6d0e6"
+  },
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_output_tokens": 5000,
+    "repairs": 0,
+    "request_limit": 10,
+    "response_format": "json_object",
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60,
+    "token_limit": 100000
+  },
+  "latency_ms": {
+    "max": 5283,
+    "p50": 4480,
+    "p80": 4896
+  },
+  "limits": [
+    "Synthetic calibration only.",
+    "Machine gates do not establish teaching quality."
+  ],
+  "metrics": {
+    "contract_pass": {
+      "denominator": 10,
+      "numerator": 7
+    },
+    "formal_denominator": false,
+    "human_review": "not_started",
+    "local_compile_gate": "pending"
+  },
+  "provider": "deepseek_official",
+  "request_model": "deepseek-v4-flash",
+  "response_models": [
+    "deepseek-v4-flash"
+  ],
+  "run_at": "2026-07-31T12:08:02.811605+00:00",
+  "run_label": "official-hybrid-dsl-v01-flash-calibration-round-1",
+  "run_phase": "calibration",
+  "slice_id": "TS-04C-hybrid-v01",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 7737,
+    "prompt_tokens": 19713,
+    "total_tokens": 27450
+  }
+}

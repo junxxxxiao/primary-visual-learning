@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "generated-scene/0.1",
+  "title": "TS-04C candidate generated scene",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "scene_code", "scene_declaration", "static_fallback"],
+  "properties": {
+    "schema_version": {"const": "generated-scene/0.1"},
+    "sample_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+    "scene_code": {"type": "string", "minLength": 1, "maxLength": 65536},
+    "scene_declaration": {
+      "type": "object",
+      "required": [
+        "schema_version", "scene_id", "scene_version", "learning_goal",
+        "knowledge_version", "teaching_contract_version", "layout_contract_version",
+        "test_version", "teaching", "viewport_profiles"
+      ]
+    },
+    "static_fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "steps", "fact_refs"],
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "steps": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "fact_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

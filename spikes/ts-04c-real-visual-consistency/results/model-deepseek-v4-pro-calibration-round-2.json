@@ -1,0 +1,281 @@
+{
+  "base_url_origin": "https://www.packyapi.ai",
+  "call_results": [
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60437,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.opening-explanation",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60383,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.compare",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60377,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound.separate",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60369,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60394,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "schema_valid": false,
+      "school_stage": "primary",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60375,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.model",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60385,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.complete",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60385,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_perfect_square.justify",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60374,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_sound_pair.wave-compare",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    },
+    {
+      "declaration_gate": "fail",
+      "error": "The read operation timed out",
+      "finish_reason": null,
+      "latency_ms": 60379,
+      "output_kind": "candidate_output",
+      "response_hash": null,
+      "response_model": null,
+      "response_received": false,
+      "sample_id": "middle_sound_pair.wave-explain",
+      "schema_valid": false,
+      "school_stage": "middle",
+      "usage": {
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "total_tokens": 0
+      },
+      "violation_codes": [
+        "MODEL_REQUEST_OR_PARSE_FAILED"
+      ]
+    }
+  ],
+  "candidates": [],
+  "cost": {
+    "amount": null,
+    "currency": null,
+    "reason": "Provider billing is not independently available to the runner."
+  },
+  "data_boundary": {
+    "child_data_sent": false,
+    "controlled_textbook_content_sent": false,
+    "sealed_synthetic_knowledge_sent": true
+  },
+  "decision": "calibration_provider_timeout",
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_tokens": 12000,
+    "response_format": "json_object",
+    "stream": false,
+    "temperature": 0.0,
+    "thinking": "provider_default_unverified",
+    "timeout_seconds": 60
+  },
+  "human_review": {
+    "status": "not_started"
+  },
+  "latency_ms": {
+    "max": 60437,
+    "p50": 60381,
+    "p80": 60387,
+    "p95": 60418
+  },
+  "limits": [
+    "Calibration samples do not enter the formal denominator.",
+    "Declared bounds do not replace browser measurements or pixel checks.",
+    "Machine checks do not replace subject and product review."
+  ],
+  "metrics": {
+    "declaration_gate_pass": {
+      "denominator": 10,
+      "numerator": 0
+    },
+    "formal_denominator": false,
+    "sandbox_execution": "pending",
+    "schema_validity": {
+      "denominator": 10,
+      "numerator": 0
+    }
+  },
+  "provider": "packyapi",
+  "request_model": "deepseek-v4-pro",
+  "requests": {
+    "attempted": 10,
+    "automatic_retries": 0,
+    "completed": 0,
+    "planned": 10
+  },
+  "response_models": [],
+  "run_at": "2026-07-30T12:43:53.641509+00:00",
+  "run_label": "calibration-round-2",
+  "run_phase": "calibration",
+  "slice_id": "TS-04C",
+  "status": "fail",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

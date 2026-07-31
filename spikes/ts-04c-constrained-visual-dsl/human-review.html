@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TS-04C-v2 人工评审</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/human-review.css">
+</head>
+<body>
+  <header class="review-header">
+    <div>
+      <strong>TS-04C-v2 人工评审</strong>
+      <span id="run-meta">DeepSeek 受限视觉 DSL · 10 个校准场景</span>
+    </div>
+    <div class="reviewer-fields">
+      <label>评审角色
+        <select id="reviewer-role">
+          <option value="product_visual">产品与视觉</option>
+          <option value="subject_matter">学科教学</option>
+        </select>
+      </label>
+      <label>评审代号
+        <input id="reviewer-alias" value="reviewer-01" maxlength="40" pattern="[A-Za-z0-9._-]+" autocomplete="off">
+      </label>
+      <button id="reset-draft" type="button">清空草稿</button>
+    </div>
+  </header>
+
+  <main class="review-shell">
+    <aside class="sample-rail" aria-label="场景列表">
+      <div class="rail-summary">
+        <strong id="progress-count">0 / 10 已完成</strong>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+      </div>
+      <nav id="sample-list"></nav>
+    </aside>
+
+    <section class="review-workspace">
+      <div class="scene-heading">
+        <div>
+          <span id="sample-position">场景 1 / 10</span>
+          <h1 id="scene-title">加载中</h1>
+          <p id="sample-id"></p>
+        </div>
+        <div class="scene-navigation">
+          <button id="previous-sample" class="icon-button" title="上一个场景" aria-label="上一个场景">&larr;</button>
+          <button id="next-sample" class="icon-button" title="下一个场景" aria-label="下一个场景">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="state-toolbar">
+        <div>
+          <strong>检查状态</strong>
+          <span id="visited-count">已查看 0 / 8</span>
+        </div>
+        <div id="state-tabs" class="state-tabs" role="tablist" aria-label="视觉状态"></div>
+      </div>
+
+      <div class="preview-grid">
+        <section class="preview-panel">
+          <header><strong>手机</strong><span>390 × 632</span></header>
+          <div class="canvas-stage phone-stage"><canvas id="phone-canvas" width="390" height="632"></canvas></div>
+        </section>
+        <section class="preview-panel">
+          <header><strong>平板</strong><span>1024 × 728</span></header>
+          <div class="canvas-stage tablet-stage"><canvas id="tablet-canvas" width="1024" height="728"></canvas></div>
+        </section>
+      </div>
+
+      <div class="evidence-review-grid">
+        <section class="evidence-panel">
+          <h2>教学依据</h2>
+          <dl>
+            <div><dt>学习目标</dt><dd id="learning-goal"></dd></div>
+            <div><dt>旁白</dt><dd id="narration"></dd></div>
+            <div><dt>模型标签</dt><dd id="candidate-labels"></dd></div>
+          </dl>
+          <div id="claims" class="claims"></div>
+        </section>
+
+        <form id="review-form" class="review-form">
+          <h2>本场景结论</h2>
+          <fieldset data-field="teaching">
+            <legend>教学表达是否正确</legend>
+            <label><input type="radio" name="teaching" value="pass"> 通过</label>
+            <label><input type="radio" name="teaching" value="fail"> 不通过</label>
+          </fieldset>
+          <fieldset data-field="visual">
+            <legend>手机与平板是否清晰易懂</legend>
+            <label><input type="radio" name="visual" value="pass"> 通过</label>
+            <label><input type="radio" name="visual" value="fail"> 不通过</label>
+          </fieldset>
+          <fieldset data-field="state_integrity">
+            <legend>8 种状态是否完整一致</legend>
+            <label><input type="radio" name="state_integrity" value="pass"> 通过</label>
+            <label><input type="radio" name="state_integrity" value="fail"> 不通过</label>
+          </fieldset>
+          <label class="critical-toggle"><input id="critical-error" type="checkbox"> 存在事实错误或结论相反</label>
+          <label class="notes-label" for="review-notes">问题记录</label>
+          <textarea id="review-notes" maxlength="1000" rows="5" placeholder="记录具体画面、状态和修改建议"></textarea>
+        </form>
+      </div>
+
+      <footer class="submit-bar">
+        <div><strong id="completion-message">请完成全部场景</strong><span id="draft-message">草稿自动保存在本浏览器</span></div>
+        <button id="submit-review" type="button" disabled>提交本轮评审</button>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="result-dialog">
+    <div class="dialog-content">
+      <h2 id="result-title">评审已保存</h2>
+      <p id="result-message"></p>
+      <button id="close-dialog" type="button">关闭</button>
+    </div>
+  </dialog>
+  <script type="module" src="./src/human-review.js"></script>
+</body>
+</html>

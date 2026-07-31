@@ -1,0 +1,195 @@
+{
+  "slice_id": "TS-04C-v3",
+  "status": "fail",
+  "baseline_sha": "5e002d1d4e04ec70e71ecd6c3b3b8af299d1e34f",
+  "fixture_version": "open-world-calibration/0.1",
+  "schema_version": "open-visual-scene/0.3",
+  "prior_candidate_schema_version": "open-visual-scene/0.2",
+  "candidate": {
+    "provider": "deepseek_official",
+    "model_or_service_version": "deepseek-v4-flash",
+    "call_method": "openai_compatible_chat_completions",
+    "parameters": {
+      "temperature": 0,
+      "thinking": {"type": "disabled"},
+      "response_format": "json_object",
+      "max_output_tokens": 5000,
+      "timeout_seconds": 60,
+      "automatic_retries": 0,
+      "repairs": 0
+    },
+    "controlled_repair": {
+      "maximum_repairs_per_failed_sample": 1,
+      "request_limit": 3,
+      "total_token_limit": 30000
+    },
+    "prior_v03_run": {
+      "schema_version": "open-visual-scene/0.3",
+      "run_label": "official-open-world-v03-flash-calibration-round-1",
+      "request_limit": 10,
+      "total_token_limit": 100000,
+      "automatic_retries": 0,
+      "repairs": 0
+    },
+    "latest_run": {
+      "profile": "v04-semantic-quality-example/0.1",
+      "status": "candidate_run_complete",
+      "run_label": "official-open-world-v04-flash-quality-guided-calibration-round-1",
+      "candidate_requests": 10,
+      "request_limit": 10,
+      "total_token_limit": 100000,
+      "automatic_retries": 0,
+      "repairs": 0,
+      "format_example_kind": "gold_fixture",
+      "format_example_source": "synthetic_format_only",
+      "format_example_sha256": "619d6eaf0ccad12a98441d0186f6ea89dd760475c272511853bb51a8cbc58f5f",
+      "prompt_builder_sha256": "42a8ba60d2c0aa1430c129a66332a54f689d6b2b721e6c4d35b101875fef6735"
+    },
+    "budget": {"initial_requests": 10, "total_token_limit": 100000},
+    "data_boundary_confirmed": true,
+    "requests_made": 63,
+    "authorized_rounds": 7
+  },
+  "metrics": {
+    "synthetic_fixture_count": 10,
+    "gold_fixture_count": 8,
+    "adversarial_fixture_count": 2,
+    "unfamiliar_wording_familiar_grammar_count": 4,
+    "familiar_concept_new_composition_count": 3,
+    "unfamiliar_concept_and_representation_count": 3,
+    "candidate_output_count": 10,
+    "candidate_response_count": 10,
+    "contract_pass_count": 7,
+    "contract_fail_count": 3,
+    "repair_response_count": 3,
+    "repair_contract_pass_count": 3,
+    "final_contract_pass_count": 10,
+    "prompt_tokens": 28243,
+    "completion_tokens": 21246,
+    "total_tokens": 49489,
+    "model_latency_p80_ms": 13941,
+    "model_latency_max_ms": 17068,
+    "repair_tokens": 19103,
+    "repair_latency_p80_ms": 13324,
+    "v03_candidate_response_count": 10,
+    "v03_contract_pass_count": 5,
+    "v03_contract_fail_count": 5,
+    "v03_total_tokens": 54641,
+    "v03_model_latency_p80_ms": 15382,
+    "v03_model_latency_max_ms": 23645,
+    "v03_browser_state_runs": 0,
+    "example_guided_response_count": 10,
+    "example_guided_contract_pass_count": 10,
+    "example_guided_contract_fail_count": 0,
+    "example_guided_total_tokens": 72796,
+    "example_guided_model_latency_p80_ms": 15327,
+    "example_guided_model_latency_max_ms": 18668,
+    "example_guided_browser_candidate_count": 10,
+    "example_guided_browser_pass_count": 10,
+    "example_guided_browser_state_runs": 160,
+    "cumulative_requests": 53,
+    "cumulative_tokens": 379391,
+    "browser_candidate_count": 10,
+    "browser_candidate_pass_count": 7,
+    "browser_candidate_fail_count": 3,
+    "browser_state_runs": 160,
+    "human_review_count": 10,
+    "human_review_showable_count": 1,
+    "human_review_revise_count": 7,
+    "human_review_reject_count": 2,
+    "human_review_severe_error_count": 0
+    ,"v04_candidate_response_count": 10
+    ,"v04_contract_pass_count": 5
+    ,"v04_contract_fail_count": 5
+    ,"v04_total_tokens": 84818
+    ,"v04_model_latency_p80_ms": 14105
+    ,"v04_model_latency_max_ms": 16593
+    ,"v04_browser_state_runs": 0
+    ,"animation_regression_count": 6
+    ,"animation_regression_state_runs": 160
+  },
+  "decision": "fail_visual_quality_and_v04_contract_gate",
+  "verified": [
+    "合成校准夹具与 Demo 题目不同",
+    "Schema 限制通用节点、受限动作、3–6 拍时间线和 1,000ms 起始静置",
+    "候选 10/10 收到响应并保存响应哈希、固定参数与 Token 用量",
+    "v0.1 候选合同 6/10 通过",
+    "v0.1 响应离线重放到 v0.2 后诊断性达到 8/10，该重放不计为候选证据",
+    "v0.2 V4 Pro 候选合同 5/10 通过",
+    "v0.2 V4 Flash 首轮候选合同 7/10 通过",
+    "受控修复只覆盖首轮 3 个失败样本，3/3 修复通过，最终合同为 10/10",
+    "最终 10 个候选在真实 Chromium 中完成手机/平板各 8 状态，共 160 次运行",
+    "浏览器候选 7/10 通过；3 个失败均触发逻辑与屏幕边界违规",
+    "v0.2 未定义 x/y 是中心点还是左上角，因此本轮浏览器失败分类为接口歧义，不能作为模型视觉质量结论",
+    "v0.3 harness 固定 center anchor 并在模型调用前检查初始几何和运动包络",
+    "v0.3 V4 Flash 10/10 收到响应，使用 54,641 Token，P80 为 15,382ms",
+    "v0.3 候选合同仅 5/10 通过；失败均为 Schema 格式遵循，没有新增坐标或运动包络接口缺口",
+    "完整实例提示轮 10/10 收到响应，合同 10/10，通过前一轮五类格式失败",
+    "完整实例提示轮使用 72,796 Token，P80 15,327ms，实际账单成本仍未取得",
+    "真实 Chromium 对完整实例轮执行手机/平板各 8 状态共 160 次，候选 10/10 通过且无边界或空白画布违规",
+    "浏览器控制台唯一错误是 favicon.ico 404，与候选门禁无关",
+    "人工评审已完成：10 题中 1 题可展示、7 题需要修改、2 题不可展示；无严重学科或音画冲突勾选",
+    "人工评审指出影子、杠杆、分数、几何、直线、勾股、电路、密度和旋转题存在图形语义、对应关系或过程表达缺陷",
+    "人工评审原始产物哈希为 7c7db4be931b64dc2c40266844d885521efdeb60d1af6c06d436ef83551486fa"
+    ,"可信渲染器已修复真实旋转、渐进描画和减少动态效果，Chromium 6 组回归及旧候选 160 状态通过"
+    ,"v0.4 增加通用多边形、箭头、形状标签和 aspect 绑定；DeepSeek Flash 10/10 收到响应，合同 5/10，使用 84,818 Token，P80 14,105ms"
+  ],
+  "failure_reasons": [
+    "shadow.lamp-distance-size 使用未允许的 x1/y1/x2/y2 直线几何字段，并把 layout.priority 写到范围外",
+    "lever.seesaw-balance 把无父节点的 parent_id 输出为非字符串",
+    "density.layering-liquids 把 layout.priority 写到范围外",
+    "shadow.lamp-distance-size 在中心点解释下把 wall 放到 y=-300",
+    "linear-functions.moving-intersection 在中心点解释下把 axes、line1 和 line2 放到左边界外",
+    "pythagorean.dissection-rearrangement 在中心点解释下把 outer-frame 放到 x=-100、y=-100",
+    "open-visual-scene/0.2 没有声明 x/y 的 anchor，可信渲染器无法无歧义解释上述几何",
+    "v0.3 影子、等值分数和移动直线交点三题继续使用未允许的 x1/y1/x2/y2",
+    "v0.3 影子与杠杆两题使用超过 1–5 的 layout.priority",
+    "v0.3 周长面积反例题大量使用不符合小写 ID 规则的标识符"
+    ,"v0.4 影子与杠杆题尝试变换 point-based 关系线，暴露动态端点接口缺口"
+    ,"v0.4 分数与凝结题引用不存在的 aspect beat，直线题生成坐标范围外点"
+  ],
+  "stopped_work": [
+    "人工学科与产品视觉评审未启动：v0.2 浏览器门禁未通过，候选未取得评审资格",
+    "无实例 v0.3 浏览器与人工评审未启动：候选合同仅 5/10，低于 10/10 门槛"
+    ,"v0.4 浏览器候选门禁与人工复评未启动：候选合同仅 5/10，低于 10/10 门槛"
+  ],
+  "unverified": [
+    "候选模型的动画与讲解质量",
+    "v0.3 候选的真实浏览器表现",
+    "学科和产品视觉人工评审的修订后复测",
+    "儿童理解、生产稳定性、延迟和成本"
+  ],
+  "artifacts": [
+    "fixtures/calibration-inputs.json",
+    "fixtures/schema-gate-cases.json",
+    "schemas/open-visual-scene.schema.json",
+    "schemas/open-visual-scene-v0.2.schema.json",
+    "reference-quality-contract.md",
+    "results/model-deepseek-v4-pro-official-open-world-calibration-round-1.json",
+    "results/diagnostic-replay-round1-against-v0.2.json",
+    "results/model-deepseek-v4-pro-official-open-world-v02-calibration-round-1.json",
+    "results/model-deepseek-v4-flash-official-open-world-v02-flash-calibration-round-1.json",
+    "results/model-deepseek-v4-flash-official-open-world-v02-flash-repair-round-1.json",
+    "results/candidates-v4-flash-v02-repaired.json",
+    "results/browser-v4-flash-v02-repaired-browser-round-1.json",
+    "schemas/open-visual-scene-v0.3.schema.json",
+    "run_v03_calibration.py",
+    "results/model-deepseek-v4-flash-official-open-world-v03-flash-calibration-round-1.json",
+    "fixtures/open-visual-scene-v03-format-example.json",
+    "src/v03_example_prompt.py",
+    "run_v03_example_guided_calibration.py",
+    "results/model-deepseek-v4-flash-official-open-world-v03-flash-example-guided-calibration-round-1.json",
+    "results/candidates-v4-flash-v03-example-guided.json",
+    "results/browser-v4-flash-v03-example-guided-browser-round-1.json",
+    "review-harness.html",
+    "src/review-harness.js",
+    "results/ts04c-v03-human-review-round-1.json"
+    ,"schemas/open-visual-scene-v0.4.schema.json"
+    ,"fixtures/open-visual-scene-v04-quality-example.json"
+    ,"src/v04_quality_prompt.py"
+    ,"run_v04_quality_calibration.py"
+    ,"results/model-deepseek-v4-flash-official-open-world-v04-flash-quality-guided-calibration-round-1.json"
+    ,"tests/animation-regression.html"
+    ,"tests/animation-regression.js"
+  ]
+}
