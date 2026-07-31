@@ -1,0 +1,5990 @@
+{
+  "scenario_results": [
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 2
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 5100,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:01a50b972aae7abd44e4d35044e07f1b0d98d2067b24ae33694a78be4f52fc36",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-full-plan-serial"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 13100,
+          "ordinal": 1,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:f703abe393561c3256c4d492f40b4249e3767d64c97fb474d1756a29dff997cb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-02",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-full-plan-serial"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0003",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 17000,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:c138cd57e0fc17acc11a2cd877a976c7ae3562b4e6eb13c8c1a46aea39d6093f",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-full-plan-serial"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "full_plan_serial",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 1500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 3200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 5000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 5100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_started",
+          "offset_ms": 5200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_completed",
+          "offset_ms": 9000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_ready",
+          "offset_ms": 9500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "visual_ready",
+          "offset_ms": 11200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0011",
+          "event_type": "audio_ready",
+          "offset_ms": 13000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0012",
+          "event_type": "segment_admitted",
+          "offset_ms": 13100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0013",
+          "event_type": "segment_started",
+          "offset_ms": 13200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0014",
+          "event_type": "segment_completed",
+          "offset_ms": 17000,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-full-plan-serial",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 5000,
+          "first_meaningful_content": 1500,
+          "first_segment_playable": 5100,
+          "first_segment_ready": 1500,
+          "first_visual_ready": 3200,
+          "interactive_ready": 5200,
+          "manifest_ready": 800,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          },
+          "seg-02": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01",
+          "seg-02"
+        ],
+        "valid_cache_entries": [
+          "seg-01",
+          "seg-02"
+        ]
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 800
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 1500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 1500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 3200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 5000
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 5100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 5200
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 1500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 3200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 5000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 5000
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 5100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 5100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 5200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_started",
+            "started_offset_ms": 5200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 9000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 9000
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 9500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 9500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 11200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 11200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 13000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0011",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 13000
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 13100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0012",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 13100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 13200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0013",
+            "stage": "event.segment_started",
+            "started_offset_ms": 13200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 17000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0014",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 17000
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 1500,
+            "ended_offset_ms": 1500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0015",
+            "stage": "lesson.plan",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 1700,
+            "ended_offset_ms": 3200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0016",
+            "stage": "visual.prepare",
+            "started_offset_ms": 1500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 1800,
+            "ended_offset_ms": 5000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0017",
+            "stage": "audio.prepare",
+            "started_offset_ms": 3200
+          }
+        ],
+        "trace_id": "ts06a-gold-full-plan-serial",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 5000,
+        "max_concurrency": 1,
+        "summed_work_ms": 5000
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true,
+        "work_critical_path_ms": true,
+        "work_sum_exceeds_critical_path": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 2
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 3000,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:01a50b972aae7abd44e4d35044e07f1b0d98d2067b24ae33694a78be4f52fc36",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-segment-parallel"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 3400,
+          "ordinal": 1,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:f703abe393561c3256c4d492f40b4249e3767d64c97fb474d1756a29dff997cb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-02",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-segment-parallel"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0003",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 6800,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:c138cd57e0fc17acc11a2cd877a976c7ae3562b4e6eb13c8c1a46aea39d6093f",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-segment-parallel"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_parallel",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "segment_ready",
+          "offset_ms": 1100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 2200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "audio_ready",
+          "offset_ms": 2400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "visual_ready",
+          "offset_ms": 2800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_admitted",
+          "offset_ms": 3000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_started",
+          "offset_ms": 3100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "visual_ready",
+          "offset_ms": 3300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0011",
+          "event_type": "segment_admitted",
+          "offset_ms": 3400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0012",
+          "event_type": "segment_completed",
+          "offset_ms": 5000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0013",
+          "event_type": "segment_started",
+          "offset_ms": 5100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0014",
+          "event_type": "segment_completed",
+          "offset_ms": 6800,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-segment-parallel",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 2200,
+          "first_meaningful_content": 900,
+          "first_segment_playable": 3000,
+          "first_segment_ready": 900,
+          "first_visual_ready": 2800,
+          "interactive_ready": 3100,
+          "manifest_ready": 400,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          },
+          "seg-02": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01",
+          "seg-02"
+        ],
+        "valid_cache_entries": [
+          "seg-01",
+          "seg-02"
+        ]
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 900
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 900
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 2200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 2800
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 3000
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 3100
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 900
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 1100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 2200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 2200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 2400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 2400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 2800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 2800
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 3000
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_started",
+            "started_offset_ms": 3100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 3300
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0011",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 3400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 5000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0012",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 5000
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 5100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0013",
+            "stage": "event.segment_started",
+            "started_offset_ms": 5100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 6800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0014",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 6800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 500,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0015",
+            "stage": "lesson.first_segment",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 1900,
+            "ended_offset_ms": 2800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0016",
+            "stage": "visual.prepare",
+            "started_offset_ms": 900
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 1300,
+            "ended_offset_ms": 2200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0017",
+            "stage": "audio.prepare",
+            "started_offset_ms": 900
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 200,
+            "ended_offset_ms": 1100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "work-0018",
+            "stage": "lesson.next_segment",
+            "started_offset_ms": 900
+          }
+        ],
+        "trace_id": "ts06a-gold-segment-parallel",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 2400,
+        "max_concurrency": 3,
+        "summed_work_ms": 3900
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 2
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 1550,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:01a50b972aae7abd44e4d35044e07f1b0d98d2067b24ae33694a78be4f52fc36",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-first-segment-independent"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 4350,
+          "ordinal": 1,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:f703abe393561c3256c4d492f40b4249e3767d64c97fb474d1756a29dff997cb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-02",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-first-segment-independent"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0003",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 6000,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:c138cd57e0fc17acc11a2cd877a976c7ae3562b4e6eb13c8c1a46aea39d6093f",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-first-segment-independent"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "first_segment_independent",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 1400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 1500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 1550,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_started",
+          "offset_ms": 1600,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_ready",
+          "offset_ms": 3500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_completed",
+          "offset_ms": 4000,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "visual_ready",
+          "offset_ms": 4200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0011",
+          "event_type": "audio_ready",
+          "offset_ms": 4300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0012",
+          "event_type": "segment_admitted",
+          "offset_ms": 4350,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0013",
+          "event_type": "segment_started",
+          "offset_ms": 4400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0014",
+          "event_type": "segment_completed",
+          "offset_ms": 6000,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-first-segment-independent",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 1500,
+          "first_meaningful_content": 800,
+          "first_segment_playable": 1550,
+          "first_segment_ready": 800,
+          "first_visual_ready": 1400,
+          "interactive_ready": 1600,
+          "manifest_ready": 300,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          },
+          "seg-02": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01",
+          "seg-02"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 800
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 800
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 1400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 1500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 1550
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 1600
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 1400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 1500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1550,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 1550
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1600,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_started",
+            "started_offset_ms": 1600
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 3500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 3500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 4000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 4000
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 4200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 4200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 4300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0011",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 4300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 4350,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0012",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 4350
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 4400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0013",
+            "stage": "event.segment_started",
+            "started_offset_ms": 4400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 6000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0014",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 6000
+          }
+        ],
+        "trace_id": "ts06a-gold-first-segment-independent",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:79aa7e1182eec6d4abf514cea3f3605831f8b5eaa7c5d41a3774eb58bd8e1873",
+          "manifest_version": 1,
+          "offset_ms": 310,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:d987e2144cf7a38dd4495023075a54ded3cf9876380c777d911000ae65e11626",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-cache-admission"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:79aa7e1182eec6d4abf514cea3f3605831f8b5eaa7c5d41a3774eb58bd8e1873",
+          "manifest_version": 1,
+          "offset_ms": 1000,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:c524acb0eaf47225dfe3308ec35282978664855c606f6018258d4e88f5befd45",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-cache-admission"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "cache_hit",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 310,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_started",
+          "offset_ms": 320,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_completed",
+          "offset_ms": 1000,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-cache-admission",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 300,
+          "first_meaningful_content": 300,
+          "first_segment_playable": 310,
+          "first_segment_ready": 300,
+          "first_visual_ready": 300,
+          "interactive_ready": 320,
+          "manifest_ready": 200,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01"
+        ],
+        "valid_cache_entries": [
+          "seg-01"
+        ]
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 310
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 320
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "hit",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "hit",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "hit",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 310,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 310
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 320,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_started",
+            "started_offset_ms": 320
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1000,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 1000
+          }
+        ],
+        "trace_id": "ts06a-gold-cache-admission",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 2
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 350,
+          "ordinal": 1,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:f703abe393561c3256c4d492f40b4249e3767d64c97fb474d1756a29dff997cb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-02",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-later-ready-first"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 750,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:01a50b972aae7abd44e4d35044e07f1b0d98d2067b24ae33694a78be4f52fc36",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-later-ready-first"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0003",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 2400,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:c138cd57e0fc17acc11a2cd877a976c7ae3562b4e6eb13c8c1a46aea39d6093f",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-later-ready-first"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "out_of_order_readiness",
+      "observed_codes": [
+        "event.playback_out_of_order"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 14,
+        "rejected": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 250,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 350,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.playback_out_of_order",
+          "event_id": "input-0007",
+          "event_type": "segment_started",
+          "offset_ms": 400,
+          "state_mutated": false,
+          "status": "rejected"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_ready",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "visual_ready",
+          "offset_ms": 600,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "audio_ready",
+          "offset_ms": 700,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0011",
+          "event_type": "segment_admitted",
+          "offset_ms": 750,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0012",
+          "event_type": "segment_started",
+          "offset_ms": 800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0013",
+          "event_type": "segment_completed",
+          "offset_ms": 1600,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0014",
+          "event_type": "segment_started",
+          "offset_ms": 1700,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0015",
+          "event_type": "segment_completed",
+          "offset_ms": 2400,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-later-ready-first",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 700,
+          "first_meaningful_content": 500,
+          "first_segment_playable": 750,
+          "first_segment_ready": 500,
+          "first_visual_ready": 600,
+          "interactive_ready": 800,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          },
+          "seg-02": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01",
+          "seg-02"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 600
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 700
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 750
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 800
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 250,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 250
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 350,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 350
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": "event.playback_out_of_order",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "failure",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_started",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 600,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 600
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 700,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 700
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 750,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0011",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 750
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0012",
+            "stage": "event.segment_started",
+            "started_offset_ms": 800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1600,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0013",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 1600
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1700,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0014",
+            "stage": "event.segment_started",
+            "started_offset_ms": 1700
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 2400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0015",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 2400
+          }
+        ],
+        "trace_id": "ts06a-gold-later-ready-first",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "fallback": 1,
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "fallback",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 550,
+          "ordinal": 0,
+          "payload": {
+            "reason": "segment.admission_failed"
+          },
+          "payload_hash": "sha256:483a6a571765bf7b7725e88f9d7dbd8138a7969edf9415cbfe3c6fc397c5c05d",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-admission-fallback-continues"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 850,
+          "ordinal": 1,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:f703abe393561c3256c4d492f40b4249e3767d64c97fb474d1756a29dff997cb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-02",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-admission-fallback-continues"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0003",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:c5c5ff481ca0d3e7632db78c75856bda75c344f9b6e0d90ed5d6d30249ccebf8",
+          "manifest_version": 1,
+          "offset_ms": 1800,
+          "ordinal": null,
+          "payload": {
+            "outcome": "degraded"
+          },
+          "payload_hash": "sha256:2891c2d96a0060d21e439591ea43b4873a4c9b46d84150593ed8cb6bbbcd9473",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-gold-admission-fallback-continues"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_fallback",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 12
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 550,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_ready",
+          "offset_ms": 600,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "visual_ready",
+          "offset_ms": 700,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "audio_ready",
+          "offset_ms": 800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "segment_admitted",
+          "offset_ms": 850,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0011",
+          "event_type": "segment_started",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0012",
+          "event_type": "segment_completed",
+          "offset_ms": 1800,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "gold-admission-fallback-continues",
+      "snapshot": {
+        "lesson_terminal": "degraded",
+        "milestones": {
+          "fallback_ready": 550,
+          "first_audio_ready": 500,
+          "first_meaningful_content": 300,
+          "first_segment_ready": 300,
+          "first_visual_ready": 400,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": false,
+            "started": false,
+            "terminal": "fallback"
+          },
+          "seg-02": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-02"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "fallback_ready",
+            "offset_ms": 550
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 550,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 550
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 600,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 600
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 700,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 700
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 850,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 850
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0011",
+            "stage": "event.segment_started",
+            "started_offset_ms": 900
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 1800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0012",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 1800
+          }
+        ],
+        "trace_id": "ts06a-gold-admission-fallback-continues",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 450,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:565634695f997a58f1d07167a9c83604f4a5ab68a09ed1b4a4a8d8ba358b7195",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-duplicate-events"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 900,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:24e491f8182c37efe63d06f5797b256c0386443ee613667f0cf4a37b899c0aed",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-duplicate-events"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "duplicates",
+      "observed_codes": [
+        "event.conflicting_duplicate",
+        "event.duplicate"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "duplicate": 1,
+        "rejected": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "open-1",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "ready-1",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.duplicate",
+          "event_id": "ready-1",
+          "event_type": "segment_ready",
+          "offset_ms": 210,
+          "state_mutated": false,
+          "status": "duplicate"
+        },
+        {
+          "code": "event.conflicting_duplicate",
+          "event_id": "ready-1",
+          "event_type": "segment_ready",
+          "offset_ms": 220,
+          "state_mutated": false,
+          "status": "rejected"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "audio_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_admitted",
+          "offset_ms": 450,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_started",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "segment_completed",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "adversarial-duplicate-events",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 400,
+          "first_meaningful_content": 200,
+          "first_segment_playable": 450,
+          "first_segment_ready": 200,
+          "first_visual_ready": 300,
+          "interactive_ready": 500,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 450
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 500
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 210,
+            "error_code": "event.duplicate",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 210
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 220,
+            "error_code": "event.conflicting_duplicate",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "failure",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 220
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 450,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 450
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_started",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 900
+          }
+        ],
+        "trace_id": "ts06a-adversarial-duplicate-events",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 450,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:565634695f997a58f1d07167a9c83604f4a5ab68a09ed1b4a4a8d8ba358b7195",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-cross-session"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 900,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:24e491f8182c37efe63d06f5797b256c0386443ee613667f0cf4a37b899c0aed",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-cross-session"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "identity_isolation",
+      "observed_codes": [
+        "event.cross_session",
+        "event.stale_manifest_version"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1,
+        "stale": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.cross_session",
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": false,
+          "status": "rejected"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "segment_ready",
+          "offset_ms": 250,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.stale_manifest_version",
+          "event_id": "input-0005",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": false,
+          "status": "stale"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "visual_ready",
+          "offset_ms": 350,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "audio_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_admitted",
+          "offset_ms": 450,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_started",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0010",
+          "event_type": "segment_completed",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "adversarial-cross-session",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 400,
+          "first_meaningful_content": 250,
+          "first_segment_playable": 450,
+          "first_segment_ready": 250,
+          "first_visual_ready": 350,
+          "interactive_ready": 500,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 250
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 250
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 350
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 450
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 500
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": "event.cross_session",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "failure",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 250,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 250
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": "event.stale_manifest_version",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 350,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 350
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 450,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 450
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_started",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0010",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 900
+          }
+        ],
+        "trace_id": "ts06a-adversarial-cross-session",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 300,
+          "ordinal": null,
+          "payload": {
+            "outcome": "degraded"
+          },
+          "payload_hash": "sha256:71ae9b3eb6d01a16150f53bb02d19b9f8c90942759d3924fced52f833130d8eb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-cancel-late-response"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_late",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 4,
+        "stale": 3
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "cancelled",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.stale_segment_terminal",
+          "event_id": "input-0005",
+          "event_type": "visual_ready",
+          "offset_ms": 500,
+          "state_mutated": false,
+          "status": "stale"
+        },
+        {
+          "code": "event.stale_segment_terminal",
+          "event_id": "input-0006",
+          "event_type": "audio_ready",
+          "offset_ms": 600,
+          "state_mutated": false,
+          "status": "stale"
+        },
+        {
+          "code": "event.stale_segment_terminal",
+          "event_id": "input-0007",
+          "event_type": "segment_admitted",
+          "offset_ms": 700,
+          "state_mutated": false,
+          "status": "stale"
+        }
+      ],
+      "scenario_id": "adversarial-cancel-late-response",
+      "snapshot": {
+        "lesson_terminal": "degraded",
+        "milestones": {
+          "first_meaningful_content": 200,
+          "first_segment_ready": 200,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": false,
+            "started": false,
+            "terminal": "cancelled"
+          }
+        },
+        "started_segments": [],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 200
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.cancelled",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": "event.stale_segment_terminal",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 600,
+            "error_code": "event.stale_segment_terminal",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 600
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 700,
+            "error_code": "event.stale_segment_terminal",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 700
+          }
+        ],
+        "trace_id": "ts06a-adversarial-cancel-late-response",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "fallback_ready_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "fallback": 1,
+        "lesson_complete": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "fallback",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 8500,
+          "ordinal": 0,
+          "payload": {
+            "reason": "segment.readiness_timeout"
+          },
+          "payload_hash": "sha256:e1be9c247569d484cd6bc176585aac06180dbc856eb3212aba982a1f5c4b7729",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-missing-audio-timeout"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 8500,
+          "ordinal": null,
+          "payload": {
+            "outcome": "degraded"
+          },
+          "payload_hash": "sha256:71ae9b3eb6d01a16150f53bb02d19b9f8c90942759d3924fced52f833130d8eb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-missing-audio-timeout"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "readiness_timeout",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 5,
+        "stale": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 700,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "segment_admitted",
+          "offset_ms": 800,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.stale_segment_terminal",
+          "event_id": "input-0006",
+          "event_type": "audio_ready",
+          "offset_ms": 9000,
+          "state_mutated": false,
+          "status": "stale"
+        }
+      ],
+      "scenario_id": "adversarial-missing-audio-timeout",
+      "snapshot": {
+        "lesson_terminal": "degraded",
+        "milestones": {
+          "fallback_ready": 8500,
+          "first_meaningful_content": 500,
+          "first_segment_ready": 500,
+          "first_visual_ready": 700,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": false,
+            "started": false,
+            "terminal": "fallback"
+          }
+        },
+        "started_segments": [],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 500
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 700
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "fallback_ready",
+            "offset_ms": 8500
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 700,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 700
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 800,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 800
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 9000,
+            "error_code": "event.stale_segment_terminal",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 9000
+          }
+        ],
+        "trace_id": "ts06a-adversarial-missing-audio-timeout",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 450,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:565634695f997a58f1d07167a9c83604f4a5ab68a09ed1b4a4a8d8ba358b7195",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-cancel-after-admission"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 500,
+          "ordinal": null,
+          "payload": {
+            "outcome": "degraded"
+          },
+          "payload_hash": "sha256:71ae9b3eb6d01a16150f53bb02d19b9f8c90942759d3924fced52f833130d8eb",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-cancel-after-admission"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_after_admission",
+      "observed_codes": [
+        "event.stale_segment_terminal"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 7,
+        "stale": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "audio_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "segment_admitted",
+          "offset_ms": 450,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "cancelled",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.stale_segment_terminal",
+          "event_id": "input-0008",
+          "event_type": "segment_started",
+          "offset_ms": 550,
+          "state_mutated": false,
+          "status": "stale"
+        }
+      ],
+      "scenario_id": "adversarial-cancel-after-admission",
+      "snapshot": {
+        "lesson_terminal": "degraded",
+        "milestones": {
+          "first_audio_ready": 400,
+          "first_meaningful_content": 200,
+          "first_segment_playable": 450,
+          "first_segment_ready": 200,
+          "first_visual_ready": 300,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": false,
+            "terminal": "cancelled"
+          }
+        },
+        "started_segments": [],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 450
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "write",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 450,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 450
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.cancelled",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 550,
+            "error_code": "event.stale_segment_terminal",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "cancelled",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_started",
+            "started_offset_ms": 550
+          }
+        ],
+        "trace_id": "ts06a-adversarial-cancel-after-admission",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "fallback_count": true,
+        "fallback_ready_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "fallback": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "fallback",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 45000,
+          "ordinal": null,
+          "payload": {
+            "reason": "lesson.hard_deadline"
+          },
+          "payload_hash": "sha256:45ec0d5a99ce48c661cadac4b4384222c901178be0be46070d32517dcdc35a7a",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-hard-deadline"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "hard_deadline",
+      "observed_codes": [],
+      "pass": true,
+      "record_counts": {
+        "accepted": 2
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "adversarial-hard-deadline",
+      "snapshot": {
+        "lesson_terminal": "fallback",
+        "milestones": {
+          "fallback_ready": 45000,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": false,
+            "started": false,
+            "terminal": "fallback"
+          }
+        },
+        "started_segments": [],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "fallback_ready",
+            "offset_ms": 45000
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          }
+        ],
+        "trace_id": "ts06a-adversarial-hard-deadline",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 450,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:565634695f997a58f1d07167a9c83604f4a5ab68a09ed1b4a4a8d8ba358b7195",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-runtime-owned-event"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 900,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:24e491f8182c37efe63d06f5797b256c0386443ee613667f0cf4a37b899c0aed",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-runtime-owned-event"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "runtime_owned_injection",
+      "observed_codes": [
+        "event.runtime_owned"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.runtime_owned",
+          "event_id": "input-0003",
+          "event_type": "segment_playable",
+          "offset_ms": 150,
+          "state_mutated": false,
+          "status": "rejected"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "audio_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_admitted",
+          "offset_ms": 450,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_started",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_completed",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "adversarial-runtime-owned-event",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 400,
+          "first_meaningful_content": 200,
+          "first_segment_playable": 450,
+          "first_segment_ready": 200,
+          "first_visual_ready": 300,
+          "interactive_ready": 500,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 450
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 500
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 150,
+            "error_code": "event.runtime_owned",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "failure",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_playable",
+            "started_offset_ms": 150
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 450,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 450
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_started",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 900
+          }
+        ],
+        "trace_id": "ts06a-adversarial-runtime-owned-event",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    },
+    {
+      "checks": {
+        "derived_event_schemas": true,
+        "first_segment_playable_ms": true,
+        "lesson_terminal": true,
+        "max_concurrency": true,
+        "required_codes": true,
+        "started_segments": true,
+        "timing_schema": true,
+        "valid_cache_entries": true
+      },
+      "derived_event_counts": {
+        "lesson_complete": 1,
+        "segment_playable": 1
+      },
+      "derived_events": [
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0001",
+          "event_type": "segment_playable",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 450,
+          "ordinal": 0,
+          "payload": {
+            "join": "all_ready"
+          },
+          "payload_hash": "sha256:565634695f997a58f1d07167a9c83604f4a5ab68a09ed1b4a4a8d8ba358b7195",
+          "schema_version": "segment-event/1.0",
+          "segment_id": "seg-01",
+          "segment_version": 1,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-malformed-event"
+        },
+        {
+          "attempt": 0,
+          "cache_status": "not_applicable",
+          "event_id": "derived-0002",
+          "event_type": "lesson_complete",
+          "lesson_id": "lesson-offline-001",
+          "manifest_hash": "sha256:2dea0a9a530320981814442540eec052a0830c23d455564247d61d5f5fce9c56",
+          "manifest_version": 1,
+          "offset_ms": 900,
+          "ordinal": null,
+          "payload": {
+            "outcome": "completed"
+          },
+          "payload_hash": "sha256:24e491f8182c37efe63d06f5797b256c0386443ee613667f0cf4a37b899c0aed",
+          "schema_version": "segment-event/1.0",
+          "segment_id": null,
+          "segment_version": null,
+          "session_id": "session-offline-001",
+          "trace_id": "ts06a-adversarial-malformed-event"
+        }
+      ],
+      "fixture_kind": "adversarial_fixture",
+      "mode": "schema_rejection",
+      "observed_codes": [
+        "event.schema_invalid"
+      ],
+      "pass": true,
+      "record_counts": {
+        "accepted": 8,
+        "rejected": 1
+      },
+      "records": [
+        {
+          "code": null,
+          "event_id": "input-0001",
+          "event_type": "lesson_open",
+          "offset_ms": 0,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0002",
+          "event_type": "manifest_ready",
+          "offset_ms": 100,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": "event.schema_invalid",
+          "event_id": "input-0003",
+          "event_type": "segment_ready",
+          "offset_ms": 150,
+          "state_mutated": false,
+          "status": "rejected"
+        },
+        {
+          "code": null,
+          "event_id": "input-0004",
+          "event_type": "segment_ready",
+          "offset_ms": 200,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0005",
+          "event_type": "visual_ready",
+          "offset_ms": 300,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0006",
+          "event_type": "audio_ready",
+          "offset_ms": 400,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0007",
+          "event_type": "segment_admitted",
+          "offset_ms": 450,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0008",
+          "event_type": "segment_started",
+          "offset_ms": 500,
+          "state_mutated": true,
+          "status": "accepted"
+        },
+        {
+          "code": null,
+          "event_id": "input-0009",
+          "event_type": "segment_completed",
+          "offset_ms": 900,
+          "state_mutated": true,
+          "status": "accepted"
+        }
+      ],
+      "scenario_id": "adversarial-malformed-event",
+      "snapshot": {
+        "lesson_terminal": "completed",
+        "milestones": {
+          "first_audio_ready": 400,
+          "first_meaningful_content": 200,
+          "first_segment_playable": 450,
+          "first_segment_ready": 200,
+          "first_visual_ready": 300,
+          "interactive_ready": 500,
+          "manifest_ready": 100,
+          "question_confirmed": 0
+        },
+        "segments": {
+          "seg-01": {
+            "playable": true,
+            "started": true,
+            "terminal": "completed"
+          }
+        },
+        "started_segments": [
+          "seg-01"
+        ],
+        "valid_cache_entries": []
+      },
+      "trace": {
+        "clock": "monotonic",
+        "milestones": [
+          {
+            "latency_scope": "user_wait_anchor",
+            "name": "question_confirmed",
+            "offset_ms": 0
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "manifest_ready",
+            "offset_ms": 100
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_meaningful_content",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_ready",
+            "offset_ms": 200
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_visual_ready",
+            "offset_ms": 300
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_audio_ready",
+            "offset_ms": 400
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "first_segment_playable",
+            "offset_ms": 450
+          },
+          {
+            "latency_scope": "system_output",
+            "name": "interactive_ready",
+            "offset_ms": 500
+          }
+        ],
+        "schema_version": "stage-timing/1.0",
+        "slice_id": "TS-06A",
+        "spans": [
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 0,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0001",
+            "stage": "event.lesson_open",
+            "started_offset_ms": 0
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 100,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0002",
+            "stage": "event.manifest_ready",
+            "started_offset_ms": 100
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 150,
+            "error_code": "event.schema_invalid",
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "failure",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0003",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 150
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 200,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0004",
+            "stage": "event.segment_ready",
+            "started_offset_ms": 200
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 300,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0005",
+            "stage": "event.visual_ready",
+            "started_offset_ms": 300
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 400,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0006",
+            "stage": "event.audio_ready",
+            "started_offset_ms": 400
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 450,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0007",
+            "stage": "event.segment_admitted",
+            "started_offset_ms": 450
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 500,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0008",
+            "stage": "event.segment_started",
+            "started_offset_ms": 500
+          },
+          {
+            "cache_status": "not_applicable",
+            "cost_amount": 0,
+            "cost_currency": "CNY",
+            "duration_ms": 0,
+            "ended_offset_ms": 900,
+            "error_code": null,
+            "input_units": null,
+            "latency_scope": "system_work",
+            "model": null,
+            "outcome": "success",
+            "output_units": null,
+            "parent_span_id": null,
+            "provider": null,
+            "retry_index": 0,
+            "span_id": "input-0009",
+            "stage": "event.segment_completed",
+            "started_offset_ms": 900
+          }
+        ],
+        "trace_id": "ts06a-adversarial-malformed-event",
+        "trace_started_at": "2026-07-31T00:00:00Z"
+      },
+      "trace_errors": [],
+      "work_metrics": {
+        "critical_path_ms": 0,
+        "max_concurrency": 0,
+        "summed_work_ms": 0
+      }
+    }
+  ]
+}

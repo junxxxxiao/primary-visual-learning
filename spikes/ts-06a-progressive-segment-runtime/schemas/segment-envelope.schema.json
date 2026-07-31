@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "segment-envelope/1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_kind", "session_id", "lesson_id", "manifest_version", "manifest_hash", "segment_id", "segment_version", "ordinal", "depends_on", "knowledge_package_hash", "verification_status", "narration", "cues", "visual_artifact_ref", "audio_artifact_ref", "admission_result_ref", "fallback_ref", "produced_offset_ms", "envelope_hash"],
+  "properties": {
+    "schema_version": { "const": "segment-envelope/1.0" },
+    "fixture_kind": { "enum": ["synthetic_gold_fixture", "synthetic_adversarial_fixture"] },
+    "session_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "lesson_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "manifest_version": { "type": "integer", "minimum": 1 },
+    "manifest_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "segment_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "segment_version": { "type": "integer", "minimum": 1 },
+    "ordinal": { "type": "integer", "minimum": 0 },
+    "depends_on": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "knowledge_package_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "verification_status": { "const": "synthetic_unverified" },
+    "narration": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "cues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cue_id", "at_ms", "visual_state"],
+        "properties": {
+          "cue_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "at_ms": { "type": "integer", "minimum": 0 },
+          "visual_state": { "type": "string", "minLength": 1, "maxLength": 64 }
+        }
+      }
+    },
+    "visual_artifact_ref": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "audio_artifact_ref": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "admission_result_ref": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "fallback_ref": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "produced_offset_ms": { "type": "integer", "minimum": 0 },
+    "envelope_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

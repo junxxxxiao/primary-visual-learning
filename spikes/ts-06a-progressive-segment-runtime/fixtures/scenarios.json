@@ -1,0 +1,301 @@
+{
+  "fixture_version": "ts-06a-scenarios/1.0",
+  "scenarios": [
+    {
+      "scenario_id": "gold-full-plan-serial",
+      "fixture_kind": "gold_fixture",
+      "mode": "full_plan_serial",
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 800, "event_type": "manifest_ready"},
+        {"at_ms": 1500, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 3200, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 5000, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 5100, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"},
+        {"at_ms": 5200, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 9000, "event_type": "segment_completed", "segment_id": "seg-01"},
+        {"at_ms": 9500, "event_type": "segment_ready", "segment_id": "seg-02"},
+        {"at_ms": 11200, "event_type": "visual_ready", "segment_id": "seg-02"},
+        {"at_ms": 13000, "event_type": "audio_ready", "segment_id": "seg-02"},
+        {"at_ms": 13100, "event_type": "segment_admitted", "segment_id": "seg-02", "cache_status": "write"},
+        {"at_ms": 13200, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 17000, "event_type": "segment_completed", "segment_id": "seg-02"}
+      ],
+      "work_spans": [
+        {"stage": "lesson.plan", "started_offset_ms": 0, "ended_offset_ms": 1500},
+        {"stage": "visual.prepare", "started_offset_ms": 1500, "ended_offset_ms": 3200},
+        {"stage": "audio.prepare", "started_offset_ms": 3200, "ended_offset_ms": 5000}
+      ],
+      "final_offset_ms": 17000,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01", "seg-02"], "valid_cache_entries": ["seg-01", "seg-02"], "required_codes": [], "first_segment_playable_ms": 5100, "max_concurrency": 1}
+    },
+    {
+      "scenario_id": "gold-segment-parallel",
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_parallel",
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 400, "event_type": "manifest_ready"},
+        {"at_ms": 900, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 1100, "event_type": "segment_ready", "segment_id": "seg-02"},
+        {"at_ms": 2200, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 2400, "event_type": "audio_ready", "segment_id": "seg-02"},
+        {"at_ms": 2800, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 3000, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"},
+        {"at_ms": 3100, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 3300, "event_type": "visual_ready", "segment_id": "seg-02"},
+        {"at_ms": 3400, "event_type": "segment_admitted", "segment_id": "seg-02", "cache_status": "write"},
+        {"at_ms": 5000, "event_type": "segment_completed", "segment_id": "seg-01"},
+        {"at_ms": 5100, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 6800, "event_type": "segment_completed", "segment_id": "seg-02"}
+      ],
+      "work_spans": [
+        {"stage": "lesson.first_segment", "started_offset_ms": 400, "ended_offset_ms": 900},
+        {"stage": "visual.prepare", "started_offset_ms": 900, "ended_offset_ms": 2800},
+        {"stage": "audio.prepare", "started_offset_ms": 900, "ended_offset_ms": 2200},
+        {"stage": "lesson.next_segment", "started_offset_ms": 900, "ended_offset_ms": 1100}
+      ],
+      "final_offset_ms": 6800,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01", "seg-02"], "valid_cache_entries": ["seg-01", "seg-02"], "required_codes": [], "first_segment_playable_ms": 3000, "max_concurrency": 3, "work_critical_path_ms": 2400, "work_sum_exceeds_critical_path": true}
+    },
+    {
+      "scenario_id": "gold-first-segment-independent",
+      "fixture_kind": "gold_fixture",
+      "mode": "first_segment_independent",
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 300, "event_type": "manifest_ready"},
+        {"at_ms": 800, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 1400, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 1500, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 1550, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 1600, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 3500, "event_type": "segment_ready", "segment_id": "seg-02"},
+        {"at_ms": 4000, "event_type": "segment_completed", "segment_id": "seg-01"},
+        {"at_ms": 4200, "event_type": "visual_ready", "segment_id": "seg-02"},
+        {"at_ms": 4300, "event_type": "audio_ready", "segment_id": "seg-02"},
+        {"at_ms": 4350, "event_type": "segment_admitted", "segment_id": "seg-02"},
+        {"at_ms": 4400, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 6000, "event_type": "segment_completed", "segment_id": "seg-02"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 6000,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01", "seg-02"], "valid_cache_entries": [], "required_codes": [], "first_segment_playable_ms": 1550, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "gold-cache-admission",
+      "fixture_kind": "gold_fixture",
+      "mode": "cache_hit",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 200, "event_type": "manifest_ready"},
+        {"at_ms": 300, "event_type": "segment_ready", "segment_id": "seg-01", "cache_status": "hit"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01", "cache_status": "hit"},
+        {"at_ms": 300, "event_type": "audio_ready", "segment_id": "seg-01", "cache_status": "hit"},
+        {"at_ms": 310, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"},
+        {"at_ms": 320, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 1000, "event_type": "segment_completed", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 1000,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01"], "valid_cache_entries": ["seg-01"], "required_codes": [], "first_segment_playable_ms": 310, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "gold-later-ready-first",
+      "fixture_kind": "gold_fixture",
+      "mode": "out_of_order_readiness",
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-02"},
+        {"at_ms": 250, "event_type": "visual_ready", "segment_id": "seg-02"},
+        {"at_ms": 300, "event_type": "audio_ready", "segment_id": "seg-02"},
+        {"at_ms": 350, "event_type": "segment_admitted", "segment_id": "seg-02"},
+        {"at_ms": 400, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 500, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 600, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 700, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 750, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 800, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 1600, "event_type": "segment_completed", "segment_id": "seg-01"},
+        {"at_ms": 1700, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 2400, "event_type": "segment_completed", "segment_id": "seg-02"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 2400,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01", "seg-02"], "valid_cache_entries": [], "required_codes": ["event.playback_out_of_order"], "first_segment_playable_ms": 750, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "gold-admission-fallback-continues",
+      "fixture_kind": "gold_fixture",
+      "mode": "segment_fallback",
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 300, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 500, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 550, "event_type": "segment_admitted", "segment_id": "seg-01", "admitted": false, "cache_status": "write"},
+        {"at_ms": 600, "event_type": "segment_ready", "segment_id": "seg-02"},
+        {"at_ms": 700, "event_type": "visual_ready", "segment_id": "seg-02"},
+        {"at_ms": 800, "event_type": "audio_ready", "segment_id": "seg-02"},
+        {"at_ms": 850, "event_type": "segment_admitted", "segment_id": "seg-02"},
+        {"at_ms": 900, "event_type": "segment_started", "segment_id": "seg-02"},
+        {"at_ms": 1800, "event_type": "segment_completed", "segment_id": "seg-02"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 1800,
+      "expected": {"lesson_terminal": "degraded", "started_segments": ["seg-02"], "valid_cache_entries": [], "required_codes": [], "fallback_count": 1, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-duplicate-events",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "duplicates",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open", "event_id": "open-1"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01", "event_id": "ready-1"},
+        {"at_ms": 210, "duplicate_of": "ready-1"},
+        {"at_ms": 220, "conflicting_duplicate_of": "ready-1"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 450, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 500, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 900, "event_type": "segment_completed", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 900,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01"], "valid_cache_entries": [], "required_codes": ["event.duplicate", "event.conflicting_duplicate"], "first_segment_playable_ms": 450, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-cross-session",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "identity_isolation",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01", "overrides": {"session_id": "session-other-999"}},
+        {"at_ms": 250, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01", "overrides": {"manifest_version": 2}},
+        {"at_ms": 350, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 450, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 500, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 900, "event_type": "segment_completed", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 900,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01"], "valid_cache_entries": [], "required_codes": ["event.cross_session", "event.stale_manifest_version"], "first_segment_playable_ms": 450, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-cancel-late-response",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_late",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 300, "event_type": "cancelled", "segment_id": "seg-01", "scope": "segment"},
+        {"at_ms": 500, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 600, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 700, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 1000,
+      "expected": {"lesson_terminal": "degraded", "started_segments": [], "valid_cache_entries": [], "required_codes": ["event.stale_segment_terminal"], "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-missing-audio-timeout",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "readiness_timeout",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 500, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 700, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 800, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"},
+        {"at_ms": 9000, "event_type": "audio_ready", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 9000,
+      "expected": {"lesson_terminal": "degraded", "started_segments": [], "valid_cache_entries": [], "required_codes": ["event.stale_segment_terminal"], "fallback_count": 1, "fallback_ready_ms": 8500, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-cancel-after-admission",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "cancel_after_admission",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 450, "event_type": "segment_admitted", "segment_id": "seg-01", "cache_status": "write"},
+        {"at_ms": 500, "event_type": "cancelled", "segment_id": "seg-01", "scope": "segment"},
+        {"at_ms": 550, "event_type": "segment_started", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 600,
+      "expected": {"lesson_terminal": "degraded", "started_segments": [], "valid_cache_entries": [], "required_codes": ["event.stale_segment_terminal"], "first_segment_playable_ms": 450, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-hard-deadline",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "hard_deadline",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 46000,
+      "expected": {"lesson_terminal": "fallback", "started_segments": [], "valid_cache_entries": [], "required_codes": [], "fallback_count": 1, "fallback_ready_ms": 45000, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-runtime-owned-event",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "runtime_owned_injection",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 150, "event_type": "segment_playable", "segment_id": "seg-01"},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 450, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 500, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 900, "event_type": "segment_completed", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 900,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01"], "valid_cache_entries": [], "required_codes": ["event.runtime_owned"], "first_segment_playable_ms": 450, "max_concurrency": 0}
+    },
+    {
+      "scenario_id": "adversarial-malformed-event",
+      "fixture_kind": "adversarial_fixture",
+      "mode": "schema_rejection",
+      "segment_count": 1,
+      "events": [
+        {"at_ms": 0, "event_type": "lesson_open"},
+        {"at_ms": 100, "event_type": "manifest_ready"},
+        {"at_ms": 150, "event_type": "segment_ready", "segment_id": "seg-01", "remove_fields": ["session_id"]},
+        {"at_ms": 200, "event_type": "segment_ready", "segment_id": "seg-01"},
+        {"at_ms": 300, "event_type": "visual_ready", "segment_id": "seg-01"},
+        {"at_ms": 400, "event_type": "audio_ready", "segment_id": "seg-01"},
+        {"at_ms": 450, "event_type": "segment_admitted", "segment_id": "seg-01"},
+        {"at_ms": 500, "event_type": "segment_started", "segment_id": "seg-01"},
+        {"at_ms": 900, "event_type": "segment_completed", "segment_id": "seg-01"}
+      ],
+      "work_spans": [],
+      "final_offset_ms": 900,
+      "expected": {"lesson_terminal": "completed", "started_segments": ["seg-01"], "valid_cache_entries": [], "required_codes": ["event.schema_invalid"], "first_segment_playable_ms": 450, "max_concurrency": 0}
+    }
+  ]
+}

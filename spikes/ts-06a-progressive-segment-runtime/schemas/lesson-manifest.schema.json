@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lesson-manifest/1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_kind", "session_id", "lesson_id", "manifest_version", "manifest_hash", "knowledge_package_hash", "verification_status", "segments", "created_at", "hard_deadline_ms"],
+  "properties": {
+    "schema_version": { "const": "lesson-manifest/1.0" },
+    "fixture_kind": { "enum": ["synthetic_gold_fixture", "synthetic_adversarial_fixture"] },
+    "session_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "lesson_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+    "manifest_version": { "type": "integer", "minimum": 1 },
+    "manifest_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "knowledge_package_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "verification_status": { "const": "synthetic_unverified" },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/segment" }
+    },
+    "created_at": { "type": "string", "minLength": 20, "maxLength": 40 },
+    "hard_deadline_ms": { "const": 45000 }
+  },
+  "$defs": {
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "segment_version", "ordinal", "depends_on"],
+      "properties": {
+        "segment_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" },
+        "segment_version": { "type": "integer", "minimum": 1 },
+        "ordinal": { "type": "integer", "minimum": 0 },
+        "depends_on": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$" }
+        }
+      }
+    }
+  }
+}
