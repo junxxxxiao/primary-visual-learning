@@ -1,30 +1,24 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {compileFullQuestion} from '../src/full-question-compiler.js';
+import {validateRequiredVisualRelations} from '../src/full-question-semantic-gate.js';
 
 const root = path.resolve(decodeURIComponent(new URL('..', import.meta.url).pathname));
 const inputName = 'model-deepseek-v4-flash-full-question-egg-saltwater-v01-network-attempt-2.json';
 const input = JSON.parse(fs.readFileSync(path.join(root, 'results', inputName), 'utf8'));
+const relationFixtureName = 'full-question-egg-saltwater-v01.visual-relations.json';
+const relationFixturePath = path.join(root, 'fixtures', relationFixtureName);
+const relationFixtureBytes = fs.readFileSync(relationFixturePath);
+const relationFixture = JSON.parse(relationFixtureBytes);
 const outputPath = path.join(root, 'results', 'full-question-local-gate-egg-saltwater-v01.json');
 let compiled = null;
 let error = null;
 const semanticViolations = [];
 try {
   compiled = compileFullQuestion(input.candidate);
-  for (const segment of compiled.segments) {
-    const objects = segment.scene.objects;
-    const forceUp = objects.find(object => object.kind === 'arrow' && object.style === 'force-up');
-    const forceDown = objects.find(object => object.kind === 'arrow' && object.style === 'force-down');
-    const declaresGreater = objects.some(object => object.kind === 'meter' && object.label.includes('浮力>重力'));
-    if (declaresGreater && (!forceUp || !forceDown || forceUp.height <= forceDown.height)) {
-      semanticViolations.push({segment_id: segment.segment_id, code: 'visual.force_magnitude_contradiction', detail: '“浮力>重力”要求浮力箭头长于重力箭头。'});
-    }
-    if (segment.narration.includes('两者平衡') || segment.narration.includes('浮力与重力平衡')) {
-      if (!forceUp || !forceDown || forceUp.height !== forceDown.height) {
-        semanticViolations.push({segment_id: segment.segment_id, code: 'visual.force_balance_missing', detail: '平衡结论必须显示等长的浮力与重力箭头。'});
-      }
-    }
-  }
+  if (relationFixture.question_id !== compiled.question_id) throw new Error('relation fixture question binding mismatch');
+  semanticViolations.push(...validateRequiredVisualRelations(compiled, relationFixture.relations));
 } catch (caught) {
   error = String(caught.message || caught);
 }
@@ -33,6 +27,12 @@ const output = {
   artifact_kind: 'full_question_local_compile_gate',
   source_result: inputName,
   source_kind: 'candidate_output',
+  relation_requirements: {
+    fixture: relationFixtureName,
+    fixture_kind: relationFixture.fixture_kind,
+    evidence_status: relationFixture.evidence_status,
+    sha256: createHash('sha256').update(relationFixtureBytes).digest('hex'),
+  },
   status: compiled && !semanticViolations.length ? 'pass' : 'fail',
   question_id: input.candidate?.question_id || null,
   metrics: compiled ? {

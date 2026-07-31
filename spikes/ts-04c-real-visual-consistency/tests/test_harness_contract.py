@@ -1,9 +1,18 @@
 import json
+import importlib.util
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_schema_validation():
+    path = ROOT.parent / "ts-03-progressive-lesson-plan/src/schema_validation.py"
+    spec = importlib.util.spec_from_file_location("ts04c_schema_validation", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class HarnessContractTests(unittest.TestCase):
@@ -31,6 +40,17 @@ class HarnessContractTests(unittest.TestCase):
         self.assertEqual(fixture["stage_counts"], {"middle": 5, "primary": 5})
         self.assertEqual(len({item["sample_id"] for item in fixture["samples"]}), 10)
         self.assertTrue(all(item["input_hash"].startswith("sha256:") for item in fixture["samples"]))
+
+    def test_full_question_relation_oracle_is_synthetic_and_claim_bound(self):
+        source = json.loads((ROOT / "fixtures/full-question-egg-saltwater-v01.json").read_text())
+        relations = json.loads((ROOT / "fixtures/full-question-egg-saltwater-v01.visual-relations.json").read_text())
+        schema = json.loads((ROOT / "schemas/visual-relation-requirements.schema.json").read_text())
+        claim_ids = {claim["claim_id"] for claim in source["claims"]}
+        self.assertEqual(load_schema_validation().validate(relations, schema), [])
+        self.assertEqual(relations["fixture_kind"], "gold_fixture")
+        self.assertEqual(relations["evidence_status"], "synthetic_unverified")
+        self.assertEqual(relations["question_id"], source["question_id"])
+        self.assertTrue(all(set(item["claim_refs"]) <= claim_ids for item in relations["relations"]))
 
 
 if __name__ == "__main__":

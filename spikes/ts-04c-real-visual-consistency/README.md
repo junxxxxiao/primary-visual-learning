@@ -93,6 +93,8 @@ python3 -m unittest discover -s tests -v
 - 教学语义门禁失败：第三段声明“浮力 > 重力”，却生成等长的浮力与重力箭头；第四段旁白说明最终平衡，却没有生成等长的平衡受力箭头；
 - 本轮没有受控修复或第二次模型调用。完整题候选不可展示或缓存，TS-04C 状态不推进到 `human_review_complete`。
 
+随后将这两个失败转为通用关系门禁回归。上游 synthetic `gold_fixture` 独立声明段序、对象语义、度量与 `gt | eq | lt` 关系，本地门禁不再扫描旁白或图形标签。旧候选重放仍稳定产生两个机器可定位违规：第三段为 `visual.required_relation_mismatch`，第四段为 `visual.required_relation_operand_missing`。关系包保存独立 SHA-256，原候选输入及其哈希未修改；本次没有外部请求或模型修复，因此只证明错误画面可以在展示和缓存前被阻断，不改变 TS-04C 的 `fail` 结论。
+
 本地评审隔离入口为 `full-question-review.html`；该页面用于查看失败候选，不是 C 端产品页。机器结果见 `results/full-question-local-gate-egg-saltwater-v01.json` 与 `results/full-question-browser-gate-egg-saltwater-v01.json`。
 
 门禁自测、候选对象运行和人工评审必须分别记录。候选输出至少保存供应商、固定版本、参数、运行时间、响应哈希、Token 或等价用量、成本和失败；无法取得的字段明确标记为未验证。

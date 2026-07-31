@@ -42,8 +42,8 @@
   "failures": [
     {"code": "repair_machine_gate_below_threshold", "actual": 0.1, "expected": 0.9},
     {"code": "generated_code_error_states", "count": 18},
-    {"code": "visual.force_magnitude_contradiction", "sample_id": "synthetic.egg-saltwater-float.v01", "segment_id": "seg3-compare"},
-    {"code": "visual.force_balance_missing", "sample_id": "synthetic.egg-saltwater-float.v01", "segment_id": "seg4-conclusion"}
+    {"code": "visual.required_relation_mismatch", "sample_id": "synthetic.egg-saltwater-float.v01", "segment_id": "seg3-compare"},
+    {"code": "visual.required_relation_operand_missing", "sample_id": "synthetic.egg-saltwater-float.v01", "segment_id": "seg4-conclusion"}
   ],
   "cost": {"status": "unverified", "reason": "Provider billing was not independently available to the runner."},
   "artifacts": [
@@ -52,6 +52,8 @@
     "spikes/ts-04c-real-visual-consistency/results/model-deepseek-v4-pro-official-compact-repair-round-1.json",
     "spikes/ts-04c-real-visual-consistency/results/browser-official-compact-repair-round-1-browser-repair-round-2.json",
     "spikes/ts-04c-real-visual-consistency/results/model-deepseek-v4-flash-full-question-egg-saltwater-v01-network-attempt-2.json",
+    "spikes/ts-04c-real-visual-consistency/fixtures/full-question-egg-saltwater-v01.visual-relations.json",
+    "spikes/ts-04c-real-visual-consistency/schemas/visual-relation-requirements.schema.json",
     "spikes/ts-04c-real-visual-consistency/results/full-question-local-gate-egg-saltwater-v01.json",
     "spikes/ts-04c-real-visual-consistency/results/full-question-browser-gate-egg-saltwater-v01.json"
   ],
