@@ -24,4 +24,11 @@
 
 `stage-timing.schema.json` 是所有切片共用的分段计时契约。里程碑只标记时间点，不伪装成耗时；`question_confirmed` 是用户感知等待的零时刻。用户阅读、修改和决定是否确认的时间必须标为 `user_action_excluded`，不得计入系统生成性能。并行 span 使用同一单调时钟记录，端到端耗时不得由局部耗时简单相加。
 
+候选证据顺序由以下 v1.0 契约共同约束：
+
+- `candidate-manifest.schema.json`；
+- `candidate-authorization.schema.json`；
+- `candidate-run.schema.json`；
+- `candidate-human-review.schema.json`。
+
 初始字段建议见 [技术验证 v3](../../../docs/technical/2026-07-28-primary-visual-tutor-technical-validation-v3.md#2-公共契约)。

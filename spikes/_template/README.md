@@ -21,6 +21,8 @@
 
 允许的状态为 `not_started | harness_ready | candidate_run_complete | human_review_complete | conditional_pass | pass | fail`。被测对象未确认时可以搭建测试框架，但不得将门禁自测表述为候选对象已经验证或通过。
 
+涉及候选对象时，从 `candidate-manifest.example.json` 和 `candidate-authorization.example.json` 建立本切片的正式文件。运行前必须通过共享 `preflight`；候选完成后生成 `candidate-run.json`，人工评审后再生成 `candidate-human-review.json`。manifest 或结果哈希变化时不得复用旧授权或旧评审。
+
 ## 不验证什么
 
 - 不验证生产扩展性；

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidate-run/1.0",
+  "title": "Technical slice candidate run attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "slice_id", "manifest_sha256", "state", "started_at", "completed_at", "result_path", "result_sha256"],
+  "properties": {
+    "schema_version": { "const": "candidate-run/1.0" },
+    "slice_id": { "type": "string", "minLength": 1 },
+    "manifest_sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "state": { "const": "candidate_run_complete" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "result_path": { "type": "string", "minLength": 1 },
+    "result_sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

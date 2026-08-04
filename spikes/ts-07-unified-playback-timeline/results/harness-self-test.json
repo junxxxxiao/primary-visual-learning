@@ -11,6 +11,10 @@
     "pause_error_rejected": true,
     "seek_error_rejected": true,
     "inconsistent_seek_state_rejected": true,
+    "duplicate_fallback_transition_rejected": true,
+    "increasing_switch_drift_rejected": true,
+    "excessive_switch_error_rejected": true,
+    "decreasing_switch_drift_accepted": true,
     "valid_measurements_accepted": true
   },
   "pass": true,

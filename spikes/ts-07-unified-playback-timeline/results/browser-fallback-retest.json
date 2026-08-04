@@ -1,8 +1,8 @@
 {
   "result_version": "ts-07-browser-audit/1.0",
   "evidence_kind": "candidate_output",
-  "started_at": "2026-08-04T08:57:57.289Z",
-  "completed_at": "2026-08-04T08:59:14.153Z",
+  "started_at": "2026-08-04T10:38:55.896Z",
+  "completed_at": "2026-08-04T10:40:23.876Z",
   "candidate": {
     "implementation": "prototype/sound-demo.html",
     "approved_browser": "Google Chrome 150.0.7871.188",
@@ -17,23 +17,121 @@
   "hashes": {
     "/prototype/sound-demo.html": "43eb488ff84a50a6c8a25fa32e3793d4489a4166c0ce07c15f1127c5cd501a0d",
     "/prototype/assets/audio/narration-math-1.wav": "221df18ba1a492280579cc079432927b2a95884ce1035e21c3bc14ff6973d5a7",
-    "./fixtures/audit-cues.json": "26666e1f35456c2e0ef42482d8b2319e28c05e765dbfeb943f0908621a67f50e",
-    "./src/audit.js": "a97e7df2421a94c13c5735cb288705c03162968ea39451e4fb4bb68025f4b485"
+    "./fixtures/audit-cues.json": "036e67918b9033ec280ec7ff64087c8640f06ec6092bb112a68786b275ed9709",
+    "./src/audit.js": "04934dd14d9e7c9ee5e803da829d1986ec1796bc87a3d74ec6ee35b396bef2b7"
   },
   "warmup": {
     "duration_ms": 20160
   },
   "raw": {
     "real_runs": [],
+    "switch_runs": [
+      {
+        "run_id": "switch-1",
+        "observations": [
+          {
+            "segment": 1,
+            "target_ms": 5000,
+            "observed_ms": 4947.316,
+            "offset_ms": -52.6840000000002,
+            "error_ms": 52.6840000000002,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 2,
+            "target_ms": 10000,
+            "observed_ms": 9898.948,
+            "offset_ms": -101.05199999999968,
+            "error_ms": 101.05199999999968,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 1,
+            "target_ms": 15000,
+            "observed_ms": 14867.082999999999,
+            "offset_ms": -132.91700000000128,
+            "error_ms": 132.91700000000128,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 2,
+            "target_ms": 5000,
+            "observed_ms": 4978.590999999999,
+            "offset_ms": -21.40900000000056,
+            "error_ms": 21.40900000000056,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 1,
+            "target_ms": 10000,
+            "observed_ms": 9927.885,
+            "offset_ms": -72.11499999999978,
+            "error_ms": 72.11499999999978,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 2,
+            "target_ms": 15000,
+            "observed_ms": 14954.057,
+            "offset_ms": -45.9429999999993,
+            "error_ms": 45.9429999999993,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 1,
+            "target_ms": 5000,
+            "observed_ms": 4970.536,
+            "offset_ms": -29.463999999999942,
+            "error_ms": 29.463999999999942,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 2,
+            "target_ms": 10000,
+            "observed_ms": 9898.948,
+            "offset_ms": -101.05199999999968,
+            "error_ms": 101.05199999999968,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 1,
+            "target_ms": 15000,
+            "observed_ms": 14887.479000000001,
+            "offset_ms": -112.52099999999882,
+            "error_ms": 112.52099999999882,
+            "segment_consistent": true,
+            "state_consistent": true
+          },
+          {
+            "segment": 2,
+            "target_ms": 5000,
+            "observed_ms": 4978.590999999999,
+            "offset_ms": -21.40900000000056,
+            "error_ms": 21.40900000000056,
+            "segment_consistent": true,
+            "state_consistent": true
+          }
+        ]
+      }
+    ],
     "fallback_runs": [
       {
         "run_id": "fallback-1",
         "duration_ms": 20160,
         "error_count": 1,
-        "before_ratio": 0.49632544642857146,
-        "after_ratio": 0.49781,
-        "later_ratio": 0.510235,
-        "handoff_error_ms": 29.928599999998866,
+        "fallback_transition_count": 1,
+        "before_ratio": 0.4960999007936508,
+        "after_ratio": 0.497228,
+        "later_ratio": 0.5096240000000001,
+        "handoff_error_ms": 22.742480000000054,
         "monotonic": true,
         "state_rollback": false
       },
@@ -41,10 +139,11 @@
         "run_id": "fallback-2",
         "duration_ms": 20160,
         "error_count": 1,
-        "before_ratio": 0.4968112103174603,
-        "after_ratio": 0.498143,
-        "later_ratio": 0.5105689999999999,
-        "handoff_error_ms": 26.848880000000737,
+        "fallback_transition_count": 1,
+        "before_ratio": 0.49690892857142854,
+        "after_ratio": 0.497916,
+        "later_ratio": 0.510302,
+        "handoff_error_ms": 20.30256000000108,
         "monotonic": true,
         "state_rollback": false
       },
@@ -52,10 +151,11 @@
         "run_id": "fallback-3",
         "duration_ms": 20160,
         "error_count": 1,
-        "before_ratio": 0.49654166666666666,
-        "after_ratio": 0.497665,
-        "later_ratio": 0.51006,
-        "handoff_error_ms": 22.64640000000064,
+        "fallback_transition_count": 1,
+        "before_ratio": 0.49708551587301586,
+        "after_ratio": 0.498361,
+        "later_ratio": 0.510767,
+        "handoff_error_ms": 25.71376000000024,
         "monotonic": true,
         "state_rollback": false
       },
@@ -63,10 +163,11 @@
         "run_id": "fallback-4",
         "duration_ms": 20160,
         "error_count": 1,
-        "before_ratio": 0.4961376488095238,
-        "after_ratio": 0.49816000000000005,
-        "later_ratio": 0.510595,
-        "handoff_error_ms": 40.77060000000067,
+        "fallback_transition_count": 1,
+        "before_ratio": 0.49664682539682536,
+        "after_ratio": 0.497739,
+        "later_ratio": 0.510135,
+        "handoff_error_ms": 22.018240000000393,
         "monotonic": true,
         "state_rollback": false
       },
@@ -74,10 +175,11 @@
         "run_id": "fallback-5",
         "duration_ms": 20160,
         "error_count": 1,
-        "before_ratio": 0.4966262896825397,
-        "after_ratio": 0.498132,
-        "later_ratio": 0.510538,
-        "handoff_error_ms": 30.355120000000237,
+        "fallback_transition_count": 1,
+        "before_ratio": 0.49688124999999994,
+        "after_ratio": 0.497913,
+        "later_ratio": 0.510279,
+        "handoff_error_ms": 20.800080000001078,
         "monotonic": true,
         "state_rollback": false
       }
@@ -115,14 +217,32 @@
       "cumulative_drift_ms": 0,
       "rendered_state_consistent": true
     },
+    "switch": {
+      "count": 10,
+      "p50_ms": 62.39949999999999,
+      "p80_ms": 103.34579999999951,
+      "p95_ms": 123.73880000000015,
+      "max_ms": 132.91700000000128,
+      "drift_slope_ms_per_operation": 2.1971151515152307,
+      "rendered_state_consistent": true,
+      "segment_consistent": true
+    },
     "fallback_handoffs": {
       "count": 5,
-      "p50_ms": 29.928599999998866,
-      "p80_ms": 32.438216000000324,
-      "p95_ms": 38.68750400000058,
-      "max_ms": 40.77060000000067,
+      "p50_ms": 22.018240000000393,
+      "p80_ms": 23.33673600000009,
+      "p95_ms": 25.1195040000002,
+      "max_ms": 25.71376000000024,
       "monotonic": true,
-      "state_rollback": false
+      "state_rollback": false,
+      "transition_counts": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "exactly_one_transition": true
     }
   },
   "violation_codes": [],

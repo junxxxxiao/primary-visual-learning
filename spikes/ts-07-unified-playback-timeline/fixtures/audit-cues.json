@@ -6,6 +6,9 @@
     "kind": "math",
     "segment": 1,
     "audio_path": "/prototype/assets/audio/narration-math-1.wav",
+    "additional_audio_paths": [
+      "/prototype/assets/audio/narration-math-2.wav"
+    ],
     "expected_duration_ms": 20160,
     "playback_rate": 1
   },
@@ -19,6 +22,52 @@
   "visual_cues": [
     { "id": "visual-problem", "ratio": 0, "selector": ".math-problem-preview" },
     { "id": "visual-rule", "ratio": 0.2, "selector": ".math-rule-card" }
+  ],
+  "switch_segments": {
+    "1": {
+      "audio_path": "/prototype/assets/audio/narration-math-1.wav",
+      "expected_duration_ms": 20160,
+      "subtitle_cues": [
+        { "id": "math-1-subtitle-1", "ratio": 0, "text": "先看材料里的共同规律。" },
+        { "id": "math-1-subtitle-2", "ratio": 0.2, "text": "完全平方不可能小于零。" },
+        { "id": "math-1-subtitle-3", "ratio": 0.45, "text": "前面是正号，就用它找最小值。" },
+        { "id": "math-1-subtitle-4", "ratio": 0.68, "text": "前面是负号，就用它找最大值。" },
+        { "id": "math-1-subtitle-5", "ratio": 0.86, "text": "关键时刻，都是让完全平方这一项等于零。" }
+      ],
+      "visual_cues": [
+        { "id": "math-1-problem", "ratio": 0, "selector": ".math-problem-preview" },
+        { "id": "math-1-rule", "ratio": 0.2, "selector": ".math-rule-card" }
+      ]
+    },
+    "2": {
+      "audio_path": "/prototype/assets/audio/narration-math-2.wav",
+      "expected_duration_ms": 23760,
+      "subtitle_cues": [
+        { "id": "math-2-subtitle-1", "ratio": 0, "text": "来看第一小题。" },
+        { "id": "math-2-subtitle-2", "ratio": 0.18, "text": "把负四 x 拆成负二乘二再乘 x。" },
+        { "id": "math-2-subtitle-3", "ratio": 0.43, "text": "补出 x 减二的平方，同时减去多补的四。" },
+        { "id": "math-2-subtitle-4", "ratio": 0.68, "text": "原式等于 x 减二的平方再减三。" },
+        { "id": "math-2-subtitle-5", "ratio": 0.86, "text": "平方最小是零，所以原式最小是负三。" }
+      ],
+      "visual_cues": [
+        { "id": "math-2-expression", "ratio": 0, "selector": ".math-formula-stack > .math-formula:nth-child(1)" },
+        { "id": "math-2-square", "ratio": 0.43, "selector": ".math-formula-stack > .math-formula:nth-child(2)" },
+        { "id": "math-2-result", "ratio": 0.68, "selector": ".math-formula-stack > .math-formula:nth-child(3)" },
+        { "id": "math-2-conclusion", "ratio": 0.86, "selector": ".math-formula-stack > .math-conclusion" }
+      ]
+    }
+  },
+  "switch_operations": [
+    { "segment": 1, "target_ms": 5000 },
+    { "segment": 2, "target_ms": 10000 },
+    { "segment": 1, "target_ms": 15000 },
+    { "segment": 2, "target_ms": 5000 },
+    { "segment": 1, "target_ms": 10000 },
+    { "segment": 2, "target_ms": 15000 },
+    { "segment": 1, "target_ms": 5000 },
+    { "segment": 2, "target_ms": 10000 },
+    { "segment": 1, "target_ms": 15000 },
+    { "segment": 2, "target_ms": 5000 }
   ],
   "seek_targets_ms": [5000, 10000, 15000, 5000, 15000, 10000, 5000, 10000, 15000, 5000],
   "thresholds": {

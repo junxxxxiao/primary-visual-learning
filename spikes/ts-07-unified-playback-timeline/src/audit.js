@@ -22,6 +22,19 @@
     };
   }
 
+  function linearSlope(values) {
+    if (values.length < 2) return 0;
+    const xMean = (values.length - 1) / 2;
+    const yMean = values.reduce((sum, value) => sum + value, 0) / values.length;
+    let numerator = 0;
+    let denominator = 0;
+    values.forEach((value, index) => {
+      numerator += (index - xMean) * (value - yMean);
+      denominator += (index - xMean) ** 2;
+    });
+    return denominator ? numerator / denominator : 0;
+  }
+
   function evaluate(config) {
     const thresholds = config.thresholds || {};
     const measurements = config.measurements || {};
@@ -29,7 +42,10 @@
     const visual = measurements.visualCueDeviationsMs || [];
     const pauseResume = measurements.pauseResumeErrorsMs || [];
     const seekErrors = measurements.seekErrorsMs || [];
+    const switchOffsets = measurements.switchOffsetsMs || [];
+    const switchErrors = switchOffsets.map(Math.abs);
     const handoffs = measurements.fallbackHandoffs || [];
+    const fallbackTransitionCounts = measurements.fallbackTransitionCounts || [];
     const durationMs = config.durationMs || 1000;
     const handoffErrors = handoffs.map(item => Math.abs(item.afterRatio - item.beforeRatio) * durationMs);
     const metrics = {
@@ -42,10 +58,18 @@
         cumulative_drift_ms: seekErrors.length > 1 ? seekErrors[seekErrors.length - 1] - seekErrors[0] : 0,
         rendered_state_consistent: measurements.seekRenderedStateConsistent !== false
       },
+      switch: {
+        ...summarize(switchErrors),
+        drift_slope_ms_per_operation: linearSlope(switchErrors),
+        rendered_state_consistent: measurements.switchRenderedStateConsistent !== false,
+        segment_consistent: measurements.switchSegmentConsistent !== false
+      },
       fallback_handoffs: {
         ...summarize(handoffErrors),
         monotonic: measurements.fallbackMonotonic !== false,
-        state_rollback: measurements.fallbackStateRollback === true
+        state_rollback: measurements.fallbackStateRollback === true,
+        transition_counts: fallbackTransitionCounts,
+        exactly_one_transition: fallbackTransitionCounts.length === 0 || fallbackTransitionCounts.every(count => count === 1)
       }
     };
     const violations = [];
@@ -62,11 +86,20 @@
       violations.push('transport.seek_final_error_exceeded');
     }
     if (!metrics.seek.rendered_state_consistent) violations.push('transport.seek_state_inconsistent');
+    if (metrics.switch.max_ms !== null && metrics.switch.max_ms >= thresholds.seekFinalErrorMsExclusive) {
+      violations.push('transport.switch_error_exceeded');
+    }
+    if (metrics.switch.drift_slope_ms_per_operation > 0) {
+      violations.push('transport.switch_drift_increasing');
+    }
+    if (!metrics.switch.rendered_state_consistent) violations.push('transport.switch_state_inconsistent');
+    if (!metrics.switch.segment_consistent) violations.push('transport.switch_segment_inconsistent');
     if (metrics.fallback_handoffs.p95_ms !== null && metrics.fallback_handoffs.p95_ms >= thresholds.handoffErrorMsExclusive) {
       violations.push('fallback.handoff_error_exceeded');
     }
     if (!metrics.fallback_handoffs.monotonic) violations.push('fallback.not_monotonic');
     if (metrics.fallback_handoffs.state_rollback) violations.push('fallback.state_rollback');
+    if (!metrics.fallback_handoffs.exactly_one_transition) violations.push('fallback.transition_count_invalid');
     return { pass: violations.length === 0, violationCodes: violations, metrics };
   }
 
@@ -110,21 +143,21 @@
     return document.querySelector('.concept-screen.active .runtime-subtitle')?.textContent.trim() || '';
   }
 
-  function visibleVisualIds(document, fixture) {
-    return fixture.visual_cues
+  function visibleVisualIds(document, cues) {
+    return cues
       .filter(cue => document.querySelector(`.concept-screen.active ${cue.selector}`)?.classList.contains('is-visible'))
       .map(cue => cue.id);
   }
 
-  function activeProgressRatio(document) {
-    const fill = document.querySelector('.concept-screen.active [data-player-kind="math"] [data-player-segment="1"] .player-fill');
+  function activeProgressRatio(document, segment = 1) {
+    const fill = document.querySelector(`.concept-screen.active [data-player-kind="math"] [data-player-segment="${segment}"] .player-fill`);
     return Number.parseFloat(fill?.style.width || '0') / 100;
   }
 
   function renderedState(document, fixture) {
     return {
       subtitle: activeSubtitle(document),
-      visualIds: visibleVisualIds(document, fixture),
+      visualIds: visibleVisualIds(document, fixture.visual_cues),
       progressRatio: activeProgressRatio(document)
     };
   }
@@ -160,6 +193,57 @@
       clientX: rect.left + rect.width * ratio,
       clientY: rect.top + rect.height / 2
     }));
+  }
+
+  function clickSwitchOperation(context, segmentFixture, operation) {
+    const button = context.document.querySelector(`.concept-screen.active [data-player-kind="math"] [data-player-segment="${operation.segment}"]`);
+    if (!button) throw new Error(`Segment ${operation.segment} control is missing`);
+    const ratio = Math.max(0, Math.min(0.99, operation.target_ms / segmentFixture.expected_duration_ms));
+    const rect = button.getBoundingClientRect();
+    button.dispatchEvent(new context.targetWindow.MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+      clientX: rect.left + rect.width * ratio,
+      clientY: rect.top + rect.height / 2
+    }));
+  }
+
+  async function collectSwitchRun(frame, fixture, runId) {
+    const context = await loadDemo(frame, runId);
+    const { targetWindow, document, audio } = context;
+    const observations = [];
+    for (const operation of fixture.switch_operations) {
+      const segmentFixture = fixture.switch_segments[String(operation.segment)];
+      clickSwitchOperation(context, segmentFixture, operation);
+      await waitFor(() => {
+        const activeSegment = Number(document.querySelector('.concept-screen.active [data-player-kind="math"] [data-player-segment].active')?.dataset.playerSegment);
+        return activeSegment === operation.segment &&
+          audio.currentSrc.endsWith(segmentFixture.audio_path) &&
+          !audio.paused &&
+          Math.abs(audio.currentTime * 1000 - operation.target_ms) < 750;
+      }, 5000, `segment ${operation.segment} at ${operation.target_ms}ms`);
+      await nextFrame(targetWindow);
+      await nextFrame(targetWindow);
+      const observedMs = audio.currentTime * 1000;
+      const actualRatio = audio.currentTime / audio.duration;
+      const actualVisualIds = visibleVisualIds(document, segmentFixture.visual_cues);
+      const expected = expectedState(segmentFixture, operation.target_ms / segmentFixture.expected_duration_ms);
+      const activeSegment = Number(document.querySelector('.concept-screen.active [data-player-kind="math"] [data-player-segment].active')?.dataset.playerSegment);
+      const progressRatio = activeProgressRatio(document, operation.segment);
+      observations.push({
+        segment: operation.segment,
+        target_ms: operation.target_ms,
+        observed_ms: observedMs,
+        offset_ms: observedMs - operation.target_ms,
+        error_ms: Math.abs(observedMs - operation.target_ms),
+        segment_consistent: activeSegment === operation.segment,
+        state_consistent: activeSubtitle(document) === expected.subtitle &&
+          sameIds(actualVisualIds, expected.visualIds) &&
+          Math.abs(progressRatio - actualRatio) < 0.02
+      });
+    }
+    if (!audio.paused) playerToggle(document).click();
+    return { run_id: runId, observations };
   }
 
   async function collectRealRun(frame, fixture, runId, includeSeek) {
@@ -271,6 +355,10 @@
     const beforeRatio = audio.currentTime / audio.duration;
     const beforeState = renderedState(document, fixture);
     let errorCount = 0;
+    let fallbackTransitionCount = 0;
+    document.addEventListener('playbackclockchange', event => {
+      if (event.detail?.from === 'audio' && event.detail?.to === 'visual-fallback') fallbackTransitionCount += 1;
+    });
     audio.addEventListener('error', () => { errorCount += 1; });
     audio.src = `/prototype/assets/audio/__ts07_missing_${encodeURIComponent(runId)}.wav`;
     audio.load();
@@ -288,6 +376,7 @@
       run_id: runId,
       duration_ms: durationMs,
       error_count: errorCount,
+      fallback_transition_count: fallbackTransitionCount,
       before_ratio: beforeRatio,
       after_ratio: afterRatio,
       later_ratio: laterRatio,
@@ -310,6 +399,7 @@
     const frame = config.frame;
     if (!(frame instanceof HTMLIFrameElement)) throw new Error('Candidate mode requires a Demo iframe');
     const realRunCount = config.realRunCount ?? 5;
+    const switchRunCount = config.switchRunCount ?? 0;
     const fallbackRunCount = config.fallbackRunCount ?? 5;
     const startedAt = new Date().toISOString();
 
@@ -317,6 +407,10 @@
     const realRuns = [];
     for (let index = 0; index < realRunCount; index += 1) {
       realRuns.push(await collectRealRun(frame, fixture, `real-${index + 1}`, true));
+    }
+    const switchRuns = [];
+    for (let index = 0; index < switchRunCount; index += 1) {
+      switchRuns.push(await collectSwitchRun(frame, fixture, `switch-${index + 1}`));
     }
     const fallbackRuns = [];
     for (let index = 0; index < fallbackRunCount; index += 1) {
@@ -329,7 +423,11 @@
       pauseResumeErrorsMs: realRuns.map(run => run.pause_resume_error_ms),
       seekErrorsMs: realRuns.flatMap(run => run.seek_observations.map(item => item.error_ms)),
       seekRenderedStateConsistent: realRuns.every(run => run.pause_state_stable && run.seek_observations.every(item => item.state_consistent)),
+      switchOffsetsMs: switchRuns.flatMap(run => run.observations.map(item => item.offset_ms)),
+      switchRenderedStateConsistent: switchRuns.every(run => run.observations.every(item => item.state_consistent)),
+      switchSegmentConsistent: switchRuns.every(run => run.observations.every(item => item.segment_consistent)),
       fallbackHandoffs: fallbackRuns.map(run => ({ beforeRatio: run.before_ratio, afterRatio: run.after_ratio })),
+      fallbackTransitionCounts: fallbackRuns.map(run => run.fallback_transition_count),
       fallbackMonotonic: fallbackRuns.every(run => run.monotonic),
       fallbackStateRollback: fallbackRuns.some(run => run.state_rollback)
     };
@@ -344,6 +442,7 @@
     for (const url of [
       '/prototype/sound-demo.html',
       fixture.candidate.audio_path,
+      ...(fixture.candidate.additional_audio_paths || []),
       fixtureUrl,
       './src/audit.js'
     ]) hashes[url] = await sha256Url(url);
@@ -366,7 +465,7 @@
       fixture_version: fixture.fixture_version,
       hashes,
       warmup: { duration_ms: warmup.duration_ms },
-      raw: { real_runs: realRuns, fallback_runs: fallbackRuns },
+      raw: { real_runs: realRuns, switch_runs: switchRuns, fallback_runs: fallbackRuns },
       metrics: evaluation.metrics,
       violation_codes: evaluation.violationCodes,
       pass: evaluation.pass

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidate-human-review/1.0",
+  "title": "Technical slice candidate human review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "slice_id", "manifest_sha256", "result_sha256", "reviewed_at", "reviewer", "decision", "evidence"],
+  "properties": {
+    "schema_version": { "const": "candidate-human-review/1.0" },
+    "slice_id": { "type": "string", "minLength": 1 },
+    "manifest_sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "result_sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "reviewer": { "type": "string", "minLength": 1 },
+    "decision": { "enum": ["conditional_pass", "pass", "fail"] },
+    "evidence": { "type": "string", "minLength": 1 }
+  }
+}

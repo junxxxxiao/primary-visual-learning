@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate-authorization/1.0",
+  "slice_id": "TS-07",
+  "manifest_sha256": "sha256:dd0c5b710dc2afeaaedd848f3b8c857d76b69fb8ff40d0f3b6b482635de05a6b",
+  "decision": "pending",
+  "authorized_by": null,
+  "authorized_at": null,
+  "evidence": "The authorized retest attempts failed before producing a candidate run. The unverified Demo edits were withdrawn, and the user chose to merge the slice at harness_ready with rapid repeated segment switching recorded as unverified."
+}

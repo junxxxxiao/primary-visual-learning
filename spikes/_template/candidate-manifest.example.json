@@ -1,0 +1,29 @@
+{
+  "schema_version": "candidate-manifest/1.0",
+  "slice_id": "TS-XX",
+  "candidate": {
+    "subject": "待确认",
+    "supplier": "待确认",
+    "version": "待确认",
+    "invocation": "待确认",
+    "fixed_parameters": {}
+  },
+  "budget": {
+    "external_requests": 0,
+    "tokens": 0,
+    "cost_cny": 0
+  },
+  "data_boundary": {
+    "classification": "synthetic_or_deidentified",
+    "contains_child_data": false
+  },
+  "inputs": [
+    {
+      "id": "candidate_input",
+      "path": "spikes/ts-xx/fixtures/input.json",
+      "sha256": "sha256:REPLACE_WITH_64_HEX_CHARACTERS",
+      "result_hash_key": "candidate_input"
+    }
+  ],
+  "result_path": "spikes/ts-xx/results/candidate.json"
+}

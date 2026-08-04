@@ -1,8 +1,9 @@
 {
   "slice_id": "TS-07",
-  "status": "conditional_pass",
-  "evidence_state": "human_review_complete",
-  "human_review": {
+  "status": "harness_ready",
+  "evidence_state": "harness_ready",
+  "decision": null,
+  "prior_human_review": {
     "evidence_state": "human_review_complete",
     "decision": "conditional_pass",
     "reviewer": "junxxxxiao",
@@ -10,6 +11,12 @@
     "method": "independent local validation rerun and explicit acceptance of unverified boundaries",
     "evidence_url": "https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523"
   },
+  "current_candidate_attempt": {
+    "state": "not_completed",
+    "failure": "Timed out waiting for segment 2 at 10000ms during rapid repeated switching",
+    "candidate_run_recorded": false
+  },
+  "metrics_classification": "historical diagnostic evidence predating the tightened candidate gate",
   "baseline_sha": "4b91022b7ca933340477d3b55eba5f863593deaa",
   "head_contains_baseline": true,
   "candidate": {
@@ -39,6 +46,7 @@
     "visual_cues": 10,
     "pause_resume": 5,
     "seek_operations": 50,
+    "switch_operations": 10,
     "fallback_handoffs": 5,
     "shared_smoke_runs": 2
   },
@@ -74,33 +82,56 @@
       "cumulative_drift_ms": -9.372999999999593,
       "rendered_state_consistent": true
     },
+    "switch": {
+      "count": 10,
+      "p50_ms": 62.39949999999999,
+      "p80_ms": 103.34579999999951,
+      "p95_ms": 123.73880000000015,
+      "max_ms": 132.91700000000128,
+      "drift_slope_ms_per_operation": 2.1971151515152307,
+      "rendered_state_consistent": true,
+      "segment_consistent": true
+    },
     "fallback_handoffs": {
       "count": 5,
-      "p50_ms": 29.928599999998866,
-      "p80_ms": 32.438216000000324,
-      "p95_ms": 38.68750400000058,
-      "max_ms": 40.77060000000067,
+      "p50_ms": 22.018240000000393,
+      "p80_ms": 23.33673600000009,
+      "p95_ms": 25.1195040000002,
+      "max_ms": 25.71376000000024,
       "monotonic": true,
-      "state_rollback": false
+      "state_rollback": false,
+      "transition_counts": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "exactly_one_transition": true
     }
   },
-  "gates": {
+  "historical_gates": {
     "subtitle_cue_p95_under_250ms": true,
     "visual_cue_p95_under_250ms": true,
     "pause_resume_p95_under_250ms": true,
     "seek_max_under_250ms": true,
     "seek_state_consistent": true,
+    "switch_max_under_250ms": true,
+    "switch_drift_slope_under_limit": true,
+    "switch_state_consistent": true,
+    "switch_segment_consistent": true,
     "fallback_handoff_p95_under_250ms": true,
     "fallback_monotonic": true,
-    "fallback_no_state_rollback": true
+    "fallback_no_state_rollback": true,
+    "fallback_exactly_one_transition": true
   },
-  "violation_codes": [],
+  "historical_violation_codes": [],
   "round_one_violation_codes": [
     "fallback.handoff_error_exceeded",
     "fallback.not_monotonic",
     "fallback.state_rollback"
   ],
-  "hash_checks": {
+  "historical_hash_checks": {
     "round_one_sealed": {
       "/prototype/sound-demo.html": true,
       "/prototype/assets/audio/narration-math-1.wav": true,
@@ -114,23 +145,28 @@
       "./src/audit.js": true
     }
   },
-  "metric_recalculation_checks": {
+  "historical_metric_recalculation_checks": {
     "subtitle_cues": true,
     "visual_cues": true,
     "pause_resume": true,
     "seek": true,
-    "fallback_handoffs": true
+    "fallback_handoffs": true,
+    "switch_p95": true,
+    "switch_drift_slope": true
   },
-  "structural_checks": {
+  "historical_structural_checks": {
     "result_version": true,
     "candidate_output": true,
     "round_one_real_run_count": true,
     "retest_real_run_count": true,
+    "switch_run_count": true,
+    "switch_operation_count": true,
     "fallback_run_count": true,
     "subtitle_observation_count": true,
     "visual_observation_count": true,
     "seek_observation_count": true,
     "one_error_per_fallback": true,
+    "one_transition_per_fallback": true,
     "shared_smoke": true,
     "zero_external_usage": true,
     "harness_self_test": true,
@@ -147,18 +183,25 @@
     "currency": "CNY",
     "external_services": false
   },
-  "verified": [
+  "historical_verified": [
     "existing Chrome Demo real-audio cue synchronization for the fixed math segment",
     "pause and resume continuity for the fixed math segment",
     "ten repeated seeks per run across five measured runs",
+    "ten alternating segment-one and segment-two selections with seek and rendered-state checks",
     "media-error fallback continuity across five measured retest runs",
+    "exactly one real-audio-to-visual-clock transition in each measured fallback run",
     "sound-main and vacuum shared-player fallback pause and resume smoke coverage"
   ],
   "unverified": [
+    "rapid repeated segment switching with seeks",
     "Safari and WeChat WebView",
     "real phones and low-end devices",
     "background throttling and network buffering",
     "long lessons and production session isolation",
-    "generated visual scenes from TS-04C"
+    "generated visual scenes from TS-04C",
+    "automatic continuous playback across segment boundaries",
+    "topic switching and return to the original topic",
+    "exact one-second starting-frame hold for every segment",
+    "reduced-motion playback and foreground/background recovery"
   ]
 }

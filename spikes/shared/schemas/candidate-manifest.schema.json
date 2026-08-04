@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidate-manifest/1.0",
+  "title": "Technical slice candidate manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "slice_id", "candidate", "budget", "data_boundary", "inputs", "result_path"],
+  "properties": {
+    "schema_version": { "const": "candidate-manifest/1.0" },
+    "slice_id": { "type": "string", "minLength": 1 },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "supplier", "version", "invocation", "fixed_parameters"],
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "supplier": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "invocation": { "type": "string", "minLength": 1 },
+        "fixed_parameters": { "type": "object" }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["external_requests", "tokens", "cost_cny"],
+      "properties": {
+        "external_requests": { "type": "integer", "minimum": 0 },
+        "tokens": { "type": "integer", "minimum": 0 },
+        "cost_cny": { "type": "number", "minimum": 0 }
+      }
+    },
+    "data_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "contains_child_data"],
+      "properties": {
+        "classification": { "type": "string", "minLength": 1 },
+        "contains_child_data": { "const": false }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "sha256", "result_hash_key"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "result_hash_key": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "historical_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "classification"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "classification": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "result_path": { "type": "string", "minLength": 1 }
+  }
+}

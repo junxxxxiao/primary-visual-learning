@@ -57,6 +57,45 @@
             fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }]
           }
         });
+        const transitionFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [2]
+          }
+        });
+        const driftFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [0, 20, 40, 60, 80, 100]
+          }
+        });
+        const switchErrorFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: {
+            cueP95MsExclusive: 250,
+            handoffErrorMsExclusive: 250,
+            seekFinalErrorMsExclusive: 250
+          },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [260, 260]
+          }
+        });
+        const decreasingDrift = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250, seekFinalErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [100, 80, 60, 40, 20]
+          }
+        });
         const checks = {
           lateCueRejected: !cueFailure.pass && cueFailure.violationCodes.includes('cue.subtitle_p95_exceeded'),
           discontinuousHandoffRejected: !handoffFailure.pass && handoffFailure.violationCodes.includes('fallback.handoff_error_exceeded'),
@@ -65,6 +104,10 @@
           pauseErrorRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.pause_resume_p95_exceeded'),
           seekErrorRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.seek_final_error_exceeded'),
           inconsistentSeekStateRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.seek_state_inconsistent'),
+          duplicateFallbackTransitionRejected: !transitionFailure.pass && transitionFailure.violationCodes.includes('fallback.transition_count_invalid'),
+          increasingDriftRejected: !driftFailure.pass && driftFailure.violationCodes.includes('transport.switch_drift_increasing'),
+          excessiveSwitchErrorRejected: !switchErrorFailure.pass && switchErrorFailure.violationCodes.includes('transport.switch_error_exceeded'),
+          decreasingDriftAccepted: decreasingDrift.pass,
           validMeasurementsAccepted: valid.pass
         };
         const result = { pass: Object.values(checks).every(Boolean), checks };

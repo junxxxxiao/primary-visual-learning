@@ -35,6 +35,7 @@
       "required": ["real_runs", "fallback_runs"],
       "properties": {
         "real_runs": { "type": "array", "minItems": 0, "maxItems": 5 },
+        "switch_runs": { "type": "array", "minItems": 0, "maxItems": 1 },
         "fallback_runs": { "type": "array", "minItems": 5, "maxItems": 5 }
       }
     },
