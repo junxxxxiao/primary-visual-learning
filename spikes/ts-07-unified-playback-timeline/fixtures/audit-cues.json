@@ -1,0 +1,30 @@
+{
+  "fixture_version": "ts-07-audit-cues/1.0",
+  "fixture_kind": "gold_fixture",
+  "synthetic": true,
+  "candidate": {
+    "kind": "math",
+    "segment": 1,
+    "audio_path": "/prototype/assets/audio/narration-math-1.wav",
+    "expected_duration_ms": 20160,
+    "playback_rate": 1
+  },
+  "subtitle_cues": [
+    { "id": "subtitle-1", "ratio": 0, "text": "先看材料里的共同规律。" },
+    { "id": "subtitle-2", "ratio": 0.2, "text": "完全平方不可能小于零。" },
+    { "id": "subtitle-3", "ratio": 0.45, "text": "前面是正号，就用它找最小值。" },
+    { "id": "subtitle-4", "ratio": 0.68, "text": "前面是负号，就用它找最大值。" },
+    { "id": "subtitle-5", "ratio": 0.86, "text": "关键时刻，都是让完全平方这一项等于零。" }
+  ],
+  "visual_cues": [
+    { "id": "visual-problem", "ratio": 0, "selector": ".math-problem-preview" },
+    { "id": "visual-rule", "ratio": 0.2, "selector": ".math-rule-card" }
+  ],
+  "seek_targets_ms": [5000, 10000, 15000, 5000, 15000, 10000, 5000, 10000, 15000, 5000],
+  "thresholds": {
+    "cue_p95_ms_exclusive": 250,
+    "pause_resume_p95_ms_exclusive": 250,
+    "seek_final_error_ms_exclusive": 250,
+    "handoff_error_ms_exclusive": 250
+  }
+}

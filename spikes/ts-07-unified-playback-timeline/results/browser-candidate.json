@@ -1,0 +1,705 @@
+{
+  "result_version": "ts-07-browser-audit/1.0",
+  "evidence_kind": "candidate_output",
+  "started_at": "2026-08-04T08:23:38.411Z",
+  "completed_at": "2026-08-04T08:27:25.233Z",
+  "candidate": {
+    "implementation": "prototype/sound-demo.html",
+    "approved_browser": "Google Chrome 150.0.7871.188",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+    "platform": "MacIntel",
+    "playback_rate": 1,
+    "external_requests": 0,
+    "tokens_or_equivalent": 0,
+    "cost_cny": 0
+  },
+  "fixture_version": "ts-07-audit-cues/1.0",
+  "hashes": {
+    "/prototype/sound-demo.html": "d0644ecbb7681553ef250e8a74b34c2724a06c39672f0fbf21ce995e0fbf20b8",
+    "/prototype/assets/audio/narration-math-1.wav": "221df18ba1a492280579cc079432927b2a95884ce1035e21c3bc14ff6973d5a7",
+    "./fixtures/audit-cues.json": "26666e1f35456c2e0ef42482d8b2319e28c05e765dbfeb943f0908621a67f50e",
+    "./src/audit.js": "a97e7df2421a94c13c5735cb288705c03162968ea39451e4fb4bb68025f4b485"
+  },
+  "warmup": {
+    "duration_ms": 20160
+  },
+  "raw": {
+    "real_runs": [
+      {
+        "run_id": "real-1",
+        "duration_ms": 20160,
+        "subtitle_observations": [
+          {
+            "cue_id": "subtitle-1",
+            "expected_ms": 0,
+            "observed_ms": 23.220000000000002,
+            "deviation_ms": 23.220000000000002
+          },
+          {
+            "cue_id": "subtitle-2",
+            "expected_ms": 4032,
+            "observed_ms": 4060.818,
+            "deviation_ms": 28.81800000000021
+          },
+          {
+            "cue_id": "subtitle-3",
+            "expected_ms": 9072,
+            "observed_ms": 9098.179,
+            "deviation_ms": 26.179000000000087
+          },
+          {
+            "cue_id": "subtitle-4",
+            "expected_ms": 13708.800000000001,
+            "observed_ms": 13719.182999999999,
+            "deviation_ms": 10.382999999997992
+          },
+          {
+            "cue_id": "subtitle-5",
+            "expected_ms": 17337.6,
+            "observed_ms": 17365.787999999997,
+            "deviation_ms": 28.187999999998283
+          }
+        ],
+        "visual_observations": [
+          {
+            "cue_id": "visual-problem",
+            "expected_ms": 0,
+            "observed_ms": 23.220000000000002,
+            "deviation_ms": 23.220000000000002
+          },
+          {
+            "cue_id": "visual-rule",
+            "expected_ms": 4032,
+            "observed_ms": 4060.818,
+            "deviation_ms": 28.81800000000021
+          }
+        ],
+        "pause_resume_error_ms": 62.62699999999999,
+        "pause_state_stable": true,
+        "seek_observations": [
+          {
+            "target_ms": 5000,
+            "observed_ms": 4892.357,
+            "error_ms": 107.64300000000003,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.092999999999,
+            "error_ms": 7.092999999998938,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15003.998,
+            "error_ms": 3.9979999999995925,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          }
+        ]
+      },
+      {
+        "run_id": "real-2",
+        "duration_ms": 20160,
+        "subtitle_observations": [
+          {
+            "cue_id": "subtitle-1",
+            "expected_ms": 0,
+            "observed_ms": 15.68,
+            "deviation_ms": 15.68
+          },
+          {
+            "cue_id": "subtitle-2",
+            "expected_ms": 4032,
+            "observed_ms": 4068.3420000000006,
+            "deviation_ms": 36.34200000000055
+          },
+          {
+            "cue_id": "subtitle-3",
+            "expected_ms": 9072,
+            "observed_ms": 9092.937,
+            "deviation_ms": 20.936999999999898
+          },
+          {
+            "cue_id": "subtitle-4",
+            "expected_ms": 13708.800000000001,
+            "observed_ms": 13730.376,
+            "deviation_ms": 21.575999999999112
+          },
+          {
+            "cue_id": "subtitle-5",
+            "expected_ms": 17337.6,
+            "observed_ms": 17370.771999999997,
+            "deviation_ms": 33.17199999999866
+          }
+        ],
+        "visual_observations": [
+          {
+            "cue_id": "visual-problem",
+            "expected_ms": 0,
+            "observed_ms": 15.68,
+            "deviation_ms": 15.68
+          },
+          {
+            "cue_id": "visual-rule",
+            "expected_ms": 4032,
+            "observed_ms": 4068.3420000000006,
+            "deviation_ms": 36.34200000000055
+          }
+        ],
+        "pause_resume_error_ms": 48.11399999999999,
+        "pause_state_stable": true,
+        "seek_observations": [
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15000.214,
+            "error_ms": 0.2139999999999418,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4900.938,
+            "error_ms": 99.0619999999999,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10012.795,
+            "error_ms": 12.795000000000073,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15002.837,
+            "error_ms": 2.8369999999995343,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          }
+        ]
+      },
+      {
+        "run_id": "real-3",
+        "duration_ms": 20160,
+        "subtitle_observations": [
+          {
+            "cue_id": "subtitle-1",
+            "expected_ms": 0,
+            "observed_ms": 23.220000000000002,
+            "deviation_ms": 23.220000000000002
+          },
+          {
+            "cue_id": "subtitle-2",
+            "expected_ms": 4032,
+            "observed_ms": 4066.3929999999996,
+            "deviation_ms": 34.392999999999574
+          },
+          {
+            "cue_id": "subtitle-3",
+            "expected_ms": 9072,
+            "observed_ms": 9101.829,
+            "deviation_ms": 29.828999999999724
+          },
+          {
+            "cue_id": "subtitle-4",
+            "expected_ms": 13708.800000000001,
+            "observed_ms": 13722.358,
+            "deviation_ms": 13.557999999999083
+          },
+          {
+            "cue_id": "subtitle-5",
+            "expected_ms": 17337.6,
+            "observed_ms": 17368.987,
+            "deviation_ms": 31.387000000002445
+          }
+        ],
+        "visual_observations": [
+          {
+            "cue_id": "visual-problem",
+            "expected_ms": 0,
+            "observed_ms": 23.220000000000002,
+            "deviation_ms": 23.220000000000002
+          },
+          {
+            "cue_id": "visual-rule",
+            "expected_ms": 4032,
+            "observed_ms": 4066.3929999999996,
+            "deviation_ms": 34.392999999999574
+          }
+        ],
+        "pause_resume_error_ms": 59.915999999999855,
+        "pause_state_stable": true,
+        "seek_observations": [
+          {
+            "target_ms": 5000,
+            "observed_ms": 4893.169,
+            "error_ms": 106.83100000000013,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10022.653,
+            "error_ms": 22.653000000000247,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10012.784,
+            "error_ms": 12.78399999999965,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10012.542,
+            "error_ms": 12.541999999999462,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4894.745000000001,
+            "error_ms": 105.2549999999992,
+            "state_consistent": true
+          }
+        ]
+      },
+      {
+        "run_id": "real-4",
+        "duration_ms": 20160,
+        "subtitle_observations": [
+          {
+            "cue_id": "subtitle-1",
+            "expected_ms": 0,
+            "observed_ms": 14.786000000000001,
+            "deviation_ms": 14.786000000000001
+          },
+          {
+            "cue_id": "subtitle-2",
+            "expected_ms": 4032,
+            "observed_ms": 4069.523,
+            "deviation_ms": 37.52300000000014
+          },
+          {
+            "cue_id": "subtitle-3",
+            "expected_ms": 9072,
+            "observed_ms": 9104.496,
+            "deviation_ms": 32.495999999999185
+          },
+          {
+            "cue_id": "subtitle-4",
+            "expected_ms": 13708.800000000001,
+            "observed_ms": 13722.652999999998,
+            "deviation_ms": 13.852999999997337
+          },
+          {
+            "cue_id": "subtitle-5",
+            "expected_ms": 17337.6,
+            "observed_ms": 17368.682,
+            "deviation_ms": 31.082000000002154
+          }
+        ],
+        "visual_observations": [
+          {
+            "cue_id": "visual-problem",
+            "expected_ms": 0,
+            "observed_ms": 14.786000000000001,
+            "deviation_ms": 14.786000000000001
+          },
+          {
+            "cue_id": "visual-rule",
+            "expected_ms": 4032,
+            "observed_ms": 4069.523,
+            "deviation_ms": 37.52300000000014
+          }
+        ],
+        "pause_resume_error_ms": 59.045999999999935,
+        "pause_state_stable": true,
+        "seek_observations": [
+          {
+            "target_ms": 5000,
+            "observed_ms": 4892.526,
+            "error_ms": 107.47400000000016,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4893.436000000001,
+            "error_ms": 106.5639999999994,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4894.924,
+            "error_ms": 105.07600000000002,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4891.818,
+            "error_ms": 108.18199999999979,
+            "state_consistent": true
+          }
+        ]
+      },
+      {
+        "run_id": "real-5",
+        "duration_ms": 20160,
+        "subtitle_observations": [
+          {
+            "cue_id": "subtitle-1",
+            "expected_ms": 0,
+            "observed_ms": 14.314,
+            "deviation_ms": 14.314
+          },
+          {
+            "cue_id": "subtitle-2",
+            "expected_ms": 4032,
+            "observed_ms": 4067.5910000000003,
+            "deviation_ms": 35.59100000000035
+          },
+          {
+            "cue_id": "subtitle-3",
+            "expected_ms": 9072,
+            "observed_ms": 9093.351,
+            "deviation_ms": 21.351000000000568
+          },
+          {
+            "cue_id": "subtitle-4",
+            "expected_ms": 13708.800000000001,
+            "observed_ms": 13728.469000000001,
+            "deviation_ms": 19.66899999999987
+          },
+          {
+            "cue_id": "subtitle-5",
+            "expected_ms": 17337.6,
+            "observed_ms": 17370.618,
+            "deviation_ms": 33.01800000000003
+          }
+        ],
+        "visual_observations": [
+          {
+            "cue_id": "visual-problem",
+            "expected_ms": 0,
+            "observed_ms": 14.314,
+            "deviation_ms": 14.314
+          },
+          {
+            "cue_id": "visual-rule",
+            "expected_ms": 4032,
+            "observed_ms": 4067.5910000000003,
+            "deviation_ms": 35.59100000000035
+          }
+        ],
+        "pause_resume_error_ms": 48.85800000000007,
+        "pause_state_stable": true,
+        "seek_observations": [
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 9996.948,
+            "error_ms": 3.05199999999968,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15007.364000000001,
+            "error_ms": 7.364000000001397,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 15005.672,
+            "error_ms": 5.67200000000048,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4897.624000000001,
+            "error_ms": 102.3759999999993,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 10000,
+            "observed_ms": 10020.168,
+            "error_ms": 20.167999999999665,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 15000,
+            "observed_ms": 14999.012999999999,
+            "error_ms": 0.9870000000009895,
+            "state_consistent": true
+          },
+          {
+            "target_ms": 5000,
+            "observed_ms": 4901.73,
+            "error_ms": 98.27000000000044,
+            "state_consistent": true
+          }
+        ]
+      }
+    ],
+    "fallback_runs": [
+      {
+        "run_id": "fallback-1",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4971768849206349,
+        "after_ratio": 0.00513333,
+        "later_ratio": 0.0329,
+        "handoff_error_ms": 9919.598067199999,
+        "monotonic": false,
+        "state_rollback": true
+      },
+      {
+        "run_id": "fallback-2",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4970644345238095,
+        "after_ratio": 0.00231111,
+        "later_ratio": 0.029977800000000002,
+        "handoff_error_ms": 9974.227022399999,
+        "monotonic": false,
+        "state_rollback": true
+      },
+      {
+        "run_id": "fallback-3",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4960871527777778,
+        "after_ratio": 0.00411111,
+        "later_ratio": 0.0319,
+        "handoff_error_ms": 9918.2370224,
+        "monotonic": false,
+        "state_rollback": true
+      },
+      {
+        "run_id": "fallback-4",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.49628789682539687,
+        "after_ratio": 0.00374444,
+        "later_ratio": 0.0315111,
+        "handoff_error_ms": 9929.676089600001,
+        "monotonic": false,
+        "state_rollback": true
+      },
+      {
+        "run_id": "fallback-5",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.49710104166666663,
+        "after_ratio": 0.00495556,
+        "later_ratio": 0.0327333,
+        "handoff_error_ms": 9921.652910399998,
+        "monotonic": false,
+        "state_rollback": true
+      }
+    ]
+  },
+  "metrics": {
+    "subtitle_cues": {
+      "count": 25,
+      "p50_ms": 26.179000000000087,
+      "p80_ms": 33.04879999999976,
+      "p95_ms": 36.19180000000051,
+      "max_ms": 37.52300000000014
+    },
+    "visual_cues": {
+      "count": 10,
+      "p50_ms": 26.019000000000105,
+      "p80_ms": 35.74120000000039,
+      "p95_ms": 36.99155000000032,
+      "max_ms": 37.52300000000014
+    },
+    "pause_resume": {
+      "count": 5,
+      "p50_ms": 59.045999999999935,
+      "p80_ms": 60.458199999999884,
+      "p95_ms": 62.08479999999996,
+      "max_ms": 62.62699999999999
+    },
+    "seek": {
+      "count": 50,
+      "p50_ms": 20.167999999999665,
+      "p80_ms": 98.27000000000044,
+      "p95_ms": 107.18465000000015,
+      "max_ms": 108.18199999999979,
+      "final_error_ms": 98.27000000000044,
+      "cumulative_drift_ms": -9.372999999999593,
+      "rendered_state_consistent": true
+    },
+    "fallback_handoffs": {
+      "count": 5,
+      "p50_ms": 9921.652910399998,
+      "p80_ms": 9938.58627616,
+      "p95_ms": 9965.31683584,
+      "max_ms": 9974.227022399999,
+      "monotonic": false,
+      "state_rollback": true
+    }
+  },
+  "violation_codes": [
+    "fallback.handoff_error_exceeded",
+    "fallback.not_monotonic",
+    "fallback.state_rollback"
+  ],
+  "pass": false
+}

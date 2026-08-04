@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TS-07 playback audit</title>
+  <style>
+    body { margin: 0; padding: 20px; background: #f4f5f7; color: #111; font: 14px/1.5 system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; }
+    button { min-height: 44px; padding: 0 16px; border: 1px solid #111; background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+    button:disabled { cursor: wait; opacity: .6; }
+    iframe { width: 100%; height: 640px; margin-top: 16px; border: 1px solid #bbb; background: #fff; }
+    pre { max-height: 360px; overflow: auto; padding: 12px; border: 1px solid #bbb; background: #fff; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>TS-07 playback audit</h1>
+    <button id="run" type="button">Run candidate audit</button>
+    <p id="status">Ready</p>
+    <pre id="result"></pre>
+    <iframe id="demo" title="Existing high-fidelity Demo under audit"></iframe>
+  </main>
+  <script src="./src/audit.js"></script>
+  <script>
+    const runButton = document.querySelector('#run');
+    const status = document.querySelector('#status');
+    const resultNode = document.querySelector('#result');
+    runButton.addEventListener('click', async () => {
+      runButton.disabled = true;
+      status.textContent = 'Running';
+      document.documentElement.dataset.auditStatus = 'running';
+      try {
+        const result = await window.ts07Audit.run({
+          mode: 'candidate',
+          frame: document.querySelector('#demo'),
+          fixtureUrl: './fixtures/audit-cues.json',
+          realRunCount: 5,
+          fallbackRunCount: 5,
+          approvedBrowser: 'Google Chrome 150.0.7871.188'
+        });
+        const saveResponse = await fetch('/__ts07_result__', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(result)
+        });
+        if (!saveResponse.ok) throw new Error(`Unable to save candidate result: HTTP ${saveResponse.status}`);
+        window.__TS07_RESULT__ = result;
+        resultNode.textContent = JSON.stringify(result, null, 2);
+        status.textContent = result.pass ? 'Candidate passed' : 'Candidate failed';
+        document.documentElement.dataset.auditStatus = result.pass ? 'pass' : 'fail';
+      } catch (error) {
+        const result = { pass: false, harness_error: String(error), stack: error?.stack || null };
+        window.__TS07_RESULT__ = result;
+        resultNode.textContent = JSON.stringify(result, null, 2);
+        status.textContent = 'Harness error';
+        document.documentElement.dataset.auditStatus = 'error';
+      } finally {
+        runButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
