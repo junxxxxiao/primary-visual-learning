@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TS-07 audit self-test</title>
+</head>
+<body>
+  <pre id="result">running</pre>
+  <script src="../src/audit.js"></script>
+  <script>
+    window.addEventListener('load', async () => {
+      const resultNode = document.querySelector('#result');
+      try {
+        const cueFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            subtitleCueDeviationsMs: [12, 18, 500],
+            visualCueDeviationsMs: [9, 16],
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }]
+          }
+        });
+        const handoffFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            subtitleCueDeviationsMs: [12, 18],
+            visualCueDeviationsMs: [9, 16],
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.02 }],
+            fallbackMonotonic: false,
+            fallbackStateRollback: true
+          }
+        });
+        const valid = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            subtitleCueDeviationsMs: [12, 18],
+            visualCueDeviationsMs: [9, 16],
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }]
+          }
+        });
+        const transportFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: {
+            cueP95MsExclusive: 250,
+            handoffErrorMsExclusive: 250,
+            pauseResumeP95MsExclusive: 250,
+            seekFinalErrorMsExclusive: 250
+          },
+          measurements: {
+            subtitleCueDeviationsMs: [12, 18],
+            visualCueDeviationsMs: [9, 16],
+            pauseResumeErrorsMs: [310],
+            seekErrorsMs: [8, 14, 390],
+            seekRenderedStateConsistent: false,
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }]
+          }
+        });
+        const transitionFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [2]
+          }
+        });
+        const driftFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [0, 20, 40, 60, 80, 100]
+          }
+        });
+        const switchErrorFailure = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: {
+            cueP95MsExclusive: 250,
+            handoffErrorMsExclusive: 250,
+            seekFinalErrorMsExclusive: 250
+          },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [260, 260]
+          }
+        });
+        const decreasingDrift = await window.ts07Audit.run({
+          mode: 'evaluate',
+          thresholds: { cueP95MsExclusive: 250, handoffErrorMsExclusive: 250, seekFinalErrorMsExclusive: 250 },
+          measurements: {
+            fallbackHandoffs: [{ beforeRatio: 0.6, afterRatio: 0.6 }],
+            fallbackTransitionCounts: [1],
+            switchOffsetsMs: [100, 80, 60, 40, 20]
+          }
+        });
+        const checks = {
+          lateCueRejected: !cueFailure.pass && cueFailure.violationCodes.includes('cue.subtitle_p95_exceeded'),
+          discontinuousHandoffRejected: !handoffFailure.pass && handoffFailure.violationCodes.includes('fallback.handoff_error_exceeded'),
+          nonMonotonicFallbackRejected: !handoffFailure.pass && handoffFailure.violationCodes.includes('fallback.not_monotonic'),
+          fallbackRollbackRejected: !handoffFailure.pass && handoffFailure.violationCodes.includes('fallback.state_rollback'),
+          pauseErrorRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.pause_resume_p95_exceeded'),
+          seekErrorRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.seek_final_error_exceeded'),
+          inconsistentSeekStateRejected: !transportFailure.pass && transportFailure.violationCodes.includes('transport.seek_state_inconsistent'),
+          duplicateFallbackTransitionRejected: !transitionFailure.pass && transitionFailure.violationCodes.includes('fallback.transition_count_invalid'),
+          increasingDriftRejected: !driftFailure.pass && driftFailure.violationCodes.includes('transport.switch_drift_increasing'),
+          excessiveSwitchErrorRejected: !switchErrorFailure.pass && switchErrorFailure.violationCodes.includes('transport.switch_error_exceeded'),
+          decreasingDriftAccepted: decreasingDrift.pass,
+          validMeasurementsAccepted: valid.pass
+        };
+        const result = { pass: Object.values(checks).every(Boolean), checks };
+        resultNode.textContent = JSON.stringify(result, null, 2);
+        document.documentElement.dataset.testStatus = result.pass ? 'pass' : 'fail';
+      } catch (error) {
+        resultNode.textContent = JSON.stringify({ pass: false, error: String(error) }, null, 2);
+        document.documentElement.dataset.testStatus = 'fail';
+      }
+    });
+  </script>
+</body>
+</html>

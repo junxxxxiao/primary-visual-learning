@@ -1,0 +1,21 @@
+name: Candidate evidence gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-candidate-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run shared gate regression tests
+        run: python3 -m unittest discover -s spikes/shared/tests -p 'test_*.py' -v

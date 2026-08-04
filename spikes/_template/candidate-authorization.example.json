@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate-authorization/1.0",
+  "slice_id": "TS-XX",
+  "manifest_sha256": "sha256:REPLACE_WITH_CANONICAL_MANIFEST_HASH",
+  "decision": "pending",
+  "authorized_by": null,
+  "authorized_at": null,
+  "evidence": "Awaiting explicit candidate authorization."
+}

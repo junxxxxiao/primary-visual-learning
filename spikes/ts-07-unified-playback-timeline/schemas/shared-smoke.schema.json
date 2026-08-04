@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ts-07-shared-smoke/1.0",
+  "title": "TS-07 shared-player fallback smoke result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_version",
+    "evidence_kind",
+    "candidate_denominator",
+    "started_at",
+    "completed_at",
+    "candidate",
+    "runs",
+    "pass"
+  ],
+  "properties": {
+    "result_version": { "const": "ts-07-shared-smoke/1.0" },
+    "evidence_kind": { "const": "candidate_output" },
+    "candidate_denominator": { "const": false },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "candidate": {
+      "type": "object",
+      "required": ["implementation", "browser_user_agent", "external_requests", "tokens_or_equivalent", "cost_cny"]
+    },
+    "runs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "monotonicHandoff",
+          "subtitlePreserved",
+          "visualStatePreserved",
+          "pauseHeld",
+          "resumeAdvanced",
+          "oneError"
+        ]
+      }
+    },
+    "pass": { "const": true }
+  }
+}

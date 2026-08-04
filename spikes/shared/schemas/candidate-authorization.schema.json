@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "candidate-authorization/1.0",
+  "title": "Technical slice candidate authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "slice_id", "manifest_sha256", "decision", "authorized_by", "authorized_at", "evidence"],
+  "properties": {
+    "schema_version": { "const": "candidate-authorization/1.0" },
+    "slice_id": { "type": "string", "minLength": 1 },
+    "manifest_sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "decision": { "enum": ["pending", "approved", "rejected"] },
+    "authorized_by": { "type": ["string", "null"] },
+    "authorized_at": { "type": ["string", "null"], "format": "date-time" },
+    "evidence": { "type": "string" }
+  }
+}

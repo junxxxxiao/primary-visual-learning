@@ -1,0 +1,207 @@
+{
+  "slice_id": "TS-07",
+  "status": "harness_ready",
+  "evidence_state": "harness_ready",
+  "decision": null,
+  "prior_human_review": {
+    "evidence_state": "human_review_complete",
+    "decision": "conditional_pass",
+    "reviewer": "junxxxxiao",
+    "reviewed_at": "2026-08-04T09:52:22Z",
+    "method": "independent local validation rerun and explicit acceptance of unverified boundaries",
+    "evidence_url": "https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523"
+  },
+  "current_candidate_attempt": {
+    "state": "not_completed",
+    "failure": "Timed out waiting for segment 2 at 10000ms during rapid repeated switching",
+    "candidate_run_recorded": false
+  },
+  "metrics_classification": "historical diagnostic evidence predating the tightened candidate gate",
+  "baseline_sha": "4b91022b7ca933340477d3b55eba5f863593deaa",
+  "head_contains_baseline": true,
+  "candidate": {
+    "implementation": "prototype/sound-demo.html",
+    "approved_browser": "Google Chrome 150.0.7871.188",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "platform": "MacIntel",
+    "playback_rate": 1,
+    "external_requests": 0,
+    "tokens_or_equivalent": 0,
+    "cost_cny": 0
+  },
+  "round_one_implementation_commit": "6a537aaef532e90dda88cf1fa1d91c39c85704e6",
+  "fixture_version": "ts-07-audit-cues/1.0",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "browser": "Google Chrome 150.0.7871.188",
+    "browser_executable_version": "Google Chrome 150.0.7871.188",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "local_http": true
+  },
+  "sample_counts": {
+    "warmup_runs": 2,
+    "real_audio_runs": 5,
+    "fallback_runs": 5,
+    "subtitle_cues": 25,
+    "visual_cues": 10,
+    "pause_resume": 5,
+    "seek_operations": 50,
+    "switch_operations": 10,
+    "fallback_handoffs": 5,
+    "shared_smoke_runs": 2
+  },
+  "metrics": {
+    "subtitle_cues": {
+      "count": 25,
+      "p50_ms": 26.179000000000087,
+      "p80_ms": 33.04879999999976,
+      "p95_ms": 36.19180000000051,
+      "max_ms": 37.52300000000014
+    },
+    "visual_cues": {
+      "count": 10,
+      "p50_ms": 26.019000000000105,
+      "p80_ms": 35.74120000000039,
+      "p95_ms": 36.99155000000032,
+      "max_ms": 37.52300000000014
+    },
+    "pause_resume": {
+      "count": 5,
+      "p50_ms": 59.045999999999935,
+      "p80_ms": 60.458199999999884,
+      "p95_ms": 62.08479999999996,
+      "max_ms": 62.62699999999999
+    },
+    "seek": {
+      "count": 50,
+      "p50_ms": 20.167999999999665,
+      "p80_ms": 98.27000000000044,
+      "p95_ms": 107.18465000000015,
+      "max_ms": 108.18199999999979,
+      "final_error_ms": 98.27000000000044,
+      "cumulative_drift_ms": -9.372999999999593,
+      "rendered_state_consistent": true
+    },
+    "switch": {
+      "count": 10,
+      "p50_ms": 62.39949999999999,
+      "p80_ms": 103.34579999999951,
+      "p95_ms": 123.73880000000015,
+      "max_ms": 132.91700000000128,
+      "drift_slope_ms_per_operation": 2.1971151515152307,
+      "rendered_state_consistent": true,
+      "segment_consistent": true
+    },
+    "fallback_handoffs": {
+      "count": 5,
+      "p50_ms": 22.018240000000393,
+      "p80_ms": 23.33673600000009,
+      "p95_ms": 25.1195040000002,
+      "max_ms": 25.71376000000024,
+      "monotonic": true,
+      "state_rollback": false,
+      "transition_counts": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "exactly_one_transition": true
+    }
+  },
+  "historical_gates": {
+    "subtitle_cue_p95_under_250ms": true,
+    "visual_cue_p95_under_250ms": true,
+    "pause_resume_p95_under_250ms": true,
+    "seek_max_under_250ms": true,
+    "seek_state_consistent": true,
+    "switch_max_under_250ms": true,
+    "switch_drift_slope_under_limit": true,
+    "switch_state_consistent": true,
+    "switch_segment_consistent": true,
+    "fallback_handoff_p95_under_250ms": true,
+    "fallback_monotonic": true,
+    "fallback_no_state_rollback": true,
+    "fallback_exactly_one_transition": true
+  },
+  "historical_violation_codes": [],
+  "round_one_violation_codes": [
+    "fallback.handoff_error_exceeded",
+    "fallback.not_monotonic",
+    "fallback.state_rollback"
+  ],
+  "historical_hash_checks": {
+    "round_one_sealed": {
+      "/prototype/sound-demo.html": true,
+      "/prototype/assets/audio/narration-math-1.wav": true,
+      "./fixtures/audit-cues.json": true,
+      "./src/audit.js": true
+    },
+    "fallback_retest_current": {
+      "/prototype/sound-demo.html": true,
+      "/prototype/assets/audio/narration-math-1.wav": true,
+      "./fixtures/audit-cues.json": true,
+      "./src/audit.js": true
+    }
+  },
+  "historical_metric_recalculation_checks": {
+    "subtitle_cues": true,
+    "visual_cues": true,
+    "pause_resume": true,
+    "seek": true,
+    "fallback_handoffs": true,
+    "switch_p95": true,
+    "switch_drift_slope": true
+  },
+  "historical_structural_checks": {
+    "result_version": true,
+    "candidate_output": true,
+    "round_one_real_run_count": true,
+    "retest_real_run_count": true,
+    "switch_run_count": true,
+    "switch_operation_count": true,
+    "fallback_run_count": true,
+    "subtitle_observation_count": true,
+    "visual_observation_count": true,
+    "seek_observation_count": true,
+    "one_error_per_fallback": true,
+    "one_transition_per_fallback": true,
+    "shared_smoke": true,
+    "zero_external_usage": true,
+    "harness_self_test": true,
+    "round_one_violation_set": true,
+    "round_one_pass_false": true,
+    "retest_has_no_violations": true,
+    "retest_pass_true": true,
+    "approved_browser_matches_executable": true
+  },
+  "validation_pass": true,
+  "candidate_gate_pass": true,
+  "cost": {
+    "amount": 0,
+    "currency": "CNY",
+    "external_services": false
+  },
+  "historical_verified": [
+    "existing Chrome Demo real-audio cue synchronization for the fixed math segment",
+    "pause and resume continuity for the fixed math segment",
+    "ten repeated seeks per run across five measured runs",
+    "ten alternating segment-one and segment-two selections with seek and rendered-state checks",
+    "media-error fallback continuity across five measured retest runs",
+    "exactly one real-audio-to-visual-clock transition in each measured fallback run",
+    "sound-main and vacuum shared-player fallback pause and resume smoke coverage"
+  ],
+  "unverified": [
+    "rapid repeated segment switching with seeks",
+    "Safari and WeChat WebView",
+    "real phones and low-end devices",
+    "background throttling and network buffering",
+    "long lessons and production session isolation",
+    "generated visual scenes from TS-04C",
+    "automatic continuous playback across segment boundaries",
+    "topic switching and return to the original topic",
+    "exact one-second starting-frame hold for every segment",
+    "reduced-motion playback and foreground/background recovery"
+  ]
+}

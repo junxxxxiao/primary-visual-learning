@@ -1,0 +1,22 @@
+{
+  "result_version": "ts-07-harness-self-test/1.0",
+  "evidence_kind": "adversarial_fixture",
+  "synthetic": true,
+  "run_date": "2026-08-04",
+  "checks": {
+    "late_cue_rejected": true,
+    "discontinuous_handoff_rejected": true,
+    "non_monotonic_fallback_rejected": true,
+    "fallback_state_rollback_rejected": true,
+    "pause_error_rejected": true,
+    "seek_error_rejected": true,
+    "inconsistent_seek_state_rejected": true,
+    "duplicate_fallback_transition_rejected": true,
+    "increasing_switch_drift_rejected": true,
+    "excessive_switch_error_rejected": true,
+    "decreasing_switch_drift_accepted": true,
+    "valid_measurements_accepted": true
+  },
+  "pass": true,
+  "candidate_denominator": false
+}

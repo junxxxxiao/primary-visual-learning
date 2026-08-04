@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ts-07-browser-audit/1.0",
+  "title": "TS-07 browser playback audit result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "result_version",
+    "evidence_kind",
+    "started_at",
+    "completed_at",
+    "candidate",
+    "fixture_version",
+    "hashes",
+    "warmup",
+    "raw",
+    "metrics",
+    "violation_codes",
+    "pass"
+  ],
+  "properties": {
+    "result_version": { "const": "ts-07-browser-audit/1.0" },
+    "evidence_kind": { "const": "candidate_output" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "candidate": {
+      "type": "object",
+      "required": ["implementation", "approved_browser", "browser_user_agent", "playback_rate", "external_requests", "tokens_or_equivalent", "cost_cny"]
+    },
+    "fixture_version": { "const": "ts-07-audit-cues/1.0" },
+    "hashes": { "type": "object", "minProperties": 4 },
+    "warmup": { "type": "object", "required": ["duration_ms"] },
+    "raw": {
+      "type": "object",
+      "required": ["real_runs", "fallback_runs"],
+      "properties": {
+        "real_runs": { "type": "array", "minItems": 0, "maxItems": 5 },
+        "switch_runs": { "type": "array", "minItems": 0, "maxItems": 1 },
+        "fallback_runs": { "type": "array", "minItems": 5, "maxItems": 5 }
+      }
+    },
+    "metrics": { "type": "object" },
+    "violation_codes": { "type": "array", "items": { "type": "string" } },
+    "pass": { "type": "boolean" }
+  }
+}

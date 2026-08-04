@@ -17,6 +17,17 @@ This repository is currently validating product assumptions and technical feasib
 - Do not treat code under `spikes/` as production architecture.
 - Move validated capabilities into `apps/` or `packages/` only through a separate implementation decision.
 
+## 执行前硬门禁（最高优先级）
+
+每批工具调用前必须确认：`当前唯一目标`、`本批动作`、`用户授权范围`、`停止点`。任一不明确，不执行。
+
+- 只做能直接完成当前目标、解除当前阻塞或改变当前决策的动作；否则不做。
+- 复用已有有效证据；重测前必须指出具体证据缺口。不得因“更完整”增加测试、审查、文档、框架、自动化或多代理工作。
+- 一次只解决一个失败。同一路径最多尝试两次；第二次仍失败，立即停止并报告，不得自行展开第三条路径。
+- 失败、用户纠正或目标变化后，必须重新确认本门禁和停止点，再调用工具。
+- 达到停止点立即停止。提交、推送、PR、合并、发布及任何范围扩大均需单独明确授权。
+- 用户要求暂停或停止时，只终止仍在运行的任务，不追加检查、修改或收尾。
+
 ## Sources of truth
 
 When requirements conflict, follow this order:
@@ -57,6 +68,7 @@ Archived documents provide background and are not active requirements.
 - 人工、Codex 或其他非被测模型生成的夹具必须标记为 `gold_fixture` 或 `adversarial_fixture`，不得计入候选对象的正式评测分母。
 - 只有通过已确认调用方式获得、可追溯到固定候选对象的输出可以标记为 `candidate_output`。结果必须记录供应商、版本、固定参数、运行时间、响应哈希、Token 或等价用量、成本和失败样例；无法取得的字段必须明确标记为未验证。
 - 技术切片状态必须按证据推进：`not_started` → `harness_ready` → `candidate_run_complete` → `human_review_complete` → `conditional_pass|pass|fail`。不得跳过候选对象运行或所需人工评审直接给出最终结论。
+- 候选验证使用 `candidate-manifest.json`、`candidate-authorization.json`、`candidate-run.json` 和 `candidate-human-review.json`。正式运行入口必须先执行 `preflight`；manifest、输入哈希或固定参数变化后旧授权自动失效，新候选结果使旧人工评审自动失效。`harness_ready` 可以合并测试框架，但不得携带通过结论；只有发布 `conditional_pass|pass|fail` 结论前才必须通过 `python3 spikes/shared/candidate_evidence_gate.py discover --repo-root . --stage release`。
 
 ## 证据来源门禁
 

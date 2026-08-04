@@ -1,0 +1,72 @@
+{
+  "schema_version": "candidate-manifest/1.0",
+  "slice_id": "TS-07",
+  "candidate": {
+    "subject": "prototype/sound-demo.html shared playback timeline",
+    "supplier": "local repository and Google Chrome",
+    "version": "Google Chrome 150.0.7871.188",
+    "invocation": "local HTTP black-box audit through visible shared-player controls",
+    "fixed_parameters": {
+      "playback_rate": 1,
+      "real_run_count": 0,
+      "switch_run_count": 1,
+      "switch_operation_count": 10,
+      "fallback_run_count": 5,
+      "switch_segments": [1, 2]
+    }
+  },
+  "budget": {
+    "external_requests": 0,
+    "tokens": 0,
+    "cost_cny": 0
+  },
+  "data_boundary": {
+    "classification": "repository fixtures and synthetic audit instructions",
+    "contains_child_data": false
+  },
+  "inputs": [
+    {
+      "id": "candidate_implementation",
+      "path": "prototype/sound-demo.html",
+      "sha256": "sha256:43eb488ff84a50a6c8a25fa32e3793d4489a4166c0ce07c15f1127c5cd501a0d",
+      "result_hash_key": "/prototype/sound-demo.html"
+    },
+    {
+      "id": "math_segment_1_audio",
+      "path": "prototype/assets/audio/narration-math-1.wav",
+      "sha256": "sha256:221df18ba1a492280579cc079432927b2a95884ce1035e21c3bc14ff6973d5a7",
+      "result_hash_key": "/prototype/assets/audio/narration-math-1.wav"
+    },
+    {
+      "id": "math_segment_2_audio",
+      "path": "prototype/assets/audio/narration-math-2.wav",
+      "sha256": "sha256:d5a5d90e1da3ed2114adb69e998f45bf5c942040f44d7e07d7429793d4ac91a7",
+      "result_hash_key": "/prototype/assets/audio/narration-math-2.wav"
+    },
+    {
+      "id": "audit_fixture",
+      "path": "spikes/ts-07-unified-playback-timeline/fixtures/audit-cues.json",
+      "sha256": "sha256:e9ee8b55f1c73f74fd4246862e946dc3ef9236952a3a49a89124cacca0202951",
+      "result_hash_key": "./fixtures/audit-cues.json"
+    },
+    {
+      "id": "audit_collector",
+      "path": "spikes/ts-07-unified-playback-timeline/src/audit.js",
+      "sha256": "sha256:815f22d3b4e8ca1c05a0dba6126dea0073eef7095f2470811c4a2272622c65b2",
+      "result_hash_key": "./src/audit.js"
+    }
+  ],
+  "historical_results": [
+    {
+      "path": "spikes/ts-07-unified-playback-timeline/results/browser-candidate.json",
+      "sha256": "sha256:b7a69e9367a9486742205eeb0506d9c28cb9159900a4948a62d579b50b2389c1",
+      "classification": "historical pre-fix candidate evidence retained as the sealed red state"
+    },
+    {
+      "path": "spikes/ts-07-unified-playback-timeline/results/browser-shared-smoke.json",
+      "sha256": "sha256:8b4a1a9489c7f7ffbd58f1173cdd3a5a13673bd4df0d7fbb5092e927cf0f05fa",
+      "classification": "historical non-denominator shared-player diagnostic evidence"
+    }
+  ],
+  "result_path": "spikes/ts-07-unified-playback-timeline/results/browser-fallback-retest.json"
+}
