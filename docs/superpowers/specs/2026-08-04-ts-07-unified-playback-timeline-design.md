@@ -1,192 +1,150 @@
-# TS-07 Unified Playback Timeline Design
+# TS-07 Minimum-Cost Playback Timeline Audit Design
 
 ## Purpose
 
-TS-07 answers one falsifiable question:
+TS-07 will audit the existing mathematics and sound high-fidelity Demo instead of building another player.
 
-> Can one problem-isolated browser runtime use a single authoritative timeline to keep real narration audio, subtitles, visual cues, and current-segment progress synchronized through play, pause, resume, seek, segment changes, background recovery, responsive layout changes, reduced motion, and audio failure?
+The Demo already provides sufficient prototype evidence that fixed narration, subtitles, progressive visuals, current-segment progress, one-second lead-in, play/pause, seek, segment switching, reduced motion, audio fallback, and phone/tablet layouts can form a coherent child-facing experience. TS-07 will not repeat those product-flow or visual acceptance checks.
 
-This is a disposable technical slice, not production application code. It validates the playback runtime candidate only. It does not prove visual generation quality, learning efficacy, production reliability, or the complete P0 chain because TS-04C is not merged into `origin/main` and its current recorded decision is `fail`.
+The remaining falsifiable question is narrower:
 
-## Authorization And Candidate
+> In the existing Chrome Demo, do the real-audio timeline and its fallback preserve the required quantitative synchronization and position continuity under the smallest set of stress operations not covered by prior acceptance evidence?
 
-- Candidate implementation: a browser-native unified timeline using `HTMLAudioElement.currentTime` as the authoritative clock while real audio is available and `performance.now()` as the continuity-preserving fallback clock after an explicit media failure.
-- Browser and version: Google Chrome `150.0.7871.188` on the local macOS environment.
-- Invocation: local HTTP browser harness driven through Playwright CLI; no hosted service or production endpoint.
-- Fixed media: repository file `prototype/assets/audio/narration-math-1.wav`, PCM 44.1 kHz, 16-bit, mono, approximately 20.16 seconds.
-- Fixed parameters: playback rate `1.0`; four subtitle cues; five visual cues; seeks to 5, 10, and 15 seconds; ten repeated switch/seek cycles; phone review viewport `390 x 844`; tablet viewport `768 x 1024`.
-- Budget: zero external requests, zero new TTS requests, zero Token usage, and zero external cost.
-- Data boundary: repository audio and synthetic timeline fixtures only; no child data, textbook files, credentials, production logs, or external services.
-- User confirmation: on 2026-08-04 the user approved this candidate, environment, media, budget, and evidence boundary.
+This is a disposable audit slice. It does not turn `prototype/` into production code, select a production framework, or prove the full P0 chain because TS-04C is not merged into `origin/main` and its current recorded result is `fail`.
 
-## Considered Approaches
+## Existing Evidence Accepted Without Retest
 
-### Audio-Authoritative Timeline
+The audit accepts the following as fixed-Demo feasibility evidence:
 
-This is the selected approach. While audio is healthy, its decoded playback position is the only business time. All other outputs project from that position. On failure, the runtime records the last semantic position and continues with a monotonic fallback clock without creating a second lesson state.
+- mathematics and sound use the same high-fidelity player implementation;
+- repository narration files play in the browser;
+- subtitles, visual reveals, and current-segment progress are projected from the active audio position;
+- every segment presents its initial scene for one second before narration and animation advance;
+- users can play, pause, resume, seek, and switch segments;
+- seeking restores the visible text, diagram, and scene for the requested position;
+- reduced motion preserves static information;
+- the Demo has a visual clock fallback when narration cannot play;
+- prior browser acceptance covered fixed phone, responsive phone, tablet/desktop layouts, overflow, controls, and complete mathematics and sound flows.
 
-This approach measures the behavior users actually experience, keeps the implementation small, and directly exercises browser media lifecycle behavior. Its precision is limited by browser media updates, so the runtime samples on animation frames and never treats `timeupdate` frequency as the clock.
+These observations prove only fixed-prototype feasibility. They are not reused as quantitative evidence and do not prove production reliability.
 
-### Web Audio Timeline
+## Candidate And Authorization
 
-An `AudioContext` could offer a finer-grained clock, but it would add decoding, buffer management, autoplay, suspension, and lifecycle behavior that TS-07 does not need to answer its first question. It would also make the spike less representative of the repository's existing pre-generated file playback.
+- Candidate under test: the existing playback implementation in `prototype/sound-demo.html`.
+- Browser: Google Chrome `150.0.7871.188` on the local macOS environment.
+- Real media: `prototype/assets/audio/narration-math-1.wav`, PCM 44.1 kHz, 16-bit, mono, approximately 20.16 seconds.
+- Invocation: local HTTP plus a same-origin audit harness driven through Playwright CLI.
+- Fixed parameters: playback rate `1.0`; existing subtitle and visual cues; one pause/resume sample per run; seek targets 5, 10, and 15 seconds; ten repeated seek/switch operations; one forced media-failure handoff.
+- Runs: one warm-up run followed by five measured real-audio runs and five measured degraded-clock runs.
+- Viewport: one stable desktop audit viewport. Timing measurements are layout-independent, and prior phone/tablet acceptance is not repeated.
+- Budget: zero external calls, zero new TTS calls, zero Token use, and zero external cost.
+- Data boundary: repository audio and synthetic audit commands only; no child data, textbook files, credentials, or production logs.
+- User confirmation: on 2026-08-04 the user approved the browser/audio candidate, then explicitly reduced TS-07 to minimum-cost testing that excludes questions already answered by the Demo.
 
-### Page-Timer Timeline
+## Approaches
 
-Using `performance.now()` during normal playback would simplify tests, but the audio would become a follower and could drift from the page timer under buffering or background throttling. That would weaken the candidate evidence, so this approach is rejected except as the declared media-failure fallback.
+### Selected: Black-Box Audit Of The Existing Demo
 
-## Public Test Seams
+A same-origin audit page loads the real Demo, drives its public controls, observes the real audio element and rendered cue state, and emits measurements. The audit does not copy playback logic and does not change child-facing behavior.
 
-Tests observe behavior only through two approved public interfaces:
+This has the lowest cost and strongest relevance because the candidate under measurement is the artifact that already demonstrated feasibility.
 
-```text
-dispatchLessonCommand(session, command, clockSample) -> { session, events }
-window.ts07Harness.runScenario(config) -> Promise<ScenarioResult>
-```
+### Rejected: Build A New Standalone Timeline Runtime
 
-`dispatchLessonCommand` is the state-transition seam. It accepts an immutable lesson session, a versioned command, and an explicit clock sample. It returns the next session and emitted events. Unit tests do not inspect private helpers or mutate internal adapter state.
+A new reducer, media adapter, and player would produce cleaner interfaces but would mostly repeat behavior already present in the Demo. Passing it would not prove the existing experience meets the timing gates.
 
-`window.ts07Harness.runScenario` is the real-browser seam. It performs one fixed scenario through the same command interface used by the controls and returns machine-readable observations, spans, percentiles, boundary results, and pass/fail codes. Browser checks do not infer correctness from screenshots alone.
+### Rejected: Repeat Full Demo Acceptance
 
-## Runtime Model
+Re-running all mathematics/sound flows, phone/tablet layouts, reduced motion, overlays, and screenshots would consume time without answering a new technical question. Existing acceptance remains prototype evidence and its stated limitations remain unchanged.
 
-The slice has four focused components:
+## Public Audit Seam
 
-1. Lesson runtime: owns session identity, active segment, playback state, semantic timeline position, scene state, interaction state, capabilities, and snapshot version.
-2. Clock adapters: sample either the real audio position or the monotonic fallback while presenting the same clock-sample contract to the runtime.
-3. Cue projector: derives subtitle, visual cue, reduced-motion equivalent, and progress exclusively from `timeline_position`.
-4. Measurement harness: executes fixed scenarios, records StageTiming-compatible spans and cue observations, computes metrics, and emits machine-readable results.
-
-The session identity tuple is `session_id + question_id + lesson_plan_version`. Commands, media callbacks, animation frames, and restored snapshots must match the tuple before they can change state.
-
-## State And Commands
-
-The runtime uses these playback states:
+The only new public seam is:
 
 ```text
-preparing
-ready
-playing
-paused
-seeking
-switching
-completed
-degraded
-failed
+window.ts07Audit.run(config) -> Promise<AuditResult>
 ```
 
-The command set is closed and versioned:
+The audit interacts with the Demo through rendered controls and browser media state. It may read:
 
-```text
-prepare
-play
-pause
-resume
-seek
-switch_segment
-enter_background
-return_foreground
-media_failed
-set_reduced_motion
-set_viewport
-tick
-```
+- `HTMLAudioElement.currentTime`, duration, paused, ended, and error state;
+- current subtitle text and visibility;
+- current segment progress fill;
+- visible visual cue state already rendered by the Demo;
+- the Demo's explicit visual-fallback state;
+- monotonic observation timestamps.
 
-Every accepted transition records the command, identity tuple, previous and next state, previous and next timeline positions, clock source, monotonic observation time, and rejection reason when applicable. Unsupported commands and stale identities fail before mutation.
+It must not call private Demo functions, duplicate cue calculations, mutate internal state directly, or determine correctness from screenshots alone.
 
-## Timeline Rules
+The only fault-injection exception is replacing the browser audio element's source with a same-origin missing URL after playback has advanced. This exercises the Demo's existing public media-error listener without calling a private function or changing repository files.
 
-- A segment always starts at semantic position `0` and holds its complete initial visual state for 1,000ms before narration, progress, and animated cues advance.
-- During healthy playback, audio remains paused throughout the lead-in and `timeline_position` then follows the sampled audio position directly.
-- Pausing snapshots the exact semantic position and projected scene. No cue can advance while paused.
-- Resuming continues from the snapshot position; it cannot clear the scene, restart the segment, or replay already revealed cues.
-- Seeking rebuilds subtitle, complete visual scene, and progress deterministically from the target semantic position.
-- Child interaction results are a separate overlay on the generated scene state. Seeking can restore whether an interaction result was already retained but cannot synthesize or replay the child action.
-- Segment switching creates a complete initial scene, waits the same 1,000ms lead-in, and then advances. Returning to a prior segment follows the same rule rather than resuming a hidden independent timer.
-- Background entry pauses browser playback and records a semantic snapshot. Foreground return restores that snapshot before resuming.
-- Responsive viewport changes only alter layout projection. Session identity, segment, position, cues, and interaction state remain unchanged.
-- Reduced motion replaces motion with equivalent static states at the same cue boundaries. It cannot remove labels, relationships, or conclusions.
-- A real-audio error emits `media_failed`, freezes the last audio-backed position, changes the clock source to fallback, and continues from that exact position in `degraded` state.
+## Four Measurements
 
-## Fixtures
+### Cue Synchronization
 
-The real-media candidate fixture uses `narration-math-1.wav` and a synthetic manifest with four subtitle cues and five visual cues distributed across its measured duration. Cue expectations are fixed literals in the fixture and are not computed by the implementation under test.
+During uninterrupted real-audio playback, observe each existing subtitle change and visual reveal. Compare the audio position at observation with the independently frozen expected cue position.
 
-Gold fixtures cover normal playback, pause and resume, seeks to 5/10/15 seconds, segment switching and return, background and foreground recovery, phone/tablet layout changes, reduced motion, and real-audio failure followed by fallback continuation.
+Report subtitle and visual deviation separately with sample count, P50, P80, P95, and maximum. The gate for both is P95 `< 250ms`.
 
-Adversarial fixtures cover stale session callbacks, stale lesson-plan callbacks, unsupported commands, duplicate delayed media events, ticks while paused, seek bounds, conflicting clocks, and attempts to replay child interactions after seek.
+### Pause And Resume Continuity
 
-All fixture content is synthetic and labeled `gold_fixture` or `adversarial_fixture`. Only observations produced by Chrome with the approved runtime and real repository audio are candidate measurements. Synthetic fixture expectations do not enter a candidate capability denominator.
+Pause through the visible player control, wait while the page remains active, and confirm that audio position, visible cue state, and progress do not advance. Resume through the same control and compare the resumed semantic position with the paused position.
 
-## Metrics And Gates
+Report position error P50, P80, P95, and maximum. The gate is P95 `< 250ms`, with zero cue rollback or clearing.
 
-Each browser observation records expected semantic cue time, observed authoritative time, wall-clock observation time, clock source, viewport, motion mode, and absolute deviation.
+### Repeated Seek And Switch Drift
 
-The candidate gates are:
+Use the visible current-segment controls to seek to 5, 10, and 15 seconds and repeat a fixed seek/switch pattern ten times. After every operation, compare requested and observed audio positions plus the rendered subtitle, visual state, and progress.
 
-- normal subtitle cue deviation P95 `< 250ms`;
-- normal visual cue deviation P95 `< 250ms`;
-- pause/resume position error P95 `< 250ms`;
-- ten switch/seek cycles produce no increasing cumulative drift and maximum final-position error `< 250ms`;
-- seek rebuild matches the expected subtitle, complete visual state, and current-segment progress at 5, 10, and 15 seconds in 100% of cases;
-- child actions are automatically replayed in 0 cases;
-- stale identity events mutate the active session in 0 cases;
-- phone and tablet runs preserve the same semantic state and have no horizontal overflow;
-- reduced-motion runs preserve 100% of declared cue information;
-- audio failure continues on the same session and semantic position with one explicit clock-source transition and no second business timeline;
-- every scenario emits machine-readable `pass` or `fail` with violation codes and StageTiming-compatible spans.
+The gate is no increasing cumulative drift, final-position error `< 250ms`, and 100% consistent rendered state. The audit does not replay or test child interactions because the existing mathematics candidate has no enabled child interaction during playback.
 
-Percentiles are calculated from raw per-observation measurements and reported with sample counts, P50, P80, P95, and maximum. Real-audio and degraded paths are reported separately. Harness self-tests and Chrome candidate results are never combined into one denominator.
+### Audio-Failure Handoff
 
-## Browser And Layout Verification
+Force one reproducible media failure after playback has advanced, observe the last real-audio position, and verify that the existing visual fallback continues from that position rather than restarting or launching an unrelated timeline.
 
-The harness is served over local HTTP. It presents a restrained test surface containing the current segment label, subtitle, visual cue states, progress, clock source, play control, and seek control. The surface exists to expose runtime behavior, not to become a product page or replace the current prototype.
+The gate is exactly one real-to-fallback transition, handoff error `< 250ms`, monotonic continuation, and no subtitle, visual, or progress rollback.
 
-Chrome runs both fixed review viewports:
+## Fixtures And Independence
 
-- phone: `390 x 844`;
-- tablet: `768 x 1024`.
+Expected cue positions are frozen literals extracted once from the current authored cue table and stored in an audit fixture. The measurement code cannot import or recompute expected values from the implementation under test.
 
-For both viewports the runner records viewport dimensions, document `scrollWidth/clientWidth`, critical control bounding boxes, timeline state before and after layout changes, and scenario results. Screenshots are supporting evidence only. Numeric runtime observations and boundary results determine pass/fail.
+One deliberately wrong cue fixture and one deliberately discontinuous handoff fixture are `adversarial_fixture` self-tests. They must fail before candidate measurements are accepted. These synthetic self-tests prove only that the audit detects the target failures and do not enter the Chrome candidate denominator.
 
-## Result Artifacts
+The real Demo observations are `candidate_output`. They record browser version, audio hash, Demo source hash, fixture hash, audit source hash, execution time, raw observations, aggregate metrics, failures, external usage, and cost.
 
-The slice will contain:
+## Files
 
 ```text
 spikes/ts-07-unified-playback-timeline/
   README.md
   decisions.md
-  browser-harness.html
-  fixtures/
-  schemas/
-  src/
-  tests/
-  results/summary.json
+  audit-harness.html
+  fixtures/audit-cues.json
+  schemas/audit-result.schema.json
+  src/audit.js
+  tests/audit-self-test.html
   results/browser-candidate.json
+  results/summary.json
 ```
 
-`results/summary.json` separates harness self-test results from candidate measurements. The candidate record includes browser version, operating system, audio hash, runtime code hash, execution time, sample counts, percentiles, failure examples, external usage, cost, and any unavailable field marked `unverified`.
+The harness is an engineering audit surface, not a C-end page. It reuses the Demo and existing audio by reference and adds no product UI, duplicated player, generated narration, or production dependency.
 
-## Evidence And Decision Boundary
+## Evidence And Status Boundary
 
-Passing deterministic tests may establish only `harness_ready`. Completing the approved Chrome runs with traceable real audio may establish `candidate_run_complete`. TS-07 cannot advance to `human_review_complete`, `conditional_pass`, or `pass` until the required review is recorded.
-
-Even if all TS-07 candidate gates pass, the decision must state that:
-
-- TS-04C is not in the branch baseline and its current candidate decision is `fail`;
-- synthetic visual cues validate timeline projection but not generated-scene quality;
-- no production framework, media library, persistence mechanism, or deployment architecture is selected;
-- the PRD, current prototype, and high-fidelity design are not changed by this isolated slice;
-- real mobile Safari, WeChat WebView, low-end devices, network buffering, long lessons, and production concurrency remain unverified;
-- no child data, credentials, external requests, or new paid media generation are involved.
+- Audit self-tests passing can establish only `harness_ready`.
+- Completing the approved Chrome runs with hashes and raw observations can establish `candidate_run_complete`.
+- TS-07 cannot advance to `human_review_complete`, `conditional_pass`, or `pass` until required review is recorded.
+- Existing Demo acceptance evidence remains explicitly labeled as prototype evidence rather than candidate timing measurements.
+- TS-04C remains a failed and unmerged dependency, so this audit cannot establish complete P0 readiness.
+- Safari, WeChat WebView, real phones, background throttling, network buffering, low-end devices, long lessons, and production session isolation remain unverified.
+- The audit does not change the PRD, current prototype behavior, high-fidelity design, architecture decision, data handling, or privacy boundary.
 
 ## Implementation Sequence
 
-1. Add schemas and fixed fixtures for sessions, commands, cue manifests, scenario results, and StageTiming spans.
-2. Implement one public state-transition seam through red/green cycles for identity rejection, play/pause/resume, seek rebuild, switching, background recovery, reduced motion, viewport changes, and degradation.
-3. Add the real browser harness using the same command seam and the fixed repository audio.
-4. Add independent harness self-tests for known good and adversarial fixtures.
-5. Run Chrome candidate scenarios for real audio and degraded clocks on phone and tablet.
-6. Generate raw candidate evidence, aggregate metrics, `summary.json`, and `decisions.md` without overstating the allowed status.
-7. Run slice tests, shared schema/provenance tests, link checks relevant to the new directory, and the final `origin/main` ancestry check.
+1. Freeze the existing cue expectations and hashes without changing the Demo.
+2. Add the minimal same-origin audit seam and result schema.
+3. Prove the audit fails the two adversarial self-tests.
+4. Run one warm-up and five measured Chrome real-audio runs.
+5. Run five measured forced-fallback runs.
+6. Generate raw evidence, summary metrics, and a bounded decision.
+7. Run only the new slice checks, relevant shared schema checks, source/hash checks, and the final `origin/main` ancestry check.
