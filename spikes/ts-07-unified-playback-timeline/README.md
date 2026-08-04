@@ -1,6 +1,6 @@
 # TS-07 统一播放时间轴最小成本审计
 
-> 状态：`candidate_run_complete`；首轮发现的降级重置已做最小共享修复，修复后候选门槛通过，尚未完成所需人工评审
+> 状态：`conditional_pass`；候选门槛通过且已完成人工评审，真机及非 Chrome 环境留待后续验证
 >
 > 性质：直接审计现有高保真 Demo 的抛弃式技术切片，不是生产运行时
 >
@@ -65,7 +65,7 @@ python3 spikes/ts-07-unified-playback-timeline/run_validation.py
 
 修复前原始证据见 `results/browser-candidate.json`，修复后降级证据见 `results/browser-fallback-retest.json`，共享冒烟见 `results/browser-shared-smoke.json`，独立复算见 `results/summary.json`，共享计时记录见 `results/timing.json`。
 
-当前证据状态仍为 `candidate_run_complete`。修复后候选门槛已通过，但在完成所需人工评审前不升级为 `conditional_pass | pass`，也不抽取为生产架构。
+人工评审人 `junxxxxiao` 于 2026-08-04 独立运行复算脚本，确认输出符合预期，并接受 Safari、微信 WebView、真机等未验证边界。评审证据见 [PR #5 评论](https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523)。证据状态为 `human_review_complete`，切片结论为 `conditional_pass`；本结论不将 Demo 提升为生产架构。
 
 ## 边界
 

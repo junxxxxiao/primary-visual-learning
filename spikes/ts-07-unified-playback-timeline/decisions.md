@@ -2,10 +2,10 @@
 
 ## 当前状态
 
-- 证据状态：`candidate_run_complete`；
+- 证据状态：`human_review_complete`；
 - 审计有效性：通过，修复前正常路径与失败红态、修复后 5 次降级结果已分开保存，哈希与指标由独立脚本复算；
 - 候选门槛：修复后通过；
-- 最终状态：尚未进入 `human_review_complete | conditional_pass | pass | fail`。
+- 最终状态：`conditional_pass`。
 
 ## 结果
 
@@ -22,6 +22,12 @@
 - `fallback.state_rollback`。
 
 修复后机器违规码为空。
+
+## 人工评审
+
+2026-08-04，评审人 `junxxxxiao` 在本地独立运行 `python3 spikes/ts-07-unified-playback-timeline/run_validation.py`，确认 `validation_pass=true`、`candidate_gate_pass=true`且 `violation_codes=[]`。评审人接受 Safari、微信 WebView、真机、低端设备、后台限流、网络缓冲和长讲解仍未验证，并确认本结论不代表完整 P0 链路通过。
+
+可追溯审核产物：[PR #5 人工评审评论](https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523)。
 
 ## 原因与修复
 
@@ -43,4 +49,4 @@
 
 ## 下一决策
 
-当前不抽取生产代码，也不把 TS-07 标记为最终通过。下一步是完成所需人工评审；若评审确认证据和边界陈述完整，再依证据状态流转给出 `conditional_pass | pass | fail`。
+TS-07 以 `conditional_pass` 结束当前最小成本切片，不抽取生产代码。后续真机和非 Chrome 环境验证在进入对应发布阶段前补齐；完整 P0 链路仍由尚未通过的 TS-04C 阻断。

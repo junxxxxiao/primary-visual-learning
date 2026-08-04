@@ -1,6 +1,15 @@
 {
   "slice_id": "TS-07",
-  "status": "candidate_run_complete",
+  "status": "conditional_pass",
+  "evidence_state": "human_review_complete",
+  "human_review": {
+    "evidence_state": "human_review_complete",
+    "decision": "conditional_pass",
+    "reviewer": "junxxxxiao",
+    "reviewed_at": "2026-08-04T09:52:22Z",
+    "method": "independent local validation rerun and explicit acceptance of unverified boundaries",
+    "evidence_url": "https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523"
+  },
   "baseline_sha": "4b91022b7ca933340477d3b55eba5f863593deaa",
   "head_contains_baseline": true,
   "candidate": {

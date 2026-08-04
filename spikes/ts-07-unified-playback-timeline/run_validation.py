@@ -14,6 +14,14 @@ BASELINE_SHA = "4b91022b7ca933340477d3b55eba5f863593deaa"
 ROUND_ONE_IMPLEMENTATION_COMMIT = "6a537aaef532e90dda88cf1fa1d91c39c85704e6"
 CHROME_BINARY = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 APPROVED_BROWSER = "Google Chrome 150.0.7871.188"
+HUMAN_REVIEW = {
+    "evidence_state": "human_review_complete",
+    "decision": "conditional_pass",
+    "reviewer": "junxxxxiao",
+    "reviewed_at": "2026-08-04T09:52:22Z",
+    "method": "independent local validation rerun and explicit acceptance of unverified boundaries",
+    "evidence_url": "https://github.com/junxxxxiao/primary-visual-learning/pull/5#issuecomment-5177367523",
+}
 
 
 def load_json(path):
@@ -253,7 +261,9 @@ def main():
     }
     summary = {
         "slice_id": "TS-07",
-        "status": "candidate_run_complete",
+        "status": HUMAN_REVIEW["decision"],
+        "evidence_state": HUMAN_REVIEW["evidence_state"],
+        "human_review": HUMAN_REVIEW,
         "baseline_sha": BASELINE_SHA,
         "head_contains_baseline": head_contains_baseline,
         "candidate": candidate["candidate"],
