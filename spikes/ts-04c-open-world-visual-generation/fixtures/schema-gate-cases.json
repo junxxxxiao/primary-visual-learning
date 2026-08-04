@@ -1,0 +1,56 @@
+{
+  "fixture_kind": "gold_fixture",
+  "source_kind": "synthetic_unverified",
+  "sample_id": "shadow.lamp-distance-size",
+  "valid_scene": {
+    "schema_version": "open-visual-scene/0.1",
+    "sample_id": "shadow.lamp-distance-size",
+    "title": "灯靠近时，影子为什么变大",
+    "fact_refs": ["shadow-ray-spread"],
+    "scene": {
+      "coordinate_space": {"width": 1000, "height": 1000},
+      "nodes": [
+        {"id": "stage", "type": "group", "role": "context", "layout": {"flow": "row", "priority": 5, "allow_reflow": true}},
+        {"id": "toy", "type": "shape", "parent_id": "stage", "role": "subject", "style_token": "science-green", "geometry": {"x": 460, "y": 360, "width": 100, "height": 260}},
+        {"id": "ray-top", "type": "line", "parent_id": "stage", "role": "relation", "style_token": "focus-yellow", "geometry": {"points": [{"x": 160, "y": 420}, {"x": 510, "y": 360}, {"x": 900, "y": 250}]}},
+        {"id": "ray-bottom", "type": "line", "parent_id": "stage", "role": "relation", "style_token": "focus-yellow", "geometry": {"points": [{"x": 160, "y": 580}, {"x": 510, "y": 620}, {"x": 900, "y": 760}]}},
+        {"id": "conclusion", "type": "text", "parent_id": "stage", "role": "conclusion", "content": "边界光线张开得更大，墙上的影子也更大", "style_token": "ink"}
+      ]
+    },
+    "timeline": {
+      "start_hold_ms": 1000,
+      "beats": [
+        {
+          "id": "orient",
+          "purpose": "orient",
+          "narration": "先固定玩偶和墙的位置，只让手电筒向玩偶靠近。",
+          "duration_ms": 5000,
+          "fact_refs": ["shadow-ray-spread"],
+          "actions": [{"type": "show", "target_ids": ["stage", "toy"], "start_ms": 0, "duration_ms": 800}]
+        },
+        {
+          "id": "trace-rays",
+          "purpose": "observe",
+          "narration": "沿着玩偶上下边缘画两条光线，观察它们到墙面时张开的距离。",
+          "duration_ms": 6500,
+          "fact_refs": ["shadow-ray-spread"],
+          "actions": [{"type": "trace", "target_ids": ["ray-top", "ray-bottom"], "start_ms": 300, "duration_ms": 4500}]
+        },
+        {
+          "id": "conclude",
+          "purpose": "conclude",
+          "narration": "灯越靠近玩偶，两条边界光线的张角越大，所以墙上的影子范围变大。",
+          "duration_ms": 6000,
+          "fact_refs": ["shadow-ray-spread"],
+          "actions": [{"type": "emphasize", "target_ids": ["ray-top", "ray-bottom", "conclusion"], "start_ms": 500, "duration_ms": 4000}]
+        }
+      ]
+    },
+    "interaction": {"kind": "adjust_value", "target_ids": ["stage"]},
+    "static_fallback": {
+      "steps": ["固定玩偶和墙的位置", "画出经过玩偶边缘的两条光线", "比较灯移动前后的光线张角", "张角越大，墙上影子范围越大"],
+      "fact_refs": ["shadow-ray-spread"]
+    }
+  },
+  "required_rejections": ["sample_id_mismatch", "code_like_content", "unknown_action_target", "too_few_beats"]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_kind": "hybrid_preview_fixture",
+  "source_kind": "synthetic_unverified",
+  "scenes": [
+    {
+      "id": "shadow-preview",
+      "title": "手电筒靠近，影子为什么变大？",
+      "caption": "手电筒靠近玩偶时，边界光线从同一个光源重新连到影子上下边缘，墙上的影子范围变大。",
+      "schema_version": "hybrid-visual-scene/0.1",
+      "nodes": [
+        {"id": "flashlight", "kind": "box", "label": "手电筒", "x": 170, "y": 500, "width": 82, "height": 52, "style": "lamp"},
+        {"id": "toy", "kind": "box", "label": "玩偶", "x": 460, "y": 500, "width": 76, "height": 150, "style": "toy"},
+        {"id": "shadow", "kind": "box", "label": "影子", "x": 800, "y": 500, "width": 46, "height": 170, "style": "shadow"},
+        {"id": "wall", "kind": "box", "label": "墙", "x": 860, "y": 500, "width": 24, "height": 330, "style": "wall"}
+      ],
+      "connectors": [
+        {"id": "ray-top", "from": {"node_id": "flashlight", "anchor": "center"}, "to": {"node_id": "shadow", "anchor": "top"}, "marker_end": "none", "style": "ray"},
+        {"id": "ray-bottom", "from": {"node_id": "flashlight", "anchor": "center"}, "to": {"node_id": "shadow", "anchor": "bottom"}, "marker_end": "none", "style": "ray"}
+      ],
+      "function_lines": [],
+      "timeline": [
+        {"target_id": "flashlight", "to": {"x": 320}, "duration_ms": 1800},
+        {"target_id": "shadow", "to": {"height": 270}, "duration_ms": 1800}
+      ]
+    },
+    {
+      "id": "line-preview",
+      "title": "两条直线为什么只在一个点相交？",
+      "caption": "两条线由同一坐标系中的公式确定。斜率不同，所以方向不同；交点同时满足两个公式。",
+      "schema_version": "hybrid-visual-scene/0.1",
+      "nodes": [
+        {"id": "axis", "kind": "box", "label": "同一坐标系", "x": 500, "y": 520, "width": 640, "height": 430, "style": "axis"},
+        {"id": "intersection", "kind": "point", "label": "交点 (2,5)", "x": 640, "y": 345, "width": 22, "height": 22, "style": "point"}
+      ],
+      "connectors": [],
+      "function_lines": [
+        {"id": "y-equals-2x-plus-1", "label": "y=2x+1", "slope": 2, "intercept": 1, "domain": [-2, 3]},
+        {"id": "y-equals-neg-x-plus-7", "label": "y=-x+7", "slope": -1, "intercept": 7, "domain": [0, 5]}
+      ],
+      "timeline": []
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "fixture_version": "visual-dsl-candidate/0.1",
+  "sample_count": 10,
+  "source_model_result": "model-deepseek-v4-pro-official-dsl-calibration-round-1.json",
+  "specs": [
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:b3190e3b76baa6d4583aeab4390f36ed2dadd474254bd944a865aa37c2c79cc9",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "同一根弦",
+          "轻拨",
+          "重拨",
+          "响度与音调"
+        ],
+        "sample_id": "primary_sound.opening-explanation",
+        "scene_id": "force-amplitude-pitch-compare",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "同一根弦保持不变",
+            "分别记录响度和音调"
+          ]
+        },
+        "title": "拨弦力度：响度与音调"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:37bb1011403c5997c51938c00834298b2a0499830568a64e7f5686a3efb5691f",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "用力拨",
+          "振幅",
+          "响度"
+        ],
+        "sample_id": "primary_sound.compare",
+        "scene_id": "string-pluck-compare",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "轻拨时摆动较窄",
+            "用力拨时摆动较宽",
+            "摆动更宽对应声音更响"
+          ]
+        },
+        "title": "轻拨与用力拨的振幅比较"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:1c284e1599a4ba1c542c342d5f5ad805e891942f0839a0be59ee46cec6bafb6f",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch",
+          "pitch-frequency-loudness-amplitude"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "重拨",
+          "振动快慢相同",
+          "音调不变"
+        ],
+        "sample_id": "primary_sound.separate",
+        "scene_id": "primary_sound.separate",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "steps": [
+            "对齐两次振动的时间",
+            "振动快慢相同",
+            "音调不变，响度改变"
+          ]
+        },
+        "title": "力度与音调"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:503b567adbbd2766e439405d82397f27f6ec1a286aca78005af0cc59e4cd2763",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "重拨",
+          "响度",
+          "音调"
+        ],
+        "sample_id": "primary_sound_pair.pair-opening-explanation",
+        "scene_id": "force-amplitude-pitch-compare",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "固定同一根橡皮筋",
+            "比较轻拨与重拨"
+          ]
+        },
+        "title": "轻拨与重拨比较"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:e5507e8973717ce32860e7ee92b1d2a58d41ec8bffa5f20a3e8abe72f33b8d48",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "重拨",
+          "摆动窄",
+          "摆动宽"
+        ],
+        "sample_id": "primary_sound_pair.pair-reveal",
+        "scene_id": "string-swing-compare",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "轻拨摆动窄",
+            "重拨摆动宽",
+            "摆动宽时更响"
+          ]
+        },
+        "title": "橡皮筋摆动与响度"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:417a386ee9194111e91126f1f2c3f3c148442d2bfd0bf67522cc916b7df08854",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "fence-transfer"
+        ],
+        "interaction": "none",
+        "labels": [
+          "短边 x",
+          "长边",
+          "面积表达式"
+        ],
+        "sample_id": "middle_perfect_square.model",
+        "scene_id": "fence.area.model",
+        "scene_type": "area_model",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "fence-transfer"
+          ],
+          "steps": [
+            "设短边为 x",
+            "写出第三边",
+            "列出面积表达式"
+          ]
+        },
+        "title": "靠墙围栏面积模型"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:0f8ad801c82e2e08f8c02d6ab5db7aa8af5ea131d6842836a8d629efe6b8f020",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "perfect-square-identities",
+          "complete-square-bound"
+        ],
+        "interaction": "toggle",
+        "labels": [
+          "完全平方",
+          "配方",
+          "非负"
+        ],
+        "sample_id": "middle_perfect_square.complete",
+        "scene_id": "complete-square-area",
+        "scene_type": "area_model",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "perfect-square-identities",
+            "complete-square-bound"
+          ],
+          "steps": [
+            "整理一次项",
+            "补成完全平方",
+            "标出平方项非负"
+          ]
+        },
+        "title": "配方与平方非负"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:acf1ba7e996bf51bc2118357cd7d4f8b33cc9f6c8abd82e45f630170206dbbe3",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "complete-square-bound",
+          "fence-transfer"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "平方项非负",
+          "平方项为零",
+          "面积最大"
+        ],
+        "sample_id": "middle_perfect_square.justify",
+        "scene_id": "square-max-area",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "steps": [
+            "平方项始终非负",
+            "平方项为零时减去量最小",
+            "因此面积达到最大值"
+          ]
+        },
+        "title": "平方项为零时面积最大"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:86e3eb167620c294de623a999ac217e309288752d6107251338a362879bec8fa",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-frequency"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "振幅",
+          "周期",
+          "波形A",
+          "波形B"
+        ],
+        "sample_id": "middle_sound_pair.wave-compare",
+        "scene_id": "wave-compare-01",
+        "scene_type": "wave",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency"
+          ],
+          "steps": [
+            "比较纵向振幅",
+            "比较横向周期",
+            "分开记录两个量"
+          ]
+        },
+        "title": "波形比较：振幅与周期"
+      }
+    },
+    {
+      "fixture_kind": "candidate_output",
+      "source_input_hash": "sha256:bdd7f0bc6e6616ce14f2a73d3708c451a810d9491a3080737f6cd73560b3c7b9",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-frequency",
+          "wave-perception-map"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "振幅",
+          "响度",
+          "频率",
+          "音调"
+        ],
+        "sample_id": "middle_sound_pair.wave-explain",
+        "scene_id": "wave-explain",
+        "scene_type": "wave",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "steps": [
+            "波形高度增大",
+            "周期保持不变",
+            "响度增大而音调不变"
+          ]
+        },
+        "title": "振幅与频率的独立变化"
+      }
+    }
+  ]
+}

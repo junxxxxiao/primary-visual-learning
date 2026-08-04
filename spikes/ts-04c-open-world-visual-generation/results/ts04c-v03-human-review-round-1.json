@@ -1,0 +1,72 @@
+{
+  "artifact_kind": "human_review_draft",
+  "prompt_profile": {
+    "format_example_kind": "gold_fixture",
+    "format_example_sha256": "5322f17e9a6df778b29e3ed30ee8bd17973f29c286414307fa2440b9f38e3fe0",
+    "format_example_source": "synthetic_format_only",
+    "name": "v03-complete-format-example/0.1",
+    "prompt_builder_sha256": "83ab2171804d3b96603c444349164d3ecb361a350e13418cfc684de731407266"
+  },
+  "reviews": [
+    {
+      "sample_id": "shadow.lamp-distance-size",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "“张角”应该改成手电筒，手电筒靠近时，两条黄线应该页随之以手电筒为起点变化，线条在墙上的终点分别时影子的上下两端；“张角”是两个线段的夹脚 "
+    },
+    {
+      "sample_id": "lever.seesaw-balance",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "箭头在画面中没看出来是啥；没有事先系统化解释“力x距离“的概念，以及为什么平衡需要两个乘积相等；右边的人右移的时候，上方的线条“力小”以及下方的线条“距离远”没有对应移动或者延长"
+    },
+    {
+      "sample_id": "fraction.equivalent-pieces",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "右边的图画错了，应该是在下方再画一条线，等分成4分，现在的图不知道是画的什么"
+    },
+    {
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "中间画了两条垂直相交的直线是干啥的？以及画面应该写出面积的计算公式"
+    },
+    {
+      "sample_id": "water-cycle.condensation-path",
+      "rating": "showable",
+      "severe_error": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "linear-functions.moving-intersection",
+      "rating": "reject",
+      "severe_error": false,
+      "notes": "画的坐标系的两条线和方程对应不上，"
+    },
+    {
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "rating": "reject",
+      "severe_error": false,
+      "notes": "这个图画的有问题，都没有直角三角形\n"
+    },
+    {
+      "sample_id": "circuit.series-current-path",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "需要把矩形分别改称电池、灯泡；同时电路应该是完整的回路，右边应该再加一个导线连接起来"
+    },
+    {
+      "sample_id": "density.layering-liquids",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "需要解释为什么他们不互融、为什么密度大的在下面，密度小的再上面"
+    },
+    {
+      "sample_id": "symmetry.rotation-order",
+      "rating": "revise",
+      "severe_error": false,
+      "notes": "你要把旋转的过程完整画出来啊，转的动作啊；以及中间的小正方形画出来是干啥的，而且转一次，大小还变一次"
+    }
+  ]
+}

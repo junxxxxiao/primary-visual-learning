@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "open-visual-scene/0.4",
+  "title": "Open-world visual scene and narration timeline v0.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_id", "title", "fact_refs", "aspect_bindings", "scene", "timeline", "static_fallback"],
+  "properties": {
+    "schema_version": {"const": "open-visual-scene/0.4"},
+    "sample_id": {"$ref": "#/$defs/id"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 48},
+    "fact_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "aspect_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["aspect", "node_ids", "beat_ids"],
+        "properties": {
+          "aspect": {"type": "string", "minLength": 1, "maxLength": 80},
+          "node_ids": {"type": "array", "minItems": 1, "maxItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+          "beat_ids": {"type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate_space", "nodes"],
+      "properties": {
+        "coordinate_space": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height", "anchor"],
+          "properties": {
+            "width": {"const": 1000},
+            "height": {"const": 1000},
+            "anchor": {"const": "center", "description": "Every geometry x/y and action to.x/to.y is the element center. Point coordinates remain absolute and point-based nodes cannot use transform actions."}
+          }
+        },
+        "nodes": {"type": "array", "minItems": 3, "maxItems": 80, "items": {"$ref": "#/$defs/node"}}
+      }
+    },
+    "timeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_hold_ms", "beats"],
+      "properties": {
+        "start_hold_ms": {"const": 1000},
+        "beats": {"type": "array", "minItems": 3, "maxItems": 6, "items": {"$ref": "#/$defs/beat"}}
+      }
+    },
+    "interaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "target_ids"],
+      "properties": {
+        "kind": {"enum": ["none", "toggle", "drag", "compare", "adjust_value"]},
+        "target_ids": {"type": "array", "maxItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "static_fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steps", "fact_refs"],
+      "properties": {
+        "steps": {"type": "array", "minItems": 3, "maxItems": 6, "items": {"type": "string", "minLength": 6, "maxLength": 100}},
+        "fact_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "role"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"enum": ["group", "shape", "line", "text", "axis", "plot", "formula", "particles"]},
+        "shape_kind": {"enum": ["rectangle", "ellipse", "polygon"]},
+        "marker_end": {"enum": ["none", "arrow"]},
+        "parent_id": {"$ref": "#/$defs/id"},
+        "role": {"enum": ["subject", "context", "label", "evidence", "relation", "conclusion", "control"]},
+        "content": {"type": "string", "maxLength": 160},
+        "style_token": {"enum": ["ink", "paper", "science-green", "math-blue", "signal-coral", "focus-yellow", "muted"]},
+        "layout": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "flow": {"enum": ["free", "row", "column", "overlay", "radial"]},
+            "priority": {"type": "integer", "minimum": 1, "maximum": 5},
+            "allow_reflow": {"type": "boolean"}
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "x/y are center coordinates; width/height extend equally around that center.",
+          "properties": {
+            "x": {"type": "number", "minimum": 0, "maximum": 1000},
+            "y": {"type": "number", "minimum": 0, "maximum": 1000},
+            "width": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+            "height": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+            "radius": {"type": "number", "exclusiveMinimum": 0, "maximum": 500},
+            "rotation_deg": {"type": "number", "minimum": -360, "maximum": 360},
+            "vertices": {
+              "description": "Polygon vertices normalized around geometry.x/y. Coordinates are multiplied by half the declared width/height.",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["x", "y"],
+                "properties": {
+                  "x": {"type": "number", "minimum": -1, "maximum": 1},
+                  "y": {"type": "number", "minimum": -1, "maximum": 1}
+                }
+              }
+            },
+            "points": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 40,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["x", "y"],
+                "properties": {
+                  "x": {"type": "number", "minimum": 0, "maximum": 1000},
+                  "y": {"type": "number", "minimum": 0, "maximum": 1000}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "beat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "purpose", "narration", "duration_ms", "fact_refs", "actions"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "purpose": {"enum": ["orient", "observe", "compare", "explain", "derive", "conclude", "boundary", "transfer"]},
+        "narration": {"type": "string", "minLength": 12, "maxLength": 220},
+        "duration_ms": {"type": "integer", "minimum": 3000, "maximum": 20000},
+        "fact_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "actions": {"type": "array", "minItems": 1, "maxItems": 12, "items": {"$ref": "#/$defs/action"}}
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "target_ids", "start_ms", "duration_ms"],
+      "properties": {
+        "type": {"enum": ["show", "hide", "emphasize", "move", "scale", "rotate", "morph", "trace", "compare", "update_value"]},
+        "target_ids": {"type": "array", "minItems": 1, "maxItems": 20, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "start_ms": {"type": "integer", "minimum": 0, "maximum": 20000},
+        "duration_ms": {"type": "integer", "minimum": 0, "maximum": 20000},
+        "value": {"type": ["number", "string", "boolean"], "maxLength": 80},
+        "to": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "to.x/to.y are center coordinates. scale is absolute relative to the declared geometry. Transform actions cannot target point-based nodes.",
+          "properties": {
+            "x": {"type": "number", "minimum": 0, "maximum": 1000},
+            "y": {"type": "number", "minimum": 0, "maximum": 1000},
+            "width": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+            "height": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+            "scale": {"type": "number", "minimum": 0.1, "maximum": 5},
+            "rotation_deg": {"type": "number", "minimum": -360, "maximum": 360}
+          }
+        }
+      }
+    }
+  }
+}

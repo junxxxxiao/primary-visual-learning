@@ -1,0 +1,54 @@
+{
+  "slice_id": "TS-04C-v2",
+  "status": "fail",
+  "fixture_version": "visual-dsl-candidate/0.1",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "candidate_model_requests": 10,
+  "candidate_model_validated": false,
+  "human_review_status": "product_visual_stop_condition_met",
+  "metrics": {
+    "dsl_fixture_count": 10,
+    "browser_candidate_pass_count": 10,
+    "browser_candidate_count": 10,
+    "browser_state_runs": 160,
+    "browser_state_pass_count": 160,
+    "phone_state_runs": 80,
+    "tablet_state_runs": 80,
+    "content_mismatch_count": 0,
+    "state_duration_p80_ms": 34,
+    "state_duration_max_ms": 55,
+    "browser_gate_pass": true,
+    "model_latency_p80_ms": 3076,
+    "model_latency_max_ms": 3275,
+    "prompt_tokens": 10692,
+    "completion_tokens": 1804,
+    "total_tokens": 12496,
+    "repair_requests": 0,
+    "product_visual_reviewed_count": 10,
+    "product_visual_displayable_count": 0,
+    "multi_beat_narration_count": 0
+  },
+  "decision": "machine_gate_passed_but_product_visual_gate_failed",
+  "failure_reasons": [
+    "10/10 校准动画经产品负责人审阅均不可展示",
+    "visual-dsl/0.1 仅有 comparison、sequence、area_model、wave 四种浅模板，无法表达陌生问题所需的过程与构图",
+    "每个样本只有单段短旁白，没有形成完整的多拍讲解与同步时间线"
+  ],
+  "stopped_work": [
+    "独立学科评审未启动：产品视觉硬门槛已失败",
+    "正式 40 例未启动：校准轮已满足停止条件"
+  ],
+  "unverified": [
+    "独立学科评审",
+    "儿童理解",
+    "生产稳定性、延迟和成本"
+  ],
+  "evidence": [
+    "results/model-deepseek-v4-pro-official-dsl-calibration-round-1.json",
+    "results/candidate-specs-official-dsl-calibration-round-1.json",
+    "results/browser-official-dsl-calibration-round-1-browser-round-2.json",
+    "results/browser-gold-harness-round-2.json",
+    "decisions.md"
+  ]
+}

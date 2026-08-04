@@ -1,0 +1,17 @@
+{
+  "schema_version": "hybrid-visual-scene/0.1",
+  "nodes": [
+    {"id": "flashlight", "kind": "box", "x": 180, "y": 500, "width": 80, "height": 80},
+    {"id": "shadow", "kind": "box", "x": 760, "y": 500, "width": 180, "height": 240}
+  ],
+  "connectors": [
+    {"id": "shadow-ray-top", "from": {"node_id": "flashlight", "anchor": "center"}, "to": {"node_id": "shadow", "anchor": "top"}, "marker_end": "arrow"}
+  ],
+  "function_lines": [
+    {"id": "line-one", "slope": 2, "intercept": 1, "domain": [-2, 3]},
+    {"id": "line-two", "slope": -1, "intercept": 7, "domain": [0, 5]}
+  ],
+  "timeline": [
+    {"target_id": "flashlight", "to": {"x": 300}, "duration_ms": 1500}
+  ]
+}

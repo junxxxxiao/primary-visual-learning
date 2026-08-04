@@ -1,0 +1,347 @@
+{
+  "fixture_version": "visual-dsl-gold/0.1",
+  "sample_count": 10,
+  "specs": [
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:b3190e3b76baa6d4583aeab4390f36ed2dadd474254bd944a865aa37c2c79cc9",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "用力拨"
+        ],
+        "sample_id": "primary_sound.opening-explanation",
+        "scene_id": "primary_sound-opening-explanation",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "同一根弦保持不变",
+            "分别记录响度和音调"
+          ]
+        },
+        "title": "同一根琴弦"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:37bb1011403c5997c51938c00834298b2a0499830568a64e7f5686a3efb5691f",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "振幅变大",
+          "音调不变"
+        ],
+        "sample_id": "primary_sound.compare",
+        "scene_id": "primary_sound-compare",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "轻拨时摆动较窄",
+            "用力拨时摆动较宽",
+            "摆动更宽对应声音更响"
+          ]
+        },
+        "title": "振幅与音调"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:1c284e1599a4ba1c542c342d5f5ad805e891942f0839a0be59ee46cec6bafb6f",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch",
+          "pitch-frequency-loudness-amplitude"
+        ],
+        "interaction": "none",
+        "labels": [
+          "用力",
+          "振幅",
+          "响度"
+        ],
+        "sample_id": "primary_sound.separate",
+        "scene_id": "primary_sound-separate",
+        "scene_type": "sequence",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch",
+            "pitch-frequency-loudness-amplitude"
+          ],
+          "steps": [
+            "对齐两次振动的时间",
+            "振动快慢相同",
+            "音调不变，响度改变"
+          ]
+        },
+        "title": "分清两个变化"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:503b567adbbd2766e439405d82397f27f6ec1a286aca78005af0cc59e4cd2763",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "轻拨",
+          "用力拨"
+        ],
+        "sample_id": "primary_sound_pair.pair-opening-explanation",
+        "scene_id": "primary_sound_pair-pair-opening-explanation",
+        "scene_type": "comparison",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "固定同一根橡皮筋",
+            "比较轻拨与重拨"
+          ]
+        },
+        "title": "橡皮筋对比"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:e5507e8973717ce32860e7ee92b1d2a58d41ec8bffa5f20a3e8abe72f33b8d48",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "science-green"
+        },
+        "facts": [
+          "force-amplitude-pitch"
+        ],
+        "interaction": "none",
+        "labels": [
+          "振幅变大",
+          "声音更响",
+          "音调不变"
+        ],
+        "sample_id": "primary_sound_pair.pair-reveal",
+        "scene_id": "primary_sound_pair-pair-reveal",
+        "scene_type": "sequence",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-pitch"
+          ],
+          "steps": [
+            "轻拨摆动窄",
+            "重拨摆动宽",
+            "摆动宽时更响"
+          ]
+        },
+        "title": "观察变化"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:417a386ee9194111e91126f1f2c3f3c148442d2bfd0bf67522cc916b7df08854",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "fence-transfer"
+        ],
+        "interaction": "none",
+        "labels": [
+          "2x+y=总长",
+          "A=x*y"
+        ],
+        "sample_id": "middle_perfect_square.model",
+        "scene_id": "middle_perfect_square-model",
+        "scene_type": "area_model",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "fence-transfer"
+          ],
+          "steps": [
+            "设短边为 x",
+            "写出第三边",
+            "列出面积表达式"
+          ]
+        },
+        "title": "建立面积模型"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:0f8ad801c82e2e08f8c02d6ab5db7aa8af5ea131d6842836a8d629efe6b8f020",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "perfect-square-identities",
+          "complete-square-bound"
+        ],
+        "interaction": "none",
+        "labels": [
+          "展开",
+          "配方",
+          "最大值"
+        ],
+        "sample_id": "middle_perfect_square.complete",
+        "scene_id": "middle_perfect_square-complete",
+        "scene_type": "area_model",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "perfect-square-identities",
+            "complete-square-bound"
+          ],
+          "steps": [
+            "整理一次项",
+            "补成完全平方",
+            "标出平方项非负"
+          ]
+        },
+        "title": "完成配方"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:acf1ba7e996bf51bc2118357cd7d4f8b33cc9f6c8abd82e45f630170206dbbe3",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "complete-square-bound",
+          "fence-transfer"
+        ],
+        "interaction": "none",
+        "labels": [
+          "平方非负",
+          "负平方不大于0",
+          "顶点取最大"
+        ],
+        "sample_id": "middle_perfect_square.justify",
+        "scene_id": "middle_perfect_square-justify",
+        "scene_type": "sequence",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "complete-square-bound",
+            "fence-transfer"
+          ],
+          "steps": [
+            "平方项始终非负",
+            "平方项为零时减去量最小",
+            "因此面积达到最大值"
+          ]
+        },
+        "title": "解释最大值"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:86e3eb167620c294de623a999ac217e309288752d6107251338a362879bec8fa",
+      "spec": {
+        "color_tokens": {
+          "accent": "signal-coral",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "force-amplitude-frequency"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "振幅增大",
+          "周期不变"
+        ],
+        "sample_id": "middle_sound_pair.wave-compare",
+        "scene_id": "middle_sound_pair-wave-compare",
+        "scene_type": "wave",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency"
+          ],
+          "steps": [
+            "比较纵向振幅",
+            "比较横向周期",
+            "分开记录两个量"
+          ]
+        },
+        "title": "波形对比"
+      }
+    },
+    {
+      "fixture_kind": "gold_fixture",
+      "source_input_hash": "sha256:bdd7f0bc6e6616ce14f2a73d3708c451a810d9491a3080737f6cd73560b3c7b9",
+      "spec": {
+        "color_tokens": {
+          "accent": "focus-yellow",
+          "primary": "math-blue"
+        },
+        "facts": [
+          "force-amplitude-frequency",
+          "wave-perception-map"
+        ],
+        "interaction": "compare",
+        "labels": [
+          "振幅",
+          "响度",
+          "频率"
+        ],
+        "sample_id": "middle_sound_pair.wave-explain",
+        "scene_id": "middle_sound_pair-wave-explain",
+        "scene_type": "wave",
+        "schema_version": "visual-dsl/0.1",
+        "static_fallback": {
+          "fact_refs": [
+            "force-amplitude-frequency",
+            "wave-perception-map"
+          ],
+          "steps": [
+            "波形高度增大",
+            "周期保持不变",
+            "响度增大而音调不变"
+          ]
+        },
+        "title": "波形与听感"
+      }
+    }
+  ]
+}

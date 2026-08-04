@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "full_question_browser_gate",
+  "source_result": "model-deepseek-v4-flash-full-question-egg-saltwater-v01-network-attempt-2.json",
+  "source_kind": "candidate_output",
+  "run_at": "2026-07-31T14:06:27+08:00",
+  "status": "pass",
+  "viewports": {
+    "phone": {"width": 390, "height": 844, "scroll_width": 390, "client_width": 390, "scroll_height": 844, "client_height": 844},
+    "tablet": {"width": 768, "height": 1024, "scroll_width": 768, "client_width": 768, "scroll_height": 1024, "client_height": 1024}
+  },
+  "state_matrix": [
+    {"segment_id": "seg1-observe", "phone": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}, "tablet": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}},
+    {"segment_id": "seg2-saltwater", "phone": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}, "tablet": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}},
+    {"segment_id": "seg3-compare", "phone": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}, "tablet": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}},
+    {"segment_id": "seg4-conclusion", "phone": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}, "tablet": {"initial": "pass", "key_process": "pass", "final": "pass", "paused": "pass", "resumed": "pass", "post_interaction": "pass", "reduced_motion": "pass"}}
+  ],
+  "metrics": {"state_runs_passed": 56, "state_runs_total": 56, "blank_scenes": 0, "canvas_bound_violations": 0, "horizontal_overflow_viewports": 0},
+  "runtime_checks": {"pause_position_ms": 367, "pause_position_after_500ms": 367, "pause_frozen": true, "resume_position_ms": 733, "resume_continued": true},
+  "console": {"errors": ["favicon.ico 404"], "relevant_errors": 0},
+  "limits": ["Browser layout pass does not override the failed semantic visual gate.", "No real narration audio or TTS was used."]
+}

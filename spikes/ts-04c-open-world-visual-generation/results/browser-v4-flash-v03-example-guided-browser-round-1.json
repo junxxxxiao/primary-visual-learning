@@ -1,0 +1,2990 @@
+{
+  "candidate_count": 10,
+  "model": "deepseek-v4-flash",
+  "pass": true,
+  "pass_count": 10,
+  "profile_key": "v03-example-guided",
+  "prompt_profile": {
+    "format_example_kind": "gold_fixture",
+    "format_example_sha256": "5322f17e9a6df778b29e3ed30ee8bd17973f29c286414307fa2440b9f38e3fe0",
+    "format_example_source": "synthetic_format_only",
+    "name": "v03-complete-format-example/0.1",
+    "prompt_builder_sha256": "83ab2171804d3b96603c444349164d3ecb361a350e13418cfc684de731407266"
+  },
+  "results": [
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 22,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2976,
+            "quantized_color_count": 45
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3690,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3903,
+            "quantized_color_count": 45
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3690,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3690,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3903,
+            "quantized_color_count": 45
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3903,
+            "quantized_color_count": 45
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 5,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3430,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8814,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11151,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11548,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11151,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11151,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11548,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11548,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5145,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "shadow.lamp-distance-size",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1628,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2008,
+            "quantized_color_count": 34
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2472,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2008,
+            "quantized_color_count": 34
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2008,
+            "quantized_color_count": 34
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2472,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2472,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3080,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3539,
+            "quantized_color_count": 42
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4361,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5274,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4361,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4361,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5274,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5274,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 13,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4501,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "lever.seesaw-balance",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 4,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4485,
+            "quantized_color_count": 22
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4695,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4964,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4695,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4695,
+            "quantized_color_count": 25
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4964,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4964,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3196,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15191,
+            "quantized_color_count": 23
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15706,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16006,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15706,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 9,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15706,
+            "quantized_color_count": 24
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16006,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16006,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 12,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5361,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "fraction.equivalent-pieces",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3072,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3770,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3809,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3770,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3770,
+            "quantized_color_count": 44
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3809,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3809,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2350,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 3,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 9958,
+            "quantized_color_count": 38
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11248,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10996,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11248,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11248,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10996,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 10996,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3988,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 3,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4490,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4629,
+            "quantized_color_count": 52
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5111,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4629,
+            "quantized_color_count": 52
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4629,
+            "quantized_color_count": 52
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5111,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5111,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2656,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 3,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 14878,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15137,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16023,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15137,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15137,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16023,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 16023,
+            "quantized_color_count": 46
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3986,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 3,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "water-cycle.condensation-path",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1282,
+            "quantized_color_count": 37
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2812,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3000,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2812,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2812,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3000,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3000,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2269,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2501,
+            "quantized_color_count": 38
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 9,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5377,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 9,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5534,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5377,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5377,
+            "quantized_color_count": 39
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5534,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5534,
+            "quantized_color_count": 40
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3045,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "linear-functions.moving-intersection",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11371,
+            "quantized_color_count": 45
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15119,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15144,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15119,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15119,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15144,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 15144,
+            "quantized_color_count": 49
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3119,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 41148,
+            "quantized_color_count": 53
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 55277,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 16,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4542,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 1606,
+            "quantized_color_count": 31
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2507,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2820,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2507,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2507,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2820,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2820,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 4,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5390,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 4365,
+            "quantized_color_count": 31
+          },
+          "rendered_element_count": 8,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5949,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 6283,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5949,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5949,
+            "quantized_color_count": 50
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 6283,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 6283,
+            "quantized_color_count": 51
+          },
+          "rendered_element_count": 11,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11429,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 6,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "circuit.series-current-path",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 6,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8068,
+            "quantized_color_count": 47
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8068,
+            "quantized_color_count": 56
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8317,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8068,
+            "quantized_color_count": 56
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8068,
+            "quantized_color_count": 56
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8317,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 8317,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 4,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3364,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28226,
+            "quantized_color_count": 48
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28226,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28601,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28226,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28226,
+            "quantized_color_count": 43
+          },
+          "rendered_element_count": 10,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28601,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 28601,
+            "quantized_color_count": 36
+          },
+          "rendered_element_count": 9,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 5801,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "density.layering-liquids",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    },
+    {
+      "pass": true,
+      "runs": [
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3412,
+            "quantized_color_count": 27
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3999,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 7038,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3999,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 2,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3999,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 7038,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 7038,
+            "quantized_color_count": 32
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 632,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 390
+          },
+          "duration_ms": 3,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 2510,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "phone"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 11237,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "initial",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 12426,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "key_process",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 23249,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "final",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 12426,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "paused",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 8,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 12426,
+            "quantized_color_count": 30
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "resumed",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 23249,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "post_interaction",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 23249,
+            "quantized_color_count": 33
+          },
+          "rendered_element_count": 7,
+          "screen_violations": [],
+          "state_id": "reduced_motion",
+          "viewport": "tablet"
+        },
+        {
+          "canvas": {
+            "height": 728,
+            "scroll_height": 0,
+            "scroll_width": 0,
+            "width": 1024
+          },
+          "duration_ms": 7,
+          "logical_violations": [],
+          "pixel_stats": {
+            "non_background_samples": 3366,
+            "quantized_color_count": 18
+          },
+          "rendered_element_count": 4,
+          "screen_violations": [],
+          "state_id": "static_fallback",
+          "viewport": "tablet"
+        }
+      ],
+      "sample_id": "symmetry.rotation-order",
+      "source_attempt": "initial",
+      "violation_codes": [],
+      "violations": []
+    }
+  ],
+  "run_label": "v4-flash-v03-example-guided-browser-round-1",
+  "schema_version": "open-visual-scene/0.3",
+  "slice_id": "TS-04C-v3",
+  "state_run_count": 160
+}

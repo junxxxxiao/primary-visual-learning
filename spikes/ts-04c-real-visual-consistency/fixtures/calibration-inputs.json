@@ -1,0 +1,1011 @@
+{
+  "fixture_version": "ts04c-calibration-inputs/0.1",
+  "sample_count": 10,
+  "samples": [
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "opening-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "opening-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "opening-visual"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:b3190e3b76baa6d4583aeab4390f36ed2dadd474254bd944a865aa37c2c79cc9",
+      "learning_goal": "建立同一根弦的公平比较，并区分响度和音调。",
+      "narration": "先固定同一根琴弦的长度、松紧和粗细，只改变拨弦力度。接下来分别比较响度和音调的变化。",
+      "sample_id": "primary_sound.opening-explanation",
+      "school_stage": "primary",
+      "source_fixture_hash": "sha256:27187e9cabf4b1651af5ddac5dc505674415a8c2d20aec5121ec0631cfb97add",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 4,
+        "profile_version": "1.0",
+        "school_stage": "primary",
+        "textbook_edition": "synthetic-primary-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-pitch"
+        ],
+        "kind": "annotated-sequence",
+        "steps": [
+          "同一根弦保持不变",
+          "分别记录响度和音调"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 4,
+        "formula_symbol_count": 0,
+        "layout_kind": "single-focus",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "same-string",
+          "comparison-focus"
+        ],
+        "terms": [
+          "响度",
+          "音调"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "compare-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "compare-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "compare-visual"
+        },
+        {
+          "action": "highlight",
+          "at_ms": 2200,
+          "cue_id": "compare-highlight"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:37bb1011403c5997c51938c00834298b2a0499830568a64e7f5686a3efb5691f",
+      "learning_goal": "比较轻拨和用力拨的振幅。",
+      "narration": "更用力拨时，弦摆动得更宽，声音更响；这里改变的是振幅和响度。",
+      "sample_id": "primary_sound.compare",
+      "school_stage": "primary",
+      "source_fixture_hash": "sha256:27187e9cabf4b1651af5ddac5dc505674415a8c2d20aec5121ec0631cfb97add",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 4,
+        "profile_version": "1.0",
+        "school_stage": "primary",
+        "textbook_edition": "synthetic-primary-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-pitch"
+        ],
+        "kind": "comparison-panel",
+        "steps": [
+          "轻拨时摆动较窄",
+          "用力拨时摆动较宽",
+          "摆动更宽对应声音更响"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 6,
+        "formula_symbol_count": 0,
+        "layout_kind": "side-by-side",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "light-pluck",
+          "strong-pluck",
+          "amplitude-highlight"
+        ],
+        "terms": [
+          "振幅",
+          "响度"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        },
+        {
+          "claim_id": "pitch-frequency-loudness-amplitude",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 13,
+              "quote": "Pitch describes how high or low a sound seems",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振动",
+            "振幅",
+            "频率",
+            "响度",
+            "音调"
+          ],
+          "text": "Pitch relates to frequency while loudness relates here to amplitude."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "separate-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "separate-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "separate-visual"
+        },
+        {
+          "action": "show_conclusion",
+          "at_ms": 3000,
+          "cue_id": "separate-conclusion"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:1c284e1599a4ba1c542c342d5f5ad805e891942f0839a0be59ee46cec6bafb6f",
+      "learning_goal": "确认音调并未随力度一起改变。",
+      "narration": "两次振动的快慢保持一致，所以音调没有升高。力度、响度和音调不能混成同一件事。",
+      "sample_id": "primary_sound.separate",
+      "school_stage": "primary",
+      "source_fixture_hash": "sha256:27187e9cabf4b1651af5ddac5dc505674415a8c2d20aec5121ec0631cfb97add",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 4,
+        "profile_version": "1.0",
+        "school_stage": "primary",
+        "textbook_edition": "synthetic-primary-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-pitch",
+          "pitch-frequency-loudness-amplitude"
+        ],
+        "kind": "comparison-panel",
+        "steps": [
+          "对齐两次振动的时间",
+          "振动快慢相同",
+          "音调不变，响度改变"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 6,
+        "formula_symbol_count": 0,
+        "layout_kind": "side-by-side",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "rate-aligned",
+          "amplitude-different",
+          "conclusion"
+        ],
+        "terms": [
+          "振动",
+          "响度",
+          "音调"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "pp-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "pp-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "pp-visual"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:503b567adbbd2766e439405d82397f27f6ec1a286aca78005af0cc59e4cd2763",
+      "learning_goal": "建立同一根橡皮筋的公平比较。",
+      "narration": "固定同一根橡皮筋，只改变拨动的力气。把轻拨和重拨放在一起，分别比较响度和音调。",
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "school_stage": "primary",
+      "source_fixture_hash": "sha256:4c15d79ceb90b0dd0298e46f1304351c3f1e56b9dd464f2a599ca716ef99cc35",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 4,
+        "profile_version": "1.0",
+        "school_stage": "primary",
+        "textbook_edition": "synthetic-primary-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-pitch"
+        ],
+        "kind": "annotated-sequence",
+        "steps": [
+          "固定同一根橡皮筋",
+          "比较轻拨与重拨"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 3,
+        "formula_symbol_count": 0,
+        "layout_kind": "single-focus",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "light",
+          "strong"
+        ],
+        "terms": [
+          "响度",
+          "音调"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-pitch",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 12,
+              "quote": "plucking it harder mainly increases vibration amplitude",
+              "source_id": "primary-sound-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "响度",
+            "音调"
+          ],
+          "text": "For the same string under unchanged conditions, more plucking force mainly increases amplitude and loudness, not frequency and pitch."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "pr-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "pr-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "pr-visual"
+        },
+        {
+          "action": "show_conclusion",
+          "at_ms": 2400,
+          "cue_id": "pr-conclusion"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:e5507e8973717ce32860e7ee92b1d2a58d41ec8bffa5f20a3e8abe72f33b8d48",
+      "learning_goal": "用摆动宽窄解释响度变化。",
+      "narration": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "school_stage": "primary",
+      "source_fixture_hash": "sha256:4c15d79ceb90b0dd0298e46f1304351c3f1e56b9dd464f2a599ca716ef99cc35",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 4,
+        "profile_version": "1.0",
+        "school_stage": "primary",
+        "textbook_edition": "synthetic-primary-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-pitch"
+        ],
+        "kind": "comparison-panel",
+        "steps": [
+          "轻拨摆动窄",
+          "重拨摆动宽",
+          "摆动宽时更响"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 5,
+        "formula_symbol_count": 0,
+        "layout_kind": "side-by-side",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "narrow-motion",
+          "wide-motion",
+          "loudness"
+        ],
+        "terms": [
+          "振幅",
+          "响度"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "fence-transfer",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 35,
+              "quote": "Completing the square identifies the maximizing dimensions",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "面积",
+            "最大值",
+            "配方"
+          ],
+          "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+        }
+      ],
+      "core_relation": "complete_square_exposes_extremum",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "model-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "model-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "model-visual"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:417a386ee9194111e91126f1f2c3f3c148442d2bfd0bf67522cc916b7df08854",
+      "learning_goal": "把三边围栏条件转成面积表达式。",
+      "narration": "先画出靠墙的长方形。设两条短边为 x，剩下的一条长边由总长度决定，再写出面积。",
+      "sample_id": "middle_perfect_square.model",
+      "school_stage": "middle",
+      "source_fixture_hash": "sha256:6b73c919e4481a228809bc62c5550157faea04a4a6a7589e2b103cb3649213b1",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 8,
+        "profile_version": "1.0",
+        "school_stage": "middle",
+        "textbook_edition": "synthetic-middle-math-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "fence-transfer"
+        ],
+        "kind": "worked-steps",
+        "steps": [
+          "设短边为 x",
+          "写出第三边",
+          "列出面积表达式"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 7,
+        "formula_symbol_count": 8,
+        "layout_kind": "step-stack",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "fence-diagram",
+          "length-labels",
+          "area-expression"
+        ],
+        "terms": [
+          "面积"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "perfect-square-identities",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "follow by multiplying the binomials",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "完全平方",
+            "配方"
+          ],
+          "text": "The perfect-square identities follow from binomial multiplication."
+        },
+        {
+          "claim_id": "complete-square-bound",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "a real square is nonnegative",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "完全平方",
+            "配方",
+            "非负",
+            "最大值"
+          ],
+          "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square."
+        }
+      ],
+      "core_relation": "complete_square_exposes_extremum",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "complete-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "complete-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "complete-visual"
+        },
+        {
+          "action": "highlight",
+          "at_ms": 2600,
+          "cue_id": "complete-highlight"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:0f8ad801c82e2e08f8c02d6ab5db7aa8af5ea131d6842836a8d629efe6b8f020",
+      "learning_goal": "通过配方显露平方项。",
+      "narration": "把面积式配方后，变化部分写成一个平方项。平方项不小于零，所以它前面的负号决定了面积上界。",
+      "sample_id": "middle_perfect_square.complete",
+      "school_stage": "middle",
+      "source_fixture_hash": "sha256:6b73c919e4481a228809bc62c5550157faea04a4a6a7589e2b103cb3649213b1",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 8,
+        "profile_version": "1.0",
+        "school_stage": "middle",
+        "textbook_edition": "synthetic-middle-math-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "perfect-square-identities",
+          "complete-square-bound"
+        ],
+        "kind": "worked-steps",
+        "steps": [
+          "整理一次项",
+          "补成完全平方",
+          "标出平方项非负"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 8,
+        "formula_symbol_count": 16,
+        "layout_kind": "step-stack",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "expanded-form",
+          "completed-square",
+          "nonnegative-highlight"
+        ],
+        "terms": [
+          "完全平方",
+          "配方",
+          "非负"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "complete-square-bound",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 34,
+              "quote": "a real square is nonnegative",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "完全平方",
+            "配方",
+            "非负",
+            "最大值"
+          ],
+          "text": "Completing the square exposes a minimum or maximum by using the nonnegativity of a real square."
+        },
+        {
+          "claim_id": "fence-transfer",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 35,
+              "quote": "Completing the square identifies the maximizing dimensions",
+              "source_id": "middle-perfect-square-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "面积",
+            "最大值",
+            "配方"
+          ],
+          "text": "A wall-side fencing problem can be modeled and optimized by completing the square."
+        }
+      ],
+      "core_relation": "complete_square_exposes_extremum",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "justify-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "justify-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "justify-visual"
+        },
+        {
+          "action": "show_conclusion",
+          "at_ms": 2800,
+          "cue_id": "justify-conclusion"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:acf1ba7e996bf51bc2118357cd7d4f8b33cc9f6c8abd82e45f630170206dbbe3",
+      "learning_goal": "用平方项的符号说明最大面积，而不只报数值。",
+      "narration": "当平方项等于零时，被减去的量最小，面积达到最大值。这个符号理由说明了答案为什么最大。",
+      "sample_id": "middle_perfect_square.justify",
+      "school_stage": "middle",
+      "source_fixture_hash": "sha256:6b73c919e4481a228809bc62c5550157faea04a4a6a7589e2b103cb3649213b1",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 8,
+        "profile_version": "1.0",
+        "school_stage": "middle",
+        "textbook_edition": "synthetic-middle-math-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "complete-square-bound",
+          "fence-transfer"
+        ],
+        "kind": "worked-steps",
+        "steps": [
+          "平方项始终非负",
+          "平方项为零时减去量最小",
+          "因此面积达到最大值"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 9,
+        "formula_symbol_count": 12,
+        "layout_kind": "coordinate-comparison",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "square-positive",
+          "square-zero",
+          "maximum-area"
+        ],
+        "terms": [
+          "非负",
+          "最大值",
+          "面积"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-frequency",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 18,
+              "quote": "increasing the driving force mainly increases vibration amplitude",
+              "source_id": "middle-sound-wave-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "频率",
+            "波形"
+          ],
+          "text": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "wc-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "wc-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "wc-visual"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:86e3eb167620c294de623a999ac217e309288752d6107251338a362879bec8fa",
+      "learning_goal": "从波形分别读取振幅和周期。",
+      "narration": "先比较两条波形的纵向高度和横向周期，判断需要分别追踪哪两个量。",
+      "sample_id": "middle_sound_pair.wave-compare",
+      "school_stage": "middle",
+      "source_fixture_hash": "sha256:bdc2ea50f246755ae6a154f64a7c0bf772f6ca010d7efb15642d24a367bac56d",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 8,
+        "profile_version": "1.0",
+        "school_stage": "middle",
+        "textbook_edition": "synthetic-middle-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-frequency"
+        ],
+        "kind": "comparison-panel",
+        "steps": [
+          "比较纵向振幅",
+          "比较横向周期",
+          "分开记录两个量"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 7,
+        "formula_symbol_count": 4,
+        "layout_kind": "coordinate-comparison",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "axes",
+          "two-waveforms",
+          "measure-guides"
+        ],
+        "terms": [
+          "振幅",
+          "频率",
+          "波形"
+        ]
+      }
+    },
+    {
+      "claims": [
+        {
+          "claim_id": "force-amplitude-frequency",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 18,
+              "quote": "increasing the driving force mainly increases vibration amplitude",
+              "source_id": "middle-sound-wave-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "频率",
+            "波形"
+          ],
+          "text": "For the same vibrating system under unchanged boundary conditions, increasing driving force mainly increases amplitude without itself changing frequency."
+        },
+        {
+          "claim_id": "wave-perception-map",
+          "critical": true,
+          "evidence_refs": [
+            {
+              "page": 19,
+              "quote": "amplitude is related to loudness and frequency is related to pitch",
+              "source_id": "middle-sound-wave-synthetic-v1"
+            }
+          ],
+          "supported_terms": [
+            "振幅",
+            "频率",
+            "响度",
+            "音调",
+            "波形"
+          ],
+          "text": "Waveform amplitude relates to loudness, while waveform frequency relates to pitch."
+        }
+      ],
+      "core_relation": "force_changes_amplitude_not_pitch_under_fixed_string",
+      "cues": [
+        {
+          "action": "show_start_frame",
+          "at_ms": 0,
+          "cue_id": "we-start"
+        },
+        {
+          "action": "start_narration",
+          "at_ms": 1000,
+          "cue_id": "we-narration"
+        },
+        {
+          "action": "start_visual",
+          "at_ms": 1000,
+          "cue_id": "we-visual"
+        },
+        {
+          "action": "show_conclusion",
+          "at_ms": 2600,
+          "cue_id": "we-conclusion"
+        }
+      ],
+      "fixture_kind": "gold_fixture",
+      "input_hash": "sha256:bdd7f0bc6e6616ce14f2a73d3708c451a810d9491a3080737f6cd73560b3c7b9",
+      "learning_goal": "用振幅与频率的独立变化解释听感。",
+      "narration": "驱动力增大后波形更高，表示振幅和响度增大；横向周期不变，说明频率和音调保持不变。",
+      "sample_id": "middle_sound_pair.wave-explain",
+      "school_stage": "middle",
+      "source_fixture_hash": "sha256:bdc2ea50f246755ae6a154f64a7c0bf772f6ca010d7efb15642d24a367bac56d",
+      "source_kind": "synthetic_gold_fixture",
+      "source_plan_schema": "lesson-plan/1.3",
+      "source_run_label": "ts03-gold-fixtures",
+      "stage_profile": {
+        "curriculum": "synthetic-national-curriculum-2026",
+        "grade": 8,
+        "profile_version": "1.0",
+        "school_stage": "middle",
+        "textbook_edition": "synthetic-middle-science-2026"
+      },
+      "static_fallback": {
+        "fact_refs": [
+          "force-amplitude-frequency",
+          "wave-perception-map"
+        ],
+        "kind": "comparison-panel",
+        "steps": [
+          "波形高度增大",
+          "周期保持不变",
+          "响度增大而音调不变"
+        ]
+      },
+      "visual_contract": {
+        "element_count": 9,
+        "formula_symbol_count": 6,
+        "layout_kind": "coordinate-comparison",
+        "scene_contract": {
+          "contract_version": "visual-scene/1.0",
+          "motion_envelope_required": true,
+          "viewports": [
+            "phone",
+            "tablet"
+          ]
+        },
+        "states": [
+          "amplitude-overlay",
+          "period-aligned",
+          "quantity-map"
+        ],
+        "terms": [
+          "振幅",
+          "响度",
+          "频率",
+          "音调",
+          "波形"
+        ]
+      }
+    }
+  ],
+  "source_fixture": "spikes/ts-03-progressive-lesson-plan/fixtures/plans.json",
+  "source_fixture_hash": "sha256:790fee1f4c40ea22899b2a18ffaa61bcc01c1759c6280c30a36e1c1a14210d0d",
+  "stage_counts": {
+    "middle": 5,
+    "primary": 5
+  }
+}

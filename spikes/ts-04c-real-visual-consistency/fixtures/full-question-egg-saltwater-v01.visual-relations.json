@@ -1,0 +1,24 @@
+{
+  "schema_version": "visual-relation-requirements/0.1",
+  "fixture_kind": "gold_fixture",
+  "evidence_status": "synthetic_unverified",
+  "question_id": "synthetic.egg-saltwater-float.v01",
+  "relations": [
+    {
+      "relation_id": "buoyancy-overcomes-weight",
+      "segment_ordinal": 3,
+      "claim_refs": ["motion-follows-force-balance"],
+      "left": {"kind": "arrow", "style": "force-up", "measure": "height"},
+      "operator": "gt",
+      "right": {"kind": "arrow", "style": "force-down", "measure": "height"}
+    },
+    {
+      "relation_id": "buoyancy-balances-weight",
+      "segment_ordinal": 4,
+      "claim_refs": ["motion-follows-force-balance"],
+      "left": {"kind": "arrow", "style": "force-up", "measure": "height"},
+      "operator": "eq",
+      "right": {"kind": "arrow", "style": "force-down", "measure": "height"}
+    }
+  ]
+}

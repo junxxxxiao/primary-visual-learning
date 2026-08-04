@@ -1,0 +1,1271 @@
+{
+  "artifact_kind": "hybrid_dsl_local_compile_gate",
+  "source_result": "model-deepseek-v4-flash-official-hybrid-dsl-v01-flash-calibration-round-1.json",
+  "source_kind": "candidate_output",
+  "status": "pass",
+  "metrics": {
+    "contract_pass": {
+      "denominator": 10,
+      "numerator": 7
+    },
+    "compile_pass": {
+      "numerator": 7,
+      "denominator": 10
+    }
+  },
+  "checks": [
+    {
+      "sample_id": "primary_sound.opening-explanation",
+      "compile_pass": true,
+      "node_count": 5,
+      "connector_count": 6,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "primary_sound.compare",
+      "compile_pass": true,
+      "node_count": 6,
+      "connector_count": 4,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "primary_sound.separate",
+      "compile_pass": true,
+      "node_count": 6,
+      "connector_count": 4,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "compile_pass": true,
+      "node_count": 6,
+      "connector_count": 3,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "compile_pass": true,
+      "node_count": 5,
+      "connector_count": 3,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "middle_perfect_square.complete",
+      "compile_pass": true,
+      "node_count": 3,
+      "connector_count": 2,
+      "function_line_count": 0
+    },
+    {
+      "sample_id": "middle_perfect_square.justify",
+      "compile_pass": true,
+      "node_count": 3,
+      "connector_count": 2,
+      "function_line_count": 1
+    }
+  ],
+  "compiled_candidates": [
+    {
+      "sample_id": "primary_sound.opening-explanation",
+      "title": "拨弦力度与响度、音调的关系",
+      "caption": "同一根琴弦，轻轻拨和用力拨，振幅和响度变化明显，音调基本不变。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 16,
+            "id": "string",
+            "kind": "box",
+            "label": "琴弦",
+            "style": "string",
+            "width": 300,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 50,
+            "id": "soft-pluck",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 250
+          },
+          {
+            "height": 50,
+            "id": "hard-pluck",
+            "kind": "box",
+            "label": "重拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 550
+          },
+          {
+            "height": 40,
+            "id": "loudness-label",
+            "kind": "box",
+            "label": "响度",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 200
+          },
+          {
+            "height": 40,
+            "id": "pitch-label",
+            "kind": "box",
+            "label": "音调",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 600
+          }
+        ],
+        "connectors": [
+          {
+            "id": "soft-to-string",
+            "from": {
+              "x": 200,
+              "y": 275
+            },
+            "to": {
+              "x": 350,
+              "y": 400
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "hard-to-string",
+            "from": {
+              "x": 200,
+              "y": 525
+            },
+            "to": {
+              "x": 350,
+              "y": 400
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "soft-to-loudness",
+            "from": {
+              "x": 250,
+              "y": 250
+            },
+            "to": {
+              "x": 660,
+              "y": 200
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "hard-to-loudness",
+            "from": {
+              "x": 250,
+              "y": 550
+            },
+            "to": {
+              "x": 660,
+              "y": 200
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "soft-to-pitch",
+            "from": {
+              "x": 250,
+              "y": 250
+            },
+            "to": {
+              "x": 660,
+              "y": 600
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "hard-to-pitch",
+            "from": {
+              "x": 250,
+              "y": 550
+            },
+            "to": {
+              "x": 660,
+              "y": 600
+            },
+            "marker_end": "arrow"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "soft-pluck",
+            "to": {
+              "y": 300
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "hard-pluck",
+            "to": {
+              "y": 500
+            },
+            "duration_ms": 1000
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-string",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "string"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-string",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "string"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "loudness-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "loudness-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "soft-pluck"
+            },
+            "id": "soft-to-pitch",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "pitch-label"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "hard-pluck"
+            },
+            "id": "hard-to-pitch",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "left",
+              "node_id": "pitch-label"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"string\", {\"height\":16,\"id\":\"string\",\"kind\":\"box\",\"label\":\"琴弦\",\"style\":\"string\",\"width\":300,\"x\":500,\"y\":400});\n  node(\"soft-pluck\", {\"height\":50,\"id\":\"soft-pluck\",\"kind\":\"box\",\"label\":\"轻拨\",\"style\":\"action\",\"width\":100,\"x\":200,\"y\":250});\n  node(\"hard-pluck\", {\"height\":50,\"id\":\"hard-pluck\",\"kind\":\"box\",\"label\":\"重拨\",\"style\":\"action\",\"width\":100,\"x\":200,\"y\":550});\n  node(\"loudness-label\", {\"height\":40,\"id\":\"loudness-label\",\"kind\":\"box\",\"label\":\"响度\",\"style\":\"label\",\"width\":80,\"x\":700,\"y\":200});\n  node(\"pitch-label\", {\"height\":40,\"id\":\"pitch-label\",\"kind\":\"box\",\"label\":\"音调\",\"style\":\"label\",\"width\":80,\"x\":700,\"y\":600});\n  connector(\"soft-to-string\", {\"x\":200,\"y\":275}, {\"x\":350,\"y\":400});\n  connector(\"hard-to-string\", {\"x\":200,\"y\":525}, {\"x\":350,\"y\":400});\n  connector(\"soft-to-loudness\", {\"x\":250,\"y\":250}, {\"x\":660,\"y\":200});\n  connector(\"hard-to-loudness\", {\"x\":250,\"y\":550}, {\"x\":660,\"y\":200});\n  connector(\"soft-to-pitch\", {\"x\":250,\"y\":250}, {\"x\":660,\"y\":600});\n  connector(\"hard-to-pitch\", {\"x\":250,\"y\":550}, {\"x\":660,\"y\":600});\n  move(\"soft-pluck\", {\"y\":300}, 1000);\n  move(\"hard-pluck\", {\"y\":500}, 1000);\n}"
+      }
+    },
+    {
+      "sample_id": "primary_sound.compare",
+      "title": "轻拨与用力拨的振幅比较",
+      "caption": "同一根弦，轻拨时振幅小，用力拨时振幅大，声音更响。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 20,
+            "id": "string-light",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "string",
+            "width": 200,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 20,
+            "id": "string-strong",
+            "kind": "box",
+            "label": "用力拨",
+            "style": "string",
+            "width": 200,
+            "x": 600,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "amplitude-light",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "amplitude",
+            "width": 120,
+            "x": 200,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "amplitude-strong",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "amplitude",
+            "width": 120,
+            "x": 600,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "loudness-light",
+            "kind": "box",
+            "label": "响度小",
+            "style": "loudness",
+            "width": 120,
+            "x": 200,
+            "y": 200
+          },
+          {
+            "height": 40,
+            "id": "loudness-strong",
+            "kind": "box",
+            "label": "响度大",
+            "style": "loudness",
+            "width": 120,
+            "x": 600,
+            "y": 200
+          }
+        ],
+        "connectors": [
+          {
+            "id": "conn-light-amp",
+            "from": {
+              "x": 200,
+              "y": 390
+            },
+            "to": {
+              "x": 200,
+              "y": 320
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-strong-amp",
+            "from": {
+              "x": 600,
+              "y": 390
+            },
+            "to": {
+              "x": 600,
+              "y": 320
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-amp-loud-light",
+            "from": {
+              "x": 200,
+              "y": 280
+            },
+            "to": {
+              "x": 200,
+              "y": 220
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-amp-loud-strong",
+            "from": {
+              "x": 600,
+              "y": 280
+            },
+            "to": {
+              "x": 600,
+              "y": 220
+            },
+            "marker_end": "arrow"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "string-light",
+            "to": {
+              "y": 420
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "string-strong",
+            "to": {
+              "y": 380
+            },
+            "duration_ms": 1000
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string-light"
+            },
+            "id": "conn-light-amp",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amplitude-light"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string-strong"
+            },
+            "id": "conn-strong-amp",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amplitude-strong"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-light"
+            },
+            "id": "conn-amp-loud-light",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness-light"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-strong"
+            },
+            "id": "conn-amp-loud-strong",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness-strong"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"string-light\", {\"height\":20,\"id\":\"string-light\",\"kind\":\"box\",\"label\":\"轻拨\",\"style\":\"string\",\"width\":200,\"x\":200,\"y\":400});\n  node(\"string-strong\", {\"height\":20,\"id\":\"string-strong\",\"kind\":\"box\",\"label\":\"用力拨\",\"style\":\"string\",\"width\":200,\"x\":600,\"y\":400});\n  node(\"amplitude-light\", {\"height\":40,\"id\":\"amplitude-light\",\"kind\":\"box\",\"label\":\"振幅小\",\"style\":\"amplitude\",\"width\":120,\"x\":200,\"y\":300});\n  node(\"amplitude-strong\", {\"height\":40,\"id\":\"amplitude-strong\",\"kind\":\"box\",\"label\":\"振幅大\",\"style\":\"amplitude\",\"width\":120,\"x\":600,\"y\":300});\n  node(\"loudness-light\", {\"height\":40,\"id\":\"loudness-light\",\"kind\":\"box\",\"label\":\"响度小\",\"style\":\"loudness\",\"width\":120,\"x\":200,\"y\":200});\n  node(\"loudness-strong\", {\"height\":40,\"id\":\"loudness-strong\",\"kind\":\"box\",\"label\":\"响度大\",\"style\":\"loudness\",\"width\":120,\"x\":600,\"y\":200});\n  connector(\"conn-light-amp\", {\"x\":200,\"y\":390}, {\"x\":200,\"y\":320});\n  connector(\"conn-strong-amp\", {\"x\":600,\"y\":390}, {\"x\":600,\"y\":320});\n  connector(\"conn-amp-loud-light\", {\"x\":200,\"y\":280}, {\"x\":200,\"y\":220});\n  connector(\"conn-amp-loud-strong\", {\"x\":600,\"y\":280}, {\"x\":600,\"y\":220});\n  move(\"string-light\", {\"y\":420}, 1000);\n  move(\"string-strong\", {\"y\":380}, 1000);\n}"
+      }
+    },
+    {
+      "sample_id": "primary_sound.separate",
+      "title": "音调与力度无关",
+      "caption": "两次拨弦的振动快慢相同，音调不变；但振幅不同，响度不同。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 80,
+            "id": "string1",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "string",
+            "width": 120,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 80,
+            "id": "string2",
+            "kind": "box",
+            "label": "重拨",
+            "style": "string",
+            "width": 120,
+            "x": 600,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "pitch1",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "label",
+            "width": 120,
+            "x": 200,
+            "y": 600
+          },
+          {
+            "height": 60,
+            "id": "pitch2",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "label",
+            "width": 120,
+            "x": 600,
+            "y": 600
+          },
+          {
+            "height": 60,
+            "id": "amp1",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "label",
+            "width": 120,
+            "x": 200,
+            "y": 250
+          },
+          {
+            "height": 60,
+            "id": "amp2",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "label",
+            "width": 120,
+            "x": 600,
+            "y": 250
+          }
+        ],
+        "connectors": [
+          {
+            "id": "conn1",
+            "from": {
+              "x": 200,
+              "y": 360
+            },
+            "to": {
+              "x": 200,
+              "y": 280
+            },
+            "marker_end": "none"
+          },
+          {
+            "id": "conn2",
+            "from": {
+              "x": 200,
+              "y": 440
+            },
+            "to": {
+              "x": 200,
+              "y": 570
+            },
+            "marker_end": "none"
+          },
+          {
+            "id": "conn3",
+            "from": {
+              "x": 600,
+              "y": 360
+            },
+            "to": {
+              "x": 600,
+              "y": 280
+            },
+            "marker_end": "none"
+          },
+          {
+            "id": "conn4",
+            "from": {
+              "x": 600,
+              "y": 440
+            },
+            "to": {
+              "x": 600,
+              "y": 570
+            },
+            "marker_end": "none"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "string1",
+            "to": {
+              "y": 380
+            },
+            "duration_ms": 500
+          },
+          {
+            "target_id": "string2",
+            "to": {
+              "y": 360
+            },
+            "duration_ms": 500
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string1"
+            },
+            "id": "conn1",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amp1"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string1"
+            },
+            "id": "conn2",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch1"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "string2"
+            },
+            "id": "conn3",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "amp2"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string2"
+            },
+            "id": "conn4",
+            "marker_end": "none",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch2"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"string1\", {\"height\":80,\"id\":\"string1\",\"kind\":\"box\",\"label\":\"轻拨\",\"style\":\"string\",\"width\":120,\"x\":200,\"y\":400});\n  node(\"string2\", {\"height\":80,\"id\":\"string2\",\"kind\":\"box\",\"label\":\"重拨\",\"style\":\"string\",\"width\":120,\"x\":600,\"y\":400});\n  node(\"pitch1\", {\"height\":60,\"id\":\"pitch1\",\"kind\":\"box\",\"label\":\"音调相同\",\"style\":\"label\",\"width\":120,\"x\":200,\"y\":600});\n  node(\"pitch2\", {\"height\":60,\"id\":\"pitch2\",\"kind\":\"box\",\"label\":\"音调相同\",\"style\":\"label\",\"width\":120,\"x\":600,\"y\":600});\n  node(\"amp1\", {\"height\":60,\"id\":\"amp1\",\"kind\":\"box\",\"label\":\"振幅小\",\"style\":\"label\",\"width\":120,\"x\":200,\"y\":250});\n  node(\"amp2\", {\"height\":60,\"id\":\"amp2\",\"kind\":\"box\",\"label\":\"振幅大\",\"style\":\"label\",\"width\":120,\"x\":600,\"y\":250});\n  connector(\"conn1\", {\"x\":200,\"y\":360}, {\"x\":200,\"y\":280});\n  connector(\"conn2\", {\"x\":200,\"y\":440}, {\"x\":200,\"y\":570});\n  connector(\"conn3\", {\"x\":600,\"y\":360}, {\"x\":600,\"y\":280});\n  connector(\"conn4\", {\"x\":600,\"y\":440}, {\"x\":600,\"y\":570});\n  move(\"string1\", {\"y\":380}, 500);\n  move(\"string2\", {\"y\":360}, 500);\n}"
+      }
+    },
+    {
+      "sample_id": "primary_sound_pair.pair-opening-explanation",
+      "title": "轻拨与重拨：响度不同，音调相同",
+      "caption": "同一根橡皮筋，轻拨时振幅小、响度低；重拨时振幅大、响度高。两种情况下音调相同。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 20,
+            "id": "rubber-band",
+            "kind": "box",
+            "label": "橡皮筋",
+            "style": "band",
+            "width": 300,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "light-pluck",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "strong-pluck",
+            "kind": "box",
+            "label": "重拨",
+            "style": "action",
+            "width": 100,
+            "x": 200,
+            "y": 550
+          },
+          {
+            "height": 40,
+            "id": "light-wave",
+            "kind": "box",
+            "label": "小振幅",
+            "style": "wave-small",
+            "width": 120,
+            "x": 700,
+            "y": 300
+          },
+          {
+            "height": 40,
+            "id": "strong-wave",
+            "kind": "box",
+            "label": "大振幅",
+            "style": "wave-large",
+            "width": 120,
+            "x": 700,
+            "y": 550
+          },
+          {
+            "height": 50,
+            "id": "pitch-label",
+            "kind": "box",
+            "label": "音调相同",
+            "style": "note",
+            "width": 160,
+            "x": 500,
+            "y": 650
+          }
+        ],
+        "connectors": [
+          {
+            "id": "conn-light",
+            "from": {
+              "x": 250,
+              "y": 300
+            },
+            "to": {
+              "x": 640,
+              "y": 300
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-strong",
+            "from": {
+              "x": 250,
+              "y": 550
+            },
+            "to": {
+              "x": 640,
+              "y": 550
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-pitch",
+            "from": {
+              "x": 500,
+              "y": 410
+            },
+            "to": {
+              "x": 500,
+              "y": 625
+            },
+            "marker_end": "none"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "light-wave",
+            "to": {
+              "y": 280
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "strong-wave",
+            "to": {
+              "y": 570
+            },
+            "duration_ms": 1000
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "light-pluck"
+            },
+            "id": "conn-light",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "light-wave"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "strong-pluck"
+            },
+            "id": "conn-strong",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "left",
+              "node_id": "strong-wave"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "rubber-band"
+            },
+            "id": "conn-pitch",
+            "marker_end": "none",
+            "style": "solid",
+            "to": {
+              "anchor": "top",
+              "node_id": "pitch-label"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"rubber-band\", {\"height\":20,\"id\":\"rubber-band\",\"kind\":\"box\",\"label\":\"橡皮筋\",\"style\":\"band\",\"width\":300,\"x\":500,\"y\":400});\n  node(\"light-pluck\", {\"height\":60,\"id\":\"light-pluck\",\"kind\":\"box\",\"label\":\"轻拨\",\"style\":\"action\",\"width\":100,\"x\":200,\"y\":300});\n  node(\"strong-pluck\", {\"height\":60,\"id\":\"strong-pluck\",\"kind\":\"box\",\"label\":\"重拨\",\"style\":\"action\",\"width\":100,\"x\":200,\"y\":550});\n  node(\"light-wave\", {\"height\":40,\"id\":\"light-wave\",\"kind\":\"box\",\"label\":\"小振幅\",\"style\":\"wave-small\",\"width\":120,\"x\":700,\"y\":300});\n  node(\"strong-wave\", {\"height\":40,\"id\":\"strong-wave\",\"kind\":\"box\",\"label\":\"大振幅\",\"style\":\"wave-large\",\"width\":120,\"x\":700,\"y\":550});\n  node(\"pitch-label\", {\"height\":50,\"id\":\"pitch-label\",\"kind\":\"box\",\"label\":\"音调相同\",\"style\":\"note\",\"width\":160,\"x\":500,\"y\":650});\n  connector(\"conn-light\", {\"x\":250,\"y\":300}, {\"x\":640,\"y\":300});\n  connector(\"conn-strong\", {\"x\":250,\"y\":550}, {\"x\":640,\"y\":550});\n  connector(\"conn-pitch\", {\"x\":500,\"y\":410}, {\"x\":500,\"y\":625});\n  move(\"light-wave\", {\"y\":280}, 1000);\n  move(\"strong-wave\", {\"y\":570}, 1000);\n}"
+      }
+    },
+    {
+      "sample_id": "primary_sound_pair.pair-reveal",
+      "title": "重拨时橡皮筋摆动更宽，声音更响",
+      "caption": "重拨时橡皮筋摆动更宽，听起来更响；这次主要改变的是振幅。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 40,
+            "id": "string-left",
+            "kind": "box",
+            "label": "轻拨",
+            "style": "label",
+            "width": 80,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "string-right",
+            "kind": "box",
+            "label": "重拨",
+            "style": "label",
+            "width": 80,
+            "x": 700,
+            "y": 400
+          },
+          {
+            "height": 40,
+            "id": "amplitude-left",
+            "kind": "box",
+            "label": "振幅小",
+            "style": "amplitude",
+            "width": 100,
+            "x": 200,
+            "y": 600
+          },
+          {
+            "height": 40,
+            "id": "amplitude-right",
+            "kind": "box",
+            "label": "振幅大",
+            "style": "amplitude",
+            "width": 100,
+            "x": 700,
+            "y": 600
+          },
+          {
+            "height": 40,
+            "id": "loudness",
+            "kind": "box",
+            "label": "响度",
+            "style": "loudness",
+            "width": 100,
+            "x": 450,
+            "y": 200
+          }
+        ],
+        "connectors": [
+          {
+            "id": "conn-left",
+            "from": {
+              "x": 200,
+              "y": 420
+            },
+            "to": {
+              "x": 200,
+              "y": 580
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-right",
+            "from": {
+              "x": 700,
+              "y": 420
+            },
+            "to": {
+              "x": 700,
+              "y": 580
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn-loudness",
+            "from": {
+              "x": 700,
+              "y": 580
+            },
+            "to": {
+              "x": 450,
+              "y": 220
+            },
+            "marker_end": "arrow"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "string-left",
+            "to": {
+              "x": 200,
+              "y": 380
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "string-right",
+            "to": {
+              "x": 700,
+              "y": 360
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "amplitude-left",
+            "to": {
+              "x": 200,
+              "y": 620
+            },
+            "duration_ms": 1000
+          },
+          {
+            "target_id": "amplitude-right",
+            "to": {
+              "x": 700,
+              "y": 580
+            },
+            "duration_ms": 1000
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string-left"
+            },
+            "id": "conn-left",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "amplitude-left"
+            }
+          },
+          {
+            "from": {
+              "anchor": "bottom",
+              "node_id": "string-right"
+            },
+            "id": "conn-right",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "top",
+              "node_id": "amplitude-right"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "amplitude-right"
+            },
+            "id": "conn-loudness",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "loudness"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"string-left\", {\"height\":40,\"id\":\"string-left\",\"kind\":\"box\",\"label\":\"轻拨\",\"style\":\"label\",\"width\":80,\"x\":200,\"y\":400});\n  node(\"string-right\", {\"height\":40,\"id\":\"string-right\",\"kind\":\"box\",\"label\":\"重拨\",\"style\":\"label\",\"width\":80,\"x\":700,\"y\":400});\n  node(\"amplitude-left\", {\"height\":40,\"id\":\"amplitude-left\",\"kind\":\"box\",\"label\":\"振幅小\",\"style\":\"amplitude\",\"width\":100,\"x\":200,\"y\":600});\n  node(\"amplitude-right\", {\"height\":40,\"id\":\"amplitude-right\",\"kind\":\"box\",\"label\":\"振幅大\",\"style\":\"amplitude\",\"width\":100,\"x\":700,\"y\":600});\n  node(\"loudness\", {\"height\":40,\"id\":\"loudness\",\"kind\":\"box\",\"label\":\"响度\",\"style\":\"loudness\",\"width\":100,\"x\":450,\"y\":200});\n  connector(\"conn-left\", {\"x\":200,\"y\":420}, {\"x\":200,\"y\":580});\n  connector(\"conn-right\", {\"x\":700,\"y\":420}, {\"x\":700,\"y\":580});\n  connector(\"conn-loudness\", {\"x\":700,\"y\":580}, {\"x\":450,\"y\":220});\n  move(\"string-left\", {\"x\":200,\"y\":380}, 1000);\n  move(\"string-right\", {\"x\":700,\"y\":360}, 1000);\n  move(\"amplitude-left\", {\"x\":200,\"y\":620}, 1000);\n  move(\"amplitude-right\", {\"x\":700,\"y\":580}, 1000);\n}"
+      }
+    },
+    {
+      "sample_id": "middle_perfect_square.complete",
+      "title": "配方显露平方项",
+      "caption": "把面积式配方后，变化部分写成一个平方项。平方项不小于零，所以它前面的负号决定了面积上界。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 60,
+            "id": "expanded",
+            "kind": "box",
+            "label": "展开式",
+            "style": "formula",
+            "width": 120,
+            "x": 150,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "square",
+            "kind": "box",
+            "label": "平方项",
+            "style": "highlight",
+            "width": 120,
+            "x": 450,
+            "y": 300
+          },
+          {
+            "height": 60,
+            "id": "nonneg",
+            "kind": "box",
+            "label": "非负",
+            "style": "highlight",
+            "width": 100,
+            "x": 750,
+            "y": 300
+          }
+        ],
+        "connectors": [
+          {
+            "id": "arrow1",
+            "from": {
+              "x": 210,
+              "y": 300
+            },
+            "to": {
+              "x": 390,
+              "y": 300
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "arrow2",
+            "from": {
+              "x": 510,
+              "y": 300
+            },
+            "to": {
+              "x": 700,
+              "y": 300
+            },
+            "marker_end": "arrow"
+          }
+        ],
+        "function_lines": [],
+        "timeline": [
+          {
+            "target_id": "square",
+            "to": {
+              "x": 450,
+              "y": 300
+            },
+            "duration_ms": 1000
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "expanded"
+            },
+            "id": "arrow1",
+            "marker_end": "arrow",
+            "style": "arrow",
+            "to": {
+              "anchor": "left",
+              "node_id": "square"
+            }
+          },
+          {
+            "from": {
+              "anchor": "right",
+              "node_id": "square"
+            },
+            "id": "arrow2",
+            "marker_end": "arrow",
+            "style": "arrow",
+            "to": {
+              "anchor": "left",
+              "node_id": "nonneg"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"expanded\", {\"height\":60,\"id\":\"expanded\",\"kind\":\"box\",\"label\":\"展开式\",\"style\":\"formula\",\"width\":120,\"x\":150,\"y\":300});\n  node(\"square\", {\"height\":60,\"id\":\"square\",\"kind\":\"box\",\"label\":\"平方项\",\"style\":\"highlight\",\"width\":120,\"x\":450,\"y\":300});\n  node(\"nonneg\", {\"height\":60,\"id\":\"nonneg\",\"kind\":\"box\",\"label\":\"非负\",\"style\":\"highlight\",\"width\":100,\"x\":750,\"y\":300});\n  connector(\"arrow1\", {\"x\":210,\"y\":300}, {\"x\":390,\"y\":300});\n  connector(\"arrow2\", {\"x\":510,\"y\":300}, {\"x\":700,\"y\":300});\n  move(\"square\", {\"x\":450,\"y\":300}, 1000);\n}"
+      }
+    },
+    {
+      "sample_id": "middle_perfect_square.justify",
+      "title": "配方揭示最大面积",
+      "caption": "当平方项等于零时，被减去的量最小，面积达到最大值。",
+      "scene": {
+        "schema_version": "hybrid-visual-scene/0.1",
+        "nodes": [
+          {
+            "height": 80,
+            "id": "area_curve",
+            "kind": "box",
+            "label": "面积曲线",
+            "style": "curve",
+            "width": 120,
+            "x": 200,
+            "y": 400
+          },
+          {
+            "height": 60,
+            "id": "square_term",
+            "kind": "box",
+            "label": "平方项",
+            "style": "square",
+            "width": 100,
+            "x": 500,
+            "y": 400
+          },
+          {
+            "height": 16,
+            "id": "max_point",
+            "kind": "point",
+            "label": "最大值",
+            "style": "point",
+            "width": 16,
+            "x": 800,
+            "y": 300
+          }
+        ],
+        "connectors": [
+          {
+            "id": "conn_square_to_curve",
+            "from": {
+              "x": 450,
+              "y": 400
+            },
+            "to": {
+              "x": 260,
+              "y": 400
+            },
+            "marker_end": "arrow"
+          },
+          {
+            "id": "conn_curve_to_max",
+            "from": {
+              "x": 200,
+              "y": 360
+            },
+            "to": {
+              "x": 800,
+              "y": 308
+            },
+            "marker_end": "arrow"
+          }
+        ],
+        "function_lines": [
+          {
+            "id": "parabola",
+            "label": "面积",
+            "points": [
+              {
+                "x": 0,
+                "y": 10
+              },
+              {
+                "x": 10,
+                "y": 0
+              }
+            ],
+            "equation": {
+              "slope": -1,
+              "intercept": 10
+            }
+          }
+        ],
+        "timeline": [
+          {
+            "target_id": "square_term",
+            "to": {
+              "x": 500
+            },
+            "duration_ms": 0
+          },
+          {
+            "target_id": "max_point",
+            "to": {
+              "y": 300
+            },
+            "duration_ms": 0
+          }
+        ],
+        "derived": {},
+        "_connector_specs": [
+          {
+            "from": {
+              "anchor": "left",
+              "node_id": "square_term"
+            },
+            "id": "conn_square_to_curve",
+            "marker_end": "arrow",
+            "style": "dashed",
+            "to": {
+              "anchor": "right",
+              "node_id": "area_curve"
+            }
+          },
+          {
+            "from": {
+              "anchor": "top",
+              "node_id": "area_curve"
+            },
+            "id": "conn_curve_to_max",
+            "marker_end": "arrow",
+            "style": "solid",
+            "to": {
+              "anchor": "bottom",
+              "node_id": "max_point"
+            }
+          }
+        ],
+        "motion_canvas_adapter_source": "// Generated by the trusted hybrid adapter. This text is an audit artifact, never eval'd.\nexport function buildScene(adapter) {\n  const {node, connector, functionLine, move} = adapter;\n  node(\"area_curve\", {\"height\":80,\"id\":\"area_curve\",\"kind\":\"box\",\"label\":\"面积曲线\",\"style\":\"curve\",\"width\":120,\"x\":200,\"y\":400});\n  node(\"square_term\", {\"height\":60,\"id\":\"square_term\",\"kind\":\"box\",\"label\":\"平方项\",\"style\":\"square\",\"width\":100,\"x\":500,\"y\":400});\n  node(\"max_point\", {\"height\":16,\"id\":\"max_point\",\"kind\":\"point\",\"label\":\"最大值\",\"style\":\"point\",\"width\":16,\"x\":800,\"y\":300});\n  connector(\"conn_square_to_curve\", {\"x\":450,\"y\":400}, {\"x\":260,\"y\":400});\n  connector(\"conn_curve_to_max\", {\"x\":200,\"y\":360}, {\"x\":800,\"y\":308});\n  functionLine(\"parabola\", -1, 10, [{\"x\":0,\"y\":10},{\"x\":10,\"y\":0}]);\n  move(\"square_term\", {\"x\":500}, 0);\n  move(\"max_point\", {\"y\":300}, 0);\n}"
+      }
+    }
+  ]
+}

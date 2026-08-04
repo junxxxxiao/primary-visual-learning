@@ -1,0 +1,52 @@
+{
+  "base_url_origin": "https://api.deepseek.com",
+  "candidate": null,
+  "contract_pass": false,
+  "data_boundary": {
+    "child_data": false,
+    "controlled_textbook_content": false,
+    "synthetic_unverified_only": true
+  },
+  "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+  "evidence": {
+    "fixture_hash": "sha256:c717c6eedc3b53051069b1b1dffaa2cc088bcca58fb847f2e5fa5fc495a6248e",
+    "schema_hash": "sha256:29f78d662595a6a4618350532b7e29c43547644edeafd697f58bee9d80d7125d"
+  },
+  "fixed_parameters": {
+    "automatic_retries": 0,
+    "max_output_tokens": 5000,
+    "repairs": 0,
+    "request_limit": 1,
+    "response_format": "json_object",
+    "temperature": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "timeout_seconds": 60,
+    "token_limit": 25000
+  },
+  "latency_ms": 9,
+  "limits": [
+    "One synthetic unverified question only.",
+    "A local renderer does not establish open-world model capability.",
+    "Human teaching-quality review is pending."
+  ],
+  "provider": "deepseek_official",
+  "request_model": "deepseek-v4-flash",
+  "response_hash": null,
+  "response_model": null,
+  "response_received": false,
+  "run_at": "2026-07-31T13:50:25.029877+00:00",
+  "run_label": "full-question-egg-saltwater-v01",
+  "run_phase": "single_full_question_calibration",
+  "slice_id": "TS-04C-full-question-v01",
+  "status": "candidate_run_complete",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  },
+  "violation_codes": [
+    "MODEL_OR_PARSE_FAILED"
+  ]
+}

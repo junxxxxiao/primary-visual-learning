@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-relation-requirements/0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_kind", "evidence_status", "question_id", "relations"],
+  "properties": {
+    "schema_version": {"const": "visual-relation-requirements/0.1"},
+    "fixture_kind": {"const": "gold_fixture"},
+    "evidence_status": {"const": "synthetic_unverified"},
+    "question_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+    "relations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {"$ref": "#/$defs/relation"}
+    }
+  },
+  "$defs": {
+    "selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "style", "measure"],
+      "properties": {
+        "kind": {"enum": ["tank", "ellipse", "particles", "arrow", "label", "meter"]},
+        "style": {"enum": ["water", "saltwater", "egg", "salt", "force-up", "force-down", "neutral", "highlight", "density"]},
+        "measure": {"enum": ["width", "height", "x", "y"]}
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation_id", "segment_ordinal", "claim_refs", "left", "operator", "right"],
+      "properties": {
+        "relation_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"},
+        "segment_ordinal": {"type": "integer", "minimum": 1, "maximum": 4},
+        "claim_refs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,95}$"}
+        },
+        "left": {"$ref": "#/$defs/selector"},
+        "operator": {"enum": ["gt", "eq", "lt"]},
+        "right": {"$ref": "#/$defs/selector"}
+      }
+    }
+  }
+}

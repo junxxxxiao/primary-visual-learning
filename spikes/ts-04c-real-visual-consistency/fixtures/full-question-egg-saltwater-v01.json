@@ -1,0 +1,28 @@
+{
+  "fixture_kind": "synthetic_unverified",
+  "schema_version": "full-question-generation-input/0.1",
+  "question_id": "synthetic.egg-saltwater-float.v01",
+  "question": "往水里加盐，鸡蛋为什么会慢慢浮起来？",
+  "school_stage": "primary",
+  "learning_goal": "用液体密度、浮力和重力的变化关系解释鸡蛋从下沉到上浮的过程。",
+  "required_segment_count": 4,
+  "claims": [
+    {
+      "claim_id": "salt-increases-solution-density",
+      "text": "在这份合成验证材料中，盐溶解后，盐水的密度比原来的水更大。"
+    },
+    {
+      "claim_id": "buoyancy-depends-on-liquid-density",
+      "text": "在鸡蛋排开液体体积相近时，液体密度增大会使鸡蛋受到的浮力增大。"
+    },
+    {
+      "claim_id": "motion-follows-force-balance",
+      "text": "浮力小于重力时鸡蛋下沉；浮力大于重力时鸡蛋上升；两者平衡时鸡蛋停止继续加速。"
+    }
+  ],
+  "data_boundary": {
+    "synthetic_unverified_only": true,
+    "controlled_textbook_content": false,
+    "child_data": false
+  }
+}

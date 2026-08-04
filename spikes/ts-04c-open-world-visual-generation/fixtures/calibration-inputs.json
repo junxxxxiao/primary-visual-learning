@@ -1,0 +1,138 @@
+{
+  "fixture_version": "open-world-calibration/0.1",
+  "source_kind": "synthetic_unverified",
+  "sample_count": 10,
+  "notice": "这些人工编写的合成题只验证生成与评审管线，不是教材、权威来源或生产知识证据。",
+  "samples": [
+    {
+      "sample_id": "shadow.lamp-distance-size",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "unfamiliar_wording_familiar_grammar",
+      "school_stage": "primary",
+      "grade": 5,
+      "question": "手电筒、玩偶和墙都不动，只把手电筒慢慢靠近玩偶，墙上的影子为什么会变大？",
+      "learning_goal": "用光线边界解释光源距离改变时影子大小的变化。",
+      "claims": [
+        {"claim_id": "shadow-ray-spread", "status": "synthetic_unverified", "critical": true, "text": "点状光源更靠近物体时，经过物体边缘的光线张角增大，屏幕上的影子范围随之增大。"}
+      ],
+      "required_explanation_aspects": ["固定物体与墙", "追踪两条边界光线", "比较移动前后张角", "说明结论适用条件"]
+    },
+    {
+      "sample_id": "lever.seesaw-balance",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "unfamiliar_wording_familiar_grammar",
+      "school_stage": "primary",
+      "grade": 6,
+      "question": "跷跷板左边坐着较重的人，右边较轻的人要坐在哪里，才可能保持平衡？",
+      "learning_goal": "通过力与支点距离的共同作用理解杠杆平衡。",
+      "claims": [
+        {"claim_id": "lever-moment-balance", "status": "synthetic_unverified", "critical": true, "text": "理想杠杆平衡时，两侧力与各自到支点距离的乘积相等。"}
+      ],
+      "required_explanation_aspects": ["标出支点", "分别显示力和距离", "动态比较两侧转动效果", "形成平衡条件"]
+    },
+    {
+      "sample_id": "fraction.equivalent-pieces",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "unfamiliar_wording_familiar_grammar",
+      "school_stage": "primary",
+      "grade": 4,
+      "question": "同样大的两张纸，一张涂二分之一，另一张涂四分之二，为什么涂色面积一样？",
+      "learning_goal": "用等分细化过程理解等值分数，而不是只背乘法规则。",
+      "claims": [
+        {"claim_id": "fraction-equivalent-partition", "status": "synthetic_unverified", "critical": true, "text": "把每个二等分小块继续等分成两块，整体涂色范围不变，二分之一可表示为四分之二。"}
+      ],
+      "required_explanation_aspects": ["保持整体同样大", "把每一半再次等分", "追踪涂色区域不变", "连接图形与分数符号"]
+    },
+    {
+      "sample_id": "geometry.perimeter-area-counterexample",
+      "fixture_kind": "adversarial_fixture",
+      "unfamiliarity_tier": "unfamiliar_wording_familiar_grammar",
+      "school_stage": "primary",
+      "grade": 5,
+      "question": "两个长方形周长都是 20 厘米，它们的面积一定相同吗？",
+      "learning_goal": "通过反例区分周长相同与面积相同。",
+      "claims": [
+        {"claim_id": "same-perimeter-different-area", "status": "synthetic_unverified", "critical": true, "text": "周长相同的长方形可以有不同长宽组合，因此面积不一定相同。"}
+      ],
+      "required_explanation_aspects": ["构造至少两组长宽", "保持周长不变", "比较覆盖面积", "明确否定错误推断"]
+    },
+    {
+      "sample_id": "water-cycle.condensation-path",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "familiar_concept_new_composition",
+      "school_stage": "primary",
+      "grade": 5,
+      "question": "烧水时看不见的水蒸气，为什么到了冷杯盖附近会变成小水滴？",
+      "learning_goal": "连接受热蒸发、移动、冷却与凝结的连续过程。",
+      "claims": [
+        {"claim_id": "water-vapor-condensation", "status": "synthetic_unverified", "critical": true, "text": "水变成水蒸气后遇到较冷表面并降温，可凝结成可见的小水滴。"}
+      ],
+      "required_explanation_aspects": ["区分水蒸气与小水滴", "呈现粒子离开水面", "表现冷却与聚集", "串起状态变化顺序"]
+    },
+    {
+      "sample_id": "linear-functions.moving-intersection",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "familiar_concept_new_composition",
+      "school_stage": "middle",
+      "grade": 8,
+      "question": "直线 y=2x+1 和 y=-x+7 为什么只在一个点相交？那个点同时表示什么？",
+      "learning_goal": "把图像交点、两式同值和方程组解联系起来。",
+      "claims": [
+        {"claim_id": "line-intersection-common-solution", "status": "synthetic_unverified", "critical": true, "text": "两条斜率不同的直线有唯一交点，交点坐标同时满足两个一次函数关系。"}
+      ],
+      "required_explanation_aspects": ["建立同一坐标系", "分别追踪两条直线", "突出共同坐标", "同步代入两式验证"]
+    },
+    {
+      "sample_id": "pythagorean.dissection-rearrangement",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "familiar_concept_new_composition",
+      "school_stage": "middle",
+      "grade": 8,
+      "question": "不用测量，怎样通过移动四个相同直角三角形，看出 a²+b²=c²？",
+      "learning_goal": "通过同面积外框的两种拼法理解勾股关系。",
+      "claims": [
+        {"claim_id": "pythagorean-dissection-area", "status": "synthetic_unverified", "critical": true, "text": "四个全等直角三角形在同一外框内重新排列，剩余面积从 a²+b² 变为 c²，因此两者相等。"}
+      ],
+      "required_explanation_aspects": ["固定外框与四个三角形", "显示完整移动路径", "比较两种剩余区域", "写出面积等式"]
+    },
+    {
+      "sample_id": "circuit.series-current-path",
+      "fixture_kind": "adversarial_fixture",
+      "unfamiliarity_tier": "unfamiliar_concept_and_representation",
+      "school_stage": "middle",
+      "grade": 9,
+      "question": "两只灯泡串联时，电流先经过第一只灯泡，会不会到第二只时已经被用掉一部分？",
+      "learning_goal": "纠正电流被前一个元件消耗的直觉，区分电流与能量转化。",
+      "claims": [
+        {"claim_id": "series-current-not-consumed", "status": "synthetic_unverified", "critical": true, "text": "稳定串联电路只有一条电荷流动路径，各处电流相同；元件转化能量，但不会把电荷流逐段消耗掉。"}
+      ],
+      "required_explanation_aspects": ["建立闭合单路径", "追踪同一批电荷连续运动", "比较两灯前后流率", "区分电流与能量"]
+    },
+    {
+      "sample_id": "density.layering-liquids",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "unfamiliar_concept_and_representation",
+      "school_stage": "middle",
+      "grade": 8,
+      "question": "体积相同的蜂蜜、水和油倒进同一杯后，为什么会分层，而且蜂蜜在最下面？",
+      "learning_goal": "用相同体积下的质量差异连接密度与液体分层。",
+      "claims": [
+        {"claim_id": "liquid-density-layering", "status": "synthetic_unverified", "critical": true, "text": "在不互溶且近似静止的条件下，密度较大的液体趋向位于密度较小液体下方。"}
+      ],
+      "required_explanation_aspects": ["比较相同体积质量", "显示三种液体重新排列", "建立密度顺序", "说明不互溶条件"]
+    },
+    {
+      "sample_id": "symmetry.rotation-order",
+      "fixture_kind": "gold_fixture",
+      "unfamiliarity_tier": "unfamiliar_concept_and_representation",
+      "school_stage": "middle",
+      "grade": 7,
+      "question": "一个正方形绕中心转不到一整圈时，有几次会和原来的样子完全重合？为什么？",
+      "learning_goal": "通过连续旋转和关键角度理解四阶旋转对称。",
+      "claims": [
+        {"claim_id": "square-rotational-order", "status": "synthetic_unverified", "critical": true, "text": "正方形绕中心旋转 90°、180°、270° 时与原图重合；不到一整圈共有三次。"}
+      ],
+      "required_explanation_aspects": ["固定旋转中心", "连续显示角度变化", "只在完全重合时计数", "区分不到一整圈与包含 360°"]
+    }
+  ]
+}

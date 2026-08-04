@@ -1,0 +1,44 @@
+{
+  "artifact_kind": "full_question_local_compile_gate",
+  "source_result": "model-deepseek-v4-flash-full-question-egg-saltwater-v01-network-attempt-2.json",
+  "source_kind": "candidate_output",
+  "relation_requirements": {
+    "fixture": "full-question-egg-saltwater-v01.visual-relations.json",
+    "fixture_kind": "gold_fixture",
+    "evidence_status": "synthetic_unverified",
+    "sha256": "d9f433be2956652e8b4ec32c6839b46502261c958dcbc2511b56ad15a354118b"
+  },
+  "status": "fail",
+  "question_id": "synthetic.egg-saltwater-float.v01",
+  "metrics": {
+    "segment_count": 4,
+    "total_duration_ms": 32000,
+    "object_count": 15,
+    "timeline_action_count": 7
+  },
+  "semantic_violations": [
+    {
+      "relation_id": "buoyancy-overcomes-weight",
+      "claim_refs": [
+        "motion-follows-force-balance"
+      ],
+      "segment_id": "seg3-compare",
+      "code": "visual.required_relation_mismatch",
+      "operator": "gt",
+      "left_value": 120,
+      "right_value": 120
+    },
+    {
+      "relation_id": "buoyancy-balances-weight",
+      "claim_refs": [
+        "motion-follows-force-balance"
+      ],
+      "segment_id": "seg4-conclusion",
+      "code": "visual.required_relation_operand_missing",
+      "operator": "eq",
+      "left_value": null,
+      "right_value": null
+    }
+  ],
+  "error": "semantic visual gate failed"
+}

@@ -1,0 +1,147 @@
+{
+  "fixture_kind": "gold_fixture",
+  "source_kind": "synthetic_format_only",
+  "purpose": "Demonstrate every strict open-visual-scene/0.4 output family and generic semantic drawing features; never use as candidate evidence or subject content.",
+  "example": {
+    "schema_version": "open-visual-scene/0.4",
+    "sample_id": "format.example",
+    "title": "仅演示结构的合成场景",
+    "fact_refs": ["format.claim"],
+    "aspect_bindings": [
+      {"aspect": "展示对象和关系", "node_ids": ["block", "guide-line"], "beat_ids": ["orient", "demonstrate"]}
+    ],
+    "scene": {
+      "coordinate_space": {
+        "width": 1000,
+        "height": 1000,
+        "anchor": "center"
+      },
+      "nodes": [
+        {
+          "id": "stage",
+          "type": "group",
+          "role": "context",
+          "layout": {"flow": "overlay", "priority": 1, "allow_reflow": true}
+        },
+        {
+          "id": "block",
+          "type": "shape",
+          "shape_kind": "polygon",
+          "parent_id": "stage",
+          "role": "subject",
+          "content": "移动主体",
+          "style_token": "science-green",
+          "layout": {"flow": "free", "priority": 2, "allow_reflow": true},
+          "geometry": {"x": 400, "y": 400, "width": 120, "height": 80, "rotation_deg": 0, "vertices": [{"x": -1, "y": 1}, {"x": -1, "y": -1}, {"x": 1, "y": 1}]}
+        },
+        {
+          "id": "guide-line",
+          "type": "line",
+          "marker_end": "arrow",
+          "parent_id": "stage",
+          "role": "relation",
+          "style_token": "focus-yellow",
+          "layout": {"flow": "free", "priority": 3, "allow_reflow": true},
+          "geometry": {"points": [{"x": 180, "y": 300}, {"x": 500, "y": 400}, {"x": 820, "y": 520}]}
+        },
+        {
+          "id": "value-label",
+          "type": "text",
+          "parent_id": "stage",
+          "role": "label",
+          "content": "示例数值：1",
+          "style_token": "ink",
+          "layout": {"flow": "free", "priority": 4, "allow_reflow": true},
+          "geometry": {"x": 500, "y": 180, "width": 240, "height": 60}
+        },
+        {
+          "id": "axes",
+          "type": "axis",
+          "parent_id": "stage",
+          "role": "context",
+          "style_token": "muted",
+          "layout": {"flow": "free", "priority": 1, "allow_reflow": true},
+          "geometry": {"x": 500, "y": 520, "width": 600, "height": 400}
+        },
+        {
+          "id": "curve",
+          "type": "plot",
+          "parent_id": "stage",
+          "role": "evidence",
+          "style_token": "math-blue",
+          "layout": {"flow": "free", "priority": 3, "allow_reflow": true},
+          "geometry": {"points": [{"x": 240, "y": 650}, {"x": 500, "y": 500}, {"x": 760, "y": 350}]}
+        },
+        {
+          "id": "equation",
+          "type": "formula",
+          "parent_id": "stage",
+          "role": "conclusion",
+          "content": "a + b = c",
+          "style_token": "signal-coral",
+          "layout": {"flow": "free", "priority": 5, "allow_reflow": true},
+          "geometry": {"x": 500, "y": 820, "width": 260, "height": 70}
+        },
+        {
+          "id": "particles",
+          "type": "particles",
+          "parent_id": "stage",
+          "role": "evidence",
+          "style_token": "science-green",
+          "layout": {"flow": "free", "priority": 2, "allow_reflow": true},
+          "geometry": {"x": 760, "y": 220, "width": 180, "height": 120}
+        }
+      ]
+    },
+    "timeline": {
+      "start_hold_ms": 1000,
+      "beats": [
+        {
+          "id": "orient",
+          "purpose": "orient",
+          "narration": "先完整展示起始结构，确认所有对象和标签的位置。",
+          "duration_ms": 5000,
+          "fact_refs": ["format.claim"],
+          "actions": [
+            {"type": "show", "target_ids": ["stage", "block", "guide-line", "value-label", "axes", "curve", "equation", "particles"], "start_ms": 0, "duration_ms": 800}
+          ]
+        },
+        {
+          "id": "demonstrate",
+          "purpose": "observe",
+          "narration": "再依次描线、强调、移动、缩放和旋转中心点图形。",
+          "duration_ms": 9000,
+          "fact_refs": ["format.claim"],
+          "actions": [
+            {"type": "trace", "target_ids": ["guide-line", "curve"], "start_ms": 0, "duration_ms": 1200},
+            {"type": "emphasize", "target_ids": ["block"], "start_ms": 1200, "duration_ms": 800},
+            {"type": "move", "target_ids": ["block"], "start_ms": 2200, "duration_ms": 1000, "to": {"x": 450, "y": 400}},
+            {"type": "scale", "target_ids": ["block"], "start_ms": 3400, "duration_ms": 1000, "to": {"scale": 1.2}},
+            {"type": "rotate", "target_ids": ["block"], "start_ms": 4600, "duration_ms": 1000, "to": {"rotation_deg": 20}}
+          ]
+        },
+        {
+          "id": "conclude",
+          "purpose": "conclude",
+          "narration": "最后改变图形尺寸、进行比较、更新文字并隐藏辅助粒子。",
+          "duration_ms": 8000,
+          "fact_refs": ["format.claim"],
+          "actions": [
+            {"type": "morph", "target_ids": ["block"], "start_ms": 0, "duration_ms": 1200, "to": {"x": 500, "y": 420, "width": 160, "height": 100}},
+            {"type": "compare", "target_ids": ["block", "equation"], "start_ms": 1400, "duration_ms": 1000},
+            {"type": "update_value", "target_ids": ["value-label"], "start_ms": 2600, "duration_ms": 500, "value": "示例数值：2"},
+            {"type": "hide", "target_ids": ["particles"], "start_ms": 3300, "duration_ms": 500}
+          ]
+        }
+      ]
+    },
+    "interaction": {
+      "kind": "adjust_value",
+      "target_ids": ["block", "value-label"]
+    },
+    "static_fallback": {
+      "steps": ["先确认全部对象的初始位置", "再观察对象如何逐步发生变化", "最后比较变化前后的关系"],
+      "fact_refs": ["format.claim"]
+    }
+  }
+}

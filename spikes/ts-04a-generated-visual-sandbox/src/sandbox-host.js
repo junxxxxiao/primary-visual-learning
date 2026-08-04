@@ -96,7 +96,35 @@ function frameDocument() {
         try {
           const run = new Function("api", "input", '"use strict";' + code);
           Promise.resolve(run(api, Object.freeze(input))).then(
-            () => send("completed"),
+            () => {
+              let stats = null;
+              try {
+                const context = canvas.getContext("2d");
+                const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+                const colors = new Set();
+                let opaqueSamples = 0;
+                let sampled = 0;
+                for (let y = 0; y < canvas.height; y += 4) {
+                  for (let x = 0; x < canvas.width; x += 4) {
+                    const offset = (y * canvas.width + x) * 4;
+                    const alpha = pixels[offset + 3];
+                    sampled += 1;
+                    if (alpha > 0) opaqueSamples += 1;
+                    if (colors.size < 256) colors.add(
+                      ((pixels[offset] >> 4) << 12)
+                      | ((pixels[offset + 1] >> 4) << 8)
+                      | ((pixels[offset + 2] >> 4) << 4)
+                      | (alpha >> 4)
+                    );
+                  }
+                }
+                stats = { sampled_pixels: sampled, opaque_samples: opaqueSamples, quantized_color_count: colors.size };
+              } catch (error) {
+                stats = { error: String(error?.message || error) };
+              }
+              send("render-stats", { stats });
+              send("completed");
+            },
             error => send("runtime-error", { message: String(error?.message || error) })
           );
         } catch (error) {
@@ -109,14 +137,14 @@ function frameDocument() {
     URL.revokeObjectURL(blobUrl);
     let terminal = false;
     let acceptedEvents = 0;
-    const finish = (status, reason) => {
+    const finish = (status, reason, errorMessage = null) => {
       if (terminal) return;
       terminal = true;
       clearTimeout(timer);
       const terminationStartedAt = performance.now();
       worker.terminate();
       const terminationDurationMs = performance.now() - terminationStartedAt;
-      port.postMessage({ type: "terminal", sessionId, status, reason, acceptedEvents, terminationDurationMs });
+      port.postMessage({ type: "terminal", sessionId, status, reason, acceptedEvents, terminationDurationMs, errorMessage });
       port.close();
     };
     let timer = setTimeout(() => finish("terminated", "worker_boot_budget"), POLICY.executionBudgetMs);
@@ -137,9 +165,13 @@ function frameDocument() {
         port.postMessage({ type: "event", sessionId, name: message.name, payload: message.payload });
         return;
       }
+      if (message.kind === "render-stats") {
+        port.postMessage({ type: "render_stats", sessionId, stats: message.stats });
+        return;
+      }
       if (message.kind === "completed") return finish("completed", "clean_exit");
       if (message.kind === "policy-violation") return finish("terminated", "output_violation");
-      if (message.kind === "runtime-error") return finish("runtime_error", "generated_code_error");
+      if (message.kind === "runtime-error") return finish("runtime_error", "generated_code_error", message.message || null);
     };
     worker.postMessage({ code, input, runToken, canvas: offscreen }, [offscreen]);
   }, { once: true });
@@ -180,8 +212,9 @@ export class VisualSandbox {
       this.activeFrames.delete(iframe);
     };
 
+    let renderStats = null;
     return new Promise(resolve => {
-      const finish = (status, reason, acceptedEvents = events.length, terminationDurationMs = 0) => {
+      const finish = (status, reason, acceptedEvents = events.length, terminationDurationMs = 0, errorMessage = null) => {
         if (settled) return;
         settled = true;
         marks.terminalAt = performance.now();
@@ -237,6 +270,8 @@ export class VisualSandbox {
           policy_version: SANDBOX_POLICY.version,
           input_schema_version: SANDBOX_POLICY.inputSchemaVersion,
           output_schema_version: SANDBOX_POLICY.outputSchemaVersion,
+          render_stats: renderStats,
+          runtime_error_message: errorMessage,
           timing: {
             schema_version: "stage-timing/1.0",
             trace_id: sessionId,
@@ -253,10 +288,11 @@ export class VisualSandbox {
         const message = event.data;
         if (!message || message.sessionId !== sessionId) return;
         if (message.type === "event") events.push({ name: message.name, payload: message.payload });
+        if (message.type === "render_stats") renderStats = message.stats;
         if (message.type === "worker_ready") marks.workerReadyAt = performance.now();
         if (message.type === "terminal") {
           clearTimeout(hostTimer);
-          finish(message.status, message.reason, message.acceptedEvents, message.terminationDurationMs);
+          finish(message.status, message.reason, message.acceptedEvents, message.terminationDurationMs, message.errorMessage);
         }
       };
       iframe.addEventListener("load", () => {

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TS-04C 陌生问题动画评审</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #17212b; background: #eef1f3; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; }
+    button, select, textarea, input { font: inherit; }
+    header { min-height: 64px; padding: 12px 20px; display: flex; align-items: center; gap: 12px; background: #fff; border-bottom: 1px solid #d8dde2; position: sticky; top: 0; z-index: 2; }
+    header strong { font-size: 17px; }
+    select { min-width: 280px; max-width: 48vw; height: 40px; border: 1px solid #bdc5cc; border-radius: 6px; padding: 0 10px; background: #fff; }
+    .segmented { display: inline-flex; border: 1px solid #bdc5cc; border-radius: 6px; overflow: hidden; }
+    .segmented button { height: 38px; padding: 0 14px; border: 0; border-right: 1px solid #bdc5cc; background: #fff; }
+    .segmented button:last-child { border-right: 0; }
+    .segmented button[aria-pressed="true"] { background: #17212b; color: #fff; }
+    main { width: min(1280px, 100%); margin: 0 auto; padding: 20px; display: grid; grid-template-columns: minmax(420px, 1fr) 340px; gap: 20px; }
+    .stage { min-width: 0; }
+    .canvas-shell { min-height: 650px; display: grid; place-items: center; background: #dfe4e7; border: 1px solid #cbd2d8; border-radius: 6px; overflow: auto; padding: 16px; }
+    canvas { display: block; max-width: 100%; height: auto; background: #fffdf7; box-shadow: 0 4px 18px rgba(23,33,43,.14); }
+    .transport { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; margin-top: 12px; }
+    .icon-button { width: 44px; height: 44px; border: 1px solid #aeb7bf; border-radius: 6px; background: #fff; font-size: 18px; }
+    input[type="range"] { width: 100%; }
+    .time { min-width: 92px; text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; }
+    aside { background: #fff; border-left: 1px solid #d8dde2; padding: 18px; min-height: 650px; }
+    .beat { font-size: 13px; color: #5d6872; margin-bottom: 8px; }
+    .narration { min-height: 112px; margin: 0 0 18px; font-size: 17px; line-height: 1.65; }
+    fieldset { border: 0; padding: 0; margin: 0 0 18px; }
+    legend { font-weight: 700; margin-bottom: 9px; }
+    .ratings { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .ratings button { min-height: 42px; border: 1px solid #aeb7bf; border-radius: 6px; background: #fff; text-align: left; padding: 8px 12px; }
+    .ratings button[aria-pressed="true"] { border-color: #17212b; box-shadow: inset 3px 0 #43b581; }
+    label { display: flex; gap: 8px; align-items: flex-start; line-height: 1.4; }
+    textarea { width: 100%; min-height: 110px; resize: vertical; border: 1px solid #bdc5cc; border-radius: 6px; padding: 10px; }
+    .review-actions { display: flex; gap: 8px; margin-top: 12px; }
+    .review-actions button { min-height: 40px; border: 1px solid #aeb7bf; border-radius: 6px; background: #fff; padding: 0 12px; }
+    @media (max-width: 860px) {
+      header { align-items: stretch; flex-wrap: wrap; }
+      select { order: 3; width: 100%; max-width: none; }
+      main { grid-template-columns: 1fr; padding: 12px; }
+      .canvas-shell { min-height: 500px; }
+      aside { min-height: 0; border-left: 0; border-top: 1px solid #d8dde2; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>动画评审</strong>
+    <select id="candidate" aria-label="选择问题"></select>
+    <div class="segmented" aria-label="画布视口">
+      <button type="button" data-viewport="phone" aria-pressed="true">手机</button>
+      <button type="button" data-viewport="tablet" aria-pressed="false">平板</button>
+    </div>
+  </header>
+  <main>
+    <section class="stage">
+      <div class="canvas-shell"><canvas id="canvas"></canvas></div>
+      <div class="transport">
+        <button id="play" class="icon-button" type="button" title="播放" aria-label="播放">▶</button>
+        <input id="progress" type="range" min="0" max="1" step="1" value="0" aria-label="讲解进度">
+        <span id="time" class="time">0:00 / 0:00</span>
+      </div>
+    </section>
+    <aside>
+      <div id="beat" class="beat">1 / 1</div>
+      <p id="narration" class="narration"></p>
+      <fieldset>
+        <legend>评审结果</legend>
+        <div class="ratings">
+          <button type="button" data-rating="showable" aria-pressed="false">可展示</button>
+          <button type="button" data-rating="revise" aria-pressed="false">需要修改</button>
+          <button type="button" data-rating="reject" aria-pressed="false">不可展示</button>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label><input id="severe" type="checkbox">存在严重学科或音画冲突</label>
+      </fieldset>
+      <label for="notes"><strong>备注</strong></label>
+      <textarea id="notes"></textarea>
+      <div class="review-actions">
+        <button id="next" type="button">下一题</button>
+        <button id="export" type="button">导出评审</button>
+      </div>
+    </aside>
+  </main>
+  <script type="module" src="./src/review-harness.js"></script>
+</body>
+</html>
