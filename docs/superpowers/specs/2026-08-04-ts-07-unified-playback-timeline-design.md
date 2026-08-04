@@ -139,6 +139,18 @@ The harness is an engineering audit surface, not a C-end page. It reuses the Dem
 - Safari, WeChat WebView, real phones, background throttling, network buffering, low-end devices, long lessons, and production session isolation remain unverified.
 - The audit does not change the PRD, current prototype behavior, high-fidelity design, architecture decision, data handling, or privacy boundary.
 
+## Approved Fallback Remediation
+
+On 2026-08-04 the user approved a minimal shared-player fix after the first candidate run consistently reproduced fallback reset.
+
+- The existing player records the last valid `audio.currentTime / audio.duration` ratio and decoded duration while real audio is healthy.
+- A media error hands that snapshot to the existing visual fallback instead of resetting `visualFallbackRatio` to zero.
+- The fallback advances against the decoded segment duration. The existing 9-second default remains only for audio that never exposes valid metadata.
+- Pausing and resuming an active fallback keeps its current ratio and duration; it does not reuse an older audio snapshot.
+- The change stays in the one shared player used by mathematics, sound, and the vacuum topic. No preset receives a local timer or override.
+- The formal retest runs only five fallback candidates because the normal-audio path is untouched and already has sealed round-one evidence. One sound-main and one vacuum-topic smoke check confirm shared coverage without entering the formal denominator.
+- The existing visible-control and media-error boundary remains the public verification seam. No private playback function becomes a test API.
+
 ## Implementation Sequence
 
 1. Freeze the existing cue expectations and hashes without changing the Demo.
