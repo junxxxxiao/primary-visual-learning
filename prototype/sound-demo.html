@@ -1529,7 +1529,10 @@
     let visualFallbackActive = false;
     let visualFallbackRatio = 0;
     let visualFallbackStartedAt = 0;
+    let visualFallbackDurationMs = 9000;
     let visualFallbackEnded = null;
+    let lastValidAudioRatio = 0;
+    let lastValidAudioDurationMs = null;
     let playbackFrame = null;
     let segmentLeadInTimer = null;
     let pendingSeekRatio = null;
@@ -2032,6 +2035,8 @@
       stopAudio();
       activeAudioSource = source;
       activeAudioEnded = onEnded;
+      lastValidAudioRatio = 0;
+      lastValidAudioDurationMs = null;
       audio.src = source;
       audio.currentTime = 0;
       audio.onended = () => { stopPlaybackTicker(); state.playing = false; syncPlayButtons(); onEnded?.(); };
@@ -2043,7 +2048,7 @@
         if (error?.name === 'NotAllowedError') showToast('点左下角播放按钮继续听');
         else {
           showToast('声音资源暂时不可用，继续播放画面');
-          if (visualFallbackFrame === null) startVisualFallback(onEnded);
+          if (!visualFallbackActive) startVisualFallback(onEnded, audioHandoffSnapshot());
         }
       });
     }
@@ -2070,7 +2075,20 @@
       visualFallbackActive = false;
       visualFallbackRatio = 0;
       visualFallbackStartedAt = 0;
+      visualFallbackDurationMs = 9000;
       visualFallbackEnded = null;
+    }
+
+    function captureAudioPosition() {
+      if (visualFallbackActive || !Number.isFinite(audio.duration) || audio.duration <= 0 || !Number.isFinite(audio.currentTime)) return;
+      lastValidAudioRatio = Math.max(0, Math.min(1, audio.currentTime / audio.duration));
+      lastValidAudioDurationMs = audio.duration * 1000;
+    }
+
+    function audioHandoffSnapshot() {
+      captureAudioPosition();
+      if (lastValidAudioDurationMs === null) return null;
+      return { ratio: lastValidAudioRatio, durationMs: lastValidAudioDurationMs };
     }
 
     function pauseVisualFallback() {
@@ -2081,10 +2099,15 @@
       return true;
     }
 
-    function startVisualFallback(onEnded) {
+    function startVisualFallback(onEnded, handoff = null) {
+      const resuming = visualFallbackActive;
       stopPlaybackTicker();
       stopVisualFallback(false);
-      const duration = 9000;
+      if (!resuming && handoff) {
+        visualFallbackRatio = handoff.ratio;
+        visualFallbackDurationMs = handoff.durationMs;
+      }
+      const duration = visualFallbackDurationMs;
       visualFallbackActive = true;
       visualFallbackEnded = onEnded ?? visualFallbackEnded;
       visualFallbackStartedAt = performance.now() - visualFallbackRatio * duration;
@@ -2135,7 +2158,7 @@
           if (error?.name === 'NotAllowedError') showToast('点左下角播放按钮继续听');
           else if (visualFallbackFrame === null) {
             showToast('声音资源暂时不可用，继续播放画面');
-            startVisualFallback(activeAudioEnded);
+            startVisualFallback(activeAudioEnded, audioHandoffSnapshot());
           }
         });
       } else {
@@ -2174,6 +2197,7 @@
     }
 
     function updatePlayer(forcedRatio = null) {
+      if (forcedRatio === null) captureAudioPosition();
       const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
       const ratio = forcedRatio ?? Math.max(0, Math.min(1, audio.currentTime / duration));
       document.querySelectorAll('.unified-player').forEach(player => {
@@ -2946,11 +2970,11 @@
     audio.addEventListener('play', () => { state.playing = true; startPlaybackTicker(); syncPlayButtons(); });
     audio.addEventListener('pause', () => { stopPlaybackTicker(); if (!audio.ended) { state.playing = false; syncPlayButtons(); } });
     audio.addEventListener('error', () => {
-      if (!activeAudioSource || visualFallbackFrame !== null) return;
+      if (!activeAudioSource || visualFallbackActive) return;
       state.playing = false;
       syncPlayButtons();
       showToast('声音资源暂时不可用，继续播放画面');
-      startVisualFallback(activeAudioEnded);
+      startVisualFallback(activeAudioEnded, audioHandoffSnapshot());
     });
 
     document.addEventListener('keydown', event => {

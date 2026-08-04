@@ -1,9 +1,9 @@
 {
   "schema_version": "stage-timing/1.0",
-  "trace_id": "ts07-chrome-candidate-20260804",
+  "trace_id": "ts07-chrome-fallback-retest-20260804",
   "slice_id": "TS-07",
   "clock": "monotonic",
-  "trace_started_at": "2026-08-04T08:23:38.411Z",
+  "trace_started_at": "2026-08-04T08:57:57.289Z",
   "milestones": [
     {
       "name": "timeline.audit_started",
@@ -12,7 +12,7 @@
     },
     {
       "name": "timeline.audit_completed",
-      "offset_ms": 226822.0,
+      "offset_ms": 76864.0,
       "latency_scope": "diagnostic"
     }
   ],
@@ -22,19 +22,19 @@
       "parent_span_id": null,
       "stage": "timeline.audit",
       "started_offset_ms": 0,
-      "ended_offset_ms": 226822.0,
-      "duration_ms": 226822.0,
+      "ended_offset_ms": 76864.0,
+      "duration_ms": 76864.0,
       "latency_scope": "system_work",
-      "outcome": "failure",
+      "outcome": "success",
       "retry_index": 0,
       "cache_status": "not_applicable",
       "provider": "local_google_chrome",
       "model": null,
-      "input_units": 10,
-      "output_units": 95,
+      "input_units": 5,
+      "output_units": 5,
       "cost_amount": 0,
       "cost_currency": "CNY",
-      "error_code": "fallback.handoff_error_exceeded"
+      "error_code": null
     }
   ]
 }

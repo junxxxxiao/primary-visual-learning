@@ -8,15 +8,21 @@ from pathlib import Path
 
 SLICE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = SLICE_ROOT.parents[1]
-RESULT_PATH = SLICE_ROOT / "results" / "browser-candidate.json"
+RESULT_TARGETS = {
+    "/__ts07_result__": (SLICE_ROOT / "results" / "browser-candidate.json", "ts-07-browser-audit/1.0"),
+    "/__ts07_fallback_retest__": (SLICE_ROOT / "results" / "browser-fallback-retest.json", "ts-07-browser-audit/1.0"),
+    "/__ts07_shared_smoke__": (SLICE_ROOT / "results" / "browser-shared-smoke.json", "ts-07-shared-smoke/1.0"),
+}
 MAX_RESULT_BYTES = 2 * 1024 * 1024
 
 
 class AuditHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
-        if self.path != "/__ts07_result__":
+        result_target = RESULT_TARGETS.get(self.path)
+        if result_target is None:
             self.send_error(404)
             return
+        result_path, expected_version = result_target
         try:
             content_length = int(self.headers.get("Content-Length", "0"))
         except ValueError:
@@ -30,16 +36,16 @@ class AuditHandler(SimpleHTTPRequestHandler):
         except (UnicodeDecodeError, json.JSONDecodeError):
             self.send_error(400, "Invalid JSON")
             return
-        if payload.get("result_version") != "ts-07-browser-audit/1.0":
+        if payload.get("result_version") != expected_version:
             self.send_error(422, "Unexpected result version")
             return
-        RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        temporary_path = RESULT_PATH.with_suffix(".json.tmp")
+        result_path.parent.mkdir(parents=True, exist_ok=True)
+        temporary_path = result_path.with_suffix(".json.tmp")
         temporary_path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-        temporary_path.replace(RESULT_PATH)
+        temporary_path.replace(result_path)
         body = b'{"saved":true}'
         self.send_response(200)
         self.send_header("Content-Type", "application/json")

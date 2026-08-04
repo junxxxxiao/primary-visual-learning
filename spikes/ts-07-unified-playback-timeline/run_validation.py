@@ -11,6 +11,7 @@ SLICE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = SLICE_ROOT.parents[1]
 RESULTS_ROOT = SLICE_ROOT / "results"
 BASELINE_SHA = "4b91022b7ca933340477d3b55eba5f863593deaa"
+ROUND_ONE_IMPLEMENTATION_COMMIT = "6a537aaef532e90dda88cf1fa1d91c39c85704e6"
 CHROME_BINARY = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 APPROVED_BROWSER = "Google Chrome 150.0.7871.188"
 
@@ -29,6 +30,10 @@ def sha256(path):
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def sha256_bytes(value):
+    return hashlib.sha256(value).hexdigest()
 
 
 def percentile(values, percentile_value):
@@ -62,10 +67,12 @@ def parse_timestamp(value):
 
 
 def main():
-    candidate = load_json(RESULTS_ROOT / "browser-candidate.json")
+    round_one = load_json(RESULTS_ROOT / "browser-candidate.json")
+    candidate = load_json(RESULTS_ROOT / "browser-fallback-retest.json")
+    shared_smoke = load_json(RESULTS_ROOT / "browser-shared-smoke.json")
     fixture = load_json(SLICE_ROOT / "fixtures" / "audit-cues.json")
     self_test = load_json(RESULTS_ROOT / "harness-self-test.json")
-    real_runs = candidate["raw"]["real_runs"]
+    real_runs = round_one["raw"]["real_runs"]
     fallback_runs = candidate["raw"]["fallback_runs"]
 
     subtitle_errors = [
@@ -106,19 +113,44 @@ def main():
         },
     }
 
-    hash_paths = {
+    current_hash_paths = {
         "/prototype/sound-demo.html": REPO_ROOT / "prototype" / "sound-demo.html",
         "/prototype/assets/audio/narration-math-1.wav": REPO_ROOT / "prototype" / "assets" / "audio" / "narration-math-1.wav",
         "./fixtures/audit-cues.json": SLICE_ROOT / "fixtures" / "audit-cues.json",
         "./src/audit.js": SLICE_ROOT / "src" / "audit.js",
     }
-    hash_checks = {
+    current_hash_checks = {
         key: candidate["hashes"].get(key) == sha256(path)
-        for key, path in hash_paths.items()
+        for key, path in current_hash_paths.items()
+    }
+    round_one_implementation = subprocess.run(
+        ["git", "show", f"{ROUND_ONE_IMPLEMENTATION_COMMIT}:prototype/sound-demo.html"],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    round_one_hash_checks = {
+        "/prototype/sound-demo.html": round_one["hashes"].get("/prototype/sound-demo.html")
+        == sha256_bytes(round_one_implementation),
+        **{
+            key: round_one["hashes"].get(key) == sha256(path)
+            for key, path in current_hash_paths.items()
+            if key != "/prototype/sound-demo.html"
+        },
+    }
+    hash_checks = {
+        "round_one_sealed": round_one_hash_checks,
+        "fallback_retest_current": current_hash_checks,
     }
     metric_checks = {
-        key: almost_equal(independent_metrics[key]["p95_ms"], candidate["metrics"][key]["p95_ms"])
-        for key in ["subtitle_cues", "visual_cues", "pause_resume", "seek", "fallback_handoffs"]
+        **{
+            key: almost_equal(independent_metrics[key]["p95_ms"], round_one["metrics"][key]["p95_ms"])
+            for key in ["subtitle_cues", "visual_cues", "pause_resume", "seek"]
+        },
+        "fallback_handoffs": almost_equal(
+            independent_metrics["fallback_handoffs"]["p95_ms"],
+            candidate["metrics"]["fallback_handoffs"]["p95_ms"],
+        ),
     }
     thresholds = fixture["thresholds"]
     gates = {
@@ -131,7 +163,7 @@ def main():
         "fallback_monotonic": independent_metrics["fallback_handoffs"]["monotonic"],
         "fallback_no_state_rollback": not independent_metrics["fallback_handoffs"]["state_rollback"],
     }
-    expected_violations = {
+    round_one_expected_violations = {
         "fallback.handoff_error_exceeded",
         "fallback.not_monotonic",
         "fallback.state_rollback",
@@ -145,18 +177,28 @@ def main():
     structural_checks = {
         "result_version": candidate.get("result_version") == "ts-07-browser-audit/1.0",
         "candidate_output": candidate.get("evidence_kind") == "candidate_output",
-        "real_run_count": len(real_runs) == 5,
+        "round_one_real_run_count": len(real_runs) == 5,
+        "retest_real_run_count": len(candidate["raw"]["real_runs"]) == 0,
         "fallback_run_count": len(fallback_runs) == 5,
         "subtitle_observation_count": len(subtitle_errors) == 25,
         "visual_observation_count": len(visual_errors) == 10,
         "seek_observation_count": len(seek_errors) == 50,
         "one_error_per_fallback": all(run["error_count"] == 1 for run in fallback_runs),
-        "zero_external_usage": candidate["candidate"]["external_requests"] == 0
+        "shared_smoke": shared_smoke.get("result_version") == "ts-07-shared-smoke/1.0"
+        and shared_smoke.get("pass") is True
+        and shared_smoke.get("candidate_denominator") is False
+        and len(shared_smoke.get("runs", [])) == 2,
+        "zero_external_usage": round_one["candidate"]["external_requests"] == 0
+        and round_one["candidate"]["tokens_or_equivalent"] == 0
+        and round_one["candidate"]["cost_cny"] == 0
+        and candidate["candidate"]["external_requests"] == 0
         and candidate["candidate"]["tokens_or_equivalent"] == 0
         and candidate["candidate"]["cost_cny"] == 0,
         "harness_self_test": self_test.get("pass") is True and self_test.get("candidate_denominator") is False,
-        "candidate_violation_set": set(candidate["violation_codes"]) == expected_violations,
-        "candidate_pass_false": candidate.get("pass") is False,
+        "round_one_violation_set": set(round_one["violation_codes"]) == round_one_expected_violations,
+        "round_one_pass_false": round_one.get("pass") is False,
+        "retest_has_no_violations": candidate.get("violation_codes") == [],
+        "retest_pass_true": candidate.get("pass") is True,
         "approved_browser_matches_executable": candidate["candidate"]["approved_browser"] == APPROVED_BROWSER
         and browser_version == APPROVED_BROWSER,
     }
@@ -165,7 +207,13 @@ def main():
         cwd=REPO_ROOT,
         check=False,
     ).returncode == 0
-    validation_pass = all(hash_checks.values()) and all(metric_checks.values()) and all(structural_checks.values()) and head_contains_baseline
+    validation_pass = (
+        all(round_one_hash_checks.values())
+        and all(current_hash_checks.values())
+        and all(metric_checks.values())
+        and all(structural_checks.values())
+        and head_contains_baseline
+    )
     candidate_gate_pass = all(gates.values())
 
     started_at = parse_timestamp(candidate["started_at"])
@@ -173,7 +221,7 @@ def main():
     duration_ms = (completed_at - started_at).total_seconds() * 1000
     timing = {
         "schema_version": "stage-timing/1.0",
-        "trace_id": "ts07-chrome-candidate-20260804",
+        "trace_id": "ts07-chrome-fallback-retest-20260804",
         "slice_id": "TS-07",
         "clock": "monotonic",
         "trace_started_at": candidate["started_at"],
@@ -190,16 +238,16 @@ def main():
                 "ended_offset_ms": duration_ms,
                 "duration_ms": duration_ms,
                 "latency_scope": "system_work",
-                "outcome": "failure",
+                "outcome": "success",
                 "retry_index": 0,
                 "cache_status": "not_applicable",
                 "provider": "local_google_chrome",
                 "model": None,
-                "input_units": 10,
-                "output_units": len(subtitle_errors) + len(visual_errors) + len(pause_errors) + len(seek_errors) + len(fallback_errors),
+                "input_units": 5,
+                "output_units": len(fallback_errors),
                 "cost_amount": 0,
                 "cost_currency": "CNY",
-                "error_code": "fallback.handoff_error_exceeded",
+                "error_code": None,
             }
         ],
     }
@@ -209,6 +257,7 @@ def main():
         "baseline_sha": BASELINE_SHA,
         "head_contains_baseline": head_contains_baseline,
         "candidate": candidate["candidate"],
+        "round_one_implementation_commit": ROUND_ONE_IMPLEMENTATION_COMMIT,
         "fixture_version": fixture["fixture_version"],
         "environment": {
             "platform": platform.platform(),
@@ -218,7 +267,7 @@ def main():
             "local_http": True,
         },
         "sample_counts": {
-            "warmup_runs": 1,
+            "warmup_runs": 2,
             "real_audio_runs": len(real_runs),
             "fallback_runs": len(fallback_runs),
             "subtitle_cues": len(subtitle_errors),
@@ -226,10 +275,12 @@ def main():
             "pause_resume": len(pause_errors),
             "seek_operations": len(seek_errors),
             "fallback_handoffs": len(fallback_errors),
+            "shared_smoke_runs": len(shared_smoke["runs"]),
         },
         "metrics": independent_metrics,
         "gates": gates,
-        "violation_codes": sorted(expected_violations),
+        "violation_codes": [],
+        "round_one_violation_codes": sorted(round_one_expected_violations),
         "hash_checks": hash_checks,
         "metric_recalculation_checks": metric_checks,
         "structural_checks": structural_checks,
@@ -240,7 +291,8 @@ def main():
             "existing Chrome Demo real-audio cue synchronization for the fixed math segment",
             "pause and resume continuity for the fixed math segment",
             "ten repeated seeks per run across five measured runs",
-            "existing media-error fallback behavior across five measured runs",
+            "media-error fallback continuity across five measured retest runs",
+            "sound-main and vacuum shared-player fallback pause and resume smoke coverage",
         ],
         "unverified": [
             "Safari and WeChat WebView",

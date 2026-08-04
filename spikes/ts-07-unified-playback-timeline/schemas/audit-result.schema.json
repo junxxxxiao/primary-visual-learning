@@ -34,7 +34,7 @@
       "type": "object",
       "required": ["real_runs", "fallback_runs"],
       "properties": {
-        "real_runs": { "type": "array", "minItems": 5, "maxItems": 5 },
+        "real_runs": { "type": "array", "minItems": 0, "maxItems": 5 },
         "fallback_runs": { "type": "array", "minItems": 5, "maxItems": 5 }
       }
     },

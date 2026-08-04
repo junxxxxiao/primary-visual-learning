@@ -1,0 +1,130 @@
+{
+  "result_version": "ts-07-browser-audit/1.0",
+  "evidence_kind": "candidate_output",
+  "started_at": "2026-08-04T08:57:57.289Z",
+  "completed_at": "2026-08-04T08:59:14.153Z",
+  "candidate": {
+    "implementation": "prototype/sound-demo.html",
+    "approved_browser": "Google Chrome 150.0.7871.188",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "platform": "MacIntel",
+    "playback_rate": 1,
+    "external_requests": 0,
+    "tokens_or_equivalent": 0,
+    "cost_cny": 0
+  },
+  "fixture_version": "ts-07-audit-cues/1.0",
+  "hashes": {
+    "/prototype/sound-demo.html": "43eb488ff84a50a6c8a25fa32e3793d4489a4166c0ce07c15f1127c5cd501a0d",
+    "/prototype/assets/audio/narration-math-1.wav": "221df18ba1a492280579cc079432927b2a95884ce1035e21c3bc14ff6973d5a7",
+    "./fixtures/audit-cues.json": "26666e1f35456c2e0ef42482d8b2319e28c05e765dbfeb943f0908621a67f50e",
+    "./src/audit.js": "a97e7df2421a94c13c5735cb288705c03162968ea39451e4fb4bb68025f4b485"
+  },
+  "warmup": {
+    "duration_ms": 20160
+  },
+  "raw": {
+    "real_runs": [],
+    "fallback_runs": [
+      {
+        "run_id": "fallback-1",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.49632544642857146,
+        "after_ratio": 0.49781,
+        "later_ratio": 0.510235,
+        "handoff_error_ms": 29.928599999998866,
+        "monotonic": true,
+        "state_rollback": false
+      },
+      {
+        "run_id": "fallback-2",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4968112103174603,
+        "after_ratio": 0.498143,
+        "later_ratio": 0.5105689999999999,
+        "handoff_error_ms": 26.848880000000737,
+        "monotonic": true,
+        "state_rollback": false
+      },
+      {
+        "run_id": "fallback-3",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.49654166666666666,
+        "after_ratio": 0.497665,
+        "later_ratio": 0.51006,
+        "handoff_error_ms": 22.64640000000064,
+        "monotonic": true,
+        "state_rollback": false
+      },
+      {
+        "run_id": "fallback-4",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4961376488095238,
+        "after_ratio": 0.49816000000000005,
+        "later_ratio": 0.510595,
+        "handoff_error_ms": 40.77060000000067,
+        "monotonic": true,
+        "state_rollback": false
+      },
+      {
+        "run_id": "fallback-5",
+        "duration_ms": 20160,
+        "error_count": 1,
+        "before_ratio": 0.4966262896825397,
+        "after_ratio": 0.498132,
+        "later_ratio": 0.510538,
+        "handoff_error_ms": 30.355120000000237,
+        "monotonic": true,
+        "state_rollback": false
+      }
+    ]
+  },
+  "metrics": {
+    "subtitle_cues": {
+      "count": 0,
+      "p50_ms": null,
+      "p80_ms": null,
+      "p95_ms": null,
+      "max_ms": null
+    },
+    "visual_cues": {
+      "count": 0,
+      "p50_ms": null,
+      "p80_ms": null,
+      "p95_ms": null,
+      "max_ms": null
+    },
+    "pause_resume": {
+      "count": 0,
+      "p50_ms": null,
+      "p80_ms": null,
+      "p95_ms": null,
+      "max_ms": null
+    },
+    "seek": {
+      "count": 0,
+      "p50_ms": null,
+      "p80_ms": null,
+      "p95_ms": null,
+      "max_ms": null,
+      "final_error_ms": null,
+      "cumulative_drift_ms": 0,
+      "rendered_state_consistent": true
+    },
+    "fallback_handoffs": {
+      "count": 5,
+      "p50_ms": 29.928599999998866,
+      "p80_ms": 32.438216000000324,
+      "p95_ms": 38.68750400000058,
+      "max_ms": 40.77060000000067,
+      "monotonic": true,
+      "state_rollback": false
+    }
+  },
+  "violation_codes": [],
+  "pass": true
+}

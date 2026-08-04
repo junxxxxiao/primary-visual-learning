@@ -1,6 +1,6 @@
 # TS-07 统一播放时间轴最小成本审计
 
-> 状态：`candidate_run_complete`；真实音频同步、暂停恢复和连续定位达到门槛，运行中音频失败后的降级连续性未达到门槛
+> 状态：`candidate_run_complete`；首轮发现的降级重置已做最小共享修复，修复后候选门槛通过，尚未完成所需人工评审
 >
 > 性质：直接审计现有高保真 Demo 的抛弃式技术切片，不是生产运行时
 >
@@ -58,15 +58,18 @@ python3 spikes/ts-07-unified-playback-timeline/run_validation.py
 - 视觉 cue P95：约 `37.0ms`，通过；
 - 暂停恢复 P95：约 `62.1ms`，通过；
 - 50 次定位 P95：约 `107.2ms`，最大约 `108.2ms`，完整现场一致，通过；
-- 降级交接 P95：约 `9965.3ms`，5/5 非单调且字幕/画面回滚，失败。
+- 首轮降级交接 P95：约 `9965.3ms`，5/5 非单调且字幕/画面回滚，用作修复前红态；
+- 共享播放器改为让视觉降级继承最后有效音频进度和已解码时长，未重新生成语音或动画；
+- 修复后只复测 5 次降级：交接 P95 约 `38.7ms`，最大约 `40.8ms`，5/5 单调继续、无字幕/画面回滚、每次仅一个错误事件；
+- 声音主讲解和真空主题各 1 次非正式分母冒烟检查通过，并确认降级暂停能保持、恢复后继续前进。
 
-浏览器原始证据见 `results/browser-candidate.json`，独立复算见 `results/summary.json`，共享计时记录见 `results/timing.json`。
+修复前原始证据见 `results/browser-candidate.json`，修复后降级证据见 `results/browser-fallback-retest.json`，共享冒烟见 `results/browser-shared-smoke.json`，独立复算见 `results/summary.json`，共享计时记录见 `results/timing.json`。
 
-当前证据状态为 `candidate_run_complete`。硬门槛已经失败，不应进入通过结论或产品实现抽取；是否修复并复测需单独决定。
+当前证据状态仍为 `candidate_run_complete`。修复后候选门槛已通过，但在完成所需人工评审前不升级为 `conditional_pass | pass`，也不抽取为生产架构。
 
 ## 边界
 
-- 没有修改 Demo 行为、PRD 或高保真规范；
+- 只修改现有 Demo 共享播放器的降级交接，并同步 PRD、原型说明和高保真规范；
 - 没有生成语音、动画或候选内容；
 - 没有验证 Safari、微信 WebView、真机、后台限流、网络缓冲、长讲解或生产会话隔离；
 - synthetic visual cue 只验证现有固定场景的时间投影，不是 TS-04C 证据；
